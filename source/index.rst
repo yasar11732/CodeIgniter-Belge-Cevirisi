@@ -1,11 +1,6 @@
 CodeIgniter'a Hoşgeldiniz
 ======================
 
-CodeIgniter, PHP ile web sayfası geliştirmek isteyen insanlar için
-hazırlanmış bir yazılım geliştirme işçatısıdır -framework-. Yazdığınız
-kodların, içerdiği yaygın ihtiyaçlar doğrultusunda oluşturulmuş zengin
-kütüphanelerin basit arayüzü ve mantıklı yapısı ile çok hızlı ve optimize
-olmasını hedefler.
 CodeIgniter is an Application Development Framework - a toolkit - for
 people who build web sites using PHP. Its goal is to enable you to
 develop projects much faster than you could if you were writing code
