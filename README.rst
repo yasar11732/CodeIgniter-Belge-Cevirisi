@@ -1,5 +1,5 @@
 ############################
-CodeIgniter Kullanım Klavuzu
+CodeIgniter Kullanım Kılavuzu
 ############################
 
 *******************
