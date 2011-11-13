@@ -1,0 +1,313 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+	    
+	    <title>Database Configuration &mdash; CodeIgniter v3.0-dev documentation</title>
+
+	    <link rel="stylesheet" href="../_static/asset/css/common.css" type="text/css" />
+	    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+	    <script type="text/javascript">
+	      var DOCUMENTATION_OPTIONS = {
+	        URL_ROOT:    '../',
+	        VERSION:     '3.0-dev',
+	        COLLAPSE_INDEX: false,
+	        FILE_SUFFIX: '.html',
+	        HAS_SOURCE:  true
+	      };
+	    </script>
+	    <script type="text/javascript" src="../_static/jquery.js"></script>
+	    <script type="text/javascript" src="../_static/underscore.js"></script>
+	    <script type="text/javascript" src="../_static/doctools.js"></script>
+	    <link rel="top" title="CodeIgniter v3.0-dev documentation" href="../index.html" />
+	    <link rel="up" title="The Database Class" href="index.html" />
+	    <link rel="next" title="Connecting to your Database" href="connecting.html" />
+	    <link rel="prev" title="Database Quick Start: Example Code" href="examples.html" /> 
+	</head>
+	<body>
+		<div id="table-contents">
+			<div class="toctree-wrapper compound">
+			<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../changelog.html">Change Log</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../license.html">Open Software License (&#8220;OSL&#8221;) v 3.0</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../overview/index.html">CodeIgniter Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../general/requirements.html">Server Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation/index.html">Installation Instructions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../general/index.html">General Topics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../libraries/index.html">Libraries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../helpers/index.html">Helpers</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">The Database Class</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="examples.html">Quick Start: Usage Examples</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Database Configuration</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="connecting.html">Connecting to a Database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="queries.html">Running Queries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="results.html">Generating Query Results</a></li>
+<li class="toctree-l2"><a class="reference internal" href="helpers.html">Query Helper Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="active_record.html">Active Record Class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="transactions.html">Transactions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="table_data.html">Table MetaData</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fields.html">Field MetaData</a></li>
+<li class="toctree-l2"><a class="reference internal" href="call_function.html">Custom Function Calls</a></li>
+<li class="toctree-l2"><a class="reference internal" href="caching.html">Query Caching</a></li>
+<li class="toctree-l2"><a class="reference internal" href="forge.html">Database Manipulation with Database Forge</a></li>
+<li class="toctree-l2"><a class="reference internal" href="utilities.html">Database Utilities Class</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../documentation/index.html">Writing CodeIgniter Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial/index.html">Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../general/quick_reference.html">Quick Reference Chart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../general/credits.html">Credits</a></li>
+</ul>
+
+			</div>
+		</div>
+
+		<div id="brand" class="ci">
+			<a href="http://codeigniter.com/"><img src="../_static/asset/img/ci-logo.gif" alt="CodeIgniter"></a>
+			<p>3.0-dev User Guide</p>
+		    <p><a href="../_sources/database/configuration.txt"
+			           rel="nofollow">Show Source</a></p>
+		</div><!-- /#brand -->
+
+		<div id="header">
+			<form method="get" action="http://www.google.com/search">
+				<fieldset>
+					<input type="text" name="q" id="q" value="">
+					<input type="hidden" name="as_sitesearch" id="as_sitesearch" value="codeigniter.com/user_guide/" />
+					<input class="grades" type="submit" value="search">
+				</fieldset>
+			</form>
+			<ul>
+				<li><a href="../index.html">Home</a>&nbsp;&nbsp; &rsaquo;</li>
+				<li><a id="toc-link" href="../index.html">Table of Contents</a>&nbsp;&nbsp; &rsaquo;</li>
+				<li><a href="index.html" accesskey="U">The Database Class</a>&nbsp;&nbsp;  &rsaquo;</li>
+
+				<li><strong>Database Configuration</strong></li>
+			</ul>
+		</div><!-- /#header -->
+
+		<div class="section" id="content">
+			<div class="section" id="database-configuration">
+<h1>Database Configuration<a class="headerlink" href="#database-configuration" title="Permalink to this headline">¶</a></h1>
+<p>CodeIgniter has a config file that lets you store your database
+connection values (username, password, database name, etc.). The config
+file is located at application/config/database.php. You can also set
+database connection values for specific
+<a class="reference internal" href="../libraries/config.html"><em>environments</em></a> by placing <strong>database.php</strong>
+it the respective environment config folder.</p>
+<p>The config settings are stored in a multi-dimensional array with this
+prototype:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span class="nv">$db</span><span class="p">[</span><span class="s1">&#39;default&#39;</span><span class="p">][</span><span class="s1">&#39;hostname&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;localhost&quot;</span><span class="p">;</span>
+<span class="nv">$db</span><span class="p">[</span><span class="s1">&#39;default&#39;</span><span class="p">][</span><span class="s1">&#39;username&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;root&quot;</span><span class="p">;</span>
+<span class="nv">$db</span><span class="p">[</span><span class="s1">&#39;default&#39;</span><span class="p">][</span><span class="s1">&#39;password&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">;</span>
+<span class="nv">$db</span><span class="p">[</span><span class="s1">&#39;default&#39;</span><span class="p">][</span><span class="s1">&#39;database&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;database_name&quot;</span><span class="p">;</span>
+<span class="nv">$db</span><span class="p">[</span><span class="s1">&#39;default&#39;</span><span class="p">][</span><span class="s1">&#39;dbdriver&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;mysql&quot;</span><span class="p">;</span>
+<span class="nv">$db</span><span class="p">[</span><span class="s1">&#39;default&#39;</span><span class="p">][</span><span class="s1">&#39;dbprefix&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">;</span>
+<span class="nv">$db</span><span class="p">[</span><span class="s1">&#39;default&#39;</span><span class="p">][</span><span class="s1">&#39;pconnect&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="k">TRUE</span><span class="p">;</span>
+<span class="nv">$db</span><span class="p">[</span><span class="s1">&#39;default&#39;</span><span class="p">][</span><span class="s1">&#39;db_debug&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="k">FALSE</span><span class="p">;</span>
+<span class="nv">$db</span><span class="p">[</span><span class="s1">&#39;default&#39;</span><span class="p">][</span><span class="s1">&#39;cache_on&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="k">FALSE</span><span class="p">;</span>
+<span class="nv">$db</span><span class="p">[</span><span class="s1">&#39;default&#39;</span><span class="p">][</span><span class="s1">&#39;cachedir&#39;</span><span class="p">]</span> <span class="o">=</span>  <span class="s2">&quot;&quot;</span><span class="p">;</span>
+<span class="nv">$db</span><span class="p">[</span><span class="s1">&#39;default&#39;</span><span class="p">][</span><span class="s1">&#39;char_set&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;utf8&quot;</span><span class="p">;</span>
+<span class="nv">$db</span><span class="p">[</span><span class="s1">&#39;default&#39;</span><span class="p">][</span><span class="s1">&#39;dbcollat&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;utf8_general_ci&quot;</span><span class="p">;</span>
+<span class="nv">$db</span><span class="p">[</span><span class="s1">&#39;default&#39;</span><span class="p">][</span><span class="s1">&#39;swap_pre&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">;</span>
+<span class="nv">$db</span><span class="p">[</span><span class="s1">&#39;default&#39;</span><span class="p">][</span><span class="s1">&#39;autoinit&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="k">TRUE</span><span class="p">;</span>
+<span class="nv">$db</span><span class="p">[</span><span class="s1">&#39;default&#39;</span><span class="p">][</span><span class="s1">&#39;stricton&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="k">FALSE</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>The reason we use a multi-dimensional array rather than a more simple
+one is to permit you to optionally store multiple sets of connection
+values. If, for example, you run multiple environments (development,
+production, test, etc.) under a single installation, you can set up a
+connection group for each, then switch between groups as needed. For
+example, to set up a &#8220;test&#8221; environment you would do this:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span class="nv">$db</span><span class="p">[</span><span class="s1">&#39;test&#39;</span><span class="p">][</span><span class="s1">&#39;hostname&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;localhost&quot;</span><span class="p">;</span>
+<span class="nv">$db</span><span class="p">[</span><span class="s1">&#39;test&#39;</span><span class="p">][</span><span class="s1">&#39;username&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;root&quot;</span><span class="p">;</span>
+<span class="nv">$db</span><span class="p">[</span><span class="s1">&#39;test&#39;</span><span class="p">][</span><span class="s1">&#39;password&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">;</span>
+<span class="nv">$db</span><span class="p">[</span><span class="s1">&#39;test&#39;</span><span class="p">][</span><span class="s1">&#39;database&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;database_name&quot;</span><span class="p">;</span>
+<span class="nv">$db</span><span class="p">[</span><span class="s1">&#39;test&#39;</span><span class="p">][</span><span class="s1">&#39;dbdriver&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;mysql&quot;</span><span class="p">;</span>
+<span class="nv">$db</span><span class="p">[</span><span class="s1">&#39;test&#39;</span><span class="p">][</span><span class="s1">&#39;dbprefix&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">;</span>
+<span class="nv">$db</span><span class="p">[</span><span class="s1">&#39;test&#39;</span><span class="p">][</span><span class="s1">&#39;pconnect&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="k">TRUE</span><span class="p">;</span>
+<span class="nv">$db</span><span class="p">[</span><span class="s1">&#39;test&#39;</span><span class="p">][</span><span class="s1">&#39;db_debug&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="k">FALSE</span><span class="p">;</span>
+<span class="nv">$db</span><span class="p">[</span><span class="s1">&#39;test&#39;</span><span class="p">][</span><span class="s1">&#39;cache_on&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="k">FALSE</span><span class="p">;</span>
+<span class="nv">$db</span><span class="p">[</span><span class="s1">&#39;test&#39;</span><span class="p">][</span><span class="s1">&#39;cachedir&#39;</span><span class="p">]</span> <span class="o">=</span>  <span class="s2">&quot;&quot;</span><span class="p">;</span>
+<span class="nv">$db</span><span class="p">[</span><span class="s1">&#39;test&#39;</span><span class="p">][</span><span class="s1">&#39;char_set&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;utf8&quot;</span><span class="p">;</span>
+<span class="nv">$db</span><span class="p">[</span><span class="s1">&#39;test&#39;</span><span class="p">][</span><span class="s1">&#39;dbcollat&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;utf8_general_ci&quot;</span><span class="p">;</span>
+<span class="nv">$db</span><span class="p">[</span><span class="s1">&#39;test&#39;</span><span class="p">][</span><span class="s1">&#39;swap_pre&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">;</span>
+<span class="nv">$db</span><span class="p">[</span><span class="s1">&#39;test&#39;</span><span class="p">][</span><span class="s1">&#39;autoinit&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="k">TRUE</span><span class="p">;</span>
+<span class="nv">$db</span><span class="p">[</span><span class="s1">&#39;test&#39;</span><span class="p">][</span><span class="s1">&#39;stricton&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="k">FALSE</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Then, to globally tell the system to use that group you would set this
+variable located in the config file:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span class="nv">$active_group</span> <span class="o">=</span> <span class="s2">&quot;test&quot;</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Note: The name &#8220;test&#8221; is arbitrary. It can be anything you want. By
+default we&#8217;ve used the word &#8220;default&#8221; for the primary connection, but it
+too can be renamed to something more relevant to your project.</p>
+<div class="section" id="active-record">
+<h2>Active Record<a class="headerlink" href="#active-record" title="Permalink to this headline">¶</a></h2>
+<p>The <a class="reference internal" href="active_record.html"><em>Active Record Class</em></a> is globally enabled or
+disabled by setting the $active_record variable in the database
+configuration file to TRUE/FALSE (boolean). If you are not using the
+active record class, setting it to FALSE will utilize fewer resources
+when the database classes are initialized.</p>
+<div class="highlight-ci"><div class="highlight"><pre><span class="nv">$active_record</span> <span class="o">=</span> <span class="k">TRUE</span><span class="p">;</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">that some CodeIgniter classes such as Sessions require Active
+Records be enabled to access certain functionality.</p>
+</div>
+</div>
+<div class="section" id="explanation-of-values">
+<h2>Explanation of Values:<a class="headerlink" href="#explanation-of-values" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="docutils">
+<colgroup>
+<col width="18%" />
+<col width="82%" />
+</colgroup>
+<thead valign="bottom">
+<tr><th class="head">Name Config</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr><td><strong>hostname</strong></td>
+<td>The hostname of your database server. Often this is &#8220;localhost&#8221;.</td>
+</tr>
+<tr><td><strong>username</strong></td>
+<td>The username used to connect to the database.</td>
+</tr>
+<tr><td><strong>password</strong></td>
+<td>The password used to connect to the database.</td>
+</tr>
+<tr><td><strong>database</strong></td>
+<td>The name of the database you want to connect to.</td>
+</tr>
+<tr><td><strong>dbdriver</strong></td>
+<td>The database type. ie: mysql, postgres, odbc, etc. Must be specified in lower case.</td>
+</tr>
+<tr><td><strong>dbprefix</strong></td>
+<td>An optional table prefix which will added to the table name when running :doc:
+<cite>Active Record &lt;active_record&gt;</cite> queries. This permits multiple CodeIgniter installations
+to share one database.</td>
+</tr>
+<tr><td><strong>pconnect</strong></td>
+<td>TRUE/FALSE (boolean) - Whether to use a persistent connection.</td>
+</tr>
+<tr><td><strong>db_debug</strong></td>
+<td>TRUE/FALSE (boolean) - Whether database errors should be displayed.</td>
+</tr>
+<tr><td><strong>cache_on</strong></td>
+<td>TRUE/FALSE (boolean) - Whether database query caching is enabled,
+see also <a class="reference internal" href="caching.html"><em>Database Caching Class</em></a>.</td>
+</tr>
+<tr><td><strong>cachedir</strong></td>
+<td>The absolute server path to your database query cache directory.</td>
+</tr>
+<tr><td><strong>char_set</strong></td>
+<td>The character set used in communicating with the database.</td>
+</tr>
+<tr><td><strong>dbcollat</strong></td>
+<td><p class="first">The character collation used in communicating with the database</p>
+<div class="last admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">For MySQL and MySQLi databases, this setting is only used
+as a backup if your server is running PHP &lt; 5.2.3 or MySQL &lt; 5.0.7
+(and in table creation queries made with DB Forge). There is an
+incompatibility in PHP with mysql_real_escape_string() which can
+make your site vulnerable to SQL injection if you are using a
+multi-byte character set and are running versions lower than these.
+Sites using Latin-1 or UTF-8 database character set and collation are
+unaffected.</p>
+</div>
+</td>
+</tr>
+<tr><td><strong>swap_pre</strong></td>
+<td>A default table prefix that should be swapped with dbprefix. This is useful for distributed
+applications where you might run manually written queries, and need the prefix to still be
+customizable by the end user.</td>
+</tr>
+<tr><td><strong>autoinit</strong></td>
+<td>Whether or not to automatically connect to the database when the library loads. If set to false,
+the connection will take place prior to executing the first query.</td>
+</tr>
+<tr><td><strong>stricton</strong></td>
+<td>TRUE/FALSE (boolean) - Whether to force &#8220;Strict Mode&#8221; connections, good for ensuring strict SQL
+while developing an application.</td>
+</tr>
+<tr><td><strong>port</strong></td>
+<td><p class="first">The database port number. To use this value you have to add a line to the database config array.</p>
+<div class="last highlight-ci"><div class="highlight"><pre><span class="nv">$db</span><span class="p">[</span><span class="s1">&#39;default&#39;</span><span class="p">][</span><span class="s1">&#39;port&#39;</span><span class="p">]</span> <span class="o">=</span>  <span class="mi">5432</span><span class="p">;</span>
+</pre></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Depending on what database platform you are using (MySQL,
+Postgres, etc.) not all values will be needed. For example, when using
+SQLite you will not need to supply a username or password, and the
+database name will be the path to your database file. The information
+above assumes you are using MySQL.</p>
+</div>
+</div>
+</div>
+
+		</div>
+
+		<!-- {user_guide_comments} -->
+					
+		<div id="footer">
+			<p class="top">
+				
+				<span class="prev">Previous Topic: <a href="examples.html">Database Quick Start: Example Code</a></span>
+				
+				
+				<span class="next">Next Topic: <a href="connecting.html">Connecting to your Database</a></span>
+				
+				<a href="#header" title="Return to top">Return to top</a>
+			</p>
+			<p><a href="">CodeIgniter</a> &ndash; Copyright &copy; 2011, EllisLab, Inc.</a> &ndash; Last updated: Nov 13, 2011</p>
+		</div><!-- /#footer -->
+	
+	<script src="../_static/asset/js/jquery-ui-min.js" type="text/javascript" charset="utf-8" async></script>
+	<script type="text/javascript" charset="utf-8">
+		$('#toc-link').click(function(){
+			$('#table-contents').animate({ left: '0' },1000);
+			return false;
+		});
+		$('html').click(function(){
+			if ($('#table-contents').css("left") == '0px'){
+				$('#table-contents').animate({ left: '-520' },1000);
+			}
+		});
+		$('#table-contents').click(function(event){
+			event.stopPropagation();
+		});
+/*		$('*:not(#table-contents,#toc-link)').click(function(){
+			if ($('#table-contents').css("left") == '0px'){
+				$('#table-contents').animate({ left: '-520' },1000);
+			}
+		});
+/*		$("#toc-link").click(function () {
+			$('#table-contents').show("slide", { direction: "left" }, 100);
+			event.stopPropagation();
+			return false;
+		});
+		$('*:not(#table-contents,#toc-link)').click(function () {
+			if ($('#table-contents').is(":visible")) {
+				$('#table-contents').hide("slide", { direction: "left" }, 100);
+				event.stopPropagation();	
+			}
+		}); */
+	</script>
+	</body>
+</html>

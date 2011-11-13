@@ -1,0 +1,224 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+	    
+	    <title>Common Functions &mdash; CodeIgniter v3.0-dev documentation</title>
+
+	    <link rel="stylesheet" href="../_static/asset/css/common.css" type="text/css" />
+	    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+	    <script type="text/javascript">
+	      var DOCUMENTATION_OPTIONS = {
+	        URL_ROOT:    '../',
+	        VERSION:     '3.0-dev',
+	        COLLAPSE_INDEX: false,
+	        FILE_SUFFIX: '.html',
+	        HAS_SOURCE:  true
+	      };
+	    </script>
+	    <script type="text/javascript" src="../_static/jquery.js"></script>
+	    <script type="text/javascript" src="../_static/underscore.js"></script>
+	    <script type="text/javascript" src="../_static/doctools.js"></script>
+	    <link rel="top" title="CodeIgniter v3.0-dev documentation" href="../index.html" />
+	    <link rel="up" title="General Topics" href="index.html" />
+	    <link rel="next" title="URI Routing" href="routing.html" />
+	    <link rel="prev" title="Auto-loading Resources" href="autoloader.html" /> 
+	</head>
+	<body>
+		<div id="table-contents">
+			<div class="toctree-wrapper compound">
+			<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../changelog.html">Change Log</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../license.html">Open Software License (&#8220;OSL&#8221;) v 3.0</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../overview/index.html">CodeIgniter Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="requirements.html">Server Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation/index.html">Installation Instructions</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">General Topics</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="urls.html">CodeIgniter URLs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="controllers.html">Controllers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reserved_names.html">Reserved Names</a></li>
+<li class="toctree-l2"><a class="reference internal" href="views.html">Views</a></li>
+<li class="toctree-l2"><a class="reference internal" href="models.html">Models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="helpers.html">Helpers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="libraries.html">Using CodeIgniter Libraries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="creating_libraries.html">Creating Libraries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="drivers.html">Using CodeIgniter Drivers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="creating_drivers.html">Creating Drivers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="core_classes.html">Creating Core System Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ancillary_classes.html">Creating Ancillary Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hooks.html">Hooks - Extending the Framework Core</a></li>
+<li class="toctree-l2"><a class="reference internal" href="autoloader.html">Auto-loading Resources</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Common Functions</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="routing.html">URI Routing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="errors.html">Error Handling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="caching.html">Caching</a></li>
+<li class="toctree-l2"><a class="reference internal" href="profiling.html">Profiling Your Application</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli.html">Running via the CLI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="managing_apps.html">Managing your Applications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="environments.html">Handling Multiple Environments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="alternative_php.html">Alternate PHP Syntax for View Files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="security.html">Security</a></li>
+<li class="toctree-l2"><a class="reference internal" href="styleguide.html">PHP Style Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../libraries/index.html">Libraries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../helpers/index.html">Helpers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../database/index.html">The Database Class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../documentation/index.html">Writing CodeIgniter Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial/index.html">Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quick_reference.html">Quick Reference Chart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="credits.html">Credits</a></li>
+</ul>
+
+			</div>
+		</div>
+
+		<div id="brand" class="ci">
+			<a href="http://codeigniter.com/"><img src="../_static/asset/img/ci-logo.gif" alt="CodeIgniter"></a>
+			<p>3.0-dev User Guide</p>
+		    <p><a href="../_sources/general/common_functions.txt"
+			           rel="nofollow">Show Source</a></p>
+		</div><!-- /#brand -->
+
+		<div id="header">
+			<form method="get" action="http://www.google.com/search">
+				<fieldset>
+					<input type="text" name="q" id="q" value="">
+					<input type="hidden" name="as_sitesearch" id="as_sitesearch" value="codeigniter.com/user_guide/" />
+					<input class="grades" type="submit" value="search">
+				</fieldset>
+			</form>
+			<ul>
+				<li><a href="../index.html">Home</a>&nbsp;&nbsp; &rsaquo;</li>
+				<li><a id="toc-link" href="../index.html">Table of Contents</a>&nbsp;&nbsp; &rsaquo;</li>
+				<li><a href="index.html" accesskey="U">General Topics</a>&nbsp;&nbsp;  &rsaquo;</li>
+
+				<li><strong>Common Functions</strong></li>
+			</ul>
+		</div><!-- /#header -->
+
+		<div class="section" id="content">
+			<div class="section" id="common-functions">
+<h1>Common Functions<a class="headerlink" href="#common-functions" title="Permalink to this headline">¶</a></h1>
+<p>CodeIgniter uses a few functions for its operation that are globally
+defined, and are available to you at any point. These do not require
+loading any libraries or helpers.</p>
+<div class="section" id="is-php-version-number">
+<h2>is_php(&#8216;version_number&#8217;)<a class="headerlink" href="#is-php-version-number" title="Permalink to this headline">¶</a></h2>
+<p>is_php() determines of the PHP version being used is greater than the
+supplied version_number.</p>
+<div class="highlight-ci"><div class="highlight"><pre><span class="k">if</span> <span class="p">(</span><span class="nx">is_php</span><span class="p">(</span><span class="s1">&#39;5.3.0&#39;</span><span class="p">))</span>
+<span class="p">{</span>
+    <span class="nv">$str</span> <span class="o">=</span> <span class="nx">quoted_printable_encode</span><span class="p">(</span><span class="nv">$str</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Returns boolean TRUE if the installed version of PHP is equal to or
+greater than the supplied version number. Returns FALSE if the installed
+version of PHP is lower than the supplied version number.</p>
+</div>
+<div class="section" id="is-really-writable-path-to-file">
+<h2>is_really_writable(&#8216;path/to/file&#8217;)<a class="headerlink" href="#is-really-writable-path-to-file" title="Permalink to this headline">¶</a></h2>
+<p>is_writable() returns TRUE on Windows servers when you really can&#8217;t
+write to the file as the OS reports to PHP as FALSE only if the
+read-only attribute is marked. This function determines if a file is
+actually writable by attempting to write to it first. Generally only
+recommended on platforms where this information may be unreliable.</p>
+<div class="highlight-ci"><div class="highlight"><pre><span class="k">if</span> <span class="p">(</span><span class="nx">is_really_writable</span><span class="p">(</span><span class="s1">&#39;file.txt&#39;</span><span class="p">))</span>
+<span class="p">{</span>
+    <span class="k">echo</span> <span class="s2">&quot;I could write to this if I wanted to&quot;</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="k">else</span>
+<span class="p">{</span>
+    <span class="k">echo</span> <span class="s2">&quot;File is not writable&quot;</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="config-item-item-key">
+<h2>config_item(&#8216;item_key&#8217;)<a class="headerlink" href="#config-item-item-key" title="Permalink to this headline">¶</a></h2>
+<p>The <a class="reference internal" href="../libraries/config.html"><em>Config library</em></a> is the preferred way of
+accessing configuration information, however config_item() can be used
+to retrieve single keys. See Config library documentation for more
+information.</p>
+</div>
+<div class="section" id="show-error-message-show-404-page-log-message-level-message">
+<h2>show_error(&#8216;message&#8217;), show_404(&#8216;page&#8217;), log_message(&#8216;level&#8217;, &#8216;message&#8217;)<a class="headerlink" href="#show-error-message-show-404-page-log-message-level-message" title="Permalink to this headline">¶</a></h2>
+<p>These are each outlined on the <a class="reference internal" href="errors.html"><em>Error Handling</em></a> page.</p>
+</div>
+<div class="section" id="set-status-header-code-text">
+<h2>set_status_header(code, &#8216;text&#8217;);<a class="headerlink" href="#set-status-header-code-text" title="Permalink to this headline">¶</a></h2>
+<p>Permits you to manually set a server status header. Example:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span class="nx">set_status_header</span><span class="p">(</span><span class="mi">401</span><span class="p">);</span>
+<span class="c1">// Sets the header as:  Unauthorized</span>
+</pre></div>
+</div>
+<p><a class="reference external" href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html">See here</a> for
+a full list of headers.</p>
+</div>
+<div class="section" id="remove-invisible-characters-str">
+<h2>remove_invisible_characters($str)<a class="headerlink" href="#remove-invisible-characters-str" title="Permalink to this headline">¶</a></h2>
+<p>This function prevents inserting null characters between ascii
+characters, like Java\0script.</p>
+</div>
+<div class="section" id="html-escape-mixed">
+<h2>html_escape($mixed)<a class="headerlink" href="#html-escape-mixed" title="Permalink to this headline">¶</a></h2>
+<p>This function provides short cut for htmlspecialchars() function. It
+accepts string and array. To prevent Cross Site Scripting (XSS), it is
+very useful.</p>
+</div>
+</div>
+
+		</div>
+
+		<!-- {user_guide_comments} -->
+					
+		<div id="footer">
+			<p class="top">
+				
+				<span class="prev">Previous Topic: <a href="autoloader.html">Auto-loading Resources</a></span>
+				
+				
+				<span class="next">Next Topic: <a href="routing.html">URI Routing</a></span>
+				
+				<a href="#header" title="Return to top">Return to top</a>
+			</p>
+			<p><a href="">CodeIgniter</a> &ndash; Copyright &copy; 2011, EllisLab, Inc.</a> &ndash; Last updated: Nov 13, 2011</p>
+		</div><!-- /#footer -->
+	
+	<script src="../_static/asset/js/jquery-ui-min.js" type="text/javascript" charset="utf-8" async></script>
+	<script type="text/javascript" charset="utf-8">
+		$('#toc-link').click(function(){
+			$('#table-contents').animate({ left: '0' },1000);
+			return false;
+		});
+		$('html').click(function(){
+			if ($('#table-contents').css("left") == '0px'){
+				$('#table-contents').animate({ left: '-520' },1000);
+			}
+		});
+		$('#table-contents').click(function(event){
+			event.stopPropagation();
+		});
+/*		$('*:not(#table-contents,#toc-link)').click(function(){
+			if ($('#table-contents').css("left") == '0px'){
+				$('#table-contents').animate({ left: '-520' },1000);
+			}
+		});
+/*		$("#toc-link").click(function () {
+			$('#table-contents').show("slide", { direction: "left" }, 100);
+			event.stopPropagation();
+			return false;
+		});
+		$('*:not(#table-contents,#toc-link)').click(function () {
+			if ($('#table-contents').is(":visible")) {
+				$('#table-contents').hide("slide", { direction: "left" }, 100);
+				event.stopPropagation();	
+			}
+		}); */
+	</script>
+	</body>
+</html>

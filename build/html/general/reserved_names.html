@@ -1,0 +1,221 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+	    
+	    <title>Reserved Names &mdash; CodeIgniter v3.0-dev documentation</title>
+
+	    <link rel="stylesheet" href="../_static/asset/css/common.css" type="text/css" />
+	    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+	    <script type="text/javascript">
+	      var DOCUMENTATION_OPTIONS = {
+	        URL_ROOT:    '../',
+	        VERSION:     '3.0-dev',
+	        COLLAPSE_INDEX: false,
+	        FILE_SUFFIX: '.html',
+	        HAS_SOURCE:  true
+	      };
+	    </script>
+	    <script type="text/javascript" src="../_static/jquery.js"></script>
+	    <script type="text/javascript" src="../_static/underscore.js"></script>
+	    <script type="text/javascript" src="../_static/doctools.js"></script>
+	    <link rel="top" title="CodeIgniter v3.0-dev documentation" href="../index.html" />
+	    <link rel="up" title="General Topics" href="index.html" />
+	    <link rel="next" title="Views" href="views.html" />
+	    <link rel="prev" title="Controllers" href="controllers.html" /> 
+	</head>
+	<body>
+		<div id="table-contents">
+			<div class="toctree-wrapper compound">
+			<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../changelog.html">Change Log</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../license.html">Open Software License (&#8220;OSL&#8221;) v 3.0</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../overview/index.html">CodeIgniter Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="requirements.html">Server Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation/index.html">Installation Instructions</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">General Topics</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="urls.html">CodeIgniter URLs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="controllers.html">Controllers</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Reserved Names</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="views.html">Views</a></li>
+<li class="toctree-l2"><a class="reference internal" href="models.html">Models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="helpers.html">Helpers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="libraries.html">Using CodeIgniter Libraries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="creating_libraries.html">Creating Libraries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="drivers.html">Using CodeIgniter Drivers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="creating_drivers.html">Creating Drivers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="core_classes.html">Creating Core System Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ancillary_classes.html">Creating Ancillary Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hooks.html">Hooks - Extending the Framework Core</a></li>
+<li class="toctree-l2"><a class="reference internal" href="autoloader.html">Auto-loading Resources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="common_functions.html">Common Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="routing.html">URI Routing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="errors.html">Error Handling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="caching.html">Caching</a></li>
+<li class="toctree-l2"><a class="reference internal" href="profiling.html">Profiling Your Application</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli.html">Running via the CLI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="managing_apps.html">Managing your Applications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="environments.html">Handling Multiple Environments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="alternative_php.html">Alternate PHP Syntax for View Files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="security.html">Security</a></li>
+<li class="toctree-l2"><a class="reference internal" href="styleguide.html">PHP Style Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../libraries/index.html">Libraries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../helpers/index.html">Helpers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../database/index.html">The Database Class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../documentation/index.html">Writing CodeIgniter Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial/index.html">Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quick_reference.html">Quick Reference Chart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="credits.html">Credits</a></li>
+</ul>
+
+			</div>
+		</div>
+
+		<div id="brand" class="ci">
+			<a href="http://codeigniter.com/"><img src="../_static/asset/img/ci-logo.gif" alt="CodeIgniter"></a>
+			<p>3.0-dev User Guide</p>
+		    <p><a href="../_sources/general/reserved_names.txt"
+			           rel="nofollow">Show Source</a></p>
+		</div><!-- /#brand -->
+
+		<div id="header">
+			<form method="get" action="http://www.google.com/search">
+				<fieldset>
+					<input type="text" name="q" id="q" value="">
+					<input type="hidden" name="as_sitesearch" id="as_sitesearch" value="codeigniter.com/user_guide/" />
+					<input class="grades" type="submit" value="search">
+				</fieldset>
+			</form>
+			<ul>
+				<li><a href="../index.html">Home</a>&nbsp;&nbsp; &rsaquo;</li>
+				<li><a id="toc-link" href="../index.html">Table of Contents</a>&nbsp;&nbsp; &rsaquo;</li>
+				<li><a href="index.html" accesskey="U">General Topics</a>&nbsp;&nbsp;  &rsaquo;</li>
+
+				<li><strong>Reserved Names</strong></li>
+			</ul>
+		</div><!-- /#header -->
+
+		<div class="section" id="content">
+			<div class="section" id="reserved-names">
+<h1>Reserved Names<a class="headerlink" href="#reserved-names" title="Permalink to this headline">¶</a></h1>
+<p>In order to help out, CodeIgniter uses a series of functions and names
+in its operation. Because of this, some names cannot be used by a
+developer. Following is a list of reserved names that cannot be used.</p>
+<div class="section" id="controller-names">
+<h2>Controller names<a class="headerlink" href="#controller-names" title="Permalink to this headline">¶</a></h2>
+<p>Since your controller classes will extend the main application
+controller you must be careful not to name your functions identically to
+the ones used by that class, otherwise your local functions will
+override them. The following is a list of reserved names. Do not name
+your controller any of these:</p>
+<ul class="simple">
+<li>Controller</li>
+<li>CI_Base</li>
+<li>_ci_initialize</li>
+<li>Default</li>
+<li>index</li>
+</ul>
+</div>
+<div class="section" id="functions">
+<h2>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>is_really_writable()</li>
+<li>load_class()</li>
+<li>get_config()</li>
+<li>config_item()</li>
+<li>show_error()</li>
+<li>show_404()</li>
+<li>log_message()</li>
+<li>_exception_handler()</li>
+<li>get_instance()</li>
+</ul>
+</div>
+<div class="section" id="variables">
+<h2>Variables<a class="headerlink" href="#variables" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>$config</li>
+<li>$mimes</li>
+<li>$lang</li>
+</ul>
+</div>
+<div class="section" id="constants">
+<h2>Constants<a class="headerlink" href="#constants" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>ENVIRONMENT</li>
+<li>EXT</li>
+<li>FCPATH</li>
+<li>SELF</li>
+<li>BASEPATH</li>
+<li>APPPATH</li>
+<li>CI_VERSION</li>
+<li>FILE_READ_MODE</li>
+<li>FILE_WRITE_MODE</li>
+<li>DIR_READ_MODE</li>
+<li>DIR_WRITE_MODE</li>
+<li>FOPEN_READ</li>
+<li>FOPEN_READ_WRITE</li>
+<li>FOPEN_WRITE_CREATE_DESTRUCTIVE</li>
+<li>FOPEN_READ_WRITE_CREATE_DESTRUCTIVE</li>
+<li>FOPEN_WRITE_CREATE</li>
+<li>FOPEN_READ_WRITE_CREATE</li>
+<li>FOPEN_WRITE_CREATE_STRICT</li>
+<li>FOPEN_READ_WRITE_CREATE_STRICT</li>
+</ul>
+</div>
+</div>
+
+		</div>
+
+		<!-- {user_guide_comments} -->
+					
+		<div id="footer">
+			<p class="top">
+				
+				<span class="prev">Previous Topic: <a href="controllers.html">Controllers</a></span>
+				
+				
+				<span class="next">Next Topic: <a href="views.html">Views</a></span>
+				
+				<a href="#header" title="Return to top">Return to top</a>
+			</p>
+			<p><a href="">CodeIgniter</a> &ndash; Copyright &copy; 2011, EllisLab, Inc.</a> &ndash; Last updated: Nov 13, 2011</p>
+		</div><!-- /#footer -->
+	
+	<script src="../_static/asset/js/jquery-ui-min.js" type="text/javascript" charset="utf-8" async></script>
+	<script type="text/javascript" charset="utf-8">
+		$('#toc-link').click(function(){
+			$('#table-contents').animate({ left: '0' },1000);
+			return false;
+		});
+		$('html').click(function(){
+			if ($('#table-contents').css("left") == '0px'){
+				$('#table-contents').animate({ left: '-520' },1000);
+			}
+		});
+		$('#table-contents').click(function(event){
+			event.stopPropagation();
+		});
+/*		$('*:not(#table-contents,#toc-link)').click(function(){
+			if ($('#table-contents').css("left") == '0px'){
+				$('#table-contents').animate({ left: '-520' },1000);
+			}
+		});
+/*		$("#toc-link").click(function () {
+			$('#table-contents').show("slide", { direction: "left" }, 100);
+			event.stopPropagation();
+			return false;
+		});
+		$('*:not(#table-contents,#toc-link)').click(function () {
+			if ($('#table-contents').is(":visible")) {
+				$('#table-contents').hide("slide", { direction: "left" }, 100);
+				event.stopPropagation();	
+			}
+		}); */
+	</script>
+	</body>
+</html>

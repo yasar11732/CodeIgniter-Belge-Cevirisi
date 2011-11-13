@@ -1,0 +1,419 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+	    
+	    <title>Input Class &mdash; CodeIgniter v3.0-dev documentation</title>
+
+	    <link rel="stylesheet" href="../_static/asset/css/common.css" type="text/css" />
+	    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+	    <script type="text/javascript">
+	      var DOCUMENTATION_OPTIONS = {
+	        URL_ROOT:    '../',
+	        VERSION:     '3.0-dev',
+	        COLLAPSE_INDEX: false,
+	        FILE_SUFFIX: '.html',
+	        HAS_SOURCE:  true
+	      };
+	    </script>
+	    <script type="text/javascript" src="../_static/jquery.js"></script>
+	    <script type="text/javascript" src="../_static/underscore.js"></script>
+	    <script type="text/javascript" src="../_static/doctools.js"></script>
+	    <link rel="top" title="CodeIgniter v3.0-dev documentation" href="../index.html" />
+	    <link rel="up" title="Libraries" href="index.html" />
+	    <link rel="next" title="Javascript Class" href="javascript.html" />
+	    <link rel="prev" title="Image Manipulation Class" href="image_lib.html" /> 
+	</head>
+	<body>
+		<div id="table-contents">
+			<div class="toctree-wrapper compound">
+			<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../changelog.html">Change Log</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../license.html">Open Software License (&#8220;OSL&#8221;) v 3.0</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../overview/index.html">CodeIgniter Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../general/requirements.html">Server Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation/index.html">Installation Instructions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../general/index.html">General Topics</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Libraries</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="benchmark.html">Benchmarking Class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="caching.html">Caching Driver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="calendar.html">Calendaring Class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cart.html">Shopping Cart Class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="config.html">Config Class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="email.html">Email Class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="encryption.html">Encryption Class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_uploading.html">File Uploading Class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="form_validation.html">Form Validation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ftp.html">FTP Class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="image_lib.html">Image Manipulation Class</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Input Class</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="javascript.html">Javascript Class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="language.html">Language Class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="loader.html">Loader Class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="output.html">Output Class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pagination.html">Pagination Class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="parser.html">Template Parser Class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="security.html">Security Class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sessions.html">Session Class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="table.html">HTML Table Class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="trackback.html">Trackback Class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="typography.html">Typography Class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="unit_testing.html">Unit Testing Class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="uri.html">URI Class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_agent.html">User Agent Class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="xmlrpc.html">XML-RPC and XML-RPC Server Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="zip.html">Zip Encoding Class</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../helpers/index.html">Helpers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../database/index.html">The Database Class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../documentation/index.html">Writing CodeIgniter Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial/index.html">Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../general/quick_reference.html">Quick Reference Chart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../general/credits.html">Credits</a></li>
+</ul>
+
+			</div>
+		</div>
+
+		<div id="brand" class="ci">
+			<a href="http://codeigniter.com/"><img src="../_static/asset/img/ci-logo.gif" alt="CodeIgniter"></a>
+			<p>3.0-dev User Guide</p>
+		    <p><a href="../_sources/libraries/input.txt"
+			           rel="nofollow">Show Source</a></p>
+		</div><!-- /#brand -->
+
+		<div id="header">
+			<form method="get" action="http://www.google.com/search">
+				<fieldset>
+					<input type="text" name="q" id="q" value="">
+					<input type="hidden" name="as_sitesearch" id="as_sitesearch" value="codeigniter.com/user_guide/" />
+					<input class="grades" type="submit" value="search">
+				</fieldset>
+			</form>
+			<ul>
+				<li><a href="../index.html">Home</a>&nbsp;&nbsp; &rsaquo;</li>
+				<li><a id="toc-link" href="../index.html">Table of Contents</a>&nbsp;&nbsp; &rsaquo;</li>
+				<li><a href="index.html" accesskey="U">Libraries</a>&nbsp;&nbsp;  &rsaquo;</li>
+
+				<li><strong>Input Class</strong></li>
+			</ul>
+		</div><!-- /#header -->
+
+		<div class="section" id="content">
+			<div class="section" id="input-class">
+<h1>Input Class<a class="headerlink" href="#input-class" title="Permalink to this headline">¶</a></h1>
+<p>The Input Class serves two purposes:</p>
+<ol class="arabic simple">
+<li>It pre-processes global input data for security.</li>
+<li>It provides some helper functions for fetching input data and
+pre-processing it.</li>
+</ol>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">This class is initialized automatically by the system so there
+is no need to do it manually.</p>
+</div>
+<div class="section" id="security-filtering">
+<h2>Security Filtering<a class="headerlink" href="#security-filtering" title="Permalink to this headline">¶</a></h2>
+<p>The security filtering function is called automatically when a new
+<a class="reference internal" href="../general/controllers.html"><em>controller</em></a> is invoked. It does the
+following:</p>
+<ul class="simple">
+<li>If $config[&#8216;allow_get_array&#8217;] is FALSE(default is TRUE), destroys
+the global GET array.</li>
+<li>Destroys all global variables in the event register_globals is
+turned on.</li>
+<li>Filters the GET/POST/COOKIE array keys, permitting only alpha-numeric
+(and a few other) characters.</li>
+<li>Provides XSS (Cross-site Scripting Hacks) filtering. This can be
+enabled globally, or upon request.</li>
+<li>Standardizes newline characters to \n(In Windows \r\n)</li>
+</ul>
+</div>
+<div class="section" id="xss-filtering">
+<h2>XSS Filtering<a class="headerlink" href="#xss-filtering" title="Permalink to this headline">¶</a></h2>
+<p>The Input class has the ability to filter input automatically to prevent
+cross-site scripting attacks. If you want the filter to run
+automatically every time it encounters POST or COOKIE data you can
+enable it by opening your application/config/config.php file and setting
+this:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span class="nv">$config</span><span class="p">[</span><span class="s1">&#39;global_xss_filtering&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="k">TRUE</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Please refer to the <a class="reference internal" href="security.html"><em>Security class</em></a> documentation for
+information on using XSS Filtering in your application.</p>
+</div>
+<div class="section" id="using-post-cookie-or-server-data">
+<h2>Using POST, COOKIE, or SERVER Data<a class="headerlink" href="#using-post-cookie-or-server-data" title="Permalink to this headline">¶</a></h2>
+<p>CodeIgniter comes with three helper functions that let you fetch POST,
+COOKIE or SERVER items. The main advantage of using the provided
+functions rather than fetching an item directly ($_POST[&#8216;something&#8217;])
+is that the functions will check to see if the item is set and return
+false (boolean) if not. This lets you conveniently use data without
+having to test whether an item exists first. In other words, normally
+you might do something like this:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span class="k">if</span> <span class="p">(</span> <span class="o">!</span> <span class="nb">isset</span><span class="p">(</span><span class="nv">$_POST</span><span class="p">[</span><span class="s1">&#39;something&#39;</span><span class="p">]))</span>
+<span class="p">{</span>
+    <span class="nv">$something</span> <span class="o">=</span> <span class="k">FALSE</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="k">else</span>
+<span class="p">{</span>
+    <span class="nv">$something</span> <span class="o">=</span> <span class="nv">$_POST</span><span class="p">[</span><span class="s1">&#39;something&#39;</span><span class="p">];</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>With CodeIgniter&#8217;s built in functions you can simply do this:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span class="nv">$something</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">input</span><span class="o">-&gt;</span><span class="na">post</span><span class="p">(</span><span class="s1">&#39;something&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>The three functions are:</p>
+<ul class="simple">
+<li>$this-&gt;input-&gt;post()</li>
+<li>$this-&gt;input-&gt;cookie()</li>
+<li>$this-&gt;input-&gt;server()</li>
+</ul>
+</div>
+<div class="section" id="this-input-post">
+<h2>$this-&gt;input-&gt;post()<a class="headerlink" href="#this-input-post" title="Permalink to this headline">¶</a></h2>
+<p>The first parameter will contain the name of the POST item you are
+looking for:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">input</span><span class="o">-&gt;</span><span class="na">post</span><span class="p">(</span><span class="s1">&#39;some_data&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>The function returns FALSE (boolean) if the item you are attempting to
+retrieve does not exist.</p>
+<p>The second optional parameter lets you run the data through the XSS
+filter. It&#8217;s enabled by setting the second parameter to boolean TRUE;</p>
+<div class="highlight-ci"><div class="highlight"><pre><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">input</span><span class="o">-&gt;</span><span class="na">post</span><span class="p">(</span><span class="s1">&#39;some_data&#39;</span><span class="p">,</span> <span class="k">TRUE</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>To return an array of all POST items call without any parameters.</p>
+<p>To return all POST items and pass them through the XSS filter set the
+first parameter NULL while setting the second parameter to boolean;</p>
+<p>The function returns FALSE (boolean) if there are no items in the POST.</p>
+<div class="highlight-ci"><div class="highlight"><pre><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">input</span><span class="o">-&gt;</span><span class="na">post</span><span class="p">(</span><span class="k">NULL</span><span class="p">,</span> <span class="k">TRUE</span><span class="p">);</span> <span class="c1">// returns all POST items with XSS filter</span>
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">input</span><span class="o">-&gt;</span><span class="na">post</span><span class="p">();</span> <span class="c1">// returns all POST items without XSS filter</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="this-input-get">
+<h2>$this-&gt;input-&gt;get()<a class="headerlink" href="#this-input-get" title="Permalink to this headline">¶</a></h2>
+<p>This function is identical to the post function, only it fetches get
+data:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">input</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;some_data&#39;</span><span class="p">,</span> <span class="k">TRUE</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>To return an array of all GET items call without any parameters.</p>
+<p>To return all GET items and pass them through the XSS filter set the
+first parameter NULL while setting the second parameter to boolean;</p>
+<p>The function returns FALSE (boolean) if there are no items in the GET.</p>
+<div class="highlight-ci"><div class="highlight"><pre><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">input</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="k">NULL</span><span class="p">,</span> <span class="k">TRUE</span><span class="p">);</span> <span class="c1">// returns all GET items with XSS filter</span>
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">input</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">();</span> <span class="c1">// returns all GET items without XSS filtering</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="this-input-get-post">
+<h2>$this-&gt;input-&gt;get_post()<a class="headerlink" href="#this-input-get-post" title="Permalink to this headline">¶</a></h2>
+<p>This function will search through both the post and get streams for
+data, looking first in post, and then in get:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">input</span><span class="o">-&gt;</span><span class="na">get_post</span><span class="p">(</span><span class="s1">&#39;some_data&#39;</span><span class="p">,</span> <span class="k">TRUE</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="this-input-cookie">
+<h2>$this-&gt;input-&gt;cookie()<a class="headerlink" href="#this-input-cookie" title="Permalink to this headline">¶</a></h2>
+<p>This function is identical to the post function, only it fetches cookie
+data:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">input</span><span class="o">-&gt;</span><span class="na">cookie</span><span class="p">(</span><span class="s1">&#39;some_data&#39;</span><span class="p">,</span> <span class="k">TRUE</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="this-input-server">
+<h2>$this-&gt;input-&gt;server()<a class="headerlink" href="#this-input-server" title="Permalink to this headline">¶</a></h2>
+<p>This function is identical to the above functions, only it fetches
+server data:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">input</span><span class="o">-&gt;</span><span class="na">server</span><span class="p">(</span><span class="s1">&#39;some_data&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="this-input-set-cookie">
+<h2>$this-&gt;input-&gt;set_cookie()<a class="headerlink" href="#this-input-set-cookie" title="Permalink to this headline">¶</a></h2>
+<p>Sets a cookie containing the values you specify. There are two ways to
+pass information to this function so that a cookie can be set: Array
+Method, and Discrete Parameters:</p>
+<div class="section" id="array-method">
+<h3>Array Method<a class="headerlink" href="#array-method" title="Permalink to this headline">¶</a></h3>
+<p>Using this method, an associative array is passed to the first
+parameter:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span class="nv">$cookie</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+    <span class="s1">&#39;name&#39;</span>   <span class="o">=&gt;</span> <span class="s1">&#39;The Cookie Name&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;value&#39;</span>  <span class="o">=&gt;</span> <span class="s1">&#39;The Value&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;expire&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;86500&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;domain&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;.some-domain.com&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;path&#39;</span>   <span class="o">=&gt;</span> <span class="s1">&#39;/&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;prefix&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;myprefix_&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;secure&#39;</span> <span class="o">=&gt;</span> <span class="k">TRUE</span>
+<span class="p">);</span>
+
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">input</span><span class="o">-&gt;</span><span class="na">set_cookie</span><span class="p">(</span><span class="nv">$cookie</span><span class="p">);</span>
+</pre></div>
+</div>
+<p><strong>Notes:</strong></p>
+<p>Only the name and value are required. To delete a cookie set it with the
+expiration blank.</p>
+<p>The expiration is set in <strong>seconds</strong>, which will be added to the current
+time. Do not include the time, but rather only the number of seconds
+from <em>now</em> that you wish the cookie to be valid. If the expiration is
+set to zero the cookie will only last as long as the browser is open.</p>
+<p>For site-wide cookies regardless of how your site is requested, add your
+URL to the <strong>domain</strong> starting with a period, like this:
+.your-domain.com</p>
+<p>The path is usually not needed since the function sets a root path.</p>
+<p>The prefix is only needed if you need to avoid name collisions with
+other identically named cookies for your server.</p>
+<p>The secure boolean is only needed if you want to make it a secure cookie
+by setting it to TRUE.</p>
+</div>
+<div class="section" id="discrete-parameters">
+<h3>Discrete Parameters<a class="headerlink" href="#discrete-parameters" title="Permalink to this headline">¶</a></h3>
+<p>If you prefer, you can set the cookie by passing data using individual
+parameters:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">input</span><span class="o">-&gt;</span><span class="na">set_cookie</span><span class="p">(</span><span class="nv">$name</span><span class="p">,</span> <span class="nv">$value</span><span class="p">,</span> <span class="nv">$expire</span><span class="p">,</span> <span class="nv">$domain</span><span class="p">,</span> <span class="nv">$path</span><span class="p">,</span> <span class="nv">$prefix</span><span class="p">,</span> <span class="nv">$secure</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="id1">
+<h2>$this-&gt;input-&gt;cookie()<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>Lets you fetch a cookie. The first parameter will contain the name of
+the cookie you are looking for (including any prefixes):</p>
+<div class="highlight-ci"><div class="highlight"><pre><span class="nx">cookie</span><span class="p">(</span><span class="s1">&#39;some_cookie&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>The function returns FALSE (boolean) if the item you are attempting to
+retrieve does not exist.</p>
+<p>The second optional parameter lets you run the data through the XSS
+filter. It&#8217;s enabled by setting the second parameter to boolean TRUE;</p>
+<div class="highlight-ci"><div class="highlight"><pre><span class="nx">cookie</span><span class="p">(</span><span class="s1">&#39;some_cookie&#39;</span><span class="p">,</span> <span class="k">TRUE</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="this-input-ip-address">
+<h2>$this-&gt;input-&gt;ip_address()<a class="headerlink" href="#this-input-ip-address" title="Permalink to this headline">¶</a></h2>
+<p>Returns the IP address for the current user. If the IP address is not
+valid, the function will return an IP of: 0.0.0.0</p>
+<div class="highlight-ci"><div class="highlight"><pre><span class="k">echo</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">input</span><span class="o">-&gt;</span><span class="na">ip_address</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="this-input-valid-ip-ip">
+<h2>$this-&gt;input-&gt;valid_ip($ip)<a class="headerlink" href="#this-input-valid-ip-ip" title="Permalink to this headline">¶</a></h2>
+<p>Takes an IP address as input and returns TRUE or FALSE (boolean) if it
+is valid or not. Note: The $this-&gt;input-&gt;ip_address() function above
+validates the IP automatically.</p>
+<div class="highlight-ci"><div class="highlight"><pre><span class="k">if</span> <span class="p">(</span> <span class="o">!</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">input</span><span class="o">-&gt;</span><span class="na">valid_ip</span><span class="p">(</span><span class="nv">$ip</span><span class="p">))</span>
+<span class="p">{</span>
+     <span class="k">echo</span> <span class="s1">&#39;Not Valid&#39;</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="k">else</span>
+<span class="p">{</span>
+     <span class="k">echo</span> <span class="s1">&#39;Valid&#39;</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="this-input-user-agent">
+<h2>$this-&gt;input-&gt;user_agent()<a class="headerlink" href="#this-input-user-agent" title="Permalink to this headline">¶</a></h2>
+<p>Returns the user agent (web browser) being used by the current user.
+Returns FALSE if it&#8217;s not available.</p>
+<div class="highlight-ci"><div class="highlight"><pre><span class="k">echo</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">input</span><span class="o">-&gt;</span><span class="na">user_agent</span><span class="p">();</span>
+</pre></div>
+</div>
+<p>See the <a class="reference internal" href="user_agent.html"><em>User Agent Class</em></a> for methods which extract
+information from the user agent string.</p>
+</div>
+<div class="section" id="this-input-request-headers">
+<h2>$this-&gt;input-&gt;request_headers()<a class="headerlink" href="#this-input-request-headers" title="Permalink to this headline">¶</a></h2>
+<p>Useful if running in a non-Apache environment where
+<a class="reference external" href="http://php.net/apache_request_headers">apache_request_headers()</a>
+will not be supported. Returns an array of headers.</p>
+<div class="highlight-ci"><div class="highlight"><pre><span class="nv">$headers</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">input</span><span class="o">-&gt;</span><span class="na">request_headers</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="this-input-get-request-header">
+<h2>$this-&gt;input-&gt;get_request_header();<a class="headerlink" href="#this-input-get-request-header" title="Permalink to this headline">¶</a></h2>
+<p>Returns a single member of the request headers array.</p>
+<div class="highlight-ci"><div class="highlight"><pre><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">input</span><span class="o">-&gt;</span><span class="na">get_request_header</span><span class="p">(</span><span class="s1">&#39;some-header&#39;</span><span class="p">,</span> <span class="k">TRUE</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="this-input-is-ajax-request">
+<h2>$this-&gt;input-&gt;is_ajax_request()<a class="headerlink" href="#this-input-is-ajax-request" title="Permalink to this headline">¶</a></h2>
+<p>Checks to see if the HTTP_X_REQUESTED_WITH server header has been
+set, and returns a boolean response.</p>
+</div>
+<div class="section" id="this-input-is-cli-request">
+<h2>$this-&gt;input-&gt;is_cli_request()<a class="headerlink" href="#this-input-is-cli-request" title="Permalink to this headline">¶</a></h2>
+<p>Checks to see if the STDIN constant is set, which is a failsafe way to
+see if PHP is being run on the command line.</p>
+<div class="highlight-ci"><div class="highlight"><pre><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">input</span><span class="o">-&gt;</span><span class="na">is_cli_request</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+		</div>
+
+		<!-- {user_guide_comments} -->
+					
+		<div id="footer">
+			<p class="top">
+				
+				<span class="prev">Previous Topic: <a href="image_lib.html">Image Manipulation Class</a></span>
+				
+				
+				<span class="next">Next Topic: <a href="javascript.html">Javascript Class</a></span>
+				
+				<a href="#header" title="Return to top">Return to top</a>
+			</p>
+			<p><a href="">CodeIgniter</a> &ndash; Copyright &copy; 2011, EllisLab, Inc.</a> &ndash; Last updated: Nov 13, 2011</p>
+		</div><!-- /#footer -->
+	
+	<script src="../_static/asset/js/jquery-ui-min.js" type="text/javascript" charset="utf-8" async></script>
+	<script type="text/javascript" charset="utf-8">
+		$('#toc-link').click(function(){
+			$('#table-contents').animate({ left: '0' },1000);
+			return false;
+		});
+		$('html').click(function(){
+			if ($('#table-contents').css("left") == '0px'){
+				$('#table-contents').animate({ left: '-520' },1000);
+			}
+		});
+		$('#table-contents').click(function(event){
+			event.stopPropagation();
+		});
+/*		$('*:not(#table-contents,#toc-link)').click(function(){
+			if ($('#table-contents').css("left") == '0px'){
+				$('#table-contents').animate({ left: '-520' },1000);
+			}
+		});
+/*		$("#toc-link").click(function () {
+			$('#table-contents').show("slide", { direction: "left" }, 100);
+			event.stopPropagation();
+			return false;
+		});
+		$('*:not(#table-contents,#toc-link)').click(function () {
+			if ($('#table-contents').is(":visible")) {
+				$('#table-contents').hide("slide", { direction: "left" }, 100);
+				event.stopPropagation();	
+			}
+		}); */
+	</script>
+	</body>
+</html>

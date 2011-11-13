@@ -1,0 +1,232 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+	    
+	    <title>Security &mdash; CodeIgniter v3.0-dev documentation</title>
+
+	    <link rel="stylesheet" href="../_static/asset/css/common.css" type="text/css" />
+	    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+	    <script type="text/javascript">
+	      var DOCUMENTATION_OPTIONS = {
+	        URL_ROOT:    '../',
+	        VERSION:     '3.0-dev',
+	        COLLAPSE_INDEX: false,
+	        FILE_SUFFIX: '.html',
+	        HAS_SOURCE:  true
+	      };
+	    </script>
+	    <script type="text/javascript" src="../_static/jquery.js"></script>
+	    <script type="text/javascript" src="../_static/underscore.js"></script>
+	    <script type="text/javascript" src="../_static/doctools.js"></script>
+	    <link rel="top" title="CodeIgniter v3.0-dev documentation" href="../index.html" />
+	    <link rel="up" title="General Topics" href="index.html" />
+	    <link rel="next" title="PHP Style Guide" href="styleguide.html" />
+	    <link rel="prev" title="Alternate PHP Syntax for View Files" href="alternative_php.html" /> 
+	</head>
+	<body>
+		<div id="table-contents">
+			<div class="toctree-wrapper compound">
+			<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../changelog.html">Change Log</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../license.html">Open Software License (&#8220;OSL&#8221;) v 3.0</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../overview/index.html">CodeIgniter Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="requirements.html">Server Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation/index.html">Installation Instructions</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">General Topics</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="urls.html">CodeIgniter URLs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="controllers.html">Controllers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reserved_names.html">Reserved Names</a></li>
+<li class="toctree-l2"><a class="reference internal" href="views.html">Views</a></li>
+<li class="toctree-l2"><a class="reference internal" href="models.html">Models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="helpers.html">Helpers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="libraries.html">Using CodeIgniter Libraries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="creating_libraries.html">Creating Libraries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="drivers.html">Using CodeIgniter Drivers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="creating_drivers.html">Creating Drivers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="core_classes.html">Creating Core System Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ancillary_classes.html">Creating Ancillary Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hooks.html">Hooks - Extending the Framework Core</a></li>
+<li class="toctree-l2"><a class="reference internal" href="autoloader.html">Auto-loading Resources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="common_functions.html">Common Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="routing.html">URI Routing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="errors.html">Error Handling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="caching.html">Caching</a></li>
+<li class="toctree-l2"><a class="reference internal" href="profiling.html">Profiling Your Application</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cli.html">Running via the CLI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="managing_apps.html">Managing your Applications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="environments.html">Handling Multiple Environments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="alternative_php.html">Alternate PHP Syntax for View Files</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Security</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="styleguide.html">PHP Style Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../libraries/index.html">Libraries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../helpers/index.html">Helpers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../database/index.html">The Database Class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../documentation/index.html">Writing CodeIgniter Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial/index.html">Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quick_reference.html">Quick Reference Chart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="credits.html">Credits</a></li>
+</ul>
+
+			</div>
+		</div>
+
+		<div id="brand" class="ci">
+			<a href="http://codeigniter.com/"><img src="../_static/asset/img/ci-logo.gif" alt="CodeIgniter"></a>
+			<p>3.0-dev User Guide</p>
+		    <p><a href="../_sources/general/security.txt"
+			           rel="nofollow">Show Source</a></p>
+		</div><!-- /#brand -->
+
+		<div id="header">
+			<form method="get" action="http://www.google.com/search">
+				<fieldset>
+					<input type="text" name="q" id="q" value="">
+					<input type="hidden" name="as_sitesearch" id="as_sitesearch" value="codeigniter.com/user_guide/" />
+					<input class="grades" type="submit" value="search">
+				</fieldset>
+			</form>
+			<ul>
+				<li><a href="../index.html">Home</a>&nbsp;&nbsp; &rsaquo;</li>
+				<li><a id="toc-link" href="../index.html">Table of Contents</a>&nbsp;&nbsp; &rsaquo;</li>
+				<li><a href="index.html" accesskey="U">General Topics</a>&nbsp;&nbsp;  &rsaquo;</li>
+
+				<li><strong>Security</strong></li>
+			</ul>
+		</div><!-- /#header -->
+
+		<div class="section" id="content">
+			<div class="section" id="security">
+<h1>Security<a class="headerlink" href="#security" title="Permalink to this headline">¶</a></h1>
+<p>This page describes some &#8220;best practices&#8221; regarding web security, and
+details CodeIgniter&#8217;s internal security features.</p>
+<div class="section" id="uri-security">
+<h2>URI Security<a class="headerlink" href="#uri-security" title="Permalink to this headline">¶</a></h2>
+<p>CodeIgniter is fairly restrictive regarding which characters it allows
+in your URI strings in order to help minimize the possibility that
+malicious data can be passed to your application. URIs may only contain
+the following:</p>
+<ul class="simple">
+<li>Alpha-numeric text</li>
+<li>Tilde: ~</li>
+<li>Period: .</li>
+<li>Colon: :</li>
+<li>Underscore: _</li>
+<li>Dash: -</li>
+</ul>
+</div>
+<div class="section" id="register-globals">
+<h2>Register_globals<a class="headerlink" href="#register-globals" title="Permalink to this headline">¶</a></h2>
+<p>During system initialization all global variables are unset, except
+those found in the $_GET, $_POST, and $_COOKIE arrays. The unsetting
+routine is effectively the same as register_globals = off.</p>
+</div>
+<div class="section" id="error-reporting">
+<h2>error_reporting<a class="headerlink" href="#error-reporting" title="Permalink to this headline">¶</a></h2>
+<p>In production environments, it is typically desirable to disable PHP&#8217;s
+error reporting by setting the internal error_reporting flag to a value
+of 0. This disables native PHP errors from being rendered as output,
+which may potentially contain sensitive information.</p>
+<p>Setting CodeIgniter&#8217;s <strong>ENVIRONMENT</strong> constant in index.php to a value of
+<strong>&#8216;production&#8217;</strong> will turn off these errors. In development mode, it is
+recommended that a value of &#8216;development&#8217; is used. More information
+about differentiating between environments can be found on the <a class="reference internal" href="environments.html"><em>Handling
+Environments</em></a> page.</p>
+</div>
+<div class="section" id="magic-quotes-runtime">
+<h2>magic_quotes_runtime<a class="headerlink" href="#magic-quotes-runtime" title="Permalink to this headline">¶</a></h2>
+<p>The magic_quotes_runtime directive is turned off during system
+initialization so that you don&#8217;t have to remove slashes when retrieving
+data from your database.</p>
+<div class="section" id="best-practices">
+<h3>Best Practices<a class="headerlink" href="#best-practices" title="Permalink to this headline">¶</a></h3>
+<p>Before accepting any data into your application, whether it be POST data
+from a form submission, COOKIE data, URI data, XML-RPC data, or even
+data from the SERVER array, you are encouraged to practice this three
+step approach:</p>
+<ol class="arabic simple">
+<li>Filter the data as if it were tainted.</li>
+<li>Validate the data to ensure it conforms to the correct type, length,
+size, etc. (sometimes this step can replace step one)</li>
+<li>Escape the data before submitting it into your database.</li>
+</ol>
+<p>CodeIgniter provides the following functions to assist in this process:</p>
+</div>
+</div>
+<div class="section" id="xss-filtering">
+<h2>XSS Filtering<a class="headerlink" href="#xss-filtering" title="Permalink to this headline">¶</a></h2>
+<p>CodeIgniter comes with a Cross Site Scripting filter. This filter
+looks for commonly used techniques to embed malicious Javascript into
+your data, or other types of code that attempt to hijack cookies or
+do other malicious things. The XSS Filter is described
+<a class="reference internal" href="../libraries/security.html"><em>here</em></a>.</p>
+</div>
+<div class="section" id="validate-the-data">
+<h2>Validate the data<a class="headerlink" href="#validate-the-data" title="Permalink to this headline">¶</a></h2>
+<p>CodeIgniter has a <a class="reference internal" href="../libraries/form_validation.html"><em>Form Validation
+Class</em></a> that assists you in
+validating, filtering, and prepping your data.</p>
+</div>
+<div class="section" id="escape-all-data-before-database-insertion">
+<h2>Escape all data before database insertion<a class="headerlink" href="#escape-all-data-before-database-insertion" title="Permalink to this headline">¶</a></h2>
+<p>Never insert information into your database without escaping it.
+Please see the section that discusses
+<a class="reference internal" href="../database/queries.html"><em>queries</em></a> for more information.</p>
+</div>
+</div>
+
+		</div>
+
+		<!-- {user_guide_comments} -->
+					
+		<div id="footer">
+			<p class="top">
+				
+				<span class="prev">Previous Topic: <a href="alternative_php.html">Alternate PHP Syntax for View Files</a></span>
+				
+				
+				<span class="next">Next Topic: <a href="styleguide.html">PHP Style Guide</a></span>
+				
+				<a href="#header" title="Return to top">Return to top</a>
+			</p>
+			<p><a href="">CodeIgniter</a> &ndash; Copyright &copy; 2011, EllisLab, Inc.</a> &ndash; Last updated: Nov 13, 2011</p>
+		</div><!-- /#footer -->
+	
+	<script src="../_static/asset/js/jquery-ui-min.js" type="text/javascript" charset="utf-8" async></script>
+	<script type="text/javascript" charset="utf-8">
+		$('#toc-link').click(function(){
+			$('#table-contents').animate({ left: '0' },1000);
+			return false;
+		});
+		$('html').click(function(){
+			if ($('#table-contents').css("left") == '0px'){
+				$('#table-contents').animate({ left: '-520' },1000);
+			}
+		});
+		$('#table-contents').click(function(event){
+			event.stopPropagation();
+		});
+/*		$('*:not(#table-contents,#toc-link)').click(function(){
+			if ($('#table-contents').css("left") == '0px'){
+				$('#table-contents').animate({ left: '-520' },1000);
+			}
+		});
+/*		$("#toc-link").click(function () {
+			$('#table-contents').show("slide", { direction: "left" }, 100);
+			event.stopPropagation();
+			return false;
+		});
+		$('*:not(#table-contents,#toc-link)').click(function () {
+			if ($('#table-contents').is(":visible")) {
+				$('#table-contents').hide("slide", { direction: "left" }, 100);
+				event.stopPropagation();	
+			}
+		}); */
+	</script>
+	</body>
+</html>

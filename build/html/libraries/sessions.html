@@ -1,0 +1,498 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+	    
+	    <title>Session Class &mdash; CodeIgniter v3.0-dev documentation</title>
+
+	    <link rel="stylesheet" href="../_static/asset/css/common.css" type="text/css" />
+	    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+	    <script type="text/javascript">
+	      var DOCUMENTATION_OPTIONS = {
+	        URL_ROOT:    '../',
+	        VERSION:     '3.0-dev',
+	        COLLAPSE_INDEX: false,
+	        FILE_SUFFIX: '.html',
+	        HAS_SOURCE:  true
+	      };
+	    </script>
+	    <script type="text/javascript" src="../_static/jquery.js"></script>
+	    <script type="text/javascript" src="../_static/underscore.js"></script>
+	    <script type="text/javascript" src="../_static/doctools.js"></script>
+	    <link rel="top" title="CodeIgniter v3.0-dev documentation" href="../index.html" />
+	    <link rel="up" title="Libraries" href="index.html" />
+	    <link rel="next" title="HTML Table Class" href="table.html" />
+	    <link rel="prev" title="Security Class" href="security.html" /> 
+	</head>
+	<body>
+		<div id="table-contents">
+			<div class="toctree-wrapper compound">
+			<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../changelog.html">Change Log</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../license.html">Open Software License (&#8220;OSL&#8221;) v 3.0</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../overview/index.html">CodeIgniter Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../general/requirements.html">Server Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation/index.html">Installation Instructions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../general/index.html">General Topics</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Libraries</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="benchmark.html">Benchmarking Class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="caching.html">Caching Driver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="calendar.html">Calendaring Class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cart.html">Shopping Cart Class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="config.html">Config Class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="email.html">Email Class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="encryption.html">Encryption Class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_uploading.html">File Uploading Class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="form_validation.html">Form Validation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ftp.html">FTP Class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="image_lib.html">Image Manipulation Class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="input.html">Input Class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="javascript.html">Javascript Class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="language.html">Language Class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="loader.html">Loader Class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="output.html">Output Class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pagination.html">Pagination Class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="parser.html">Template Parser Class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="security.html">Security Class</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Session Class</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="table.html">HTML Table Class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="trackback.html">Trackback Class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="typography.html">Typography Class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="unit_testing.html">Unit Testing Class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="uri.html">URI Class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_agent.html">User Agent Class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="xmlrpc.html">XML-RPC and XML-RPC Server Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="zip.html">Zip Encoding Class</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../helpers/index.html">Helpers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../database/index.html">The Database Class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../documentation/index.html">Writing CodeIgniter Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial/index.html">Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../general/quick_reference.html">Quick Reference Chart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../general/credits.html">Credits</a></li>
+</ul>
+
+			</div>
+		</div>
+
+		<div id="brand" class="ci">
+			<a href="http://codeigniter.com/"><img src="../_static/asset/img/ci-logo.gif" alt="CodeIgniter"></a>
+			<p>3.0-dev User Guide</p>
+		    <p><a href="../_sources/libraries/sessions.txt"
+			           rel="nofollow">Show Source</a></p>
+		</div><!-- /#brand -->
+
+		<div id="header">
+			<form method="get" action="http://www.google.com/search">
+				<fieldset>
+					<input type="text" name="q" id="q" value="">
+					<input type="hidden" name="as_sitesearch" id="as_sitesearch" value="codeigniter.com/user_guide/" />
+					<input class="grades" type="submit" value="search">
+				</fieldset>
+			</form>
+			<ul>
+				<li><a href="../index.html">Home</a>&nbsp;&nbsp; &rsaquo;</li>
+				<li><a id="toc-link" href="../index.html">Table of Contents</a>&nbsp;&nbsp; &rsaquo;</li>
+				<li><a href="index.html" accesskey="U">Libraries</a>&nbsp;&nbsp;  &rsaquo;</li>
+
+				<li><strong>Session Class</strong></li>
+			</ul>
+		</div><!-- /#header -->
+
+		<div class="section" id="content">
+			<div class="section" id="session-class">
+<h1>Session Class<a class="headerlink" href="#session-class" title="Permalink to this headline">¶</a></h1>
+<p>The Session class permits you maintain a user&#8217;s &#8220;state&#8221; and track their
+activity while they browse your site. The Session class stores session
+information for each user as serialized (and optionally encrypted) data
+in a cookie. It can also store the session data in a database table for
+added security, as this permits the session ID in the user&#8217;s cookie to
+be matched against the stored session ID. By default only the cookie is
+saved. If you choose to use the database option you&#8217;ll need to create
+the session table as indicated below.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The Session class does <strong>not</strong> utilize native PHP sessions. It
+generates its own session data, offering more flexibility for
+developers.</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Even if you are not using encrypted sessions, you must set
+an <a class="reference internal" href="encryption.html"><em>encryption key</em></a> in your config file which is used
+to aid in preventing session data manipulation.</p>
+</div>
+<div class="section" id="initializing-a-session">
+<h2>Initializing a Session<a class="headerlink" href="#initializing-a-session" title="Permalink to this headline">¶</a></h2>
+<p>Sessions will typically run globally with each page load, so the session
+class must either be <a class="reference internal" href="../general/libraries.html"><em>initialized</em></a> in your
+<a class="reference internal" href="../general/controllers.html"><em>controller</em></a> constructors, or it can be
+<a class="reference internal" href="../general/autoloader.html"><em>auto-loaded</em></a> by the system. For the most
+part the session class will run unattended in the background, so simply
+initializing the class will cause it to read, create, and update
+sessions.</p>
+<p>To initialize the Session class manually in your controller constructor,
+use the $this-&gt;load-&gt;library function:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">library</span><span class="p">(</span><span class="s1">&#39;session&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Once loaded, the Sessions library object will be available using:
+$this-&gt;session</p>
+</div>
+<div class="section" id="how-do-sessions-work">
+<h2>How do Sessions work?<a class="headerlink" href="#how-do-sessions-work" title="Permalink to this headline">¶</a></h2>
+<p>When a page is loaded, the session class will check to see if valid
+session data exists in the user&#8217;s session cookie. If sessions data does
+<strong>not</strong> exist (or if it has expired) a new session will be created and
+saved in the cookie. If a session does exist, its information will be
+updated and the cookie will be updated. With each update, the
+session_id will be regenerated.</p>
+<p>It&#8217;s important for you to understand that once initialized, the Session
+class runs automatically. There is nothing you need to do to cause the
+above behavior to happen. You can, as you&#8217;ll see below, work with
+session data or even add your own data to a user&#8217;s session, but the
+process of reading, writing, and updating a session is automatic.</p>
+</div>
+<div class="section" id="what-is-session-data">
+<h2>What is Session Data?<a class="headerlink" href="#what-is-session-data" title="Permalink to this headline">¶</a></h2>
+<p>A <em>session</em>, as far as CodeIgniter is concerned, is simply an array
+containing the following information:</p>
+<ul class="simple">
+<li>The user&#8217;s unique Session ID (this is a statistically random string
+with very strong entropy, hashed with MD5 for portability, and
+regenerated (by default) every five minutes)</li>
+<li>The user&#8217;s IP Address</li>
+<li>The user&#8217;s User Agent data (the first 120 characters of the browser
+data string)</li>
+<li>The &#8220;last activity&#8221; time stamp.</li>
+</ul>
+<p>The above data is stored in a cookie as a serialized array with this
+prototype:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span class="p">[</span><span class="k">array</span><span class="p">]</span>
+<span class="p">(</span>
+     <span class="s1">&#39;session_id&#39;</span>    <span class="o">=&gt;</span> <span class="nx">random</span> <span class="nx">hash</span><span class="p">,</span>
+     <span class="s1">&#39;ip_address&#39;</span>    <span class="o">=&gt;</span> <span class="s1">&#39;string - user IP address&#39;</span><span class="p">,</span>
+     <span class="s1">&#39;user_agent&#39;</span>    <span class="o">=&gt;</span> <span class="s1">&#39;string - user agent data&#39;</span><span class="p">,</span>
+     <span class="s1">&#39;last_activity&#39;</span> <span class="o">=&gt;</span> <span class="nx">timestamp</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<p>If you have the encryption option enabled, the serialized array will be
+encrypted before being stored in the cookie, making the data highly
+secure and impervious to being read or altered by someone. More info
+regarding encryption can be <a class="reference internal" href="encryption.html"><em>found here</em></a>, although
+the Session class will take care of initializing and encrypting the data
+automatically.</p>
+<p>Note: Session cookies are only updated every five minutes by default to
+reduce processor load. If you repeatedly reload a page you&#8217;ll notice
+that the &#8220;last activity&#8221; time only updates if five minutes or more has
+passed since the last time the cookie was written. This time is
+configurable by changing the $config[&#8216;sess_time_to_update&#8217;] line in
+your system/config/config.php file.</p>
+</div>
+<div class="section" id="retrieving-session-data">
+<h2>Retrieving Session Data<a class="headerlink" href="#retrieving-session-data" title="Permalink to this headline">¶</a></h2>
+<p>Any piece of information from the session array is available using the
+following function:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">session</span><span class="o">-&gt;</span><span class="na">userdata</span><span class="p">(</span><span class="s1">&#39;item&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Where item is the array index corresponding to the item you wish to
+fetch. For example, to fetch the session ID you will do this:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span class="nv">$session_id</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">session</span><span class="o">-&gt;</span><span class="na">userdata</span><span class="p">(</span><span class="s1">&#39;session_id&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The function returns FALSE (boolean) if the item you are
+trying to access does not exist.</p>
+</div>
+</div>
+<div class="section" id="adding-custom-session-data">
+<h2>Adding Custom Session Data<a class="headerlink" href="#adding-custom-session-data" title="Permalink to this headline">¶</a></h2>
+<p>A useful aspect of the session array is that you can add your own data
+to it and it will be stored in the user&#8217;s cookie. Why would you want to
+do this? Here&#8217;s one example:</p>
+<p>Let&#8217;s say a particular user logs into your site. Once authenticated, you
+could add their username and email address to the session cookie, making
+that data globally available to you without having to run a database
+query when you need it.</p>
+<p>To add your data to the session array involves passing an array
+containing your new data to this function:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">session</span><span class="o">-&gt;</span><span class="na">set_userdata</span><span class="p">(</span><span class="nv">$array</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Where $array is an associative array containing your new data. Here&#8217;s an
+example:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span class="nv">$newdata</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+                   <span class="s1">&#39;username&#39;</span>  <span class="o">=&gt;</span> <span class="s1">&#39;johndoe&#39;</span><span class="p">,</span>
+                   <span class="s1">&#39;email&#39;</span>     <span class="o">=&gt;</span> <span class="s1">&#39;johndoe@some-site.com&#39;</span><span class="p">,</span>
+                   <span class="s1">&#39;logged_in&#39;</span> <span class="o">=&gt;</span> <span class="k">TRUE</span>
+               <span class="p">);</span>
+
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">session</span><span class="o">-&gt;</span><span class="na">set_userdata</span><span class="p">(</span><span class="nv">$newdata</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>If you want to add userdata one value at a time, set_userdata() also
+supports this syntax.</p>
+<div class="highlight-ci"><div class="highlight"><pre><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">session</span><span class="o">-&gt;</span><span class="na">set_userdata</span><span class="p">(</span><span class="s1">&#39;some_name&#39;</span><span class="p">,</span> <span class="s1">&#39;some_value&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Cookies can only hold 4KB of data, so be careful not to exceed
+the capacity. The encryption process in particular produces a longer
+data string than the original so keep careful track of how much data you
+are storing.</p>
+</div>
+</div>
+<div class="section" id="retrieving-all-session-data">
+<h2>Retrieving All Session Data<a class="headerlink" href="#retrieving-all-session-data" title="Permalink to this headline">¶</a></h2>
+<p>An array of all userdata can be retrieved as follows:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">session</span><span class="o">-&gt;</span><span class="na">all_userdata</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>And returns an associative array like the following:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span class="k">Array</span>
+<span class="p">(</span>
+    <span class="p">[</span><span class="nb">session_id</span><span class="p">]</span> <span class="o">=&gt;</span> <span class="mi">4</span><span class="nx">a5a5dca22728fb0a84364eeb405b601</span>
+    <span class="p">[</span><span class="nx">ip_address</span><span class="p">]</span> <span class="o">=&gt;</span> <span class="mf">127.0</span><span class="o">.</span><span class="mf">0.1</span>
+    <span class="p">[</span><span class="nx">user_agent</span><span class="p">]</span> <span class="o">=&gt;</span> <span class="nx">Mozilla</span><span class="o">/</span><span class="mf">5.0</span> <span class="p">(</span><span class="nx">Macintosh</span><span class="p">;</span> <span class="nx">U</span><span class="p">;</span> <span class="nx">Intel</span> <span class="nx">Mac</span> <span class="nx">OS</span> <span class="nx">X</span> <span class="mi">10</span><span class="nx">_6_7</span><span class="p">;</span>
+    <span class="p">[</span><span class="nx">last_activity</span><span class="p">]</span> <span class="o">=&gt;</span> <span class="mi">1303142623</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="removing-session-data">
+<h2>Removing Session Data<a class="headerlink" href="#removing-session-data" title="Permalink to this headline">¶</a></h2>
+<p>Just as set_userdata() can be used to add information into a session,
+unset_userdata() can be used to remove it, by passing the session key.
+For example, if you wanted to remove &#8216;some_name&#8217; from your session
+information:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">session</span><span class="o">-&gt;</span><span class="na">unset_userdata</span><span class="p">(</span><span class="s1">&#39;some_name&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>This function can also be passed an associative array of items to unset.</p>
+<div class="highlight-ci"><div class="highlight"><pre><span class="nv">$array_items</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span><span class="s1">&#39;username&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;email&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;&#39;</span><span class="p">);</span>
+
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">session</span><span class="o">-&gt;</span><span class="na">unset_userdata</span><span class="p">(</span><span class="nv">$array_items</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="flashdata">
+<h2>Flashdata<a class="headerlink" href="#flashdata" title="Permalink to this headline">¶</a></h2>
+<p>CodeIgniter supports &#8220;flashdata&#8221;, or session data that will only be
+available for the next server request, and are then automatically
+cleared. These can be very useful, and are typically used for
+informational or status messages (for example: &#8220;record 2 deleted&#8221;).</p>
+<p>Note: Flash variables are prefaced with &#8220;flash_&#8221; so avoid this prefix
+in your own session names.</p>
+<p>To add flashdata:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">session</span><span class="o">-&gt;</span><span class="na">set_flashdata</span><span class="p">(</span><span class="s1">&#39;item&#39;</span><span class="p">,</span> <span class="s1">&#39;value&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>You can also pass an array to set_flashdata(), in the same manner as
+set_userdata().</p>
+<p>To read a flashdata variable:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">session</span><span class="o">-&gt;</span><span class="na">flashdata</span><span class="p">(</span><span class="s1">&#39;item&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>If you find that you need to preserve a flashdata variable through an
+additional request, you can do so using the keep_flashdata() function.</p>
+<div class="highlight-ci"><div class="highlight"><pre><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">session</span><span class="o">-&gt;</span><span class="na">keep_flashdata</span><span class="p">(</span><span class="s1">&#39;item&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="saving-session-data-to-a-database">
+<h2>Saving Session Data to a Database<a class="headerlink" href="#saving-session-data-to-a-database" title="Permalink to this headline">¶</a></h2>
+<p>While the session data array stored in the user&#8217;s cookie contains a
+Session ID, unless you store session data in a database there is no way
+to validate it. For some applications that require little or no
+security, session ID validation may not be needed, but if your
+application requires security, validation is mandatory. Otherwise, an
+old session could be restored by a user modifying their cookies.</p>
+<p>When session data is available in a database, every time a valid session
+is found in the user&#8217;s cookie, a database query is performed to match
+it. If the session ID does not match, the session is destroyed. Session
+IDs can never be updated, they can only be generated when a new session
+is created.</p>
+<p>In order to store sessions, you must first create a database table for
+this purpose. Here is the basic prototype (for MySQL) required by the
+session class:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span class="nx">CREATE</span> <span class="nx">TABLE</span> <span class="k">IF</span> <span class="k">NOT</span> <span class="nx">EXISTS</span>  <span class="sb">`ci_sessions`</span> <span class="p">(</span>
+        <span class="nb">session_id</span> <span class="nx">varchar</span><span class="p">(</span><span class="mi">40</span><span class="p">)</span> <span class="k">DEFAULT</span> <span class="s1">&#39;0&#39;</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+        <span class="nx">ip_address</span> <span class="nx">varchar</span><span class="p">(</span><span class="mi">16</span><span class="p">)</span> <span class="k">DEFAULT</span> <span class="s1">&#39;0&#39;</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+        <span class="nx">user_agent</span> <span class="nx">varchar</span><span class="p">(</span><span class="mi">120</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+        <span class="nx">last_activity</span> <span class="nx">int</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="nx">unsigned</span> <span class="k">DEFAULT</span> <span class="mi">0</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+        <span class="nx">user_data</span> <span class="nx">text</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+        <span class="nx">PRIMARY</span> <span class="nx">KEY</span> <span class="p">(</span><span class="nb">session_id</span><span class="p">),</span>
+        <span class="nx">KEY</span> <span class="sb">`last_activity_idx`</span> <span class="p">(</span><span class="sb">`last_activity`</span><span class="p">)</span>
+<span class="p">);</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>By default the table is called ci_sessions, but you can name
+it anything you want as long as you update the
+application/config/config.php file so that it contains the name you have
+chosen. Once you have created your database table you can enable the
+database option in your config.php file as follows:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span class="nv">$config</span><span class="p">[</span><span class="s1">&#39;sess_use_database&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="k">TRUE</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Once enabled, the Session class will store session data in the DB.</p>
+<p>Make sure you&#8217;ve specified the table name in your config file as well:</p>
+<div class="last highlight-ci"><div class="highlight"><pre><span class="nv">$config</span><span class="p">[</span><span class="s1">&#39;sess_table_name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;ci_sessions&#39;</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The Session class has built-in garbage collection which clears
+out expired sessions so you do not need to write your own routine to do
+it.</p>
+</div>
+</div>
+<div class="section" id="destroying-a-session">
+<h2>Destroying a Session<a class="headerlink" href="#destroying-a-session" title="Permalink to this headline">¶</a></h2>
+<p>To clear the current session:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">session</span><span class="o">-&gt;</span><span class="na">sess_destroy</span><span class="p">();</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">This function should be the last one called, and even flash
+variables will no longer be available. If you only want some items
+destroyed and not all, use unset_userdata().</p>
+</div>
+</div>
+<div class="section" id="session-preferences">
+<h2>Session Preferences<a class="headerlink" href="#session-preferences" title="Permalink to this headline">¶</a></h2>
+<p>You&#8217;ll find the following Session related preferences in your
+application/config/config.php file:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="19%" />
+<col width="10%" />
+<col width="19%" />
+<col width="52%" />
+</colgroup>
+<thead valign="bottom">
+<tr><th class="head">Preference</th>
+<th class="head">Default</th>
+<th class="head">Options</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr><td><strong>sess_cookie_name</strong></td>
+<td>ci_session</td>
+<td>None</td>
+<td>The name you want the session cookie saved as.</td>
+</tr>
+<tr><td><strong>sess_expiration</strong></td>
+<td>7200</td>
+<td>None</td>
+<td>The number of seconds you would like the session to last. The default
+value is 2 hours (7200 seconds). If you would like a non-expiring
+session set the value to zero: 0</td>
+</tr>
+<tr><td><strong>sess_expire_on_close</strong></td>
+<td>FALSE</td>
+<td>TRUE/FALSE (boolean)</td>
+<td>Whether to cause the session to expire automatically when the browser
+window is closed.</td>
+</tr>
+<tr><td><strong>sess_encrypt_cookie</strong></td>
+<td>FALSE</td>
+<td>TRUE/FALSE (boolean)</td>
+<td>Whether to encrypt the session data.</td>
+</tr>
+<tr><td><strong>sess_use_database</strong></td>
+<td>FALSE</td>
+<td>TRUE/FALSE (boolean)</td>
+<td>Whether to save the session data to a database. You must create the
+table before enabling this option.</td>
+</tr>
+<tr><td><strong>sess_table_name</strong></td>
+<td>ci_sessions</td>
+<td>Any valid SQL table name</td>
+<td>The name of the session database table.</td>
+</tr>
+<tr><td><strong>sess_time_to_update</strong></td>
+<td>300</td>
+<td>Time in seconds</td>
+<td>This options controls how often the session class will regenerate itself
+and create a new session id.</td>
+</tr>
+<tr><td><strong>sess_match_ip</strong></td>
+<td>FALSE</td>
+<td>TRUE/FALSE (boolean)</td>
+<td>Whether to match the user&#8217;s IP address when reading the session data.
+Note that some ISPs dynamically changes the IP, so if you want a
+non-expiring session you will likely set this to FALSE.</td>
+</tr>
+<tr><td><strong>sess_match_useragent</strong></td>
+<td>TRUE</td>
+<td>TRUE/FALSE (boolean)</td>
+<td>Whether to match the User Agent when reading the session data.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+		</div>
+
+		<!-- {user_guide_comments} -->
+					
+		<div id="footer">
+			<p class="top">
+				
+				<span class="prev">Previous Topic: <a href="security.html">Security Class</a></span>
+				
+				
+				<span class="next">Next Topic: <a href="table.html">HTML Table Class</a></span>
+				
+				<a href="#header" title="Return to top">Return to top</a>
+			</p>
+			<p><a href="">CodeIgniter</a> &ndash; Copyright &copy; 2011, EllisLab, Inc.</a> &ndash; Last updated: Nov 13, 2011</p>
+		</div><!-- /#footer -->
+	
+	<script src="../_static/asset/js/jquery-ui-min.js" type="text/javascript" charset="utf-8" async></script>
+	<script type="text/javascript" charset="utf-8">
+		$('#toc-link').click(function(){
+			$('#table-contents').animate({ left: '0' },1000);
+			return false;
+		});
+		$('html').click(function(){
+			if ($('#table-contents').css("left") == '0px'){
+				$('#table-contents').animate({ left: '-520' },1000);
+			}
+		});
+		$('#table-contents').click(function(event){
+			event.stopPropagation();
+		});
+/*		$('*:not(#table-contents,#toc-link)').click(function(){
+			if ($('#table-contents').css("left") == '0px'){
+				$('#table-contents').animate({ left: '-520' },1000);
+			}
+		});
+/*		$("#toc-link").click(function () {
+			$('#table-contents').show("slide", { direction: "left" }, 100);
+			event.stopPropagation();
+			return false;
+		});
+		$('*:not(#table-contents,#toc-link)').click(function () {
+			if ($('#table-contents').is(":visible")) {
+				$('#table-contents').hide("slide", { direction: "left" }, 100);
+				event.stopPropagation();	
+			}
+		}); */
+	</script>
+	</body>
+</html>

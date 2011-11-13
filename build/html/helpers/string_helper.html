@@ -1,0 +1,304 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+	    
+	    <title>String Helper &mdash; CodeIgniter v3.0-dev documentation</title>
+
+	    <link rel="stylesheet" href="../_static/asset/css/common.css" type="text/css" />
+	    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+	    <script type="text/javascript">
+	      var DOCUMENTATION_OPTIONS = {
+	        URL_ROOT:    '../',
+	        VERSION:     '3.0-dev',
+	        COLLAPSE_INDEX: false,
+	        FILE_SUFFIX: '.html',
+	        HAS_SOURCE:  true
+	      };
+	    </script>
+	    <script type="text/javascript" src="../_static/jquery.js"></script>
+	    <script type="text/javascript" src="../_static/underscore.js"></script>
+	    <script type="text/javascript" src="../_static/doctools.js"></script>
+	    <link rel="top" title="CodeIgniter v3.0-dev documentation" href="../index.html" />
+	    <link rel="up" title="Helpers" href="index.html" />
+	    <link rel="next" title="Text Helper" href="text_helper.html" />
+	    <link rel="prev" title="Smiley Helper" href="smiley_helper.html" /> 
+	</head>
+	<body>
+		<div id="table-contents">
+			<div class="toctree-wrapper compound">
+			<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../changelog.html">Change Log</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../license.html">Open Software License (&#8220;OSL&#8221;) v 3.0</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../overview/index.html">CodeIgniter Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../general/requirements.html">Server Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation/index.html">Installation Instructions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../general/index.html">General Topics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../libraries/index.html">Libraries</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Helpers</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="array_helper.html">Array Helper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="captcha_helper.html">CAPTCHA Helper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cookie_helper.html">Cookie Helper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="date_helper.html">Date Helper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="directory_helper.html">Directory Helper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="download_helper.html">Download Helper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="email_helper.html">Email Helper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_helper.html">File Helper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="form_helper.html">Form Helper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="html_helper.html">HTML Helper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="inflector_helper.html">Inflector Helper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="language_helper.html">Language Helper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="number_helper.html">Number Helper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="path_helper.html">Path Helper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="security_helper.html">Security Helper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="smiley_helper.html">Smiley Helper</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">String Helper</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="text_helper.html">Text Helper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="typography_helper.html">Typography Helper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="url_helper.html">URL Helper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="xml_helper.html">XML Helper</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../database/index.html">The Database Class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../documentation/index.html">Writing CodeIgniter Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial/index.html">Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../general/quick_reference.html">Quick Reference Chart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../general/credits.html">Credits</a></li>
+</ul>
+
+			</div>
+		</div>
+
+		<div id="brand" class="ci">
+			<a href="http://codeigniter.com/"><img src="../_static/asset/img/ci-logo.gif" alt="CodeIgniter"></a>
+			<p>3.0-dev User Guide</p>
+		    <p><a href="../_sources/helpers/string_helper.txt"
+			           rel="nofollow">Show Source</a></p>
+		</div><!-- /#brand -->
+
+		<div id="header">
+			<form method="get" action="http://www.google.com/search">
+				<fieldset>
+					<input type="text" name="q" id="q" value="">
+					<input type="hidden" name="as_sitesearch" id="as_sitesearch" value="codeigniter.com/user_guide/" />
+					<input class="grades" type="submit" value="search">
+				</fieldset>
+			</form>
+			<ul>
+				<li><a href="../index.html">Home</a>&nbsp;&nbsp; &rsaquo;</li>
+				<li><a id="toc-link" href="../index.html">Table of Contents</a>&nbsp;&nbsp; &rsaquo;</li>
+				<li><a href="index.html" accesskey="U">Helpers</a>&nbsp;&nbsp;  &rsaquo;</li>
+
+				<li><strong>String Helper</strong></li>
+			</ul>
+		</div><!-- /#header -->
+
+		<div class="section" id="content">
+			<div class="section" id="string-helper">
+<h1><a class="toc-backref" href="#id1">String Helper</a><a class="headerlink" href="#string-helper" title="Permalink to this headline">¶</a></h1>
+<p>The String Helper file contains functions that assist in working with
+strings.</p>
+<div class="contents topic" id="page-contents">
+<p class="topic-title first">Page Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#string-helper" id="id1">String Helper</a><ul>
+<li><a class="reference internal" href="#loading-this-helper" id="id2">Loading this Helper</a></li>
+<li><a class="reference internal" href="#random-string" id="id3">random_string()</a></li>
+<li><a class="reference internal" href="#increment-string" id="id4">increment_string()</a></li>
+<li><a class="reference internal" href="#alternator" id="id5">alternator()</a></li>
+<li><a class="reference internal" href="#repeater" id="id6">repeater()</a></li>
+<li><a class="reference internal" href="#reduce-double-slashes" id="id7">reduce_double_slashes()</a></li>
+<li><a class="reference internal" href="#trim-slashes" id="id8">trim_slashes()</a></li>
+<li><a class="reference internal" href="#reduce-multiples" id="id9">reduce_multiples()</a></li>
+<li><a class="reference internal" href="#quotes-to-entities" id="id10">quotes_to_entities()</a></li>
+<li><a class="reference internal" href="#strip-quotes" id="id11">strip_quotes()</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="loading-this-helper">
+<h2><a class="toc-backref" href="#id2">Loading this Helper</a><a class="headerlink" href="#loading-this-helper" title="Permalink to this headline">¶</a></h2>
+<p>This helper is loaded using the following code</p>
+<div class="highlight-ci"><div class="highlight"><pre><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">helper</span><span class="p">(</span><span class="s1">&#39;string&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>The following functions are available:</p>
+</div>
+<div class="section" id="random-string">
+<h2><a class="toc-backref" href="#id3">random_string()</a><a class="headerlink" href="#random-string" title="Permalink to this headline">¶</a></h2>
+<p>Generates a random string based on the type and length you specify.
+Useful for creating passwords or generating random hashes.</p>
+<p>The first parameter specifies the type of string, the second parameter
+specifies the length. The following choices are available:</p>
+<p>alpha, alunum, numeric, nozero, unique, md5, encrypt and sha1</p>
+<ul class="simple">
+<li><strong>alpha</strong>: A string with lower and uppercase letters only.</li>
+<li><strong>alnum</strong>: Alpha-numeric string with lower and uppercase characters.</li>
+<li><strong>numeric</strong>: Numeric string.</li>
+<li><strong>nozero</strong>: Numeric string with no zeros.</li>
+<li><strong>unique</strong>: Encrypted with MD5 and uniqid(). Note: The length
+parameter is not available for this type. Returns a fixed length 32
+character string.</li>
+<li><strong>sha1</strong>: An encrypted random number based on do_hash() from the
+<a class="reference internal" href="security_helper.html"><em>security helper</em></a>.</li>
+</ul>
+<p>Usage example</p>
+<div class="highlight-ci"><div class="highlight"><pre><span class="k">echo</span> <span class="nx">random_string</span><span class="p">(</span><span class="s1">&#39;alnum&#39;</span><span class="p">,</span> <span class="mi">16</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="increment-string">
+<h2><a class="toc-backref" href="#id4">increment_string()</a><a class="headerlink" href="#increment-string" title="Permalink to this headline">¶</a></h2>
+<p>Increments a string by appending a number to it or increasing the
+number. Useful for creating &#8220;copies&#8221; or a file or duplicating database
+content which has unique titles or slugs.</p>
+<p>Usage example</p>
+<div class="highlight-ci"><div class="highlight"><pre><span class="k">echo</span> <span class="nx">increment_string</span><span class="p">(</span><span class="s1">&#39;file&#39;</span><span class="p">,</span> <span class="s1">&#39;_&#39;</span><span class="p">);</span> <span class="c1">// &quot;file_1&quot;</span>
+<span class="k">echo</span> <span class="nx">increment_string</span><span class="p">(</span><span class="s1">&#39;file&#39;</span><span class="p">,</span> <span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span> <span class="c1">// &quot;file-2&quot;</span>
+<span class="k">echo</span> <span class="nx">increment_string</span><span class="p">(</span><span class="s1">&#39;file-4&#39;</span><span class="p">);</span> <span class="c1">// &quot;file-5&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="alternator">
+<h2><a class="toc-backref" href="#id5">alternator()</a><a class="headerlink" href="#alternator" title="Permalink to this headline">¶</a></h2>
+<p>Allows two or more items to be alternated between, when cycling through
+a loop. Example</p>
+<div class="highlight-ci"><div class="highlight"><pre><span class="k">for</span> <span class="p">(</span><span class="nv">$i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nv">$i</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">;</span> <span class="nv">$i</span><span class="o">++</span><span class="p">)</span>
+<span class="p">{</span>
+        <span class="k">echo</span> <span class="nx">alternator</span><span class="p">(</span><span class="s1">&#39;string one&#39;</span><span class="p">,</span> <span class="s1">&#39;string two&#39;</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>You can add as many parameters as you want, and with each iteration of
+your loop the next item will be returned.</p>
+<div class="highlight-ci"><div class="highlight"><pre><span class="k">for</span> <span class="p">(</span><span class="nv">$i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nv">$i</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">;</span> <span class="nv">$i</span><span class="o">++</span><span class="p">)</span>
+<span class="p">{</span>
+        <span class="k">echo</span> <span class="nx">alternator</span><span class="p">(</span><span class="s1">&#39;one&#39;</span><span class="p">,</span> <span class="s1">&#39;two&#39;</span><span class="p">,</span> <span class="s1">&#39;three&#39;</span><span class="p">,</span> <span class="s1">&#39;four&#39;</span><span class="p">,</span> <span class="s1">&#39;five&#39;</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">To use multiple separate calls to this function simply call the
+function with no arguments to re-initialize.</p>
+</div>
+</div>
+<div class="section" id="repeater">
+<h2><a class="toc-backref" href="#id6">repeater()</a><a class="headerlink" href="#repeater" title="Permalink to this headline">¶</a></h2>
+<p>Generates repeating copies of the data you submit. Example</p>
+<div class="highlight-ci"><div class="highlight"><pre><span class="nv">$string</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span> <span class="k">echo</span> <span class="nx">repeater</span><span class="p">(</span><span class="nv">$string</span><span class="p">,</span> <span class="mi">30</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>The above would generate 30 newlines.</p>
+</div>
+<div class="section" id="reduce-double-slashes">
+<h2><a class="toc-backref" href="#id7">reduce_double_slashes()</a><a class="headerlink" href="#reduce-double-slashes" title="Permalink to this headline">¶</a></h2>
+<p>Converts double slashes in a string to a single slash, except those
+found in <a class="reference external" href="http://">http://</a>. Example</p>
+<div class="highlight-ci"><div class="highlight"><pre><span class="nv">$string</span> <span class="o">=</span> <span class="s2">&quot;http://example.com//index.php&quot;</span><span class="p">;</span>
+<span class="k">echo</span> <span class="nx">reduce_double_slashes</span><span class="p">(</span><span class="nv">$string</span><span class="p">);</span> <span class="c1">// results in &quot;http://example.com/index.php&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="trim-slashes">
+<h2><a class="toc-backref" href="#id8">trim_slashes()</a><a class="headerlink" href="#trim-slashes" title="Permalink to this headline">¶</a></h2>
+<p>Removes any leading/trailing slashes from a string. Example</p>
+<div class="highlight-ci"><div class="highlight"><pre><span class="nv">$string</span> <span class="o">=</span> <span class="s2">&quot;/this/that/theother/&quot;</span><span class="p">;</span>
+<span class="k">echo</span> <span class="nx">trim_slashes</span><span class="p">(</span><span class="nv">$string</span><span class="p">);</span> <span class="c1">// results in this/that/theother</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="reduce-multiples">
+<h2><a class="toc-backref" href="#id9">reduce_multiples()</a><a class="headerlink" href="#reduce-multiples" title="Permalink to this headline">¶</a></h2>
+<p>Reduces multiple instances of a particular character occuring directly
+after each other. Example:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span class="nv">$string</span> <span class="o">=</span> <span class="s2">&quot;Fred, Bill,, Joe, Jimmy&quot;</span><span class="p">;</span>
+<span class="nv">$string</span> <span class="o">=</span> <span class="nx">reduce_multiples</span><span class="p">(</span><span class="nv">$string</span><span class="p">,</span><span class="s2">&quot;,&quot;</span><span class="p">);</span> <span class="c1">//results in &quot;Fred, Bill, Joe, Jimmy&quot;</span>
+</pre></div>
+</div>
+<p>The function accepts the following parameters:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span class="nx">reduce_multiples</span><span class="p">(</span><span class="nx">string</span><span class="o">:</span> <span class="nx">text</span> <span class="nx">to</span> <span class="nx">search</span> <span class="nx">in</span><span class="p">,</span> <span class="nx">string</span><span class="o">:</span> <span class="nx">character</span> <span class="nx">to</span> <span class="nx">reduce</span><span class="p">,</span> <span class="nx">boolean</span><span class="o">:</span> <span class="nx">whether</span> <span class="nx">to</span> <span class="nx">remove</span> <span class="nx">the</span> <span class="nx">character</span> <span class="nx">from</span> <span class="nx">the</span> <span class="nx">front</span> <span class="k">and</span> <span class="nb">end</span> <span class="nx">of</span> <span class="nx">the</span> <span class="nx">string</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The first parameter contains the string in which you want to reduce the
+multiplies. The second parameter contains the character you want to have
+reduced. The third parameter is FALSE by default; if set to TRUE it will
+remove occurences of the character at the beginning and the end of the
+string. Example:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span class="nv">$string</span> <span class="o">=</span> <span class="s2">&quot;,Fred, Bill,, Joe, Jimmy,&quot;</span><span class="p">;</span>
+<span class="nv">$string</span> <span class="o">=</span> <span class="nx">reduce_multiples</span><span class="p">(</span><span class="nv">$string</span><span class="p">,</span> <span class="s2">&quot;, &quot;</span><span class="p">,</span> <span class="k">TRUE</span><span class="p">);</span> <span class="c1">//results in &quot;Fred, Bill, Joe, Jimmy&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="quotes-to-entities">
+<h2><a class="toc-backref" href="#id10">quotes_to_entities()</a><a class="headerlink" href="#quotes-to-entities" title="Permalink to this headline">¶</a></h2>
+<p>Converts single and double quotes in a string to the corresponding HTML
+entities. Example</p>
+<div class="highlight-ci"><div class="highlight"><pre><span class="nv">$string</span> <span class="o">=</span> <span class="s2">&quot;Joe&#39;s </span><span class="se">\&quot;</span><span class="s2">dinner</span><span class="se">\&quot;</span><span class="s2">&quot;</span><span class="p">;</span>
+<span class="nv">$string</span> <span class="o">=</span> <span class="nx">quotes_to_entities</span><span class="p">(</span><span class="nv">$string</span><span class="p">);</span> <span class="c1">//results in &quot;Joe&amp;#39;s &amp;quot;dinner&amp;quot;&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="strip-quotes">
+<h2><a class="toc-backref" href="#id11">strip_quotes()</a><a class="headerlink" href="#strip-quotes" title="Permalink to this headline">¶</a></h2>
+<p>Removes single and double quotes from a string. Example:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span class="nv">$string</span> <span class="o">=</span> <span class="s2">&quot;Joe&#39;s </span><span class="se">\&quot;</span><span class="s2">dinner</span><span class="se">\&quot;</span><span class="s2">&quot;</span><span class="p">;</span>
+<span class="nv">$string</span> <span class="o">=</span> <span class="nx">strip_quotes</span><span class="p">(</span><span class="nv">$string</span><span class="p">);</span> <span class="c1">//results in &quot;Joes dinner&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+		</div>
+
+		<!-- {user_guide_comments} -->
+					
+		<div id="footer">
+			<p class="top">
+				
+				<span class="prev">Previous Topic: <a href="smiley_helper.html">Smiley Helper</a></span>
+				
+				
+				<span class="next">Next Topic: <a href="text_helper.html">Text Helper</a></span>
+				
+				<a href="#header" title="Return to top">Return to top</a>
+			</p>
+			<p><a href="">CodeIgniter</a> &ndash; Copyright &copy; 2011, EllisLab, Inc.</a> &ndash; Last updated: Nov 13, 2011</p>
+		</div><!-- /#footer -->
+	
+	<script src="../_static/asset/js/jquery-ui-min.js" type="text/javascript" charset="utf-8" async></script>
+	<script type="text/javascript" charset="utf-8">
+		$('#toc-link').click(function(){
+			$('#table-contents').animate({ left: '0' },1000);
+			return false;
+		});
+		$('html').click(function(){
+			if ($('#table-contents').css("left") == '0px'){
+				$('#table-contents').animate({ left: '-520' },1000);
+			}
+		});
+		$('#table-contents').click(function(event){
+			event.stopPropagation();
+		});
+/*		$('*:not(#table-contents,#toc-link)').click(function(){
+			if ($('#table-contents').css("left") == '0px'){
+				$('#table-contents').animate({ left: '-520' },1000);
+			}
+		});
+/*		$("#toc-link").click(function () {
+			$('#table-contents').show("slide", { direction: "left" }, 100);
+			event.stopPropagation();
+			return false;
+		});
+		$('*:not(#table-contents,#toc-link)').click(function () {
+			if ($('#table-contents').is(":visible")) {
+				$('#table-contents').hide("slide", { direction: "left" }, 100);
+				event.stopPropagation();	
+			}
+		}); */
+	</script>
+	</body>
+</html>
