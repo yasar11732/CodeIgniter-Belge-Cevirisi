@@ -1,45 +1,43 @@
 ##########
-URL Helper
+URL Yardımcısı
 ##########
 
-The URL Helper file contains functions that assist in working with URLs.
+URL Yardımcısı URL'ler ile çalışmanız için hazırlanmış işlevseller içerir.
 
-.. contents:: Page Contents
+.. contents:: Sayfa İçeriği
 
-Loading this Helper
+Yardımcının Yüklenmesi
 ===================
 
-This helper is loaded using the following code
+Bu yardımcı aşağıdaki kod kullanılarak yüklenebilir:
 
 ::
 
 	$this->load->helper('url');
 
-The following functions are available:
+Kullanılabilir işlevseller aşağıda listelenmiştir:
 
 site_url()
 ==========
 
-Returns your site URL, as specified in your config file. The index.php
-file (or whatever you have set as your site index_page in your config
-file) will be added to the URL, as will any URI segments you pass to the
-function, and the url_suffix as set in your config file.
+Ayar dosyanızda bulunan [config.php], sitenizin bağlantı adresini döndürür.
+Site adresinizin sonuna index.php [yada ayar dosyanız index_page değişkenine
+ne değer atadıysanız] ekler.
 
-You are encouraged to use this function any time you need to generate a
-local URL so that your pages become more portable in the event your URL
-changes.
+Bu işlevseli kullanmanız projenizin adres değişikliğinin kolayca yapılabilmesini
+ve taşınabilirliğinin artmasını sağlar.
 
-Segments can be optionally passed to the function as a string or an
-array. Here is a string example
+Adres sonuna eklenmesini istediğiniz kısımlar, isteğe bağlı olarak string veya 
+array veritipinde gönderilebilir. Aşağıda bir örneği mevcut 
 
 ::
 
 	echo site_url("news/local/123");
 
-The above example would return something like:
+Bu örnek şuna benzer bir sonuç döndürecektir:
 http://example.com/index.php/news/local/123
 
-Here is an example of segments passed as an array
+Buradaki örnekte ise parçaların array veritipinde nasıl verileceği gösteriliyor
 
 ::
 
@@ -49,52 +47,53 @@ Here is an example of segments passed as an array
 base_url()
 ===========
 
-Returns your site base URL, as specified in your config file. Example
+Sitenizin bağlantı adresini ayar dosyanızda ayarlandığı gibi döndürür. Örneğin
 
 ::
 
 	echo base_url();
 
-This function returns the same thing as `site_url`, without the
-index_page or url_suffix being appended.
+Bu işlevsel `site_url` olduğu gibi index_page veya url_suffix değerlerini adres
+sonuna eklemez.
 
-Also like site_url, you can supply segments as a string or an array.
-Here is a string example
+Ayrıca site_url'de olduğu gibi adresin sonuna string veya array tipinde parçacıklar 
+ekletebilirsiniz.
+String tipinde veri gönderim örneği
 
 ::
 
 	echo base_url("blog/post/123");
 
-The above example would return something like:
+Bu örnek şuna benzer bir sonuç döndürecektir:
 http://example.com/blog/post/123
 
-This is useful because unlike `site_url()`, you can supply a string to a
-file, such as an image or stylesheet. For example
+Bu faydalıdır çünkü `site_url()` işlevseline benzemez. Bir dosya, resim yada stil dosyasını
+bu şekilde sayfanıza dahil edebilirsiniz. Şuradaki gibi
 
 ::
 
 	echo base_url("images/icons/edit.png");
 
-This would give you something like:
+Bu örnek şuna benzer bir sonuç döndürür:
 http://example.com/images/icons/edit.png
 
 current_url()
 =============
 
-Returns the full URL (including segments) of the page being currently
-viewed.
+Sitenizin o an görüntülenen kısmının tam adresini (parçacıklar dahil)
+döndürür.
 
 uri_string()
 ============
 
-Returns the URI segments of any page that contains this function. For
-example, if your URL was this
+Bu işlevseli kullanılması, görüntülenen sayfanın adres parçacıklarını döndürür.
+Şu örnekteki gibi adres eğer şu ise
 
 ::
 
 	http://some-site.com/blog/comments/123
 
-The function would return
+Bu işlevse şunu döndürür
 
 ::
 
@@ -103,8 +102,8 @@ The function would return
 index_page()
 ============
 
-Returns your site "index" page, as specified in your config file.
-Example
+Sitenizin ayar dosyanızda tanımlanan "index" dosyasını döndürür.
+Örnek:
 
 ::
 
@@ -113,58 +112,55 @@ Example
 anchor()
 ========
 
-Creates a standard HTML anchor link based on your local site URL
+HTML standartlarında bir köprü oluşturabilmenizi sağlar
 
 ::
 
 	<a href="http://example.com">Click Here</a>
 
-The tag has three optional parameters
+Bu işlevsel isteğe bağlı üç değer alır
 
 ::
 
-	anchor(uri segments, text, attributes)
+	anchor(adres, görünecek metin, öznitelikler)
 
-The first parameter can contain any segments you wish appended to the
-URL. As with the site_url() function above, segments can be a string or
-an array.
+İlk değer site adresinizin sonuna eklenir. Önce site_url() işlevseli çağrılıp
+sonuna string veya array veritipinde gönderilen değerler eklenir.
 
-.. note:: If you are building links that are internal to your application
-	do not include the base URL (http://...). This will be added automatically
-	from the information specified in your config file. Include only the
-	URI segments you wish appended to the URL.
+.. note:: Eğer alt uygulamalarınız için bağlantı oluşturacaksanız bu işlevselin 
+	ayar dosyanızda tanımladığınız adresi çağırdığını ve verdiğiniz değerlerin o
+	adres onuna ekleneceğini bilmelisiniz.
 
-The second segment is the text you would like the link to say. If you
-leave it blank, the URL will be used.
+İkinci değer ise bağlantılı olarak görüntülecek metni içermelidir. Eğer boş bırakılırsa
+bağlantı adresi görüntülenen metin olarak kullanılır.
 
-The third parameter can contain a list of attributes you would like
-added to the link. The attributes can be a simple string or an
-associative array.
+Üçüncü değer ise köprü için kullanılacak öznitelikleri dahil etmenizi sağlar. Bu öznitelikler
+string veritipinde olabileceği gibi array veritipinde de olabilir.
 
-Here are some examples
+Şuraki örnekte olduğu gibi
 
 ::
 
-	echo anchor('news/local/123', 'My News', 'title="News title"');
+	echo anchor('news/local/123', 'Haberler', 'title="Haberler başlığı"');
 
-Would produce: <a href="http://example.com/index.php/news/local/123"
-title="News title">My News</a>
+İşlendikten sonra: <a href="http://example.com/index.php/news/local/123"
+title="Haber başlığı">Haberler</a>
 
 ::
 
-	echo anchor('news/local/123', 'My News', array('title' => 'The best news!'));
+	echo anchor('news/local/123', 'Haberler', array('title' => 'En iyi haberler!'));
 
-Would produce: <a href="http://example.com/index.php/news/local/123"
-title="The best news!">My News</a>
+İşlendikten sonra: <a href="http://example.com/index.php/news/local/123"
+title="En iyi haberler!">Haberler</a>
 
 anchor_popup()
 ==============
 
-Nearly identical to the anchor() function except that it opens the URL
-in a new window. You can specify JavaScript window attributes in the
-third parameter to control how the window is opened. If the third
-parameter is not set it will simply open a new window with your own
-browser settings. Here is an example with attributes
+Neredeyse anchor() işlevseliyle aynı işi görüp tek farkı bağlantıyı 
+yeni bir pencerede açmasıdır. Üçüncü değeri ile açılan pencereyi kontrol
+edebilmek için JavaScript öznitelikleri gönderilebilir. Eğer üçüncü değer
+boş bırakılırsa, tarayıcınız ön tanımlı ayarları ile bağlantıyı yeni bir
+pencerede açar. Şurada özniteliklerle alakalı bir örnek görebilirsiniz
 
 ::
 
@@ -178,12 +174,12 @@ browser settings. Here is an example with attributes
 		'screeny'    => '0'             
 	);
 
-	echo anchor_popup('news/local/123', 'Click Me!', $atts);
+	echo anchor_popup('news/local/123', 'Tıkla!', $atts);
 
-Note: The above attributes are the function defaults so you only need to
-set the ones that are different from what you need. If you want the
-function to use all of its defaults simply pass an empty array in the
-third parameter
+Uyarı: Üçüncü değeri ne yaptığınızı bilmeniz durumunda kullanmanız gerekmektedir.
+Eğer JavaScript ile açılır pencerelere gönderilen değerler hakkında 
+bilginiz yoksa üçüncü değeri boş bir array veritipinde değişken olarak girebilirsiniz.
+Bu şekilde CodeIgniter öntanımlı ayarlarını kullanacaktır.
 
 ::
 
@@ -192,21 +188,20 @@ third parameter
 mailto()
 ========
 
-Creates a standard HTML email link. Usage example
+HTML standartlarında bir eposta bağlantı adresi oluturur. Kullanım örneği
 
 ::
 
-	echo mailto('me@my-site.com', 'Click Here to Contact Me');
+	echo mailto('ben@sitem.com', 'İletişim için tıklayınız');
 
-As with the anchor() tab above, you can set attributes using the third
-parameter.
+Ayrıca anchor() işlevseli gibi, üçüncü değer olarak öznitelikleri ekleyebilirsiniz.
 
 safe_mailto()
 =============
 
-Identical to the above function except it writes an obfuscated version
-of the mailto tag using ordinal numbers written with JavaScript to help
-prevent the email address from being harvested by spam bots.
+EPosta adresinizi korumak için JavaScript ile şifrelenmiş kodlar kullanıp eposta 
+adres metninizi oluşturduktan sonra mailto() işlevseli gibi çalışır.Kaynak kodda oluşturduğu
+JavaScript betiği eposta adresinizi spam botlarından korur.
 
 auto_link()
 ===========
