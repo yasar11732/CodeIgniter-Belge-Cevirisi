@@ -63,5 +63,5 @@ Stil Rehberi
 Sphinx kullanarak CodeIgniter belgelendirmeyle ilgili genel bir rehber için
 lütfen source/documentation/index.rst'ye bakınız. Çeviri ile ilgili bir stil
 rehberine de
-https://github.com/yasar11732/CodeIgniter-Belge--evirisi/wiki/Stil-Rehberi
+https://github.com/yasar11732/CodeIgniter-Belge-Cevirisi/wiki/Stil-Rehberi
 adresinden ulaşılabilir. 
