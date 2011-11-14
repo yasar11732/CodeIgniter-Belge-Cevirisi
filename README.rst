@@ -1,16 +1,16 @@
-######################
-CodeIgniter User Guide
-######################
+############################
+CodeIgniter Kullanım Kılavuzu
+############################
 
-******************
-Setup Instructions
-******************
+*******************
+Kurulum Talimatları
+*******************
 
-The CodeIgniter user guide uses Sphinx to manage the documentation and
-output it to various formats.  Pages are written in human-readable
-`ReStructured Text <http://sphinx.pocoo.org/rest.html>`_ format.
+Codeigniter kullanım klavuzu belgeleri yönetmek ve farklı formatlarda çıktı almak 
+için Sphinx kullanır.Sayfalar kolayca okunabilen `ReStructured Text <http://sphinx.pocoo.org/rest.html>`_
+formatında yazılır.
 
-Prerequisites
+Gereksinimler
 =============
 
 Sphinx requires Python, which is already installed if you are running OS X.

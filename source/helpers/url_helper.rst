@@ -1,13 +1,13 @@
-##########
+##############
 URL Yardımcısı
-##########
+##############
 
 URL Yardımcısı URL'ler ile çalışmanız için hazırlanmış fonksiyonları içerir.
 
 .. contents:: Sayfa İçeriği
 
 Yardımcının Yüklenmesi
-===================
+======================
 
 Bu yardımcı aşağıdaki kod kullanılarak yüklenebilir:
 
@@ -301,9 +301,6 @@ yönlendirmede kullanılmalıdır 'refresh' türündekilerde değil. Şuradaki �
 
 	// 301 ile yönlendirme
 	redirect('/article/13', 'location', 301);
-
-.. note:: In order for this function to work it must be used before anything
-	is outputted to the browser since it utilizes server headers.
 	 
-.. note:: Başlıklarda en iyi kontrolü sağlamak için, 
-	 `Output Library </libraries/output>` set_header() işlevselini kullanmalısınız.
+.. note:: HTTP başlıklarında en iyi kontrolü sağlamak için, 
+	 `Output Library </libraries/output>` set_header() fonksiyonunu kullanmalısınız.

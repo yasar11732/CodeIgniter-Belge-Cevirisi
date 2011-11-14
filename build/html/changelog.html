@@ -93,17 +93,56 @@ all licensing authority over your own application code.</li>
 <li>Added an optional backtrace to php-error template.</li>
 <li>Added Android to the list of user agents.</li>
 <li>Added Windows 7 to the list of user platforms.</li>
+<li>Ability to log certain error types, not all under a threshold.</li>
+<li>Added support for pem, p10, p12, p7a, p7c, p7m, p7r, p7s, crt, crl, der, kdb, rsa, cer, sst, csr Certs to mimes.php.</li>
+<li>Added support pgp and gpg to mimes.php.</li>
+<li>Added support 3gp, 3g2, mp4, wmv, f4v, vlc Video files to mimes.php.</li>
+<li>Added support m4a, aac, m4u, xspf, au, ac3, flac, ogg Audio files to mimes.php.</li>
+</ul>
+</li>
+<li>Helpers<ul>
+<li>url_title() will now trim extra dashes from beginning and end.</li>
+<li>Added XHTML Basic 1.1 doctype to <a class="reference internal" href="helpers/html_helper.html"><em>HTML Helper</em></a>.</li>
+</ul>
+</li>
+<li>Database<ul>
+<li>Added new <a class="reference internal" href="database/active_record.html"><em>Active Record</em></a> methods that return
+the SQL string of queries without executing them: get_compiled_select(),
+get_compiled_insert(), get_compiled_update(), get_compiled_delete().</li>
+</ul>
+</li>
+<li>Libraries<ul>
+<li>Added max_filename_increment config setting for Upload library.</li>
+<li>CI_Loader::_ci_autoloader() is now a protected method.</li>
+<li>Modified valid_ip() to use PHP&#8217;s filter_var() when possible (&gt;= PHP 5.2) in the <a class="reference internal" href="libraries/form_validation.html"><em>Form Validation library</em></a>.</li>
+</ul>
+</li>
+<li>Core<ul>
+<li>Changed private functions in CI_URI to protected so MY_URI can
+override them.</li>
+<li>Removed CI_CORE boolean constant from CodeIgniter.php (no longer Reactor and Core versions).</li>
+</ul>
+</li>
+</ul>
+<div class="section" id="bug-fixes-for-3-0">
+<h3>Bug fixes for 3.0<a class="headerlink" href="#bug-fixes-for-3-0" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Unlink raised an error if cache file did not exist when you try to delete it.</li>
+<li>Fixed a bug (#181) where a mis-spelling was in the form validation
+language file.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="version-2-1-0">
+<h2>Version 2.1.0<a class="headerlink" href="#version-2-1-0" title="Permalink to this headline">¶</a></h2>
+<p>Release Date: Not Released</p>
+<ul class="simple">
+<li>General Changes<ul>
 <li>Callback validation rules can now accept parameters like any other
 validation rule.</li>
-<li>Ability to log certain error types, not all under a threshold.</li>
 <li>Added html_escape() to <a class="reference internal" href="general/common_functions.html"><em>Common
 functions</em></a> to escape HTML output
 for preventing XSS.</li>
-<li>Added support for pem,p10,p12,p7a,p7c,p7m,p7r,p7s,crt,crl,der,kdb,rsa,cer,sst,csr Certs to mimes.php.</li>
-<li>Added support pgp,gpg to mimes.php.</li>
-<li>Added support 3gp, 3g2, mp4, wmv, f4v, vlc Video files to mimes.php.</li>
-<li>Added support m4a, aac, m4u, xspf, au, ac3, flac, ogg Audio files to mimes.php.</li>
-<li>Added support pptx office files to mimes.php.</li>
 </ul>
 </li>
 <li>Helpers<ul>
@@ -114,7 +153,6 @@ or &#8220;foo-1&#8221; into &#8220;foo-2&#8221;.</li>
 function call optional. Fixes (#65)</li>
 <li>url_title() will now trim extra dashes from beginning and end.</li>
 <li>Improved speed of <a class="reference internal" href="helpers/string_helper.html"><em>String Helper</em></a>&#8216;s random_string() method</li>
-<li>Added XHTML Basic 1.1 doctype to <a class="reference internal" href="helpers/html_helper.html"><em>HTML Helper</em></a>.</li>
 </ul>
 </li>
 <li>Database<ul>
@@ -129,9 +167,6 @@ injection.</li>
 $this-&gt;db-&gt;like() in the <a class="reference internal" href="database/active_record.html"><em>Database
 Driver</em></a>.</li>
 <li>Added $this-&gt;db-&gt;insert_batch() support to the OCI8 (Oracle) driver.</li>
-<li>Added new <a class="reference internal" href="database/active_record.html"><em>Active Record</em></a> methods that return
-the SQL string of queries without executing them: get_compiled_select(),
-get_compiled_insert(), get_compiled_update(), get_compiled_delete().</li>
 </ul>
 </li>
 <li>Libraries<ul>
@@ -141,14 +176,12 @@ item was inserted successfully.</li>
 <li>Added support to set an optional parameter in your callback rules
 of validation using the <a class="reference internal" href="libraries/form_validation.html"><em>Form Validation
 Library</em></a>.</li>
-<li>Added a <tt class="xref doc docutils literal"><span class="pre">Migration</span> <span class="pre">Library</span></tt> to assist with applying
+<li>Added a <tt class="xref doc docutils literal"><span class="pre">Migration</span> <span class="pre">library</span></tt> to assist with applying
 incremental updates to your database schema.</li>
 <li>Driver children can be located in any package path.</li>
 <li>Added max_filename_increment config setting for Upload library.</li>
-<li>CI_Loader::_ci_autoloader() is now a protected method.</li>
 <li>Added is_unique to the <a class="reference internal" href="libraries/form_validation.html"><em>Form Validation
 library</em></a>.</li>
-<li>Modified valid_ip() to use PHP&#8217;s filter_var() when possible (&gt;= PHP 5.2) in the <a class="reference internal" href="libraries/form_validation.html"><em>Form Validation library</em></a>.</li>
 <li>Added $config[&#8216;use_page_numbers&#8217;] to the <a class="reference internal" href="libraries/pagination.html"><em>Pagination library</em></a>, which enables real page numbers in the URI.</li>
 <li>Added TLS and SSL Encryption for SMTP.</li>
 </ul>
@@ -163,7 +196,6 @@ override them.</li>
 <div class="section" id="bug-fixes-for-2-1-0">
 <h3>Bug fixes for 2.1.0<a class="headerlink" href="#bug-fixes-for-2-1-0" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li>Unlink raised an error if cache file did not exist when you try to delete it.</li>
 <li>Fixed #378 Robots identified as regular browsers by the User Agent
 class.</li>
 <li>If a config class was loaded first then a library with the same name
@@ -174,21 +206,16 @@ available to the 404_override controller when a controller existed
 but the requested method did not.</li>
 <li>Fixed a bug (Reactor #89) where MySQL export would fail if the table
 had hyphens or other non alphanumeric/underscore characters.</li>
-<li>Fixed a bug (#200) where MySQL queries would be malformed after
-calling count_all() then db-&gt;get()</li>
-<li>Fixed bug #105 that stopped query errors from being logged unless database debugging was enabled</li>
-<li>Fixed a bug (#181) where a mis-spelling was in the form validation
-language file.</li>
+<li>Fixed a bug (#200) where MySQL queries would be malformed after calling $this-&gt;db-&gt;count_all() then $this-&gt;db-&gt;get()</li>
+<li>Fixed a bug (#105) that stopped query errors from being logged unless database debugging was enabled</li>
 <li>Fixed a bug (#160) - Removed unneeded array copy in the file cache
 driver.</li>
 <li>Fixed a bug (#150) - field_data() now correctly returns column
 length.</li>
 <li>Fixed a bug (#8) - load_class() now looks for core classes in
 APPPATH first, allowing them to be replaced.</li>
-<li>Fixed a bug (#24) - ODBC database driver called incorrect parent in
-__construct().</li>
-<li>Fixed a bug (#85) - OCI8 (Oracle) database escape_str() function did
-not escape correct.</li>
+<li>Fixed a bug (#24) - ODBC database driver called incorrect parent in __construct().</li>
+<li>Fixed a bug (#85) - OCI8 (Oracle) database escape_str() function did not escape correct.</li>
 <li>Fixed a bug (#344) - Using schema found in <a class="reference internal" href="libraries/sessions.html"><em>Saving Session Data to a Database</em></a>, system would throw error &#8220;user_data does not have a default value&#8221; when deleting then creating a session.</li>
 <li>Fixed a bug (#112) - OCI8 (Oracle) driver didn&#8217;t pass the configured database character set when connecting.</li>
 <li>Fixed a bug (#182) - OCI8 (Oracle) driver used to re-execute the statement whenever num_rows() is called.</li>
@@ -199,6 +226,7 @@ not escape correct.</li>
 <li>Fixed a bug (#60) - Added _file_mime_type() method to the <a class="reference internal" href="libraries/file_uploading.html"><em>File Uploading Library</em></a> in order to fix a possible MIME-type injection.</li>
 <li>Fixed a bug (#537) - Support for all wav type in browser.</li>
 <li>Fixed a bug (#576) - Using ini_get() function to detect if apc is enabled or not.</li>
+<li>Fixed invalid date time format in <a class="reference internal" href="helpers/date_helper.html"><em>Date Helper</em></a> and <a class="reference internal" href="libraries/xmlrpc.html"><em>XMLRPC Library</em></a></li>
 </ul>
 </div>
 </div>
@@ -2302,7 +2330,7 @@ and fixed various typos.</li>
 				
 				<a href="#header" title="Return to top">Return to top</a>
 			</p>
-			<p><a href="">CodeIgniter</a> &ndash; Copyright &copy; 2011, EllisLab, Inc.</a> &ndash; Last updated: Nov 13, 2011</p>
+			<p><a href="">CodeIgniter</a> &ndash; Copyright &copy; 2011, EllisLab, Inc.</a> &ndash; Last updated: Nov 14, 2011</p>
 		</div><!-- /#footer -->
 	
 	<script src="_static/asset/js/jquery-ui-min.js" type="text/javascript" charset="utf-8" async></script>
