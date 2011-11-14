@@ -2,34 +2,34 @@
 CodeIgniter URLs
 ################
 
-URL CodeIngiter'da arama-motoru ve kullanıcı dostu varsayılarak tasarlanmıştır. Standart "sorgu dizisi" (query string) yaklaşımı yerine, dinamik sistemli eş anlamlı, CodeIgniter **parça-tabanlı** yaklaşımını kullanır::
+URL CodeIngiter'da arama-motoru ve kullanÄ±cÄ± dostu varsayÄ±larak tasarlanmÄ±Ã¾tÄ±r. Standart "sorgu dizisi" (query string) yaklaÃ¾Ä±mÄ± yerine, dinamik sistemli eÃ¾ anlamlÄ±, CodeIgniter **parÃ§a-tabanlÄ±** yaklaÃ¾Ä±mÄ±nÄ± kullanÄ±r::
 
 	example.com/news/article/my_article
 
-.. not::  Sorgu dizisi URL opsiyon olarak aşağıda tanımlandığı gibi kullanılabilir.
+.. note::  Sorgu dizisi URL opsiyon olarak aÃ¾aÄŸÄ±da tanÄ±mlandÄ±ÄŸÄ± gibi kullanÄ±labilir.
 
-URI Parçaları
-============
+URI ParÃ§alarÄ±
+=============
 
-Model-View-Controller yaklaşımında URL parçaları genelde şöyle sunulur::
+Model-View-Controller yaklaÃ¾Ä±mÄ±nda URL parÃ§alarÄ± genelde Ã¾Ã¶yle sunulur::
 
 	example.com/class/function/ID
 
 
-#. İlk parça controller **sınıfını** hatırlatır.
-#. İkinci parça sınıftaki **fonksiyon** ya da metodu çağırır.
-#. Üçüncü parça ya da diğer ek parçalar, ID ile gösterilir ve controller'a değişken olarak gönderilir.
+#. Ä°lk parÃ§a controller **sÄ±nÄ±fÄ±nÄ±** hatÄ±rlatÄ±r.
+#. Ä°kinci parÃ§a sÄ±nÄ±ftaki **fonksiyon** ya da metodu Ã§aÄŸÄ±rÄ±r.
+#. ÃœÃ§Ã¼ncÃ¼ parÃ§a ya da diÄŸer ek parÃ§alar, ID ile gÃ¶sterilir ve controller'a deÄŸiÃ¾ken olarak gÃ¶nderilir.
 
-The :doc:`URI Sınıfı <../libraries/uri>` ve :doc:`URL Helper <../helpers/url_helper>` dosyaları, URI bilgilerini kolayca kullanmanızı sağlayan fonksiyonlara sahiptir. Ek olarak, URL değeriniz :doc:`URI Yönlendirme <routing>` özelliğiyle daha esnek bir özellik için yeniden tanımlanabilir.
+The :doc:`URI SÄ±nÄ±fÄ± <../libraries/uri>` ve :doc:`URL Helper <../helpers/url_helper>` dosyalarÄ±, URI bilgilerini kolayca kullanmanÄ±zÄ± saÄŸlayan fonksiyonlara sahiptir. Ek olarak, URL deÄŸeriniz :doc:`URI YÃ¶nlendirme <routing>` Ã¶zelliÄŸiyle daha esnek bir Ã¶zellik iÃ§in yeniden tanÄ±mlanabilir.
 
-Adresten Index.php kaldırmak
-===========================
+Adresten Index.php kaldÄ±rmak
+============================
 
-**index.php** dosyası aşağıdaki URL'de bulunduğunu varsayalım::
+**index.php** dosyasÄ± aÃ¾aÄŸÄ±daki URL'de bulunduÄŸunu varsayalÄ±m::
 
 	example.com/index.php/news/article/my_article
 
-Bu dosyayı .htaccess dosyasında yazacağınız bir kaç basit kural ile kaldırabilirsiniz. Burada verilen örnek dosya ile, kullanılan çıkartma  metodu ile herşeyi yeniden yönlendirebilirsiniz:
+Bu dosyayÄ± .htaccess dosyasÄ±nda yazacaÄŸÄ±nÄ±z bir kaÃ§ basit kural ile kaldÄ±rabilirsiniz. Burada verilen Ã¶rnek dosya ile, kullanÄ±lan Ã§Ä±kartma  metodu ile herÃ¾eyi yeniden yÃ¶nlendirebilirsiniz:
 
 ::
 	
@@ -37,34 +37,34 @@ Bu dosyayı .htaccess dosyasında yazacağınız bir kaç basit kural ile kaldırabilir
 	RewriteCond $1 !^(index\.php|images|robots\.txt)
 	RewriteRule ^(.*)$ /index.php/$1 [L]
 
-Yukarıdaki örnekte, index.php, images ve robots.txt dosyalarından farklı her HTTP istemi index.php dosyamızı çağırmış işlemi görecektir.
+YukarÄ±daki Ã¶rnekte, index.php, images ve robots.txt dosyalarÄ±ndan farklÄ± her HTTP istemi index.php dosyamÄ±zÄ± Ã§aÄŸÄ±rmÄ±Ã¾ iÃ¾lemi gÃ¶recektir.
 
 URL Soneki Eklemek
-===================
+==================
 
-**config/config.php** dosyanızda, istediğiniz soneki ekleyerek CodeIgniter tarafından URL oluşturulmasını tanımlayabilirsiniz. Örneğin, eğer URL şöyle ise::
+**config/config.php** dosyanÄ±zda, istediÄŸiniz soneki ekleyerek CodeIgniter tarafÄ±ndan URL oluÃ¾turulmasÄ±nÄ± tanÄ±mlayabilirsiniz. Ã–rneÄŸin, eÄŸer URL Ã¾Ã¶yle ise::
 
 	example.com/index.php/products/view/shoes
 
-Seçtiğiniz bir sonek, mesela **.html,** sayfanızı şöyle gösterilmesini sağlar::
+SeÃ§tiÄŸiniz bir sonek, mesela **.html,** sayfanÄ±zÄ± Ã¾Ã¶yle gÃ¶sterilmesini saÄŸlar::
 
 	example.com/index.php/products/view/shoes.html
 
-Sorgu Dizisi İmkanı
-======================
+Sorgu Dizisi Ä°mkanÄ±
+===================
 
-Bazı durumlarda URL'nizde sorgu dizisi kullanmayı tercih edebilirsiniz::
+BazÄ± durumlarda URL'nizde sorgu dizisi kullanmayÄ± tercih edebilirsiniz::
 
 	index.php?c=products&m=view&id=345
 
-CodeIgniter, **application/config.php** dosyasıyla bu imkanı kullanmanıza olanak tanır. Eğer config dosyanızı açarsanız şunları göreceksiniz::
+CodeIgniter, **application/config.php** dosyasÄ±yla bu imkanÄ± kullanmanÄ±za olanak tanÄ±r. EÄŸer config dosyanÄ±zÄ± aÃ§arsanÄ±z Ã¾unlarÄ± gÃ¶receksiniz::
 
 	$config['enable_query_strings'] = FALSE;
 	$config['controller_trigger'] = 'c';
 	$config['function_trigger'] = 'm';
 
-Eğer "enable_query_strings" değerini TRUE olarak değiştirirseniz bu özellik aktif olacaktır.  Controller ve fonksiyonlarınız tetikleyici kelime geldiğinde, ayarlarsanız controller ve metodlarınıza ulaşabilir::
+EÄŸer "enable_query_strings" deÄŸerini TRUE olarak deÄŸiÃ¾tirirseniz bu Ã¶zellik aktif olacaktÄ±r.  Controller ve fonksiyonlarÄ±nÄ±z tetikleyici kelime geldiÄŸinde, ayarlarsanÄ±z controller ve metodlarÄ±nÄ±za ulaÃ¾abilir::
 
 	index.php?c=controller&m=method
 
-.. Not:: IEğer sorgu dizisi kullanacaksanız, URL helper (ve URL üreten diğer helper, mesela bazı form helper'ı gibi) gibi parça tabanlı URL'ye uygun tasarlanmış helper kullanmak yerine, kendi URL'nizi inşa etmelisiniz.
+.. note:: IEÄŸer sorgu dizisi kullanacaksanÄ±z, URL helper (ve URL Ã¼reten diÄŸer helper, mesela bazÄ± form helper'Ä± gibi) gibi parÃ§a tabanlÄ± URL'ye uygun tasarlanmÄ±Ã¾ helper kullanmak yerine, kendi URL'nizi inÃ¾a etmelisiniz.
