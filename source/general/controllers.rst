@@ -2,54 +2,53 @@
 Controllers
 ###########
 
-Controllers are the heart of your application, as they determine how
-HTTP requests should be handled.
+Controllers uygulamanızın kalbidir, yani HTTP isteklerinin nasıl ele alınması 
+gerektiğini belirlemek gibi.
 
-.. contents:: Page Contents
+.. contents:: Sayfa İçeriği
 
-What is a Controller?
-=====================
+Controller nedir ?
+==================
 
-**A Controller is simply a class file that is named in a way that can be
-associated with a URI.**
+**Controller, sadece bir URI ile ilişkili bir şekilde isim alan sınıf 
+dosyasıdır.**
 
-Consider this URI::
+Bu URI'a göz atalaım::
 
 	example.com/index.php/blog/
 
-In the above example, CodeIgniter would attempt to find a controller
-named blog.php and load it.
+Yukarıdaki örnekte, CodeIgniter "blog.php" isimli dosyayı bulmayı ve yüklemeyi 
+dener.
 
-**When a controller's name matches the first segment of a URI, it will
-be loaded.**
 
-Let's try it: Hello World!
-==========================
+**Controller'ın adı bir URI'ın ilk segmenti eşleştiğinde, yüklenecektir.**
 
-Let's create a simple controller so you can see it in action. Using your
-text editor, create a file called blog.php, and put the following code
-in it::
+
+Hadi deneyelim: Merhaba Dünya !
+===============================
+
+Basit bir controller oluşturalım ve yaptıklarımıza göz atalım. Yazı editörünüzü 
+kullanarak,"blog.php" adlı bir sayfa oluşturun, ve altına bu kodları yazın::
 
 	<?php
 	class Blog extends CI_Controller {
 
 		public function index()
 		{
-			echo 'Hello World!';
+			echo 'Merhaba Dünya !';
 		}
 	}
 	?>
 
-Then save the file to your application/controllers/ folder.
+Dosyanızı "application/controllers/" klasörünüzün içine kaydedin.
 
-Now visit the your site using a URL similar to this::
+Şimdi buna benzer bir URL ile sitenizi ziyaret edin::
 
 	example.com/index.php/blog/
 
-If you did it right, you should see Hello World!.
+Eğer doğru yaptıysanız, "Merhaba Dünya !" yazısını görüyor olmalısınız.
 
-Note: Class names must start with an uppercase letter. In other words,
-this is valid::
+Not: Sınıf isimleri herzaman büyük harf ile başlamalıdır.::
 
 	<?php
 	class Blog extends CI_Controller {
@@ -58,7 +57,7 @@ this is valid::
 	?>
 	
 
-This is **not** valid::
+Bu örnek geçerli **değildir**::
 
 	<?php
 	class blog extends CI_Controller {
@@ -66,108 +65,108 @@ This is **not** valid::
 	}
 	?>
 
-Also, always make sure your controller extends the parent controller
-class so that it can inherit all its functions.
+Ayrıca bir Controller tüm işlevlerini herzaman "CI_Controller" sınıfından 
+devralır.
 
-Functions
-=========
+Fonksiyonlar
+============
 
-In the above example the function name is index(). The "index" function
-is always loaded by default if the **second segment** of the URI is
-empty. Another way to show your "Hello World" message would be this::
+Yukarıdaki örnekteki fonksiyonun ismi index(). "index" fonksiyonu
+herzaman varsayılan olarak yüklenir tabi URI'ın **ikinci bölümü**
+boşsa. "Merhaba Dünya" mesajını göstermenin başka bir yolu şudur::
 
 	example.com/index.php/blog/index/
 
-**The second segment of the URI determines which function in the
-controller gets called.**
+**URI'ın ikinci bölümü, controller'daki hangi fonksiyonun
+çağırılacağını belirler.**
 
-Let's try it. Add a new function to your controller::
+Hadi deneyelim. "blog.php" dosyanıza yeni bir fonksiyon ekleyin::
 
 	<?php
 	class Blog extends CI_Controller {
 
 		public function index()
 		{
-			echo 'Hello World!';
+			echo 'Merhaba Dünya !';
 		}
 
-		public function comments()
+		public function mesajlar()
 		{
-			echo 'Look at this!';
+			echo 'Şuna bak !';
 		}
 	}
 	?>
 
-Now load the following URL to see the comment function::
+Şimdi aşağıdaki URL'i girerek "mesajlar" fonksiyonunu görelim::
 
-	example.com/index.php/blog/comments/
+	example.com/index.php/blog/mesajlar/
 
-You should see your new message.
+Yeni mesajınızı görüyor olmalısınız.
 
-Passing URI Segments to your Functions
-======================================
+Fonksiyonumuza URI Bölümü Ekleyelim
+===================================
 
-If your URI contains more then two segments they will be passed to your
-function as parameters.
+Eğer URI'ınız 2 bölümden fazlasını içeriyorsa bu bölümler fonksiyonunuza
+parametre olarak geçer.
 
-For example, lets say you have a URI like this::
+Örnek olarak, diyelim ki şuna benzer bir URI'ınız var::
 
-	example.com/index.php/products/shoes/sandals/123
+	example.com/index.php/urunler/ayakkabilar/sandaletler/123
 
-Your function will be passed URI segments 3 and 4 ("sandals" and "123")::
+Fonksiyonunuz URI'ın 3. ve 4. bölümlerini parametre olarak
+alacak ("sandaletler" and "123")::
 
 	<?php
-	class Products extends CI_Controller {
+	class Urunler extends CI_Controller {
 
-	    public function shoes($sandals, $id)
+	    public function ayakkabilar($sandaletler, $id)
 	    {
-	        echo $sandals;
-	        echo $id;
+	        echo 'İlk parametre : '.$sandaletler;
+	        echo 'İkinci parametre : '.$id;
 	    }
 	}
 	?>
 
-.. important:: If you are using the :doc:`URI Routing <routing>`
-	feature, the segments passed to your function will be the re-routed
-	ones.
+.. important:: Eğer :doc:`URI Yönlendirme <routing>` özelliğini kullanıyorsanız,
+	bu bölümler fonksiyonunuza yeniden yönlendirilebilir olarak geçecektir.
 
-Defining a Default Controller
-=============================
+Öntanımlı Controller'ı Tanımlamak
+=================================
 
-CodeIgniter can be told to load a default controller when a URI is not
-present, as will be the case when only your site root URL is requested.
-To specify a default controller, open your **application/config/routes.php**
-file and set this variable::
+CodeIgniter bir URI mevcut değilken bile ön tanımlı olan bir Controller
+yükleyebilir. Sadece sitenizin kök URL'i sabit olacak.
+Ön tanımlı Controller'ı yüklemek için, **application/config/routes.php**
+dosyanızı açın ve şu değişkeni ayarlayın::
 
 	$route['default_controller'] = 'Blog';
 
-Where Blog is the name of the controller class you want used. If you now
-load your main index.php file without specifying any URI segments you'll
-see your Hello World message by default.
+"Blog" kullanılmasını istediğiniz sınıfın adıdır. Eğer şimdi ana "index.php"
+dosyanızı URI belirtmeden yüklerseniz ön tanımlı olarak "Merhaba Dünya !"
+mesajını göreceksiniz.
 
-Remapping Function Calls
-========================
+Remapping Fonksiyonunu Çağırmak
+===============================
 
-As noted above, the second segment of the URI typically determines which
-function in the controller gets called. CodeIgniter permits you to
-override this behavior through the use of the _remap() function::
+Yukarıda belirtildiği gibi, URI'ın ikinci bölümü normal olarak hangi
+fonksiyonun Controller olarak çağırılacağını belirler. CodeIgniter
+_remap() fonksiyonu ile bu davranışı geçersiz kılmanıza izin verir::
 
 	public function _remap()
 	{
 	    // Some code here...
 	}
 
-.. important:: If your controller contains a function named _remap(),
-	it will **always** get called regardless of what your URI contains. It
-	overrides the normal behavior in which the URI determines which function
-	is called, allowing you to define your own function routing rules.
+.. important:: Eğer Controller'ınız _remap() isimli bir fonksiyon içeriyorsa,
+	URI içeriği ne olursa olsun herzaman denileni alacaktır.
+	Normal davranış olan URI içeriğinin hangi fonksiyonu çağıracağını
+	belirlemesini geçersiz kılar ve kendi kurallarınızı belirlemenize izin verir
 
-The overridden function call (typically the second segment of the URI)
-will be passed as a parameter to the _remap() function::
+Geçersiz kılınmış bir fonksiyon çağrısı (URI'ın ikinci bölümü)
+_remap() fonksiyonuna parametre olarak geçirilir::
 
 	public function _remap($method)
 	{
-	    if ($method == 'some_method')
+	    if ($method == 'bir_method')
 	    {
 	        $this->$method();
 	    }
