@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="utf-8">
 	    
-	    <title>CodeIgniter URLs &mdash; CodeIgniter v3.0-dev documentation</title>
+	    <title>CodeIgniter URL’leri &mdash; CodeIgniter v3.0-dev documentation</title>
 
 	    <link rel="stylesheet" href="../_static/asset/css/common.css" type="text/css" />
 	    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -35,7 +35,7 @@
 <li class="toctree-l1"><a class="reference internal" href="requirements.html">Server Requirements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../installation/index.html">Installation Instructions</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">General Topics</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="">CodeIgniter URLs</a><ul class="simple">
+<li class="toctree-l2 current"><a class="current reference internal" href="">CodeIgniter URL&#8217;leri</a><ul class="simple">
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="controllers.html">Controllers</a></li>
@@ -96,54 +96,54 @@
 				<li><a id="toc-link" href="../index.html">Table of Contents</a>&nbsp;&nbsp; &rsaquo;</li>
 				<li><a href="index.html" accesskey="U">General Topics</a>&nbsp;&nbsp;  &rsaquo;</li>
 
-				<li><strong>CodeIgniter URLs</strong></li>
+				<li><strong>CodeIgniter URL&#8217;leri</strong></li>
 			</ul>
 		</div><!-- /#header -->
 
 		<div class="section" id="content">
-			<div class="section" id="codeigniter-urls">
-<h1>CodeIgniter URLs<a class="headerlink" href="#codeigniter-urls" title="Permalink to this headline">¶</a></h1>
-<p>URL CodeIngiter&#8217;da arama-motoru ve kullanıcı dostu varsayılarak tasarlanmıþtır. Standart &#8220;sorgu dizisi&#8221; (query string) yaklaþımı yerine, dinamik sistemli eþ anlamlı, CodeIgniter <strong>parça-tabanlı</strong> yaklaþımını kullanır:</p>
+			<div class="section" id="codeigniter-url-leri">
+<h1>CodeIgniter URL&#8217;leri<a class="headerlink" href="#codeigniter-url-leri" title="Permalink to this headline">¶</a></h1>
+<p>URL CodeIngiter&#8217;da arama-motoru ve kullanıcı dostu varsayılarak tasarlanmıştır. Standart &#8220;sorgu dizisi&#8221; (query string) yaklaşımı yerine, dinamik sistemli eş anlamlı, CodeIgniter <strong>parça-tabanlı</strong> yaklaşımını kullanır:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nx">example</span><span class="o">.</span><span class="nx">com</span><span class="o">/</span><span class="nx">news</span><span class="o">/</span><span class="nx">article</span><span class="o">/</span><span class="nx">my_article</span>
 </pre></div>
 </div>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">Sorgu dizisi URL opsiyon olarak aþağıda tanımlandığı gibi kullanılabilir.</p>
+<p class="last">Sorgu dizisi URL opsiyon olarak aşağıda tanımlandığı gibi kullanılabilir.</p>
 </div>
 <div class="section" id="uri-parcalari">
 <h2>URI Parçaları<a class="headerlink" href="#uri-parcalari" title="Permalink to this headline">¶</a></h2>
-<p>Model-View-Controller yaklaþımında URL parçaları genelde þöyle sunulur:</p>
+<p>Model-View-Controller yaklaşımında URL parçaları genelde şöyle sunulur:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nx">example</span><span class="o">.</span><span class="nx">com</span><span class="o">/</span><span class="nx">class</span><span class="o">/</span><span class="nx">function</span><span class="o">/</span><span class="nx">ID</span>
 </pre></div>
 </div>
 <ol class="arabic simple">
 <li>İlk parça controller <strong>sınıfını</strong> hatırlatır.</li>
 <li>İkinci parça sınıftaki <strong>fonksiyon</strong> ya da metodu çağırır.</li>
-<li>Üçüncü parça ya da diğer ek parçalar, ID ile gösterilir ve controller&#8217;a değiþken olarak gönderilir.</li>
+<li>Üçüncü parça ya da diğer ek parçalar, ID ile gösterilir ve controller&#8217;a değişken olarak gönderilir.</li>
 </ol>
 <p>The <a class="reference internal" href="../libraries/uri.html"><em>URI Sınıfı</em></a> ve <a class="reference internal" href="../helpers/url_helper.html"><em>URL Helper</em></a> dosyaları, URI bilgilerini kolayca kullanmanızı sağlayan fonksiyonlara sahiptir. Ek olarak, URL değeriniz <a class="reference internal" href="routing.html"><em>URI Yönlendirme</em></a> özelliğiyle daha esnek bir özellik için yeniden tanımlanabilir.</p>
 </div>
 <div class="section" id="adresten-index-php-kaldirmak">
 <h2>Adresten Index.php kaldırmak<a class="headerlink" href="#adresten-index-php-kaldirmak" title="Permalink to this headline">¶</a></h2>
-<p><strong>index.php</strong> dosyası aþağıdaki URL&#8217;de bulunduğunu varsayalım:</p>
+<p><strong>index.php</strong> dosyası aşağıdaki URL&#8217;de bulunduğunu varsayalım:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nx">example</span><span class="o">.</span><span class="nx">com</span><span class="o">/</span><span class="nx">index</span><span class="o">.</span><span class="nx">php</span><span class="o">/</span><span class="nx">news</span><span class="o">/</span><span class="nx">article</span><span class="o">/</span><span class="nx">my_article</span>
 </pre></div>
 </div>
-<p>Bu dosyayı .htaccess dosyasında yazacağınız bir kaç basit kural ile kaldırabilirsiniz. Burada verilen örnek dosya ile, kullanılan çıkartma  metodu ile herþeyi yeniden yönlendirebilirsiniz:</p>
+<p>Bu dosyayı .htaccess dosyasında yazacağınız bir kaç basit kural ile kaldırabilirsiniz. Burada verilen örnek dosya ile, kullanılan çıkartma  metodu ile herşeyi yeniden yönlendirebilirsiniz:</p>
 <div class="highlight-ci"><pre>RewriteEngine on
 RewriteCond $1 !^(index\.php|images|robots\.txt)
 RewriteRule ^(.*)$ /index.php/$1 [L]</pre>
 </div>
-<p>Yukarıdaki örnekte, index.php, images ve robots.txt dosyalarından farklı her HTTP istemi index.php dosyamızı çağırmıþ iþlemi görecektir.</p>
+<p>Yukarıdaki örnekte, index.php, images ve robots.txt dosyalarından farklı her HTTP istemi index.php dosyamızı çağırmış işlemi görecektir.</p>
 </div>
 <div class="section" id="url-soneki-eklemek">
 <h2>URL Soneki Eklemek<a class="headerlink" href="#url-soneki-eklemek" title="Permalink to this headline">¶</a></h2>
-<p><strong>config/config.php</strong> dosyanızda, istediğiniz soneki ekleyerek CodeIgniter tarafından URL oluþturulmasını tanımlayabilirsiniz. Örneğin, eğer URL þöyle ise:</p>
+<p><strong>config/config.php</strong> dosyanızda, istediğiniz soneki ekleyerek CodeIgniter tarafından URL oluşturulmasını tanımlayabilirsiniz. Örneğin, eğer URL şöyle ise:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nx">example</span><span class="o">.</span><span class="nx">com</span><span class="o">/</span><span class="nx">index</span><span class="o">.</span><span class="nx">php</span><span class="o">/</span><span class="nx">products</span><span class="o">/</span><span class="nx">view</span><span class="o">/</span><span class="nx">shoes</span>
 </pre></div>
 </div>
-<p>Seçtiğiniz bir sonek, mesela <strong>.html,</strong> sayfanızı þöyle gösterilmesini sağlar:</p>
+<p>Seçtiğiniz bir sonek, mesela <strong>.html,</strong> sayfanızı şöyle gösterilmesini sağlar:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nx">example</span><span class="o">.</span><span class="nx">com</span><span class="o">/</span><span class="nx">index</span><span class="o">.</span><span class="nx">php</span><span class="o">/</span><span class="nx">products</span><span class="o">/</span><span class="nx">view</span><span class="o">/</span><span class="nx">shoes</span><span class="o">.</span><span class="nx">html</span>
 </pre></div>
 </div>
@@ -154,19 +154,19 @@ RewriteRule ^(.*)$ /index.php/$1 [L]</pre>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nx">index</span><span class="o">.</span><span class="nx">php</span><span class="o">?</span><span class="nx">c</span><span class="o">=</span><span class="nx">products</span><span class="o">&amp;</span><span class="nx">m</span><span class="o">=</span><span class="nx">view</span><span class="o">&amp;</span><span class="nx">id</span><span class="o">=</span><span class="mi">345</span>
 </pre></div>
 </div>
-<p>CodeIgniter, <strong>application/config.php</strong> dosyasıyla bu imkanı kullanmanıza olanak tanır. Eğer config dosyanızı açarsanız þunları göreceksiniz:</p>
+<p>CodeIgniter, <strong>application/config.php</strong> dosyasıyla bu imkanı kullanmanıza olanak tanır. Eğer config dosyanızı açarsanız şunları göreceksiniz:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$config</span><span class="p">[</span><span class="s1">&#39;enable_query_strings&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="k">FALSE</span><span class="p">;</span>
 <span class="nv">$config</span><span class="p">[</span><span class="s1">&#39;controller_trigger&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;c&#39;</span><span class="p">;</span>
 <span class="nv">$config</span><span class="p">[</span><span class="s1">&#39;function_trigger&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;m&#39;</span><span class="p">;</span>
 </pre></div>
 </div>
-<p>Eğer &#8220;enable_query_strings&#8221; değerini TRUE olarak değiþtirirseniz bu özellik aktif olacaktır.  Controller ve fonksiyonlarınız tetikleyici kelime geldiğinde, ayarlarsanız controller ve metodlarınıza ulaþabilir:</p>
+<p>Eğer &#8220;enable_query_strings&#8221; değerini TRUE olarak değiştirirseniz bu özellik aktif olacaktır.  Controller ve fonksiyonlarınız tetikleyici kelime geldiğinde, ayarlarsanız controller ve metodlarınıza ulaşabilir:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nx">index</span><span class="o">.</span><span class="nx">php</span><span class="o">?</span><span class="nx">c</span><span class="o">=</span><span class="nx">controller</span><span class="o">&amp;</span><span class="nx">m</span><span class="o">=</span><span class="nx">method</span>
 </pre></div>
 </div>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">IEğer sorgu dizisi kullanacaksanız, URL helper (ve URL üreten diğer helper, mesela bazı form helper&#8217;ı gibi) gibi parça tabanlı URL&#8217;ye uygun tasarlanmıþ helper kullanmak yerine, kendi URL&#8217;nizi inþa etmelisiniz.</p>
+<p class="last">Eğer sorgu dizisi kullanacaksanız, URL helper (ve URL üreten diğer helper, mesela bazı form helper&#8217;ı gibi) gibi parça tabanlı URL&#8217;ye uygun tasarlanmış helper kullanmak yerine, kendi URL&#8217;nizi inşa etmelisiniz.</p>
 </div>
 </div>
 </div>
