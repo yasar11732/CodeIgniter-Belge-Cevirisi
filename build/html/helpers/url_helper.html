@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="utf-8">
 	    
-	    <title>URL Helper &mdash; CodeIgniter v3.0-dev documentation</title>
+	    <title>URL Yardımcısı &mdash; CodeIgniter v3.0-dev documentation</title>
 
 	    <link rel="stylesheet" href="../_static/asset/css/common.css" type="text/css" />
 	    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -56,7 +56,7 @@
 <li class="toctree-l2"><a class="reference internal" href="string_helper.html">String Helper</a></li>
 <li class="toctree-l2"><a class="reference internal" href="text_helper.html">Text Helper</a></li>
 <li class="toctree-l2"><a class="reference internal" href="typography_helper.html">Typography Helper</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="">URL Helper</a><ul class="simple">
+<li class="toctree-l2 current"><a class="current reference internal" href="">URL Yardımcısı</a><ul class="simple">
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="xml_helper.html">XML Helper</a></li>
@@ -92,19 +92,19 @@
 				<li><a id="toc-link" href="../index.html">Table of Contents</a>&nbsp;&nbsp; &rsaquo;</li>
 				<li><a href="index.html" accesskey="U">Helpers</a>&nbsp;&nbsp;  &rsaquo;</li>
 
-				<li><strong>URL Helper</strong></li>
+				<li><strong>URL Yardımcısı</strong></li>
 			</ul>
 		</div><!-- /#header -->
 
 		<div class="section" id="content">
-			<div class="section" id="url-helper">
-<h1><a class="toc-backref" href="#id1">URL Helper</a><a class="headerlink" href="#url-helper" title="Permalink to this headline">¶</a></h1>
-<p>The URL Helper file contains functions that assist in working with URLs.</p>
-<div class="contents topic" id="page-contents">
-<p class="topic-title first">Page Contents</p>
+			<div class="section" id="url-yardimcisi">
+<h1><a class="toc-backref" href="#id1">URL Yardımcısı</a><a class="headerlink" href="#url-yardimcisi" title="Permalink to this headline">¶</a></h1>
+<p>URL Yardımcısı URL&#8217;ler ile çalışmanız için hazırlanmış fonksiyonları içerir.</p>
+<div class="contents topic" id="sayfa-icerigi">
+<p class="topic-title first">Sayfa İçeriği</p>
 <ul class="simple">
-<li><a class="reference internal" href="#url-helper" id="id1">URL Helper</a><ul>
-<li><a class="reference internal" href="#loading-this-helper" id="id2">Loading this Helper</a></li>
+<li><a class="reference internal" href="#url-yardimcisi" id="id1">URL Yardımcısı</a><ul>
+<li><a class="reference internal" href="#yardimcinin-yuklenmesi" id="id2">Yardımcının Yüklenmesi</a></li>
 <li><a class="reference internal" href="#site-url" id="id3">site_url()</a></li>
 <li><a class="reference internal" href="#base-url" id="id4">base_url()</a></li>
 <li><a class="reference internal" href="#current-url" id="id5">current_url()</a></li>
@@ -124,31 +124,29 @@
 </li>
 </ul>
 </div>
-<div class="section" id="loading-this-helper">
-<h2><a class="toc-backref" href="#id2">Loading this Helper</a><a class="headerlink" href="#loading-this-helper" title="Permalink to this headline">¶</a></h2>
-<p>This helper is loaded using the following code</p>
+<div class="section" id="yardimcinin-yuklenmesi">
+<h2><a class="toc-backref" href="#id2">Yardımcının Yüklenmesi</a><a class="headerlink" href="#yardimcinin-yuklenmesi" title="Permalink to this headline">¶</a></h2>
+<p>Bu yardımcı aşağıdaki kod kullanılarak yüklenebilir:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">helper</span><span class="p">(</span><span class="s1">&#39;url&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>The following functions are available:</p>
+<p>Kullanılabilir fonksiyonlar aşağıda listelenmiştir:</p>
 </div>
 <div class="section" id="site-url">
 <h2><a class="toc-backref" href="#id3">site_url()</a><a class="headerlink" href="#site-url" title="Permalink to this headline">¶</a></h2>
-<p>Returns your site URL, as specified in your config file. The index.php
-file (or whatever you have set as your site index_page in your config
-file) will be added to the URL, as will any URI segments you pass to the
-function, and the url_suffix as set in your config file.</p>
-<p>You are encouraged to use this function any time you need to generate a
-local URL so that your pages become more portable in the event your URL
-changes.</p>
-<p>Segments can be optionally passed to the function as a string or an
-array. Here is a string example</p>
+<p>Ayar dosyanızda bulunan [config.php], sitenizin bağlantı adresini döndürür.
+Site adresinizin sonuna index.php [yada ayar dosyanız index_page değişkenine
+ne değer atadıysanız] ekler.</p>
+<p>Bu fonksiyonu kullanmanız projenizin adres değişikliğinin kolayca yapılabilmesini
+ve taşınabilirliğinin artmasını sağlar.</p>
+<p>Adres sonuna eklenmesini istediğiniz kısımlar, isteğe bağlı olarak string veya
+array veritipinde gönderilebilir. Aşağıda bir örneği mevcut</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="k">echo</span> <span class="nx">site_url</span><span class="p">(</span><span class="s2">&quot;news/local/123&quot;</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>The above example would return something like:
+<p>Bu örnek şuna benzer bir sonuç döndürecektir:
 <a class="reference external" href="http://example.com/index.php/news/local/123">http://example.com/index.php/news/local/123</a></p>
-<p>Here is an example of segments passed as an array</p>
+<p>Buradaki örnekte ise parçaların array veritipinde nasıl verileceği gösteriliyor</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$segments</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span><span class="s1">&#39;news&#39;</span><span class="p">,</span> <span class="s1">&#39;local&#39;</span><span class="p">,</span> <span class="s1">&#39;123&#39;</span><span class="p">);</span>
 <span class="k">echo</span> <span class="nx">site_url</span><span class="p">(</span><span class="nv">$segments</span><span class="p">);</span>
 </pre></div>
@@ -156,96 +154,93 @@ array. Here is a string example</p>
 </div>
 <div class="section" id="base-url">
 <h2><a class="toc-backref" href="#id4">base_url()</a><a class="headerlink" href="#base-url" title="Permalink to this headline">¶</a></h2>
-<p>Returns your site base URL, as specified in your config file. Example</p>
+<p>Sitenizin bağlantı adresini ayar dosyanızda ayarlandığı gibi döndürür. Örneğin</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="k">echo</span> <span class="nx">base_url</span><span class="p">();</span>
 </pre></div>
 </div>
-<p>This function returns the same thing as <cite>site_url</cite>, without the
-index_page or url_suffix being appended.</p>
-<p>Also like site_url, you can supply segments as a string or an array.
-Here is a string example</p>
+<p>Bu fonksiyon <cite>site_url</cite> olduğu gibi index_page veya url_suffix değerlerini adres
+sonuna eklemez.</p>
+<p>Ayrıca site_url&#8217;de olduğu gibi adresin sonuna string veya array tipinde parçacıklar
+ekletebilirsiniz.
+String tipinde veri gönderim örneği</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="k">echo</span> <span class="nx">base_url</span><span class="p">(</span><span class="s2">&quot;blog/post/123&quot;</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>The above example would return something like:
+<p>Bu örnek şuna benzer bir sonuç döndürecektir:
 <a class="reference external" href="http://example.com/blog/post/123">http://example.com/blog/post/123</a></p>
-<p>This is useful because unlike <cite>site_url()</cite>, you can supply a string to a
-file, such as an image or stylesheet. For example</p>
+<p>Bu faydalıdır çünkü <cite>site_url()</cite> fonksiyonuna benzemez. Bir dosya, resim yada stil dosyasını
+bu şekilde sayfanıza dahil edebilirsiniz. Şuradaki gibi</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="k">echo</span> <span class="nx">base_url</span><span class="p">(</span><span class="s2">&quot;images/icons/edit.png&quot;</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>This would give you something like:
+<p>Bu örnek şuna benzer bir sonuç döndürür:
 <a class="reference external" href="http://example.com/images/icons/edit.png">http://example.com/images/icons/edit.png</a></p>
 </div>
 <div class="section" id="current-url">
 <h2><a class="toc-backref" href="#id5">current_url()</a><a class="headerlink" href="#current-url" title="Permalink to this headline">¶</a></h2>
-<p>Returns the full URL (including segments) of the page being currently
-viewed.</p>
+<p>Sitenizin o an görüntülenen kısmının tam adresini (parçacıklar dahil)
+döndürür.</p>
 </div>
 <div class="section" id="uri-string">
 <h2><a class="toc-backref" href="#id6">uri_string()</a><a class="headerlink" href="#uri-string" title="Permalink to this headline">¶</a></h2>
-<p>Returns the URI segments of any page that contains this function. For
-example, if your URL was this</p>
+<p>Bu fonksiyonun kullanılması, görüntülenen sayfanın adres parçacıklarını döndürür.
+Şu örnekteki gibi adres eğer şu ise</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nx">http</span><span class="o">://</span><span class="nx">some</span><span class="o">-</span><span class="nx">site</span><span class="o">.</span><span class="nx">com</span><span class="o">/</span><span class="nx">blog</span><span class="o">/</span><span class="nx">comments</span><span class="o">/</span><span class="mi">123</span>
 </pre></div>
 </div>
-<p>The function would return</p>
+<p>Bu fonksiyon şunu döndürür</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="o">/</span><span class="nx">blog</span><span class="o">/</span><span class="nx">comments</span><span class="o">/</span><span class="mi">123</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="index-page">
 <h2><a class="toc-backref" href="#id7">index_page()</a><a class="headerlink" href="#index-page" title="Permalink to this headline">¶</a></h2>
-<p>Returns your site &#8220;index&#8221; page, as specified in your config file.
-Example</p>
+<p>Sitenizin ayar dosyanızda tanımlanan &#8220;index&#8221; dosyasını döndürür.
+Örnek:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="k">echo</span> <span class="nx">index_page</span><span class="p">();</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="anchor">
 <h2><a class="toc-backref" href="#id8">anchor()</a><a class="headerlink" href="#anchor" title="Permalink to this headline">¶</a></h2>
-<p>Creates a standard HTML anchor link based on your local site URL</p>
+<p>HTML standartlarında bir köprü oluşturabilmenizi sağlar</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="o">&lt;</span><span class="nx">a</span> <span class="nx">href</span><span class="o">=</span><span class="s2">&quot;http://example.com&quot;</span><span class="o">&gt;</span><span class="nx">Click</span> <span class="nx">Here</span><span class="o">&lt;/</span><span class="nx">a</span><span class="o">&gt;</span>
 </pre></div>
 </div>
-<p>The tag has three optional parameters</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="nx">anchor</span><span class="p">(</span><span class="nx">uri</span> <span class="nx">segments</span><span class="p">,</span> <span class="nx">text</span><span class="p">,</span> <span class="nx">attributes</span><span class="p">)</span>
-</pre></div>
+<p>Bu fonksiyon isteğe bağlı üç değer alır</p>
+<div class="highlight-ci"><pre>anchor(adres, görünecek metin, öznitelikler)</pre>
 </div>
-<p>The first parameter can contain any segments you wish appended to the
-URL. As with the site_url() function above, segments can be a string or
-an array.</p>
+<p>İlk değer site adresinizin sonuna eklenir. Önce site_url() fonksiyonu çağrılıp
+sonuna string veya array veritipinde gönderilen değerler eklenir.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">If you are building links that are internal to your application
-do not include the base URL (<a class="reference external" href="http://">http://</a>...). This will be added automatically
-from the information specified in your config file. Include only the
-URI segments you wish appended to the URL.</p>
+<p class="last">Eğer alt uygulamalarınız için bağlantı oluşturacaksanız bu fonksiyonun
+ayar dosyanızda tanımladığınız adresi çağırdığını ve verdiğiniz değerlerin o
+adres sonuna ekleneceğini bilmelisiniz.</p>
 </div>
-<p>The second segment is the text you would like the link to say. If you
-leave it blank, the URL will be used.</p>
-<p>The third parameter can contain a list of attributes you would like
-added to the link. The attributes can be a simple string or an
-associative array.</p>
-<p>Here are some examples</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="k">echo</span> <span class="nx">anchor</span><span class="p">(</span><span class="s1">&#39;news/local/123&#39;</span><span class="p">,</span> <span class="s1">&#39;My News&#39;</span><span class="p">,</span> <span class="s1">&#39;title=&quot;News title&quot;&#39;</span><span class="p">);</span>
+<p>İkinci değer ise bağlantılı olarak görüntülecek metni içermelidir. Eğer boş bırakılırsa
+bağlantı adresi görüntülenen metin olarak kullanılır.</p>
+<p>Üçüncü değer ise köprü için kullanılacak öznitelikleri dahil etmenizi sağlar. Bu öznitelikler
+string veritipinde olabileceği gibi array veritipinde de olabilir.</p>
+<p>Şuraki örnekte olduğu gibi</p>
+<div class="highlight-ci"><div class="highlight"><pre><span class="k">echo</span> <span class="nx">anchor</span><span class="p">(</span><span class="s1">&#39;news/local/123&#39;</span><span class="p">,</span> <span class="s1">&#39;Haberler&#39;</span><span class="p">,</span> <span class="s1">&#39;title=&quot;Haberler başlığı&quot;&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>Would produce: &lt;a href=&#8221;<a class="reference external" href="http://example.com/index.php/news/local/123">http://example.com/index.php/news/local/123</a>&#8221;
-title=&#8221;News title&#8221;&gt;My News&lt;/a&gt;</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="k">echo</span> <span class="nx">anchor</span><span class="p">(</span><span class="s1">&#39;news/local/123&#39;</span><span class="p">,</span> <span class="s1">&#39;My News&#39;</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span><span class="s1">&#39;title&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;The best news!&#39;</span><span class="p">));</span>
+<p>İşlendikten sonra: &lt;a href=&#8221;<a class="reference external" href="http://example.com/index.php/news/local/123">http://example.com/index.php/news/local/123</a>&#8221;
+title=&#8221;Haber başlığı&#8221;&gt;Haberler&lt;/a&gt;</p>
+<div class="highlight-ci"><div class="highlight"><pre><span class="k">echo</span> <span class="nx">anchor</span><span class="p">(</span><span class="s1">&#39;news/local/123&#39;</span><span class="p">,</span> <span class="s1">&#39;Haberler&#39;</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span><span class="s1">&#39;title&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;En iyi haberler!&#39;</span><span class="p">));</span>
 </pre></div>
 </div>
-<p>Would produce: &lt;a href=&#8221;<a class="reference external" href="http://example.com/index.php/news/local/123">http://example.com/index.php/news/local/123</a>&#8221;
-title=&#8221;The best news!&#8221;&gt;My News&lt;/a&gt;</p>
+<p>İşlendikten sonra: &lt;a href=&#8221;<a class="reference external" href="http://example.com/index.php/news/local/123">http://example.com/index.php/news/local/123</a>&#8221;
+title=&#8221;En iyi haberler!&#8221;&gt;Haberler&lt;/a&gt;</p>
 </div>
 <div class="section" id="anchor-popup">
 <h2><a class="toc-backref" href="#id9">anchor_popup()</a><a class="headerlink" href="#anchor-popup" title="Permalink to this headline">¶</a></h2>
-<p>Nearly identical to the anchor() function except that it opens the URL
-in a new window. You can specify JavaScript window attributes in the
-third parameter to control how the window is opened. If the third
-parameter is not set it will simply open a new window with your own
-browser settings. Here is an example with attributes</p>
+<p>Neredeyse anchor() fonksiyonuyla aynı işi görüp tek farkı bağlantıyı
+yeni bir pencerede açmasıdır. Üçüncü değeri ile açılan pencereyi kontrol
+edebilmek için JavaScript öznitelikleri gönderilebilir. Eğer üçüncü değer
+boş bırakılırsa, tarayıcınız ön tanımlı ayarları ile bağlantıyı yeni bir
+pencerede açar. Şurada özniteliklerle alakalı bir örnek görebilirsiniz</p>
 <div class="highlight-ci"><pre>$atts = array(
         'width'      =&gt; '800',
         'height'     =&gt; '600',
@@ -256,80 +251,79 @@ browser settings. Here is an example with attributes</p>
         'screeny'    =&gt; '0'
 );
 
-echo anchor_popup('news/local/123', 'Click Me!', $atts);</pre>
+echo anchor_popup('news/local/123', 'Tıkla!', $atts);</pre>
 </div>
-<p>Note: The above attributes are the function defaults so you only need to
-set the ones that are different from what you need. If you want the
-function to use all of its defaults simply pass an empty array in the
-third parameter</p>
+<p>Uyarı: Üçüncü değeri ne yaptığınızı bilmeniz durumunda kullanmanız gerekmektedir.
+Eğer JavaScript ile açılır pencerelere gönderilen değerler hakkında
+bilginiz yoksa üçüncü değeri boş bir array veritipinde değişken olarak girebilirsiniz.
+Bu şekilde CodeIgniter öntanımlı ayarlarını kullanacaktır.</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="k">echo</span> <span class="nx">anchor_popup</span><span class="p">(</span><span class="s1">&#39;news/local/123&#39;</span><span class="p">,</span> <span class="s1">&#39;Click Me!&#39;</span><span class="p">,</span> <span class="k">array</span><span class="p">());</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="mailto">
 <h2><a class="toc-backref" href="#id10">mailto()</a><a class="headerlink" href="#mailto" title="Permalink to this headline">¶</a></h2>
-<p>Creates a standard HTML email link. Usage example</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="k">echo</span> <span class="nx">mailto</span><span class="p">(</span><span class="s1">&#39;me@my-site.com&#39;</span><span class="p">,</span> <span class="s1">&#39;Click Here to Contact Me&#39;</span><span class="p">);</span>
+<p>HTML standartlarında bir eposta bağlantı adresi oluturur. Kullanım örneği</p>
+<div class="highlight-ci"><div class="highlight"><pre><span class="k">echo</span> <span class="nx">mailto</span><span class="p">(</span><span class="s1">&#39;ben@sitem.com&#39;</span><span class="p">,</span> <span class="s1">&#39;İletişim için tıklayınız&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>As with the anchor() tab above, you can set attributes using the third
-parameter.</p>
+<p>Ayrıca anchor() fonksiyonu gibi, üçüncü değer olarak öznitelikleri ekleyebilirsiniz.</p>
 </div>
 <div class="section" id="safe-mailto">
 <h2><a class="toc-backref" href="#id11">safe_mailto()</a><a class="headerlink" href="#safe-mailto" title="Permalink to this headline">¶</a></h2>
-<p>Identical to the above function except it writes an obfuscated version
-of the mailto tag using ordinal numbers written with JavaScript to help
-prevent the email address from being harvested by spam bots.</p>
+<p>EPosta adresinizi korumak için JavaScript ile şifrelenmiş kodlar kullanıp eposta
+adres metninizi oluşturduktan sonra mailto() işlevseli gibi çalışır.Kaynak kodda oluşturduğu
+JavaScript betiği eposta adresinizi spam botlarından korur.</p>
 </div>
 <div class="section" id="auto-link">
 <h2><a class="toc-backref" href="#id12">auto_link()</a><a class="headerlink" href="#auto-link" title="Permalink to this headline">¶</a></h2>
-<p>Automatically turns URLs and email addresses contained in a string into
-links. Example</p>
+<p>Otomatik olarak değer olarak vereceğiniz string içerisinde geçen eposta adresleri
+ve web adreslerini köprü haline çevirecektir. Örneğin</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$string</span> <span class="o">=</span> <span class="nx">auto_link</span><span class="p">(</span><span class="nv">$string</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>The second parameter determines whether URLs and emails are converted or
-just one or the other. Default behavior is both if the parameter is not
-specified. Email links are encoded as safe_mailto() as shown above.</p>
-<p>Converts only URLs</p>
+<p>İkinci değer ise çevirmek istediğiniz türü belirtir. Belirttiğiniz tür dışında kalanlar
+çevrilmez. Burada email veya url diye vereceğiniz iki tür bulunmaktadır. Eposta bağlantıları
+safe_mailto() fonksiyonunda olduğu gibi şifrelenecektir. Ön tanımlı olarak her iki türü de
+köprüleme yapmaktadır.</p>
+<p>Sadece bağlantı adresleri</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$string</span> <span class="o">=</span> <span class="nx">auto_link</span><span class="p">(</span><span class="nv">$string</span><span class="p">,</span> <span class="s1">&#39;url&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>Converts only Email addresses</p>
+<p>Sadece Eposta Adresleri</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$string</span> <span class="o">=</span> <span class="nx">auto_link</span><span class="p">(</span><span class="nv">$string</span><span class="p">,</span> <span class="s1">&#39;email&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>The third parameter determines whether links are shown in a new window.
-The value can be TRUE or FALSE (boolean)</p>
+<p>Üçüncü değer ise bağlantıların yeni bir pencerede gösterilip gösterilmeyeceğini belirler.
+TRUE veya FALSE değerleri alabilir (boolean).</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$string</span> <span class="o">=</span> <span class="nx">auto_link</span><span class="p">(</span><span class="nv">$string</span><span class="p">,</span> <span class="s1">&#39;both&#39;</span><span class="p">,</span> <span class="k">TRUE</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="url-title">
 <h2><a class="toc-backref" href="#id13">url_title()</a><a class="headerlink" href="#url-title" title="Permalink to this headline">¶</a></h2>
-<p>Takes a string as input and creates a human-friendly URL string. This is
-useful if, for example, you have a blog in which you&#8217;d like to use the
-title of your entries in the URL. Example</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="nv">$title</span> <span class="o">=</span> <span class="s2">&quot;What&#39;s wrong with CSS?&quot;</span><span class="p">;</span>
-<span class="nv">$url_title</span> <span class="o">=</span> <span class="nx">url_title</span><span class="p">(</span><span class="nv">$title</span><span class="p">);</span>  <span class="c1">// Produces:  Whats-wrong-with-CSS</span>
+<p>Girdi olarak verilecek metinlerdeki adreslemelerde geçersiz olacak karakterlerden temizler.
+Kullanıcı dostu bağlantılar oluşturmak için kullanabilirsiniz. Şurada olduğu gibi kullanılır</p>
+<div class="highlight-ci"><div class="highlight"><pre><span class="nv">$title</span> <span class="o">=</span> <span class="s2">&quot;CSS&#39;de yanlış olan nedir ?&quot;</span><span class="p">;</span>
+<span class="nv">$url_title</span> <span class="o">=</span> <span class="nx">url_title</span><span class="p">(</span><span class="nv">$title</span><span class="p">);</span>  <span class="c1">// İşlem sonunda:  CSSde-yanl-olan-nedir-</span>
 </pre></div>
 </div>
-<p>The second parameter determines the word delimiter. By default dashes
-are used. Options are: dash, or underscore</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="nv">$title</span> <span class="o">=</span> <span class="s2">&quot;What&#39;s wrong with CSS?&quot;</span><span class="p">;</span>
-<span class="nv">$url_title</span> <span class="o">=</span> <span class="nx">url_title</span><span class="p">(</span><span class="nv">$title</span><span class="p">,</span> <span class="s1">&#39;underscore&#39;</span><span class="p">);</span>  <span class="c1">// Produces:  Whats_wrong_with_CSS</span>
+<p>İkinci değer olarak belirteç ayarlanabilir. Öntanımlı olarak <cite>dash</cite> değeri tanımlıdır ve boşluk
+karakteri ve diğer geçersiz karakterler yerine düz tire(-) koyar.
+Ayar olarak dash(-) veya underscore(_) kullanılabilir.</p>
+<div class="highlight-ci"><div class="highlight"><pre><span class="nv">$title</span> <span class="o">=</span> <span class="s2">&quot;CSS&#39;de yanlış olan nedir ?&quot;</span><span class="p">;</span>
+<span class="nv">$url_title</span> <span class="o">=</span> <span class="nx">url_title</span><span class="p">(</span><span class="nv">$title</span><span class="p">,</span> <span class="s1">&#39;underscore&#39;</span><span class="p">);</span>  <span class="c1">// İşlem sonunda:  CSSde_yanl_olan_nedir_</span>
 </pre></div>
 </div>
-<p>The third parameter determines whether or not lowercase characters are
-forced. By default they are not. Options are boolean TRUE/FALSE</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="nv">$title</span> <span class="o">=</span> <span class="s2">&quot;What&#39;s wrong with CSS?&quot;</span><span class="p">;</span>
-<span class="nv">$url_title</span> <span class="o">=</span> <span class="nx">url_title</span><span class="p">(</span><span class="nv">$title</span><span class="p">,</span> <span class="s1">&#39;underscore&#39;</span><span class="p">,</span> <span class="k">TRUE</span><span class="p">);</span>  <span class="c1">// Produces:  whats_wrong_with_css</span>
+<p>Üçüncü değer ise karakterlerde bir tümünü küçültme yapılıp yapılmayacağıdır.
+Ön tanımlı değer ise yapılmayacağıdır. Boolean veritipinde değer girilebilir(TRUE/FALSE).</p>
+<div class="highlight-ci"><div class="highlight"><pre><span class="nv">$title</span> <span class="o">=</span> <span class="s2">&quot;CSS&#39;de yanlış olan nedir ?&quot;</span><span class="p">;</span>
+<span class="nv">$url_title</span> <span class="o">=</span> <span class="nx">url_title</span><span class="p">(</span><span class="nv">$title</span><span class="p">,</span> <span class="s1">&#39;underscore&#39;</span><span class="p">,</span> <span class="k">TRUE</span><span class="p">);</span>  <span class="c1">// İşlem sonunda:  cssde_yanl_olan_nedir_</span>
 </pre></div>
 </div>
 <div class="section" id="prep-url">
 <h3><a class="toc-backref" href="#id14">prep_url()</a><a class="headerlink" href="#prep-url" title="Permalink to this headline">¶</a></h3>
-<p>This function will add <a class="reference external" href="http://">http://</a> in the event that a scheme is missing
-from a URL. Pass the URL string to the function like this</p>
+<p>Bu fonksiyon verilen bağlantının önüne <a class="reference external" href="http://">http://</a> ekleyecektir. Şu şekilde kullanılabilir</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$url</span> <span class="o">=</span> <span class="s2">&quot;example.com&quot;</span><span class="p">;</span>
 <span class="nv">$url</span> <span class="o">=</span> <span class="nx">prep_url</span><span class="p">(</span><span class="nv">$url</span><span class="p">);</span>
 </pre></div>
@@ -338,37 +332,32 @@ from a URL. Pass the URL string to the function like this</p>
 </div>
 <div class="section" id="redirect">
 <h2><a class="toc-backref" href="#id15">redirect()</a><a class="headerlink" href="#redirect" title="Permalink to this headline">¶</a></h2>
-<p>Does a &#8220;header redirect&#8221; to the URI specified. If you specify the full
-site URL that link will be built, but for local links simply providing
-the URI segments to the controller you want to direct to will create the
-link. The function will build the URL based on your config file values.</p>
-<p>The optional second parameter allows you to force a particular redirection
-method. The available methods are &#8220;location&#8221; or &#8220;refresh&#8221;, with location
-being faster but less reliable on Windows servers. The default is &#8220;auto&#8221;,
-which will attempt to intelligently choose the method based on the server
-environment.</p>
-<p>The optional third parameter allows you to send a specific HTTP Response
-Code - this could be used for example to create 301 redirects for search
-engine purposes. The default Response Code is 302. The third parameter is
-<em>only</em> available with &#8216;location&#8217; redirects, and not &#8216;refresh&#8217;. Examples:</p>
+<p>Yönlendirme oluşturmak için kullanılabilir. Başlık(header) yönlendirme
+yapmaktadır. Eğer kendi siteniz haricinde bir site yönlendirme yapacaksanız
+çalışmayacaktır. Vereceğiniz değerin kendi projenizdeki bir bağlantı olması
+gereklidir ve ayar dosyasından alınan ayarların sonuna verdiğiniz değerler
+eklenerek yönlendirme gerçekleştirilir.</p>
+<p>İsteğe bağlı ikinci değer ise bölgesel yönlendirme yöntemine zorlar. Bu
+yöntemler &#8220;location&#8221; veya &#8220;refresh&#8221; olarak belirlenmiştir. &#8220;location&#8221; yöntemi
+daha hızlıdır ancak windows sunucularda daha az güvenilirdir. Öntanımlı ayarı
+&#8220;auto&#8221; olmakla beraber sunucun ön tanımlı ayarını kullanır.</p>
+<p>İsteğe bağlı üçüncü değer ise özel HTTP Cevap Kodu (HTTP Response Code)
+oluşturulmasına imkan verir. Örneğin arama motorları 301 koduna sahip sonuçları
+hedefler. Öntanımlı olarak bu kod 302dir. Üçüncü değer <em>sadece</em> &#8216;location&#8217; türünde
+yönlendirmede kullanılmalıdır &#8216;refresh&#8217; türündekilerde değil. Şuradaki şekilde:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="k">if</span> <span class="p">(</span><span class="nv">$logged_in</span> <span class="o">==</span> <span class="k">FALSE</span><span class="p">)</span>
 <span class="p">{</span>
         <span class="nx">redirect</span><span class="p">(</span><span class="s1">&#39;/login/form/&#39;</span><span class="p">);</span>
 <span class="p">}</span>
 
-<span class="c1">// with 301 redirect</span>
+<span class="c1">// 301 ile yönlendirme</span>
 <span class="nx">redirect</span><span class="p">(</span><span class="s1">&#39;/article/13&#39;</span><span class="p">,</span> <span class="s1">&#39;location&#39;</span><span class="p">,</span> <span class="mi">301</span><span class="p">);</span>
 </pre></div>
 </div>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">In order for this function to work it must be used before anything
-is outputted to the browser since it utilizes server headers.</p>
-</div>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">For very fine grained control over headers, you should use the
-<cite>Output Library &lt;/libraries/output&gt;</cite> set_header() function.</p>
+<p class="last">Http header&#8217;larında en iyi kontrolü sağlamak için,
+<cite>Output Library &lt;/libraries/output&gt;</cite> set_header() fonksiyonunu kullanmalısınız.</p>
 </div>
 </div>
 </div>
