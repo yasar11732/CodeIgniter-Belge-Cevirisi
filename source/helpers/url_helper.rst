@@ -2,7 +2,7 @@
 URL Yardımcısı
 ##########
 
-URL Yardımcısı URL'ler ile çalışmanız için hazırlanmış işlevseller içerir.
+URL Yardımcısı URL'ler ile çalışmanız için hazırlanmış fonksiyonları içerir.
 
 .. contents:: Sayfa İçeriği
 
@@ -15,7 +15,7 @@ Bu yardımcı aşağıdaki kod kullanılarak yüklenebilir:
 
 	$this->load->helper('url');
 
-Kullanılabilir işlevseller aşağıda listelenmiştir:
+Kullanılabilir fonksiyonlar aşağıda listelenmiştir:
 
 site_url()
 ==========
@@ -24,7 +24,7 @@ Ayar dosyanızda bulunan [config.php], sitenizin bağlantı adresini döndürür
 Site adresinizin sonuna index.php [yada ayar dosyanız index_page değişkenine
 ne değer atadıysanız] ekler.
 
-Bu işlevseli kullanmanız projenizin adres değişikliğinin kolayca yapılabilmesini
+Bu fonksiyonu kullanmanız projenizin adres değişikliğinin kolayca yapılabilmesini
 ve taşınabilirliğinin artmasını sağlar.
 
 Adres sonuna eklenmesini istediğiniz kısımlar, isteğe bağlı olarak string veya 
@@ -53,7 +53,7 @@ Sitenizin bağlantı adresini ayar dosyanızda ayarlandığı gibi döndürür. 
 
 	echo base_url();
 
-Bu işlevsel `site_url` olduğu gibi index_page veya url_suffix değerlerini adres
+Bu fonksiyon `site_url` olduğu gibi index_page veya url_suffix değerlerini adres
 sonuna eklemez.
 
 Ayrıca site_url'de olduğu gibi adresin sonuna string veya array tipinde parçacıklar 
@@ -67,7 +67,7 @@ String tipinde veri gönderim örneği
 Bu örnek şuna benzer bir sonuç döndürecektir:
 http://example.com/blog/post/123
 
-Bu faydalıdır çünkü `site_url()` işlevseline benzemez. Bir dosya, resim yada stil dosyasını
+Bu faydalıdır çünkü `site_url()` fonksiyonuna benzemez. Bir dosya, resim yada stil dosyasını
 bu şekilde sayfanıza dahil edebilirsiniz. Şuradaki gibi
 
 ::
@@ -86,14 +86,14 @@ döndürür.
 uri_string()
 ============
 
-Bu işlevseli kullanılması, görüntülenen sayfanın adres parçacıklarını döndürür.
+Bu fonksiyonun kullanılması, görüntülenen sayfanın adres parçacıklarını döndürür.
 Şu örnekteki gibi adres eğer şu ise
 
 ::
 
 	http://some-site.com/blog/comments/123
 
-Bu işlevse şunu döndürür
+Bu fonksiyon şunu döndürür
 
 ::
 
@@ -118,18 +118,18 @@ HTML standartlarında bir köprü oluşturabilmenizi sağlar
 
 	<a href="http://example.com">Click Here</a>
 
-Bu işlevsel isteğe bağlı üç değer alır
+Bu fonksiyon isteğe bağlı üç değer alır
 
 ::
 
 	anchor(adres, görünecek metin, öznitelikler)
 
-İlk değer site adresinizin sonuna eklenir. Önce site_url() işlevseli çağrılıp
+İlk değer site adresinizin sonuna eklenir. Önce site_url() fonksiyonu çağrılıp
 sonuna string veya array veritipinde gönderilen değerler eklenir.
 
-.. note:: Eğer alt uygulamalarınız için bağlantı oluşturacaksanız bu işlevselin 
+.. note:: Eğer alt uygulamalarınız için bağlantı oluşturacaksanız bu fonksiyonun 
 	ayar dosyanızda tanımladığınız adresi çağırdığını ve verdiğiniz değerlerin o
-	adres onuna ekleneceğini bilmelisiniz.
+	adres sonuna ekleneceğini bilmelisiniz.
 
 İkinci değer ise bağlantılı olarak görüntülecek metni içermelidir. Eğer boş bırakılırsa
 bağlantı adresi görüntülenen metin olarak kullanılır.
@@ -156,7 +156,7 @@ title="En iyi haberler!">Haberler</a>
 anchor_popup()
 ==============
 
-Neredeyse anchor() işlevseliyle aynı işi görüp tek farkı bağlantıyı 
+Neredeyse anchor() fonksiyonuyla aynı işi görüp tek farkı bağlantıyı 
 yeni bir pencerede açmasıdır. Üçüncü değeri ile açılan pencereyi kontrol
 edebilmek için JavaScript öznitelikleri gönderilebilir. Eğer üçüncü değer
 boş bırakılırsa, tarayıcınız ön tanımlı ayarları ile bağlantıyı yeni bir
@@ -194,7 +194,7 @@ HTML standartlarında bir eposta bağlantı adresi oluturur. Kullanım örneği
 
 	echo mailto('ben@sitem.com', 'İletişim için tıklayınız');
 
-Ayrıca anchor() işlevseli gibi, üçüncü değer olarak öznitelikleri ekleyebilirsiniz.
+Ayrıca anchor() fonksiyonu gibi, üçüncü değer olarak öznitelikleri ekleyebilirsiniz.
 
 safe_mailto()
 =============
@@ -206,31 +206,32 @@ JavaScript betiği eposta adresinizi spam botlarından korur.
 auto_link()
 ===========
 
-Automatically turns URLs and email addresses contained in a string into
-links. Example
+Otomatik olarak değer olarak vereceğiniz string içerisinde geçen eposta adresleri 
+ve web adreslerini köprü haline çevirecektir. Örneğin
 
 ::
 
 	$string = auto_link($string);
 
-The second parameter determines whether URLs and emails are converted or
-just one or the other. Default behavior is both if the parameter is not
-specified. Email links are encoded as safe_mailto() as shown above.
+İkinci değer ise çevirmek istediğiniz türü belirtir. Belirttiğiniz tür dışında kalanlar 
+çevrilmez. Burada email veya url diye vereceğiniz iki tür bulunmaktadır. Eposta bağlantıları
+safe_mailto() fonksiyonunda olduğu gibi şifrelenecektir. Ön tanımlı olarak her iki türü de 
+köprüleme yapmaktadır.
 
-Converts only URLs
+Sadece bağlantı adresleri
 
 ::
 
 	$string = auto_link($string, 'url');
 
-Converts only Email addresses
+Sadece Eposta Adresleri
 
 ::
 
 	$string = auto_link($string, 'email');
 
-The third parameter determines whether links are shown in a new window.
-The value can be TRUE or FALSE (boolean)
+Üçüncü değer ise bağlantıların yeni bir pencerede gösterilip gösterilmeyeceğini belirler.
+TRUE veya FALSE değerleri alabilir (boolean).
 
 ::
 
@@ -239,36 +240,35 @@ The value can be TRUE or FALSE (boolean)
 url_title()
 ===========
 
-Takes a string as input and creates a human-friendly URL string. This is
-useful if, for example, you have a blog in which you'd like to use the
-title of your entries in the URL. Example
+Girdi olarak verilecek metinlerdeki adreslemelerde geçersiz olacak karakterlerden temizler.
+Kullanıcı dostu bağlantılar oluşturmak için kullanabilirsiniz. Şurada olduğu gibi kullanılır
 
 ::
 
-	$title = "What's wrong with CSS?";
-	$url_title = url_title($title);  // Produces:  Whats-wrong-with-CSS
+	$title = "CSS'de yanlış olan nedir ?";
+	$url_title = url_title($title);  // İşlem sonunda:  CSSde-yanl-olan-nedir-
 
-The second parameter determines the word delimiter. By default dashes
-are used. Options are: dash, or underscore
-
-::
-
-	$title = "What's wrong with CSS?";
-	$url_title = url_title($title, 'underscore');  // Produces:  Whats_wrong_with_CSS
-
-The third parameter determines whether or not lowercase characters are
-forced. By default they are not. Options are boolean TRUE/FALSE
+İkinci değer olarak belirteç ayarlanabilir. Öntanımlı olarak `dash` değeri tanımlıdır ve boşluk
+karakteri ve diğer geçersiz karakterler yerine düz tire(-) koyar. 
+Ayar olarak dash(-) veya underscore(_) kullanılabilir.
 
 ::
 
-	$title = "What's wrong with CSS?";
-	$url_title = url_title($title, 'underscore', TRUE);  // Produces:  whats_wrong_with_css
+	$title = "CSS'de yanlış olan nedir ?";
+	$url_title = url_title($title, 'underscore');  // İşlem sonunda:  CSSde_yanl_olan_nedir_
+
+Üçüncü değer ise karakterlerde bir tümünü küçültme yapılıp yapılmayacağıdır.
+Ön tanımlı değer ise yapılmayacağıdır. Boolean veritipinde değer girilebilir(TRUE/FALSE).
+
+::
+
+	$title = "CSS'de yanlış olan nedir ?";
+	$url_title = url_title($title, 'underscore', TRUE);  // İşlem sonunda:  cssde_yanl_olan_nedir_
 
 prep_url()
 ----------
 
-This function will add http:// in the event that a scheme is missing
-from a URL. Pass the URL string to the function like this
+Bu fonksiyon verilen bağlantının önüne http:// ekleyecektir. Şu şekilde kullanılabilir
 
 ::
 
@@ -278,32 +278,32 @@ from a URL. Pass the URL string to the function like this
 redirect()
 ==========
 
-Does a "header redirect" to the URI specified. If you specify the full
-site URL that link will be built, but for local links simply providing
-the URI segments to the controller you want to direct to will create the
-link. The function will build the URL based on your config file values.
+Yönlendirme oluşturmak için kullanılabilir. Başlık(header) yönlendirme
+yapmaktadır. Eğer kendi siteniz haricinde bir site yönlendirme yapacaksanız
+çalışmayacaktır. Vereceğiniz değerin kendi projenizdeki bir bağlantı olması 
+gereklidir ve ayar dosyasından alınan ayarların sonuna verdiğiniz değerler 
+eklenerek yönlendirme gerçekleştirilir.
 
-The optional second parameter allows you to force a particular redirection
-method. The available methods are "location" or "refresh", with location
-being faster but less reliable on Windows servers. The default is "auto",
-which will attempt to intelligently choose the method based on the server
-environment.
+İsteğe bağlı ikinci değer ise bölgesel yönlendirme yöntemine zorlar. Bu
+yöntemler "location" veya "refresh" olarak belirlenmiştir. "location" yöntemi 
+daha hızlıdır ancak windows sunucularda daha az güvenilirdir. Öntanımlı ayarı
+"auto" olmakla beraber sunucun ön tanımlı ayarını kullanır.
 
-The optional third parameter allows you to send a specific HTTP Response
-Code - this could be used for example to create 301 redirects for search
-engine purposes. The default Response Code is 302. The third parameter is
-*only* available with 'location' redirects, and not 'refresh'. Examples::
+İsteğe bağlı üçüncü değer ise özel HTTP Cevap Kodu (HTTP Response Code) 
+oluşturulmasına imkan verir. Örneğin arama motorları 301 koduna sahip sonuçları
+hedefler. Öntanımlı olarak bu kod 302dir. Üçüncü değer *sadece* 'location' türünde
+yönlendirmede kullanılmalıdır 'refresh' türündekilerde değil. Şuradaki şekilde::
 
 	if ($logged_in == FALSE)
 	{      
 		redirect('/login/form/');
 	}
 
-	// with 301 redirect
+	// 301 ile yönlendirme
 	redirect('/article/13', 'location', 301);
 
 .. note:: In order for this function to work it must be used before anything
 	is outputted to the browser since it utilizes server headers.
-
-.. note:: For very fine grained control over headers, you should use the
-	`Output Library </libraries/output>` set_header() function.
+	 
+.. note:: Başlıklarda en iyi kontrolü sağlamak için, 
+	 `Output Library </libraries/output>` set_header() işlevselini kullanmalısınız.
