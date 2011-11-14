@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="utf-8">
 	    
-	    <title>Database Quick Start: Example Code &mdash; CodeIgniter v3.0-dev documentation</title>
+	    <title>Veri Tabanı Hızlı Başlangıç: Örnek Kodlar &mdash; CodeIgniter v3.0-dev documentation</title>
 
 	    <link rel="stylesheet" href="../_static/asset/css/common.css" type="text/css" />
 	    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -85,108 +85,108 @@
 				<li><a id="toc-link" href="../index.html">Table of Contents</a>&nbsp;&nbsp; &rsaquo;</li>
 				<li><a href="index.html" accesskey="U">The Database Class</a>&nbsp;&nbsp;  &rsaquo;</li>
 
-				<li><strong>Database Quick Start: Example Code</strong></li>
+				<li><strong>Veri Tabanı Hızlı Başlangıç: Örnek Kodlar</strong></li>
 			</ul>
 		</div><!-- /#header -->
 
 		<div class="section" id="content">
-			<div class="section" id="database-quick-start-example-code">
-<h1>Database Quick Start: Example Code<a class="headerlink" href="#database-quick-start-example-code" title="Permalink to this headline">¶</a></h1>
-<p>The following page contains example code showing how the database class
-is used. For complete details please read the individual pages
-describing each function.</p>
-<div class="section" id="initializing-the-database-class">
-<h2>Initializing the Database Class<a class="headerlink" href="#initializing-the-database-class" title="Permalink to this headline">¶</a></h2>
-<p>The following code loads and initializes the database class based on
-your <a class="reference internal" href="configuration.html"><em>configuration</em></a> settings:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">database</span><span class="p">();</span>
-</pre></div>
+			<div class="section" id="veri-tabani-hizli-baslangic-ornek-kodlar">
+<h1>Veri Tabanı Hızlı Başlangıç: Örnek Kodlar<a class="headerlink" href="#veri-tabani-hizli-baslangic-ornek-kodlar" title="Permalink to this headline">¶</a></h1>
+<p>Bulunduğunuz sayfa veri tabanı sınıfının nasıl kullanılacağını gösteren
+örnekler içerir. Daha detaylı bilgi için lütfen fonksiyonların kendi
+sayfalarını okuyun.</p>
+<div class="section" id="veri-tabani-sinifinin-baslatilmasi">
+<h2>Veri Tabanı Sınıfının Başlatılması<a class="headerlink" href="#veri-tabani-sinifinin-baslatilmasi" title="Permalink to this headline">¶</a></h2>
+<p>Aşağıda komut <a class="reference internal" href="configuration.html"><em>konfigürasyon</em></a> dosyanızdaki ayarlara
+bağlı olarak veri tabanı sınıfını yükler ve çalıştırır:</p>
+<blockquote>
+<div>$this-&gt;load-&gt;database();</div></blockquote>
+<p>Sınıf bir kere yüklendiğinde aşağıda anlatıldığı gibi kullanmaya hazırdır.</p>
+<p>Not: Eğer tüm sayfalarınız veri tabanı bağlantısı gerektiriyorsa, veri
+tabanına otomatik olarak bağlanabilirsiniz. Detaylar için <a class="reference internal" href="connecting.html"><em>bağlantı</em></a>
+sayfasına göz atınız.</p>
 </div>
-<p>Once loaded the class is ready to be used as described below.</p>
-<p>Note: If all your pages require database access you can connect
-automatically. See the <a class="reference internal" href="connecting.html"><em>connecting</em></a> page for details.</p>
-</div>
-<div class="section" id="standard-query-with-multiple-results-object-version">
-<h2>Standard Query With Multiple Results (Object Version)<a class="headerlink" href="#standard-query-with-multiple-results-object-version" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-ci"><div class="highlight"><pre><span class="nv">$query</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">query</span><span class="p">(</span><span class="s1">&#39;SELECT name, title, email FROM my_table&#39;</span><span class="p">);</span>
+<div class="section" id="coklu-sonuc-donduren-standart-sorgu-nesne-versiyonu">
+<h2>Çoklu Sonuç Döndüren Standart Sorgu (Nesne Versiyonu)<a class="headerlink" href="#coklu-sonuc-donduren-standart-sorgu-nesne-versiyonu" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-ci"><div class="highlight"><pre><span class="nv">$query</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">query</span><span class="p">(</span><span class="s1">&#39;SELECT ad, unvan, eposta FROM tablom&#39;</span><span class="p">);</span>
 
 <span class="k">foreach</span> <span class="p">(</span><span class="nv">$query</span><span class="o">-&gt;</span><span class="na">result</span><span class="p">()</span> <span class="k">as</span> <span class="nv">$row</span><span class="p">)</span>
 <span class="p">{</span>
-        <span class="k">echo</span> <span class="nv">$row</span><span class="o">-&gt;</span><span class="na">title</span><span class="p">;</span>
-        <span class="k">echo</span> <span class="nv">$row</span><span class="o">-&gt;</span><span class="na">name</span><span class="p">;</span>
-        <span class="k">echo</span> <span class="nv">$row</span><span class="o">-&gt;</span><span class="na">email</span><span class="p">;</span>
+        <span class="k">echo</span> <span class="nv">$row</span><span class="o">-&gt;</span><span class="na">unvan</span><span class="p">;</span>
+        <span class="k">echo</span> <span class="nv">$row</span><span class="o">-&gt;</span><span class="na">ad</span><span class="p">;</span>
+        <span class="k">echo</span> <span class="nv">$row</span><span class="o">-&gt;</span><span class="na">eposta</span><span class="p">;</span>
 <span class="p">}</span>
 
-<span class="k">echo</span> <span class="s1">&#39;Total Results: &#39;</span> <span class="o">.</span> <span class="nv">$query</span><span class="o">-&gt;</span><span class="na">num_rows</span><span class="p">();</span>
+<span class="k">echo</span> <span class="s1">&#39;Toplam Sonuç: &#39;</span> <span class="o">.</span> <span class="nv">$query</span><span class="o">-&gt;</span><span class="na">num_rows</span><span class="p">();</span>
 </pre></div>
 </div>
-<p>The above result() function returns an array of <strong>objects</strong>. Example:
-$row-&gt;title</p>
+<p>Yukarıdaki result() fonksiyonu bir <strong>nesne</strong> dizisi döndürür. Örneğin:
+$row-&gt;unvan</p>
 </div>
-<div class="section" id="standard-query-with-multiple-results-array-version">
-<h2>Standard Query With Multiple Results (Array Version)<a class="headerlink" href="#standard-query-with-multiple-results-array-version" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-ci"><div class="highlight"><pre><span class="nv">$query</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">query</span><span class="p">(</span><span class="s1">&#39;SELECT name, title, email FROM my_table&#39;</span><span class="p">);</span>
+<div class="section" id="coklu-sonuc-donduren-standart-sorgu-dizi-versiyonu">
+<h2>Çoklu Sonuç Döndüren Standart Sorgu (Dizi Versiyonu)<a class="headerlink" href="#coklu-sonuc-donduren-standart-sorgu-dizi-versiyonu" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-ci"><div class="highlight"><pre><span class="nv">$query</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">query</span><span class="p">(</span><span class="s1">&#39;SELECT ad, unvan, eposta FROM tablom&#39;</span><span class="p">);</span>
 
 <span class="k">foreach</span> <span class="p">(</span><span class="nv">$query</span><span class="o">-&gt;</span><span class="na">result_array</span><span class="p">()</span> <span class="k">as</span> <span class="nv">$row</span><span class="p">)</span>
 <span class="p">{</span>
-        <span class="k">echo</span> <span class="nv">$row</span><span class="p">[</span><span class="s1">&#39;title&#39;</span><span class="p">];</span>
-        <span class="k">echo</span> <span class="nv">$row</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">];</span>
-        <span class="k">echo</span> <span class="nv">$row</span><span class="p">[</span><span class="s1">&#39;email&#39;</span><span class="p">];</span>
+        <span class="k">echo</span> <span class="nv">$row</span><span class="p">[</span><span class="s1">&#39;ad&#39;</span><span class="p">];</span>
+        <span class="k">echo</span> <span class="nv">$row</span><span class="p">[</span><span class="s1">&#39;unvan&#39;</span><span class="p">];</span>
+        <span class="k">echo</span> <span class="nv">$row</span><span class="p">[</span><span class="s1">&#39;eposta&#39;</span><span class="p">];</span>
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>The above result_array() function returns an array of standard array
-indexes. Example: $row[&#8216;title&#8217;]</p>
+<p>Yukarıdaki result_array() fonksiyonu standart dizi indekslerinden oluşan
+bir dizi döndürür. Örneğin: $row[&#8216;unvan&#8217;]</p>
 </div>
-<div class="section" id="testing-for-results">
-<h2>Testing for Results<a class="headerlink" href="#testing-for-results" title="Permalink to this headline">¶</a></h2>
-<p>If you run queries that might <strong>not</strong> produce a result, you are
-encouraged to test for a result first using the num_rows() function:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="nv">$query</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">query</span><span class="p">(</span><span class="s2">&quot;YOUR QUERY&quot;</span><span class="p">);</span>
+<div class="section" id="sonuclarin-kontrol-edilmesi">
+<h2>Sonuçların Kontrol Edilmesi<a class="headerlink" href="#sonuclarin-kontrol-edilmesi" title="Permalink to this headline">¶</a></h2>
+<p>Yapılan sorgular her zaman bir sonuç döndürmek zorunda <strong>değildir</strong>. Bunu
+kontrol etmek için num_rows() fonksiyonunu kullanabilirsiniz:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span class="nv">$query</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">query</span><span class="p">(</span><span class="s2">&quot;SQL SORGUNUZ&quot;</span><span class="p">);</span>
 <span class="k">if</span> <span class="p">(</span><span class="nv">$query</span><span class="o">-&gt;</span><span class="na">num_rows</span><span class="p">()</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span>
 <span class="p">{</span>
         <span class="k">foreach</span> <span class="p">(</span><span class="nv">$query</span><span class="o">-&gt;</span><span class="na">result</span><span class="p">()</span> <span class="k">as</span> <span class="nv">$row</span><span class="p">)</span>
         <span class="p">{</span>
-                <span class="k">echo</span> <span class="nv">$row</span><span class="o">-&gt;</span><span class="na">title</span><span class="p">;</span>
-                <span class="k">echo</span> <span class="nv">$row</span><span class="o">-&gt;</span><span class="na">name</span><span class="p">;</span>
-                <span class="k">echo</span> <span class="nv">$row</span><span class="o">-&gt;</span><span class="na">body</span><span class="p">;</span>
+                <span class="k">echo</span> <span class="nv">$row</span><span class="o">-&gt;</span><span class="na">unvan</span><span class="p">;</span>
+                <span class="k">echo</span> <span class="nv">$row</span><span class="o">-&gt;</span><span class="na">ad</span><span class="p">;</span>
+                <span class="k">echo</span> <span class="nv">$row</span><span class="o">-&gt;</span><span class="na">metin</span><span class="p">;</span>
         <span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
 </div>
 </div>
-<div class="section" id="standard-query-with-single-result">
-<h2>Standard Query With Single Result<a class="headerlink" href="#standard-query-with-single-result" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-ci"><div class="highlight"><pre><span class="nv">$query</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">query</span><span class="p">(</span><span class="s1">&#39;SELECT name FROM my_table LIMIT 1&#39;</span><span class="p">);</span>
+<div class="section" id="tek-sonuc-donduren-standart-sorgu">
+<h2>Tek Sonuç Döndüren Standart Sorgu<a class="headerlink" href="#tek-sonuc-donduren-standart-sorgu" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-ci"><div class="highlight"><pre><span class="nv">$query</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">query</span><span class="p">(</span><span class="s1">&#39;SELECT ad FROM tablom LIMIT 1&#39;</span><span class="p">);</span>
 <span class="nv">$row</span> <span class="o">=</span> <span class="nv">$query</span><span class="o">-&gt;</span><span class="na">row</span><span class="p">();</span>
-<span class="k">echo</span> <span class="nv">$row</span><span class="o">-&gt;</span><span class="na">name</span><span class="p">;</span>
+<span class="k">echo</span> <span class="nv">$row</span><span class="o">-&gt;</span><span class="na">ad</span><span class="p">;</span>
 </pre></div>
 </div>
-<p>The above row() function returns an <strong>object</strong>. Example: $row-&gt;name</p>
+<p>Yukarıdaki row() fonksiyonu bir <strong>nesne</strong> döndürür. Örneğin: $row-&gt;name</p>
 </div>
-<div class="section" id="standard-query-with-single-result-array-version">
-<h2>Standard Query With Single Result (Array version)<a class="headerlink" href="#standard-query-with-single-result-array-version" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-ci"><div class="highlight"><pre><span class="nv">$query</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">query</span><span class="p">(</span><span class="s1">&#39;SELECT name FROM my_table LIMIT 1&#39;</span><span class="p">);</span>
+<div class="section" id="tek-sonuc-donduren-standart-sorgu-dizi-versiyonu">
+<h2>Tek Sonuç Döndüren Standart Sorgu (Dizi Versiyonu)<a class="headerlink" href="#tek-sonuc-donduren-standart-sorgu-dizi-versiyonu" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-ci"><div class="highlight"><pre><span class="nv">$query</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">query</span><span class="p">(</span><span class="s1">&#39;SELECT ad FROM tablom LIMIT 1&#39;</span><span class="p">);</span>
 <span class="nv">$row</span> <span class="o">=</span> <span class="nv">$query</span><span class="o">-&gt;</span><span class="na">row_array</span><span class="p">();</span>
-<span class="k">echo</span> <span class="nv">$row</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">];</span>
+<span class="k">echo</span> <span class="nv">$row</span><span class="p">[</span><span class="s1">&#39;ad&#39;</span><span class="p">];</span>
 </pre></div>
 </div>
-<p>The above row_array() function returns an <strong>array</strong>. Example:
-$row[&#8216;name&#8217;]</p>
+<p>Yukarıdaki row_array() fonksiyonu bir <strong>dizi</strong> döndürür. Örneğin:
+$row[&#8216;ad&#8217;]</p>
 </div>
-<div class="section" id="standard-insert">
-<h2>Standard Insert<a class="headerlink" href="#standard-insert" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-ci"><div class="highlight"><pre><span class="nv">$sql</span> <span class="o">=</span> <span class="s2">&quot;INSERT INTO mytable (title, name) VALUES (&quot;</span><span class="o">.</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">escape</span><span class="p">(</span><span class="nv">$title</span><span class="p">)</span><span class="o">.</span><span class="s2">&quot;, &quot;</span><span class="o">.</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">escape</span><span class="p">(</span><span class="nv">$name</span><span class="p">)</span><span class="o">.</span><span class="s2">&quot;)&quot;</span><span class="p">;</span>
+<div class="section" id="standart-kayit-ekleme">
+<h2>Standart Kayıt Ekleme<a class="headerlink" href="#standart-kayit-ekleme" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-ci"><div class="highlight"><pre><span class="nv">$sql</span> <span class="o">=</span> <span class="s2">&quot;INSERT INTO tablom (unvan, ad) VALUES (&quot;</span><span class="o">.</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">escape</span><span class="p">(</span><span class="nv">$unvan</span><span class="p">)</span><span class="o">.</span><span class="s2">&quot;, &quot;</span><span class="o">.</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">escape</span><span class="p">(</span><span class="nv">$ad</span><span class="p">)</span><span class="o">.</span><span class="s2">&quot;)&quot;</span><span class="p">;</span>
 <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">query</span><span class="p">(</span><span class="nv">$sql</span><span class="p">);</span>
 <span class="k">echo</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">affected_rows</span><span class="p">();</span>
 </pre></div>
 </div>
 </div>
-<div class="section" id="active-record-query">
-<h2>Active Record Query<a class="headerlink" href="#active-record-query" title="Permalink to this headline">¶</a></h2>
-<p>The <a class="reference internal" href="active_record.html"><em>Active Record Pattern</em></a> gives you a simplified
-means of retrieving data:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="nv">$query</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;table_name&#39;</span><span class="p">);</span>
+<div class="section" id="aktif-kayit-yontemi-ile-sorgu">
+<h2>Aktif Kayıt Yöntemi İle Sorgu<a class="headerlink" href="#aktif-kayit-yontemi-ile-sorgu" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference internal" href="active_record.html"><em>Aktif Kayıt Modeli</em></a> veriyi daha basit bir şekilde
+almanıza olanak sağlar.:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span class="nv">$query</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;tablo_adi&#39;</span><span class="p">);</span>
 
 <span class="k">foreach</span> <span class="p">(</span><span class="nv">$query</span><span class="o">-&gt;</span><span class="na">result</span><span class="p">()</span> <span class="k">as</span> <span class="nv">$row</span><span class="p">)</span>
 <span class="p">{</span>
@@ -194,19 +194,19 @@ means of retrieving data:</p>
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>The above get() function retrieves all the results from the supplied
-table. The <a class="reference internal" href="active_record.html"><em>Active Record</em></a> class contains a full
-compliment of functions for working with data.</p>
+<p>Yukarıdaki get() fonksiyonu sorgulanan tablodaki tüm sonuçları getirir.
+<a class="reference internal" href="active_record.html"><em>Aktif Kayıt</em></a> sınıfı bir veri ile çalışmak için
+gereken tüm fonksiyonları içerir.</p>
 </div>
-<div class="section" id="active-record-insert">
-<h2>Active Record Insert<a class="headerlink" href="#active-record-insert" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-ci"><div class="highlight"><pre><span class="nv">$data</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
-        <span class="s1">&#39;title&#39;</span> <span class="o">=&gt;</span> <span class="nv">$title</span><span class="p">,</span>
-        <span class="s1">&#39;name&#39;</span> <span class="o">=&gt;</span> <span class="nv">$name</span><span class="p">,</span>
-        <span class="s1">&#39;date&#39;</span> <span class="o">=&gt;</span> <span class="nv">$date</span>
+<div class="section" id="aktif-kayit-yontemi-ile-kayit-ekleme">
+<h2>Aktif Kayıt Yöntemi İle Kayıt Ekleme<a class="headerlink" href="#aktif-kayit-yontemi-ile-kayit-ekleme" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-ci"><div class="highlight"><pre><span class="nv">$veri</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+        <span class="s1">&#39;unvan&#39;</span> <span class="o">=&gt;</span> <span class="nv">$unvan</span><span class="p">,</span>
+        <span class="s1">&#39;ad&#39;</span> <span class="o">=&gt;</span> <span class="nv">$ad</span><span class="p">,</span>
+        <span class="s1">&#39;tarih&#39;</span> <span class="o">=&gt;</span> <span class="nv">$tarih</span>
 <span class="p">);</span>
 
-<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">insert</span><span class="p">(</span><span class="s1">&#39;mytable&#39;</span><span class="p">,</span> <span class="nv">$data</span><span class="p">);</span>  <span class="c1">// Produces: INSERT INTO mytable (title, name, date) VALUES (&#39;{$title}&#39;, &#39;{$name}&#39;, &#39;{$date}&#39;)</span>
+<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">insert</span><span class="p">(</span><span class="s1">&#39;tablom&#39;</span><span class="p">,</span> <span class="nv">$veri</span><span class="p">);</span>  <span class="c1">// Üretilen sorgu: INSERT INTO tablom (unvan, ad, tarih) VALUES (&#39;{$unvan}&#39;, &#39;{$ad}&#39;, &#39;{$tarih}&#39;)</span>
 </pre></div>
 </div>
 </div>
@@ -226,7 +226,7 @@ compliment of functions for working with data.</p>
 				
 				<a href="#header" title="Return to top">Return to top</a>
 			</p>
-			<p><a href="">CodeIgniter</a> &ndash; Copyright &copy; 2011, EllisLab, Inc.</a> &ndash; Last updated: Nov 13, 2011</p>
+			<p><a href="">CodeIgniter</a> &ndash; Copyright &copy; 2011, EllisLab, Inc.</a> &ndash; Last updated: Nov 14, 2011</p>
 		</div><!-- /#footer -->
 	
 	<script src="../_static/asset/js/jquery-ui-min.js" type="text/javascript" charset="utf-8" async></script>
