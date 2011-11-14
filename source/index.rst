@@ -1,4 +1,4 @@
-Welcome to CodeIgniter
+CodeIgniter'a Hoşgeldiniz
 ======================
 
 CodeIgniter is an Application Development Framework - a toolkit - for
