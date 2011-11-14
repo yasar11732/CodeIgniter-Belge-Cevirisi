@@ -1,10 +1,10 @@
-##################################
-Database Quick Start: Example Code
-##################################
+########################################
+Veritabanı Hızlı Başlangıç: Örnek Kodlar
+########################################
 
-The following page contains example code showing how the database class
-is used. For complete details please read the individual pages
-describing each function.
+Bulunduğunuz sayfa veritabaı sınıfının nasıl kullanılacağını gösteren 
+örnekler içerir. Daha detaylı bilgi için fonksiyonların kendi sayfalarını
+okuyun.
 
 Initializing the Database Class
 ===============================
