@@ -6,7 +6,10 @@ URL CodeIngiter'da arama-motoru ve kullanıcı dostu varsayılarak tasarlanmış
 
 	example.com/news/article/my_article
 
-.. note::  Sorgu dizisi URL opsiyon olarak aşağıda tanımlandığı gibi kullanılabilir.
+.. admonition:: Not
+    :class: note
+
+    Sorgu dizisi URL opsiyon olarak aşağıda tanımlandığı gibi kullanılabilir.
 
 URI Parçaları
 =============
@@ -67,4 +70,7 @@ Eğer "enable_query_strings" değerini TRUE olarak değiştirirseniz bu özellik
 
 	index.php?c=controller&m=method
 
-.. note:: Eğer sorgu dizisi kullanacaksanız, URL helper (ve URL üreten diğer helper, mesela bazı form helper'ı gibi) gibi parça tabanlı URL'ye uygun tasarlanmış helper kullanmak yerine, kendi URL'nizi inşa etmelisiniz.
+.. admonition:: Not
+    :class: note
+
+    Eğer sorgu dizisi kullanacaksanız, URL helper (ve URL üreten diğer helper, mesela bazı form helper'ı gibi) gibi parça tabanlı URL'ye uygun tasarlanmış helper kullanmak yerine, kendi URL'nizi inşa etmelisiniz.

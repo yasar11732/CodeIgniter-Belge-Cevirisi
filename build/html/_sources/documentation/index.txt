@@ -1,6 +1,6 @@
-#################################
-Writing CodeIgniter Documentation
-#################################
+#########################
+CodeIgniter Belgesi Yazma
+#########################
 
 CodeIgniter uses Sphinx to generate its documentation in a variety of formats,
 using reStructuredText to handle the formatting.  If you are familiar with
