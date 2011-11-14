@@ -302,5 +302,5 @@ yönlendirmede kullanılmalıdır 'refresh' türündekilerde değil. Şuradaki �
 	// 301 ile yönlendirme
 	redirect('/article/13', 'location', 301);
 	 
-.. note:: Http header'larında en iyi kontrolü sağlamak için, 
+.. note:: HTTP başlıklarında en iyi kontrolü sağlamak için, 
 	 `Output Library </libraries/output>` set_header() fonksiyonunu kullanmalısınız.
