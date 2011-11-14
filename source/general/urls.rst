@@ -20,7 +20,7 @@ Model-View-Controller yaklaşımında URL parçaları genelde şöyle sunulur::
 #. İkinci parça sınıftaki **fonksiyon** ya da metodu çağırır.
 #. Üçüncü parça ya da diğer ek parçalar, ID ile gösterilir ve controller'a değişken olarak gönderilir.
 
-The :doc:`URI Sınıfı <../libraries/uri>` ve :doc:`URL Helper <../helpers/url_helper>` dosyaları, URI bilgilerini kolayca kullanmanızı sağlayan fonksiyonlara sahiptir. Ek olarak, URL değeriniz :doc:`URI Yönlendirme <routing>` özelliğiyle daha esnek bir özellik için yeniden tanımlanabilir.
+:doc:`URI Sınıfı <../libraries/uri>` ve :doc:`URL Helper <../helpers/url_helper>` dosyaları, URI bilgilerini kolayca kullanmanızı sağlayan fonksiyonlara sahiptir. Ek olarak, URL değeriniz :doc:`URI Yönlendirme <routing>` özelliğiyle daha esnek bir özellik için yeniden tanımlanabilir.
 
 Adresten Index.php kaldırmak
 ============================

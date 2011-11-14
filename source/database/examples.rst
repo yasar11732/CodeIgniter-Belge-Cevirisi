@@ -9,7 +9,7 @@ sayfalarını okuyun.
 Veri Tabanı Sınıfının Başlatılması
 ==================================
 
-Aşağıda komut :doc:`konfigürasyon <configuration>` dosyanızdaki ayarlara
+Aşağıda komut :doc:`ayarlar <configuration>` dosyanızdaki ayarlara
 bağlı olarak veri tabanı sınıfını yükler ve çalıştırır::
 
 	$this->load->database();
