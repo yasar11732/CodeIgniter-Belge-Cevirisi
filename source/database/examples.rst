@@ -1,136 +1,137 @@
-##################################
-Database Quick Start: Example Code
-##################################
+#########################################
+Veri Tabanı Hızlı Başlangıç: Örnek Kodlar
+#########################################
 
-The following page contains example code showing how the database class
-is used. For complete details please read the individual pages
-describing each function.
+Bulunduğunuz sayfa veri tabanı sınıfının nasıl kullanılacağını gösteren 
+örnekler içerir. Daha detaylı bilgi için lütfen fonksiyonların kendi 
+sayfalarını okuyun.
 
-Initializing the Database Class
-===============================
+Veri Tabanı Sınıfının Başlatılması
+==================================
 
-The following code loads and initializes the database class based on
-your :doc:`configuration <configuration>` settings::
+Aşağıda komut :doc:`konfigürasyon <configuration>` dosyanızdaki ayarlara
+bağlı olarak veri tabanı sınıfını yükler ve çalıştırır:
 
 	$this->load->database();
 
-Once loaded the class is ready to be used as described below.
+Sınıf bir kere yüklendiğinde aşağıda anlatıldığı gibi kullanmaya hazırdır.
 
-Note: If all your pages require database access you can connect
-automatically. See the :doc:`connecting <connecting>` page for details.
+Not: Eğer tüm sayfalarınız veri tabanı bağlantısı gerektiriyorsa, veri 
+tabanına otomatik olarak bağlanabilirsiniz. Detaylar için :doc:`bağlantı <connecting>`
+sayfasına göz atınız.
 
-Standard Query With Multiple Results (Object Version)
+Çoklu Sonuç Döndüren Standart Sorgu (Nesne Versiyonu)
 =====================================================
 
 ::
 
-	$query = $this->db->query('SELECT name, title, email FROM my_table');
+	$query = $this->db->query('SELECT ad, unvan, eposta FROM tablom');
 	
 	foreach ($query->result() as $row)
 	{
-		echo $row->title;
-		echo $row->name;
-		echo $row->email;
+		echo $row->unvan;
+		echo $row->ad;
+		echo $row->eposta;
 	}
 	
-	echo 'Total Results: ' . $query->num_rows();
+	echo 'Toplam Sonuç: ' . $query->num_rows();
 
-The above result() function returns an array of **objects**. Example:
-$row->title
+Yukarıdaki result() fonksiyonu bir **nesne** dizisi döndürür. Örneğin:
+$row->unvan
 
-Standard Query With Multiple Results (Array Version)
+Çoklu Sonuç Döndüren Standart Sorgu (Dizi Versiyonu)
 ====================================================
 
 ::
 
-	$query = $this->db->query('SELECT name, title, email FROM my_table');
+	$query = $this->db->query('SELECT ad, unvan, eposta FROM tablom');
 	
 	foreach ($query->result_array() as $row)
 	{
-		echo $row['title'];
-		echo $row['name'];
-		echo $row['email'];
+		echo $row['ad'];
+		echo $row['unvan'];
+		echo $row['eposta'];
 	}
 
-The above result_array() function returns an array of standard array
-indexes. Example: $row['title']
+Yukarıdaki result_array() fonksiyonu standart dizi indekslerinden oluşan
+bir dizi döndürür. Örneğin: $row['unvan']
 
-Testing for Results
-===================
+Sonuçların Kontrol Edilmesi
+===========================
 
-If you run queries that might **not** produce a result, you are
-encouraged to test for a result first using the num_rows() function::
+Yapılan sorgular her zaman bir sonuç döndürmek zorunda **değildir**. Bunu
+kontrol etmek için num_rows() fonksiyonunu kullanabilirsiniz::
 
-	$query = $this->db->query("YOUR QUERY");
+	$query = $this->db->query("SQL SORGUNUZ");
 	if ($query->num_rows() > 0)
 	{
 		foreach ($query->result() as $row)
 		{
-			echo $row->title;
-			echo $row->name;
-			echo $row->body;
+			echo $row->unvan;
+			echo $row->ad;
+			echo $row->metin;
 		}
 	}
 
-Standard Query With Single Result
+Tek Sonuç Döndüren Standart Sorgu
 =================================
 
 ::
 
-	$query = $this->db->query('SELECT name FROM my_table LIMIT 1'); 
+	$query = $this->db->query('SELECT ad FROM tablom LIMIT 1'); 
 	$row = $query->row();
-	echo $row->name;
+	echo $row->ad;
 
-The above row() function returns an **object**. Example: $row->name
+Yukarıdaki row() fonksiyonu bir **nesne** döndürür. Örneğin: $row->name
 
-Standard Query With Single Result (Array version)
-=================================================
+Tek Sonuç Döndüren Standart Sorgu (Dizi Versiyonu)
+==================================================
 
 ::
 
-	$query = $this->db->query('SELECT name FROM my_table LIMIT 1');
+	$query = $this->db->query('SELECT ad FROM tablom LIMIT 1');
 	$row = $query->row_array();
-	echo $row['name'];
+	echo $row['ad'];
 
-The above row_array() function returns an **array**. Example:
-$row['name']
+Yukarıdaki row_array() fonksiyonu bir **dizi** döndürür. Örneğin:
+$row['ad']
 
-Standard Insert
-===============
+Standart Kayıt Ekleme
+=====================
 
 ::
 
-	$sql = "INSERT INTO mytable (title, name) VALUES (".$this->db->escape($title).", ".$this->db->escape($name).")";
+	$sql = "INSERT INTO tablom (unvan, ad) VALUES (".$this->db->escape($unvan).", ".$this->db->escape($ad).")";
 	$this->db->query($sql);
 	echo $this->db->affected_rows();
 
-Active Record Query
-===================
+Aktif Kayıt Yöntemi İle Sorgu
+=============================
 
-The :doc:`Active Record Pattern <active_record>` gives you a simplified
-means of retrieving data::
+:doc:`Aktif Kayıt Modeli <active_record>` veriyi daha basit bir şekilde
+almanıza olanak sağlar.::
 
-	$query = $this->db->get('table_name');
+	$query = $this->db->get('tablo_adi');
 	
 	foreach ($query->result() as $row)
 	{
 		echo $row->title;
 	}
 
-The above get() function retrieves all the results from the supplied
-table. The :doc:`Active Record <active_record>` class contains a full
-compliment of functions for working with data.
+Yukarıdaki get() fonksiyonu sorgulanan tablodaki tüm sonuçları getirir. 
+:doc:`Aktif Kayıt <active_record>` sınıfı bir veri ile çalışmak için
+gereken tüm fonksiyonları içerir.
 
-Active Record Insert
-====================
+Aktif Kayıt Yöntemi İle Kayıt Ekleme
+====================================
 
 ::
 
-	$data = array(
-		'title' => $title,
-		'name' => $name,
-		'date' => $date
+	$veri = array(
+		'unvan' => $unvan,
+		'ad' => $ad,
+		'tarih' => $tarih
 	);
 	
-	$this->db->insert('mytable', $data);  // Produces: INSERT INTO mytable (title, name, date) VALUES ('{$title}', '{$name}', '{$date}')
+	$this->db->insert('tablom', $veri);  // Üretilen sorgu: INSERT INTO tablom (unvan, ad, tarih) VALUES ('{$unvan}', '{$ad}', '{$tarih}')
 
