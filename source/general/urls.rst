@@ -1,5 +1,5 @@
 ################
-CodeIgniter URLs
+CodeIgniter'da URL
 ################
 
 URL CodeIngiter'da arama-motoru ve kullanýcý dostu varsayýlarak tasarlanmýþtýr. Standart "sorgu dizisi" (query string) yaklaþýmý yerine, dinamik sistemli eþ anlamlý, CodeIgniter **parça-tabanlý** yaklaþýmýný kullanýr::
