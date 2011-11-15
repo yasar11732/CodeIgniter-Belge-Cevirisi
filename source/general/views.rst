@@ -1,26 +1,17 @@
 #####
-Views
+View
 #####
 
-A view is simply a web page, or a page fragment, like a header, footer,
-sidebar, etc. In fact, views can flexibly be embedded within other views
-(within other views, etc., etc.) if you need this type of hierarchy.
+View basit bir web sayfası, ya da başlık, alt-başlık, kenar-kolonu gibi sayfa parçasıdır. Gerçekte, eğer bir hiyerarşiye ihtiyacınız varsa, View dosyaları diğer View dosyaları içine de esnek olarak gömülebilirler.
 
-Views are never called directly, they must be loaded by a
-:doc:`controller <controllers>`. Remember that in an MVC framework, the
-Controller acts as the traffic cop, so it is responsible for fetching a
-particular view. If you have not read the
-:doc:`Controllers <controllers>` page you should do so before
-continuing.
+View dosyaları, asla doğrudan çağrılmaz, :doc:`controller <controllers>` dosyaları tarafından yüklenirler. MVC çatısını hatırlarsak, Controller bir trafik polisi gibi davranıp, belirli View dosyalarını getirirler. Eğer :doc:`Controllers <controllers>` sayfasını okumadıysanız, devam etmeden önce okuyunuz.
 
-Using the example controller you created in the
-:doc:`controller <controllers>` page, let's add a view to it.
+Hadi :doc:`controller <controllers>` sayfasında hazırladığınız örnek controller dosyasını kullanıp, ona bir View ekleyelim.
 
-Creating a View
+View Oluşturma
 ===============
 
-Using your text editor, create a file called blogview.php, and put this
-in it::
+Metin düzenleyicinizi kullanarak, blogview.php dosyasını oluşturup, içine şunları ekleyelim::
 
 	<html>
 	<head>
@@ -31,20 +22,18 @@ in it::
 	</body>
 	</html>
 	
-Then save the file in your application/views/ folder.
+Sonra da application/views/ dizini altına kayıt edelim.
 
-Loading a View
+View Yükleme
 ==============
 
-To load a particular view file you will use the following function::
+Belirli View dosyalarını yüklemek için aşağıdaki fonksiyonu kullanmalısınız::
 
 	$this->load->view('name');
 
-Where name is the name of your view file. Note: The .php file extension
-does not need to be specified unless you use something other than .php.
+Burada name View dosyasının adıdır. Not: Eğer dosyanızın uzantısı .php ise, dosya uzantısını yazmanıza gerek yoktur.
 
-Now, open the controller file you made earlier called blog.php, and
-replace the echo statement with the view loading function::
+Şimdi, daha önce blog.php ismi ile oluşturduğumuz dosyayı, controller içinden açarak echo ile yazdırdığımız satırı view yükleme fonksiyonu ile değiştirelim::
 
 	<?php
 	class Blog extends CI_Controller {
@@ -56,19 +45,14 @@ replace the echo statement with the view loading function::
 	}
 	?>
 
-If you visit your site using the URL you did earlier you should see your
-new view. The URL was similar to this::
+Eğer daha önce geçen URL adresini kullanarak sitenizi ziyaret ederseniz, yeni görüntüyü görebilirsiniz. BUnun için URL aynısıdır::
 
 	example.com/index.php/blog/
 
-Loading multiple views
+Çoklu view yükleme
 ======================
 
-CodeIgniter will intelligently handle multiple calls to
-$this->load->view from within a controller. If more than one call
-happens they will be appended together. For example, you may wish to
-have a header view, a menu view, a content view, and a footer view. That
-might look something like this::
+CodeIgniter bir controller $this->load->view ile çoklu yükleme kabiliyetine sahiptir. Eğer birden fazla çağrı olursa, hepsi birbirine eklenecektir. Örneğin, başlık görüntüsü, menü görüntüsü, içerik görüntüsü ve alt-başlık görüntüsünü göstermekmek istediğinizde, şuna benzer bir şey olur ::
 
 	<?php
 
@@ -86,24 +70,19 @@ might look something like this::
 	}
 	?>
 
-In the example above, we are using "dynamically added data", which you
-will see below.
+Yukarıdaki örnekte, aşağıda anlatılan "dinamik bilgi eklemeyi" kullandık.
 
-Storing Views within Sub-folders
+Alt-dizinlere View depolama
 ================================
 
-Your view files can also be stored within sub-folders if you prefer that
-type of organization. When doing so you will need to include the folder
-name loading the view. Example::
+Eğer organizayonda tercih ederseniz, View dosylarınız alt-sizinlerde de depolanabilir. Bu durumda ihtiyacınız, view yüklenirken dizin adını da belirtmektir. Örneğin::
 
 	$this->load->view('folder_name/file_name');
 
-Adding Dynamic Data to the View
+View'lara Dinamik Bilgi Eklemek
 ===============================
 
-Data is passed from the controller to the view by way of an **array** or
-an **object** in the second parameter of the view loading function. Here
-is an example using an array::
+Bilgiler View yüklemede kullanılan fonksyionun ikinci parametresi olarak, Controller içinden bir **dizi** ya da bir **obje** kullanılarak aktarılır. Burada dizi ile aktarımın örneği::
 
 	$data = array(
 	               'title' => 'My Title',
@@ -113,15 +92,14 @@ is an example using an array::
 
 	$this->load->view('blogview', $data);
 
-And here's an example using an object::
+ve burada da obje kullanılarak aktarım örneği::
 
 	$data = new Someclass();
 	$this->load->view('blogview', $data);
 
-Note: If you use an object, the class variables will be turned into
-array elements.
+Not: Eğer obje kullanılarak aktarım yapılıyorsa, sınıf değişkenleri dizi elemanlarına dönüştürülmelidir.
 
-Let's try it with your controller file. Open it add this code::
+Hadi Controller dosyanızda deneyin. Açıp şu kodu ekleyelim::
 
 	<?php
 	class Blog extends CI_Controller {
@@ -136,8 +114,7 @@ Let's try it with your controller file. Open it add this code::
 	}
 	?>
 
-Now open your view file and change the text to variables that correspond
-to the array keys in your data::
+Şimdi view dosyanızı açın ve metin değişkenlerini, ilgili dizinin anahtarları olacak şekilde değiştirin::
 
 	<html>
 	<head>
@@ -148,18 +125,14 @@ to the array keys in your data::
 	</body>
 	</html>
 
-Then load the page at the URL you've been using and you should see the
-variables replaced.
+Sonra sayfayı, kullandığınız URL ile yüklediğinizde değişkenlerin yerini aldığını göreceksiniz.
 
-Creating Loops
+Döngüler Oluşturmak
 ==============
 
-The data array you pass to your view files is not limited to simple
-variables. You can pass multi dimensional arrays, which can be looped to
-generate multiple rows. For example, if you pull data from your database
-it will typically be in the form of a multi-dimensional array.
+View dosylarına gönderilen değişkenler basit değişkenlerle sınırlı değildirler. Çoklu starılarla döngülere alabileceğiniz çok boyutlu diziler gönderebilirsiniz. Örneğin, veritabanından çektiğiniz bilgiler, çok boyutlu dizilere tipik birer örnektirler.
 
-Here's a simple example. Add this to your controller::
+Basit bir örnek. Bunu controller dosyasına ekleyin::
 
 	<?php
 	class Blog extends CI_Controller {
@@ -176,7 +149,7 @@ Here's a simple example. Add this to your controller::
 	}
 	?>
 
-Now open your view file and create a loop::
+Şimdi View dosyasını açın ve bir döngü oluşturun::
 
 	<html>
 	<head>
@@ -198,19 +171,12 @@ Now open your view file and create a loop::
 	</body>
 	</html>
 
-.. note:: You'll notice that in the example above we are using PHP's
-	alternative syntax. If you are not familiar with it you can read about
-	it :doc:`here </general/alternative_php>`.
+.. Not:: Yukarıdaki örnekte fark edeceğiniz gibi PHP'nin alternatif imlasını kullandık. Eğer bu imlaya yabancı iseniz, bu konu hakkında :doc:`here </general/alternative_php>` okuyun.	
 
-Returning views as data
+View'den Bilgi Geri Dönüşü
 =======================
 
-There is a third **optional** parameter lets you change the behavior of
-the function so that it returns data as a string rather than sending it
-to your browser. This can be useful if you want to process the data in
-some way. If you set the parameter to true (boolean) it will return
-data. The default behavior is false, which sends it to your browser.
-Remember to assign it to a variable if you want the data returned::
+Fonksiyonun üçüncü **opsiyonel** parametresi, tarayıcıya bilgiyi göndermektense metin olarak geri dönmeye izin verir. Bilgiyi başka yollardan işlemek isterseniz, bu yöntem oldukça kullanışlıdır. Eğer bu parametreyi true (boolean) yaparsanız, beli geriye dönecektir. Varsayılan değer tarayıcıya bilgi yazdıran false değeridir. Eğer bilgi geri geliyorsa, bunun bir değişkene atanması gerekitğini unutmayın::
 
 	$string = $this->load->view('myfile', '', true);
 

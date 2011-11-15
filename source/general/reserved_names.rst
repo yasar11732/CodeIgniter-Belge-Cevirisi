@@ -1,19 +1,13 @@
 ##############
-Reserved Names
+Rezerve İsimler
 ##############
 
-In order to help out, CodeIgniter uses a series of functions and names
-in its operation. Because of this, some names cannot be used by a
-developer. Following is a list of reserved names that cannot be used.
+CodeIgniter kendi operasyonlarında fonksiyon ve isim serisi kullanır. Bunun nedeni, bazı isimler geliştiriciler için kullanılmamalıdır. Aşağıdaki liste kullanılmaması gereken rezerve isim listesidir.
 
-Controller names
+Controller isimleri
 ----------------
 
-Since your controller classes will extend the main application
-controller you must be careful not to name your functions identically to
-the ones used by that class, otherwise your local functions will
-override them. The following is a list of reserved names. Do not name
-your controller any of these:
+Controller sınıfınız ana controller uygulamasından genişletilmesi durumunda, kendi sınıfınıza vereceğiniz isimlere dikkat etmelisiniz, yoksa sınıflar kendi lokal sınıflarınızın üzerine yazılır. Aşağıdaki liste kullanılmaması gereken rezerve isim listesidir. Controller fonksiyonları içinde bu isimler kullanılmamalıdır:
 
 -  Controller
 -  CI_Base
@@ -21,7 +15,7 @@ your controller any of these:
 -  Default
 -  index
 
-Functions
+Fonksiyonlar
 ---------
 
 -  is_really_writable()
@@ -34,14 +28,14 @@ Functions
 -  _exception_handler()
 -  get_instance()
 
-Variables
+Değişkenler
 ---------
 
 -  $config
 -  $mimes
 -  $lang
 
-Constants
+Sabitler
 ---------
 
 -  ENVIRONMENT

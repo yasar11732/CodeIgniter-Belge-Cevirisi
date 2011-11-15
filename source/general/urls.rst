@@ -1,6 +1,6 @@
-####################
-CodeIgniter URL'leri
-####################
+################
+CodeIgniter'da URL
+################
 
 URL CodeIngiter'da arama-motoru ve kullanıcı dostu varsayılarak tasarlanmıştır. Standart "sorgu dizisi" (query string) yaklaşımı yerine, dinamik sistemli eş anlamlı, CodeIgniter **parça-tabanlı** yaklaşımını kullanır::
 
