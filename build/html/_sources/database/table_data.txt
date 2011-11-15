@@ -1,31 +1,35 @@
-##########
-Table Data
-##########
+##############
+Tablo Verileri
+##############
 
-These functions let you fetch table information.
+Bu fonksiyonlar tablo bilgilerini almanıza izin verirler.
 
 $this->db->list_tables();
 ==========================
 
-Returns an array containing the names of all the tables in the database
-you are currently connected to. Example::
+Bu fonksiyon o an bağlı olduğunuz veri tabanında bulunan tüm tabloların
+isimlerini içeren bir dizi döndürür. Örneğin::
 
-	$tables = $this->db->list_tables();
+	$tablolar = $this->db->list_tables();
 	
-	foreach ($tables as $table)
+	foreach ($tablolar as $tablo)
 	{
-		echo $table;
+		echo $tablo;
 	}
 
 $this->db->table_exists();
 ===========================
 
-Sometimes it's helpful to know whether a particular table exists before
-running an operation on it. Returns a boolean TRUE/FALSE. Usage example::
+Bazen özellikle bir tablonun üzerinde işlem yapmadan önce, o tablonun veri 
+tabanında olup olmadığını bilmek size yardımcı olur. Bu fonkisyon boole 
+TRUE/FALSE döndürür. Örnek kullanımı::
 
-	if ($this->db->table_exists('table_name'))
+	if ($this->db->table_exists('tablo_adı'))
 	{
-		// some code...
+		// yazdığınız kodlar...
 	}
 
-.. note:: Replace *table_name* with the name of the table you are looking for.
+.. admonition:: Not
+    :class: note
+
+    *tablo_adı* değerini aradığınız tablonun adıyla değiştirin.

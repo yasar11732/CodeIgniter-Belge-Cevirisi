@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="utf-8">
 	    
-	    <title>Table Data &mdash; CodeIgniter v3.0-dev documentation</title>
+	    <title>Tablo Verileri &mdash; CodeIgniter v3.0-dev documentation</title>
 
 	    <link rel="stylesheet" href="../_static/asset/css/common.css" type="text/css" />
 	    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -21,7 +21,7 @@
 	    <script type="text/javascript" src="../_static/underscore.js"></script>
 	    <script type="text/javascript" src="../_static/doctools.js"></script>
 	    <link rel="top" title="CodeIgniter v3.0-dev documentation" href="../index.html" />
-	    <link rel="up" title="The Database Class" href="index.html" />
+	    <link rel="up" title="Veri Tabanı Sınıfı" href="index.html" />
 	    <link rel="next" title="Field Data" href="fields.html" />
 	    <link rel="prev" title="Transactions" href="transactions.html" /> 
 	</head>
@@ -37,26 +37,26 @@
 <li class="toctree-l1"><a class="reference internal" href="../general/index.html">General Topics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../libraries/index.html">Libraries</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../helpers/index.html">Helpers</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="index.html">The Database Class</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="examples.html">Quick Start: Usage Examples</a></li>
-<li class="toctree-l2"><a class="reference internal" href="configuration.html">Database Configuration</a></li>
-<li class="toctree-l2"><a class="reference internal" href="connecting.html">Connecting to a Database</a></li>
-<li class="toctree-l2"><a class="reference internal" href="queries.html">Running Queries</a></li>
-<li class="toctree-l2"><a class="reference internal" href="results.html">Generating Query Results</a></li>
-<li class="toctree-l2"><a class="reference internal" href="helpers.html">Query Helper Functions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="active_record.html">Active Record Class</a></li>
-<li class="toctree-l2"><a class="reference internal" href="transactions.html">Transactions</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="">Table MetaData</a><ul class="simple">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Veri Tabanı Sınıfı</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="examples.html">Hızlı Başlangıç: Kullanım Örnekleri</a></li>
+<li class="toctree-l2"><a class="reference internal" href="configuration.html">Veri Tabanı Konfigürasyonu</a></li>
+<li class="toctree-l2"><a class="reference internal" href="connecting.html">Veri Tabanına Bağlanmak</a></li>
+<li class="toctree-l2"><a class="reference internal" href="queries.html">Sorgu Çalıştırmak</a></li>
+<li class="toctree-l2"><a class="reference internal" href="results.html">Sorgu Sonuçları Üretmek</a></li>
+<li class="toctree-l2"><a class="reference internal" href="helpers.html">Sorgu Yardımcı Fonksiyonları</a></li>
+<li class="toctree-l2"><a class="reference internal" href="active_record.html">Aktif Kayıt Sınıfı</a></li>
+<li class="toctree-l2"><a class="reference internal" href="transactions.html">İşlemler</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Tablo Meta Verileri</a><ul class="simple">
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="fields.html">Field MetaData</a></li>
-<li class="toctree-l2"><a class="reference internal" href="call_function.html">Custom Function Calls</a></li>
-<li class="toctree-l2"><a class="reference internal" href="caching.html">Query Caching</a></li>
-<li class="toctree-l2"><a class="reference internal" href="forge.html">Database Manipulation with Database Forge</a></li>
-<li class="toctree-l2"><a class="reference internal" href="utilities.html">Database Utilities Class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fields.html">Alan Meta Verileri</a></li>
+<li class="toctree-l2"><a class="reference internal" href="call_function.html">Özel Fonksiyon Çağrıları</a></li>
+<li class="toctree-l2"><a class="reference internal" href="caching.html">Sorgu Önbelleği</a></li>
+<li class="toctree-l2"><a class="reference internal" href="forge.html">Veri Tabanı Forge Sınıfı İle Veri Tabanı Düzenleme İşlemleri</a></li>
+<li class="toctree-l2"><a class="reference internal" href="utilities.html">Veri Tabanı Yardımcı Sınıfı</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../documentation/index.html">Writing CodeIgniter Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../documentation/index.html">CodeIgniter Belgesi Yazma</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../tutorial/index.html">Tutorial</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../general/quick_reference.html">Quick Reference Chart</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../general/credits.html">Credits</a></li>
@@ -83,42 +83,43 @@
 			<ul>
 				<li><a href="../index.html">Home</a>&nbsp;&nbsp; &rsaquo;</li>
 				<li><a id="toc-link" href="../index.html">Table of Contents</a>&nbsp;&nbsp; &rsaquo;</li>
-				<li><a href="index.html" accesskey="U">The Database Class</a>&nbsp;&nbsp;  &rsaquo;</li>
+				<li><a href="index.html" accesskey="U">Veri Tabanı Sınıfı</a>&nbsp;&nbsp;  &rsaquo;</li>
 
-				<li><strong>Table Data</strong></li>
+				<li><strong>Tablo Verileri</strong></li>
 			</ul>
 		</div><!-- /#header -->
 
 		<div class="section" id="content">
-			<div class="section" id="table-data">
-<h1>Table Data<a class="headerlink" href="#table-data" title="Permalink to this headline">¶</a></h1>
-<p>These functions let you fetch table information.</p>
+			<div class="section" id="tablo-verileri">
+<h1>Tablo Verileri<a class="headerlink" href="#tablo-verileri" title="Permalink to this headline">¶</a></h1>
+<p>Bu fonksiyonlar tablo bilgilerini almanıza izin verirler.</p>
 <div class="section" id="this-db-list-tables">
 <h2>$this-&gt;db-&gt;list_tables();<a class="headerlink" href="#this-db-list-tables" title="Permalink to this headline">¶</a></h2>
-<p>Returns an array containing the names of all the tables in the database
-you are currently connected to. Example:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="nv">$tables</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">list_tables</span><span class="p">();</span>
+<p>Bu fonksiyon o an bağlı olduğunuz veri tabanında bulunan tüm tabloların
+isimlerini içeren bir dizi döndürür. Örneğin:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span class="nv">$tablolar</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">list_tables</span><span class="p">();</span>
 
-<span class="k">foreach</span> <span class="p">(</span><span class="nv">$tables</span> <span class="k">as</span> <span class="nv">$table</span><span class="p">)</span>
+<span class="k">foreach</span> <span class="p">(</span><span class="nv">$tablolar</span> <span class="k">as</span> <span class="nv">$tablo</span><span class="p">)</span>
 <span class="p">{</span>
-        <span class="k">echo</span> <span class="nv">$table</span><span class="p">;</span>
+        <span class="k">echo</span> <span class="nv">$tablo</span><span class="p">;</span>
 <span class="p">}</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="this-db-table-exists">
 <h2>$this-&gt;db-&gt;table_exists();<a class="headerlink" href="#this-db-table-exists" title="Permalink to this headline">¶</a></h2>
-<p>Sometimes it&#8217;s helpful to know whether a particular table exists before
-running an operation on it. Returns a boolean TRUE/FALSE. Usage example:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="k">if</span> <span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">table_exists</span><span class="p">(</span><span class="s1">&#39;table_name&#39;</span><span class="p">))</span>
+<p>Bazen özellikle bir tablonun üzerinde işlem yapmadan önce, o tablonun veri
+tabanında olup olmadığını bilmek size yardımcı olur. Bu fonkisyon boole
+TRUE/FALSE döndürür. Örnek kullanımı:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span class="k">if</span> <span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">table_exists</span><span class="p">(</span><span class="s1">&#39;tablo_adı&#39;</span><span class="p">))</span>
 <span class="p">{</span>
-        <span class="c1">// some code...</span>
+        <span class="c1">// yazdığınız kodlar...</span>
 <span class="p">}</span>
 </pre></div>
 </div>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">Replace <em>table_name</em> with the name of the table you are looking for.</p>
+<div class="note admonition">
+<p class="first admonition-title">Not</p>
+<p class="last"><em>tablo_adı</em> değerini aradığınız tablonun adıyla değiştirin.</p>
 </div>
 </div>
 </div>
@@ -137,7 +138,7 @@ running an operation on it. Returns a boolean TRUE/FALSE. Usage example:</p>
 				
 				<a href="#header" title="Return to top">Return to top</a>
 			</p>
-			<p><a href="">CodeIgniter</a> &ndash; Copyright &copy; 2011, EllisLab, Inc.</a> &ndash; Last updated: Nov 13, 2011</p>
+			<p><a href="">CodeIgniter</a> &ndash; Copyright &copy; 2011, EllisLab, Inc.</a> &ndash; Last updated: Nov 15, 2011</p>
 		</div><!-- /#footer -->
 	
 	<script src="../_static/asset/js/jquery-ui-min.js" type="text/javascript" charset="utf-8" async></script>

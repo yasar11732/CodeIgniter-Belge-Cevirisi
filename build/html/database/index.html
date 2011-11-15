@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="utf-8">
 	    
-	    <title>The Database Class &mdash; CodeIgniter v3.0-dev documentation</title>
+	    <title>Veri Tabanı Sınıfı &mdash; CodeIgniter v3.0-dev documentation</title>
 
 	    <link rel="stylesheet" href="../_static/asset/css/common.css" type="text/css" />
 	    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -36,24 +36,24 @@
 <li class="toctree-l1"><a class="reference internal" href="../general/index.html">General Topics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../libraries/index.html">Libraries</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../helpers/index.html">Helpers</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="">The Database Class</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="examples.html">Quick Start: Usage Examples</a></li>
-<li class="toctree-l2"><a class="reference internal" href="configuration.html">Database Configuration</a></li>
-<li class="toctree-l2"><a class="reference internal" href="connecting.html">Connecting to a Database</a></li>
-<li class="toctree-l2"><a class="reference internal" href="queries.html">Running Queries</a></li>
-<li class="toctree-l2"><a class="reference internal" href="results.html">Generating Query Results</a></li>
-<li class="toctree-l2"><a class="reference internal" href="helpers.html">Query Helper Functions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="active_record.html">Active Record Class</a></li>
-<li class="toctree-l2"><a class="reference internal" href="transactions.html">Transactions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="table_data.html">Table MetaData</a></li>
-<li class="toctree-l2"><a class="reference internal" href="fields.html">Field MetaData</a></li>
-<li class="toctree-l2"><a class="reference internal" href="call_function.html">Custom Function Calls</a></li>
-<li class="toctree-l2"><a class="reference internal" href="caching.html">Query Caching</a></li>
-<li class="toctree-l2"><a class="reference internal" href="forge.html">Database Manipulation with Database Forge</a></li>
-<li class="toctree-l2"><a class="reference internal" href="utilities.html">Database Utilities Class</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Veri Tabanı Sınıfı</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="examples.html">Hızlı Başlangıç: Kullanım Örnekleri</a></li>
+<li class="toctree-l2"><a class="reference internal" href="configuration.html">Veri Tabanı Konfigürasyonu</a></li>
+<li class="toctree-l2"><a class="reference internal" href="connecting.html">Veri Tabanına Bağlanmak</a></li>
+<li class="toctree-l2"><a class="reference internal" href="queries.html">Sorgu Çalıştırmak</a></li>
+<li class="toctree-l2"><a class="reference internal" href="results.html">Sorgu Sonuçları Üretmek</a></li>
+<li class="toctree-l2"><a class="reference internal" href="helpers.html">Sorgu Yardımcı Fonksiyonları</a></li>
+<li class="toctree-l2"><a class="reference internal" href="active_record.html">Aktif Kayıt Sınıfı</a></li>
+<li class="toctree-l2"><a class="reference internal" href="transactions.html">İşlemler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="table_data.html">Tablo Meta Verileri</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fields.html">Alan Meta Verileri</a></li>
+<li class="toctree-l2"><a class="reference internal" href="call_function.html">Özel Fonksiyon Çağrıları</a></li>
+<li class="toctree-l2"><a class="reference internal" href="caching.html">Sorgu Önbelleği</a></li>
+<li class="toctree-l2"><a class="reference internal" href="forge.html">Veri Tabanı Forge Sınıfı İle Veri Tabanı Düzenleme İşlemleri</a></li>
+<li class="toctree-l2"><a class="reference internal" href="utilities.html">Veri Tabanı Yardımcı Sınıfı</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../documentation/index.html">Writing CodeIgniter Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../documentation/index.html">CodeIgniter Belgesi Yazma</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../tutorial/index.html">Tutorial</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../general/quick_reference.html">Quick Reference Chart</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../general/credits.html">Credits</a></li>
@@ -81,58 +81,58 @@
 				<li><a href="../index.html">Home</a>&nbsp;&nbsp; &rsaquo;</li>
 				<li><a id="toc-link" href="../index.html">Table of Contents</a>&nbsp;&nbsp; &rsaquo;</li>
 
-				<li><strong>The Database Class</strong></li>
+				<li><strong>Veri Tabanı Sınıfı</strong></li>
 			</ul>
 		</div><!-- /#header -->
 
 		<div class="section" id="content">
-			<div class="section" id="the-database-class">
-<h1>The Database Class<a class="headerlink" href="#the-database-class" title="Permalink to this headline">¶</a></h1>
-<p>CodeIgniter comes with a full-featured and very fast abstracted database
-class that supports both traditional structures and Active Record
-patterns. The database functions offer clear, simple syntax.</p>
+			<div class="section" id="veri-tabani-sinifi">
+<h1>Veri Tabanı Sınıfı<a class="headerlink" href="#veri-tabani-sinifi" title="Permalink to this headline">¶</a></h1>
+<p>CodeIgniter, hem geleneksel yapıları hem de Aktif Kayıt modelini destekleyen
+oldukça donanımlı ve hızlı bir veri tabanı sınıfıyla beraber gelir. Veri tabanı
+fonksiyonları temiz ve basit bir söz dizimi sunar.</p>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="examples.html">Quick Start: Usage Examples</a><ul class="simple">
+<li class="toctree-l1"><a class="reference internal" href="examples.html">Hızlı Başlangıç: Kullanım Örnekleri</a><ul class="simple">
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="configuration.html">Database Configuration</a><ul class="simple">
+<li class="toctree-l1"><a class="reference internal" href="configuration.html">Veri Tabanı Konfigürasyonu</a><ul class="simple">
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="connecting.html">Connecting to a Database</a><ul class="simple">
+<li class="toctree-l1"><a class="reference internal" href="connecting.html">Veri Tabanına Bağlanmak</a><ul class="simple">
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="queries.html">Running Queries</a><ul class="simple">
+<li class="toctree-l1"><a class="reference internal" href="queries.html">Sorgu Çalıştırmak</a><ul class="simple">
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="results.html">Generating Query Results</a><ul class="simple">
+<li class="toctree-l1"><a class="reference internal" href="results.html">Sorgu Sonuçları Üretmek</a><ul class="simple">
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="helpers.html">Query Helper Functions</a><ul class="simple">
+<li class="toctree-l1"><a class="reference internal" href="helpers.html">Sorgu Yardımcı Fonksiyonları</a><ul class="simple">
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="active_record.html">Active Record Class</a><ul class="simple">
+<li class="toctree-l1"><a class="reference internal" href="active_record.html">Aktif Kayıt Sınıfı</a><ul class="simple">
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="transactions.html">Transactions</a><ul class="simple">
+<li class="toctree-l1"><a class="reference internal" href="transactions.html">İşlemler</a><ul class="simple">
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="table_data.html">Table MetaData</a><ul class="simple">
+<li class="toctree-l1"><a class="reference internal" href="table_data.html">Tablo Meta Verileri</a><ul class="simple">
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="fields.html">Field MetaData</a><ul class="simple">
+<li class="toctree-l1"><a class="reference internal" href="fields.html">Alan Meta Verileri</a><ul class="simple">
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="call_function.html">Custom Function Calls</a><ul class="simple">
+<li class="toctree-l1"><a class="reference internal" href="call_function.html">Özel Fonksiyon Çağrıları</a><ul class="simple">
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="caching.html">Query Caching</a><ul class="simple">
+<li class="toctree-l1"><a class="reference internal" href="caching.html">Sorgu Önbelleği</a><ul class="simple">
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="forge.html">Database Manipulation with Database Forge</a><ul class="simple">
+<li class="toctree-l1"><a class="reference internal" href="forge.html">Veri Tabanı Forge Sınıfı İle Veri Tabanı Düzenleme İşlemleri</a><ul class="simple">
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="utilities.html">Database Utilities Class</a><ul class="simple">
+<li class="toctree-l1"><a class="reference internal" href="utilities.html">Veri Tabanı Yardımcı Sınıfı</a><ul class="simple">
 </ul>
 </li>
 </ul>
@@ -153,7 +153,7 @@ patterns. The database functions offer clear, simple syntax.</p>
 				
 				<a href="#header" title="Return to top">Return to top</a>
 			</p>
-			<p><a href="">CodeIgniter</a> &ndash; Copyright &copy; 2011, EllisLab, Inc.</a> &ndash; Last updated: Nov 14, 2011</p>
+			<p><a href="">CodeIgniter</a> &ndash; Copyright &copy; 2011, EllisLab, Inc.</a> &ndash; Last updated: Nov 15, 2011</p>
 		</div><!-- /#footer -->
 	
 	<script src="../_static/asset/js/jquery-ui-min.js" type="text/javascript" charset="utf-8" async></script>
