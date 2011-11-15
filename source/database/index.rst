@@ -1,25 +1,25 @@
 ##################
-The Database Class
+Veri Tabanı Sınıfı
 ##################
 
-CodeIgniter comes with a full-featured and very fast abstracted database
-class that supports both traditional structures and Active Record
-patterns. The database functions offer clear, simple syntax.
+CodeIgniter, hem geleneksel yapıları hem de Aktif Kayıt modelini destekleyen
+oldukça donanımlı ve hızlı bir veri tabanı sınıfıyla beraber gelir. Veri tabanı
+fonksiyonları temiz ve basit bir söz dizimi sunar.
 
 .. toctree::
 	:titlesonly:
 	
-	Quick Start: Usage Examples <examples>
-	Database Configuration <configuration>
-	Connecting to a Database <connecting>
-	Running Queries <queries>
-	Generating Query Results <results>
-	Query Helper Functions <helpers>
-	Active Record Class <active_record>
-	Transactions <transactions>
-	Table MetaData <table_data>
-	Field MetaData <fields>
-	Custom Function Calls <call_function>
-	Query Caching <caching>
-	Database Manipulation with Database Forge <forge>
-	Database Utilities Class <utilities>
+	Hızlı Başlangıç: Kullanım Örnekleri <examples>
+	Veri Tabanı Konfigürasyonu <configuration>
+	Veri Tabanına Bağlanmak <connecting>
+	Sorgu Çalıştırmak <queries>
+	Sorgu Sonuçları Üretmek <results>
+	Sorgu Yardımcı Fonksiyonları <helpers>
+	Aktif Kayıt Sınıfı <active_record>
+	İşlemler <transactions>
+	Tablo Meta Verileri <table_data>
+	Alan Meta Verileri <fields>
+	Özel Fonksiyon Çağrıları <call_function>
+	Sorgu Önbelleği <caching>
+	Veri Tabanı Forge Sınıfı İle Veri Tabanı Düzenleme İşlemleri<forge>
+	Veri Tabanı Yardımcı Sınıfı <utilities>

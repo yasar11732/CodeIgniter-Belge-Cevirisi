@@ -1,39 +1,37 @@
-#####################
-Custom Function Calls
-#####################
+########################
+Özel Fonksiyon Çağrıları
+########################
 
 $this->db->call_function();
 ============================
 
-This function enables you to call PHP database functions that are not
-natively included in CodeIgniter, in a platform independent manner. For
-example, lets say you want to call the mysql_get_client_info()
-function, which is **not** natively supported by CodeIgniter. You could
-do so like this::
+Bu fonksiyon Codeigniter ile beraber gelmeyen PHP veri tabanı fonksiyonlarını
+çalıştığınız platformdan bağımsız olarak çağırmanıza olanak tanır. Örneğin, 
+Codeigniter tarafından **desteklenmeyen** mysql_get_client_info() fonksiyonunu 
+çağırmak istiyorsunuz. Bunu şu şekilde yapabilirisiniz::
 
 	$this->db->call_function('get_client_info');
 
-You must supply the name of the function, **without** the mysql\_
-prefix, in the first parameter. The prefix is added automatically based
-on which database driver is currently being used. This permits you to
-run the same function on different database platforms. Obviously not all
-function calls are identical between platforms, so there are limits to
-how useful this function can be in terms of portability.
+Fonksiyonun adını başında mysql\_ **olmadan** ilk parametre olarak yazmalısınız.
+mysql\_ ön eki hangi o an kullanılan veri tabanı tipine bağlı olarak otomatik
+olarak eklenecektir. Bu durum size aynı fonksiyonu farklı veri tabanı ortamlarında
+çalıştırma izini verir. Şu durum açıktır ki bir fonksiyon farklı ortamlarda tamamen aynı
+şekilde çağrılamaz. Dolayısıyla fonksiyonun ortamlar arası uyumluluğuna bağlı olarak
+bazı sınırlamalar olacaktır.
 
-Any parameters needed by the function you are calling will be added to
-the second parameter.
+Çağırdığınız fonksiyonun ihtiyaç duyduğu parametreler, fonksiyon adından sonra eklenir.
 
 ::
 
-	$this->db->call_function('some_function', $param1, $param2, etc..);
+	$this->db->call_function('çağrılan_fonksiyon', $param1, $param2, etc..);
 
-Often, you will either need to supply a database connection ID or a
-database result ID. The connection ID can be accessed using::
+Uygulamada sıklıkla veri tabanı bağlantı ID'sine, veri tabanı sonuç ID'sine ya da her
+ikisine ihtiyaç duyabilirsiniz. Bağlantı ID'sine aşağıdaki şekilde ulaşılabilir::
 
 	$this->db->conn_id;
 
-The result ID can be accessed from within your result object, like this::
+Sonuç ID'sine, yapılan sorgunun sonuç nesnesinden şu şekilde erişilebilir.::
 
-	$query = $this->db->query("SOME QUERY");
+	$sorgu = $this->db->query("SQL SORGUNUZ");
 	
-	$query->result_id;
+	$sorgu->result_id;
