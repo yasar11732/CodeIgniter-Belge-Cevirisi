@@ -29,4 +29,7 @@ TRUE/FALSE döndürür. Örnek kullanımı::
 		// yazdığınız kodlar...
 	}
 
-.. not:: *tablo_adı* değerini aradığınız tablonun adıyla değiştirin.
+.. admonition:: Not
+    :class: note
+
+    *tablo_adı* değerini aradığınız tablonun adıyla değiştirin.
