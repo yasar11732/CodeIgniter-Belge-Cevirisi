@@ -1,6 +1,6 @@
-#####
+####
 View
-#####
+####
 
 View basit bir web sayfası, ya da başlık, alt-başlık, kenar-kolonu gibi sayfa parçasıdır. Gerçekte, eğer bir hiyerarşiye ihtiyacınız varsa, View dosyaları diğer View dosyaları içine de esnek olarak gömülebilirler.
 
@@ -9,7 +9,7 @@ View dosyaları, asla doğrudan çağrılmaz, :doc:`controller <controllers>` do
 Hadi :doc:`controller <controllers>` sayfasında hazırladığınız örnek controller dosyasını kullanıp, ona bir View ekleyelim.
 
 View Oluşturma
-===============
+==============
 
 Metin düzenleyicinizi kullanarak, blogview.php dosyasını oluşturup, içine şunları ekleyelim::
 
@@ -25,7 +25,7 @@ Metin düzenleyicinizi kullanarak, blogview.php dosyasını oluşturup, içine �
 Sonra da application/views/ dizini altına kayıt edelim.
 
 View Yükleme
-==============
+============
 
 Belirli View dosyalarını yüklemek için aşağıdaki fonksiyonu kullanmalısınız::
 
@@ -50,7 +50,7 @@ Eğer daha önce geçen URL adresini kullanarak sitenizi ziyaret ederseniz, yeni
 	example.com/index.php/blog/
 
 Çoklu view yükleme
-======================
+==================
 
 CodeIgniter bir controller $this->load->view ile çoklu yükleme kabiliyetine sahiptir. Eğer birden fazla çağrı olursa, hepsi birbirine eklenecektir. Örneğin, başlık görüntüsü, menü görüntüsü, içerik görüntüsü ve alt-başlık görüntüsünü göstermekmek istediğinizde, şuna benzer bir şey olur ::
 
@@ -73,7 +73,7 @@ CodeIgniter bir controller $this->load->view ile çoklu yükleme kabiliyetine sa
 Yukarıdaki örnekte, aşağıda anlatılan "dinamik bilgi eklemeyi" kullandık.
 
 Alt-dizinlere View depolama
-================================
+===========================
 
 Eğer organizayonda tercih ederseniz, View dosylarınız alt-sizinlerde de depolanabilir. Bu durumda ihtiyacınız, view yüklenirken dizin adını da belirtmektir. Örneğin::
 
@@ -128,7 +128,7 @@ Hadi Controller dosyanızda deneyin. Açıp şu kodu ekleyelim::
 Sonra sayfayı, kullandığınız URL ile yüklediğinizde değişkenlerin yerini aldığını göreceksiniz.
 
 Döngüler Oluşturmak
-==============
+===================
 
 View dosylarına gönderilen değişkenler basit değişkenlerle sınırlı değildirler. Çoklu starılarla döngülere alabileceğiniz çok boyutlu diziler gönderebilirsiniz. Örneğin, veritabanından çektiğiniz bilgiler, çok boyutlu dizilere tipik birer örnektirler.
 
@@ -171,10 +171,13 @@ Basit bir örnek. Bunu controller dosyasına ekleyin::
 	</body>
 	</html>
 
-.. Not:: Yukarıdaki örnekte fark edeceğiniz gibi PHP'nin alternatif imlasını kullandık. Eğer bu imlaya yabancı iseniz, bu konu hakkında :doc:`here </general/alternative_php>` okuyun.	
+.. admonition:: Not
+    :class: note
+    
+    Yukarıdaki örnekte fark edeceğiniz gibi PHP'nin alternatif imlasını kullandık. Eğer bu imlaya yabancı iseniz, bu konu hakkında :doc:`here </general/alternative_php>` okuyun.	
 
 View'den Bilgi Geri Dönüşü
-=======================
+==========================
 
 Fonksiyonun üçüncü **opsiyonel** parametresi, tarayıcıya bilgiyi göndermektense metin olarak geri dönmeye izin verir. Bilgiyi başka yollardan işlemek isterseniz, bu yöntem oldukça kullanışlıdır. Eğer bu parametreyi true (boolean) yaparsanız, beli geriye dönecektir. Varsayılan değer tarayıcıya bilgi yazdıran false değeridir. Eğer bilgi geri geliyorsa, bunun bir değişkene atanması gerekitğini unutmayın::
 

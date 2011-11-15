@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="utf-8">
 	    
-	    <title>Reserved Names &mdash; CodeIgniter v3.0-dev documentation</title>
+	    <title>Rezerve İsimler &mdash; CodeIgniter v3.0-dev documentation</title>
 
 	    <link rel="stylesheet" href="../_static/asset/css/common.css" type="text/css" />
 	    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -22,7 +22,7 @@
 	    <script type="text/javascript" src="../_static/doctools.js"></script>
 	    <link rel="top" title="CodeIgniter v3.0-dev documentation" href="../index.html" />
 	    <link rel="up" title="General Topics" href="index.html" />
-	    <link rel="next" title="Views" href="views.html" />
+	    <link rel="next" title="View" href="views.html" />
 	    <link rel="prev" title="Controllers" href="controllers.html" /> 
 	</head>
 	<body>
@@ -35,12 +35,12 @@
 <li class="toctree-l1"><a class="reference internal" href="requirements.html">Server Requirements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../installation/index.html">Installation Instructions</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">General Topics</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="urls.html">CodeIgniter URLs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="urls.html">CodeIgniter&#8217;da URL</a></li>
 <li class="toctree-l2"><a class="reference internal" href="controllers.html">Controllers</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="">Reserved Names</a><ul class="simple">
+<li class="toctree-l2 current"><a class="current reference internal" href="">Rezerve İsimler</a><ul class="simple">
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="views.html">Views</a></li>
+<li class="toctree-l2"><a class="reference internal" href="views.html">View</a></li>
 <li class="toctree-l2"><a class="reference internal" href="models.html">Models</a></li>
 <li class="toctree-l2"><a class="reference internal" href="helpers.html">Helpers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="libraries.html">Using CodeIgniter Libraries</a></li>
@@ -67,7 +67,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../libraries/index.html">Libraries</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../helpers/index.html">Helpers</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../database/index.html">The Database Class</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../documentation/index.html">Writing CodeIgniter Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../documentation/index.html">CodeIgniter Belgesi Yazma</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../tutorial/index.html">Tutorial</a></li>
 <li class="toctree-l1"><a class="reference internal" href="quick_reference.html">Quick Reference Chart</a></li>
 <li class="toctree-l1"><a class="reference internal" href="credits.html">Credits</a></li>
@@ -96,23 +96,17 @@
 				<li><a id="toc-link" href="../index.html">Table of Contents</a>&nbsp;&nbsp; &rsaquo;</li>
 				<li><a href="index.html" accesskey="U">General Topics</a>&nbsp;&nbsp;  &rsaquo;</li>
 
-				<li><strong>Reserved Names</strong></li>
+				<li><strong>Rezerve İsimler</strong></li>
 			</ul>
 		</div><!-- /#header -->
 
 		<div class="section" id="content">
-			<div class="section" id="reserved-names">
-<h1>Reserved Names<a class="headerlink" href="#reserved-names" title="Permalink to this headline">¶</a></h1>
-<p>In order to help out, CodeIgniter uses a series of functions and names
-in its operation. Because of this, some names cannot be used by a
-developer. Following is a list of reserved names that cannot be used.</p>
-<div class="section" id="controller-names">
-<h2>Controller names<a class="headerlink" href="#controller-names" title="Permalink to this headline">¶</a></h2>
-<p>Since your controller classes will extend the main application
-controller you must be careful not to name your functions identically to
-the ones used by that class, otherwise your local functions will
-override them. The following is a list of reserved names. Do not name
-your controller any of these:</p>
+			<div class="section" id="rezerve-isimler">
+<h1>Rezerve İsimler<a class="headerlink" href="#rezerve-isimler" title="Permalink to this headline">¶</a></h1>
+<p>CodeIgniter kendi operasyonlarında fonksiyon ve isim serisi kullanır. Bunun nedeni, bazı isimler geliştiriciler için kullanılmamalıdır. Aşağıdaki liste kullanılmaması gereken rezerve isim listesidir.</p>
+<div class="section" id="controller-isimleri">
+<h2>Controller isimleri<a class="headerlink" href="#controller-isimleri" title="Permalink to this headline">¶</a></h2>
+<p>Controller sınıfınız ana controller uygulamasından genişletilmesi durumunda, kendi sınıfınıza vereceğiniz isimlere dikkat etmelisiniz, yoksa sınıflar kendi lokal sınıflarınızın üzerine yazılır. Aşağıdaki liste kullanılmaması gereken rezerve isim listesidir. Controller fonksiyonları içinde bu isimler kullanılmamalıdır:</p>
 <ul class="simple">
 <li>Controller</li>
 <li>CI_Base</li>
@@ -121,8 +115,8 @@ your controller any of these:</p>
 <li>index</li>
 </ul>
 </div>
-<div class="section" id="functions">
-<h2>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="fonksiyonlar">
+<h2>Fonksiyonlar<a class="headerlink" href="#fonksiyonlar" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li>is_really_writable()</li>
 <li>load_class()</li>
@@ -135,16 +129,16 @@ your controller any of these:</p>
 <li>get_instance()</li>
 </ul>
 </div>
-<div class="section" id="variables">
-<h2>Variables<a class="headerlink" href="#variables" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="degiskenler">
+<h2>Değişkenler<a class="headerlink" href="#degiskenler" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li>$config</li>
 <li>$mimes</li>
 <li>$lang</li>
 </ul>
 </div>
-<div class="section" id="constants">
-<h2>Constants<a class="headerlink" href="#constants" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="sabitler">
+<h2>Sabitler<a class="headerlink" href="#sabitler" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li>ENVIRONMENT</li>
 <li>EXT</li>
@@ -179,11 +173,11 @@ your controller any of these:</p>
 				<span class="prev">Previous Topic: <a href="controllers.html">Controllers</a></span>
 				
 				
-				<span class="next">Next Topic: <a href="views.html">Views</a></span>
+				<span class="next">Next Topic: <a href="views.html">View</a></span>
 				
 				<a href="#header" title="Return to top">Return to top</a>
 			</p>
-			<p><a href="">CodeIgniter</a> &ndash; Copyright &copy; 2011, EllisLab, Inc.</a> &ndash; Last updated: Nov 13, 2011</p>
+			<p><a href="">CodeIgniter</a> &ndash; Copyright &copy; 2011, EllisLab, Inc.</a> &ndash; Last updated: Nov 15, 2011</p>
 		</div><!-- /#footer -->
 	
 	<script src="../_static/asset/js/jquery-ui-min.js" type="text/javascript" charset="utf-8" async></script>

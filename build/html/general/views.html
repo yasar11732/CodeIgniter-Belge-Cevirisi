@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="utf-8">
 	    
-	    <title>Views &mdash; CodeIgniter v3.0-dev documentation</title>
+	    <title>View &mdash; CodeIgniter v3.0-dev documentation</title>
 
 	    <link rel="stylesheet" href="../_static/asset/css/common.css" type="text/css" />
 	    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -23,7 +23,7 @@
 	    <link rel="top" title="CodeIgniter v3.0-dev documentation" href="../index.html" />
 	    <link rel="up" title="General Topics" href="index.html" />
 	    <link rel="next" title="Models" href="models.html" />
-	    <link rel="prev" title="Reserved Names" href="reserved_names.html" /> 
+	    <link rel="prev" title="Rezerve İsimler" href="reserved_names.html" /> 
 	</head>
 	<body>
 		<div id="table-contents">
@@ -35,10 +35,10 @@
 <li class="toctree-l1"><a class="reference internal" href="requirements.html">Server Requirements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../installation/index.html">Installation Instructions</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">General Topics</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="urls.html">CodeIgniter URLs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="urls.html">CodeIgniter&#8217;da URL</a></li>
 <li class="toctree-l2"><a class="reference internal" href="controllers.html">Controllers</a></li>
-<li class="toctree-l2"><a class="reference internal" href="reserved_names.html">Reserved Names</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="">Views</a><ul class="simple">
+<li class="toctree-l2"><a class="reference internal" href="reserved_names.html">Rezerve İsimler</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">View</a><ul class="simple">
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="models.html">Models</a></li>
@@ -67,7 +67,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../libraries/index.html">Libraries</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../helpers/index.html">Helpers</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../database/index.html">The Database Class</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../documentation/index.html">Writing CodeIgniter Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../documentation/index.html">CodeIgniter Belgesi Yazma</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../tutorial/index.html">Tutorial</a></li>
 <li class="toctree-l1"><a class="reference internal" href="quick_reference.html">Quick Reference Chart</a></li>
 <li class="toctree-l1"><a class="reference internal" href="credits.html">Credits</a></li>
@@ -96,28 +96,19 @@
 				<li><a id="toc-link" href="../index.html">Table of Contents</a>&nbsp;&nbsp; &rsaquo;</li>
 				<li><a href="index.html" accesskey="U">General Topics</a>&nbsp;&nbsp;  &rsaquo;</li>
 
-				<li><strong>Views</strong></li>
+				<li><strong>View</strong></li>
 			</ul>
 		</div><!-- /#header -->
 
 		<div class="section" id="content">
-			<div class="section" id="views">
-<h1>Views<a class="headerlink" href="#views" title="Permalink to this headline">¶</a></h1>
-<p>A view is simply a web page, or a page fragment, like a header, footer,
-sidebar, etc. In fact, views can flexibly be embedded within other views
-(within other views, etc., etc.) if you need this type of hierarchy.</p>
-<p>Views are never called directly, they must be loaded by a
-<a class="reference internal" href="controllers.html"><em>controller</em></a>. Remember that in an MVC framework, the
-Controller acts as the traffic cop, so it is responsible for fetching a
-particular view. If you have not read the
-<a class="reference internal" href="controllers.html"><em>Controllers</em></a> page you should do so before
-continuing.</p>
-<p>Using the example controller you created in the
-<a class="reference internal" href="controllers.html"><em>controller</em></a> page, let&#8217;s add a view to it.</p>
-<div class="section" id="creating-a-view">
-<h2>Creating a View<a class="headerlink" href="#creating-a-view" title="Permalink to this headline">¶</a></h2>
-<p>Using your text editor, create a file called blogview.php, and put this
-in it:</p>
+			<div class="section" id="view">
+<h1>View<a class="headerlink" href="#view" title="Permalink to this headline">¶</a></h1>
+<p>View basit bir web sayfası, ya da başlık, alt-başlık, kenar-kolonu gibi sayfa parçasıdır. Gerçekte, eğer bir hiyerarşiye ihtiyacınız varsa, View dosyaları diğer View dosyaları içine de esnek olarak gömülebilirler.</p>
+<p>View dosyaları, asla doğrudan çağrılmaz, <a class="reference internal" href="controllers.html"><em>controller</em></a> dosyaları tarafından yüklenirler. MVC çatısını hatırlarsak, Controller bir trafik polisi gibi davranıp, belirli View dosyalarını getirirler. Eğer <a class="reference internal" href="controllers.html"><em>Controllers</em></a> sayfasını okumadıysanız, devam etmeden önce okuyunuz.</p>
+<p>Hadi <a class="reference internal" href="controllers.html"><em>controller</em></a> sayfasında hazırladığınız örnek controller dosyasını kullanıp, ona bir View ekleyelim.</p>
+<div class="section" id="view-olusturma">
+<h2>View Oluşturma<a class="headerlink" href="#view-olusturma" title="Permalink to this headline">¶</a></h2>
+<p>Metin düzenleyicinizi kullanarak, blogview.php dosyasını oluşturup, içine şunları ekleyelim:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="o">&lt;</span><span class="nx">html</span><span class="o">&gt;</span>
 <span class="o">&lt;</span><span class="nx">head</span><span class="o">&gt;</span>
         <span class="o">&lt;</span><span class="nx">title</span><span class="o">&gt;</span><span class="nx">My</span> <span class="nx">Blog</span><span class="o">&lt;/</span><span class="nx">title</span><span class="o">&gt;</span>
@@ -128,18 +119,16 @@ in it:</p>
 <span class="o">&lt;/</span><span class="nx">html</span><span class="o">&gt;</span>
 </pre></div>
 </div>
-<p>Then save the file in your application/views/ folder.</p>
+<p>Sonra da application/views/ dizini altına kayıt edelim.</p>
 </div>
-<div class="section" id="loading-a-view">
-<h2>Loading a View<a class="headerlink" href="#loading-a-view" title="Permalink to this headline">¶</a></h2>
-<p>To load a particular view file you will use the following function:</p>
+<div class="section" id="view-yukleme">
+<h2>View Yükleme<a class="headerlink" href="#view-yukleme" title="Permalink to this headline">¶</a></h2>
+<p>Belirli View dosyalarını yüklemek için aşağıdaki fonksiyonu kullanmalısınız:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">view</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>Where name is the name of your view file. Note: The .php file extension
-does not need to be specified unless you use something other than .php.</p>
-<p>Now, open the controller file you made earlier called blog.php, and
-replace the echo statement with the view loading function:</p>
+<p>Burada name View dosyasının adıdır. Not: Eğer dosyanızın uzantısı .php ise, dosya uzantısını yazmanıza gerek yoktur.</p>
+<p>Şimdi, daha önce blog.php ismi ile oluşturduğumuz dosyayı, controller içinden açarak echo ile yazdırdığımız satırı view yükleme fonksiyonu ile değiştirelim:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="o">&lt;?</span><span class="nx">php</span>
 <span class="k">class</span> <span class="nc">Blog</span> <span class="k">extends</span> <span class="nx">CI_Controller</span> <span class="p">{</span>
 
@@ -151,19 +140,14 @@ replace the echo statement with the view loading function:</p>
 <span class="cp">?&gt;</span>
 </pre></div>
 </div>
-<p>If you visit your site using the URL you did earlier you should see your
-new view. The URL was similar to this:</p>
+<p>Eğer daha önce geçen URL adresini kullanarak sitenizi ziyaret ederseniz, yeni görüntüyü görebilirsiniz. BUnun için URL aynısıdır:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nx">example</span><span class="o">.</span><span class="nx">com</span><span class="o">/</span><span class="nx">index</span><span class="o">.</span><span class="nx">php</span><span class="o">/</span><span class="nx">blog</span><span class="o">/</span>
 </pre></div>
 </div>
 </div>
-<div class="section" id="loading-multiple-views">
-<h2>Loading multiple views<a class="headerlink" href="#loading-multiple-views" title="Permalink to this headline">¶</a></h2>
-<p>CodeIgniter will intelligently handle multiple calls to
-$this-&gt;load-&gt;view from within a controller. If more than one call
-happens they will be appended together. For example, you may wish to
-have a header view, a menu view, a content view, and a footer view. That
-might look something like this:</p>
+<div class="section" id="coklu-view-yukleme">
+<h2>Çoklu view yükleme<a class="headerlink" href="#coklu-view-yukleme" title="Permalink to this headline">¶</a></h2>
+<p>CodeIgniter bir controller $this-&gt;load-&gt;view ile çoklu yükleme kabiliyetine sahiptir. Eğer birden fazla çağrı olursa, hepsi birbirine eklenecektir. Örneğin, başlık görüntüsü, menü görüntüsü, içerik görüntüsü ve alt-başlık görüntüsünü göstermekmek istediğinizde, şuna benzer bir şey olur</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="o">&lt;?</span><span class="nx">php</span>
 
 <span class="k">class</span> <span class="nc">Page</span> <span class="k">extends</span> <span class="nx">CI_Controller</span> <span class="p">{</span>
@@ -181,23 +165,18 @@ might look something like this:</p>
 <span class="cp">?&gt;</span>
 </pre></div>
 </div>
-<p>In the example above, we are using &#8220;dynamically added data&#8221;, which you
-will see below.</p>
+<p>Yukarıdaki örnekte, aşağıda anlatılan &#8220;dinamik bilgi eklemeyi&#8221; kullandık.</p>
 </div>
-<div class="section" id="storing-views-within-sub-folders">
-<h2>Storing Views within Sub-folders<a class="headerlink" href="#storing-views-within-sub-folders" title="Permalink to this headline">¶</a></h2>
-<p>Your view files can also be stored within sub-folders if you prefer that
-type of organization. When doing so you will need to include the folder
-name loading the view. Example:</p>
+<div class="section" id="alt-dizinlere-view-depolama">
+<h2>Alt-dizinlere View depolama<a class="headerlink" href="#alt-dizinlere-view-depolama" title="Permalink to this headline">¶</a></h2>
+<p>Eğer organizayonda tercih ederseniz, View dosylarınız alt-sizinlerde de depolanabilir. Bu durumda ihtiyacınız, view yüklenirken dizin adını da belirtmektir. Örneğin:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">view</span><span class="p">(</span><span class="s1">&#39;folder_name/file_name&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
-<div class="section" id="adding-dynamic-data-to-the-view">
-<h2>Adding Dynamic Data to the View<a class="headerlink" href="#adding-dynamic-data-to-the-view" title="Permalink to this headline">¶</a></h2>
-<p>Data is passed from the controller to the view by way of an <strong>array</strong> or
-an <strong>object</strong> in the second parameter of the view loading function. Here
-is an example using an array:</p>
+<div class="section" id="view-lara-dinamik-bilgi-eklemek">
+<h2>View&#8217;lara Dinamik Bilgi Eklemek<a class="headerlink" href="#view-lara-dinamik-bilgi-eklemek" title="Permalink to this headline">¶</a></h2>
+<p>Bilgiler View yüklemede kullanılan fonksyionun ikinci parametresi olarak, Controller içinden bir <strong>dizi</strong> ya da bir <strong>obje</strong> kullanılarak aktarılır. Burada dizi ile aktarımın örneği:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$data</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
                <span class="s1">&#39;title&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;My Title&#39;</span><span class="p">,</span>
                <span class="s1">&#39;heading&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;My Heading&#39;</span><span class="p">,</span>
@@ -207,14 +186,13 @@ is an example using an array:</p>
 <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">view</span><span class="p">(</span><span class="s1">&#39;blogview&#39;</span><span class="p">,</span> <span class="nv">$data</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>And here&#8217;s an example using an object:</p>
+<p>ve burada da obje kullanılarak aktarım örneği:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$data</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Someclass</span><span class="p">();</span>
 <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">view</span><span class="p">(</span><span class="s1">&#39;blogview&#39;</span><span class="p">,</span> <span class="nv">$data</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>Note: If you use an object, the class variables will be turned into
-array elements.</p>
-<p>Let&#8217;s try it with your controller file. Open it add this code:</p>
+<p>Not: Eğer obje kullanılarak aktarım yapılıyorsa, sınıf değişkenleri dizi elemanlarına dönüştürülmelidir.</p>
+<p>Hadi Controller dosyanızda deneyin. Açıp şu kodu ekleyelim:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="o">&lt;?</span><span class="nx">php</span>
 <span class="k">class</span> <span class="nc">Blog</span> <span class="k">extends</span> <span class="nx">CI_Controller</span> <span class="p">{</span>
 
@@ -229,8 +207,7 @@ array elements.</p>
 <span class="cp">?&gt;</span>
 </pre></div>
 </div>
-<p>Now open your view file and change the text to variables that correspond
-to the array keys in your data:</p>
+<p>Şimdi view dosyanızı açın ve metin değişkenlerini, ilgili dizinin anahtarları olacak şekilde değiştirin:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="o">&lt;</span><span class="nx">html</span><span class="o">&gt;</span>
 <span class="o">&lt;</span><span class="nx">head</span><span class="o">&gt;</span>
         <span class="o">&lt;</span><span class="nx">title</span><span class="o">&gt;&lt;?</span><span class="nx">php</span> <span class="k">echo</span> <span class="nv">$title</span><span class="p">;</span><span class="cp">?&gt;</span><span class="nt">&lt;/title&gt;</span>
@@ -241,16 +218,12 @@ to the array keys in your data:</p>
 <span class="nt">&lt;/html&gt;</span>
 </pre></div>
 </div>
-<p>Then load the page at the URL you&#8217;ve been using and you should see the
-variables replaced.</p>
+<p>Sonra sayfayı, kullandığınız URL ile yüklediğinizde değişkenlerin yerini aldığını göreceksiniz.</p>
 </div>
-<div class="section" id="creating-loops">
-<h2>Creating Loops<a class="headerlink" href="#creating-loops" title="Permalink to this headline">¶</a></h2>
-<p>The data array you pass to your view files is not limited to simple
-variables. You can pass multi dimensional arrays, which can be looped to
-generate multiple rows. For example, if you pull data from your database
-it will typically be in the form of a multi-dimensional array.</p>
-<p>Here&#8217;s a simple example. Add this to your controller:</p>
+<div class="section" id="donguler-olusturmak">
+<h2>Döngüler Oluşturmak<a class="headerlink" href="#donguler-olusturmak" title="Permalink to this headline">¶</a></h2>
+<p>View dosylarına gönderilen değişkenler basit değişkenlerle sınırlı değildirler. Çoklu starılarla döngülere alabileceğiniz çok boyutlu diziler gönderebilirsiniz. Örneğin, veritabanından çektiğiniz bilgiler, çok boyutlu dizilere tipik birer örnektirler.</p>
+<p>Basit bir örnek. Bunu controller dosyasına ekleyin:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="o">&lt;?</span><span class="nx">php</span>
 <span class="k">class</span> <span class="nc">Blog</span> <span class="k">extends</span> <span class="nx">CI_Controller</span> <span class="p">{</span>
 
@@ -267,7 +240,7 @@ it will typically be in the form of a multi-dimensional array.</p>
 <span class="cp">?&gt;</span>
 </pre></div>
 </div>
-<p>Now open your view file and create a loop:</p>
+<p>Şimdi View dosyasını açın ve bir döngü oluşturun:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="o">&lt;</span><span class="nx">html</span><span class="o">&gt;</span>
 <span class="o">&lt;</span><span class="nx">head</span><span class="o">&gt;</span>
         <span class="o">&lt;</span><span class="nx">title</span><span class="o">&gt;&lt;?</span><span class="nx">php</span> <span class="k">echo</span> <span class="nv">$title</span><span class="p">;</span><span class="cp">?&gt;</span><span class="nt">&lt;/title&gt;</span>
@@ -289,21 +262,14 @@ it will typically be in the form of a multi-dimensional array.</p>
 <span class="nt">&lt;/html&gt;</span>
 </pre></div>
 </div>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">You&#8217;ll notice that in the example above we are using PHP&#8217;s
-alternative syntax. If you are not familiar with it you can read about
-it <a class="reference internal" href="alternative_php.html"><em>here</em></a>.</p>
+<div class="note admonition">
+<p class="first admonition-title">Not</p>
+<p class="last">Yukarıdaki örnekte fark edeceğiniz gibi PHP&#8217;nin alternatif imlasını kullandık. Eğer bu imlaya yabancı iseniz, bu konu hakkında <a class="reference internal" href="alternative_php.html"><em>here</em></a> okuyun.</p>
 </div>
 </div>
-<div class="section" id="returning-views-as-data">
-<h2>Returning views as data<a class="headerlink" href="#returning-views-as-data" title="Permalink to this headline">¶</a></h2>
-<p>There is a third <strong>optional</strong> parameter lets you change the behavior of
-the function so that it returns data as a string rather than sending it
-to your browser. This can be useful if you want to process the data in
-some way. If you set the parameter to true (boolean) it will return
-data. The default behavior is false, which sends it to your browser.
-Remember to assign it to a variable if you want the data returned:</p>
+<div class="section" id="view-den-bilgi-geri-donusu">
+<h2>View&#8217;den Bilgi Geri Dönüşü<a class="headerlink" href="#view-den-bilgi-geri-donusu" title="Permalink to this headline">¶</a></h2>
+<p>Fonksiyonun üçüncü <strong>opsiyonel</strong> parametresi, tarayıcıya bilgiyi göndermektense metin olarak geri dönmeye izin verir. Bilgiyi başka yollardan işlemek isterseniz, bu yöntem oldukça kullanışlıdır. Eğer bu parametreyi true (boolean) yaparsanız, beli geriye dönecektir. Varsayılan değer tarayıcıya bilgi yazdıran false değeridir. Eğer bilgi geri geliyorsa, bunun bir değişkene atanması gerekitğini unutmayın:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$string</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">view</span><span class="p">(</span><span class="s1">&#39;myfile&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="k">true</span><span class="p">);</span>
 </pre></div>
 </div>
@@ -317,14 +283,14 @@ Remember to assign it to a variable if you want the data returned:</p>
 		<div id="footer">
 			<p class="top">
 				
-				<span class="prev">Previous Topic: <a href="reserved_names.html">Reserved Names</a></span>
+				<span class="prev">Previous Topic: <a href="reserved_names.html">Rezerve İsimler</a></span>
 				
 				
 				<span class="next">Next Topic: <a href="models.html">Models</a></span>
 				
 				<a href="#header" title="Return to top">Return to top</a>
 			</p>
-			<p><a href="">CodeIgniter</a> &ndash; Copyright &copy; 2011, EllisLab, Inc.</a> &ndash; Last updated: Nov 13, 2011</p>
+			<p><a href="">CodeIgniter</a> &ndash; Copyright &copy; 2011, EllisLab, Inc.</a> &ndash; Last updated: Nov 15, 2011</p>
 		</div><!-- /#footer -->
 	
 	<script src="../_static/asset/js/jquery-ui-min.js" type="text/javascript" charset="utf-8" async></script>
