@@ -6,8 +6,8 @@ CodeIgniter Kullanım Kılavuzu
 Kurulum Talimatları
 *******************
 
-Codeigniter kullanım klavuzu belgeleri yönetmek ve farklı formatlarda çıktı almak 
-için Sphinx kullanır.Sayfalar kolayca okunabilen `ReStructured Text <http://sphinx.pocoo.org/rest.html>`_
+CodeIgniter kullanım kılavuzu, belgeleri yönetmek ve farklı formatlarda çıktı almak 
+için Sphinx kullanır. Sayfalar kolayca okunabilen `ReStructured Text <http://sphinx.pocoo.org/rest.html>`_
 formatında yazılır.
 
 Gereksinimler
