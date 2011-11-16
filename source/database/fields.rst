@@ -39,7 +39,10 @@ döndürür. Örnek kullanımı::
 		// yazılan kodlar...
 	}
 
-.. not:: *alan_adı* parametresini aradığınız kolonun adıyla ve *tablo_adı*
+.. admonition:: Not
+    :class: note
+
+    *alan_adı* parametresini aradığınız kolonun adıyla ve *tablo_adı*
 	parametresini üzerinde arama yapmak istediğiniz tablo adıyla değiştirin.
 
 $this->db->field_data()
@@ -50,7 +53,10 @@ Alan bilgisi içeren bir nesne dizisi döndürür.
 Bazen alan alan adlarını veya kolon tipi, maksimumum uzunluk, vb. meta verileri 
 almak, size yardımcı olabilir.
 
-.. not:: Bazı veri tabanları meta veri desteği sağlamayabilir.
+.. admonition:: Not
+    :class: note
+    
+    Bazı veri tabanları meta veri desteği sağlamayabilir.
 
 Kullanım örneği::
 
