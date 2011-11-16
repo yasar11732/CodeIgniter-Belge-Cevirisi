@@ -21,9 +21,9 @@
 	    <script type="text/javascript" src="../_static/underscore.js"></script>
 	    <script type="text/javascript" src="../_static/doctools.js"></script>
 	    <link rel="top" title="CodeIgniter v3.0-dev documentation" href="../index.html" />
-	    <link rel="up" title="The Database Class" href="index.html" />
-	    <link rel="next" title="Custom Function Calls" href="call_function.html" />
-	    <link rel="prev" title="Table Data" href="table_data.html" /> 
+	    <link rel="up" title="Veri Tabanı Sınıfı" href="index.html" />
+	    <link rel="next" title="Özel Fonksiyon Çağrıları" href="call_function.html" />
+	    <link rel="prev" title="Tablo Verileri" href="table_data.html" /> 
 	</head>
 	<body>
 		<div id="table-contents">
@@ -37,26 +37,26 @@
 <li class="toctree-l1"><a class="reference internal" href="../general/index.html">General Topics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../libraries/index.html">Libraries</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../helpers/index.html">Helpers</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="index.html">The Database Class</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="examples.html">Quick Start: Usage Examples</a></li>
-<li class="toctree-l2"><a class="reference internal" href="configuration.html">Database Configuration</a></li>
-<li class="toctree-l2"><a class="reference internal" href="connecting.html">Connecting to a Database</a></li>
-<li class="toctree-l2"><a class="reference internal" href="queries.html">Running Queries</a></li>
-<li class="toctree-l2"><a class="reference internal" href="results.html">Generating Query Results</a></li>
-<li class="toctree-l2"><a class="reference internal" href="helpers.html">Query Helper Functions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="active_record.html">Active Record Class</a></li>
-<li class="toctree-l2"><a class="reference internal" href="transactions.html">Transactions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="table_data.html">Table MetaData</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="">Field MetaData</a><ul class="simple">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Veri Tabanı Sınıfı</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="examples.html">Hızlı Başlangıç: Kullanım Örnekleri</a></li>
+<li class="toctree-l2"><a class="reference internal" href="configuration.html">Veri Tabanı Konfigürasyonu</a></li>
+<li class="toctree-l2"><a class="reference internal" href="connecting.html">Veri Tabanına Bağlanmak</a></li>
+<li class="toctree-l2"><a class="reference internal" href="queries.html">Sorgu Çalıştırmak</a></li>
+<li class="toctree-l2"><a class="reference internal" href="results.html">Sorgu Sonuçları Üretmek</a></li>
+<li class="toctree-l2"><a class="reference internal" href="helpers.html">Sorgu Yardımcı Fonksiyonları</a></li>
+<li class="toctree-l2"><a class="reference internal" href="active_record.html">Aktif Kayıt Sınıfı</a></li>
+<li class="toctree-l2"><a class="reference internal" href="transactions.html">İşlemler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="table_data.html">Tablo Meta Verileri</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Alan Meta Verileri</a><ul class="simple">
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="call_function.html">Custom Function Calls</a></li>
-<li class="toctree-l2"><a class="reference internal" href="caching.html">Query Caching</a></li>
-<li class="toctree-l2"><a class="reference internal" href="forge.html">Database Manipulation with Database Forge</a></li>
-<li class="toctree-l2"><a class="reference internal" href="utilities.html">Database Utilities Class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="call_function.html">Özel Fonksiyon Çağrıları</a></li>
+<li class="toctree-l2"><a class="reference internal" href="caching.html">Sorgu Önbelleği</a></li>
+<li class="toctree-l2"><a class="reference internal" href="forge.html">Veri Tabanı Forge Sınıfı İle Veri Tabanı Düzenleme İşlemleri</a></li>
+<li class="toctree-l2"><a class="reference internal" href="utilities.html">Veri Tabanı Yardımcı Sınıfı</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../documentation/index.html">Writing CodeIgniter Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../documentation/index.html">CodeIgniter Belgesi Yazma</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../tutorial/index.html">Tutorial</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../general/quick_reference.html">Quick Reference Chart</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../general/credits.html">Credits</a></li>
@@ -83,7 +83,7 @@
 			<ul>
 				<li><a href="../index.html">Home</a>&nbsp;&nbsp; &rsaquo;</li>
 				<li><a id="toc-link" href="../index.html">Table of Contents</a>&nbsp;&nbsp; &rsaquo;</li>
-				<li><a href="index.html" accesskey="U">The Database Class</a>&nbsp;&nbsp;  &rsaquo;</li>
+				<li><a href="index.html" accesskey="U">Veri Tabanı Sınıfı</a>&nbsp;&nbsp;  &rsaquo;</li>
 
 				<li><strong>Field Data</strong></li>
 			</ul>
@@ -179,14 +179,14 @@ database:</p>
 		<div id="footer">
 			<p class="top">
 				
-				<span class="prev">Previous Topic: <a href="table_data.html">Table Data</a></span>
+				<span class="prev">Previous Topic: <a href="table_data.html">Tablo Verileri</a></span>
 				
 				
-				<span class="next">Next Topic: <a href="call_function.html">Custom Function Calls</a></span>
+				<span class="next">Next Topic: <a href="call_function.html">Özel Fonksiyon Çağrıları</a></span>
 				
 				<a href="#header" title="Return to top">Return to top</a>
 			</p>
-			<p><a href="">CodeIgniter</a> &ndash; Copyright &copy; 2011, EllisLab, Inc.</a> &ndash; Last updated: Nov 13, 2011</p>
+			<p><a href="">CodeIgniter</a> &ndash; Copyright &copy; 2011, EllisLab, Inc.</a> &ndash; Last updated: Nov 16, 2011</p>
 		</div><!-- /#footer -->
 	
 	<script src="../_static/asset/js/jquery-ui-min.js" type="text/javascript" charset="utf-8" async></script>

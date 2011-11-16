@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="utf-8">
 	    
-	    <title>Helper Functions &mdash; CodeIgniter v3.0-dev documentation</title>
+	    <title>Helper Fonksiyonu &mdash; CodeIgniter v3.0-dev documentation</title>
 
 	    <link rel="stylesheet" href="../_static/asset/css/common.css" type="text/css" />
 	    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -23,7 +23,7 @@
 	    <link rel="top" title="CodeIgniter v3.0-dev documentation" href="../index.html" />
 	    <link rel="up" title="General Topics" href="index.html" />
 	    <link rel="next" title="Using CodeIgniter Libraries" href="libraries.html" />
-	    <link rel="prev" title="Models" href="models.html" /> 
+	    <link rel="prev" title="Model" href="models.html" /> 
 	</head>
 	<body>
 		<div id="table-contents">
@@ -35,11 +35,11 @@
 <li class="toctree-l1"><a class="reference internal" href="requirements.html">Server Requirements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../installation/index.html">Installation Instructions</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">General Topics</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="urls.html">CodeIgniter URLs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="urls.html">CodeIgniter&#8217;da URL</a></li>
 <li class="toctree-l2"><a class="reference internal" href="controllers.html">Controllers</a></li>
-<li class="toctree-l2"><a class="reference internal" href="reserved_names.html">Reserved Names</a></li>
-<li class="toctree-l2"><a class="reference internal" href="views.html">Views</a></li>
-<li class="toctree-l2"><a class="reference internal" href="models.html">Models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reserved_names.html">Rezerve İsimler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="views.html">View</a></li>
+<li class="toctree-l2"><a class="reference internal" href="models.html">Model</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="">Helpers</a><ul class="simple">
 </ul>
 </li>
@@ -66,8 +66,8 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../libraries/index.html">Libraries</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../helpers/index.html">Helpers</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../database/index.html">The Database Class</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../documentation/index.html">Writing CodeIgniter Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../database/index.html">Veri Tabanı Sınıfı</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../documentation/index.html">CodeIgniter Belgesi Yazma</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../tutorial/index.html">Tutorial</a></li>
 <li class="toctree-l1"><a class="reference internal" href="quick_reference.html">Quick Reference Chart</a></li>
 <li class="toctree-l1"><a class="reference internal" href="credits.html">Credits</a></li>
@@ -96,98 +96,56 @@
 				<li><a id="toc-link" href="../index.html">Table of Contents</a>&nbsp;&nbsp; &rsaquo;</li>
 				<li><a href="index.html" accesskey="U">General Topics</a>&nbsp;&nbsp;  &rsaquo;</li>
 
-				<li><strong>Helper Functions</strong></li>
+				<li><strong>Helper Fonksiyonu</strong></li>
 			</ul>
 		</div><!-- /#header -->
 
 		<div class="section" id="content">
-			<div class="section" id="helper-functions">
-<h1>Helper Functions<a class="headerlink" href="#helper-functions" title="Permalink to this headline">¶</a></h1>
-<p>Helpers, as the name suggests, help you with tasks. Each helper file is
-simply a collection of functions in a particular category. There are <strong>URL
-Helpers</strong>, that assist in creating links, there are Form Helpers that help
-you create form elements, <strong>Text Helpers</strong> perform various text formatting
-routines, <strong>Cookie Helpers</strong> set and read cookies, File Helpers help you
-deal with files, etc.</p>
-<p>Unlike most other systems in CodeIgniter, Helpers are not written in an
-Object Oriented format. They are simple, procedural functions. Each
-helper function performs one specific task, with no dependence on other
-functions.</p>
-<p>CodeIgniter does not load Helper Files by default, so the first step in
-using a Helper is to load it. Once loaded, it becomes globally available
-in your <a class="reference internal" href="controllers.html"><em>controller</em></a> and
-<a class="reference internal" href="views.html"><em>views</em></a>.</p>
-<p>Helpers are typically stored in your <strong>system/helpers</strong>, or
-<strong>application/helpers directory</strong>. CodeIgniter will look first in your
-<strong>application/helpers directory</strong>. If the directory does not exist or the
-specified helper is not located there CI will instead look in your
-global system/helpers folder.</p>
-<div class="section" id="loading-a-helper">
-<h2>Loading a Helper<a class="headerlink" href="#loading-a-helper" title="Permalink to this headline">¶</a></h2>
-<p>Loading a helper file is quite simple using the following function:</p>
+			<div class="section" id="helper-fonksiyonu">
+<h1>Helper Fonksiyonu<a class="headerlink" href="#helper-fonksiyonu" title="Permalink to this headline">¶</a></h1>
+<p>Helper&#8217;lar, isimlerinden de anlaşıldığı gibi, size yardımcılardır. Her helper dosyası belli kategorilerde fonskiyonları basitçe toparlar. <strong>URL Helper</strong> link oluşturmada yardımcı olur, <strong>Form Helper</strong> form oluşturmaya yardımcı olur, <strong>Text Helper</strong> metin formatı rutinlerini gerçekleştirir, <strong>Cookie Helper</strong> dosyaları cookie bilgilerini ayarlar ve okur, <strong>File Helper</strong> dosya işlemlerine yardım eder, vs.</p>
+<p>CodeIgniter&#8217;daki diğer sistemlerden farkı, Helper&#8217;lar nesne tabanı formatında yazılmamışlardır. Basit ve prosedürel fonsiyonlardır. Her helper fonksiyonu bir görev için diğer fonksiyonlara bağlı olamdan çalışır.</p>
+<p>CodeIgniter Helper dosyalarını açılışta yüklemez, bu yüzden ilk adım Helper dosyasını yüklemektir. Bir kez yüklendiğinde, <a class="reference internal" href="controllers.html"><em>controller</em></a> ve <a class="reference internal" href="views.html"><em>views</em></a> dosyalarında kullanılır hale gelir.</p>
+<p>Helper&#8217;lar tipik olarak <strong>system/helpers</strong> dizini altında ya da <strong>system/application/helpers</strong> dizini altına yerleştirilmiştir. CodeIgniter ilk önce <strong>system/application/helpers</strong> dizini altını kontrol eder. Eğer dizin altında yoksa ya da tanımlanan helper bu sizinde değilse, CI genel system/helpers dizini altını kontrol eder.</p>
+<div class="section" id="helper-yuklemek">
+<h2>Helper Yüklemek<a class="headerlink" href="#helper-yuklemek" title="Permalink to this headline">¶</a></h2>
+<p>Aşağıdaki fonksiyon kullanarak helper yüklemek oldukça basittir:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">helper</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>Where <strong>name</strong> is the file name of the helper, without the .php file
-extension or the &#8220;helper&#8221; part.</p>
-<p>For example, to load the <strong>URL Helper</strong> file, which is named
-<strong>url_helper.php</strong>, you would do this:</p>
+<p>Burada <strong>name</strong>, helper&#8217;ın adıdır; .php dosya uzantısı ya da &#8220;helper&#8221; kısmı olmadan kullanılır.</p>
+<p>Örneğin, <strong>url_helper.php</strong> isimli <strong>URL Helper</strong>&#8216;ını yüklemek için, şunu yapmalısınız:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">helper</span><span class="p">(</span><span class="s1">&#39;url&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>A helper can be loaded anywhere within your controller functions (or
-even within your View files, although that&#8217;s not a good practice), as
-long as you load it before you use it. You can load your helpers in your
-controller constructor so that they become available automatically in
-any function, or you can load a helper in a specific function that needs
-it.</p>
-<p>Note: The Helper loading function above does not return a value, so
-don&#8217;t try to assign it to a variable. Just use it as shown.</p>
+<p>Helper dosyası kullanmadan önce controller fonksiyonlarının herhangi bir yerinde (hatta iyi bir pratik olmamasına karşın View dosyalarında bile) çağrılır. Helper&#8217;ı controller&#8217;ın constructor kısmında yüklerseniz, o controller&#8217;ın bütün fonksiyonlarında geçerli olur ya da istediğiniz bir fonksiyonda yükleyebilirsiniz.</p>
+<p>Not: Helper&#8217;lar geri değer döndürmezler o nedenle bir değişkene atamayı denemeyin. Sadece kullanın.</p>
 </div>
-<div class="section" id="loading-multiple-helpers">
-<h2>Loading Multiple Helpers<a class="headerlink" href="#loading-multiple-helpers" title="Permalink to this headline">¶</a></h2>
-<p>If you need to load more than one helper you can specify them in an
-array, like this:</p>
+<div class="section" id="coklu-helper-yuklemek">
+<h2>Çoklu Helper Yüklemek<a class="headerlink" href="#coklu-helper-yuklemek" title="Permalink to this headline">¶</a></h2>
+<p>Eğer birden fazla helper&#8217;i aynı anda yüklemeniz gerekliyse, onları bir diziye atın, şunun gibi:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">helper</span><span class="p">(</span> <span class="k">array</span><span class="p">(</span><span class="s1">&#39;helper1&#39;</span><span class="p">,</span> <span class="s1">&#39;helper2&#39;</span><span class="p">,</span> <span class="s1">&#39;helper3&#39;</span><span class="p">)</span> <span class="p">);</span>
 </pre></div>
 </div>
 </div>
-<div class="section" id="auto-loading-helpers">
-<h2>Auto-loading Helpers<a class="headerlink" href="#auto-loading-helpers" title="Permalink to this headline">¶</a></h2>
-<p>If you find that you need a particular helper globally throughout your
-application, you can tell CodeIgniter to auto-load it during system
-initialization. This is done by opening the <strong>application/config/autoload.php</strong>
-file and adding the helper to the autoload array.</p>
+<div class="section" id="helper-lari-otomatik-yuklemek">
+<h2>Helper&#8217;ları Otomatik Yüklemek<a class="headerlink" href="#helper-lari-otomatik-yuklemek" title="Permalink to this headline">¶</a></h2>
+<p>Eğer bütün uygulamanızda kullanmanız gereken özel bir helper varsa, bunu CodeIgniter&#8217;a sistem başlarken söyleyebilirsiniz. Bunun için <strong>application/config/autoload.php</strong> dosyasını açmalı ve helper&#8217;ı otomatik yükleme dizisine eklemelisiniz.</p>
 </div>
-<div class="section" id="using-a-helper">
-<h2>Using a Helper<a class="headerlink" href="#using-a-helper" title="Permalink to this headline">¶</a></h2>
-<p>Once you&#8217;ve loaded the Helper File containing the function you intend to
-use, you&#8217;ll call it the way you would a standard PHP function.</p>
-<p>For example, to create a link using the anchor() function in one of your
-view files you would do this:</p>
+<div class="section" id="helper-kullanmak">
+<h2>Helper Kullanmak<a class="headerlink" href="#helper-kullanmak" title="Permalink to this headline">¶</a></h2>
+<p>Bir defa yüklendiğinde, Helper dosyasındaki fonksiyonları, standart PHP fonksiyonu gibi niyetlendiğiniz yerde kullanabilirsiniz.</p>
+<p>Örneğin, anchor() fonskiyonu kullanarak bir view dosyanızda link oluşturmak için şunu yapmalısınız:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="o">&lt;?</span><span class="nx">php</span> <span class="k">echo</span> <span class="nx">anchor</span><span class="p">(</span><span class="s1">&#39;blog/comments&#39;</span><span class="p">,</span> <span class="s1">&#39;Click Here&#39;</span><span class="p">);</span><span class="cp">?&gt;</span>
 </pre></div>
 </div>
-<p>Where &#8220;Click Here&#8221; is the name of the link, and &#8220;blog/comments&#8221; is the
-URI to the controller/function you wish to link to.</p>
+<p>Burada &#8220;Click Here&#8221; linkin adı ve &#8220;blog/comments&#8221; ise link vermek istediğini controller/fonskiyon URI bilgisidir.</p>
 </div>
-<div class="section" id="extending-helpers">
-<h2>&#8220;Extending&#8221; Helpers<a class="headerlink" href="#extending-helpers" title="Permalink to this headline">¶</a></h2>
-<p>To &#8220;extend&#8221; Helpers, create a file in your <strong>application/helpers/</strong> folder
-with an identical name to the existing Helper, but prefixed with <strong>MY_</strong>
-(this item is configurable. See below.).</p>
-<p>If all you need to do is add some functionality to an existing helper -
-perhaps add a function or two, or change how a particular helper
-function operates - then it&#8217;s overkill to replace the entire helper with
-your version. In this case it&#8217;s better to simply &#8220;extend&#8221; the Helper.
-The term &#8220;extend&#8221; is used loosely since Helper functions are procedural
-and discrete and cannot be extended in the traditional programmatic
-sense. Under the hood, this gives you the ability to add to the
-functions a Helper provides, or to modify how the native Helper
-functions operate.</p>
-<p>For example, to extend the native <strong>Array Helper</strong> you&#8217;ll create a file
-named <strong>application/helpers/MY_array_helper.php</strong>, and add or override
-functions:</p>
+<div class="section" id="helper-i-genisletmek">
+<h2>Helper&#8217;ı &#8220;Genişletmek&#8221;<a class="headerlink" href="#helper-i-genisletmek" title="Permalink to this headline">¶</a></h2>
+<p>Helper&#8217;ı &#8220;genişletmek&#8221;, mevcut dosyası olan bir helper&#8217;ı <strong>application/helpers/</strong> dizini altında, <strong>MY_</strong> önekiyle değiştirmek (bu maddeye ayar yapılabilir. Aşağıya bakınız.).</p>
+<p>Eğer bütün ihtiyacınız mevcut helper&#8217;a biraz fonksiyonellik kazandırmaksa -belki bir iki fonksiyon eklemek ya da belirli bir fonksiyonu değiştirmekse-, kendi fonksiyonlarınız mevcut fonskiyonların yerine geçecektir. Bu durumda en iyisi basitçe helper&#8217;ı &#8220;genişletmek&#8221;tir. &#8220;Genişletmek&#8221; terimi, helper fonksiyonları usulüne ait, münferit olması ve geleneksel programlamadaki algı gibi genişletilmemesi nedneiyle gevşek kullanılır. Bu başlık altında, bu bilgiler size Helper&#8217;a yeni fonksiyon eklemek ya da mevcut helper fonksiyonlarını değiştirme yetkisi verir.</p>
+<p>Örneğin, <strong>Array Helper</strong>&#8216;ı genişletmek için, <strong>application/helpers/</strong> dizini altında <strong>MY_array_helper.php</strong> dosyası oluşturun ve aşağıdaki fonksiyonu üzerine yazın ya da ekleyin:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="c1">// any_in_array() is not in the Array Helper, so it defines a new function</span>
 <span class="k">function</span> <span class="nf">any_in_array</span><span class="p">(</span><span class="nv">$needle</span><span class="p">,</span> <span class="nv">$haystack</span><span class="p">)</span>
 <span class="p">{</span>
@@ -212,22 +170,18 @@ functions:</p>
 <span class="p">}</span>
 </pre></div>
 </div>
-<div class="section" id="setting-your-own-prefix">
-<h3>Setting Your Own Prefix<a class="headerlink" href="#setting-your-own-prefix" title="Permalink to this headline">¶</a></h3>
-<p>The filename prefix for &#8220;extending&#8221; Helpers is the same used to extend
-libraries and Core classes. To set your own prefix, open your
-<strong>application/config/config.php</strong> file and look for this item:</p>
+<div class="section" id="kendi-onekinizi-ayarlamak">
+<h3>Kendi Önekinizi Ayarlamak<a class="headerlink" href="#kendi-onekinizi-ayarlamak" title="Permalink to this headline">¶</a></h3>
+<p>&#8220;Genişletilmiş&#8221; Helper için dosya öneki genişletimiş kütüphaneler ve çekirdek sınıflar için aynıdır. Kendi önekinizi kullanmak için, <strong>application/config/config.php</strong> dosyasını açın ve şunu arayın:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$config</span><span class="p">[</span><span class="s1">&#39;subclass_prefix&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;MY_&#39;</span><span class="p">;</span>
 </pre></div>
 </div>
-<p>Please note that all native CodeIgniter libraries are prefixed with <strong>CI_</strong>
-so DO NOT use that as your prefix.</p>
+<p>Lütfen dikkat, <strong>CI_</strong> öneki CodeIgniter kütüphanelerinde kullanılır bu nedenle kendi önekiniz olarak KULLANMAYIN.</p>
 </div>
 </div>
-<div class="section" id="now-what">
-<h2>Now What?<a class="headerlink" href="#now-what" title="Permalink to this headline">¶</a></h2>
-<p>In the Table of Contents you&#8217;ll find a list of all the available Helper
-Files. Browse each one to see what they do.</p>
+<div class="section" id="simdi-ne-yapalim">
+<h2>Şimdi Ne Yapalım?<a class="headerlink" href="#simdi-ne-yapalim" title="Permalink to this headline">¶</a></h2>
+<p>İçindekiler Tablosunda mevcut Helper dosyalarının listesini bulacaksınız. Herbirini araştırın ve ne işe yaradığına bakın.</p>
 </div>
 </div>
 
@@ -238,14 +192,14 @@ Files. Browse each one to see what they do.</p>
 		<div id="footer">
 			<p class="top">
 				
-				<span class="prev">Previous Topic: <a href="models.html">Models</a></span>
+				<span class="prev">Previous Topic: <a href="models.html">Model</a></span>
 				
 				
 				<span class="next">Next Topic: <a href="libraries.html">Using CodeIgniter Libraries</a></span>
 				
 				<a href="#header" title="Return to top">Return to top</a>
 			</p>
-			<p><a href="">CodeIgniter</a> &ndash; Copyright &copy; 2011, EllisLab, Inc.</a> &ndash; Last updated: Nov 13, 2011</p>
+			<p><a href="">CodeIgniter</a> &ndash; Copyright &copy; 2011, EllisLab, Inc.</a> &ndash; Last updated: Nov 16, 2011</p>
 		</div><!-- /#footer -->
 	
 	<script src="../_static/asset/js/jquery-ui-min.js" type="text/javascript" charset="utf-8" async></script>
