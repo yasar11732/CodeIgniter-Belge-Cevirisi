@@ -1,20 +1,15 @@
 ######
-Models
+Model
 ######
 
-Models are **optionally** available for those who want to use a more
-traditional MVC approach.
+Model, geleneksel MVC yaklaşımını kullanmak isteyenler için **opsiyonel** olarak mevcuttur.
 
-.. contents:: Page Contents
+.. contents:: Sayfa İçeriği
 
-What is a Model?
+Model Nedir?
 ================
 
-Models are PHP classes that are designed to work with information in
-your database. For example, let's say you use CodeIgniter to manage a
-blog. You might have a model class that contains functions to insert,
-update, and retrieve your blog data. Here is an example of what such a
-model class might look like::
+MOdeller veritabanınızla bilgi alışverişi sağlamak üzere tasarlanmış PHP sınıflarıdır. Örneğin, diyelim ki CodeIgniter kullanarak bir blog yönetiyorsunuz. Blog bilgilerinizi ekleme, yenileme ve çekme fonksiyonlarına sajip bir model sınıfınız olmalıdır. Burada bir örnekle model sınıfının neye benzediğini gösterelim::
 
 	class Blogmodel extends CI_Model {
 
@@ -54,21 +49,16 @@ model class might look like::
 
 	}
 
-.. note:: The functions in the above example use the :doc:`Active
-	Record <../database/active_record>` database functions.
+.. not:: Yukarıdaki örnek :doc:`Active Record <../database/active_record>` veritabanı fonksiyonlarını kullanır.
 
-.. note:: For the sake of simplicity in this example we're using $_POST
-	directly. This is generally bad practice, and a more common approach
-	would be to use the :doc:`Input Class <../libraries/input>`
-	$this->input->post('title')
+.. not:: Bu örnekte basitliği korumak için $_POST kullandık. Bu kötü bir uygulamadır ve bir çok genel uygulama :doc:`Bilgi Girişi Sınıfı <../libraries/input>` $this->input->post('title') kullanır.
 
-Anatomy of a Model
+Bir Modelin Anatomisi
 ==================
 
-Model classes are stored in your **application/models/ folder**. They can be
-nested within sub-folders if you want this type of organization.
+Model sınıfları **application/models/ dizini** altına depolanmıştır. Eğer isterseniz alt-dizinlere de yerleştirebilirsiniz.
 
-The basic prototype for a model class is this::
+Bir model sınıfının taemel yapısı şöyledir::
 
 	class Model_name extends CI_Model {
 
@@ -78,12 +68,9 @@ The basic prototype for a model class is this::
 	    }
 	}
 
-Where **Model_name** is the name of your class. Class names **must** have
-the first letter capitalized with the rest of the name lowercase. Make
-sure your class extends the base Model class.
+**Model_name** sınıfın ismidir. Sınıf ismi **mutlaka** ilk harfi büyük, sonraki harfleri küçük olmak zorundadır. Sınıfın Model sınıfının extend edilmiş hali olduğundan emin olun.
 
-The file name will be a lower case version of your class name. For
-example, if your class is this::
+Dosya adında bütün harfler küçük harf olacaktır. Örneğin, eğer sınıfınız şöyleyse::
 
 	class User_model extends CI_Model {
 
@@ -93,41 +80,34 @@ example, if your class is this::
 	    }
 	}
 
-Your file will be this::
+Dosyanız şöyle olacaktır::
 
 	application/models/user_model.php
 
-Loading a Model
+Model Yüklemek
 ===============
 
-Your models will typically be loaded and called from within your
-:doc:`controller <controllers>` functions. To load a model you will use
-the following function::
+Modellerin yüklenemsi ve çağrılması :doc:`controller <controllers>` fonksiyonları ile yapılır. MOdel yüklemesi için aşağıdaki fonksiyonu kullanacaksınız::
 
 	$this->load->model('Model_name');
 
-If your model is located in a sub-folder, include the relative path from
-your models folder. For example, if you have a model located at
-application/models/blog/queries.php you'll load it using::
+Eğer modeliniz bir alt-sizindeyse, göreli olarak bulunan model dizinini de ekleyiniz. Örneğin, eğer modeliniz application/models/blog/queries.php yolundaysa, yüklerken bunu kullanınız::
 
 	$this->load->model('blog/queries');
 
-Once loaded, you will access your model functions using an object with
-the same name as your class::
+Bir defa yüklenince, Model fonksiyonlarınıza aynı sınıfın ismi ile erişebilirisiniz::
 
 	$this->load->model('Model_name');
 
 	$this->Model_name->function();
 
-If you would like your model assigned to a different object name you can
-specify it via the second parameter of the loading function::
+Eğer farklı bir adla modelinize erişmek isterseniz, yükelem yaparken ikinci parametre olarak bu ismi belirtmelisiniz::
 
 	$this->load->model('Model_name', 'fubar');
 
 	$this->fubar->function();
 
-Here is an example of a controller, that loads a model, then serves a
-view::
+Buradaki controller örneği modeli yükler, sonra view'e gönderir ::
 
 	class Blog_controller extends CI_Controller {
 
@@ -142,33 +122,23 @@ view::
 	}
 	
 
-Auto-loading Models
+Modeli Otomatik Yükleme
 ===================
 
-If you find that you need a particular model globally throughout your
-application, you can tell CodeIgniter to auto-load it during system
-initialization. This is done by opening the
-**application/config/autoload.php** file and adding the model to the
-autoload array.
+Eğer belirli bir modeli uygulamanızın tamamında kullanıyorsanız, bunu sistem yüklenirken otomatik yükle diyerek CodeIgniter'a diyebilirsiniz. Bunun için **application/config/autoload.php** dosyasını açıp, autoload dizisine eklemeniz gereklidir.
 
-Connecting to your Database
+Veritabanına Bağlanmak
 ===========================
 
-When a model is loaded it does **NOT** connect automatically to your
-database. The following options for connecting are available to you:
+Model yüklendiğinde, veritabanına otomatik olarak **BAĞLANMAZ**. Bağlantı için aşağıdaki opsiyonlar mevcuttur::
 
--  You can connect using the standard database methods :doc:`described
-   here <../database/connecting>`, either from within your
-   Controller class or your Model class.
--  You can tell the model loading function to auto-connect by passing
-   TRUE (boolean) via the third parameter, and connectivity settings, as
-   defined in your database config file will be used:
+-  :doc:`Burada anlatılan<../database/connecting>` standart veritabanı bağlantı metodunu Controller sınıfı ya da Model sınıfından kullanabilirsiniz.
+-  Model yükleme fonksiyonunda üçüncü parametreye TRUE değeri vererek, bağlantı bilgilerinizi veritabanı ayar dosyasında tanımladığınız gibi kullanması şartıyla otomatik bağlan diyebilirsiniz:
    ::
 
 	$this->load->model('Model_name', '', TRUE);
 
--  You can manually pass database connectivity settings via the third
-   parameter::
+-  Üçüncü parametre ile kullanmasını sitediğiniz veritabanı bağlantı ayarlarını elle ayarlayabilirsiniz ::
 
 	$config['hostname'] = "localhost";
 	$config['username'] = "myusername";
