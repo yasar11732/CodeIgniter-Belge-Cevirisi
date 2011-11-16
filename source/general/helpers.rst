@@ -1,105 +1,63 @@
 ################
-Helper Functions
+Helper Fonksiyonu
 ################
 
-Helpers, as the name suggests, help you with tasks. Each helper file is
-simply a collection of functions in a particular category. There are **URL
-Helpers**, that assist in creating links, there are Form Helpers that help
-you create form elements, **Text Helpers** perform various text formatting
-routines, **Cookie Helpers** set and read cookies, File Helpers help you
-deal with files, etc.
+Helper'lar, isimlerinden de anlaşıldığı gibi, size yardımcılardır. Her helper dosyası belli kategorilerde fonskiyonları basitçe toparlar. **URL Helper** link oluşturmada yardımcı olur, **Form Helper** form oluşturmaya yardımcı olur, **Text Helper** metin formatı rutinlerini gerçekleştirir, **Cookie Helper** dosyaları cookie bilgilerini ayarlar ve okur, **File Helper** dosya işlemlerine yardım eder, vs.
 
-Unlike most other systems in CodeIgniter, Helpers are not written in an
-Object Oriented format. They are simple, procedural functions. Each
-helper function performs one specific task, with no dependence on other
-functions.
+CodeIgniter'daki diğer sistemlerden farkı, Helper'lar nesne tabanı formatında yazılmamışlardır. Basit ve prosedürel fonsiyonlardır. Her helper fonksiyonu bir görev için diğer fonksiyonlara bağlı olamdan çalışır.
 
-CodeIgniter does not load Helper Files by default, so the first step in
-using a Helper is to load it. Once loaded, it becomes globally available
-in your :doc:`controller <../general/controllers>` and
-:doc:`views <../general/views>`.
+CodeIgniter Helper dosyalarını açılışta yüklemez, bu yüzden ilk adım Helper dosyasını yüklemektir. Bir kez yüklendiğinde, :doc:`controller <../general/controllers>` ve :doc:`views <../general/views>` dosyalarında kullanılır hale gelir.
 
-Helpers are typically stored in your **system/helpers**, or
-**application/helpers directory**. CodeIgniter will look first in your
-**application/helpers directory**. If the directory does not exist or the
-specified helper is not located there CI will instead look in your
-global system/helpers folder.
+Helper'lar tipik olarak **system/helpers** dizini altında ya da **system/application/helpers** dizini altına yerleştirilmiştir. CodeIgniter ilk önce **system/application/helpers** dizini altını kontrol eder. Eğer dizin altında yoksa ya da tanımlanan helper bu sizinde değilse, CI genel system/helpers dizini altını kontrol eder.
 
-Loading a Helper
+Helper Yüklemek
 ================
 
-Loading a helper file is quite simple using the following function::
+Aşağıdaki fonksiyon kullanarak helper yüklemek oldukça basittir::
 
 	$this->load->helper('name');
 
-Where **name** is the file name of the helper, without the .php file
-extension or the "helper" part.
+Burada **name**, helper'ın adıdır; .php dosya uzantısı ya da "helper" kısmı olmadan kullanılır.
 
-For example, to load the **URL Helper** file, which is named
-**url_helper.php**, you would do this::
+Örneğin, **url_helper.php** isimli **URL Helper**'ını yüklemek için, şunu yapmalısınız:
 
 	$this->load->helper('url');
 
-A helper can be loaded anywhere within your controller functions (or
-even within your View files, although that's not a good practice), as
-long as you load it before you use it. You can load your helpers in your
-controller constructor so that they become available automatically in
-any function, or you can load a helper in a specific function that needs
-it.
+Helper dosyası kullanmadan önce controller fonksiyonlarının herhangi bir yerinde (hatta iyi bir pratik olmamasına karşın View dosyalarında bile) çağrılır. Helper'ı controller'ın constructor kısmında yüklerseniz, o controller'ın bütün fonksiyonlarında geçerli olur ya da istediğiniz bir fonksiyonda yükleyebilirsiniz.
 
-Note: The Helper loading function above does not return a value, so
-don't try to assign it to a variable. Just use it as shown.
+Not: Helper'lar geri değer döndürmezler o nedenle bir değişkene atamayı denemeyin. Sadece kullanın.
 
-Loading Multiple Helpers
+Çoklu Helper Yüklemek
 ========================
 
-If you need to load more than one helper you can specify them in an
-array, like this::
+Eğer birden fazla helper'i aynı anda yüklemeniz gerekliyse, onları bir diziye atın, şunun gibi::
 
 	$this->load->helper( array('helper1', 'helper2', 'helper3') );
 
-Auto-loading Helpers
+Helper'ları Otomatik Yüklemek
 ====================
 
-If you find that you need a particular helper globally throughout your
-application, you can tell CodeIgniter to auto-load it during system
-initialization. This is done by opening the **application/config/autoload.php** 
-file and adding the helper to the autoload array.
+Eğer bütün uygulamanızda kullanmanız gereken özel bir helper varsa, bunu CodeIgniter'a sistem başlarken söyleyebilirsiniz. Bunun için **application/config/autoload.php** dosyasını açmalı ve helper'ı otomatik yükleme dizisine eklemelisiniz.
 
-Using a Helper
+Helper Kullanmak
 ==============
 
-Once you've loaded the Helper File containing the function you intend to
-use, you'll call it the way you would a standard PHP function.
+Bir defa yüklendiğinde, Helper dosyasındaki fonksiyonları, standart PHP fonksiyonu gibi niyetlendiğiniz yerde kullanabilirsiniz.
 
-For example, to create a link using the anchor() function in one of your
-view files you would do this::
+Örneğin, anchor() fonskiyonu kullanarak bir view dosyanızda link oluşturmak için şunu yapmalısınız::
 
 	<?php echo anchor('blog/comments', 'Click Here');?>
 
-Where "Click Here" is the name of the link, and "blog/comments" is the
-URI to the controller/function you wish to link to.
+Burada "Click Here" linkin adı ve "blog/comments" ise link vermek istediğini controller/fonskiyon URI bilgisidir.
 
-"Extending" Helpers
+Helper'ı "Genişletmek"
 ===================
 
-To "extend" Helpers, create a file in your **application/helpers/** folder
-with an identical name to the existing Helper, but prefixed with **MY\_**
-(this item is configurable. See below.).
+Helper'ı "genişletmek", mevcut dosyası olan bir helper'ı **application/helpers/** dizini altında, **MY_** önekiyle değiştirmek (bu maddeye ayar yapılabilir. Aşağıya bakınız.).
 
-If all you need to do is add some functionality to an existing helper -
-perhaps add a function or two, or change how a particular helper
-function operates - then it's overkill to replace the entire helper with
-your version. In this case it's better to simply "extend" the Helper.
-The term "extend" is used loosely since Helper functions are procedural
-and discrete and cannot be extended in the traditional programmatic
-sense. Under the hood, this gives you the ability to add to the
-functions a Helper provides, or to modify how the native Helper
-functions operate.
+Eğer bütün ihtiyacınız mevcut helper'a biraz fonksiyonellik kazandırmaksa -belki bir iki fonksiyon eklemek ya da belirli bir fonksiyonu değiştirmekse-, kendi fonksiyonlarınız mevcut fonskiyonların yerine geçecektir. Bu durumda en iyisi basitçe helper'ı "genişletmek"tir. "Genişletmek" terimi, helper fonksiyonları usulüne ait, münferit olması ve geleneksel programlamadaki algı gibi genişletilmemesi nedneiyle gevşek kullanılır. Bu başlık altında, bu bilgiler size Helper'a yeni fonksiyon eklemek ya da mevcut helper fonksiyonlarını değiştirme yetkisi verir.
 
-For example, to extend the native **Array Helper** you'll create a file
-named **application/helpers/MY_array_helper.php**, and add or override
-functions::
+Örneğin, **Array Helper**'ı genişletmek için, **application/helpers/** dizini altında **MY_array_helper.php** dosyası oluşturun ve aşağıdaki fonksiyonu üzerine yazın ya da ekleyin:
 
 	// any_in_array() is not in the Array Helper, so it defines a new function
 	function any_in_array($needle, $haystack)
@@ -124,20 +82,16 @@ functions::
 	    return array_pop($array);
 	}
 
-Setting Your Own Prefix
+Kendi Önekinizi Ayarlamak
 -----------------------
 
-The filename prefix for "extending" Helpers is the same used to extend
-libraries and Core classes. To set your own prefix, open your
-**application/config/config.php** file and look for this item::
+"Genişletilmiş" Helper için dosya öneki genişletimiş kütüphaneler ve çekirdek sınıflar için aynıdır. Kendi önekinizi kullanmak için, **application/config/config.php** dosyasını açın ve şunu arayın:
 
 	$config['subclass_prefix'] = 'MY_';
 
-Please note that all native CodeIgniter libraries are prefixed with **CI\_**
-so DO NOT use that as your prefix.
+Lütfen dikkat, **CI\_** öneki CodeIgniter kütüphanelerinde kullanılır bu nedenle kendi önekiniz olarak KULLANMAYIN.	
 
-Now What?
+Şimdi Ne Yapalım?
 =========
 
-In the Table of Contents you'll find a list of all the available Helper
-Files. Browse each one to see what they do.
+İçindekiler Tablosunda mevcut Helper dosyalarının listesini bulacaksınız. Herbirini araştırın ve ne işe yaradığına bakın.
