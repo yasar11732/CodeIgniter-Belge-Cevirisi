@@ -1,80 +1,79 @@
-##########
-Field Data
-##########
+##################
+Alan Meta Verileri
+##################
 
 $this->db->list_fields()
 =========================
 
-Returns an array containing the field names. This query can be called
-two ways:
+Alan adlarını içeren bir dizi döndürür. Bu sorgu iki şekilde çağırılabilir:
 
-1. You can supply the table name and call it from the $this->db->
+1. Tablo adını parametre olarak verebilir ve $this->db nesnesinden çağrabilirsiniz::
 object::
 
-	$fields = $this->db->list_fields('table_name');
+	$alanlar = $this->db->list_fields('tablo_adı');
 	
-	foreach ($fields as $field)
+	foreach ($alanlar as $alan_adi)
 	{
-		echo $field;
+		echo $alan_adi;
 	}
 
-2. You can gather the field names associated with any query you run by
-calling the function from your query result object::
+2. Sorgu sonucu nesnesinden bu fonksiyonu çağırarak, yapılan sorgu ile ilişkili 
+alan adlarını bir araya getirebilirsiniz.::
 
-	$query = $this->db->query('SELECT * FROM some_table');
+	$sorgu = $this->db->query('SELECT * FROM bir_tablo');
 	
-	foreach ($query->list_fields() as $field)
+	foreach ($sorgu->list_fields() as $alan_adi)
 	{
-		echo $field;
+		echo $alan_adi;
 	}
 
 $this->db->field_exists()
 ==========================
 
-Sometimes it's helpful to know whether a particular field exists before
-performing an action. Returns a boolean TRUE/FALSE. Usage example::
+Bazen özellikle bir alanın üzerinde işlem yapmadan önce, o alanın var 
+olup olmadığını bilmek size yardımcı olur. Bu fonkisyon boole TRUE/FALSE 
+döndürür. Örnek kullanımı::
 
-	if ($this->db->field_exists('field_name', 'table_name'))
+	if ($this->db->field_exists('alan_adı', 'tablo_adı'))
 	{
-		// some code...
+		// yazılan kodlar...
 	}
 
-.. note:: Replace *field_name* with the name of the column you are looking
-	for, and replace *table_name* with the name of the table you are
-	looking for.
+.. not:: *alan_adı* parametresini aradığınız kolonun adıyla ve *tablo_adı*
+	parametresini üzerinde arama yapmak istediğiniz tablo adıyla değiştirin.
 
 $this->db->field_data()
 ========================
 
-Returns an array of objects containing field information.
+Alan bilgisi içeren bir nesne dizisi döndürür.
 
-Sometimes it's helpful to gather the field names or other metadata, like
-the column type, max length, etc.
+Bazen alan alan adlarını veya kolon tipi, maksimumum uzunluk, vb. meta verileri 
+almak, size yardımcı olabilir.
 
-.. note:: Not all databases provide meta-data.
+.. not:: Bazı veri tabanları meta veri desteği sağlamayabilir.
 
-Usage example::
+Kullanım örneği::
 
-	$fields = $this->db->field_data('table_name');
+	$alanlar = $this->db->field_data('tablo_adi');
 	
-	foreach ($fields as $field)
+	foreach ($alanlar as $alan)
 	{
-		echo $field->name;
-		echo $field->type;
-		echo $field->max_length;
-		echo $field->primary_key;
+		echo $alan->name;
+		echo $alan->type;
+		echo $alan->max_length;
+		echo $alan->primary_key;
 	}
 
-If you have run a query already you can use the result object instead of
-supplying the table name::
+Zaten çalıştırmış olduğunuz bir sorgunuz varsa fonksiyona parametre olarak tablo 
+adı vermek yerine sonuç nesnesini kullanabilirsiniz::
 
-	$query = $this->db->query("YOUR QUERY");
-	$fields = $query->field_data();
+	$sorgu = $this->db->query("SQL SORGUNUZ");
+	$alanlar = $sorgu->field_data();
 
-The following data is available from this function if supported by your
-database:
+Eğer veri tabanınız tarafından destekleniyorsa, bu fonksiyon aşağıdaki verileri 
+döndürür:
 
--  name - column name
--  max_length - maximum length of the column
--  primary_key - 1 if the column is a primary key
--  type - the type of the column
+-  name - kolon adı
+-  max_length - kolonun saip olduğu maksimum uzunluk değeri
+-  primary_key - eğer kolon birincil anahtar (primary key) ise 1 
+-  type - kolonun tipi
