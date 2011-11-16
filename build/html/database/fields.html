@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="utf-8">
 	    
-	    <title>Field Data &mdash; CodeIgniter v3.0-dev documentation</title>
+	    <title>Alan Meta Verileri &mdash; CodeIgniter v3.0-dev documentation</title>
 
 	    <link rel="stylesheet" href="../_static/asset/css/common.css" type="text/css" />
 	    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -85,89 +85,90 @@
 				<li><a id="toc-link" href="../index.html">Table of Contents</a>&nbsp;&nbsp; &rsaquo;</li>
 				<li><a href="index.html" accesskey="U">Veri Tabanı Sınıfı</a>&nbsp;&nbsp;  &rsaquo;</li>
 
-				<li><strong>Field Data</strong></li>
+				<li><strong>Alan Meta Verileri</strong></li>
 			</ul>
 		</div><!-- /#header -->
 
 		<div class="section" id="content">
-			<div class="section" id="field-data">
-<h1>Field Data<a class="headerlink" href="#field-data" title="Permalink to this headline">¶</a></h1>
+			<div class="section" id="alan-meta-verileri">
+<h1>Alan Meta Verileri<a class="headerlink" href="#alan-meta-verileri" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="this-db-list-fields">
 <h2>$this-&gt;db-&gt;list_fields()<a class="headerlink" href="#this-db-list-fields" title="Permalink to this headline">¶</a></h2>
-<p>Returns an array containing the field names. This query can be called
-two ways:</p>
-<p>1. You can supply the table name and call it from the $this-&gt;db-&gt;
+<p>Alan adlarını içeren bir dizi döndürür. Bu sorgu iki şekilde çağırılabilir:</p>
+<p>1. Tablo adını parametre olarak verebilir ve $this-&gt;db nesnesinden çağrabilirsiniz::
 object:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="nv">$fields</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">list_fields</span><span class="p">(</span><span class="s1">&#39;table_name&#39;</span><span class="p">);</span>
+<div class="highlight-ci"><div class="highlight"><pre><span class="nv">$alanlar</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">list_fields</span><span class="p">(</span><span class="s1">&#39;tablo_adı&#39;</span><span class="p">);</span>
 
-<span class="k">foreach</span> <span class="p">(</span><span class="nv">$fields</span> <span class="k">as</span> <span class="nv">$field</span><span class="p">)</span>
+<span class="k">foreach</span> <span class="p">(</span><span class="nv">$alanlar</span> <span class="k">as</span> <span class="nv">$alan_adi</span><span class="p">)</span>
 <span class="p">{</span>
-        <span class="k">echo</span> <span class="nv">$field</span><span class="p">;</span>
+        <span class="k">echo</span> <span class="nv">$alan_adi</span><span class="p">;</span>
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>2. You can gather the field names associated with any query you run by
-calling the function from your query result object:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="nv">$query</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">query</span><span class="p">(</span><span class="s1">&#39;SELECT * FROM some_table&#39;</span><span class="p">);</span>
+<p>2. Sorgu sonucu nesnesinden bu fonksiyonu çağırarak, yapılan sorgu ile ilişkili
+alan adlarını bir araya getirebilirsiniz.:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span class="nv">$sorgu</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">query</span><span class="p">(</span><span class="s1">&#39;SELECT * FROM bir_tablo&#39;</span><span class="p">);</span>
 
-<span class="k">foreach</span> <span class="p">(</span><span class="nv">$query</span><span class="o">-&gt;</span><span class="na">list_fields</span><span class="p">()</span> <span class="k">as</span> <span class="nv">$field</span><span class="p">)</span>
+<span class="k">foreach</span> <span class="p">(</span><span class="nv">$sorgu</span><span class="o">-&gt;</span><span class="na">list_fields</span><span class="p">()</span> <span class="k">as</span> <span class="nv">$alan_adi</span><span class="p">)</span>
 <span class="p">{</span>
-        <span class="k">echo</span> <span class="nv">$field</span><span class="p">;</span>
+        <span class="k">echo</span> <span class="nv">$alan_adi</span><span class="p">;</span>
 <span class="p">}</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="this-db-field-exists">
 <h2>$this-&gt;db-&gt;field_exists()<a class="headerlink" href="#this-db-field-exists" title="Permalink to this headline">¶</a></h2>
-<p>Sometimes it&#8217;s helpful to know whether a particular field exists before
-performing an action. Returns a boolean TRUE/FALSE. Usage example:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="k">if</span> <span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">field_exists</span><span class="p">(</span><span class="s1">&#39;field_name&#39;</span><span class="p">,</span> <span class="s1">&#39;table_name&#39;</span><span class="p">))</span>
+<p>Bazen özellikle bir alanın üzerinde işlem yapmadan önce, o alanın var
+olup olmadığını bilmek size yardımcı olur. Bu fonkisyon boole TRUE/FALSE
+döndürür. Örnek kullanımı:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span class="k">if</span> <span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">field_exists</span><span class="p">(</span><span class="s1">&#39;alan_adı&#39;</span><span class="p">,</span> <span class="s1">&#39;tablo_adı&#39;</span><span class="p">))</span>
 <span class="p">{</span>
-        <span class="c1">// some code...</span>
+        <span class="c1">// yazılan kodlar...</span>
 <span class="p">}</span>
 </pre></div>
 </div>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">Replace <em>field_name</em> with the name of the column you are looking
-for, and replace <em>table_name</em> with the name of the table you are
-looking for.</p>
+<div class="note admonition">
+<p class="first admonition-title">Not</p>
+<dl class="last docutils">
+<dt><em>alan_adı</em> parametresini aradığınız kolonun adıyla ve <em>tablo_adı</em></dt>
+<dd>parametresini üzerinde arama yapmak istediğiniz tablo adıyla değiştirin.</dd>
+</dl>
 </div>
 </div>
 <div class="section" id="this-db-field-data">
 <h2>$this-&gt;db-&gt;field_data()<a class="headerlink" href="#this-db-field-data" title="Permalink to this headline">¶</a></h2>
-<p>Returns an array of objects containing field information.</p>
-<p>Sometimes it&#8217;s helpful to gather the field names or other metadata, like
-the column type, max length, etc.</p>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">Not all databases provide meta-data.</p>
+<p>Alan bilgisi içeren bir nesne dizisi döndürür.</p>
+<p>Bazen alan alan adlarını veya kolon tipi, maksimumum uzunluk, vb. meta verileri
+almak, size yardımcı olabilir.</p>
+<div class="note admonition">
+<p class="first admonition-title">Not</p>
+<p class="last">Bazı veri tabanları meta veri desteği sağlamayabilir.</p>
 </div>
-<p>Usage example:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="nv">$fields</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">field_data</span><span class="p">(</span><span class="s1">&#39;table_name&#39;</span><span class="p">);</span>
+<p>Kullanım örneği:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span class="nv">$alanlar</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">field_data</span><span class="p">(</span><span class="s1">&#39;tablo_adi&#39;</span><span class="p">);</span>
 
-<span class="k">foreach</span> <span class="p">(</span><span class="nv">$fields</span> <span class="k">as</span> <span class="nv">$field</span><span class="p">)</span>
+<span class="k">foreach</span> <span class="p">(</span><span class="nv">$alanlar</span> <span class="k">as</span> <span class="nv">$alan</span><span class="p">)</span>
 <span class="p">{</span>
-        <span class="k">echo</span> <span class="nv">$field</span><span class="o">-&gt;</span><span class="na">name</span><span class="p">;</span>
-        <span class="k">echo</span> <span class="nv">$field</span><span class="o">-&gt;</span><span class="na">type</span><span class="p">;</span>
-        <span class="k">echo</span> <span class="nv">$field</span><span class="o">-&gt;</span><span class="na">max_length</span><span class="p">;</span>
-        <span class="k">echo</span> <span class="nv">$field</span><span class="o">-&gt;</span><span class="na">primary_key</span><span class="p">;</span>
+        <span class="k">echo</span> <span class="nv">$alan</span><span class="o">-&gt;</span><span class="na">name</span><span class="p">;</span>
+        <span class="k">echo</span> <span class="nv">$alan</span><span class="o">-&gt;</span><span class="na">type</span><span class="p">;</span>
+        <span class="k">echo</span> <span class="nv">$alan</span><span class="o">-&gt;</span><span class="na">max_length</span><span class="p">;</span>
+        <span class="k">echo</span> <span class="nv">$alan</span><span class="o">-&gt;</span><span class="na">primary_key</span><span class="p">;</span>
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>If you have run a query already you can use the result object instead of
-supplying the table name:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="nv">$query</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">query</span><span class="p">(</span><span class="s2">&quot;YOUR QUERY&quot;</span><span class="p">);</span>
-<span class="nv">$fields</span> <span class="o">=</span> <span class="nv">$query</span><span class="o">-&gt;</span><span class="na">field_data</span><span class="p">();</span>
+<p>Zaten çalıştırmış olduğunuz bir sorgunuz varsa fonksiyona parametre olarak tablo
+adı vermek yerine sonuç nesnesini kullanabilirsiniz:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span class="nv">$sorgu</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">query</span><span class="p">(</span><span class="s2">&quot;SQL SORGUNUZ&quot;</span><span class="p">);</span>
+<span class="nv">$alanlar</span> <span class="o">=</span> <span class="nv">$sorgu</span><span class="o">-&gt;</span><span class="na">field_data</span><span class="p">();</span>
 </pre></div>
 </div>
-<p>The following data is available from this function if supported by your
-database:</p>
+<p>Eğer veri tabanınız tarafından destekleniyorsa, bu fonksiyon aşağıdaki verileri
+döndürür:</p>
 <ul class="simple">
-<li>name - column name</li>
-<li>max_length - maximum length of the column</li>
-<li>primary_key - 1 if the column is a primary key</li>
-<li>type - the type of the column</li>
+<li>name - kolon adı</li>
+<li>max_length - kolonun saip olduğu maksimum uzunluk değeri</li>
+<li>primary_key - eğer kolon birincil anahtar (primary key) ise 1</li>
+<li>type - kolonun tipi</li>
 </ul>
 </div>
 </div>
