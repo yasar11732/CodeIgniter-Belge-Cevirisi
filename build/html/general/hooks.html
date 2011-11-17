@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="utf-8">
 	    
-	    <title>Hooks - Extending the Framework Core &mdash; CodeIgniter v3.0-dev documentation</title>
+	    <title>Hook - Çatı Çekirdeğini Genişletmek &mdash; CodeIgniter v3.0-dev documentation</title>
 
 	    <link rel="stylesheet" href="../_static/asset/css/common.css" type="text/css" />
 	    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -41,13 +41,13 @@
 <li class="toctree-l2"><a class="reference internal" href="views.html">View</a></li>
 <li class="toctree-l2"><a class="reference internal" href="models.html">Model</a></li>
 <li class="toctree-l2"><a class="reference internal" href="helpers.html">Helpers</a></li>
-<li class="toctree-l2"><a class="reference internal" href="libraries.html">Using CodeIgniter Libraries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="libraries.html">CodeIgniter Kütüphanelerinin Kullanımı</a></li>
 <li class="toctree-l2"><a class="reference internal" href="creating_libraries.html">Creating Libraries</a></li>
 <li class="toctree-l2"><a class="reference internal" href="drivers.html">Using CodeIgniter Drivers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="creating_drivers.html">Creating Drivers</a></li>
-<li class="toctree-l2"><a class="reference internal" href="core_classes.html">Creating Core System Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="core_classes.html">Çekirdek Sistem Sınıfı Oluşturmak</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ancillary_classes.html">Creating Ancillary Classes</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="">Hooks - Extending the Framework Core</a><ul class="simple">
+<li class="toctree-l2 current"><a class="current reference internal" href="">Hook - Çatı Çekirdeğini Genişletmek</a><ul class="simple">
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="autoloader.html">Auto-loading Resources</a></li>
@@ -96,34 +96,24 @@
 				<li><a id="toc-link" href="../index.html">Table of Contents</a>&nbsp;&nbsp; &rsaquo;</li>
 				<li><a href="index.html" accesskey="U">General Topics</a>&nbsp;&nbsp;  &rsaquo;</li>
 
-				<li><strong>Hooks - Extending the Framework Core</strong></li>
+				<li><strong>Hook - Çatı Çekirdeğini Genişletmek</strong></li>
 			</ul>
 		</div><!-- /#header -->
 
 		<div class="section" id="content">
-			<div class="section" id="hooks-extending-the-framework-core">
-<h1>Hooks - Extending the Framework Core<a class="headerlink" href="#hooks-extending-the-framework-core" title="Permalink to this headline">¶</a></h1>
-<p>CodeIgniter&#8217;s Hooks feature provides a means to tap into and modify the
-inner workings of the framework without hacking the core files. When
-CodeIgniter runs it follows a specific execution process, diagramed in
-the <a class="reference internal" href="../overview/appflow.html"><em>Application Flow</em></a> page. There may be
-instances, however, where you&#8217;d like to cause some action to take place
-at a particular stage in the execution process. For example, you might
-want to run a script right before your controllers get loaded, or right
-after, or you might want to trigger one of your own scripts in some
-other location.</p>
-<div class="section" id="enabling-hooks">
-<h2>Enabling Hooks<a class="headerlink" href="#enabling-hooks" title="Permalink to this headline">¶</a></h2>
-<p>The hooks feature can be globally enabled/disabled by setting the
-following item in the application/config/config.php file:</p>
+			<div class="section" id="hook-cati-cekirdegini-genisletmek">
+<h1>Hook - Çatı Çekirdeğini Genişletmek<a class="headerlink" href="#hook-cati-cekirdegini-genisletmek" title="Permalink to this headline">¶</a></h1>
+<p>CodeIgniter&#8217;ın Hook özelliği, çekirdek dosyaları ele geçirmeden çatıya girmenin ve içeride çalışmanın yolunu sağlar. CodeIgniter çalıştığında <a class="reference internal" href="../overview/appflow.html"><em>Uygulama Akışında</em></a> tanımlı yolu uygular. Bununla birlikte, uygulamanın çalışmasıyla belirli aşamalarında uygulamaya müdahale etmek isteyebilirsiniz. Örneğin, controller dosyasının yüklenmesinden önce ya da sonra bir script çalıştırmak, ya da başka bir yerde bulunan bir scriptinizi tetiklemek isteyebilirsiniz.</p>
+<div class="section" id="hook-u-etkinlestirmek">
+<h2>Hook&#8217;u Etkinleştirmek<a class="headerlink" href="#hook-u-etkinlestirmek" title="Permalink to this headline">¶</a></h2>
+<p>Hook özelliğini tüm uygulamada etkinleştirip, etkisizleştirmek için application/config/config.php dosyasında şu madde ayarlanmalıdır:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$config</span><span class="p">[</span><span class="s1">&#39;enable_hooks&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="k">TRUE</span><span class="p">;</span>
 </pre></div>
 </div>
 </div>
-<div class="section" id="defining-a-hook">
-<h2>Defining a Hook<a class="headerlink" href="#defining-a-hook" title="Permalink to this headline">¶</a></h2>
-<p>Hooks are defined in application/config/hooks.php file. Each hook is
-specified as an array with this prototype:</p>
+<div class="section" id="bir-hook-tanimlamak">
+<h2>Bir Hook Tanımlamak<a class="headerlink" href="#bir-hook-tanimlamak" title="Permalink to this headline">¶</a></h2>
+<p>Hooks application/config/hooks.php dosyasında tanımlanır. Her Hook dizide bir prototip olarak tanımlanır:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$hook</span><span class="p">[</span><span class="s1">&#39;pre_controller&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
                                 <span class="s1">&#39;class&#39;</span>    <span class="o">=&gt;</span> <span class="s1">&#39;MyClass&#39;</span><span class="p">,</span>
                                 <span class="s1">&#39;function&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Myfunction&#39;</span><span class="p">,</span>
@@ -133,31 +123,19 @@ specified as an array with this prototype:</p>
                                 <span class="p">);</span>
 </pre></div>
 </div>
-<p><strong>Notes:</strong>
-The array index correlates to the name of the particular hook point you
-want to use. In the above example the hook point is pre_controller. A
-list of hook points is found below. The following items should be
-defined in your associative hook array:</p>
+<p><strong>Notlar:</strong>
+Dizi indeksi, kullanmak istediğiniz hook adı ile ilişkilendirilir. Yukarıdaki örnekte, hook noktası pre_controllerdır. Hook noktalarının listesi aşağıdadır. Takip eden maddeleri hook dizisinde ilişkili olarak tanımlanmalıdır:</p>
 <ul class="simple">
-<li><strong>class</strong> The name of the class you wish to invoke. If you prefer to
-use a procedural function instead of a class, leave this item blank.</li>
-<li><strong>function</strong> The function name you wish to call.</li>
-<li><strong>filename</strong> The file name containing your class/function.</li>
-<li><strong>filepath</strong> The name of the directory containing your script. Note:
-Your script must be located in a directory INSIDE your application
-folder, so the file path is relative to that folder. For example, if
-your script is located in application/hooks, you will simply use
-hooks as your filepath. If your script is located in
-application/hooks/utilities you will use hooks/utilities as your
-filepath. No trailing slash.</li>
-<li><strong>params</strong> Any parameters you wish to pass to your script. This item
-is optional.</li>
+<li><strong>class</strong> Başlatmak istediğiniz sınıfın adıdır. eğer sınıf yerine fonksiyon başlatmak istiyorsanız, bu maddeyi boş bırakın.</li>
+<li><strong>function</strong> Çağırmak istediğiniz fonksiyonun adı.</li>
+<li><strong>filename</strong> Sınıf/fonksiyonun bulunduğu dosya adı.</li>
+<li><strong>filepath</strong> criptinizin bulunduğu dizinin adıdır. Not: Scriptiniz application dizini İÇİNDE bulunmalı, filepath bağıl olarak bu dizini işaret etmelidir. Örneğin, eğer scriptiniz application/hooks dizini altındaysa, filepath değeri için hooks kullanmalısınız. Eğer scriptiniz application/hooks/utilities dizini altındaysa, filepath için hooks/utilities değerini kullanmalısınız. Sona ters bölü eklemeyin.</li>
+<li><strong>params</strong> Scriptinize göndermek istediğiniz herhangi bir parametre. Bu madde opsiyoneldir.</li>
 </ul>
 </div>
-<div class="section" id="multiple-calls-to-the-same-hook">
-<h2>Multiple Calls to the Same Hook<a class="headerlink" href="#multiple-calls-to-the-same-hook" title="Permalink to this headline">¶</a></h2>
-<p>If want to use the same hook point with more then one script, simply
-make your array declaration multi-dimensional, like this:</p>
+<div class="section" id="ayni-hook-a-coklu-cagirmak">
+<h2>Aynı Hook&#8217;a Çoklu Çağırmak<a class="headerlink" href="#ayni-hook-a-coklu-cagirmak" title="Permalink to this headline">¶</a></h2>
+<p>Eğer birden fazla scripti aynı hook noktasında kullanmak isterseniz, çok-boyutlu dizi tanımlamanız yeterlidir, mesela:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$hook</span><span class="p">[</span><span class="s1">&#39;pre_controller&#39;</span><span class="p">][]</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
                                 <span class="s1">&#39;class&#39;</span>    <span class="o">=&gt;</span> <span class="s1">&#39;MyClass&#39;</span><span class="p">,</span>
                                 <span class="s1">&#39;function&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Myfunction&#39;</span><span class="p">,</span>
@@ -175,44 +153,46 @@ make your array declaration multi-dimensional, like this:</p>
                                 <span class="p">);</span>
 </pre></div>
 </div>
-<p>Notice the brackets after each array index:</p>
+<p>Her dizi indeksinden sonra köşeli paranteze dikkat edin:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$hook</span><span class="p">[</span><span class="s1">&#39;pre_controller&#39;</span><span class="p">][]</span>
 </pre></div>
 </div>
-<p>This permits you to have the same hook point with multiple scripts. The
-order you define your array will be the execution order.</p>
+<p>Bu, sizin çoklu scriptlerli aynı hook içinde kullanmanıza izin verir. Dizinlerinizi çalışma önceliğine göre sıralayın.</p>
 </div>
-<div class="section" id="hook-points">
-<h2>Hook Points<a class="headerlink" href="#hook-points" title="Permalink to this headline">¶</a></h2>
-<p>The following is a list of available hook points.</p>
-<ul class="simple">
-<li><strong>pre_system</strong>
-Called very early during system execution. Only the benchmark and
-hooks class have been loaded at this point. No routing or other
-processes have happened.</li>
-<li><strong>pre_controller</strong>
-Called immediately prior to any of your controllers being called.
-All base classes, routing, and security checks have been done.</li>
-<li><strong>post_controller_constructor</strong>
-Called immediately after your controller is instantiated, but prior
-to any method calls happening.</li>
-<li><strong>post_controller</strong>
-Called immediately after your controller is fully executed.</li>
-<li><strong>display_override</strong>
-Overrides the _display() function, used to send the finalized page
-to the web browser at the end of system execution. This permits you
-to use your own display methodology. Note that you will need to
-reference the CI superobject with $this-&gt;CI =&amp; get_instance() and
-then the finalized data will be available by calling
-$this-&gt;CI-&gt;output-&gt;get_output()</li>
-<li><strong>cache_override</strong>
-Enables you to call your own function instead of the
-_display_cache() function in the output class. This permits you to
-use your own cache display mechanism.</li>
-<li><strong>post_system</strong>
-Called after the final rendered page is sent to the browser, at the
-end of system execution after the finalized data is sent to the
-browser.</li>
+<div class="section" id="hook-noktalari">
+<h2>Hook Noktaları<a class="headerlink" href="#hook-noktalari" title="Permalink to this headline">¶</a></h2>
+<p>Mevcut hook noktaları listesi aşağıdadır.</p>
+<ul>
+<li><p class="first"><strong>pre_system</strong>
+Sistem çalışmadan çok önce çağırılma. Sadece benchmark ve hook sınıfları yüklenmiştir bu noktada. Yönlendirme ya da diğer işlemler gerçekleşmez.</p>
+</li>
+<li><p class="first"><strong>pre_controller</strong>
+Herhangi bir controller çalışmadan önce çağrılma. Bütün temel sınıflar, yönlendirme ve güvenlik kontrolleri yapılmıştır.</p>
+</li>
+<li><p class="first"><strong>post_controller_constructor</strong>
+Controller yüklendikten hemen sonra, metodların başlatılmasından önce derhal çağrılma.</p>
+</li>
+<li><p class="first"><strong>post_controller</strong>
+Controller dosyası tamamen çalıştırıldıktan sonra hemen çağrılma.</p>
+</li>
+<li><dl class="first docutils">
+<dt><strong>display_override</strong></dt>
+<dd><p class="first last">_display() fonksiyonunun üzerine yazmak, sistem çalışması bittikten sonra web tarayıcıya finalize edilerek sayfa göndermekte kullanılır. Bu opsiyon, kendi ekran gösterin metodunuzu kullanmaya izin verir. Bu opsiyonu kullanırken $this-&gt;CI =&amp; get_instance() ile CI superobject&#8217;e referans vermeyi ve finalize edilmiş bilgileri $this-&gt;CI-&gt;output-&gt;get_output() ile çağırmayı unutmayın.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt><strong>cache_override</strong></dt>
+<dd><p class="first last">Output sınıfnıdaki _display_cache() fonksiyonu yerine kendi fonksiyonlarınızı çağırma olanağı. Bu opsiyon, kendi bellek gösterim mekanizmanızı kullanmaya izin verir.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt><strong>post_system</strong></dt>
+<dd><p class="first last">Sistem çalıştırılması bittikten sonra tarayıcıya gönderilen finalize edilmiş sayfanın ardından çağrılma.</p>
+</dd>
+</dl>
+</li>
 </ul>
 </div>
 </div>
@@ -231,7 +211,7 @@ browser.</li>
 				
 				<a href="#header" title="Return to top">Return to top</a>
 			</p>
-			<p><a href="">CodeIgniter</a> &ndash; Copyright &copy; 2011, EllisLab, Inc.</a> &ndash; Last updated: Nov 16, 2011</p>
+			<p><a href="">CodeIgniter</a> &ndash; Copyright &copy; 2011, EllisLab, Inc.</a> &ndash; Last updated: Nov 17, 2011</p>
 		</div><!-- /#footer -->
 	
 	<script src="../_static/asset/js/jquery-ui-min.js" type="text/javascript" charset="utf-8" async></script>
