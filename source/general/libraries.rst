@@ -1,6 +1,6 @@
-###########################
+######################################
 CodeIgniter Kütüphanelerinin Kullanımı
-###########################
+######################################
 
 Bütün mevcut kütüphaneler system/libraries dizini altındadır. Çoğu zaman, kütüphanelerin kullanıması için :doc:`controller <controllers>` dosyasında aşağıdaki fonksiyon ile başlatmak gerekir::
 
@@ -19,6 +19,6 @@ Ayrıca, birden fazla kütüphaneyi aynı anda yüklemek isterseniz load fonksiy
 	$this->load->library(array('email', 'table'));
 
 Kendi Kütüphanenizi Oluşturmak
-===========================
+==============================
 
 Lütfen Kullanım Kılavuzundaki :doc:`Kendi Kütüphanenizi Oluşturmak<creating_libraries>` kısmındaki tartışmayı okuyun.
