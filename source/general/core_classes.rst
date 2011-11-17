@@ -1,24 +1,17 @@
 ############################
-Creating Core System Classes
+Çekirdek Sistem Sınıfı Oluşturmak
 ############################
 
-Every time CodeIgniter runs there are several base classes that are
-initialized automatically as part of the core framework. It is possible,
-however, to swap any of the core system classes with your own versions
-or even extend the core versions.
+CodeIgniter herzaman çekirdek çatının bir parçası olarak başlangıçta otomatik bazı temel sınıflar yükler. Bununla birlikte, bazı çekirdek sistem sınıflarının kendi versiyonlarınızla yer değiştirmesi ya da çekirdek versiyonlarının genişletilmesi de mümkündür.
 
-**Most users will never have any need to do this, but the option to
-replace or extend them does exist for those who would like to
-significantly alter the CodeIgniter core.**
+**Bir çok kullanıcının asla ihtiyaç duymayacağı bu opsiyon, CodeIgniter çekirdeğinde belirgin bir değişiklik izi bırakmak isteyenlere olanak sağlar.**
 
-.. note:: Messing with a core system class has a lot of implications, so
-	make sure you know what you are doing before attempting it.
+.. not:: Çekirdek sistem sınıflarını karıştırma bir çok olumsuzluğu getireceği için işe başlamadan önce ne yaptığınızı bildiğinizden emin olun.
 
-System Class List
+Sistem Sınıfları Listesi
 =================
 
-The following is a list of the core system files that are invoked every
-time CodeIgniter runs:
+Aşağıdaki liste CodeIgniter'ın her başladığında çalıştırdığı çekirdek sistem dosyaları listesidir:
 
 -  Benchmark
 -  Config
@@ -34,48 +27,38 @@ time CodeIgniter runs:
 -  URI
 -  Utf8
 
-Replacing Core Classes
+Çekirdek Sınıfları Değiştirmek
 ======================
 
-To use one of your own system classes instead of a default one simply
-place your version inside your local application/core directory::
+Kendinize ait bir sistem sınıfını mevcut sınıfla değiştirmek için, dosyanın kendi versiyonunu application/libraries dizini altına yerleştirin::
 
 	application/core/some-class.php
 
-If this directory does not exist you can create it.
+Eğer bu dizin mevcut değilse oluşturun.
 
-Any file named identically to one from the list above will be used
-instead of the one normally used.
+Yukarıdaki listede bulunanlardan aynı isime sahip olanlar, normalde kullanılanlar yerine kullanılacaktır.
 
-Please note that your class must use CI as a prefix. For example, if
-your file is named Input.php the class will be named::
+Lütfen şunu unutmayın, kendi sınıflarınız CI öneki kullanmak zorundadır. Örneğin, eğer dosya adınız Input.php ise, sınıf adı şöyle olmalıdır::
 
 	class CI_Input {
 
 	}
 
-Extending Core Class
+Çekirdek Sınıfı Genişletmek
 ====================
 
-If all you need to do is add some functionality to an existing library -
-perhaps add a function or two - then it's overkill to replace the entire
-library with your version. In this case it's better to simply extend the
-class. Extending a class is nearly identical to replacing a class with a
-couple exceptions:
+Eğer tüm ihtiyacınız mevcut kütüphaneye bazı işlevsellikler kazandırmak -belki bir ya da iki fonskyion eklemek-, sonra da kullandığınız mevcut kütüphaneyi sizin kütüphanenizle yerdeğiştirmek ve onu durdurmak ise, bu durumda sınıfı genişletmek daha uygun olur. Sınıf genişletmek neredeyse, mevcut sınıf ile yer değiştirmek gibidir, şu farkla:
 
--  The class declaration must extend the parent class.
--  Your new class name and filename must be prefixed with MY\_ (this
-   item is configurable. See below.).
+-  Ana sınıf bildirimi mutlaka yapılmalıdır.
+-  Sizin sınıf ve dosya adınız mutlaka MY\_ öneki ile başlamalıdır (Bu değer değiştirilebilir. Aşağı bakın.).
 
-For example, to extend the native Input class you'll create a file named
-application/core/MY_Input.php, and declare your class with::
+Örneğin, mevcut Input sınıfı için, application/libraries/MY_Input.php dosyasını oluşturmalı ve kendi sınıfınızda bildirim yapmalısınız:
 
 	class MY_Input extends CI_Input {
 
 	}
 
-Note: If you need to use a constructor in your class make sure you
-extend the parent constructor::
+Not: Eğer sınıfınızda constructor kullanmaya ihtiyacınız varsa, ana constructor'ü de genişletmelisiniz::
 
 	class MY_Input extends CI_Input {
 
@@ -85,13 +68,9 @@ extend the parent constructor::
 	    }
 	}
 
-**Tip:** Any functions in your class that are named identically to the
-functions in the parent class will be used instead of the native ones
-(this is known as "method overriding"). This allows you to substantially
-alter the CodeIgniter core.
+**İpucu**:  Sınıfınız bulunan ve ana sınıfın adı ile aynı ada sahip olan herhangi bir fonksiyon varsa, bu fonksiyon mevcut olanın yerine kullanılır ("üzerine yazdırma metodu" olarak da bilinir). Bu özellik CodeIgniter çekirdeğini büyük olçüde değiştirmenize olanak tanır.
 
-If you are extending the Controller core class, then be sure to extend
-your new class in your application controller's constructors.
+Eğer controller çekirdek sınıfını genişlettiyseniz, uygulamanızda kullandığınız controller'ın constructor sınıfında bu yeni sınıfın genişletilmesi ile oluşturduğunuzu kontrol ediniz.
 
 ::
 
@@ -108,13 +87,11 @@ your new class in your application controller's constructors.
 	    }
 	}
 
-Setting Your Own Prefix
+Kendi Önekinizi Ayarlamak
 -----------------------
 
-To set your own sub-class prefix, open your
-application/config/config.php file and look for this item::
+Kendi alt-sınıfınızda kullanacağını önekinizi ayarlamak için, application/config/config.php dosyasını açın ve şunu arayın::
 
 	$config['subclass_prefix'] = 'MY_';
 
-Please note that all native CodeIgniter libraries are prefixed with CI\_
-so DO NOT use that as your prefix.
+Lütfen unutmayın, CodeIgniter'ın bütün mevcut kütüphaneleri CI\_ önekini kullanır, bu nedenle siz KULLANMAYIN.
