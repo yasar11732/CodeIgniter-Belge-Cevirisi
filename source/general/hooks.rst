@@ -1,30 +1,20 @@
 ####################################
-Hooks - Extending the Framework Core
+Hook - Çatı Çekirdeğini Genişletmek
 ####################################
 
-CodeIgniter's Hooks feature provides a means to tap into and modify the
-inner workings of the framework without hacking the core files. When
-CodeIgniter runs it follows a specific execution process, diagramed in
-the :doc:`Application Flow <../overview/appflow>` page. There may be
-instances, however, where you'd like to cause some action to take place
-at a particular stage in the execution process. For example, you might
-want to run a script right before your controllers get loaded, or right
-after, or you might want to trigger one of your own scripts in some
-other location.
+CodeIgniter'ın Hook özelliği, çekirdek dosyaları ele geçirmeden çatıya girmenin ve içeride çalışmanın yolunu sağlar. CodeIgniter çalıştığında :doc:`Uygulama Akışında <../overview/appflow>` tanımlı yolu uygular. Bununla birlikte, uygulamanın çalışmasıyla belirli aşamalarında uygulamaya müdahale etmek isteyebilirsiniz. Örneğin, controller dosyasının yüklenmesinden önce ya da sonra bir script çalıştırmak, ya da başka bir yerde bulunan bir scriptinizi tetiklemek isteyebilirsiniz.
 
-Enabling Hooks
+Hook'u Etkinleştirmek
 ==============
 
-The hooks feature can be globally enabled/disabled by setting the
-following item in the application/config/config.php file::
+Hook özelliğini tüm uygulamada etkinleştirip, etkisizleştirmek için application/config/config.php dosyasında şu madde ayarlanmalıdır::
 
 	$config['enable_hooks'] = TRUE;
 
-Defining a Hook
+Bir Hook Tanımlamak
 ===============
 
-Hooks are defined in application/config/hooks.php file. Each hook is
-specified as an array with this prototype::
+Hooks application/config/hooks.php dosyasında tanımlanır. Her Hook dizide bir prototip olarak tanımlanır::
 
 	$hook['pre_controller'] = array(
 	                                'class'    => 'MyClass',
@@ -34,31 +24,19 @@ specified as an array with this prototype::
 	                                'params'   => array('beer', 'wine', 'snacks')
 	                                );
 
-**Notes:**
-The array index correlates to the name of the particular hook point you
-want to use. In the above example the hook point is pre_controller. A
-list of hook points is found below. The following items should be
-defined in your associative hook array:
+**Notlar:**
+Dizi indeksi, kullanmak istediğiniz hook adı ile ilişkilendirilir. Yukarıdaki örnekte, hook noktası pre_controllerdır. Hook noktalarının listesi aşağıdadır. Takip eden maddeleri hook dizisinde ilişkili olarak tanımlanmalıdır:
 
--  **class** The name of the class you wish to invoke. If you prefer to
-   use a procedural function instead of a class, leave this item blank.
--  **function** The function name you wish to call.
--  **filename** The file name containing your class/function.
--  **filepath** The name of the directory containing your script. Note:
-   Your script must be located in a directory INSIDE your application
-   folder, so the file path is relative to that folder. For example, if
-   your script is located in application/hooks, you will simply use
-   hooks as your filepath. If your script is located in
-   application/hooks/utilities you will use hooks/utilities as your
-   filepath. No trailing slash.
--  **params** Any parameters you wish to pass to your script. This item
-   is optional.
+-  **class** Başlatmak istediğiniz sınıfın adıdır. eğer sınıf yerine fonksiyon başlatmak istiyorsanız, bu maddeyi boş bırakın.
+-  **function** Çağırmak istediğiniz fonksiyonun adı.
+-  **filename** Sınıf/fonksiyonun bulunduğu dosya adı.
+-  **filepath** criptinizin bulunduğu dizinin adıdır. Not: Scriptiniz application dizini İÇİNDE bulunmalı, filepath bağıl olarak bu dizini işaret etmelidir. Örneğin, eğer scriptiniz application/hooks dizini altındaysa, filepath değeri için hooks kullanmalısınız. Eğer scriptiniz application/hooks/utilities dizini altındaysa, filepath için hooks/utilities değerini kullanmalısınız. Sona ters bölü eklemeyin.
+-  **params** Scriptinize göndermek istediğiniz herhangi bir parametre. Bu madde opsiyoneldir.
 
-Multiple Calls to the Same Hook
+Aynı Hook'a Çoklu Çağırmak
 ===============================
 
-If want to use the same hook point with more then one script, simply
-make your array declaration multi-dimensional, like this::
+Eğer birden fazla scripti aynı hook noktasında kullanmak isterseniz, çok-boyutlu dizi tanımlamanız yeterlidir, mesela::
 
 	$hook['pre_controller'][] = array(
 	                                'class'    => 'MyClass',
@@ -76,43 +54,29 @@ make your array declaration multi-dimensional, like this::
 	                                'params'   => array('red', 'yellow', 'blue')
 	                                );
 
-Notice the brackets after each array index::
+Her dizi indeksinden sonra köşeli paranteze dikkat edin::
 
 	$hook['pre_controller'][]
 
-This permits you to have the same hook point with multiple scripts. The
-order you define your array will be the execution order.
+Bu, sizin çoklu scriptlerli aynı hook içinde kullanmanıza izin verir. Dizinlerinizi çalışma önceliğine göre sıralayın.
 
-Hook Points
+Hook Noktaları
 ===========
 
-The following is a list of available hook points.
+Mevcut hook noktaları listesi aşağıdadır.
 
 -  **pre_system**
-   Called very early during system execution. Only the benchmark and
-   hooks class have been loaded at this point. No routing or other
-   processes have happened.
+   Sistem çalışmadan çok önce çağırılma. Sadece benchmark ve hook sınıfları yüklenmiştir bu noktada. Yönlendirme ya da diğer işlemler gerçekleşmez.
 -  **pre_controller**
-   Called immediately prior to any of your controllers being called.
-   All base classes, routing, and security checks have been done.
+   Herhangi bir controller çalışmadan önce çağrılma. Bütün temel sınıflar, yönlendirme ve güvenlik kontrolleri yapılmıştır.
 -  **post_controller_constructor**
-   Called immediately after your controller is instantiated, but prior
-   to any method calls happening.
+   Controller yüklendikten hemen sonra, metodların başlatılmasından önce derhal çağrılma.
 -  **post_controller**
-   Called immediately after your controller is fully executed.
+   Controller dosyası tamamen çalıştırıldıktan sonra hemen çağrılma.
 -  **display_override**
-   Overrides the _display() function, used to send the finalized page
-   to the web browser at the end of system execution. This permits you
-   to use your own display methodology. Note that you will need to
-   reference the CI superobject with $this->CI =& get_instance() and
-   then the finalized data will be available by calling
-   $this->CI->output->get_output()
+	_display() fonksiyonunun üzerine yazmak, sistem çalışması bittikten sonra web tarayıcıya finalize edilerek sayfa göndermekte kullanılır. Bu opsiyon, kendi ekran gösterin metodunuzu kullanmaya izin verir. Bu opsiyonu kullanırken $this->CI =& get_instance() ile CI superobject'e referans vermeyi ve finalize edilmiş bilgileri $this->CI->output->get_output() ile çağırmayı unutmayın.
 -  **cache_override**
-   Enables you to call your own function instead of the
-   _display_cache() function in the output class. This permits you to
-   use your own cache display mechanism.
+	Output sınıfnıdaki _display_cache() fonksiyonu yerine kendi fonksiyonlarınızı çağırma olanağı. Bu opsiyon, kendi bellek gösterim mekanizmanızı kullanmaya izin verir.
 -  **post_system**
-   Called after the final rendered page is sent to the browser, at the
-   end of system execution after the finalized data is sent to the
-   browser.
+	Sistem çalıştırılması bittikten sonra tarayıcıya gönderilen finalize edilmiş sayfanın ardından çağrılma.
 

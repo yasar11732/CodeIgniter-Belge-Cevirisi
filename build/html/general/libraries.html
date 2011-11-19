@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="utf-8">
 	    
-	    <title>Using CodeIgniter Libraries &mdash; CodeIgniter v3.0-dev documentation</title>
+	    <title>CodeIgniter Kütüphanelerinin Kullanımı &mdash; CodeIgniter v3.0-dev documentation</title>
 
 	    <link rel="stylesheet" href="../_static/asset/css/common.css" type="text/css" />
 	    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -23,7 +23,7 @@
 	    <link rel="top" title="CodeIgniter v3.0-dev documentation" href="../index.html" />
 	    <link rel="up" title="General Topics" href="index.html" />
 	    <link rel="next" title="Creating Libraries" href="creating_libraries.html" />
-	    <link rel="prev" title="Helper Functions" href="helpers.html" /> 
+	    <link rel="prev" title="Helper Fonksiyonu" href="helpers.html" /> 
 	</head>
 	<body>
 		<div id="table-contents">
@@ -35,21 +35,21 @@
 <li class="toctree-l1"><a class="reference internal" href="requirements.html">Server Requirements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../installation/index.html">Installation Instructions</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">General Topics</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="urls.html">CodeIgniter URLs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="urls.html">CodeIgniter&#8217;da URL</a></li>
 <li class="toctree-l2"><a class="reference internal" href="controllers.html">Controllers</a></li>
-<li class="toctree-l2"><a class="reference internal" href="reserved_names.html">Reserved Names</a></li>
-<li class="toctree-l2"><a class="reference internal" href="views.html">Views</a></li>
-<li class="toctree-l2"><a class="reference internal" href="models.html">Models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reserved_names.html">Rezerve İsimler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="views.html">View</a></li>
+<li class="toctree-l2"><a class="reference internal" href="models.html">Model</a></li>
 <li class="toctree-l2"><a class="reference internal" href="helpers.html">Helpers</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="">Using CodeIgniter Libraries</a><ul class="simple">
+<li class="toctree-l2 current"><a class="current reference internal" href="">CodeIgniter Kütüphanelerinin Kullanımı</a><ul class="simple">
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="creating_libraries.html">Creating Libraries</a></li>
 <li class="toctree-l2"><a class="reference internal" href="drivers.html">Using CodeIgniter Drivers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="creating_drivers.html">Creating Drivers</a></li>
-<li class="toctree-l2"><a class="reference internal" href="core_classes.html">Creating Core System Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="core_classes.html">Çekirdek Sistem Sınıfı Oluşturmak</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ancillary_classes.html">Creating Ancillary Classes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="hooks.html">Hooks - Extending the Framework Core</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hooks.html">Hook - Çatı Çekirdeğini Genişletmek</a></li>
 <li class="toctree-l2"><a class="reference internal" href="autoloader.html">Auto-loading Resources</a></li>
 <li class="toctree-l2"><a class="reference internal" href="common_functions.html">Common Functions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="routing.html">URI Routing</a></li>
@@ -66,8 +66,8 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../libraries/index.html">Libraries</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../helpers/index.html">Helpers</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../database/index.html">The Database Class</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../documentation/index.html">Writing CodeIgniter Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../database/index.html">Veri Tabanı Sınıfı</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../documentation/index.html">CodeIgniter Belgesi Yazma</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../tutorial/index.html">Tutorial</a></li>
 <li class="toctree-l1"><a class="reference internal" href="quick_reference.html">Quick Reference Chart</a></li>
 <li class="toctree-l1"><a class="reference internal" href="credits.html">Credits</a></li>
@@ -96,36 +96,29 @@
 				<li><a id="toc-link" href="../index.html">Table of Contents</a>&nbsp;&nbsp; &rsaquo;</li>
 				<li><a href="index.html" accesskey="U">General Topics</a>&nbsp;&nbsp;  &rsaquo;</li>
 
-				<li><strong>Using CodeIgniter Libraries</strong></li>
+				<li><strong>CodeIgniter Kütüphanelerinin Kullanımı</strong></li>
 			</ul>
 		</div><!-- /#header -->
 
 		<div class="section" id="content">
-			<div class="section" id="using-codeigniter-libraries">
-<h1>Using CodeIgniter Libraries<a class="headerlink" href="#using-codeigniter-libraries" title="Permalink to this headline">¶</a></h1>
-<p>All of the available libraries are located in your system/libraries
-folder. In most cases, to use one of these classes involves initializing
-it within a <a class="reference internal" href="controllers.html"><em>controller</em></a> using the following
-initialization function:</p>
+			<div class="section" id="codeigniter-kutuphanelerinin-kullanimi">
+<h1>CodeIgniter Kütüphanelerinin Kullanımı<a class="headerlink" href="#codeigniter-kutuphanelerinin-kullanimi" title="Permalink to this headline">¶</a></h1>
+<p>Bütün mevcut kütüphaneler system/libraries dizini altındadır. Çoğu zaman, kütüphanelerin kullanıması için <a class="reference internal" href="controllers.html"><em>controller</em></a> dosyasında aşağıdaki fonksiyon ile başlatmak gerekir:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">library</span><span class="p">(</span><span class="s1">&#39;class name&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>Where class name is the name of the class you want to invoke. For
-example, to load the form validation class you would do this:</p>
+<p>Burada class name başlatmak istediğiniz sınıfın adıdır. Örneğin, doğrulama (validation) sınıfını başlatmak istediğinizde:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">library</span><span class="p">(</span><span class="s1">&#39;form_validation&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>Once initialized you can use it as indicated in the user guide page
-corresponding to that class.</p>
-<p>Additionally, multiple libraries can be loaded at the same time by
-passing an array of libraries to the load function.</p>
+<p>Bir kere başlattığınızda, kullanım kılavuzunda ilgili sayfadaki gösterilen sınıfı kullanabilirsiniz.</p>
+<p>Ayrıca, birden fazla kütüphaneyi aynı anda yüklemek isterseniz load fonksiyonuna dizi gönderebilirsiniz.</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">library</span><span class="p">(</span><span class="k">array</span><span class="p">(</span><span class="s1">&#39;email&#39;</span><span class="p">,</span> <span class="s1">&#39;table&#39;</span><span class="p">));</span>
 </pre></div>
 </div>
-<div class="section" id="creating-your-own-libraries">
-<h2>Creating Your Own Libraries<a class="headerlink" href="#creating-your-own-libraries" title="Permalink to this headline">¶</a></h2>
-<p>Please read the section of the user guide that discusses how to <a class="reference internal" href="creating_libraries.html"><em>create
-your own libraries</em></a></p>
+<div class="section" id="kendi-kutuphanenizi-olusturmak">
+<h2>Kendi Kütüphanenizi Oluşturmak<a class="headerlink" href="#kendi-kutuphanenizi-olusturmak" title="Permalink to this headline">¶</a></h2>
+<p>Lütfen Kullanım Kılavuzundaki <a class="reference internal" href="creating_libraries.html"><em>Kendi Kütüphanenizi Oluşturmak</em></a> kısmındaki tartışmayı okuyun.</p>
 </div>
 </div>
 
@@ -136,14 +129,14 @@ your own libraries</em></a></p>
 		<div id="footer">
 			<p class="top">
 				
-				<span class="prev">Previous Topic: <a href="helpers.html">Helper Functions</a></span>
+				<span class="prev">Previous Topic: <a href="helpers.html">Helper Fonksiyonu</a></span>
 				
 				
 				<span class="next">Next Topic: <a href="creating_libraries.html">Creating Libraries</a></span>
 				
 				<a href="#header" title="Return to top">Return to top</a>
 			</p>
-			<p><a href="">CodeIgniter</a> &ndash; Copyright &copy; 2011, EllisLab, Inc.</a> &ndash; Last updated: Nov 13, 2011</p>
+			<p><a href="">CodeIgniter</a> &ndash; Copyright &copy; 2011, EllisLab, Inc.</a> &ndash; Last updated: Nov 17, 2011</p>
 		</div><!-- /#footer -->
 	
 	<script src="../_static/asset/js/jquery-ui-min.js" type="text/javascript" charset="utf-8" async></script>

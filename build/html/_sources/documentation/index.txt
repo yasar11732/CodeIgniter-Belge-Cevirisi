@@ -1,58 +1,60 @@
-#################################
-Writing CodeIgniter Documentation
-#################################
+#########################
+CodeIgniter Belgesi Yazma
+#########################
 
-CodeIgniter uses Sphinx to generate its documentation in a variety of formats,
-using reStructuredText to handle the formatting.  If you are familiar with
-Markdown or Textile, you will quickly grasp reStructuredText.  The focus is
-on readability, user friendliness, and an "I've got your hand, baby" feel.
-While they can be quite technical, we always write for humans!
+CodeIgniter birkaç farklı formatta belgelerini oluşturmak için, formatlamayı
+üstlenmesi için reStructuredText formatı ile birlikte, Sphinx kullanır.
+Eğer Mardown veya Textile kullanmışlığınız varsa, reStructuredText'i
+kolaylıkla anlarsınız. Bu formatın odak noktası, okunabilirlik ve kullanım
+kolaylığıdır. Oldukça teknik belgeler yazacak olsak da, bunları insanlar için
+yazarız.
 
-A table of contents should always be included like the one below.
-It is created automatically by inserting the ``.. contents::``
-directive on a line by itself.
+Bir içindekiler tablosu daima aşağıdaki gibi eklenmelidir. Bu ``.. contents::``
+yönergesini kendi başına bir satıra ekleyerek oluşturulmuştur.
 
 .. contents:: Page Contents
 
 
-**************
-Tools Required
-**************
+***************
+Gerekli Araçlar
+***************
 
-To see the rendered HTML, ePub, PDF, etc., you will need to install Sphinx
-along with the PHP domain extension for Sphinx.  The underlying requirement
-is to have Python installed.  Lastly, you will install the CI Lexer for
-Pygments, so that code blocks can be properly highlighted.
+HTML, ePub, PDF vb. oluşturulmuş dosyaları görmek için Sphinx ve Sphinx için
+PHP domain eklentisini de kurmanız gerekiyor. Altta yatan bir gereksinim ise
+Python'un kurulu olması. Son olarak, Pygments için CI Lexer'ı yüklemeniz
+gerek. Böylece kod blokları düzgün bir şekilde renklendirilecek.
 
 .. code-block:: bash
 
 	easy_install sphinx
 	easy_install sphinxcontrib-phpdomain
 
-Then follow the directions in the README file in the :samp:`cilexer` folder
-inside the documentation repository to install the CI Lexer.
+Daha sonra :samp:`cilexer` klasöründeki README dosyasındaki yönergeleri takip
+ederek CI Lexer'ı kurun.
 
 
 
-*****************************************
-Page and Section Headings and Subheadings
-*****************************************
+****************************************
+Sayfa, Bölüm Başlıkları ve Alt Başlıklar
+****************************************
 
-Headings not only provide order and sections within a page, but they also
-are used to automatically build both the page and document table of contents.
-Headings are formed by using certain characters as underlines for a bit of
-text.  Major headings, like page titles and section headings also use
-overlines.  Other headings just use underlines, with the following hierarchy::
+Başlıklar sayfa içerisinde sıra ve bölümleme oluşturmakla kalmaz, aynı zamanda
+otomatik olarak hem sayfa, hem de belge için *içindekiler* oluşturuken
+kullanılır. 
 
-	# with overline for page titles
-	* with overline for major sections
-	= for subsections
-	- for subsubsections
-	^ for subsubsubsections
-	" for subsubsubsubsections (!)
+Başlıklar bir kısım yazı için belirli karakterleri altçizgi olarak kullanarak
+oluşturulur. Sayfa başlıkları ve bölüm başlıkları gibi büyük başlıklar aynız
+zamanda üstçizgi de kullanır. Diğer başlıklar aşağıdaki sıralamada haliyle sadece alt çizgi kullanır::
+
+	# üstçizgi ile birlikte, sayfa başlığı için
+	* üstçizgi ile birlikte, büyük bölüm başlığı için
+	= altbölüm için
+	- altaltbölüm için
+	^ altaltaltbölüm için
+	" altaltaltaltbölüm için (!)
 	
-The :download:`TextMate ELDocs Bundle <./ELDocs.tmbundle.zip>` can help you
-create these with the following tab triggers::
+:download:`TextMate ELDocs Bundle <./ELDocs.tmbundle.zip>` aşağıdaki tab
+tetikleyicileri ile bunları kolayca oluşturmanıza yardımcı olabilir::
 
 	title->
 	
@@ -89,9 +91,9 @@ create these with the following tab triggers::
 
 
 
-********************
-Method Documentation
-********************
+*******************
+Metot Belgelendirme
+*******************
 
 When documenting class methods for third party developers, Sphinx provides
 directives to assist and keep things simple.  For example, consider the following

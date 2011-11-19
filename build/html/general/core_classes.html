@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="utf-8">
 	    
-	    <title>Creating Core System Classes &mdash; CodeIgniter v3.0-dev documentation</title>
+	    <title>Çekirdek Sistem Sınıfı Oluşturmak &mdash; CodeIgniter v3.0-dev documentation</title>
 
 	    <link rel="stylesheet" href="../_static/asset/css/common.css" type="text/css" />
 	    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -35,21 +35,21 @@
 <li class="toctree-l1"><a class="reference internal" href="requirements.html">Server Requirements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../installation/index.html">Installation Instructions</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">General Topics</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="urls.html">CodeIgniter URLs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="urls.html">CodeIgniter&#8217;da URL</a></li>
 <li class="toctree-l2"><a class="reference internal" href="controllers.html">Controllers</a></li>
-<li class="toctree-l2"><a class="reference internal" href="reserved_names.html">Reserved Names</a></li>
-<li class="toctree-l2"><a class="reference internal" href="views.html">Views</a></li>
-<li class="toctree-l2"><a class="reference internal" href="models.html">Models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reserved_names.html">Rezerve İsimler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="views.html">View</a></li>
+<li class="toctree-l2"><a class="reference internal" href="models.html">Model</a></li>
 <li class="toctree-l2"><a class="reference internal" href="helpers.html">Helpers</a></li>
-<li class="toctree-l2"><a class="reference internal" href="libraries.html">Using CodeIgniter Libraries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="libraries.html">CodeIgniter Kütüphanelerinin Kullanımı</a></li>
 <li class="toctree-l2"><a class="reference internal" href="creating_libraries.html">Creating Libraries</a></li>
 <li class="toctree-l2"><a class="reference internal" href="drivers.html">Using CodeIgniter Drivers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="creating_drivers.html">Creating Drivers</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="">Creating Core System Classes</a><ul class="simple">
+<li class="toctree-l2 current"><a class="current reference internal" href="">Çekirdek Sistem Sınıfı Oluşturmak</a><ul class="simple">
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="ancillary_classes.html">Creating Ancillary Classes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="hooks.html">Hooks - Extending the Framework Core</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hooks.html">Hook - Çatı Çekirdeğini Genişletmek</a></li>
 <li class="toctree-l2"><a class="reference internal" href="autoloader.html">Auto-loading Resources</a></li>
 <li class="toctree-l2"><a class="reference internal" href="common_functions.html">Common Functions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="routing.html">URI Routing</a></li>
@@ -66,8 +66,8 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../libraries/index.html">Libraries</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../helpers/index.html">Helpers</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../database/index.html">The Database Class</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../documentation/index.html">Writing CodeIgniter Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../database/index.html">Veri Tabanı Sınıfı</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../documentation/index.html">CodeIgniter Belgesi Yazma</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../tutorial/index.html">Tutorial</a></li>
 <li class="toctree-l1"><a class="reference internal" href="quick_reference.html">Quick Reference Chart</a></li>
 <li class="toctree-l1"><a class="reference internal" href="credits.html">Credits</a></li>
@@ -96,29 +96,18 @@
 				<li><a id="toc-link" href="../index.html">Table of Contents</a>&nbsp;&nbsp; &rsaquo;</li>
 				<li><a href="index.html" accesskey="U">General Topics</a>&nbsp;&nbsp;  &rsaquo;</li>
 
-				<li><strong>Creating Core System Classes</strong></li>
+				<li><strong>Çekirdek Sistem Sınıfı Oluşturmak</strong></li>
 			</ul>
 		</div><!-- /#header -->
 
 		<div class="section" id="content">
-			<div class="section" id="creating-core-system-classes">
-<h1>Creating Core System Classes<a class="headerlink" href="#creating-core-system-classes" title="Permalink to this headline">¶</a></h1>
-<p>Every time CodeIgniter runs there are several base classes that are
-initialized automatically as part of the core framework. It is possible,
-however, to swap any of the core system classes with your own versions
-or even extend the core versions.</p>
-<p><strong>Most users will never have any need to do this, but the option to
-replace or extend them does exist for those who would like to
-significantly alter the CodeIgniter core.</strong></p>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">Messing with a core system class has a lot of implications, so
-make sure you know what you are doing before attempting it.</p>
-</div>
-<div class="section" id="system-class-list">
-<h2>System Class List<a class="headerlink" href="#system-class-list" title="Permalink to this headline">¶</a></h2>
-<p>The following is a list of the core system files that are invoked every
-time CodeIgniter runs:</p>
+			<div class="section" id="cekirdek-sistem-sinifi-olusturmak">
+<h1>Çekirdek Sistem Sınıfı Oluşturmak<a class="headerlink" href="#cekirdek-sistem-sinifi-olusturmak" title="Permalink to this headline">¶</a></h1>
+<p>CodeIgniter herzaman çekirdek çatının bir parçası olarak başlangıçta otomatik bazı temel sınıflar yükler. Bununla birlikte, bazı çekirdek sistem sınıflarının kendi versiyonlarınızla yer değiştirmesi ya da çekirdek versiyonlarının genişletilmesi de mümkündür.</p>
+<p><strong>Bir çok kullanıcının asla ihtiyaç duymayacağı bu opsiyon, CodeIgniter çekirdeğinde belirgin bir değişiklik izi bırakmak isteyenlere olanak sağlar.</strong></p>
+<div class="section" id="sistem-siniflari-listesi">
+<h2>Sistem Sınıfları Listesi<a class="headerlink" href="#sistem-siniflari-listesi" title="Permalink to this headline">¶</a></h2>
+<p>Aşağıdaki liste CodeIgniter&#8217;ın her başladığında çalıştırdığı çekirdek sistem dosyaları listesidir:</p>
 <ul class="simple">
 <li>Benchmark</li>
 <li>Config</li>
@@ -135,45 +124,34 @@ time CodeIgniter runs:</p>
 <li>Utf8</li>
 </ul>
 </div>
-<div class="section" id="replacing-core-classes">
-<h2>Replacing Core Classes<a class="headerlink" href="#replacing-core-classes" title="Permalink to this headline">¶</a></h2>
-<p>To use one of your own system classes instead of a default one simply
-place your version inside your local application/core directory:</p>
+<div class="section" id="cekirdek-siniflari-degistirmek">
+<h2>Çekirdek Sınıfları Değiştirmek<a class="headerlink" href="#cekirdek-siniflari-degistirmek" title="Permalink to this headline">¶</a></h2>
+<p>Kendinize ait bir sistem sınıfını mevcut sınıfla değiştirmek için, dosyanın kendi versiyonunu application/libraries dizini altına yerleştirin:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nx">application</span><span class="o">/</span><span class="nx">core</span><span class="o">/</span><span class="nx">some</span><span class="o">-</span><span class="nx">class</span><span class="o">.</span><span class="nx">php</span>
 </pre></div>
 </div>
-<p>If this directory does not exist you can create it.</p>
-<p>Any file named identically to one from the list above will be used
-instead of the one normally used.</p>
-<p>Please note that your class must use CI as a prefix. For example, if
-your file is named Input.php the class will be named:</p>
+<p>Eğer bu dizin mevcut değilse oluşturun.</p>
+<p>Yukarıdaki listede bulunanlardan aynı isime sahip olanlar, normalde kullanılanlar yerine kullanılacaktır.</p>
+<p>Lütfen şunu unutmayın, kendi sınıflarınız CI öneki kullanmak zorundadır. Örneğin, eğer dosya adınız Input.php ise, sınıf adı şöyle olmalıdır:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="k">class</span> <span class="nc">CI_Input</span> <span class="p">{</span>
 
 <span class="p">}</span>
 </pre></div>
 </div>
 </div>
-<div class="section" id="extending-core-class">
-<h2>Extending Core Class<a class="headerlink" href="#extending-core-class" title="Permalink to this headline">¶</a></h2>
-<p>If all you need to do is add some functionality to an existing library -
-perhaps add a function or two - then it&#8217;s overkill to replace the entire
-library with your version. In this case it&#8217;s better to simply extend the
-class. Extending a class is nearly identical to replacing a class with a
-couple exceptions:</p>
+<div class="section" id="cekirdek-sinifi-genisletmek">
+<h2>Çekirdek Sınıfı Genişletmek<a class="headerlink" href="#cekirdek-sinifi-genisletmek" title="Permalink to this headline">¶</a></h2>
+<p>Eğer tüm ihtiyacınız mevcut kütüphaneye bazı işlevsellikler kazandırmak -belki bir ya da iki fonskyion eklemek-, sonra da kullandığınız mevcut kütüphaneyi sizin kütüphanenizle yerdeğiştirmek ve onu durdurmak ise, bu durumda sınıfı genişletmek daha uygun olur. Sınıf genişletmek neredeyse, mevcut sınıf ile yer değiştirmek gibidir, şu farkla:</p>
 <ul class="simple">
-<li>The class declaration must extend the parent class.</li>
-<li>Your new class name and filename must be prefixed with MY_ (this
-item is configurable. See below.).</li>
+<li>Ana sınıf bildirimi mutlaka yapılmalıdır.</li>
+<li>Sizin sınıf ve dosya adınız mutlaka MY_ öneki ile başlamalıdır (Bu değer değiştirilebilir. Aşağı bakın.).</li>
 </ul>
-<p>For example, to extend the native Input class you&#8217;ll create a file named
-application/core/MY_Input.php, and declare your class with:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="k">class</span> <span class="nc">MY_Input</span> <span class="k">extends</span> <span class="nx">CI_Input</span> <span class="p">{</span>
-
-<span class="p">}</span>
-</pre></div>
-</div>
-<p>Note: If you need to use a constructor in your class make sure you
-extend the parent constructor:</p>
+<p>Örneğin, mevcut Input sınıfı için, application/libraries/MY_Input.php dosyasını oluşturmalı ve kendi sınıfınızda bildirim yapmalısınız:</p>
+<blockquote>
+<div><p>class MY_Input extends CI_Input {</p>
+<p>}</p>
+</div></blockquote>
+<p>Not: Eğer sınıfınızda constructor kullanmaya ihtiyacınız varsa, ana constructor&#8217;ü de genişletmelisiniz:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="k">class</span> <span class="nc">MY_Input</span> <span class="k">extends</span> <span class="nx">CI_Input</span> <span class="p">{</span>
 
     <span class="k">function</span> <span class="nf">__construct</span><span class="p">()</span>
@@ -183,12 +161,8 @@ extend the parent constructor:</p>
 <span class="p">}</span>
 </pre></div>
 </div>
-<p><strong>Tip:</strong> Any functions in your class that are named identically to the
-functions in the parent class will be used instead of the native ones
-(this is known as &#8220;method overriding&#8221;). This allows you to substantially
-alter the CodeIgniter core.</p>
-<p>If you are extending the Controller core class, then be sure to extend
-your new class in your application controller&#8217;s constructors.</p>
+<p><strong>İpucu</strong>:  Sınıfınız bulunan ve ana sınıfın adı ile aynı ada sahip olan herhangi bir fonksiyon varsa, bu fonksiyon mevcut olanın yerine kullanılır (&#8220;üzerine yazdırma metodu&#8221; olarak da bilinir). Bu özellik CodeIgniter çekirdeğini büyük olçüde değiştirmenize olanak tanır.</p>
+<p>Eğer controller çekirdek sınıfını genişlettiyseniz, uygulamanızda kullandığınız controller&#8217;ın constructor sınıfında bu yeni sınıfın genişletilmesi ile oluşturduğunuzu kontrol ediniz.</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="k">class</span> <span class="nc">Welcome</span> <span class="k">extends</span> <span class="nx">MY_Controller</span> <span class="p">{</span>
 
     <span class="k">function</span> <span class="nf">__construct</span><span class="p">()</span>
@@ -203,15 +177,13 @@ your new class in your application controller&#8217;s constructors.</p>
 <span class="p">}</span>
 </pre></div>
 </div>
-<div class="section" id="setting-your-own-prefix">
-<h3>Setting Your Own Prefix<a class="headerlink" href="#setting-your-own-prefix" title="Permalink to this headline">¶</a></h3>
-<p>To set your own sub-class prefix, open your
-application/config/config.php file and look for this item:</p>
+<div class="section" id="kendi-onekinizi-ayarlamak">
+<h3>Kendi Önekinizi Ayarlamak<a class="headerlink" href="#kendi-onekinizi-ayarlamak" title="Permalink to this headline">¶</a></h3>
+<p>Kendi alt-sınıfınızda kullanacağını önekinizi ayarlamak için, application/config/config.php dosyasını açın ve şunu arayın:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$config</span><span class="p">[</span><span class="s1">&#39;subclass_prefix&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;MY_&#39;</span><span class="p">;</span>
 </pre></div>
 </div>
-<p>Please note that all native CodeIgniter libraries are prefixed with CI_
-so DO NOT use that as your prefix.</p>
+<p>Lütfen unutmayın, CodeIgniter&#8217;ın bütün mevcut kütüphaneleri CI_ önekini kullanır, bu nedenle siz KULLANMAYIN.</p>
 </div>
 </div>
 </div>
@@ -230,7 +202,7 @@ so DO NOT use that as your prefix.</p>
 				
 				<a href="#header" title="Return to top">Return to top</a>
 			</p>
-			<p><a href="">CodeIgniter</a> &ndash; Copyright &copy; 2011, EllisLab, Inc.</a> &ndash; Last updated: Nov 13, 2011</p>
+			<p><a href="">CodeIgniter</a> &ndash; Copyright &copy; 2011, EllisLab, Inc.</a> &ndash; Last updated: Nov 17, 2011</p>
 		</div><!-- /#footer -->
 	
 	<script src="../_static/asset/js/jquery-ui-min.js" type="text/javascript" charset="utf-8" async></script>

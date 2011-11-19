@@ -127,9 +127,10 @@ Bu fonksiyon isteğe bağlı üç değer alır
 İlk değer site adresinizin sonuna eklenir. Önce site_url() fonksiyonu çağrılıp
 sonuna string veya array veritipinde gönderilen değerler eklenir.
 
-.. note:: Eğer alt uygulamalarınız için bağlantı oluşturacaksanız bu fonksiyonun 
-	ayar dosyanızda tanımladığınız adresi çağırdığını ve verdiğiniz değerlerin o
-	adres sonuna ekleneceğini bilmelisiniz.
+.. admonition:: Not
+    :class: note
+    
+    Eğer alt uygulamalarınız için bağlantı oluşturacaksanız bu fonksiyonun ayar dosyanızda tanımladığınız adresi çağırdığını ve verdiğiniz değerlerin o adres sonuna ekleneceğini bilmelisiniz.
 
 İkinci değer ise bağlantılı olarak görüntülecek metni içermelidir. Eğer boş bırakılırsa
 bağlantı adresi görüntülenen metin olarak kullanılır.
@@ -302,5 +303,9 @@ yönlendirmede kullanılmalıdır 'refresh' türündekilerde değil. Şuradaki �
 	// 301 ile yönlendirme
 	redirect('/article/13', 'location', 301);
 	 
-.. note:: HTTP başlıklarında en iyi kontrolü sağlamak için, 
-	 `Output Library </libraries/output>` set_header() fonksiyonunu kullanmalısınız.
+.. admonition:: Not
+    :class: note
+    
+    HTTP başlıklarında en iyi kontrolü sağlamak için, 
+    `Output Library </libraries/output>` set_header() fonksiyonunu kullanmalısınız.
+

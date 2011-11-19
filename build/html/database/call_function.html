@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="utf-8">
 	    
-	    <title>Custom Function Calls &mdash; CodeIgniter v3.0-dev documentation</title>
+	    <title>Özel Fonksiyon Çağrıları &mdash; CodeIgniter v3.0-dev documentation</title>
 
 	    <link rel="stylesheet" href="../_static/asset/css/common.css" type="text/css" />
 	    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -21,7 +21,7 @@
 	    <script type="text/javascript" src="../_static/underscore.js"></script>
 	    <script type="text/javascript" src="../_static/doctools.js"></script>
 	    <link rel="top" title="CodeIgniter v3.0-dev documentation" href="../index.html" />
-	    <link rel="up" title="The Database Class" href="index.html" />
+	    <link rel="up" title="Veri Tabanı Sınıfı" href="index.html" />
 	    <link rel="next" title="Database Caching Class" href="caching.html" />
 	    <link rel="prev" title="Field Data" href="fields.html" /> 
 	</head>
@@ -37,26 +37,26 @@
 <li class="toctree-l1"><a class="reference internal" href="../general/index.html">General Topics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../libraries/index.html">Libraries</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../helpers/index.html">Helpers</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="index.html">The Database Class</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="examples.html">Quick Start: Usage Examples</a></li>
-<li class="toctree-l2"><a class="reference internal" href="configuration.html">Database Configuration</a></li>
-<li class="toctree-l2"><a class="reference internal" href="connecting.html">Connecting to a Database</a></li>
-<li class="toctree-l2"><a class="reference internal" href="queries.html">Running Queries</a></li>
-<li class="toctree-l2"><a class="reference internal" href="results.html">Generating Query Results</a></li>
-<li class="toctree-l2"><a class="reference internal" href="helpers.html">Query Helper Functions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="active_record.html">Active Record Class</a></li>
-<li class="toctree-l2"><a class="reference internal" href="transactions.html">Transactions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="table_data.html">Table MetaData</a></li>
-<li class="toctree-l2"><a class="reference internal" href="fields.html">Field MetaData</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="">Custom Function Calls</a><ul class="simple">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Veri Tabanı Sınıfı</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="examples.html">Hızlı Başlangıç: Kullanım Örnekleri</a></li>
+<li class="toctree-l2"><a class="reference internal" href="configuration.html">Veri Tabanı Konfigürasyonu</a></li>
+<li class="toctree-l2"><a class="reference internal" href="connecting.html">Veri Tabanına Bağlanmak</a></li>
+<li class="toctree-l2"><a class="reference internal" href="queries.html">Sorgu Çalıştırmak</a></li>
+<li class="toctree-l2"><a class="reference internal" href="results.html">Sorgu Sonuçları Üretmek</a></li>
+<li class="toctree-l2"><a class="reference internal" href="helpers.html">Sorgu Yardımcı Fonksiyonları</a></li>
+<li class="toctree-l2"><a class="reference internal" href="active_record.html">Aktif Kayıt Sınıfı</a></li>
+<li class="toctree-l2"><a class="reference internal" href="transactions.html">İşlemler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="table_data.html">Tablo Meta Verileri</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fields.html">Alan Meta Verileri</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Özel Fonksiyon Çağrıları</a><ul class="simple">
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="caching.html">Query Caching</a></li>
-<li class="toctree-l2"><a class="reference internal" href="forge.html">Database Manipulation with Database Forge</a></li>
-<li class="toctree-l2"><a class="reference internal" href="utilities.html">Database Utilities Class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="caching.html">Sorgu Önbelleği</a></li>
+<li class="toctree-l2"><a class="reference internal" href="forge.html">Veri Tabanı Forge Sınıfı İle Veri Tabanı Düzenleme İşlemleri</a></li>
+<li class="toctree-l2"><a class="reference internal" href="utilities.html">Veri Tabanı Yardımcı Sınıfı</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../documentation/index.html">Writing CodeIgniter Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../documentation/index.html">CodeIgniter Belgesi Yazma</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../tutorial/index.html">Tutorial</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../general/quick_reference.html">Quick Reference Chart</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../general/credits.html">Credits</a></li>
@@ -83,45 +83,43 @@
 			<ul>
 				<li><a href="../index.html">Home</a>&nbsp;&nbsp; &rsaquo;</li>
 				<li><a id="toc-link" href="../index.html">Table of Contents</a>&nbsp;&nbsp; &rsaquo;</li>
-				<li><a href="index.html" accesskey="U">The Database Class</a>&nbsp;&nbsp;  &rsaquo;</li>
+				<li><a href="index.html" accesskey="U">Veri Tabanı Sınıfı</a>&nbsp;&nbsp;  &rsaquo;</li>
 
-				<li><strong>Custom Function Calls</strong></li>
+				<li><strong>Özel Fonksiyon Çağrıları</strong></li>
 			</ul>
 		</div><!-- /#header -->
 
 		<div class="section" id="content">
-			<div class="section" id="custom-function-calls">
-<h1>Custom Function Calls<a class="headerlink" href="#custom-function-calls" title="Permalink to this headline">¶</a></h1>
+			<div class="section" id="ozel-fonksiyon-cagrilari">
+<h1>Özel Fonksiyon Çağrıları<a class="headerlink" href="#ozel-fonksiyon-cagrilari" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="this-db-call-function">
 <h2>$this-&gt;db-&gt;call_function();<a class="headerlink" href="#this-db-call-function" title="Permalink to this headline">¶</a></h2>
-<p>This function enables you to call PHP database functions that are not
-natively included in CodeIgniter, in a platform independent manner. For
-example, lets say you want to call the mysql_get_client_info()
-function, which is <strong>not</strong> natively supported by CodeIgniter. You could
-do so like this:</p>
+<p>Bu fonksiyon Codeigniter ile beraber gelmeyen PHP veri tabanı fonksiyonlarını
+çalıştığınız platformdan bağımsız olarak çağırmanıza olanak tanır. Örneğin,
+Codeigniter tarafından <strong>desteklenmeyen</strong> mysql_get_client_info() fonksiyonunu
+çağırmak istiyorsunuz. Bunu şu şekilde yapabilirisiniz:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">call_function</span><span class="p">(</span><span class="s1">&#39;get_client_info&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>You must supply the name of the function, <strong>without</strong> the mysql_
-prefix, in the first parameter. The prefix is added automatically based
-on which database driver is currently being used. This permits you to
-run the same function on different database platforms. Obviously not all
-function calls are identical between platforms, so there are limits to
-how useful this function can be in terms of portability.</p>
-<p>Any parameters needed by the function you are calling will be added to
-the second parameter.</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">call_function</span><span class="p">(</span><span class="s1">&#39;some_function&#39;</span><span class="p">,</span> <span class="nv">$param1</span><span class="p">,</span> <span class="nv">$param2</span><span class="p">,</span> <span class="nx">etc</span><span class="o">..</span><span class="p">);</span>
+<p>Fonksiyonun adını başında mysql_ <strong>olmadan</strong> ilk parametre olarak yazmalısınız.
+mysql_ ön eki hangi o an kullanılan veri tabanı tipine bağlı olarak otomatik
+olarak eklenecektir. Bu durum size aynı fonksiyonu farklı veri tabanı ortamlarında
+çalıştırma izini verir. Şu durum açıktır ki bir fonksiyon farklı ortamlarda tamamen aynı
+şekilde çağrılamaz. Dolayısıyla fonksiyonun ortamlar arası uyumluluğuna bağlı olarak
+bazı sınırlamalar olacaktır.</p>
+<p>Çağırdığınız fonksiyonun ihtiyaç duyduğu parametreler, fonksiyon adından sonra eklenir.</p>
+<div class="highlight-ci"><div class="highlight"><pre><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">call_function</span><span class="p">(</span><span class="s1">&#39;çağrılan_fonksiyon&#39;</span><span class="p">,</span> <span class="nv">$param1</span><span class="p">,</span> <span class="nv">$param2</span><span class="p">,</span> <span class="nx">etc</span><span class="o">..</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>Often, you will either need to supply a database connection ID or a
-database result ID. The connection ID can be accessed using:</p>
+<p>Uygulamada sıklıkla veri tabanı bağlantı ID&#8217;sine, veri tabanı sonuç ID&#8217;sine ya da her
+ikisine ihtiyaç duyabilirsiniz. Bağlantı ID&#8217;sine aşağıdaki şekilde ulaşılabilir:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">conn_id</span><span class="p">;</span>
 </pre></div>
 </div>
-<p>The result ID can be accessed from within your result object, like this:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="nv">$query</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">query</span><span class="p">(</span><span class="s2">&quot;SOME QUERY&quot;</span><span class="p">);</span>
+<p>Sonuç ID&#8217;sine, yapılan sorgunun sonuç nesnesinden şu şekilde erişilebilir.:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span class="nv">$sorgu</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">query</span><span class="p">(</span><span class="s2">&quot;SQL SORGUNUZ&quot;</span><span class="p">);</span>
 
-<span class="nv">$query</span><span class="o">-&gt;</span><span class="na">result_id</span><span class="p">;</span>
+<span class="nv">$sorgu</span><span class="o">-&gt;</span><span class="na">result_id</span><span class="p">;</span>
 </pre></div>
 </div>
 </div>
@@ -141,7 +139,7 @@ database result ID. The connection ID can be accessed using:</p>
 				
 				<a href="#header" title="Return to top">Return to top</a>
 			</p>
-			<p><a href="">CodeIgniter</a> &ndash; Copyright &copy; 2011, EllisLab, Inc.</a> &ndash; Last updated: Nov 13, 2011</p>
+			<p><a href="">CodeIgniter</a> &ndash; Copyright &copy; 2011, EllisLab, Inc.</a> &ndash; Last updated: Nov 16, 2011</p>
 		</div><!-- /#footer -->
 	
 	<script src="../_static/asset/js/jquery-ui-min.js" type="text/javascript" charset="utf-8" async></script>
