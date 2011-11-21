@@ -64,24 +64,22 @@ sorguyu çalıştırmayıp string veritipinde döndürür.
 	
 	// Sonuç: SELECT * FROM tablom
 
-İkinci değer 	...
-The second parameter enables you to set whether or not the active record query 
-will be reset (by default it will be&mdash;just like `$this->db->get()`)::
+İkinci değer sadece SQL sorgusunu string veritipinde almak ve sorguyu çalıştırmadan bunu yapmak
+için kullanılır::
 
-	echo $this->db->limit(10,20)->get_compiled_select('mytable', FALSE);
-	// Produces string: SELECT * FROM mytable LIMIT 20, 10 
-	// (in MySQL. Other databases have slightly different syntax)
+	echo $this->db->limit(10,20)->get_compiled_select('tablom', FALSE);
+	// Sonuç Çıktısı: SELECT * FROM tablom LIMIT 20, 10 
+	// (MySQL böyledir. Diğer veritabanlarında ufak değişiklikler gösterebilir.)
 	
-	echo $this->db->select('title, content, date')->get_compiled_select();
+	echo $this->db->select('baslik, icerik, tarih')->get_compiled_select();
 
-	// Produces string: SELECT title, content, date FROM mytable
+	// Sonuç Çıktısı: SELECT baslik, icerik, tarih FROM tablom
 	
 The key thing to notice in the above example is that the second query did not 
 utilize `$this->db->from()`_ and did not pass a table name into the first 
 parameter. The reason for this outcome is because the query has not been 
 executed using `$this->db->get()`_ which resets values or reset directly 
 using `$this-db->reset_query()`_.
-
 
 $this->db->get_where()
 ======================
