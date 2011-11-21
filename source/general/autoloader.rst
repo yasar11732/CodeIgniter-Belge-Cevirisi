@@ -1,23 +1,17 @@
 ######################
-Auto-loading Resources
+Otomatik Yükleme Kaynakları
 ######################
 
-CodeIgniter comes with an "Auto-load" feature that permits libraries,
-helpers, and models to be initialized automatically every time the
-system runs. If you need certain resources globally throughout your
-application you should consider auto-loading them for convenience.
+CodeIgniter otomatik yükleme özelliği ile kütüphaneler, helper ve plugin dosylaarını her sistem açılışında otomatik yükleme özelliğine sahiptir. Eğer uygulamanızın genelinde kullanacağınız dosyalara ihtiyacınız varsa, otomatik yükleme opsiyonunu hesaba katmalısınız.
 
-The following items can be loaded automatically:
+Aşağıdaki maddeler otomatik yüklenir:
 
--  Core classes found in the "libraries" folder
--  Helper files found in the "helpers" folder
--  Custom config files found in the "config" folder
--  Language files found in the "system/language" folder
--  Models found in the "models" folder
+- "libraries" dizini altındaki çekirdek sınıfları
+- "helpers" dizini altındaki helper dosyları
+- "config" dizini altında bulunan kullanıcı ayar dosyaları
+- "system/language" dizini altındaki dil dosyaları
+- "models" dizini altında bulunan model dosyaları
 
-To autoload resources, open the application/config/autoload.php file and
-add the item you want loaded to the autoload array. You'll find
-instructions in that file corresponding to each type of item.
+Kaynakları otomatik yüklemek için, application/config/autoload.php dosyasını aç ve autoload dizisine yükelemek istediğin maddeleri ekle. Gerekli bilgileri, her madde ile ilgili bölümde bulacaksınız.
 
-.. note:: Do not include the file extension (.php) when adding items to
-	the autoload array.
+.. not:: Otomatik yükleme dizinine madde eklerken (.php) dosya uzantısını yazmayın.
