@@ -84,13 +84,12 @@ using `$this-db->reset_query()`_.
 $this->db->get_where()
 ======================
 
-Identical to the above function except that it permits you to add a
-"where" clause in the second parameter, instead of using the db->where()
-function::
+Bu veri çekme fonksiyonunda diğerinden farklı olarak, ikinci değer "where" kısmı için verilir.
+db->where() fonksiyonunu kullanmanıza gerek kalmaz.::
 
-	$query = $this->db->get_where('mytable', array('id' => $id), $limit, $offset);
+	$query = $this->db->get_where('tablom', array('id' => $id), $limit, $offset);
 
-Please read the about the where function below for more information.
+Detaylı bilgi için aşağıdaki where fonksiyonu hakkındaki yazıyı okuyunuz.
 
 .. note:: get_where() was formerly known as getwhere(), which has been
 removed
@@ -98,16 +97,16 @@ removed
 $this->db->select()
 ===================
 
-Permits you to write the SELECT portion of your query::
+Sorgunuzun SELECT kısmını yazmanız içindir::
 
-	$this->db->select('title, content, date');
-	$query = $this->db->get('mytable');  // Produces: SELECT title, content, date FROM mytable
+	$this->db->select('baslik, icerik, tarih');
+	$query = $this->db->get('tablom');  // İşlem Sonucu: SELECT baslik, icerik, tarih FROM tablom
 
 
-.. note:: If you are selecting all (\*) from a table you do not need to
-	use this function. When omitted, CodeIgniter assumes you wish to SELECT *
+.. note:: Eğer tüm sutunları seçmek isterseniz (\*) bu fonksiyonu hiç kullanmanız gerekmez.
+	CodeIgniter SELECT * şeklinde işlem yapar.
 
-$this->db->select() accepts an optional second parameter. If you set it
+$this->db->select() isteğe bağlı ikinci bir değer kabul eder. If you set it
 to FALSE, CodeIgniter will not try to protect your field or table names
 with backticks. This is useful if you need a compound select statement.
 
