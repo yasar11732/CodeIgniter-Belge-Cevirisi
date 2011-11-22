@@ -1,133 +1,100 @@
 ###########
-URI Routing
+URI Yönlendirme
 ###########
 
-Typically there is a one-to-one relationship between a URL string and
-its corresponding controller class/method. The segments in a URI
-normally follow this pattern::
+Genellikle URL adresi ile onun controller sınıf/metodu arasında birebir ilişki mevcuttur. URI URI parçaları normalde şu deseni takip eder::
 
 	example.com/class/function/id/
 
-In some instances, however, you may want to remap this relationship so
-that a different class/function can be called instead of the one
-corresponding to the URL.
+Bununla birlikte, bazı durumlarda, bu ilişkiyi yeniden düzenlemek isteyebilirsiniz. Yani, bir tane ilgili URL yerine farklı bir sınıf/fonksiyon çağrılabilir.
 
-For example, lets say you want your URLs to have this prototype:
+Örneğin, diyelimki URL'lerin şu kalıpta gelmesini istiyorsunuz:
 
 example.com/product/1/
 example.com/product/2/
 example.com/product/3/
 example.com/product/4/
 
-Normally the second segment of the URL is reserved for the function
-name, but in the example above it instead has a product ID. To overcome
-this, CodeIgniter allows you to remap the URI handler.
+Normalde URL'nin ikinci parçası fonksiyon adına rezerve edilmiştir, ama bu yukarıdaki örnekte onun yerine ürün ID değeri vardır. Bunun çaresine bakmak için, CodeIgniter URI işlemeyi yeniden düzenlemenize izin verir.
 
-Setting your own routing rules
+Kendi yönlendirme kurallarınızı ayarlamak
 ==============================
 
-Routing rules are defined in your application/config/routes.php file. In
-it you'll see an array called $route that permits you to specify your
-own routing criteria. Routes can either be specified using wildcards or
-Regular Expressions
+Yönlendirme kurallarınızı application/config/routes.php dosyasında tanımlayabilirsiniz. BU dosya içinde çağırdığınız $route dizini, kendi yönlendirme kriterinizi tanımlamanıza izin verir. Yönlendirme tanımlanırken wildcards ya da Regular Expressions kullanılabilir.
 
 Wildcards
 =========
 
-A typical wildcard route might look something like this::
+Tipik bir wildcard yönlendirmesi şuna benzeyecektir::
 
 	$route['product/:num'] = "catalog/product_lookup";
 
-In a route, the array key contains the URI to be matched, while the
-array value contains the destination it should be re-routed to. In the
-above example, if the literal word "product" is found in the first
-segment of the URL, and a number is found in the second segment, the
-"catalog" class and the "product_lookup" method are instead used.
+Yönlendirmede dizi anahtarı, varılacak hedef bilgisine göre yeniden yönlendirilecek değere eşleştirilecek URI değerini içerir. Yukarıdaki örnekte, eğer harfiyen "product" kelimesi URL'nin ilk parçasında ve bir sayı da ikinci parçada bulunursa, bu değerler yerine "catalog" sınıfı ve "product_lookup" metodu kullanılacaktır.
 
-You can match literal values or you can use two wildcard types:
+Kelimeye harfiyen ya da iki farklı wildcard kullanarak eşleştirme yapabilirsiniz:
 
-**(:num)** will match a segment containing only numbers.
- **(:any)** will match a segment containing any character.
+**(:num)** parça sadece sayı ise eşleştirir.
+ **(:any)** parça sadece karakter ise eşleştirir.
 
-.. note:: Routes will run in the order they are defined. Higher routes
-	will always take precedence over lower ones.
+.. not:: Yönelendirme sadece tanımlıysa çalışır. Yükek öncelikteki yönlendirmeler düşüklere göre her zaman önce çalışır.
 
-Examples
+Örnekler
 ========
 
-Here are a few routing examples::
+Burada bir kaç tane yönlendirme örneği gösterelim::
 
 	$route['journals'] = "blogs";
 
-A URL containing the word "journals" in the first segment will be
-remapped to the "blogs" class.
+URl içerisinde "journals" kelimesi ilk parçada geçtiğinde "blogs" sınıfına yönlendirilir.
 
 ::
 
 	$route['blog/joe'] = "blogs/users/34";
 
-A URL containing the segments blog/joe will be remapped to the "blogs"
-class and the "users" method. The ID will be set to "34".
+URl içerisindeki parçada blog/joe parçası geçtiğinde "blogs" sınıfına "users" metoduna yönlendirilir. ID değeri "34" olarak ayarlanır.
 
 ::
 
 	$route['product/(:any)'] = "catalog/product_lookup";
 
-A URL with "product" as the first segment, and anything in the second
-will be remapped to the "catalog" class and the "product_lookup"
-method.
+URL'nin ilk parçası "product" ve ikinci parçası herhangi bir şey olduğunda, hemen "catalog" sınıfı, "product_lookup" metoduna yönlendirilir.
 
 ::
 
 	$route['product/(:num)'] = "catalog/product_lookup_by_id/$1";
 
-A URL with "product" as the first segment, and a number in the second
-will be remapped to the "catalog" class and the
-"product_lookup_by_id" method passing in the match as a variable to
-the function.
+URL'nin ilk parçası "product" ve ikinci parçası herhangi bir şey olduğunda, hemen "catalog" sınıfı, "product_lookup_by_id" metoduna ne kadar parametre varsa gönderilir.
 
-.. important:: Do not use leading/trailing slashes.
+.. Önemli:: Önceye ya da sonraya ters bölü işareti kullanmayın.
 
-Regular Expressions
+Düzenli İfadeler (Regular Expressions)
 ===================
 
-If you prefer you can use regular expressions to define your routing
-rules. Any valid regular expression is allowed, as are back-references.
+Eğer isterseniz, yönlendirme kullarınızda düzenli ifadeler kullanabilirsiniz. Geçerli olan düzenli ifadelerin kullanımı geri-referanslı olmaları durumunda izin verilir.
 
-.. note:: If you use back-references you must use the dollar syntax
-	rather than the double backslash syntax.
+.. not:: Eğer geri-referanslı kullanacaksanız, çift ters bölü işareti yerine dolar işaretini tercih edin.
 
-A typical RegEx route might look something like this::
+Tipik bir RegEx yönlendirmesi şöyledir::
 
 	$route['products/([a-z]+)/(\d+)'] = "$1/id_$2";
 
-In the above example, a URI similar to products/shirts/123 would instead
-call the shirts controller class and the id_123 function.
+Yukarıdaki örnekte, products/shirts/123 gibi olan bir URI, shirts controller sınıfı ve id_123 fonksiyonunu çağıracaktır.
 
-You can also mix and match wildcards with regular expressions.
+Ayrıca yönlendirme için wildcards ve düzenli ifadeleri birlikte de kullanabilirsiniz.
 
-Reserved Routes
+Rezerve Yönlendirmeler
 ===============
 
-There are two reserved routes::
+İki tane rezerve yönlendirme vardır::
 
 	$route['default_controller'] = 'welcome';
 
-This route indicates which controller class should be loaded if the URI
-contains no data, which will be the case when people load your root URL.
-In the above example, the "welcome" class would be loaded. You are
-encouraged to always have a default route otherwise a 404 page will
-appear by default.
+Bu yönlendirme URI içinde herhangi bir bilgi yoksa, insanlar kök URL adresini çağırdıklarında yüklenecek controller sınıfını işaret eder. Yukarıdaki örnekte, "welcome" sınıfı yüklenir. Varsayılan yönlendirme için kendi 404 sayfanızın görünmesini sağlayabilirsiniz.
 
 ::
 
 	$route['404_override'] = '';
 
-This route indicates which controller class should be loaded if the
-requested controller is not found. It will override the default 404
-error page. It won't affect to the show_404() function, which will
-continue loading the default error_404.php file at
-application/errors/error_404.php.
+Bu yönlendirmede controller sınıfı bulunamadığında yüklenecek olan controller gösterilmektedir. Varsayılan 404 hata sayfasının üzerine yazılır. Eğer varsayılan  application/errors/error_404.php dosyası yüklenecekse, show_404() fonksiyonu etkilenmeyecektir.
 
-.. important:: The reserved routes must come before any wildcard or
-	regular expression routes.
+.. önemli:: Rezerve yönlendirmeler herhangi bir wildcards ya da düzenli ifade yönlendirmelerinden önce olmalıdır.
