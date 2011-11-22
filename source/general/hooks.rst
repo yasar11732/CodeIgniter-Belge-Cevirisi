@@ -1,18 +1,18 @@
-####################################
+###################################
 Hook - Çatı Çekirdeğini Genişletmek
-####################################
+###################################
 
 CodeIgniter'ın Hook özelliği, çekirdek dosyaları ele geçirmeden çatıya girmenin ve içeride çalışmanın yolunu sağlar. CodeIgniter çalıştığında :doc:`Uygulama Akışında <../overview/appflow>` tanımlı yolu uygular. Bununla birlikte, uygulamanın çalışmasıyla belirli aşamalarında uygulamaya müdahale etmek isteyebilirsiniz. Örneğin, controller dosyasının yüklenmesinden önce ya da sonra bir script çalıştırmak, ya da başka bir yerde bulunan bir scriptinizi tetiklemek isteyebilirsiniz.
 
 Hook'u Etkinleştirmek
-==============
+=====================
 
 Hook özelliğini tüm uygulamada etkinleştirip, etkisizleştirmek için application/config/config.php dosyasında şu madde ayarlanmalıdır::
 
 	$config['enable_hooks'] = TRUE;
 
 Bir Hook Tanımlamak
-===============
+===================
 
 Hooks application/config/hooks.php dosyasında tanımlanır. Her Hook dizide bir prototip olarak tanımlanır::
 
@@ -34,7 +34,7 @@ Dizi indeksi, kullanmak istediğiniz hook adı ile ilişkilendirilir. Yukarıdak
 -  **params** Scriptinize göndermek istediğiniz herhangi bir parametre. Bu madde opsiyoneldir.
 
 Aynı Hook'a Çoklu Çağırmak
-===============================
+==========================
 
 Eğer birden fazla scripti aynı hook noktasında kullanmak isterseniz, çok-boyutlu dizi tanımlamanız yeterlidir, mesela::
 
@@ -61,7 +61,7 @@ Her dizi indeksinden sonra köşeli paranteze dikkat edin::
 Bu, sizin çoklu scriptlerli aynı hook içinde kullanmanıza izin verir. Dizinlerinizi çalışma önceliğine göre sıralayın.
 
 Hook Noktaları
-===========
+==============
 
 Mevcut hook noktaları listesi aşağıdadır.
 

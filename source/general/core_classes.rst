@@ -1,15 +1,18 @@
-############################
+#################################
 Çekirdek Sistem Sınıfı Oluşturmak
-############################
+#################################
 
 CodeIgniter herzaman çekirdek çatının bir parçası olarak başlangıçta otomatik bazı temel sınıflar yükler. Bununla birlikte, bazı çekirdek sistem sınıflarının kendi versiyonlarınızla yer değiştirmesi ya da çekirdek versiyonlarının genişletilmesi de mümkündür.
 
 **Bir çok kullanıcının asla ihtiyaç duymayacağı bu opsiyon, CodeIgniter çekirdeğinde belirgin bir değişiklik izi bırakmak isteyenlere olanak sağlar.**
 
-.. not:: Çekirdek sistem sınıflarını karıştırma bir çok olumsuzluğu getireceği için işe başlamadan önce ne yaptığınızı bildiğinizden emin olun.
+.. admonition:: Not
+    :class: note
+
+    Çekirdek sistem sınıflarını karıştırma bir çok olumsuzluğu getireceği için işe başlamadan önce ne yaptığınızı bildiğinizden emin olun.
 
 Sistem Sınıfları Listesi
-=================
+========================
 
 Aşağıdaki liste CodeIgniter'ın her başladığında çalıştırdığı çekirdek sistem dosyaları listesidir:
 
@@ -28,7 +31,7 @@ Aşağıdaki liste CodeIgniter'ın her başladığında çalıştırdığı çek
 -  Utf8
 
 Çekirdek Sınıfları Değiştirmek
-======================
+==============================
 
 Kendinize ait bir sistem sınıfını mevcut sınıfla değiştirmek için, dosyanın kendi versiyonunu application/libraries dizini altına yerleştirin::
 
@@ -45,7 +48,7 @@ Lütfen şunu unutmayın, kendi sınıflarınız CI öneki kullanmak zorundadır
 	}
 
 Çekirdek Sınıfı Genişletmek
-====================
+===========================
 
 Eğer tüm ihtiyacınız mevcut kütüphaneye bazı işlevsellikler kazandırmak -belki bir ya da iki fonskyion eklemek-, sonra da kullandığınız mevcut kütüphaneyi sizin kütüphanenizle yerdeğiştirmek ve onu durdurmak ise, bu durumda sınıfı genişletmek daha uygun olur. Sınıf genişletmek neredeyse, mevcut sınıf ile yer değiştirmek gibidir, şu farkla:
 
@@ -88,7 +91,7 @@ Eğer controller çekirdek sınıfını genişlettiyseniz, uygulamanızda kullan
 	}
 
 Kendi Önekinizi Ayarlamak
------------------------
+-------------------------
 
 Kendi alt-sınıfınızda kullanacağını önekinizi ayarlamak için, application/config/config.php dosyasını açın ve şunu arayın::
 

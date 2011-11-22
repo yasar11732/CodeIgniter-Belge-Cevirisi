@@ -1,13 +1,13 @@
-######
+#####
 Model
-######
+#####
 
 Model, geleneksel MVC yaklaşımını kullanmak isteyenler için **opsiyonel** olarak mevcuttur.
 
 .. contents:: Sayfa İçeriği
 
 Model Nedir?
-================
+============
 
 MOdeller veritabanınızla bilgi alışverişi sağlamak üzere tasarlanmış PHP sınıflarıdır. Örneğin, diyelim ki CodeIgniter kullanarak bir blog yönetiyorsunuz. Blog bilgilerinizi ekleme, yenileme ve çekme fonksiyonlarına sajip bir model sınıfınız olmalıdır. Burada bir örnekle model sınıfının neye benzediğini gösterelim::
 
@@ -49,12 +49,18 @@ MOdeller veritabanınızla bilgi alışverişi sağlamak üzere tasarlanmış PH
 
 	}
 
-.. not:: Yukarıdaki örnek :doc:`Active Record <../database/active_record>` veritabanı fonksiyonlarını kullanır.
+.. admonition:: Not
+    :class: note
 
-.. not:: Bu örnekte basitliği korumak için $_POST kullandık. Bu kötü bir uygulamadır ve bir çok genel uygulama :doc:`Bilgi Girişi Sınıfı <../libraries/input>` $this->input->post('title') kullanır.
+    Yukarıdaki örnek :doc:`Active Record <../database/active_record>` veritabanı fonksiyonlarını kullanır.
+
+.. admonition:: Not
+    :class: note
+
+    Bu örnekte basitliği korumak için $_POST kullandık. Bu kötü bir uygulamadır ve bir çok genel uygulama :doc:`Bilgi Girişi Sınıfı <../libraries/input>` $this->input->post('title') kullanır.
 
 Bir Modelin Anatomisi
-==================
+=====================
 
 Model sınıfları **application/models/ dizini** altına depolanmıştır. Eğer isterseniz alt-dizinlere de yerleştirebilirsiniz.
 
@@ -85,7 +91,7 @@ Dosyanız şöyle olacaktır::
 	application/models/user_model.php
 
 Model Yüklemek
-===============
+==============
 
 Modellerin yüklenemsi ve çağrılması :doc:`controller <controllers>` fonksiyonları ile yapılır. MOdel yüklemesi için aşağıdaki fonksiyonu kullanacaksınız::
 
@@ -123,20 +129,19 @@ Buradaki controller örneği modeli yükler, sonra view'e gönderir ::
 	
 
 Modeli Otomatik Yükleme
-===================
+=======================
 
 Eğer belirli bir modeli uygulamanızın tamamında kullanıyorsanız, bunu sistem yüklenirken otomatik yükle diyerek CodeIgniter'a diyebilirsiniz. Bunun için **application/config/autoload.php** dosyasını açıp, autoload dizisine eklemeniz gereklidir.
 
 Veritabanına Bağlanmak
-===========================
+======================
 
 Model yüklendiğinde, veritabanına otomatik olarak **BAĞLANMAZ**. Bağlantı için aşağıdaki opsiyonlar mevcuttur::
 
 -  :doc:`Burada anlatılan<../database/connecting>` standart veritabanı bağlantı metodunu Controller sınıfı ya da Model sınıfından kullanabilirsiniz.
--  Model yükleme fonksiyonunda üçüncü parametreye TRUE değeri vererek, bağlantı bilgilerinizi veritabanı ayar dosyasında tanımladığınız gibi kullanması şartıyla otomatik bağlan diyebilirsiniz:
-   ::
+-  Model yükleme fonksiyonunda üçüncü parametreye TRUE değeri vererek, bağlantı bilgilerinizi veritabanı ayar dosyasında tanımladığınız gibi kullanması şartıyla otomatik bağlan diyebilirsiniz::
 
-	$this->load->model('Model_name', '', TRUE);
+    $this->load->model('Model_name', '', TRUE);
 
 -  Üçüncü parametre ile kullanmasını sitediğiniz veritabanı bağlantı ayarlarını elle ayarlayabilirsiniz ::
 

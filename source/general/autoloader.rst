@@ -1,6 +1,6 @@
-######################
+###########################
 Otomatik Yükleme Kaynakları
-######################
+###########################
 
 CodeIgniter otomatik yükleme özelliği ile kütüphaneler, helper ve plugin dosylaarını her sistem açılışında otomatik yükleme özelliğine sahiptir. Eğer uygulamanızın genelinde kullanacağınız dosyalara ihtiyacınız varsa, otomatik yükleme opsiyonunu hesaba katmalısınız.
 
@@ -14,4 +14,7 @@ Aşağıdaki maddeler otomatik yüklenir:
 
 Kaynakları otomatik yüklemek için, application/config/autoload.php dosyasını aç ve autoload dizisine yükelemek istediğin maddeleri ekle. Gerekli bilgileri, her madde ile ilgili bölümde bulacaksınız.
 
-.. not:: Otomatik yükleme dizinine madde eklerken (.php) dosya uzantısını yazmayın.
+.. admonition:: Not
+    :class: note
+
+    Otomatik yükleme dizinine madde eklerken (.php) dosya uzantısını yazmayın.
