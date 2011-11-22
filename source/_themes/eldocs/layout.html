@@ -84,7 +84,7 @@
 
 		<div id="brand" class="{{ project_abbreviation }}">
 			<a href="http://{{ project_domain }}/"><img src="{{ pathto('_static/asset/img/' + project_abbreviation + '-logo.gif', 1) }}" alt="{{ project }}"></a>
-			<p>{{ release }} User Guide</p>
+			<p>{{ release }} Kullanım Kılavuzu</p>
 			{%- if show_source and has_source and sourcename %}
 		    <p><a href="{{ pathto('_sources/' + sourcename, true)|e }}"
 			           rel="nofollow">{{ _('Show Source') }}</a></p>
@@ -96,13 +96,13 @@
 				<fieldset>
 					<input type="text" name="q" id="q" value="">
 					<input type="hidden" name="as_sitesearch" id="as_sitesearch" value="{{ project_domain }}/user_guide/" />
-					<input class="grades" type="submit" value="search">
+					<input class="grades" type="submit" value="ara">
 				</fieldset>
 			</form>
 			<ul>
 				{%- block rootrellink %}
-				<li><a href="{{ pathto(master_doc) }}">Home</a>&nbsp;&nbsp;{{ reldelim1 }}</li>
-				<li><a id="toc-link" href="{{ pathto(master_doc) }}">Table of Contents</a>&nbsp;&nbsp;{{ reldelim1 }}</li>
+				<li><a href="{{ pathto(master_doc) }}">Anasayfa</a>&nbsp;&nbsp;{{ reldelim1 }}</li>
+				<li><a id="toc-link" href="{{ pathto(master_doc) }}">İçindekiler</a>&nbsp;&nbsp;{{ reldelim1 }}</li>
 				{%- endblock %}
 				
 				{%- for parent in parents %}
@@ -131,7 +131,7 @@
 				{% if next %}
 				<span class="next">Sonraki Başlık: <a href="{{ next.link }}">{{ next.title }}</a></span>
 				{% endif %}
-				<a href="#header" title="Return to top">Return to top</a>
+				<a href="#header" title="Başa Dön">Başa Dön</a>
 			</p>
 			<p><a href="{{ project_url }}">{{ project }}</a> &ndash; Copyright &copy;
       {{ copyright }}</a> &ndash; Son Güncelleme: {{ last_updated }}</p>
