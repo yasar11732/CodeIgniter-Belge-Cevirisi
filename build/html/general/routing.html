@@ -131,6 +131,10 @@ example.com/product/4/</p>
 <dt><strong>(:num)</strong> parça sadece sayı ise eşleştirir.</dt>
 <dd><strong>(:any)</strong> parça sadece karakter ise eşleştirir.</dd>
 </dl>
+<div class="note admonition">
+<p class="first admonition-title">Not</p>
+<p class="last">Yönelendirme sadece tanımlıysa çalışır. Yükek öncelikteki yönlendirmeler düşüklere göre her zaman önce çalışır.</p>
+</div>
 </div>
 <div class="section" id="ornekler">
 <h2>Örnekler<a class="headerlink" href="#ornekler" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
@@ -151,10 +155,18 @@ example.com/product/4/</p>
 </pre></div>
 </div>
 <p>URL&#8217;nin ilk parçası &#8220;product&#8221; ve ikinci parçası herhangi bir şey olduğunda, hemen &#8220;catalog&#8221; sınıfı, &#8220;product_lookup_by_id&#8221; metoduna ne kadar parametre varsa gönderilir.</p>
+<div class="important admonition">
+<p class="first admonition-title">ÖNEMLİ</p>
+<p class="last">Önceye ya da sonraya ters bölü işareti kullanmayın.</p>
+</div>
 </div>
 <div class="section" id="duzenli-ifadeler-regular-expressions">
 <h2>Düzenli İfadeler (Regular Expressions)<a class="headerlink" href="#duzenli-ifadeler-regular-expressions" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
 <p>Eğer isterseniz, yönlendirme kullarınızda düzenli ifadeler kullanabilirsiniz. Geçerli olan düzenli ifadelerin kullanımı geri-referanslı olmaları durumunda izin verilir.</p>
+<div class="note admonition">
+<p class="first admonition-title">Not</p>
+<p class="last">Eğer geri-referanslı kullanacaksanız, çift ters bölü işareti yerine dolar işaretini tercih edin.</p>
+</div>
 <p>Tipik bir RegEx yönlendirmesi şöyledir:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$route</span><span class="p">[</span><span class="s1">&#39;products/([a-z]+)/(\d+)&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;$1/id_$2&quot;</span><span class="p">;</span>
 </pre></div>
@@ -173,6 +185,10 @@ example.com/product/4/</p>
 </pre></div>
 </div>
 <p>Bu yönlendirmede controller sınıfı bulunamadığında yüklenecek olan controller gösterilmektedir. Varsayılan 404 hata sayfasının üzerine yazılır. Eğer varsayılan  application/errors/error_404.php dosyası yüklenecekse, show_404() fonksiyonu etkilenmeyecektir.</p>
+<div class="important admonition">
+<p class="first admonition-title">ÖNEMLİ</p>
+<p class="last">Rezerve yönlendirmeler herhangi bir wildcards ya da düzenli ifade yönlendirmelerinden önce olmalıdır.</p>
+</div>
 </div>
 </div>
 

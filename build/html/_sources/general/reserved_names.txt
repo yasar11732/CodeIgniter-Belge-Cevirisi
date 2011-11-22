@@ -1,11 +1,11 @@
-##############
+###############
 Rezerve İsimler
-##############
+###############
 
 CodeIgniter kendi operasyonlarında fonksiyon ve isim serisi kullanır. Bunun nedeni, bazı isimler geliştiriciler için kullanılmamalıdır. Aşağıdaki liste kullanılmaması gereken rezerve isim listesidir.
 
 Controller isimleri
-----------------
+-------------------
 
 Controller sınıfınız ana controller uygulamasından genişletilmesi durumunda, kendi sınıfınıza vereceğiniz isimlere dikkat etmelisiniz, yoksa sınıflar kendi lokal sınıflarınızın üzerine yazılır. Aşağıdaki liste kullanılmaması gereken rezerve isim listesidir. Controller fonksiyonları içinde bu isimler kullanılmamalıdır:
 
@@ -16,7 +16,7 @@ Controller sınıfınız ana controller uygulamasından genişletilmesi durumund
 -  index
 
 Fonksiyonlar
----------
+------------
 
 -  is_really_writable()
 -  load_class()
@@ -29,14 +29,14 @@ Fonksiyonlar
 -  get_instance()
 
 Değişkenler
----------
+-----------
 
 -  $config
 -  $mimes
 -  $lang
 
 Sabitler
----------
+--------
 
 -  ENVIRONMENT
 -  EXT

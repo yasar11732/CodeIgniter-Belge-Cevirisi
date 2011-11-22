@@ -1,6 +1,6 @@
-###########
+###############
 URI Yönlendirme
-###########
+###############
 
 Genellikle URL adresi ile onun controller sınıf/metodu arasında birebir ilişki mevcuttur. URI URI parçaları normalde şu deseni takip eder::
 
@@ -18,7 +18,7 @@ example.com/product/4/
 Normalde URL'nin ikinci parçası fonksiyon adına rezerve edilmiştir, ama bu yukarıdaki örnekte onun yerine ürün ID değeri vardır. Bunun çaresine bakmak için, CodeIgniter URI işlemeyi yeniden düzenlemenize izin verir.
 
 Kendi yönlendirme kurallarınızı ayarlamak
-==============================
+=========================================
 
 Yönlendirme kurallarınızı application/config/routes.php dosyasında tanımlayabilirsiniz. BU dosya içinde çağırdığınız $route dizini, kendi yönlendirme kriterinizi tanımlamanıza izin verir. Yönlendirme tanımlanırken wildcards ya da Regular Expressions kullanılabilir.
 
@@ -36,7 +36,10 @@ Kelimeye harfiyen ya da iki farklı wildcard kullanarak eşleştirme yapabilirsi
 **(:num)** parça sadece sayı ise eşleştirir.
  **(:any)** parça sadece karakter ise eşleştirir.
 
-.. not:: Yönelendirme sadece tanımlıysa çalışır. Yükek öncelikteki yönlendirmeler düşüklere göre her zaman önce çalışır.
+.. admonition:: Not
+    :class: note
+
+    Yönelendirme sadece tanımlıysa çalışır. Yükek öncelikteki yönlendirmeler düşüklere göre her zaman önce çalışır.
 
 Örnekler
 ========
@@ -65,14 +68,20 @@ URL'nin ilk parçası "product" ve ikinci parçası herhangi bir şey olduğunda
 
 URL'nin ilk parçası "product" ve ikinci parçası herhangi bir şey olduğunda, hemen "catalog" sınıfı, "product_lookup_by_id" metoduna ne kadar parametre varsa gönderilir.
 
-.. Önemli:: Önceye ya da sonraya ters bölü işareti kullanmayın.
+.. admonition:: ÖNEMLİ
+    :class: important
+
+    Önceye ya da sonraya ters bölü işareti kullanmayın.
 
 Düzenli İfadeler (Regular Expressions)
-===================
+======================================
 
 Eğer isterseniz, yönlendirme kullarınızda düzenli ifadeler kullanabilirsiniz. Geçerli olan düzenli ifadelerin kullanımı geri-referanslı olmaları durumunda izin verilir.
 
-.. not:: Eğer geri-referanslı kullanacaksanız, çift ters bölü işareti yerine dolar işaretini tercih edin.
+.. admonition:: Not
+    :class: note
+
+    Eğer geri-referanslı kullanacaksanız, çift ters bölü işareti yerine dolar işaretini tercih edin.
 
 Tipik bir RegEx yönlendirmesi şöyledir::
 
@@ -83,7 +92,7 @@ Yukarıdaki örnekte, products/shirts/123 gibi olan bir URI, shirts controller s
 Ayrıca yönlendirme için wildcards ve düzenli ifadeleri birlikte de kullanabilirsiniz.
 
 Rezerve Yönlendirmeler
-===============
+======================
 
 İki tane rezerve yönlendirme vardır::
 
@@ -97,4 +106,7 @@ Bu yönlendirme URI içinde herhangi bir bilgi yoksa, insanlar kök URL adresini
 
 Bu yönlendirmede controller sınıfı bulunamadığında yüklenecek olan controller gösterilmektedir. Varsayılan 404 hata sayfasının üzerine yazılır. Eğer varsayılan  application/errors/error_404.php dosyası yüklenecekse, show_404() fonksiyonu etkilenmeyecektir.
 
-.. önemli:: Rezerve yönlendirmeler herhangi bir wildcards ya da düzenli ifade yönlendirmelerinden önce olmalıdır.
+.. admonition:: ÖNEMLİ
+    :class: important
+
+    Rezerve yönlendirmeler herhangi bir wildcards ya da düzenli ifade yönlendirmelerinden önce olmalıdır.

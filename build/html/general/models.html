@@ -160,6 +160,14 @@
 <span class="p">}</span>
 </pre></div>
 </div>
+<div class="note admonition">
+<p class="first admonition-title">Not</p>
+<p class="last">Yukarıdaki örnek <a class="reference internal" href="../database/active_record.html"><em>Active Record</em></a> veritabanı fonksiyonlarını kullanır.</p>
+</div>
+<div class="note admonition">
+<p class="first admonition-title">Not</p>
+<p class="last">Bu örnekte basitliği korumak için $_POST kullandık. Bu kötü bir uygulamadır ve bir çok genel uygulama <a class="reference internal" href="../libraries/input.html"><em>Bilgi Girişi Sınıfı</em></a> $this-&gt;input-&gt;post(&#8216;title&#8217;) kullanır.</p>
+</div>
 </div>
 <div class="section" id="bir-modelin-anatomisi">
 <h2><a class="toc-backref" href="#id3">Bir Modelin Anatomisi</a><a class="headerlink" href="#bir-modelin-anatomisi" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
@@ -235,13 +243,10 @@
 <h2><a class="toc-backref" href="#id6">Veritabanına Bağlanmak</a><a class="headerlink" href="#veritabanina-baglanmak" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
 <p>Model yüklendiğinde, veritabanına otomatik olarak <strong>BAĞLANMAZ</strong>. Bağlantı için aşağıdaki opsiyonlar mevcuttur:</p>
 <div class="highlight-ci"><pre>-  :doc:`Burada anlatılan&lt;../database/connecting&gt;` standart veritabanı bağlantı metodunu Controller sınıfı ya da Model sınıfından kullanabilirsiniz.
--  Model yükleme fonksiyonunda üçüncü parametreye TRUE değeri vererek, bağlantı bilgilerinizi veritabanı ayar dosyasında tanımladığınız gibi kullanması şartıyla otomatik bağlan diyebilirsiniz:</pre>
+-  Model yükleme fonksiyonunda üçüncü parametreye TRUE değeri vererek, bağlantı bilgilerinizi veritabanı ayar dosyasında tanımladığınız gibi kullanması şartıyla otomatik bağlan diyebilirsiniz::</pre>
 </div>
 <blockquote>
-<div><div class="highlight-ci"><div class="highlight"><pre><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">model</span><span class="p">(</span><span class="s1">&#39;Model_name&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="k">TRUE</span><span class="p">);</span>
-</pre></div>
-</div>
-</div></blockquote>
+<div>$this-&gt;load-&gt;model(&#8216;Model_name&#8217;, &#8216;&#8217;, TRUE);</div></blockquote>
 <ul>
 <li><p class="first">Üçüncü parametre ile kullanmasını sitediğiniz veritabanı bağlantı ayarlarını elle ayarlayabilirsiniz</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$config</span><span class="p">[</span><span class="s1">&#39;hostname&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;localhost&quot;</span><span class="p">;</span>

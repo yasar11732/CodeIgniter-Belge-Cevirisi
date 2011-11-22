@@ -96,8 +96,7 @@ function::
 
 Please read the about the where function below for more information.
 
-.. note:: get_where() was formerly known as getwhere(), which has been
-removed
+.. note:: get_where() was formerly known as getwhere(), which has been removed
 
 $this->db->select()
 ===================

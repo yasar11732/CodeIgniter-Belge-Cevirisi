@@ -105,6 +105,10 @@
 			<div class="section" id="hata-isleme">
 <h1>Hata İşleme<a class="headerlink" href="#hata-isleme" title="Bu başlığın kalıcı bağlantısı">¶</a></h1>
 <p>CodeIgniter aşağıdaki fonksiyonların uygulamalarınızda kullanılması durumunda hata raporlamasına izin verir. Ayrıca, hata kayıt sınıfı ile hata ayıklama mesajlarını yazı dosyası olarak kayıt da edebilirsiniz.</p>
+<div class="note admonition">
+<p class="first admonition-title">Not</p>
+<p class="last">CodeIgniter aksi belirtilmediği sürece bütün PHP hatalarını gösterir. Bu özelliği, program geliştirmeniz bitince değiştirmek isteyebilirsiniz. Kök dizinde bulunan index.php dosyasının başındaki error_reporting() fonksiyonu bulacaksınız. Hata raporlamanın pasif hale getirilmesi, hataların olması durumunda kayıt edilmesini ÖNLEMEZ.</p>
+</div>
 <p>CodeIgniter&#8217;daki birbirinden farklı çoğu sistem, uygulama boyunca oluşan hataları basit bir arayüzle yansıtır. Bu yaklaşım hata mesajlarının sınıf/fonksiyon ayrımına girmeden toplanmasına izin verir.</p>
 <p>Aşağıdaki fonksiyonlar hata üretmenize izin verir:</p>
 <div class="section" id="show-error-message-int-status-code-500">
@@ -141,6 +145,10 @@
 <li>Debug Mesajları. Bu mesajlar hata ayıklamaya yardımcı mesajlardır. Örneğin, eğer bir sınıf başlatıldıysa, log dosyasına bu bilgiyi ekleyebilirsiniz.</li>
 <li>Informational Mesajları. Bunlar düşük öncelikli, sadece işlem sırasında oluşan bilgilerdir. CodeIgniter doğal olarak herhangi bir bilgi mesajı oluşturmaz ama siz uygulamanızda olmasını isteyebilirsiniz.</li>
 </ol>
+<div class="note admonition">
+<p class="first admonition-title">Not</p>
+<p class="last">Log dosyasına yazdırmak için, &#8220;log&#8221; dizininiz yazılabilir olmalıdır. Ayrıca, kayıt için &#8220;eşiği&#8221; ayarlamalısınız. Örneğin, sadece hata (error) mesajlarını istiyor ve diğer iki tipi istemiyor olabilirsiniz. Eğer kayıtlama istemiyorsanız sıfır değerini girmelisiniz.</p>
+</div>
 </div>
 </div>
 
