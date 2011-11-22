@@ -1,16 +1,13 @@
 ################
-Common Functions
+Genel Fonksiyonlar
 ################
 
-CodeIgniter uses a few functions for its operation that are globally
-defined, and are available to you at any point. These do not require
-loading any libraries or helpers.
+CodeIgniter kendi kullanımı için bir kaç tane fonksiyonu genel olarak tanımlar, bu fonksiyonlar her hangi bir noktada sizin de kullanımınıza açıktır. Herhangibi bir kütüphane ya da helper ile yüklemenize gerek yoktur.
 
 is_php('version_number')
 ==========================
 
-is_php() determines of the PHP version being used is greater than the
-supplied version_number.
+is_php() kullanılan PHP versiyonunun, Versiyon_number ile tanımlı değerden büyüklüğünü kontrol eder.
 
 ::
 
@@ -19,18 +16,12 @@ supplied version_number.
 	    $str = quoted_printable_encode($str);
 	}
 
-Returns boolean TRUE if the installed version of PHP is equal to or
-greater than the supplied version number. Returns FALSE if the installed
-version of PHP is lower than the supplied version number.
+Eğer kullanılan versiyon, sorulan versiyon numarasına eşit ya da büyükse geri dönüşü TRUE olur. Geri dönüş FALSE ise, kullanılan PHP versiyonu sorulan versiyon numarasından daha küçük demektir.
 
 is_really_writable('path/to/file')
 ====================================
 
-is_writable() returns TRUE on Windows servers when you really can't
-write to the file as the OS reports to PHP as FALSE only if the
-read-only attribute is marked. This function determines if a file is
-actually writable by attempting to write to it first. Generally only
-recommended on platforms where this information may be unreliable.
+is_writable() fonksiyonu Windows sunucu üzerinde PHP kullanıldığı zaman, dosya yazılamayan dizinlerde dahi TRUE olarak dönebilir. Oysa bu fonksiyon çalıştığında öncelikle gerçek bir dosya yazmaya çalışarak sonuca karar verir. Genellikle güvenilir sonuçlar elde edilemeyen platformlarda kullanılması önerilir.
 
 ::
 
@@ -46,36 +37,30 @@ recommended on platforms where this information may be unreliable.
 config_item('item_key')
 =========================
 
-The :doc:`Config library <../libraries/config>` is the preferred way of
-accessing configuration information, however config_item() can be used
-to retrieve single keys. See Config library documentation for more
-information.
+Yapılandırma bilgilerine erişim :doc:`Config library <../libraries/config>` ile kullanıması tercih edilse de, config_item() fonksiyonu da tekil değerler için kullanılabilir. Daha fazla bilgi için Yapılandırma Kütüphanesi bölümüne bakınız.
 
 show_error('message'), show_404('page'), log_message('level', 'message')
 ========================================================================
 
-These are each outlined on the :doc:`Error Handling <errors>` page.
+Her biri için :doc:`Hata İşleme <errors>` sayfasına bakınız.
 
 set_status_header(code, 'text');
 ================================
 
-Permits you to manually set a server status header. Example::
+Sunucu durum başlığını elinizle düzeltmenize izin verir. Örneğin::
 
 	set_status_header(401);
 	// Sets the header as:  Unauthorized
 
-`See here <http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html>`_ for
-a full list of headers.
+Tüm başlıklara ait liste için `burayı <http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html>`_ okuyunuz.	
+	
 
 remove_invisible_characters($str)
 ===================================
 
-This function prevents inserting null characters between ascii
-characters, like Java\\0script.
+Bu fonksiyon ascii karakterler ile boş (null) karakter girişini önler (Java\\0script gibi).
 
 html_escape($mixed)
 ====================
 
-This function provides short cut for htmlspecialchars() function. It
-accepts string and array. To prevent Cross Site Scripting (XSS), it is
-very useful.
+Bu fonksiyon, htmlspecialchars() fonsiyonunun kısayoludur. String ve dizi değişkenlerini kabul eder. Cross Site Scripting (XSS) yapılmasını kolayca önler.
