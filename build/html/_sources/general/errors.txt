@@ -1,58 +1,39 @@
 ##############
-Error Handling
+Hata İşleme
 ##############
 
-CodeIgniter lets you build error reporting into your applications using
-the functions described below. In addition, it has an error logging
-class that permits error and debugging messages to be saved as text
-files.
+CodeIgniter aşağıdaki fonksiyonların uygulamalarınızda kullanılması durumunda hata raporlamasına izin verir. Ayrıca, hata kayıt sınıfı ile hata ayıklama mesajlarını yazı dosyası olarak kayıt da edebilirsiniz.
 
-.. note:: By default, CodeIgniter displays all PHP errors. You might
-	wish to change this behavior once your development is complete. You'll
-	find the error_reporting() function located at the top of your main
-	index.php file. Disabling error reporting will NOT prevent log files
-	from being written if there are errors.
+.. not:: CodeIgniter aksi belirtilmediği sürece bütün PHP hatalarını gösterir. Bu özelliği, program geliştirmeniz bitince değiştirmek isteyebilirsiniz. Kök dizinde bulunan index.php dosyasının başındaki error_reporting() fonksiyonu bulacaksınız. Hata raporlamanın pasif hale getirilmesi, hataların olması durumunda kayıt edilmesini ÖNLEMEZ.
 
-Unlike most systems in CodeIgniter, the error functions are simple
-procedural interfaces that are available globally throughout the
-application. This approach permits error messages to get triggered
-without having to worry about class/function scoping.
+CodeIgniter'daki birbirinden farklı çoğu sistem, uygulama boyunca oluşan hataları basit bir arayüzle yansıtır. Bu yaklaşım hata mesajlarının sınıf/fonksiyon ayrımına girmeden toplanmasına izin verir.
 
-The following functions let you generate errors:
+Aşağıdaki fonksiyonlar hata üretmenize izin verir:
 
 show_error('message' [, int $status_code= 500 ] )
 ===================================================
 
-This function will display the error message supplied to it using the
-following error template:
+Bu fonksiyon, aşağıdaki hata şablonu kullanılarak hataları gösterir :
 
 application/errors/error_general.php
 
-The optional parameter $status_code determines what HTTP status code
-should be sent with the error.
+Seçime bağlı parametre $status_code, hata ile hangi HTTP kodunun gönderildiğini belirler.
 
 show_404('page' [, 'log_error'])
 ==================================
 
-This function will display the 404 error message supplied to it using
-the following error template:
+Bu fonksiyon, aşağıdaki hata şablonu kullanılarak 404 hatalarını gösterir :
 
 application/errors/error_404.php
 
-The function expects the string passed to it to be the file path to the
-page that isn't found. Note that CodeIgniter automatically shows 404
-messages if controllers are not found.
+Bu fonksiyon, sayfa bulunamazsa dosya yoluna göndereceği yazıyı bekler. Not: CodeIgniter eğer controller bulunamazsa 404 mesajlarını otomatik olarak oluşturur.
 
-CodeIgniter automatically logs any show_404() calls. Setting the
-optional second parameter to FALSE will skip logging.
+CodeIgniter show_404() çağrılarını otomatik olarak kayıt eder. İkinci parametreyi FALSE edilrse kayıt tutması önlenir.
 
 log_message('level', 'message')
 ================================
 
-This function lets you write messages to your log files. You must supply
-one of three "levels" in the first parameter, indicating what type of
-message it is (debug, error, info), with the message itself in the
-second parameter. Example::
+Bu fonksiyon log dosyasına mesaj yazmanıza izin verir. İlk parametre hangi tip mesaj olduğunu (debug, error, info), ikinci parametre de mesajın kendisini gösterir. Örneğin::
 
 	if ($some_var == "")
 	{
@@ -65,20 +46,10 @@ second parameter. Example::
 
 	log_message('info', 'The purpose of some variable is to provide some value.');
 
-There are three message types:
+Üç farklı mesaj tipi vardır:
 
-#. Error Messages. These are actual errors, such as PHP errors or user
-   errors.
-#. Debug Messages. These are messages that assist in debugging. For
-   example, if a class has been initialized, you could log this as
-   debugging info.
-#. Informational Messages. These are the lowest priority messages,
-   simply giving information regarding some process. CodeIgniter doesn't
-   natively generate any info messages but you may want to in your
-   application.
+#. Error Mesajları. Bunlar PHP ya da kullanıcı hataları gibi olan gerçek hatalardır.
+#. Debug Mesajları. Bu mesajlar hata ayıklamaya yardımcı mesajlardır. Örneğin, eğer bir sınıf başlatıldıysa, log dosyasına bu bilgiyi ekleyebilirsiniz.
+#. Informational Mesajları. Bunlar düşük öncelikli, sadece işlem sırasında oluşan bilgilerdir. CodeIgniter doğal olarak herhangi bir bilgi mesajı oluşturmaz ama siz uygulamanızda olmasını isteyebilirsiniz.
 
-.. note:: In order for the log file to actually be written, the "logs"
-	folder must be writable. In addition, you must set the "threshold" for
-	logging in application/config/config.php. You might, for example, only
-	want error messages to be logged, and not the other two types. If you
-	set it to zero logging will be disabled.
+.. not:: Log dosyasına yazdırmak için, "log" dizininiz yazılabilir olmalıdır. Ayrıca, kayıt için "eşiği" ayarlamalısınız. Örneğin, sadece hata (error) mesajlarını istiyor ve diğer iki tipi istemiyor olabilirsiniz. Eğer kayıtlama istemiyorsanız sıfır değerini girmelisiniz.

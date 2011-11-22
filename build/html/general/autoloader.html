@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="utf-8">
 	    
-	    <title>Auto-loading Resources &mdash; CodeIgniter v3.0-dev documentation</title>
+	    <title>Otomatik Yükleme Kaynakları &mdash; CodeIgniter v3.0-dev documentation</title>
 
 	    <link rel="stylesheet" href="../_static/asset/css/common.css" type="text/css" />
 	    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -22,8 +22,8 @@
 	    <script type="text/javascript" src="../_static/doctools.js"></script>
 	    <link rel="top" title="CodeIgniter v3.0-dev documentation" href="../index.html" />
 	    <link rel="up" title="General Topics" href="index.html" />
-	    <link rel="next" title="Common Functions" href="common_functions.html" />
-	    <link rel="prev" title="Hooks - Extending the Framework Core" href="hooks.html" /> 
+	    <link rel="next" title="Genel Fonksiyonlar" href="common_functions.html" />
+	    <link rel="prev" title="Hook - Çatı Çekirdeğini Genişletmek" href="hooks.html" /> 
 	</head>
 	<body>
 		<div id="table-contents">
@@ -41,17 +41,17 @@
 <li class="toctree-l2"><a class="reference internal" href="views.html">View</a></li>
 <li class="toctree-l2"><a class="reference internal" href="models.html">Model</a></li>
 <li class="toctree-l2"><a class="reference internal" href="helpers.html">Helpers</a></li>
-<li class="toctree-l2"><a class="reference internal" href="libraries.html">Using CodeIgniter Libraries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="libraries.html">CodeIgniter Kütüphanelerinin Kullanımı</a></li>
 <li class="toctree-l2"><a class="reference internal" href="creating_libraries.html">Creating Libraries</a></li>
 <li class="toctree-l2"><a class="reference internal" href="drivers.html">Using CodeIgniter Drivers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="creating_drivers.html">Creating Drivers</a></li>
-<li class="toctree-l2"><a class="reference internal" href="core_classes.html">Creating Core System Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="core_classes.html">Çekirdek Sistem Sınıfı Oluşturmak</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ancillary_classes.html">Creating Ancillary Classes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="hooks.html">Hooks - Extending the Framework Core</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="">Auto-loading Resources</a></li>
-<li class="toctree-l2"><a class="reference internal" href="common_functions.html">Common Functions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="routing.html">URI Routing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="errors.html">Error Handling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hooks.html">Hook - Çatı Çekirdeğini Genişletmek</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Otomatik Yükleme Kaynakları</a></li>
+<li class="toctree-l2"><a class="reference internal" href="common_functions.html">Genel Fonksiyonlar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="routing.html">URI Yönlendirme</a></li>
+<li class="toctree-l2"><a class="reference internal" href="errors.html">Hata İşleme</a></li>
 <li class="toctree-l2"><a class="reference internal" href="caching.html">Caching</a></li>
 <li class="toctree-l2"><a class="reference internal" href="profiling.html">Profiling Your Application</a></li>
 <li class="toctree-l2"><a class="reference internal" href="cli.html">Running via the CLI</a></li>
@@ -94,33 +94,23 @@
 				<li><a id="toc-link" href="../index.html">Table of Contents</a>&nbsp;&nbsp; &rsaquo;</li>
 				<li><a href="index.html" accesskey="U">General Topics</a>&nbsp;&nbsp;  &rsaquo;</li>
 
-				<li><strong>Auto-loading Resources</strong></li>
+				<li><strong>Otomatik Yükleme Kaynakları</strong></li>
 			</ul>
 		</div><!-- /#header -->
 
 		<div class="section" id="content">
-			<div class="section" id="auto-loading-resources">
-<h1>Auto-loading Resources<a class="headerlink" href="#auto-loading-resources" title="Permalink to this headline">¶</a></h1>
-<p>CodeIgniter comes with an &#8220;Auto-load&#8221; feature that permits libraries,
-helpers, and models to be initialized automatically every time the
-system runs. If you need certain resources globally throughout your
-application you should consider auto-loading them for convenience.</p>
-<p>The following items can be loaded automatically:</p>
+			<div class="section" id="otomatik-yukleme-kaynaklari">
+<h1>Otomatik Yükleme Kaynakları<a class="headerlink" href="#otomatik-yukleme-kaynaklari" title="Permalink to this headline">¶</a></h1>
+<p>CodeIgniter otomatik yükleme özelliği ile kütüphaneler, helper ve plugin dosylaarını her sistem açılışında otomatik yükleme özelliğine sahiptir. Eğer uygulamanızın genelinde kullanacağınız dosyalara ihtiyacınız varsa, otomatik yükleme opsiyonunu hesaba katmalısınız.</p>
+<p>Aşağıdaki maddeler otomatik yüklenir:</p>
 <ul class="simple">
-<li>Core classes found in the &#8220;libraries&#8221; folder</li>
-<li>Helper files found in the &#8220;helpers&#8221; folder</li>
-<li>Custom config files found in the &#8220;config&#8221; folder</li>
-<li>Language files found in the &#8220;system/language&#8221; folder</li>
-<li>Models found in the &#8220;models&#8221; folder</li>
+<li>&#8220;libraries&#8221; dizini altındaki çekirdek sınıfları</li>
+<li>&#8220;helpers&#8221; dizini altındaki helper dosyları</li>
+<li>&#8220;config&#8221; dizini altında bulunan kullanıcı ayar dosyaları</li>
+<li>&#8220;system/language&#8221; dizini altındaki dil dosyaları</li>
+<li>&#8220;models&#8221; dizini altında bulunan model dosyaları</li>
 </ul>
-<p>To autoload resources, open the application/config/autoload.php file and
-add the item you want loaded to the autoload array. You&#8217;ll find
-instructions in that file corresponding to each type of item.</p>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">Do not include the file extension (.php) when adding items to
-the autoload array.</p>
-</div>
+<p>Kaynakları otomatik yüklemek için, application/config/autoload.php dosyasını aç ve autoload dizisine yükelemek istediğin maddeleri ekle. Gerekli bilgileri, her madde ile ilgili bölümde bulacaksınız.</p>
 </div>
 
 		</div>
@@ -130,14 +120,14 @@ the autoload array.</p>
 		<div id="footer">
 			<p class="top">
 				
-				<span class="prev">Previous Topic: <a href="hooks.html">Hooks - Extending the Framework Core</a></span>
+				<span class="prev">Previous Topic: <a href="hooks.html">Hook - Çatı Çekirdeğini Genişletmek</a></span>
 				
 				
-				<span class="next">Next Topic: <a href="common_functions.html">Common Functions</a></span>
+				<span class="next">Next Topic: <a href="common_functions.html">Genel Fonksiyonlar</a></span>
 				
 				<a href="#header" title="Return to top">Return to top</a>
 			</p>
-			<p><a href="">CodeIgniter</a> &ndash; Copyright &copy; 2011, EllisLab, Inc.</a> &ndash; Last updated: Nov 16, 2011</p>
+			<p><a href="">CodeIgniter</a> &ndash; Copyright &copy; 2011, EllisLab, Inc.</a> &ndash; Last updated: Nov 22, 2011</p>
 		</div><!-- /#footer -->
 	
 	<script src="../_static/asset/js/jquery-ui-min.js" type="text/javascript" charset="utf-8" async></script>

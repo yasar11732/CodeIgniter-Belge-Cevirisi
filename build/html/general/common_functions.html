@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="utf-8">
 	    
-	    <title>Common Functions &mdash; CodeIgniter v3.0-dev documentation</title>
+	    <title>Genel Fonksiyonlar &mdash; CodeIgniter v3.0-dev documentation</title>
 
 	    <link rel="stylesheet" href="../_static/asset/css/common.css" type="text/css" />
 	    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -22,8 +22,8 @@
 	    <script type="text/javascript" src="../_static/doctools.js"></script>
 	    <link rel="top" title="CodeIgniter v3.0-dev documentation" href="../index.html" />
 	    <link rel="up" title="General Topics" href="index.html" />
-	    <link rel="next" title="URI Routing" href="routing.html" />
-	    <link rel="prev" title="Auto-loading Resources" href="autoloader.html" /> 
+	    <link rel="next" title="URI Yönlendirme" href="routing.html" />
+	    <link rel="prev" title="Otomatik Yükleme Kaynakları" href="autoloader.html" /> 
 	</head>
 	<body>
 		<div id="table-contents">
@@ -41,19 +41,19 @@
 <li class="toctree-l2"><a class="reference internal" href="views.html">View</a></li>
 <li class="toctree-l2"><a class="reference internal" href="models.html">Model</a></li>
 <li class="toctree-l2"><a class="reference internal" href="helpers.html">Helpers</a></li>
-<li class="toctree-l2"><a class="reference internal" href="libraries.html">Using CodeIgniter Libraries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="libraries.html">CodeIgniter Kütüphanelerinin Kullanımı</a></li>
 <li class="toctree-l2"><a class="reference internal" href="creating_libraries.html">Creating Libraries</a></li>
 <li class="toctree-l2"><a class="reference internal" href="drivers.html">Using CodeIgniter Drivers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="creating_drivers.html">Creating Drivers</a></li>
-<li class="toctree-l2"><a class="reference internal" href="core_classes.html">Creating Core System Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="core_classes.html">Çekirdek Sistem Sınıfı Oluşturmak</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ancillary_classes.html">Creating Ancillary Classes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="hooks.html">Hooks - Extending the Framework Core</a></li>
-<li class="toctree-l2"><a class="reference internal" href="autoloader.html">Auto-loading Resources</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="">Common Functions</a><ul class="simple">
+<li class="toctree-l2"><a class="reference internal" href="hooks.html">Hook - Çatı Çekirdeğini Genişletmek</a></li>
+<li class="toctree-l2"><a class="reference internal" href="autoloader.html">Otomatik Yükleme Kaynakları</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Genel Fonksiyonlar</a><ul class="simple">
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="routing.html">URI Routing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="errors.html">Error Handling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="routing.html">URI Yönlendirme</a></li>
+<li class="toctree-l2"><a class="reference internal" href="errors.html">Hata İşleme</a></li>
 <li class="toctree-l2"><a class="reference internal" href="caching.html">Caching</a></li>
 <li class="toctree-l2"><a class="reference internal" href="profiling.html">Profiling Your Application</a></li>
 <li class="toctree-l2"><a class="reference internal" href="cli.html">Running via the CLI</a></li>
@@ -96,37 +96,28 @@
 				<li><a id="toc-link" href="../index.html">Table of Contents</a>&nbsp;&nbsp; &rsaquo;</li>
 				<li><a href="index.html" accesskey="U">General Topics</a>&nbsp;&nbsp;  &rsaquo;</li>
 
-				<li><strong>Common Functions</strong></li>
+				<li><strong>Genel Fonksiyonlar</strong></li>
 			</ul>
 		</div><!-- /#header -->
 
 		<div class="section" id="content">
-			<div class="section" id="common-functions">
-<h1>Common Functions<a class="headerlink" href="#common-functions" title="Permalink to this headline">¶</a></h1>
-<p>CodeIgniter uses a few functions for its operation that are globally
-defined, and are available to you at any point. These do not require
-loading any libraries or helpers.</p>
+			<div class="section" id="genel-fonksiyonlar">
+<h1>Genel Fonksiyonlar<a class="headerlink" href="#genel-fonksiyonlar" title="Permalink to this headline">¶</a></h1>
+<p>CodeIgniter kendi kullanımı için bir kaç tane fonksiyonu genel olarak tanımlar, bu fonksiyonlar her hangi bir noktada sizin de kullanımınıza açıktır. Herhangibi bir kütüphane ya da helper ile yüklemenize gerek yoktur.</p>
 <div class="section" id="is-php-version-number">
 <h2>is_php(&#8216;version_number&#8217;)<a class="headerlink" href="#is-php-version-number" title="Permalink to this headline">¶</a></h2>
-<p>is_php() determines of the PHP version being used is greater than the
-supplied version_number.</p>
+<p>is_php() kullanılan PHP versiyonunun, Versiyon_number ile tanımlı değerden büyüklüğünü kontrol eder.</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="k">if</span> <span class="p">(</span><span class="nx">is_php</span><span class="p">(</span><span class="s1">&#39;5.3.0&#39;</span><span class="p">))</span>
 <span class="p">{</span>
     <span class="nv">$str</span> <span class="o">=</span> <span class="nx">quoted_printable_encode</span><span class="p">(</span><span class="nv">$str</span><span class="p">);</span>
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>Returns boolean TRUE if the installed version of PHP is equal to or
-greater than the supplied version number. Returns FALSE if the installed
-version of PHP is lower than the supplied version number.</p>
+<p>Eğer kullanılan versiyon, sorulan versiyon numarasına eşit ya da büyükse geri dönüşü TRUE olur. Geri dönüş FALSE ise, kullanılan PHP versiyonu sorulan versiyon numarasından daha küçük demektir.</p>
 </div>
 <div class="section" id="is-really-writable-path-to-file">
 <h2>is_really_writable(&#8216;path/to/file&#8217;)<a class="headerlink" href="#is-really-writable-path-to-file" title="Permalink to this headline">¶</a></h2>
-<p>is_writable() returns TRUE on Windows servers when you really can&#8217;t
-write to the file as the OS reports to PHP as FALSE only if the
-read-only attribute is marked. This function determines if a file is
-actually writable by attempting to write to it first. Generally only
-recommended on platforms where this information may be unreliable.</p>
+<p>is_writable() fonksiyonu Windows sunucu üzerinde PHP kullanıldığı zaman, dosya yazılamayan dizinlerde dahi TRUE olarak dönebilir. Oysa bu fonksiyon çalıştığında öncelikle gerçek bir dosya yazmaya çalışarak sonuca karar verir. Genellikle güvenilir sonuçlar elde edilemeyen platformlarda kullanılması önerilir.</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="k">if</span> <span class="p">(</span><span class="nx">is_really_writable</span><span class="p">(</span><span class="s1">&#39;file.txt&#39;</span><span class="p">))</span>
 <span class="p">{</span>
     <span class="k">echo</span> <span class="s2">&quot;I could write to this if I wanted to&quot;</span><span class="p">;</span>
@@ -140,35 +131,28 @@ recommended on platforms where this information may be unreliable.</p>
 </div>
 <div class="section" id="config-item-item-key">
 <h2>config_item(&#8216;item_key&#8217;)<a class="headerlink" href="#config-item-item-key" title="Permalink to this headline">¶</a></h2>
-<p>The <a class="reference internal" href="../libraries/config.html"><em>Config library</em></a> is the preferred way of
-accessing configuration information, however config_item() can be used
-to retrieve single keys. See Config library documentation for more
-information.</p>
+<p>Yapılandırma bilgilerine erişim <a class="reference internal" href="../libraries/config.html"><em>Config library</em></a> ile kullanıması tercih edilse de, config_item() fonksiyonu da tekil değerler için kullanılabilir. Daha fazla bilgi için Yapılandırma Kütüphanesi bölümüne bakınız.</p>
 </div>
 <div class="section" id="show-error-message-show-404-page-log-message-level-message">
 <h2>show_error(&#8216;message&#8217;), show_404(&#8216;page&#8217;), log_message(&#8216;level&#8217;, &#8216;message&#8217;)<a class="headerlink" href="#show-error-message-show-404-page-log-message-level-message" title="Permalink to this headline">¶</a></h2>
-<p>These are each outlined on the <a class="reference internal" href="errors.html"><em>Error Handling</em></a> page.</p>
+<p>Her biri için <a class="reference internal" href="errors.html"><em>Hata İşleme</em></a> sayfasına bakınız.</p>
 </div>
 <div class="section" id="set-status-header-code-text">
 <h2>set_status_header(code, &#8216;text&#8217;);<a class="headerlink" href="#set-status-header-code-text" title="Permalink to this headline">¶</a></h2>
-<p>Permits you to manually set a server status header. Example:</p>
+<p>Sunucu durum başlığını elinizle düzeltmenize izin verir. Örneğin:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nx">set_status_header</span><span class="p">(</span><span class="mi">401</span><span class="p">);</span>
 <span class="c1">// Sets the header as:  Unauthorized</span>
 </pre></div>
 </div>
-<p><a class="reference external" href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html">See here</a> for
-a full list of headers.</p>
+<p>Tüm başlıklara ait liste için <a class="reference external" href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html">burayı</a> okuyunuz.</p>
 </div>
 <div class="section" id="remove-invisible-characters-str">
 <h2>remove_invisible_characters($str)<a class="headerlink" href="#remove-invisible-characters-str" title="Permalink to this headline">¶</a></h2>
-<p>This function prevents inserting null characters between ascii
-characters, like Java\0script.</p>
+<p>Bu fonksiyon ascii karakterler ile boş (null) karakter girişini önler (Java\0script gibi).</p>
 </div>
 <div class="section" id="html-escape-mixed">
 <h2>html_escape($mixed)<a class="headerlink" href="#html-escape-mixed" title="Permalink to this headline">¶</a></h2>
-<p>This function provides short cut for htmlspecialchars() function. It
-accepts string and array. To prevent Cross Site Scripting (XSS), it is
-very useful.</p>
+<p>Bu fonksiyon, htmlspecialchars() fonsiyonunun kısayoludur. String ve dizi değişkenlerini kabul eder. Cross Site Scripting (XSS) yapılmasını kolayca önler.</p>
 </div>
 </div>
 
@@ -179,14 +163,14 @@ very useful.</p>
 		<div id="footer">
 			<p class="top">
 				
-				<span class="prev">Previous Topic: <a href="autoloader.html">Auto-loading Resources</a></span>
+				<span class="prev">Previous Topic: <a href="autoloader.html">Otomatik Yükleme Kaynakları</a></span>
 				
 				
-				<span class="next">Next Topic: <a href="routing.html">URI Routing</a></span>
+				<span class="next">Next Topic: <a href="routing.html">URI Yönlendirme</a></span>
 				
 				<a href="#header" title="Return to top">Return to top</a>
 			</p>
-			<p><a href="">CodeIgniter</a> &ndash; Copyright &copy; 2011, EllisLab, Inc.</a> &ndash; Last updated: Nov 16, 2011</p>
+			<p><a href="">CodeIgniter</a> &ndash; Copyright &copy; 2011, EllisLab, Inc.</a> &ndash; Last updated: Nov 22, 2011</p>
 		</div><!-- /#footer -->
 	
 	<script src="../_static/asset/js/jquery-ui-min.js" type="text/javascript" charset="utf-8" async></script>

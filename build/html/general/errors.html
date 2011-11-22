@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="utf-8">
 	    
-	    <title>Error Handling &mdash; CodeIgniter v3.0-dev documentation</title>
+	    <title>Hata İşleme &mdash; CodeIgniter v3.0-dev documentation</title>
 
 	    <link rel="stylesheet" href="../_static/asset/css/common.css" type="text/css" />
 	    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -22,8 +22,8 @@
 	    <script type="text/javascript" src="../_static/doctools.js"></script>
 	    <link rel="top" title="CodeIgniter v3.0-dev documentation" href="../index.html" />
 	    <link rel="up" title="General Topics" href="index.html" />
-	    <link rel="next" title="Web Page Caching" href="caching.html" />
-	    <link rel="prev" title="URI Routing" href="routing.html" /> 
+	    <link rel="next" title="Web Sayfasını Önbelleğe Alma" href="caching.html" />
+	    <link rel="prev" title="URI Yönlendirme" href="routing.html" /> 
 	</head>
 	<body>
 		<div id="table-contents">
@@ -41,17 +41,17 @@
 <li class="toctree-l2"><a class="reference internal" href="views.html">View</a></li>
 <li class="toctree-l2"><a class="reference internal" href="models.html">Model</a></li>
 <li class="toctree-l2"><a class="reference internal" href="helpers.html">Helpers</a></li>
-<li class="toctree-l2"><a class="reference internal" href="libraries.html">Using CodeIgniter Libraries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="libraries.html">CodeIgniter Kütüphanelerinin Kullanımı</a></li>
 <li class="toctree-l2"><a class="reference internal" href="creating_libraries.html">Creating Libraries</a></li>
 <li class="toctree-l2"><a class="reference internal" href="drivers.html">Using CodeIgniter Drivers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="creating_drivers.html">Creating Drivers</a></li>
-<li class="toctree-l2"><a class="reference internal" href="core_classes.html">Creating Core System Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="core_classes.html">Çekirdek Sistem Sınıfı Oluşturmak</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ancillary_classes.html">Creating Ancillary Classes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="hooks.html">Hooks - Extending the Framework Core</a></li>
-<li class="toctree-l2"><a class="reference internal" href="autoloader.html">Auto-loading Resources</a></li>
-<li class="toctree-l2"><a class="reference internal" href="common_functions.html">Common Functions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="routing.html">URI Routing</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="">Error Handling</a><ul class="simple">
+<li class="toctree-l2"><a class="reference internal" href="hooks.html">Hook - Çatı Çekirdeğini Genişletmek</a></li>
+<li class="toctree-l2"><a class="reference internal" href="autoloader.html">Otomatik Yükleme Kaynakları</a></li>
+<li class="toctree-l2"><a class="reference internal" href="common_functions.html">Genel Fonksiyonlar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="routing.html">URI Yönlendirme</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Hata İşleme</a><ul class="simple">
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="caching.html">Caching</a></li>
@@ -96,55 +96,32 @@
 				<li><a id="toc-link" href="../index.html">Table of Contents</a>&nbsp;&nbsp; &rsaquo;</li>
 				<li><a href="index.html" accesskey="U">General Topics</a>&nbsp;&nbsp;  &rsaquo;</li>
 
-				<li><strong>Error Handling</strong></li>
+				<li><strong>Hata İşleme</strong></li>
 			</ul>
 		</div><!-- /#header -->
 
 		<div class="section" id="content">
-			<div class="section" id="error-handling">
-<h1>Error Handling<a class="headerlink" href="#error-handling" title="Permalink to this headline">¶</a></h1>
-<p>CodeIgniter lets you build error reporting into your applications using
-the functions described below. In addition, it has an error logging
-class that permits error and debugging messages to be saved as text
-files.</p>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">By default, CodeIgniter displays all PHP errors. You might
-wish to change this behavior once your development is complete. You&#8217;ll
-find the error_reporting() function located at the top of your main
-index.php file. Disabling error reporting will NOT prevent log files
-from being written if there are errors.</p>
-</div>
-<p>Unlike most systems in CodeIgniter, the error functions are simple
-procedural interfaces that are available globally throughout the
-application. This approach permits error messages to get triggered
-without having to worry about class/function scoping.</p>
-<p>The following functions let you generate errors:</p>
+			<div class="section" id="hata-isleme">
+<h1>Hata İşleme<a class="headerlink" href="#hata-isleme" title="Permalink to this headline">¶</a></h1>
+<p>CodeIgniter aşağıdaki fonksiyonların uygulamalarınızda kullanılması durumunda hata raporlamasına izin verir. Ayrıca, hata kayıt sınıfı ile hata ayıklama mesajlarını yazı dosyası olarak kayıt da edebilirsiniz.</p>
+<p>CodeIgniter&#8217;daki birbirinden farklı çoğu sistem, uygulama boyunca oluşan hataları basit bir arayüzle yansıtır. Bu yaklaşım hata mesajlarının sınıf/fonksiyon ayrımına girmeden toplanmasına izin verir.</p>
+<p>Aşağıdaki fonksiyonlar hata üretmenize izin verir:</p>
 <div class="section" id="show-error-message-int-status-code-500">
 <h2>show_error(&#8216;message&#8217; [, int $status_code= 500 ] )<a class="headerlink" href="#show-error-message-int-status-code-500" title="Permalink to this headline">¶</a></h2>
-<p>This function will display the error message supplied to it using the
-following error template:</p>
+<p>Bu fonksiyon, aşağıdaki hata şablonu kullanılarak hataları gösterir :</p>
 <p>application/errors/error_general.php</p>
-<p>The optional parameter $status_code determines what HTTP status code
-should be sent with the error.</p>
+<p>Seçime bağlı parametre $status_code, hata ile hangi HTTP kodunun gönderildiğini belirler.</p>
 </div>
 <div class="section" id="show-404-page-log-error">
 <h2>show_404(&#8216;page&#8217; [, &#8216;log_error&#8217;])<a class="headerlink" href="#show-404-page-log-error" title="Permalink to this headline">¶</a></h2>
-<p>This function will display the 404 error message supplied to it using
-the following error template:</p>
+<p>Bu fonksiyon, aşağıdaki hata şablonu kullanılarak 404 hatalarını gösterir :</p>
 <p>application/errors/error_404.php</p>
-<p>The function expects the string passed to it to be the file path to the
-page that isn&#8217;t found. Note that CodeIgniter automatically shows 404
-messages if controllers are not found.</p>
-<p>CodeIgniter automatically logs any show_404() calls. Setting the
-optional second parameter to FALSE will skip logging.</p>
+<p>Bu fonksiyon, sayfa bulunamazsa dosya yoluna göndereceği yazıyı bekler. Not: CodeIgniter eğer controller bulunamazsa 404 mesajlarını otomatik olarak oluşturur.</p>
+<p>CodeIgniter show_404() çağrılarını otomatik olarak kayıt eder. İkinci parametreyi FALSE edilrse kayıt tutması önlenir.</p>
 </div>
 <div class="section" id="log-message-level-message">
 <h2>log_message(&#8216;level&#8217;, &#8216;message&#8217;)<a class="headerlink" href="#log-message-level-message" title="Permalink to this headline">¶</a></h2>
-<p>This function lets you write messages to your log files. You must supply
-one of three &#8220;levels&#8221; in the first parameter, indicating what type of
-message it is (debug, error, info), with the message itself in the
-second parameter. Example:</p>
+<p>Bu fonksiyon log dosyasına mesaj yazmanıza izin verir. İlk parametre hangi tip mesaj olduğunu (debug, error, info), ikinci parametre de mesajın kendisini gösterir. Örneğin:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="k">if</span> <span class="p">(</span><span class="nv">$some_var</span> <span class="o">==</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="nx">log_message</span><span class="p">(</span><span class="s1">&#39;error&#39;</span><span class="p">,</span> <span class="s1">&#39;Some variable did not contain a value.&#39;</span><span class="p">);</span>
@@ -157,26 +134,12 @@ second parameter. Example:</p>
 <span class="nx">log_message</span><span class="p">(</span><span class="s1">&#39;info&#39;</span><span class="p">,</span> <span class="s1">&#39;The purpose of some variable is to provide some value.&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>There are three message types:</p>
+<p>Üç farklı mesaj tipi vardır:</p>
 <ol class="arabic simple">
-<li>Error Messages. These are actual errors, such as PHP errors or user
-errors.</li>
-<li>Debug Messages. These are messages that assist in debugging. For
-example, if a class has been initialized, you could log this as
-debugging info.</li>
-<li>Informational Messages. These are the lowest priority messages,
-simply giving information regarding some process. CodeIgniter doesn&#8217;t
-natively generate any info messages but you may want to in your
-application.</li>
+<li>Error Mesajları. Bunlar PHP ya da kullanıcı hataları gibi olan gerçek hatalardır.</li>
+<li>Debug Mesajları. Bu mesajlar hata ayıklamaya yardımcı mesajlardır. Örneğin, eğer bir sınıf başlatıldıysa, log dosyasına bu bilgiyi ekleyebilirsiniz.</li>
+<li>Informational Mesajları. Bunlar düşük öncelikli, sadece işlem sırasında oluşan bilgilerdir. CodeIgniter doğal olarak herhangi bir bilgi mesajı oluşturmaz ama siz uygulamanızda olmasını isteyebilirsiniz.</li>
 </ol>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">In order for the log file to actually be written, the &#8220;logs&#8221;
-folder must be writable. In addition, you must set the &#8220;threshold&#8221; for
-logging in application/config/config.php. You might, for example, only
-want error messages to be logged, and not the other two types. If you
-set it to zero logging will be disabled.</p>
-</div>
 </div>
 </div>
 
@@ -187,14 +150,14 @@ set it to zero logging will be disabled.</p>
 		<div id="footer">
 			<p class="top">
 				
-				<span class="prev">Previous Topic: <a href="routing.html">URI Routing</a></span>
+				<span class="prev">Previous Topic: <a href="routing.html">URI Yönlendirme</a></span>
 				
 				
-				<span class="next">Next Topic: <a href="caching.html">Web Page Caching</a></span>
+				<span class="next">Next Topic: <a href="caching.html">Web Sayfasını Önbelleğe Alma</a></span>
 				
 				<a href="#header" title="Return to top">Return to top</a>
 			</p>
-			<p><a href="">CodeIgniter</a> &ndash; Copyright &copy; 2011, EllisLab, Inc.</a> &ndash; Last updated: Nov 16, 2011</p>
+			<p><a href="">CodeIgniter</a> &ndash; Copyright &copy; 2011, EllisLab, Inc.</a> &ndash; Last updated: Nov 22, 2011</p>
 		</div><!-- /#footer -->
 	
 	<script src="../_static/asset/js/jquery-ui-min.js" type="text/javascript" charset="utf-8" async></script>

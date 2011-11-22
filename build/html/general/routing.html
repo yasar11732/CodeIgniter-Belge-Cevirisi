@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="utf-8">
 	    
-	    <title>URI Routing &mdash; CodeIgniter v3.0-dev documentation</title>
+	    <title>URI Yönlendirme &mdash; CodeIgniter v3.0-dev documentation</title>
 
 	    <link rel="stylesheet" href="../_static/asset/css/common.css" type="text/css" />
 	    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -22,8 +22,8 @@
 	    <script type="text/javascript" src="../_static/doctools.js"></script>
 	    <link rel="top" title="CodeIgniter v3.0-dev documentation" href="../index.html" />
 	    <link rel="up" title="General Topics" href="index.html" />
-	    <link rel="next" title="Error Handling" href="errors.html" />
-	    <link rel="prev" title="Common Functions" href="common_functions.html" /> 
+	    <link rel="next" title="Hata İşleme" href="errors.html" />
+	    <link rel="prev" title="Genel Fonksiyonlar" href="common_functions.html" /> 
 	</head>
 	<body>
 		<div id="table-contents">
@@ -41,19 +41,19 @@
 <li class="toctree-l2"><a class="reference internal" href="views.html">View</a></li>
 <li class="toctree-l2"><a class="reference internal" href="models.html">Model</a></li>
 <li class="toctree-l2"><a class="reference internal" href="helpers.html">Helpers</a></li>
-<li class="toctree-l2"><a class="reference internal" href="libraries.html">Using CodeIgniter Libraries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="libraries.html">CodeIgniter Kütüphanelerinin Kullanımı</a></li>
 <li class="toctree-l2"><a class="reference internal" href="creating_libraries.html">Creating Libraries</a></li>
 <li class="toctree-l2"><a class="reference internal" href="drivers.html">Using CodeIgniter Drivers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="creating_drivers.html">Creating Drivers</a></li>
-<li class="toctree-l2"><a class="reference internal" href="core_classes.html">Creating Core System Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="core_classes.html">Çekirdek Sistem Sınıfı Oluşturmak</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ancillary_classes.html">Creating Ancillary Classes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="hooks.html">Hooks - Extending the Framework Core</a></li>
-<li class="toctree-l2"><a class="reference internal" href="autoloader.html">Auto-loading Resources</a></li>
-<li class="toctree-l2"><a class="reference internal" href="common_functions.html">Common Functions</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="">URI Routing</a><ul class="simple">
+<li class="toctree-l2"><a class="reference internal" href="hooks.html">Hook - Çatı Çekirdeğini Genişletmek</a></li>
+<li class="toctree-l2"><a class="reference internal" href="autoloader.html">Otomatik Yükleme Kaynakları</a></li>
+<li class="toctree-l2"><a class="reference internal" href="common_functions.html">Genel Fonksiyonlar</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">URI Yönlendirme</a><ul class="simple">
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="errors.html">Error Handling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="errors.html">Hata İşleme</a></li>
 <li class="toctree-l2"><a class="reference internal" href="caching.html">Caching</a></li>
 <li class="toctree-l2"><a class="reference internal" href="profiling.html">Profiling Your Application</a></li>
 <li class="toctree-l2"><a class="reference internal" href="cli.html">Running via the CLI</a></li>
@@ -96,131 +96,82 @@
 				<li><a id="toc-link" href="../index.html">Table of Contents</a>&nbsp;&nbsp; &rsaquo;</li>
 				<li><a href="index.html" accesskey="U">General Topics</a>&nbsp;&nbsp;  &rsaquo;</li>
 
-				<li><strong>URI Routing</strong></li>
+				<li><strong>URI Yönlendirme</strong></li>
 			</ul>
 		</div><!-- /#header -->
 
 		<div class="section" id="content">
-			<div class="section" id="uri-routing">
-<h1>URI Routing<a class="headerlink" href="#uri-routing" title="Permalink to this headline">¶</a></h1>
-<p>Typically there is a one-to-one relationship between a URL string and
-its corresponding controller class/method. The segments in a URI
-normally follow this pattern:</p>
+			<div class="section" id="uri-yonlendirme">
+<h1>URI Yönlendirme<a class="headerlink" href="#uri-yonlendirme" title="Permalink to this headline">¶</a></h1>
+<p>Genellikle URL adresi ile onun controller sınıf/metodu arasında birebir ilişki mevcuttur. URI URI parçaları normalde şu deseni takip eder:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nx">example</span><span class="o">.</span><span class="nx">com</span><span class="o">/</span><span class="nx">class</span><span class="o">/</span><span class="nx">function</span><span class="o">/</span><span class="nx">id</span><span class="o">/</span>
 </pre></div>
 </div>
-<p>In some instances, however, you may want to remap this relationship so
-that a different class/function can be called instead of the one
-corresponding to the URL.</p>
-<p>For example, lets say you want your URLs to have this prototype:</p>
+<p>Bununla birlikte, bazı durumlarda, bu ilişkiyi yeniden düzenlemek isteyebilirsiniz. Yani, bir tane ilgili URL yerine farklı bir sınıf/fonksiyon çağrılabilir.</p>
+<p>Örneğin, diyelimki URL&#8217;lerin şu kalıpta gelmesini istiyorsunuz:</p>
 <p>example.com/product/1/
 example.com/product/2/
 example.com/product/3/
 example.com/product/4/</p>
-<p>Normally the second segment of the URL is reserved for the function
-name, but in the example above it instead has a product ID. To overcome
-this, CodeIgniter allows you to remap the URI handler.</p>
-<div class="section" id="setting-your-own-routing-rules">
-<h2>Setting your own routing rules<a class="headerlink" href="#setting-your-own-routing-rules" title="Permalink to this headline">¶</a></h2>
-<p>Routing rules are defined in your application/config/routes.php file. In
-it you&#8217;ll see an array called $route that permits you to specify your
-own routing criteria. Routes can either be specified using wildcards or
-Regular Expressions</p>
+<p>Normalde URL&#8217;nin ikinci parçası fonksiyon adına rezerve edilmiştir, ama bu yukarıdaki örnekte onun yerine ürün ID değeri vardır. Bunun çaresine bakmak için, CodeIgniter URI işlemeyi yeniden düzenlemenize izin verir.</p>
+<div class="section" id="kendi-yonlendirme-kurallarinizi-ayarlamak">
+<h2>Kendi yönlendirme kurallarınızı ayarlamak<a class="headerlink" href="#kendi-yonlendirme-kurallarinizi-ayarlamak" title="Permalink to this headline">¶</a></h2>
+<p>Yönlendirme kurallarınızı application/config/routes.php dosyasında tanımlayabilirsiniz. BU dosya içinde çağırdığınız $route dizini, kendi yönlendirme kriterinizi tanımlamanıza izin verir. Yönlendirme tanımlanırken wildcards ya da Regular Expressions kullanılabilir.</p>
 </div>
 <div class="section" id="wildcards">
 <h2>Wildcards<a class="headerlink" href="#wildcards" title="Permalink to this headline">¶</a></h2>
-<p>A typical wildcard route might look something like this:</p>
+<p>Tipik bir wildcard yönlendirmesi şuna benzeyecektir:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$route</span><span class="p">[</span><span class="s1">&#39;product/:num&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;catalog/product_lookup&quot;</span><span class="p">;</span>
 </pre></div>
 </div>
-<p>In a route, the array key contains the URI to be matched, while the
-array value contains the destination it should be re-routed to. In the
-above example, if the literal word &#8220;product&#8221; is found in the first
-segment of the URL, and a number is found in the second segment, the
-&#8220;catalog&#8221; class and the &#8220;product_lookup&#8221; method are instead used.</p>
-<p>You can match literal values or you can use two wildcard types:</p>
+<p>Yönlendirmede dizi anahtarı, varılacak hedef bilgisine göre yeniden yönlendirilecek değere eşleştirilecek URI değerini içerir. Yukarıdaki örnekte, eğer harfiyen &#8220;product&#8221; kelimesi URL&#8217;nin ilk parçasında ve bir sayı da ikinci parçada bulunursa, bu değerler yerine &#8220;catalog&#8221; sınıfı ve &#8220;product_lookup&#8221; metodu kullanılacaktır.</p>
+<p>Kelimeye harfiyen ya da iki farklı wildcard kullanarak eşleştirme yapabilirsiniz:</p>
 <dl class="docutils">
-<dt><strong>(:num)</strong> will match a segment containing only numbers.</dt>
-<dd><strong>(:any)</strong> will match a segment containing any character.</dd>
+<dt><strong>(:num)</strong> parça sadece sayı ise eşleştirir.</dt>
+<dd><strong>(:any)</strong> parça sadece karakter ise eşleştirir.</dd>
 </dl>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">Routes will run in the order they are defined. Higher routes
-will always take precedence over lower ones.</p>
 </div>
-</div>
-<div class="section" id="examples">
-<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
-<p>Here are a few routing examples:</p>
+<div class="section" id="ornekler">
+<h2>Örnekler<a class="headerlink" href="#ornekler" title="Permalink to this headline">¶</a></h2>
+<p>Burada bir kaç tane yönlendirme örneği gösterelim:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$route</span><span class="p">[</span><span class="s1">&#39;journals&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;blogs&quot;</span><span class="p">;</span>
 </pre></div>
 </div>
-<p>A URL containing the word &#8220;journals&#8221; in the first segment will be
-remapped to the &#8220;blogs&#8221; class.</p>
+<p>URl içerisinde &#8220;journals&#8221; kelimesi ilk parçada geçtiğinde &#8220;blogs&#8221; sınıfına yönlendirilir.</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$route</span><span class="p">[</span><span class="s1">&#39;blog/joe&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;blogs/users/34&quot;</span><span class="p">;</span>
 </pre></div>
 </div>
-<p>A URL containing the segments blog/joe will be remapped to the &#8220;blogs&#8221;
-class and the &#8220;users&#8221; method. The ID will be set to &#8220;34&#8221;.</p>
+<p>URl içerisindeki parçada blog/joe parçası geçtiğinde &#8220;blogs&#8221; sınıfına &#8220;users&#8221; metoduna yönlendirilir. ID değeri &#8220;34&#8221; olarak ayarlanır.</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$route</span><span class="p">[</span><span class="s1">&#39;product/(:any)&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;catalog/product_lookup&quot;</span><span class="p">;</span>
 </pre></div>
 </div>
-<p>A URL with &#8220;product&#8221; as the first segment, and anything in the second
-will be remapped to the &#8220;catalog&#8221; class and the &#8220;product_lookup&#8221;
-method.</p>
+<p>URL&#8217;nin ilk parçası &#8220;product&#8221; ve ikinci parçası herhangi bir şey olduğunda, hemen &#8220;catalog&#8221; sınıfı, &#8220;product_lookup&#8221; metoduna yönlendirilir.</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$route</span><span class="p">[</span><span class="s1">&#39;product/(:num)&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;catalog/product_lookup_by_id/$1&quot;</span><span class="p">;</span>
 </pre></div>
 </div>
-<p>A URL with &#8220;product&#8221; as the first segment, and a number in the second
-will be remapped to the &#8220;catalog&#8221; class and the
-&#8220;product_lookup_by_id&#8221; method passing in the match as a variable to
-the function.</p>
-<div class="admonition important">
-<p class="first admonition-title">Important</p>
-<p class="last">Do not use leading/trailing slashes.</p>
+<p>URL&#8217;nin ilk parçası &#8220;product&#8221; ve ikinci parçası herhangi bir şey olduğunda, hemen &#8220;catalog&#8221; sınıfı, &#8220;product_lookup_by_id&#8221; metoduna ne kadar parametre varsa gönderilir.</p>
 </div>
-</div>
-<div class="section" id="regular-expressions">
-<h2>Regular Expressions<a class="headerlink" href="#regular-expressions" title="Permalink to this headline">¶</a></h2>
-<p>If you prefer you can use regular expressions to define your routing
-rules. Any valid regular expression is allowed, as are back-references.</p>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">If you use back-references you must use the dollar syntax
-rather than the double backslash syntax.</p>
-</div>
-<p>A typical RegEx route might look something like this:</p>
+<div class="section" id="duzenli-ifadeler-regular-expressions">
+<h2>Düzenli İfadeler (Regular Expressions)<a class="headerlink" href="#duzenli-ifadeler-regular-expressions" title="Permalink to this headline">¶</a></h2>
+<p>Eğer isterseniz, yönlendirme kullarınızda düzenli ifadeler kullanabilirsiniz. Geçerli olan düzenli ifadelerin kullanımı geri-referanslı olmaları durumunda izin verilir.</p>
+<p>Tipik bir RegEx yönlendirmesi şöyledir:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$route</span><span class="p">[</span><span class="s1">&#39;products/([a-z]+)/(\d+)&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;$1/id_$2&quot;</span><span class="p">;</span>
 </pre></div>
 </div>
-<p>In the above example, a URI similar to products/shirts/123 would instead
-call the shirts controller class and the id_123 function.</p>
-<p>You can also mix and match wildcards with regular expressions.</p>
+<p>Yukarıdaki örnekte, products/shirts/123 gibi olan bir URI, shirts controller sınıfı ve id_123 fonksiyonunu çağıracaktır.</p>
+<p>Ayrıca yönlendirme için wildcards ve düzenli ifadeleri birlikte de kullanabilirsiniz.</p>
 </div>
-<div class="section" id="reserved-routes">
-<h2>Reserved Routes<a class="headerlink" href="#reserved-routes" title="Permalink to this headline">¶</a></h2>
-<p>There are two reserved routes:</p>
+<div class="section" id="rezerve-yonlendirmeler">
+<h2>Rezerve Yönlendirmeler<a class="headerlink" href="#rezerve-yonlendirmeler" title="Permalink to this headline">¶</a></h2>
+<p>İki tane rezerve yönlendirme vardır:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$route</span><span class="p">[</span><span class="s1">&#39;default_controller&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;welcome&#39;</span><span class="p">;</span>
 </pre></div>
 </div>
-<p>This route indicates which controller class should be loaded if the URI
-contains no data, which will be the case when people load your root URL.
-In the above example, the &#8220;welcome&#8221; class would be loaded. You are
-encouraged to always have a default route otherwise a 404 page will
-appear by default.</p>
+<p>Bu yönlendirme URI içinde herhangi bir bilgi yoksa, insanlar kök URL adresini çağırdıklarında yüklenecek controller sınıfını işaret eder. Yukarıdaki örnekte, &#8220;welcome&#8221; sınıfı yüklenir. Varsayılan yönlendirme için kendi 404 sayfanızın görünmesini sağlayabilirsiniz.</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$route</span><span class="p">[</span><span class="s1">&#39;404_override&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="p">;</span>
 </pre></div>
 </div>
-<p>This route indicates which controller class should be loaded if the
-requested controller is not found. It will override the default 404
-error page. It won&#8217;t affect to the show_404() function, which will
-continue loading the default error_404.php file at
-application/errors/error_404.php.</p>
-<div class="admonition important">
-<p class="first admonition-title">Important</p>
-<p class="last">The reserved routes must come before any wildcard or
-regular expression routes.</p>
-</div>
+<p>Bu yönlendirmede controller sınıfı bulunamadığında yüklenecek olan controller gösterilmektedir. Varsayılan 404 hata sayfasının üzerine yazılır. Eğer varsayılan  application/errors/error_404.php dosyası yüklenecekse, show_404() fonksiyonu etkilenmeyecektir.</p>
 </div>
 </div>
 
@@ -231,14 +182,14 @@ regular expression routes.</p>
 		<div id="footer">
 			<p class="top">
 				
-				<span class="prev">Previous Topic: <a href="common_functions.html">Common Functions</a></span>
+				<span class="prev">Previous Topic: <a href="common_functions.html">Genel Fonksiyonlar</a></span>
 				
 				
-				<span class="next">Next Topic: <a href="errors.html">Error Handling</a></span>
+				<span class="next">Next Topic: <a href="errors.html">Hata İşleme</a></span>
 				
 				<a href="#header" title="Return to top">Return to top</a>
 			</p>
-			<p><a href="">CodeIgniter</a> &ndash; Copyright &copy; 2011, EllisLab, Inc.</a> &ndash; Last updated: Nov 16, 2011</p>
+			<p><a href="">CodeIgniter</a> &ndash; Copyright &copy; 2011, EllisLab, Inc.</a> &ndash; Last updated: Nov 22, 2011</p>
 		</div><!-- /#footer -->
 	
 	<script src="../_static/asset/js/jquery-ui-min.js" type="text/javascript" charset="utf-8" async></script>

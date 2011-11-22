@@ -1,58 +1,40 @@
-################
-Web Page Caching
-################
+############################
+Web Sayfasını Önbelleğe Alma
+############################
 
-CodeIgniter lets you cache your pages in order to achieve maximum
-performance.
+CodeIgniter maksimum performansa ulaşmanız için sayfaları önbelleğe almanıza olanak tanır.
 
-Although CodeIgniter is quite fast, the amount of dynamic information
-you display in your pages will correlate directly to the server
-resources, memory, and processing cycles utilized, which affect your
-page load speeds. By caching your pages, since they are saved in their
-fully rendered state, you can achieve performance that nears that of
-static web pages.
+CodeIgniter oldukça hızlı olmasına rağmen, ekranda gösterdiğiniz dinamik bilginin miktarı sunucu kaynaklarını, hafızayı ve sayfa yükleme hızını etkileyen çevrim işlemlerini arttıracaktır. Sayfanızın görünüşünü olduğu gibi kaydetmesi nedeniyle önbelleğe alarak, neredeyse statik web sayfaların performansına ulaşabilirsiniz.
 
-How Does Caching Work?
+Önbelleğe Alma Nasıl Çalışır?
+=============================
+
+Önbelleğe alma sayfa bazlı olarak kullanabilir ve sayfanın tekrar yenilenmesine kadar geçen süre ayarlayabilirsiniz. Sayfa ilk kez yüklendiğinde, önbellek dosyası system/cache dizinine yazılır. Daha sonra açılan her sayfa için önbellekteki dosya çağrılır ve kullanıcının tarayıcısına gönderilir. Eğer sayfanın süresi geçmişse, silinir ve tekrar tarayıcıya gönderilmeden önce yenilenir.
+
+Not: Benchmark başlıkları önbelleğe atılmaz yani önbelleği kullansanız da sayfa mevcut açılma hızınızı göreceksiniz.
+
+Önbelleği Devreye Alma
 ======================
 
-Caching can be enabled on a per-page basis, and you can set the length
-of time that a page should remain cached before being refreshed. When a
-page is loaded for the first time, the cache file will be written to
-your application/cache folder. On subsequent page loads the cache file
-will be retrieved and sent to the requesting user's browser. If it has
-expired, it will be deleted and refreshed before being sent to the
-browser.
-
-Note: The Benchmark tag is not cached so you can still view your page
-load speed when caching is enabled.
-
-Enabling Caching
-================
-
-To enable caching, put the following tag in any of your controller
-functions::
+Önbelleği devreye almak için, aşağıdaki başlığı controller fonksiyonunda herhangi bir yere koymalısınız::
 
 	$this->output->cache(n);
 
-Where n is the number of **minutes** you wish the page to remain cached
-between refreshes.
+Burada n, iki yenileme arasında önbellekte kalmasını istediğiniz **dakika** sayısıdır.
 
-The above tag can go anywhere within a function. It is not affected by
-the order that it appears, so place it wherever it seems most logical to
-you. Once the tag is in place, your pages will begin being cached.
+Yukarıdaki başlık fonksiyonun herhangi bir yerinde olabilir. Sırası görünümü etkilemeyecektir bu nedenle sizin mantığınıza en uygun yere koyabilirsiniz. Başlık bir kere eklendimi, sayfalarınız önbelleğe atılacaktır.
 
-.. important:: Because of the way CodeIgniter stores content for output,
-	caching will only work if you are generating display for your controller
-	with a :doc:`view <./views>`.
+.. admonition:: ÖNEMLİ
+    :class: important
 
-.. note:: Before the cache files can be written you must set the file
-	permissions on your application/cache folder such that it is writable.
+    CodeIgniter'ın çıktı içeriği yükleme tarzı nedeniyle, önbelleğe alma sadece controller ile bir :doc:`view <./views>` dosyası oluşturmanız durumunda çalışır.
 
-Deleting Caches
-===============
+.. admonition:: Not 
+    :class: note
+    
+    Önbelleğe alma dosyalarını yazdırmadan önce application/cache dizininin yazılabilir olmasına izin vermelisiniz.
 
-If you no longer wish to cache a file you can remove the caching tag and
-it will no longer be refreshed when it expires. Note: Removing the tag
-will not delete the cache immediately. It will have to expire normally.
-If you need to remove it earlier you will need to manually delete it
-from your cache folder.
+Önbelleğin Silinmesi
+====================
+
+Eğer dosylarınızı daha fazla önbelleğe almak istemiyorsanız, controller dosyasındaki ilgili başlığı kaldırmanızın ardından önbellek süresi bittiğinde dosyalar kayıt edilmeyecektir. Not: Başlığın kaldırılmasıyla önbellek dosyaları derhal silinmeyefcektir. Süresi geçtiği zaman silinecektir. Eğer önbelleği daha erken kaldırmak istiyorsanız, önbellek dizini altındaki dosyları elinizle silebilirsiniz.
