@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="utf-8">
 	    
-	    <title>Handling Multiple Environments &mdash; CodeIgniter v3.0-dev documentation</title>
+	    <title>Handling Multiple Environments &mdash; CodeIgniter 3.0-dev documentation</title>
 
 	    <link rel="stylesheet" href="../_static/asset/css/common.css" type="text/css" />
 	    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -20,7 +20,8 @@
 	    <script type="text/javascript" src="../_static/jquery.js"></script>
 	    <script type="text/javascript" src="../_static/underscore.js"></script>
 	    <script type="text/javascript" src="../_static/doctools.js"></script>
-	    <link rel="top" title="CodeIgniter v3.0-dev documentation" href="../index.html" />
+	    <script type="text/javascript" src="../_static/translations.js"></script>
+	    <link rel="top" title="CodeIgniter 3.0-dev documentation" href="../index.html" />
 	    <link rel="up" title="General Topics" href="index.html" />
 	    <link rel="next" title="Alternate PHP Syntax for View Files" href="alternative_php.html" />
 	    <link rel="prev" title="Managing your Applications" href="managing_apps.html" /> 
@@ -78,9 +79,9 @@
 
 		<div id="brand" class="ci">
 			<a href="http://codeigniter.com/"><img src="../_static/asset/img/ci-logo.gif" alt="CodeIgniter"></a>
-			<p>3.0-dev User Guide</p>
+			<p>3.0-dev Kullanım Kılavuzu</p>
 		    <p><a href="../_sources/general/environments.txt"
-			           rel="nofollow">Show Source</a></p>
+			           rel="nofollow">Kaynağı Göster</a></p>
 		</div><!-- /#brand -->
 
 		<div id="header">
@@ -88,12 +89,12 @@
 				<fieldset>
 					<input type="text" name="q" id="q" value="">
 					<input type="hidden" name="as_sitesearch" id="as_sitesearch" value="codeigniter.com/user_guide/" />
-					<input class="grades" type="submit" value="search">
+					<input class="grades" type="submit" value="ara">
 				</fieldset>
 			</form>
 			<ul>
-				<li><a href="../index.html">Home</a>&nbsp;&nbsp; &rsaquo;</li>
-				<li><a id="toc-link" href="../index.html">Table of Contents</a>&nbsp;&nbsp; &rsaquo;</li>
+				<li><a href="../index.html">Anasayfa</a>&nbsp;&nbsp; &rsaquo;</li>
+				<li><a id="toc-link" href="../index.html">İçindekiler</a>&nbsp;&nbsp; &rsaquo;</li>
 				<li><a href="index.html" accesskey="U">General Topics</a>&nbsp;&nbsp;  &rsaquo;</li>
 
 				<li><strong>Handling Multiple Environments</strong></li>
@@ -102,14 +103,14 @@
 
 		<div class="section" id="content">
 			<div class="section" id="handling-multiple-environments">
-<h1>Handling Multiple Environments<a class="headerlink" href="#handling-multiple-environments" title="Permalink to this headline">¶</a></h1>
+<h1>Handling Multiple Environments<a class="headerlink" href="#handling-multiple-environments" title="Bu başlığın kalıcı bağlantısı">¶</a></h1>
 <p>Developers often desire different system behavior depending on whether
 an application is running in a development or production environment.
 For example, verbose error output is something that would be useful
 while developing an application, but it may also pose a security issue
 when &#8220;live&#8221;.</p>
 <div class="section" id="the-environment-constant">
-<h2>The ENVIRONMENT Constant<a class="headerlink" href="#the-environment-constant" title="Permalink to this headline">¶</a></h2>
+<h2>The ENVIRONMENT Constant<a class="headerlink" href="#the-environment-constant" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
 <p>By default, CodeIgniter comes with the environment constant set to
 &#8216;development&#8217;. At the top of index.php, you will see:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nb">define</span><span class="p">(</span><span class="s1">&#39;ENVIRONMENT&#39;</span><span class="p">,</span> <span class="s1">&#39;development&#39;</span><span class="p">);</span>
@@ -120,12 +121,12 @@ section), you may use this constant in your own development to
 differentiate between which environment you are running in.</p>
 </div>
 <div class="section" id="effects-on-default-framework-behavior">
-<h2>Effects On Default Framework Behavior<a class="headerlink" href="#effects-on-default-framework-behavior" title="Permalink to this headline">¶</a></h2>
+<h2>Effects On Default Framework Behavior<a class="headerlink" href="#effects-on-default-framework-behavior" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
 <p>There are some places in the CodeIgniter system where the ENVIRONMENT
 constant is used. This section describes how default framework behavior
 is affected.</p>
 <div class="section" id="error-reporting">
-<h3>Error Reporting<a class="headerlink" href="#error-reporting" title="Permalink to this headline">¶</a></h3>
+<h3>Error Reporting<a class="headerlink" href="#error-reporting" title="Bu başlığın kalıcı bağlantısı">¶</a></h3>
 <p>Setting the ENVIRONMENT constant to a value of &#8216;development&#8217; will cause
 all PHP errors to be rendered to the browser when they occur.
 Conversely, setting the constant to &#8216;production&#8217; will disable all error
@@ -133,7 +134,7 @@ output. Disabling error reporting in production is a <a class="reference interna
 practice</em></a>.</p>
 </div>
 <div class="section" id="configuration-files">
-<h3>Configuration Files<a class="headerlink" href="#configuration-files" title="Permalink to this headline">¶</a></h3>
+<h3>Configuration Files<a class="headerlink" href="#configuration-files" title="Bu başlığın kalıcı bağlantısı">¶</a></h3>
 <p>Optionally, you can have CodeIgniter load environment-specific
 configuration files. This may be useful for managing things like
 differing API keys across multiple environments. This is described in
@@ -155,10 +156,10 @@ Class</a> documentation.</p>
 				
 				<span class="next">Sonraki Başlık: <a href="alternative_php.html">Alternate PHP Syntax for View Files</a></span>
 				
-				<a href="#header" title="Return to top">Return to top</a>
+				<a href="#header" title="Başa Dön">Başa Dön</a>
 			</p>
 			<p><a href="">CodeIgniter</a> &ndash; Copyright &copy;
-      2011, EllisLab, Inc.</a> &ndash; Son Güncelleme: Nov 22, 2011</p>
+      2011, EllisLab, Inc.</a> &ndash; Son Güncelleme: 22 Kasım 2011</p>
 		</div><!-- /#footer -->
 	
 	<script src="../_static/asset/js/jquery-ui-min.js" type="text/javascript" charset="utf-8" async></script>

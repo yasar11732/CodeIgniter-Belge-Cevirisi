@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="utf-8">
 	    
-	    <title>Helper Fonksiyonu &mdash; CodeIgniter v3.0-dev documentation</title>
+	    <title>Helper Fonksiyonu &mdash; CodeIgniter 3.0-dev documentation</title>
 
 	    <link rel="stylesheet" href="../_static/asset/css/common.css" type="text/css" />
 	    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -20,7 +20,8 @@
 	    <script type="text/javascript" src="../_static/jquery.js"></script>
 	    <script type="text/javascript" src="../_static/underscore.js"></script>
 	    <script type="text/javascript" src="../_static/doctools.js"></script>
-	    <link rel="top" title="CodeIgniter v3.0-dev documentation" href="../index.html" />
+	    <script type="text/javascript" src="../_static/translations.js"></script>
+	    <link rel="top" title="CodeIgniter 3.0-dev documentation" href="../index.html" />
 	    <link rel="up" title="General Topics" href="index.html" />
 	    <link rel="next" title="CodeIgniter Kütüphanelerinin Kullanımı" href="libraries.html" />
 	    <link rel="prev" title="Model" href="models.html" /> 
@@ -78,9 +79,9 @@
 
 		<div id="brand" class="ci">
 			<a href="http://codeigniter.com/"><img src="../_static/asset/img/ci-logo.gif" alt="CodeIgniter"></a>
-			<p>3.0-dev User Guide</p>
+			<p>3.0-dev Kullanım Kılavuzu</p>
 		    <p><a href="../_sources/general/helpers.txt"
-			           rel="nofollow">Show Source</a></p>
+			           rel="nofollow">Kaynağı Göster</a></p>
 		</div><!-- /#brand -->
 
 		<div id="header">
@@ -88,12 +89,12 @@
 				<fieldset>
 					<input type="text" name="q" id="q" value="">
 					<input type="hidden" name="as_sitesearch" id="as_sitesearch" value="codeigniter.com/user_guide/" />
-					<input class="grades" type="submit" value="search">
+					<input class="grades" type="submit" value="ara">
 				</fieldset>
 			</form>
 			<ul>
-				<li><a href="../index.html">Home</a>&nbsp;&nbsp; &rsaquo;</li>
-				<li><a id="toc-link" href="../index.html">Table of Contents</a>&nbsp;&nbsp; &rsaquo;</li>
+				<li><a href="../index.html">Anasayfa</a>&nbsp;&nbsp; &rsaquo;</li>
+				<li><a id="toc-link" href="../index.html">İçindekiler</a>&nbsp;&nbsp; &rsaquo;</li>
 				<li><a href="index.html" accesskey="U">General Topics</a>&nbsp;&nbsp;  &rsaquo;</li>
 
 				<li><strong>Helper Fonksiyonu</strong></li>
@@ -102,13 +103,13 @@
 
 		<div class="section" id="content">
 			<div class="section" id="helper-fonksiyonu">
-<h1>Helper Fonksiyonu<a class="headerlink" href="#helper-fonksiyonu" title="Permalink to this headline">¶</a></h1>
+<h1>Helper Fonksiyonu<a class="headerlink" href="#helper-fonksiyonu" title="Bu başlığın kalıcı bağlantısı">¶</a></h1>
 <p>Helper&#8217;lar, isimlerinden de anlaşıldığı gibi, size yardımcılardır. Her helper dosyası belli kategorilerde fonskiyonları basitçe toparlar. <strong>URL Helper</strong> link oluşturmada yardımcı olur, <strong>Form Helper</strong> form oluşturmaya yardımcı olur, <strong>Text Helper</strong> metin formatı rutinlerini gerçekleştirir, <strong>Cookie Helper</strong> dosyaları cookie bilgilerini ayarlar ve okur, <strong>File Helper</strong> dosya işlemlerine yardım eder, vs.</p>
 <p>CodeIgniter&#8217;daki diğer sistemlerden farkı, Helper&#8217;lar nesne tabanı formatında yazılmamışlardır. Basit ve prosedürel fonsiyonlardır. Her helper fonksiyonu bir görev için diğer fonksiyonlara bağlı olamdan çalışır.</p>
 <p>CodeIgniter Helper dosyalarını açılışta yüklemez, bu yüzden ilk adım Helper dosyasını yüklemektir. Bir kez yüklendiğinde, <a class="reference internal" href="controllers.html"><em>controller</em></a> ve <a class="reference internal" href="views.html"><em>views</em></a> dosyalarında kullanılır hale gelir.</p>
 <p>Helper&#8217;lar tipik olarak <strong>system/helpers</strong> dizini altında ya da <strong>system/application/helpers</strong> dizini altına yerleştirilmiştir. CodeIgniter ilk önce <strong>system/application/helpers</strong> dizini altını kontrol eder. Eğer dizin altında yoksa ya da tanımlanan helper bu sizinde değilse, CI genel system/helpers dizini altını kontrol eder.</p>
 <div class="section" id="helper-yuklemek">
-<h2>Helper Yüklemek<a class="headerlink" href="#helper-yuklemek" title="Permalink to this headline">¶</a></h2>
+<h2>Helper Yüklemek<a class="headerlink" href="#helper-yuklemek" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
 <p>Aşağıdaki fonksiyon kullanarak helper yüklemek oldukça basittir:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">helper</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">);</span>
 </pre></div>
@@ -122,18 +123,18 @@
 <p>Not: Helper&#8217;lar geri değer döndürmezler o nedenle bir değişkene atamayı denemeyin. Sadece kullanın.</p>
 </div>
 <div class="section" id="coklu-helper-yuklemek">
-<h2>Çoklu Helper Yüklemek<a class="headerlink" href="#coklu-helper-yuklemek" title="Permalink to this headline">¶</a></h2>
+<h2>Çoklu Helper Yüklemek<a class="headerlink" href="#coklu-helper-yuklemek" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
 <p>Eğer birden fazla helper&#8217;i aynı anda yüklemeniz gerekliyse, onları bir diziye atın, şunun gibi:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">helper</span><span class="p">(</span> <span class="k">array</span><span class="p">(</span><span class="s1">&#39;helper1&#39;</span><span class="p">,</span> <span class="s1">&#39;helper2&#39;</span><span class="p">,</span> <span class="s1">&#39;helper3&#39;</span><span class="p">)</span> <span class="p">);</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="helper-lari-otomatik-yuklemek">
-<h2>Helper&#8217;ları Otomatik Yüklemek<a class="headerlink" href="#helper-lari-otomatik-yuklemek" title="Permalink to this headline">¶</a></h2>
+<h2>Helper&#8217;ları Otomatik Yüklemek<a class="headerlink" href="#helper-lari-otomatik-yuklemek" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
 <p>Eğer bütün uygulamanızda kullanmanız gereken özel bir helper varsa, bunu CodeIgniter&#8217;a sistem başlarken söyleyebilirsiniz. Bunun için <strong>application/config/autoload.php</strong> dosyasını açmalı ve helper&#8217;ı otomatik yükleme dizisine eklemelisiniz.</p>
 </div>
 <div class="section" id="helper-kullanmak">
-<h2>Helper Kullanmak<a class="headerlink" href="#helper-kullanmak" title="Permalink to this headline">¶</a></h2>
+<h2>Helper Kullanmak<a class="headerlink" href="#helper-kullanmak" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
 <p>Bir defa yüklendiğinde, Helper dosyasındaki fonksiyonları, standart PHP fonksiyonu gibi niyetlendiğiniz yerde kullanabilirsiniz.</p>
 <p>Örneğin, anchor() fonskiyonu kullanarak bir view dosyanızda link oluşturmak için şunu yapmalısınız:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="o">&lt;?</span><span class="nx">php</span> <span class="k">echo</span> <span class="nx">anchor</span><span class="p">(</span><span class="s1">&#39;blog/comments&#39;</span><span class="p">,</span> <span class="s1">&#39;Click Here&#39;</span><span class="p">);</span><span class="cp">?&gt;</span>
@@ -142,7 +143,7 @@
 <p>Burada &#8220;Click Here&#8221; linkin adı ve &#8220;blog/comments&#8221; ise link vermek istediğini controller/fonskiyon URI bilgisidir.</p>
 </div>
 <div class="section" id="helper-i-genisletmek">
-<h2>Helper&#8217;ı &#8220;Genişletmek&#8221;<a class="headerlink" href="#helper-i-genisletmek" title="Permalink to this headline">¶</a></h2>
+<h2>Helper&#8217;ı &#8220;Genişletmek&#8221;<a class="headerlink" href="#helper-i-genisletmek" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
 <p>Helper&#8217;ı &#8220;genişletmek&#8221;, mevcut dosyası olan bir helper&#8217;ı <strong>application/helpers/</strong> dizini altında, <strong>MY_</strong> önekiyle değiştirmek (bu maddeye ayar yapılabilir. Aşağıya bakınız.).</p>
 <p>Eğer bütün ihtiyacınız mevcut helper&#8217;a biraz fonksiyonellik kazandırmaksa -belki bir iki fonksiyon eklemek ya da belirli bir fonksiyonu değiştirmekse-, kendi fonksiyonlarınız mevcut fonskiyonların yerine geçecektir. Bu durumda en iyisi basitçe helper&#8217;ı &#8220;genişletmek&#8221;tir. &#8220;Genişletmek&#8221; terimi, helper fonksiyonları usulüne ait, münferit olması ve geleneksel programlamadaki algı gibi genişletilmemesi nedneiyle gevşek kullanılır. Bu başlık altında, bu bilgiler size Helper&#8217;a yeni fonksiyon eklemek ya da mevcut helper fonksiyonlarını değiştirme yetkisi verir.</p>
 <p>Örneğin, <strong>Array Helper</strong>&#8216;ı genişletmek için, <strong>application/helpers/</strong> dizini altında <strong>MY_array_helper.php</strong> dosyası oluşturun ve aşağıdaki fonksiyonu üzerine yazın ya da ekleyin:</p>
@@ -171,7 +172,7 @@
 </pre></div>
 </div>
 <div class="section" id="kendi-onekinizi-ayarlamak">
-<h3>Kendi Önekinizi Ayarlamak<a class="headerlink" href="#kendi-onekinizi-ayarlamak" title="Permalink to this headline">¶</a></h3>
+<h3>Kendi Önekinizi Ayarlamak<a class="headerlink" href="#kendi-onekinizi-ayarlamak" title="Bu başlığın kalıcı bağlantısı">¶</a></h3>
 <p>&#8220;Genişletilmiş&#8221; Helper için dosya öneki genişletimiş kütüphaneler ve çekirdek sınıflar için aynıdır. Kendi önekinizi kullanmak için, <strong>application/config/config.php</strong> dosyasını açın ve şunu arayın:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$config</span><span class="p">[</span><span class="s1">&#39;subclass_prefix&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;MY_&#39;</span><span class="p">;</span>
 </pre></div>
@@ -180,7 +181,7 @@
 </div>
 </div>
 <div class="section" id="simdi-ne-yapalim">
-<h2>Şimdi Ne Yapalım?<a class="headerlink" href="#simdi-ne-yapalim" title="Permalink to this headline">¶</a></h2>
+<h2>Şimdi Ne Yapalım?<a class="headerlink" href="#simdi-ne-yapalim" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
 <p>İçindekiler Tablosunda mevcut Helper dosyalarının listesini bulacaksınız. Herbirini araştırın ve ne işe yaradığına bakın.</p>
 </div>
 </div>
@@ -197,10 +198,10 @@
 				
 				<span class="next">Sonraki Başlık: <a href="libraries.html">CodeIgniter Kütüphanelerinin Kullanımı</a></span>
 				
-				<a href="#header" title="Return to top">Return to top</a>
+				<a href="#header" title="Başa Dön">Başa Dön</a>
 			</p>
 			<p><a href="">CodeIgniter</a> &ndash; Copyright &copy;
-      2011, EllisLab, Inc.</a> &ndash; Son Güncelleme: Nov 22, 2011</p>
+      2011, EllisLab, Inc.</a> &ndash; Son Güncelleme: 22 Kasım 2011</p>
 		</div><!-- /#footer -->
 	
 	<script src="../_static/asset/js/jquery-ui-min.js" type="text/javascript" charset="utf-8" async></script>

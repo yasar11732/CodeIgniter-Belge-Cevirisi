@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="utf-8">
 	    
-	    <title>Session Class &mdash; CodeIgniter v3.0-dev documentation</title>
+	    <title>Session Class &mdash; CodeIgniter 3.0-dev documentation</title>
 
 	    <link rel="stylesheet" href="../_static/asset/css/common.css" type="text/css" />
 	    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -20,7 +20,8 @@
 	    <script type="text/javascript" src="../_static/jquery.js"></script>
 	    <script type="text/javascript" src="../_static/underscore.js"></script>
 	    <script type="text/javascript" src="../_static/doctools.js"></script>
-	    <link rel="top" title="CodeIgniter v3.0-dev documentation" href="../index.html" />
+	    <script type="text/javascript" src="../_static/translations.js"></script>
+	    <link rel="top" title="CodeIgniter 3.0-dev documentation" href="../index.html" />
 	    <link rel="up" title="Libraries" href="index.html" />
 	    <link rel="next" title="HTML Table Class" href="table.html" />
 	    <link rel="prev" title="Security Class" href="security.html" /> 
@@ -81,9 +82,9 @@
 
 		<div id="brand" class="ci">
 			<a href="http://codeigniter.com/"><img src="../_static/asset/img/ci-logo.gif" alt="CodeIgniter"></a>
-			<p>3.0-dev User Guide</p>
+			<p>3.0-dev Kullanım Kılavuzu</p>
 		    <p><a href="../_sources/libraries/sessions.txt"
-			           rel="nofollow">Show Source</a></p>
+			           rel="nofollow">Kaynağı Göster</a></p>
 		</div><!-- /#brand -->
 
 		<div id="header">
@@ -91,12 +92,12 @@
 				<fieldset>
 					<input type="text" name="q" id="q" value="">
 					<input type="hidden" name="as_sitesearch" id="as_sitesearch" value="codeigniter.com/user_guide/" />
-					<input class="grades" type="submit" value="search">
+					<input class="grades" type="submit" value="ara">
 				</fieldset>
 			</form>
 			<ul>
-				<li><a href="../index.html">Home</a>&nbsp;&nbsp; &rsaquo;</li>
-				<li><a id="toc-link" href="../index.html">Table of Contents</a>&nbsp;&nbsp; &rsaquo;</li>
+				<li><a href="../index.html">Anasayfa</a>&nbsp;&nbsp; &rsaquo;</li>
+				<li><a id="toc-link" href="../index.html">İçindekiler</a>&nbsp;&nbsp; &rsaquo;</li>
 				<li><a href="index.html" accesskey="U">Libraries</a>&nbsp;&nbsp;  &rsaquo;</li>
 
 				<li><strong>Session Class</strong></li>
@@ -105,7 +106,7 @@
 
 		<div class="section" id="content">
 			<div class="section" id="session-class">
-<h1>Session Class<a class="headerlink" href="#session-class" title="Permalink to this headline">¶</a></h1>
+<h1>Session Class<a class="headerlink" href="#session-class" title="Bu başlığın kalıcı bağlantısı">¶</a></h1>
 <p>The Session class permits you maintain a user&#8217;s &#8220;state&#8221; and track their
 activity while they browse your site. The Session class stores session
 information for each user as serialized (and optionally encrypted) data
@@ -115,19 +116,19 @@ be matched against the stored session ID. By default only the cookie is
 saved. If you choose to use the database option you&#8217;ll need to create
 the session table as indicated below.</p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
+<p class="first admonition-title">Not</p>
 <p class="last">The Session class does <strong>not</strong> utilize native PHP sessions. It
 generates its own session data, offering more flexibility for
 developers.</p>
 </div>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
+<p class="first admonition-title">Not</p>
 <p class="last">Even if you are not using encrypted sessions, you must set
 an <a class="reference internal" href="encryption.html"><em>encryption key</em></a> in your config file which is used
 to aid in preventing session data manipulation.</p>
 </div>
 <div class="section" id="initializing-a-session">
-<h2>Initializing a Session<a class="headerlink" href="#initializing-a-session" title="Permalink to this headline">¶</a></h2>
+<h2>Initializing a Session<a class="headerlink" href="#initializing-a-session" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
 <p>Sessions will typically run globally with each page load, so the session
 class must either be <a class="reference internal" href="../general/libraries.html"><em>initialized</em></a> in your
 <a class="reference internal" href="../general/controllers.html"><em>controller</em></a> constructors, or it can be
@@ -144,7 +145,7 @@ use the $this-&gt;load-&gt;library function:</p>
 $this-&gt;session</p>
 </div>
 <div class="section" id="how-do-sessions-work">
-<h2>How do Sessions work?<a class="headerlink" href="#how-do-sessions-work" title="Permalink to this headline">¶</a></h2>
+<h2>How do Sessions work?<a class="headerlink" href="#how-do-sessions-work" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
 <p>When a page is loaded, the session class will check to see if valid
 session data exists in the user&#8217;s session cookie. If sessions data does
 <strong>not</strong> exist (or if it has expired) a new session will be created and
@@ -158,7 +159,7 @@ session data or even add your own data to a user&#8217;s session, but the
 process of reading, writing, and updating a session is automatic.</p>
 </div>
 <div class="section" id="what-is-session-data">
-<h2>What is Session Data?<a class="headerlink" href="#what-is-session-data" title="Permalink to this headline">¶</a></h2>
+<h2>What is Session Data?<a class="headerlink" href="#what-is-session-data" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
 <p>A <em>session</em>, as far as CodeIgniter is concerned, is simply an array
 containing the following information:</p>
 <ul class="simple">
@@ -195,7 +196,7 @@ configurable by changing the $config[&#8216;sess_time_to_update&#8217;] line in
 your system/config/config.php file.</p>
 </div>
 <div class="section" id="retrieving-session-data">
-<h2>Retrieving Session Data<a class="headerlink" href="#retrieving-session-data" title="Permalink to this headline">¶</a></h2>
+<h2>Retrieving Session Data<a class="headerlink" href="#retrieving-session-data" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
 <p>Any piece of information from the session array is available using the
 following function:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">session</span><span class="o">-&gt;</span><span class="na">userdata</span><span class="p">(</span><span class="s1">&#39;item&#39;</span><span class="p">);</span>
@@ -207,13 +208,13 @@ fetch. For example, to fetch the session ID you will do this:</p>
 </pre></div>
 </div>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
+<p class="first admonition-title">Not</p>
 <p class="last">The function returns FALSE (boolean) if the item you are
 trying to access does not exist.</p>
 </div>
 </div>
 <div class="section" id="adding-custom-session-data">
-<h2>Adding Custom Session Data<a class="headerlink" href="#adding-custom-session-data" title="Permalink to this headline">¶</a></h2>
+<h2>Adding Custom Session Data<a class="headerlink" href="#adding-custom-session-data" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
 <p>A useful aspect of the session array is that you can add your own data
 to it and it will be stored in the user&#8217;s cookie. Why would you want to
 do this? Here&#8217;s one example:</p>
@@ -243,7 +244,7 @@ supports this syntax.</p>
 </pre></div>
 </div>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
+<p class="first admonition-title">Not</p>
 <p class="last">Cookies can only hold 4KB of data, so be careful not to exceed
 the capacity. The encryption process in particular produces a longer
 data string than the original so keep careful track of how much data you
@@ -251,7 +252,7 @@ are storing.</p>
 </div>
 </div>
 <div class="section" id="retrieving-all-session-data">
-<h2>Retrieving All Session Data<a class="headerlink" href="#retrieving-all-session-data" title="Permalink to this headline">¶</a></h2>
+<h2>Retrieving All Session Data<a class="headerlink" href="#retrieving-all-session-data" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
 <p>An array of all userdata can be retrieved as follows:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">session</span><span class="o">-&gt;</span><span class="na">all_userdata</span><span class="p">()</span>
 </pre></div>
@@ -268,7 +269,7 @@ are storing.</p>
 </div>
 </div>
 <div class="section" id="removing-session-data">
-<h2>Removing Session Data<a class="headerlink" href="#removing-session-data" title="Permalink to this headline">¶</a></h2>
+<h2>Removing Session Data<a class="headerlink" href="#removing-session-data" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
 <p>Just as set_userdata() can be used to add information into a session,
 unset_userdata() can be used to remove it, by passing the session key.
 For example, if you wanted to remove &#8216;some_name&#8217; from your session
@@ -284,7 +285,7 @@ information:</p>
 </div>
 </div>
 <div class="section" id="flashdata">
-<h2>Flashdata<a class="headerlink" href="#flashdata" title="Permalink to this headline">¶</a></h2>
+<h2>Flashdata<a class="headerlink" href="#flashdata" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
 <p>CodeIgniter supports &#8220;flashdata&#8221;, or session data that will only be
 available for the next server request, and are then automatically
 cleared. These can be very useful, and are typically used for
@@ -308,7 +309,7 @@ additional request, you can do so using the keep_flashdata() function.</p>
 </div>
 </div>
 <div class="section" id="saving-session-data-to-a-database">
-<h2>Saving Session Data to a Database<a class="headerlink" href="#saving-session-data-to-a-database" title="Permalink to this headline">¶</a></h2>
+<h2>Saving Session Data to a Database<a class="headerlink" href="#saving-session-data-to-a-database" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
 <p>While the session data array stored in the user&#8217;s cookie contains a
 Session ID, unless you store session data in a database there is no way
 to validate it. For some applications that require little or no
@@ -335,7 +336,7 @@ session class:</p>
 </pre></div>
 </div>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
+<p class="first admonition-title">Not</p>
 <p>By default the table is called ci_sessions, but you can name
 it anything you want as long as you update the
 application/config/config.php file so that it contains the name you have
@@ -351,27 +352,27 @@ database option in your config.php file as follows:</p>
 </div>
 </div>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
+<p class="first admonition-title">Not</p>
 <p class="last">The Session class has built-in garbage collection which clears
 out expired sessions so you do not need to write your own routine to do
 it.</p>
 </div>
 </div>
 <div class="section" id="destroying-a-session">
-<h2>Destroying a Session<a class="headerlink" href="#destroying-a-session" title="Permalink to this headline">¶</a></h2>
+<h2>Destroying a Session<a class="headerlink" href="#destroying-a-session" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
 <p>To clear the current session:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">session</span><span class="o">-&gt;</span><span class="na">sess_destroy</span><span class="p">();</span>
 </pre></div>
 </div>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
+<p class="first admonition-title">Not</p>
 <p class="last">This function should be the last one called, and even flash
 variables will no longer be available. If you only want some items
 destroyed and not all, use unset_userdata().</p>
 </div>
 </div>
 <div class="section" id="session-preferences">
-<h2>Session Preferences<a class="headerlink" href="#session-preferences" title="Permalink to this headline">¶</a></h2>
+<h2>Session Preferences<a class="headerlink" href="#session-preferences" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
 <p>You&#8217;ll find the following Session related preferences in your
 application/config/config.php file:</p>
 <table border="1" class="docutils">
@@ -382,61 +383,61 @@ application/config/config.php file:</p>
 <col width="52%" />
 </colgroup>
 <thead valign="bottom">
-<tr><th class="head">Preference</th>
+<tr class="row-odd"><th class="head">Preference</th>
 <th class="head">Default</th>
 <th class="head">Options</th>
 <th class="head">Description</th>
 </tr>
 </thead>
 <tbody valign="top">
-<tr><td><strong>sess_cookie_name</strong></td>
+<tr class="row-even"><td><strong>sess_cookie_name</strong></td>
 <td>ci_session</td>
 <td>None</td>
 <td>The name you want the session cookie saved as.</td>
 </tr>
-<tr><td><strong>sess_expiration</strong></td>
+<tr class="row-odd"><td><strong>sess_expiration</strong></td>
 <td>7200</td>
 <td>None</td>
 <td>The number of seconds you would like the session to last. The default
 value is 2 hours (7200 seconds). If you would like a non-expiring
 session set the value to zero: 0</td>
 </tr>
-<tr><td><strong>sess_expire_on_close</strong></td>
+<tr class="row-even"><td><strong>sess_expire_on_close</strong></td>
 <td>FALSE</td>
 <td>TRUE/FALSE (boolean)</td>
 <td>Whether to cause the session to expire automatically when the browser
 window is closed.</td>
 </tr>
-<tr><td><strong>sess_encrypt_cookie</strong></td>
+<tr class="row-odd"><td><strong>sess_encrypt_cookie</strong></td>
 <td>FALSE</td>
 <td>TRUE/FALSE (boolean)</td>
 <td>Whether to encrypt the session data.</td>
 </tr>
-<tr><td><strong>sess_use_database</strong></td>
+<tr class="row-even"><td><strong>sess_use_database</strong></td>
 <td>FALSE</td>
 <td>TRUE/FALSE (boolean)</td>
 <td>Whether to save the session data to a database. You must create the
 table before enabling this option.</td>
 </tr>
-<tr><td><strong>sess_table_name</strong></td>
+<tr class="row-odd"><td><strong>sess_table_name</strong></td>
 <td>ci_sessions</td>
 <td>Any valid SQL table name</td>
 <td>The name of the session database table.</td>
 </tr>
-<tr><td><strong>sess_time_to_update</strong></td>
+<tr class="row-even"><td><strong>sess_time_to_update</strong></td>
 <td>300</td>
 <td>Time in seconds</td>
 <td>This options controls how often the session class will regenerate itself
 and create a new session id.</td>
 </tr>
-<tr><td><strong>sess_match_ip</strong></td>
+<tr class="row-odd"><td><strong>sess_match_ip</strong></td>
 <td>FALSE</td>
 <td>TRUE/FALSE (boolean)</td>
 <td>Whether to match the user&#8217;s IP address when reading the session data.
 Note that some ISPs dynamically changes the IP, so if you want a
 non-expiring session you will likely set this to FALSE.</td>
 </tr>
-<tr><td><strong>sess_match_useragent</strong></td>
+<tr class="row-even"><td><strong>sess_match_useragent</strong></td>
 <td>TRUE</td>
 <td>TRUE/FALSE (boolean)</td>
 <td>Whether to match the User Agent when reading the session data.</td>
@@ -458,10 +459,10 @@ non-expiring session you will likely set this to FALSE.</td>
 				
 				<span class="next">Sonraki Başlık: <a href="table.html">HTML Table Class</a></span>
 				
-				<a href="#header" title="Return to top">Return to top</a>
+				<a href="#header" title="Başa Dön">Başa Dön</a>
 			</p>
 			<p><a href="">CodeIgniter</a> &ndash; Copyright &copy;
-      2011, EllisLab, Inc.</a> &ndash; Son Güncelleme: Nov 22, 2011</p>
+      2011, EllisLab, Inc.</a> &ndash; Son Güncelleme: 22 Kasım 2011</p>
 		</div><!-- /#footer -->
 	
 	<script src="../_static/asset/js/jquery-ui-min.js" type="text/javascript" charset="utf-8" async></script>

@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="utf-8">
 	    
-	    <title>Security &mdash; CodeIgniter v3.0-dev documentation</title>
+	    <title>Security &mdash; CodeIgniter 3.0-dev documentation</title>
 
 	    <link rel="stylesheet" href="../_static/asset/css/common.css" type="text/css" />
 	    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -20,7 +20,8 @@
 	    <script type="text/javascript" src="../_static/jquery.js"></script>
 	    <script type="text/javascript" src="../_static/underscore.js"></script>
 	    <script type="text/javascript" src="../_static/doctools.js"></script>
-	    <link rel="top" title="CodeIgniter v3.0-dev documentation" href="../index.html" />
+	    <script type="text/javascript" src="../_static/translations.js"></script>
+	    <link rel="top" title="CodeIgniter 3.0-dev documentation" href="../index.html" />
 	    <link rel="up" title="General Topics" href="index.html" />
 	    <link rel="next" title="PHP Style Guide" href="styleguide.html" />
 	    <link rel="prev" title="Alternate PHP Syntax for View Files" href="alternative_php.html" /> 
@@ -78,9 +79,9 @@
 
 		<div id="brand" class="ci">
 			<a href="http://codeigniter.com/"><img src="../_static/asset/img/ci-logo.gif" alt="CodeIgniter"></a>
-			<p>3.0-dev User Guide</p>
+			<p>3.0-dev Kullanım Kılavuzu</p>
 		    <p><a href="../_sources/general/security.txt"
-			           rel="nofollow">Show Source</a></p>
+			           rel="nofollow">Kaynağı Göster</a></p>
 		</div><!-- /#brand -->
 
 		<div id="header">
@@ -88,12 +89,12 @@
 				<fieldset>
 					<input type="text" name="q" id="q" value="">
 					<input type="hidden" name="as_sitesearch" id="as_sitesearch" value="codeigniter.com/user_guide/" />
-					<input class="grades" type="submit" value="search">
+					<input class="grades" type="submit" value="ara">
 				</fieldset>
 			</form>
 			<ul>
-				<li><a href="../index.html">Home</a>&nbsp;&nbsp; &rsaquo;</li>
-				<li><a id="toc-link" href="../index.html">Table of Contents</a>&nbsp;&nbsp; &rsaquo;</li>
+				<li><a href="../index.html">Anasayfa</a>&nbsp;&nbsp; &rsaquo;</li>
+				<li><a id="toc-link" href="../index.html">İçindekiler</a>&nbsp;&nbsp; &rsaquo;</li>
 				<li><a href="index.html" accesskey="U">General Topics</a>&nbsp;&nbsp;  &rsaquo;</li>
 
 				<li><strong>Security</strong></li>
@@ -102,11 +103,11 @@
 
 		<div class="section" id="content">
 			<div class="section" id="security">
-<h1>Security<a class="headerlink" href="#security" title="Permalink to this headline">¶</a></h1>
+<h1>Security<a class="headerlink" href="#security" title="Bu başlığın kalıcı bağlantısı">¶</a></h1>
 <p>This page describes some &#8220;best practices&#8221; regarding web security, and
 details CodeIgniter&#8217;s internal security features.</p>
 <div class="section" id="uri-security">
-<h2>URI Security<a class="headerlink" href="#uri-security" title="Permalink to this headline">¶</a></h2>
+<h2>URI Security<a class="headerlink" href="#uri-security" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
 <p>CodeIgniter is fairly restrictive regarding which characters it allows
 in your URI strings in order to help minimize the possibility that
 malicious data can be passed to your application. URIs may only contain
@@ -121,13 +122,13 @@ the following:</p>
 </ul>
 </div>
 <div class="section" id="register-globals">
-<h2>Register_globals<a class="headerlink" href="#register-globals" title="Permalink to this headline">¶</a></h2>
+<h2>Register_globals<a class="headerlink" href="#register-globals" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
 <p>During system initialization all global variables are unset, except
 those found in the $_GET, $_POST, and $_COOKIE arrays. The unsetting
 routine is effectively the same as register_globals = off.</p>
 </div>
 <div class="section" id="error-reporting">
-<h2>error_reporting<a class="headerlink" href="#error-reporting" title="Permalink to this headline">¶</a></h2>
+<h2>error_reporting<a class="headerlink" href="#error-reporting" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
 <p>In production environments, it is typically desirable to disable PHP&#8217;s
 error reporting by setting the internal error_reporting flag to a value
 of 0. This disables native PHP errors from being rendered as output,
@@ -139,12 +140,12 @@ about differentiating between environments can be found on the <a class="referen
 Environments</em></a> page.</p>
 </div>
 <div class="section" id="magic-quotes-runtime">
-<h2>magic_quotes_runtime<a class="headerlink" href="#magic-quotes-runtime" title="Permalink to this headline">¶</a></h2>
+<h2>magic_quotes_runtime<a class="headerlink" href="#magic-quotes-runtime" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
 <p>The magic_quotes_runtime directive is turned off during system
 initialization so that you don&#8217;t have to remove slashes when retrieving
 data from your database.</p>
 <div class="section" id="best-practices">
-<h3>Best Practices<a class="headerlink" href="#best-practices" title="Permalink to this headline">¶</a></h3>
+<h3>Best Practices<a class="headerlink" href="#best-practices" title="Bu başlığın kalıcı bağlantısı">¶</a></h3>
 <p>Before accepting any data into your application, whether it be POST data
 from a form submission, COOKIE data, URI data, XML-RPC data, or even
 data from the SERVER array, you are encouraged to practice this three
@@ -159,7 +160,7 @@ size, etc. (sometimes this step can replace step one)</li>
 </div>
 </div>
 <div class="section" id="xss-filtering">
-<h2>XSS Filtering<a class="headerlink" href="#xss-filtering" title="Permalink to this headline">¶</a></h2>
+<h2>XSS Filtering<a class="headerlink" href="#xss-filtering" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
 <p>CodeIgniter comes with a Cross Site Scripting filter. This filter
 looks for commonly used techniques to embed malicious Javascript into
 your data, or other types of code that attempt to hijack cookies or
@@ -167,13 +168,13 @@ do other malicious things. The XSS Filter is described
 <a class="reference internal" href="../libraries/security.html"><em>here</em></a>.</p>
 </div>
 <div class="section" id="validate-the-data">
-<h2>Validate the data<a class="headerlink" href="#validate-the-data" title="Permalink to this headline">¶</a></h2>
+<h2>Validate the data<a class="headerlink" href="#validate-the-data" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
 <p>CodeIgniter has a <a class="reference internal" href="../libraries/form_validation.html"><em>Form Validation
 Class</em></a> that assists you in
 validating, filtering, and prepping your data.</p>
 </div>
 <div class="section" id="escape-all-data-before-database-insertion">
-<h2>Escape all data before database insertion<a class="headerlink" href="#escape-all-data-before-database-insertion" title="Permalink to this headline">¶</a></h2>
+<h2>Escape all data before database insertion<a class="headerlink" href="#escape-all-data-before-database-insertion" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
 <p>Never insert information into your database without escaping it.
 Please see the section that discusses
 <a class="reference internal" href="../database/queries.html"><em>queries</em></a> for more information.</p>
@@ -192,10 +193,10 @@ Please see the section that discusses
 				
 				<span class="next">Sonraki Başlık: <a href="styleguide.html">PHP Style Guide</a></span>
 				
-				<a href="#header" title="Return to top">Return to top</a>
+				<a href="#header" title="Başa Dön">Başa Dön</a>
 			</p>
 			<p><a href="">CodeIgniter</a> &ndash; Copyright &copy;
-      2011, EllisLab, Inc.</a> &ndash; Son Güncelleme: Nov 22, 2011</p>
+      2011, EllisLab, Inc.</a> &ndash; Son Güncelleme: 22 Kasım 2011</p>
 		</div><!-- /#footer -->
 	
 	<script src="../_static/asset/js/jquery-ui-min.js" type="text/javascript" charset="utf-8" async></script>

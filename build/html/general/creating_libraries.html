@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="utf-8">
 	    
-	    <title>Creating Libraries &mdash; CodeIgniter v3.0-dev documentation</title>
+	    <title>Creating Libraries &mdash; CodeIgniter 3.0-dev documentation</title>
 
 	    <link rel="stylesheet" href="../_static/asset/css/common.css" type="text/css" />
 	    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -20,7 +20,8 @@
 	    <script type="text/javascript" src="../_static/jquery.js"></script>
 	    <script type="text/javascript" src="../_static/underscore.js"></script>
 	    <script type="text/javascript" src="../_static/doctools.js"></script>
-	    <link rel="top" title="CodeIgniter v3.0-dev documentation" href="../index.html" />
+	    <script type="text/javascript" src="../_static/translations.js"></script>
+	    <link rel="top" title="CodeIgniter 3.0-dev documentation" href="../index.html" />
 	    <link rel="up" title="General Topics" href="index.html" />
 	    <link rel="next" title="Using CodeIgniter Drivers" href="drivers.html" />
 	    <link rel="prev" title="CodeIgniter Kütüphanelerinin Kullanımı" href="libraries.html" /> 
@@ -78,9 +79,9 @@
 
 		<div id="brand" class="ci">
 			<a href="http://codeigniter.com/"><img src="../_static/asset/img/ci-logo.gif" alt="CodeIgniter"></a>
-			<p>3.0-dev User Guide</p>
+			<p>3.0-dev Kullanım Kılavuzu</p>
 		    <p><a href="../_sources/general/creating_libraries.txt"
-			           rel="nofollow">Show Source</a></p>
+			           rel="nofollow">Kaynağı Göster</a></p>
 		</div><!-- /#brand -->
 
 		<div id="header">
@@ -88,12 +89,12 @@
 				<fieldset>
 					<input type="text" name="q" id="q" value="">
 					<input type="hidden" name="as_sitesearch" id="as_sitesearch" value="codeigniter.com/user_guide/" />
-					<input class="grades" type="submit" value="search">
+					<input class="grades" type="submit" value="ara">
 				</fieldset>
 			</form>
 			<ul>
-				<li><a href="../index.html">Home</a>&nbsp;&nbsp; &rsaquo;</li>
-				<li><a id="toc-link" href="../index.html">Table of Contents</a>&nbsp;&nbsp; &rsaquo;</li>
+				<li><a href="../index.html">Anasayfa</a>&nbsp;&nbsp; &rsaquo;</li>
+				<li><a id="toc-link" href="../index.html">İçindekiler</a>&nbsp;&nbsp; &rsaquo;</li>
 				<li><a href="index.html" accesskey="U">General Topics</a>&nbsp;&nbsp;  &rsaquo;</li>
 
 				<li><strong>Creating Libraries</strong></li>
@@ -102,7 +103,7 @@
 
 		<div class="section" id="content">
 			<div class="section" id="creating-libraries">
-<h1>Creating Libraries<a class="headerlink" href="#creating-libraries" title="Permalink to this headline">¶</a></h1>
+<h1>Creating Libraries<a class="headerlink" href="#creating-libraries" title="Bu başlığın kalıcı bağlantısı">¶</a></h1>
 <p>When we use the term &#8220;Libraries&#8221; we are normally referring to the
 classes that are located in the libraries directory and described in the
 Class Reference of this user guide. In this case, however, we will
@@ -121,18 +122,18 @@ identically named versions in your application/libraries folder.</p>
 </ul>
 <p>The page below explains these three concepts in detail.</p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
+<p class="first admonition-title">Not</p>
 <p class="last">The Database classes can not be extended or replaced with your
 own classes. All other classes are able to be replaced/extended.</p>
 </div>
 <div class="section" id="storage">
-<h2>Storage<a class="headerlink" href="#storage" title="Permalink to this headline">¶</a></h2>
+<h2>Storage<a class="headerlink" href="#storage" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
 <p>Your library classes should be placed within your application/libraries
 folder, as this is where CodeIgniter will look for them when they are
 initialized.</p>
 </div>
 <div class="section" id="naming-conventions">
-<h2>Naming Conventions<a class="headerlink" href="#naming-conventions" title="Permalink to this headline">¶</a></h2>
+<h2>Naming Conventions<a class="headerlink" href="#naming-conventions" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
 <ul class="simple">
 <li>File names must be capitalized. For example: Myclass.php</li>
 <li>Class declarations must be capitalized. For example: class Myclass</li>
@@ -140,7 +141,7 @@ initialized.</p>
 </ul>
 </div>
 <div class="section" id="the-class-file">
-<h2>The Class File<a class="headerlink" href="#the-class-file" title="Permalink to this headline">¶</a></h2>
+<h2>The Class File<a class="headerlink" href="#the-class-file" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
 <p>Classes should have this basic prototype (Note: We are using the name
 Someclass purely as an example):</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="o">&lt;?</span><span class="nx">php</span> <span class="k">if</span> <span class="p">(</span> <span class="o">!</span> <span class="nb">defined</span><span class="p">(</span><span class="s1">&#39;BASEPATH&#39;</span><span class="p">))</span> <span class="k">exit</span><span class="p">(</span><span class="s1">&#39;No direct script access allowed&#39;</span><span class="p">);</span>
@@ -157,7 +158,7 @@ Someclass purely as an example):</p>
 </div>
 </div>
 <div class="section" id="using-your-class">
-<h2>Using Your Class<a class="headerlink" href="#using-your-class" title="Permalink to this headline">¶</a></h2>
+<h2>Using Your Class<a class="headerlink" href="#using-your-class" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
 <p>From within any of your <a class="reference internal" href="controllers.html"><em>Controller</em></a> functions you
 can initialize your class using the standard:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">library</span><span class="p">(</span><span class="s1">&#39;someclass&#39;</span><span class="p">);</span>
@@ -171,7 +172,7 @@ doesn&#8217;t care.</p>
 </div>
 </div>
 <div class="section" id="passing-parameters-when-initializing-your-class">
-<h2>Passing Parameters When Initializing Your Class<a class="headerlink" href="#passing-parameters-when-initializing-your-class" title="Permalink to this headline">¶</a></h2>
+<h2>Passing Parameters When Initializing Your Class<a class="headerlink" href="#passing-parameters-when-initializing-your-class" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
 <p>In the library loading function you can dynamically pass data as an
 array via the second parameter and it will be passed to your class
 constructor:</p>
@@ -202,7 +203,7 @@ parameters as described above, the config file option will not be
 available.</p>
 </div>
 <div class="section" id="utilizing-codeigniter-resources-within-your-library">
-<h2>Utilizing CodeIgniter Resources within Your Library<a class="headerlink" href="#utilizing-codeigniter-resources-within-your-library" title="Permalink to this headline">¶</a></h2>
+<h2>Utilizing CodeIgniter Resources within Your Library<a class="headerlink" href="#utilizing-codeigniter-resources-within-your-library" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
 <p>To access CodeIgniter&#8217;s native resources within your library use the
 get_instance() function. This function returns the CodeIgniter super
 object.</p>
@@ -232,7 +233,7 @@ from within your own custom classes you can do so as follows:</p>
 </pre></div>
 </div>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
+<p class="first admonition-title">Not</p>
 <p>You&#8217;ll notice that the above get_instance() function is being
 passed by reference:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$CI</span> <span class="o">=&amp;</span> <span class="nx">get_instance</span><span class="p">();</span>
@@ -243,7 +244,7 @@ original CodeIgniter object rather than creating a copy of it.</p>
 </div>
 </div>
 <div class="section" id="replacing-native-libraries-with-your-versions">
-<h2>Replacing Native Libraries with Your Versions<a class="headerlink" href="#replacing-native-libraries-with-your-versions" title="Permalink to this headline">¶</a></h2>
+<h2>Replacing Native Libraries with Your Versions<a class="headerlink" href="#replacing-native-libraries-with-your-versions" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
 <p>Simply by naming your class files identically to a native library will
 cause CodeIgniter to use it instead of the native one. To use this
 feature you must name the file and the class declaration exactly the
@@ -261,13 +262,13 @@ declare your class with:</p>
 </pre></div>
 </div>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
+<p class="first admonition-title">Not</p>
 <p class="last">At this time the Database classes can not be replaced with
 your own versions.</p>
 </div>
 </div>
 <div class="section" id="extending-native-libraries">
-<h2>Extending Native Libraries<a class="headerlink" href="#extending-native-libraries" title="Permalink to this headline">¶</a></h2>
+<h2>Extending Native Libraries<a class="headerlink" href="#extending-native-libraries" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
 <p>If all you need to do is add some functionality to an existing library -
 perhaps add a function or two - then it&#8217;s overkill to replace the entire
 library with your version. In this case it&#8217;s better to simply extend the
@@ -297,7 +298,7 @@ extend the parent constructor:</p>
 </pre></div>
 </div>
 <div class="section" id="loading-your-sub-class">
-<h3>Loading Your Sub-class<a class="headerlink" href="#loading-your-sub-class" title="Permalink to this headline">¶</a></h3>
+<h3>Loading Your Sub-class<a class="headerlink" href="#loading-your-sub-class" title="Bu başlığın kalıcı bağlantısı">¶</a></h3>
 <p>To load your sub-class you&#8217;ll use the standard syntax normally used. DO
 NOT include your prefix. For example, to load the example above, which
 extends the Email class, you will use:</p>
@@ -312,7 +313,7 @@ will use:</p>
 </div>
 </div>
 <div class="section" id="setting-your-own-prefix">
-<h3>Setting Your Own Prefix<a class="headerlink" href="#setting-your-own-prefix" title="Permalink to this headline">¶</a></h3>
+<h3>Setting Your Own Prefix<a class="headerlink" href="#setting-your-own-prefix" title="Bu başlığın kalıcı bağlantısı">¶</a></h3>
 <p>To set your own sub-class prefix, open your
 application/config/config.php file and look for this item:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$config</span><span class="p">[</span><span class="s1">&#39;subclass_prefix&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;MY_&#39;</span><span class="p">;</span>
@@ -336,10 +337,10 @@ so DO NOT use that as your prefix.</p>
 				
 				<span class="next">Sonraki Başlık: <a href="drivers.html">Using CodeIgniter Drivers</a></span>
 				
-				<a href="#header" title="Return to top">Return to top</a>
+				<a href="#header" title="Başa Dön">Başa Dön</a>
 			</p>
 			<p><a href="">CodeIgniter</a> &ndash; Copyright &copy;
-      2011, EllisLab, Inc.</a> &ndash; Son Güncelleme: Nov 22, 2011</p>
+      2011, EllisLab, Inc.</a> &ndash; Son Güncelleme: 22 Kasım 2011</p>
 		</div><!-- /#footer -->
 	
 	<script src="../_static/asset/js/jquery-ui-min.js" type="text/javascript" charset="utf-8" async></script>

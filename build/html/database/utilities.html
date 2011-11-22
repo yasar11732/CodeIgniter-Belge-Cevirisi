@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="utf-8">
 	    
-	    <title>Database Utility Class &mdash; CodeIgniter v3.0-dev documentation</title>
+	    <title>Database Utility Class &mdash; CodeIgniter 3.0-dev documentation</title>
 
 	    <link rel="stylesheet" href="../_static/asset/css/common.css" type="text/css" />
 	    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -20,7 +20,8 @@
 	    <script type="text/javascript" src="../_static/jquery.js"></script>
 	    <script type="text/javascript" src="../_static/underscore.js"></script>
 	    <script type="text/javascript" src="../_static/doctools.js"></script>
-	    <link rel="top" title="CodeIgniter v3.0-dev documentation" href="../index.html" />
+	    <script type="text/javascript" src="../_static/translations.js"></script>
+	    <link rel="top" title="CodeIgniter 3.0-dev documentation" href="../index.html" />
 	    <link rel="up" title="Veri Tabanı Sınıfı" href="index.html" />
 	    <link rel="next" title="CodeIgniter Belgesi Yazma" href="../documentation/index.html" />
 	    <link rel="prev" title="Database Forge Class" href="forge.html" /> 
@@ -67,9 +68,9 @@
 
 		<div id="brand" class="ci">
 			<a href="http://codeigniter.com/"><img src="../_static/asset/img/ci-logo.gif" alt="CodeIgniter"></a>
-			<p>3.0-dev User Guide</p>
+			<p>3.0-dev Kullanım Kılavuzu</p>
 		    <p><a href="../_sources/database/utilities.txt"
-			           rel="nofollow">Show Source</a></p>
+			           rel="nofollow">Kaynağı Göster</a></p>
 		</div><!-- /#brand -->
 
 		<div id="header">
@@ -77,12 +78,12 @@
 				<fieldset>
 					<input type="text" name="q" id="q" value="">
 					<input type="hidden" name="as_sitesearch" id="as_sitesearch" value="codeigniter.com/user_guide/" />
-					<input class="grades" type="submit" value="search">
+					<input class="grades" type="submit" value="ara">
 				</fieldset>
 			</form>
 			<ul>
-				<li><a href="../index.html">Home</a>&nbsp;&nbsp; &rsaquo;</li>
-				<li><a id="toc-link" href="../index.html">Table of Contents</a>&nbsp;&nbsp; &rsaquo;</li>
+				<li><a href="../index.html">Anasayfa</a>&nbsp;&nbsp; &rsaquo;</li>
+				<li><a id="toc-link" href="../index.html">İçindekiler</a>&nbsp;&nbsp; &rsaquo;</li>
 				<li><a href="index.html" accesskey="U">Veri Tabanı Sınıfı</a>&nbsp;&nbsp;  &rsaquo;</li>
 
 				<li><strong>Database Utility Class</strong></li>
@@ -91,7 +92,7 @@
 
 		<div class="section" id="content">
 			<div class="section" id="database-utility-class">
-<h1><a class="toc-backref" href="#id1">Database Utility Class</a><a class="headerlink" href="#database-utility-class" title="Permalink to this headline">¶</a></h1>
+<h1><a class="toc-backref" href="#id1">Database Utility Class</a><a class="headerlink" href="#database-utility-class" title="Bu başlığın kalıcı bağlantısı">¶</a></h1>
 <p>The Database Utility Class contains functions that help you manage your
 database.</p>
 <div class="contents topic" id="table-of-contents">
@@ -120,11 +121,11 @@ database.</p>
 </ul>
 </div>
 <div class="section" id="function-reference">
-<h2><a class="toc-backref" href="#id2">Function Reference</a><a class="headerlink" href="#function-reference" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id2">Function Reference</a><a class="headerlink" href="#function-reference" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
 <div class="section" id="initializing-the-utility-class">
-<h3><a class="toc-backref" href="#id3">Initializing the Utility Class</a><a class="headerlink" href="#initializing-the-utility-class" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id3">Initializing the Utility Class</a><a class="headerlink" href="#initializing-the-utility-class" title="Bu başlığın kalıcı bağlantısı">¶</a></h3>
 <div class="admonition important">
-<p class="first admonition-title">Important</p>
+<p class="first admonition-title">Önemli</p>
 <p class="last">In order to initialize the Utility class, your database
 driver must already be running, since the utilities class relies on it.</p>
 </div>
@@ -139,7 +140,7 @@ object:</p>
 </div>
 </div>
 <div class="section" id="this-dbutil-list-databases">
-<h3><a class="toc-backref" href="#id4">$this-&gt;dbutil-&gt;list_databases()</a><a class="headerlink" href="#this-dbutil-list-databases" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id4">$this-&gt;dbutil-&gt;list_databases()</a><a class="headerlink" href="#this-dbutil-list-databases" title="Bu başlığın kalıcı bağlantısı">¶</a></h3>
 <p>Returns an array of database names:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$dbs</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">dbutil</span><span class="o">-&gt;</span><span class="na">list_databases</span><span class="p">();</span>
 
@@ -151,7 +152,7 @@ object:</p>
 </div>
 </div>
 <div class="section" id="this-dbutil-database-exists">
-<h3><a class="toc-backref" href="#id5">$this-&gt;dbutil-&gt;database_exists();</a><a class="headerlink" href="#this-dbutil-database-exists" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id5">$this-&gt;dbutil-&gt;database_exists();</a><a class="headerlink" href="#this-dbutil-database-exists" title="Bu başlığın kalıcı bağlantısı">¶</a></h3>
 <p>Sometimes it&#8217;s helpful to know whether a particular database exists.
 Returns a boolean TRUE/FALSE. Usage example:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="k">if</span> <span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">dbutil</span><span class="o">-&gt;</span><span class="na">database_exists</span><span class="p">(</span><span class="s1">&#39;database_name&#39;</span><span class="p">))</span>
@@ -164,9 +165,9 @@ Returns a boolean TRUE/FALSE. Usage example:</p>
 looking for. This function is case sensitive.</p>
 </div>
 <div class="section" id="this-dbutil-optimize-table-table-name">
-<h3><a class="toc-backref" href="#id6">$this-&gt;dbutil-&gt;optimize_table(&#8216;table_name&#8217;);</a><a class="headerlink" href="#this-dbutil-optimize-table-table-name" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id6">$this-&gt;dbutil-&gt;optimize_table(&#8216;table_name&#8217;);</a><a class="headerlink" href="#this-dbutil-optimize-table-table-name" title="Bu başlığın kalıcı bağlantısı">¶</a></h3>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
+<p class="first admonition-title">Not</p>
 <p class="last">This features is only available for MySQL/MySQLi databases.</p>
 </div>
 <p>Permits you to optimize a table using the table name specified in the
@@ -178,14 +179,14 @@ first parameter. Returns TRUE/FALSE based on success or failure:</p>
 </pre></div>
 </div>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
+<p class="first admonition-title">Not</p>
 <p class="last">Not all database platforms support table optimization.</p>
 </div>
 </div>
 <div class="section" id="this-dbutil-repair-table-table-name">
-<h3><a class="toc-backref" href="#id7">$this-&gt;dbutil-&gt;repair_table(&#8216;table_name&#8217;);</a><a class="headerlink" href="#this-dbutil-repair-table-table-name" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id7">$this-&gt;dbutil-&gt;repair_table(&#8216;table_name&#8217;);</a><a class="headerlink" href="#this-dbutil-repair-table-table-name" title="Bu başlığın kalıcı bağlantısı">¶</a></h3>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
+<p class="first admonition-title">Not</p>
 <p class="last">This features is only available for MySQL/MySQLi databases.</p>
 </div>
 <p>Permits you to repair a table using the table name specified in the
@@ -197,14 +198,14 @@ first parameter. Returns TRUE/FALSE based on success or failure:</p>
 </pre></div>
 </div>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
+<p class="first admonition-title">Not</p>
 <p class="last">Not all database platforms support table repairs.</p>
 </div>
 </div>
 <div class="section" id="this-dbutil-optimize-database">
-<h3><a class="toc-backref" href="#id8">$this-&gt;dbutil-&gt;optimize_database();</a><a class="headerlink" href="#this-dbutil-optimize-database" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id8">$this-&gt;dbutil-&gt;optimize_database();</a><a class="headerlink" href="#this-dbutil-optimize-database" title="Bu başlığın kalıcı bağlantısı">¶</a></h3>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
+<p class="first admonition-title">Not</p>
 <p class="last">This features is only available for MySQL/MySQLi databases.</p>
 </div>
 <p>Permits you to optimize the database your DB class is currently
@@ -219,12 +220,12 @@ FALSE on failure.</p>
 </pre></div>
 </div>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
+<p class="first admonition-title">Not</p>
 <p class="last">Not all database platforms support table optimization.</p>
 </div>
 </div>
 <div class="section" id="this-dbutil-csv-from-result-db-result">
-<h3><a class="toc-backref" href="#id9">$this-&gt;dbutil-&gt;csv_from_result($db_result)</a><a class="headerlink" href="#this-dbutil-csv-from-result-db-result" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id9">$this-&gt;dbutil-&gt;csv_from_result($db_result)</a><a class="headerlink" href="#this-dbutil-csv-from-result-db-result" title="Bu başlığın kalıcı bağlantısı">¶</a></h3>
 <p>Permits you to generate a CSV file from a query result. The first
 parameter of the function must contain the result object from your
 query. Example:</p>
@@ -247,14 +248,14 @@ is used as the enclosure. Example:</p>
 </pre></div>
 </div>
 <div class="admonition important">
-<p class="first admonition-title">Important</p>
+<p class="first admonition-title">Önemli</p>
 <p class="last">This function will NOT write the CSV file for you. It
 simply creates the CSV layout. If you need to write the file
 use the <a class="reference internal" href="../helpers/file_helper.html"><em>File Helper</em></a>.</p>
 </div>
 </div>
 <div class="section" id="this-dbutil-xml-from-result-db-result">
-<h3><a class="toc-backref" href="#id10">$this-&gt;dbutil-&gt;xml_from_result($db_result)</a><a class="headerlink" href="#this-dbutil-xml-from-result-db-result" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id10">$this-&gt;dbutil-&gt;xml_from_result($db_result)</a><a class="headerlink" href="#this-dbutil-xml-from-result-db-result" title="Bu başlığın kalıcı bağlantısı">¶</a></h3>
 <p>Permits you to generate an XML file from a query result. The first
 parameter expects a query result object, the second may contain an
 optional array of config parameters. Example:</p>
@@ -273,22 +274,22 @@ optional array of config parameters. Example:</p>
 </pre></div>
 </div>
 <div class="admonition important">
-<p class="first admonition-title">Important</p>
+<p class="first admonition-title">Önemli</p>
 <p class="last">This function will NOT write the XML file for you. It
 simply creates the XML layout. If you need to write the file
 use the <a class="reference internal" href="../helpers/file_helper.html"><em>File Helper</em></a>.</p>
 </div>
 </div>
 <div class="section" id="this-dbutil-backup">
-<h3><a class="toc-backref" href="#id11">$this-&gt;dbutil-&gt;backup()</a><a class="headerlink" href="#this-dbutil-backup" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id11">$this-&gt;dbutil-&gt;backup()</a><a class="headerlink" href="#this-dbutil-backup" title="Bu başlığın kalıcı bağlantısı">¶</a></h3>
 <p>Permits you to backup your full database or individual tables. The
 backup data can be compressed in either Zip or Gzip format.</p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
+<p class="first admonition-title">Not</p>
 <p class="last">This features is only available for MySQL databases.</p>
 </div>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
+<p class="first admonition-title">Not</p>
 <p class="last">Due to the limited execution time and memory available to PHP,
 backing up very large databases may not be possible. If your database is
 very large you might need to backup directly from your SQL server via
@@ -296,7 +297,7 @@ the command line, or have your server admin do it for you if you do not
 have root privileges.</p>
 </div>
 <div class="section" id="usage-example">
-<h4><a class="toc-backref" href="#id12">Usage Example</a><a class="headerlink" href="#usage-example" title="Permalink to this headline">¶</a></h4>
+<h4><a class="toc-backref" href="#id12">Usage Example</a><a class="headerlink" href="#usage-example" title="Bu başlığın kalıcı bağlantısı">¶</a></h4>
 <div class="highlight-ci"><div class="highlight"><pre><span class="c1">// Load the DB utility class</span>
 <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">dbutil</span><span class="p">();</span>
 
@@ -314,7 +315,7 @@ have root privileges.</p>
 </div>
 </div>
 <div class="section" id="setting-backup-preferences">
-<h4><a class="toc-backref" href="#id13">Setting Backup Preferences</a><a class="headerlink" href="#setting-backup-preferences" title="Permalink to this headline">¶</a></h4>
+<h4><a class="toc-backref" href="#id13">Setting Backup Preferences</a><a class="headerlink" href="#setting-backup-preferences" title="Bu başlığın kalıcı bağlantısı">¶</a></h4>
 <p>Backup preferences are set by submitting an array of values to the first
 parameter of the backup function. Example:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$prefs</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
@@ -332,7 +333,7 @@ parameter of the backup function. Example:</p>
 </div>
 </div>
 <div class="section" id="description-of-backup-preferences">
-<h4><a class="toc-backref" href="#id14">Description of Backup Preferences</a><a class="headerlink" href="#description-of-backup-preferences" title="Permalink to this headline">¶</a></h4>
+<h4><a class="toc-backref" href="#id14">Description of Backup Preferences</a><a class="headerlink" href="#description-of-backup-preferences" title="Bu başlığın kalıcı bağlantısı">¶</a></h4>
 <table border="1" class="docutils">
 <colgroup>
 <col width="11%" />
@@ -341,46 +342,46 @@ parameter of the backup function. Example:</p>
 <col width="54%" />
 </colgroup>
 <thead valign="bottom">
-<tr><th class="head">Preference</th>
+<tr class="row-odd"><th class="head">Preference</th>
 <th class="head">Default Value</th>
 <th class="head">Options</th>
 <th class="head">Description</th>
 </tr>
 </thead>
 <tbody valign="top">
-<tr><td><strong>tables</strong></td>
+<tr class="row-even"><td><strong>tables</strong></td>
 <td>empty array</td>
 <td>None</td>
 <td>An array of tables you want backed up. If left blank all tables will be
 exported.</td>
 </tr>
-<tr><td><strong>ignore</strong></td>
+<tr class="row-odd"><td><strong>ignore</strong></td>
 <td>empty array</td>
 <td>None</td>
 <td>An array of tables you want the backup routine to ignore.</td>
 </tr>
-<tr><td><strong>format</strong></td>
+<tr class="row-even"><td><strong>format</strong></td>
 <td>gzip</td>
 <td>gzip, zip, txt</td>
 <td>The file format of the export file.</td>
 </tr>
-<tr><td><strong>filename</strong></td>
+<tr class="row-odd"><td><strong>filename</strong></td>
 <td>the current date/time</td>
 <td>None</td>
 <td>The name of the backed-up file. The name is needed only if you are using
 zip compression.</td>
 </tr>
-<tr><td><strong>add_drop</strong></td>
+<tr class="row-even"><td><strong>add_drop</strong></td>
 <td>TRUE</td>
 <td>TRUE/FALSE</td>
 <td>Whether to include DROP TABLE statements in your SQL export file.</td>
 </tr>
-<tr><td><strong>add_insert</strong></td>
+<tr class="row-odd"><td><strong>add_insert</strong></td>
 <td>TRUE</td>
 <td>TRUE/FALSE</td>
 <td>Whether to include INSERT statements in your SQL export file.</td>
 </tr>
-<tr><td><strong>newline</strong></td>
+<tr class="row-even"><td><strong>newline</strong></td>
 <td>&#8220;\n&#8221;</td>
 <td>&#8220;\n&#8221;, &#8220;\r&#8221;, &#8220;\r\n&#8221;</td>
 <td>Type of newline to use in your SQL export file.</td>
@@ -404,10 +405,10 @@ zip compression.</td>
 				
 				<span class="next">Sonraki Başlık: <a href="../documentation/index.html">CodeIgniter Belgesi Yazma</a></span>
 				
-				<a href="#header" title="Return to top">Return to top</a>
+				<a href="#header" title="Başa Dön">Başa Dön</a>
 			</p>
 			<p><a href="">CodeIgniter</a> &ndash; Copyright &copy;
-      2011, EllisLab, Inc.</a> &ndash; Son Güncelleme: Nov 22, 2011</p>
+      2011, EllisLab, Inc.</a> &ndash; Son Güncelleme: 22 Kasım 2011</p>
 		</div><!-- /#footer -->
 	
 	<script src="../_static/asset/js/jquery-ui-min.js" type="text/javascript" charset="utf-8" async></script>

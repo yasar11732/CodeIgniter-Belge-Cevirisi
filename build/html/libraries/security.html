@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="utf-8">
 	    
-	    <title>Security Class &mdash; CodeIgniter v3.0-dev documentation</title>
+	    <title>Security Class &mdash; CodeIgniter 3.0-dev documentation</title>
 
 	    <link rel="stylesheet" href="../_static/asset/css/common.css" type="text/css" />
 	    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -20,7 +20,8 @@
 	    <script type="text/javascript" src="../_static/jquery.js"></script>
 	    <script type="text/javascript" src="../_static/underscore.js"></script>
 	    <script type="text/javascript" src="../_static/doctools.js"></script>
-	    <link rel="top" title="CodeIgniter v3.0-dev documentation" href="../index.html" />
+	    <script type="text/javascript" src="../_static/translations.js"></script>
+	    <link rel="top" title="CodeIgniter 3.0-dev documentation" href="../index.html" />
 	    <link rel="up" title="Libraries" href="index.html" />
 	    <link rel="next" title="Session Class" href="sessions.html" />
 	    <link rel="prev" title="Template Parser Class" href="parser.html" /> 
@@ -81,9 +82,9 @@
 
 		<div id="brand" class="ci">
 			<a href="http://codeigniter.com/"><img src="../_static/asset/img/ci-logo.gif" alt="CodeIgniter"></a>
-			<p>3.0-dev User Guide</p>
+			<p>3.0-dev Kullanım Kılavuzu</p>
 		    <p><a href="../_sources/libraries/security.txt"
-			           rel="nofollow">Show Source</a></p>
+			           rel="nofollow">Kaynağı Göster</a></p>
 		</div><!-- /#brand -->
 
 		<div id="header">
@@ -91,12 +92,12 @@
 				<fieldset>
 					<input type="text" name="q" id="q" value="">
 					<input type="hidden" name="as_sitesearch" id="as_sitesearch" value="codeigniter.com/user_guide/" />
-					<input class="grades" type="submit" value="search">
+					<input class="grades" type="submit" value="ara">
 				</fieldset>
 			</form>
 			<ul>
-				<li><a href="../index.html">Home</a>&nbsp;&nbsp; &rsaquo;</li>
-				<li><a id="toc-link" href="../index.html">Table of Contents</a>&nbsp;&nbsp; &rsaquo;</li>
+				<li><a href="../index.html">Anasayfa</a>&nbsp;&nbsp; &rsaquo;</li>
+				<li><a id="toc-link" href="../index.html">İçindekiler</a>&nbsp;&nbsp; &rsaquo;</li>
 				<li><a href="index.html" accesskey="U">Libraries</a>&nbsp;&nbsp;  &rsaquo;</li>
 
 				<li><strong>Security Class</strong></li>
@@ -105,11 +106,11 @@
 
 		<div class="section" id="content">
 			<div class="section" id="security-class">
-<h1>Security Class<a class="headerlink" href="#security-class" title="Permalink to this headline">¶</a></h1>
+<h1>Security Class<a class="headerlink" href="#security-class" title="Bu başlığın kalıcı bağlantısı">¶</a></h1>
 <p>The Security Class contains methods that help you create a secure
 application, processing input data for security.</p>
 <div class="section" id="xss-filtering">
-<h2>XSS Filtering<a class="headerlink" href="#xss-filtering" title="Permalink to this headline">¶</a></h2>
+<h2>XSS Filtering<a class="headerlink" href="#xss-filtering" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
 <p>CodeIgniter comes with a Cross Site Scripting Hack prevention filter
 which can either run automatically to filter all POST and COOKIE data
 that is encountered, or you can run it on a per item basis. By default
@@ -125,7 +126,7 @@ processing since it requires a fair amount of processing overhead.</p>
 <p>To filter data through the XSS filter use this function:</p>
 </div>
 <div class="section" id="this-security-xss-clean">
-<h2>$this-&gt;security-&gt;xss_clean()<a class="headerlink" href="#this-security-xss-clean" title="Permalink to this headline">¶</a></h2>
+<h2>$this-&gt;security-&gt;xss_clean()<a class="headerlink" href="#this-security-xss-clean" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
 <p>Here is an usage example:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$data</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">security</span><span class="o">-&gt;</span><span class="na">xss_clean</span><span class="p">(</span><span class="nv">$data</span><span class="p">);</span>
 </pre></div>
@@ -152,7 +153,7 @@ browser may attempt to execute.</p>
 </div>
 </div>
 <div class="section" id="this-security-sanitize-filename">
-<h2>$this-&gt;security-&gt;sanitize_filename()<a class="headerlink" href="#this-security-sanitize-filename" title="Permalink to this headline">¶</a></h2>
+<h2>$this-&gt;security-&gt;sanitize_filename()<a class="headerlink" href="#this-security-sanitize-filename" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
 <p>When accepting filenames from user input, it is best to sanitize them to
 prevent directory traversal and other security related issues. To do so,
 use the sanitize_filename() method of the Security class. Here is an
@@ -168,7 +169,7 @@ parameter, $relative_path to TRUE.</p>
 </div>
 </div>
 <div class="section" id="cross-site-request-forgery-csrf">
-<h2>Cross-site request forgery (CSRF)<a class="headerlink" href="#cross-site-request-forgery-csrf" title="Permalink to this headline">¶</a></h2>
+<h2>Cross-site request forgery (CSRF)<a class="headerlink" href="#cross-site-request-forgery-csrf" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
 <p>You can enable csrf protection by opening your
 application/config/config.php file and setting this:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$config</span><span class="p">[</span><span class="s1">&#39;csrf_protection&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="k">TRUE</span><span class="p">;</span>
@@ -198,10 +199,10 @@ by editing the &#8216;csrf_exclude_uris&#8217; config parameter:</p>
 				
 				<span class="next">Sonraki Başlık: <a href="sessions.html">Session Class</a></span>
 				
-				<a href="#header" title="Return to top">Return to top</a>
+				<a href="#header" title="Başa Dön">Başa Dön</a>
 			</p>
 			<p><a href="">CodeIgniter</a> &ndash; Copyright &copy;
-      2011, EllisLab, Inc.</a> &ndash; Son Güncelleme: Nov 22, 2011</p>
+      2011, EllisLab, Inc.</a> &ndash; Son Güncelleme: 22 Kasım 2011</p>
 		</div><!-- /#footer -->
 	
 	<script src="../_static/asset/js/jquery-ui-min.js" type="text/javascript" charset="utf-8" async></script>

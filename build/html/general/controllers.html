@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="utf-8">
 	    
-	    <title>Controllers &mdash; CodeIgniter v3.0-dev documentation</title>
+	    <title>Controllers &mdash; CodeIgniter 3.0-dev documentation</title>
 
 	    <link rel="stylesheet" href="../_static/asset/css/common.css" type="text/css" />
 	    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -20,7 +20,8 @@
 	    <script type="text/javascript" src="../_static/jquery.js"></script>
 	    <script type="text/javascript" src="../_static/underscore.js"></script>
 	    <script type="text/javascript" src="../_static/doctools.js"></script>
-	    <link rel="top" title="CodeIgniter v3.0-dev documentation" href="../index.html" />
+	    <script type="text/javascript" src="../_static/translations.js"></script>
+	    <link rel="top" title="CodeIgniter 3.0-dev documentation" href="../index.html" />
 	    <link rel="up" title="General Topics" href="index.html" />
 	    <link rel="next" title="Rezerve İsimler" href="reserved_names.html" />
 	    <link rel="prev" title="CodeIgniter’da URL" href="urls.html" /> 
@@ -78,9 +79,9 @@
 
 		<div id="brand" class="ci">
 			<a href="http://codeigniter.com/"><img src="../_static/asset/img/ci-logo.gif" alt="CodeIgniter"></a>
-			<p>3.0-dev User Guide</p>
+			<p>3.0-dev Kullanım Kılavuzu</p>
 		    <p><a href="../_sources/general/controllers.txt"
-			           rel="nofollow">Show Source</a></p>
+			           rel="nofollow">Kaynağı Göster</a></p>
 		</div><!-- /#brand -->
 
 		<div id="header">
@@ -88,12 +89,12 @@
 				<fieldset>
 					<input type="text" name="q" id="q" value="">
 					<input type="hidden" name="as_sitesearch" id="as_sitesearch" value="codeigniter.com/user_guide/" />
-					<input class="grades" type="submit" value="search">
+					<input class="grades" type="submit" value="ara">
 				</fieldset>
 			</form>
 			<ul>
-				<li><a href="../index.html">Home</a>&nbsp;&nbsp; &rsaquo;</li>
-				<li><a id="toc-link" href="../index.html">Table of Contents</a>&nbsp;&nbsp; &rsaquo;</li>
+				<li><a href="../index.html">Anasayfa</a>&nbsp;&nbsp; &rsaquo;</li>
+				<li><a id="toc-link" href="../index.html">İçindekiler</a>&nbsp;&nbsp; &rsaquo;</li>
 				<li><a href="index.html" accesskey="U">General Topics</a>&nbsp;&nbsp;  &rsaquo;</li>
 
 				<li><strong>Controllers</strong></li>
@@ -102,7 +103,7 @@
 
 		<div class="section" id="content">
 			<div class="section" id="controllers">
-<h1><a class="toc-backref" href="#id1">Controllers</a><a class="headerlink" href="#controllers" title="Permalink to this headline">¶</a></h1>
+<h1><a class="toc-backref" href="#id1">Controllers</a><a class="headerlink" href="#controllers" title="Bu başlığın kalıcı bağlantısı">¶</a></h1>
 <p>Controllers uygulamanızın kalbidir, yani HTTP isteklerinin nasıl ele alınması
 gerektiğini belirlemek gibi.</p>
 <div class="contents topic" id="sayfa-icerigi">
@@ -126,7 +127,7 @@ gerektiğini belirlemek gibi.</p>
 </ul>
 </div>
 <div class="section" id="controller-nedir">
-<h2><a class="toc-backref" href="#id2">Controller nedir ?</a><a class="headerlink" href="#controller-nedir" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id2">Controller nedir ?</a><a class="headerlink" href="#controller-nedir" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
 <p><strong>Controller, sadece bir URI ile ilişkili bir şekilde isim alan sınıf
 dosyasıdır.</strong></p>
 <p>Bu URI&#8217;a göz atalaım:</p>
@@ -138,7 +139,7 @@ dener.</p>
 <p><strong>Controller&#8217;ın adı bir URI&#8217;ın ilk segmenti eşleştiğinde, yüklenecektir.</strong></p>
 </div>
 <div class="section" id="hadi-deneyelim-merhaba-dunya">
-<h2><a class="toc-backref" href="#id3">Hadi deneyelim: Merhaba Dünya !</a><a class="headerlink" href="#hadi-deneyelim-merhaba-dunya" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id3">Hadi deneyelim: Merhaba Dünya !</a><a class="headerlink" href="#hadi-deneyelim-merhaba-dunya" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
 <p>Basit bir controller oluşturalım ve yaptıklarımıza göz atalım. Yazı editörünüzü
 kullanarak,&#8221;blog.php&#8221; adlı bir sayfa oluşturun, ve altına bu kodları yazın:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="o">&lt;?</span><span class="nx">php</span>
@@ -178,7 +179,7 @@ kullanarak,&#8221;blog.php&#8221; adlı bir sayfa oluşturun, ve altına bu kodl
 devralır.</p>
 </div>
 <div class="section" id="fonksiyonlar">
-<h2><a class="toc-backref" href="#id4">Fonksiyonlar</a><a class="headerlink" href="#fonksiyonlar" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id4">Fonksiyonlar</a><a class="headerlink" href="#fonksiyonlar" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
 <p>Yukarıdaki örnekteki fonksiyonun ismi index(). &#8220;index&#8221; fonksiyonu
 herzaman varsayılan olarak yüklenir tabi URI&#8217;ın <strong>ikinci bölümü</strong>
 boşsa. &#8220;Merhaba Dünya&#8221; mesajını göstermenin başka bir yolu şudur:</p>
@@ -211,7 +212,7 @@ boşsa. &#8220;Merhaba Dünya&#8221; mesajını göstermenin başka bir yolu şu
 <p>Yeni mesajınızı görüyor olmalısınız.</p>
 </div>
 <div class="section" id="fonksiyonumuza-uri-bolumu-ekleyelim">
-<h2><a class="toc-backref" href="#id5">Fonksiyonumuza URI Bölümü Ekleyelim</a><a class="headerlink" href="#fonksiyonumuza-uri-bolumu-ekleyelim" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id5">Fonksiyonumuza URI Bölümü Ekleyelim</a><a class="headerlink" href="#fonksiyonumuza-uri-bolumu-ekleyelim" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
 <p>Eğer URI&#8217;ınız 2 bölümden fazlasını içeriyorsa bu bölümler fonksiyonunuza
 parametre olarak geçer.</p>
 <p>Örnek olarak, diyelim ki şuna benzer bir URI&#8217;ınız var:</p>
@@ -233,13 +234,13 @@ alacak (&#8220;sandaletler&#8221; and &#8220;123&#8221;):</p>
 </pre></div>
 </div>
 <div class="admonition important">
-<p class="first admonition-title">Important</p>
+<p class="first admonition-title">Önemli</p>
 <p class="last">Eğer <a class="reference internal" href="routing.html"><em>URI Yönlendirme</em></a> özelliğini kullanıyorsanız,
 bu bölümler fonksiyonunuza yeniden yönlendirilebilir olarak geçecektir.</p>
 </div>
 </div>
 <div class="section" id="ontanimli-controller-i-tanimlamak">
-<h2><a class="toc-backref" href="#id6">Öntanımlı Controller&#8217;ı Tanımlamak</a><a class="headerlink" href="#ontanimli-controller-i-tanimlamak" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id6">Öntanımlı Controller&#8217;ı Tanımlamak</a><a class="headerlink" href="#ontanimli-controller-i-tanimlamak" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
 <p>CodeIgniter bir URI mevcut değilken bile ön tanımlı olan bir Controller
 yükleyebilir. Sadece sitenizin kök URL&#8217;i sabit olacak.
 Ön tanımlı Controller&#8217;ı yüklemek için, <strong>application/config/routes.php</strong>
@@ -252,7 +253,7 @@ dosyanızı URI belirtmeden yüklerseniz ön tanımlı olarak &#8220;Merhaba Dü
 mesajını göreceksiniz.</p>
 </div>
 <div class="section" id="remapping-fonksiyonunu-cagirmak">
-<h2><a class="toc-backref" href="#id7">Remapping Fonksiyonunu Çağırmak</a><a class="headerlink" href="#remapping-fonksiyonunu-cagirmak" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id7">Remapping Fonksiyonunu Çağırmak</a><a class="headerlink" href="#remapping-fonksiyonunu-cagirmak" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
 <p>Yukarıda belirtildiği gibi, URI&#8217;ın ikinci bölümü normal olarak hangi
 fonksiyonun Controller olarak çağırılacağını belirler. CodeIgniter
 _remap() fonksiyonu ile bu davranışı geçersiz kılmanıza izin verir:</p>
@@ -263,7 +264,7 @@ _remap() fonksiyonu ile bu davranışı geçersiz kılmanıza izin verir:</p>
 </pre></div>
 </div>
 <div class="admonition important">
-<p class="first admonition-title">Important</p>
+<p class="first admonition-title">Önemli</p>
 <p class="last">Eğer Controller&#8217;ınız _remap() isimli bir fonksiyon içeriyorsa,
 URI içeriği ne olursa olsun herzaman denileni alacaktır.
 Normal davranış olan URI içeriğinin hangi fonksiyonu çağıracağını
@@ -301,7 +302,7 @@ to emulate CodeIgniter&#8217;s default behavior.</p>
 </div>
 </div>
 <div class="section" id="processing-output">
-<h2><a class="toc-backref" href="#id8">Processing Output</a><a class="headerlink" href="#processing-output" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id8">Processing Output</a><a class="headerlink" href="#processing-output" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
 <p>CodeIgniter has an output class that takes care of sending your final
 rendered data to the web browser automatically. More information on this
 can be found in the <a class="reference internal" href="views.html"><em>Views</em></a> and <a class="reference internal" href="../libraries/output.html"><em>Output class</em></a> pages. In some cases, however, you
@@ -310,7 +311,7 @@ the browser yourself. CodeIgniter permits you to add a function named
 _output() to your controller that will receive the finalized output
 data.</p>
 <div class="admonition important">
-<p class="first admonition-title">Important</p>
+<p class="first admonition-title">Önemli</p>
 <p class="last">If your controller contains a function named _output(),
 it will <strong>always</strong> be called by the output class instead of echoing the
 finalized data directly. The first parameter of the function will
@@ -324,7 +325,7 @@ contain the finalized output.</p>
 </pre></div>
 </div>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
+<p class="first admonition-title">Not</p>
 <p>Please note that your _output() function will receive the data in its
 finalized state. Benchmark and memory usage data will be rendered, cache
 files written (if you have caching enabled), and headers will be sent
@@ -346,7 +347,7 @@ available methods in the <a class="reference internal" href="../libraries/output
 </div>
 </div>
 <div class="section" id="private-functions">
-<h2><a class="toc-backref" href="#id9">Private Functions</a><a class="headerlink" href="#private-functions" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id9">Private Functions</a><a class="headerlink" href="#private-functions" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
 <p>In some cases you may want certain functions hidden from public access.
 To make a function private, simply add an underscore as the name prefix
 and it will not be served via a URL request. For example, if you were to
@@ -363,14 +364,14 @@ have a function like this:</p>
 </div>
 </div>
 <div class="section" id="organizing-your-controllers-into-sub-folders">
-<h2><a class="toc-backref" href="#id10">Organizing Your Controllers into Sub-folders</a><a class="headerlink" href="#organizing-your-controllers-into-sub-folders" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id10">Organizing Your Controllers into Sub-folders</a><a class="headerlink" href="#organizing-your-controllers-into-sub-folders" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
 <p>If you are building a large application you might find it convenient to
 organize your controllers into sub-folders. CodeIgniter permits you to
 do this.</p>
 <p>Simply create folders within your application/controllers directory and
 place your controller classes within them.</p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
+<p class="first admonition-title">Not</p>
 <p>When using this feature the first segment of your URI must
 specify the folder. For example, lets say you have a controller located
 here:</p>
@@ -389,7 +390,7 @@ controller as specified in your application/config/routes.php file</p>
 Routing</em></a> feature.</p>
 </div>
 <div class="section" id="class-constructors">
-<h2><a class="toc-backref" href="#id11">Class Constructors</a><a class="headerlink" href="#class-constructors" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id11">Class Constructors</a><a class="headerlink" href="#class-constructors" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
 <p>If you intend to use a constructor in any of your Controllers, you
 <strong>MUST</strong> place the following line of code in it:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="k">parent</span><span class="o">::</span><span class="na">__construct</span><span class="p">();</span>
@@ -415,7 +416,7 @@ default process when your class is instantiated. Constructors can&#8217;t
 return a value, but they can do some default work.</p>
 </div>
 <div class="section" id="reserved-function-names">
-<h2><a class="toc-backref" href="#id12">Reserved Function Names</a><a class="headerlink" href="#reserved-function-names" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id12">Reserved Function Names</a><a class="headerlink" href="#reserved-function-names" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
 <p>Since your controller classes will extend the main application
 controller you must be careful not to name your functions identically to
 the ones used by that class, otherwise your local functions will
@@ -423,7 +424,7 @@ override them. See <a class="reference internal" href="reserved_names.html"><em>
 list.</p>
 </div>
 <div class="section" id="that-s-it">
-<h2><a class="toc-backref" href="#id13">That&#8217;s it!</a><a class="headerlink" href="#that-s-it" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id13">That&#8217;s it!</a><a class="headerlink" href="#that-s-it" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
 <p>That, in a nutshell, is all there is to know about controllers.</p>
 </div>
 </div>
@@ -440,10 +441,10 @@ list.</p>
 				
 				<span class="next">Sonraki Başlık: <a href="reserved_names.html">Rezerve İsimler</a></span>
 				
-				<a href="#header" title="Return to top">Return to top</a>
+				<a href="#header" title="Başa Dön">Başa Dön</a>
 			</p>
 			<p><a href="">CodeIgniter</a> &ndash; Copyright &copy;
-      2011, EllisLab, Inc.</a> &ndash; Son Güncelleme: Nov 22, 2011</p>
+      2011, EllisLab, Inc.</a> &ndash; Son Güncelleme: 22 Kasım 2011</p>
 		</div><!-- /#footer -->
 	
 	<script src="../_static/asset/js/jquery-ui-min.js" type="text/javascript" charset="utf-8" async></script>

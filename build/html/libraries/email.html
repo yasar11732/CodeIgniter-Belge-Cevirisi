@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="utf-8">
 	    
-	    <title>Email Class &mdash; CodeIgniter v3.0-dev documentation</title>
+	    <title>Email Class &mdash; CodeIgniter 3.0-dev documentation</title>
 
 	    <link rel="stylesheet" href="../_static/asset/css/common.css" type="text/css" />
 	    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -20,7 +20,8 @@
 	    <script type="text/javascript" src="../_static/jquery.js"></script>
 	    <script type="text/javascript" src="../_static/underscore.js"></script>
 	    <script type="text/javascript" src="../_static/doctools.js"></script>
-	    <link rel="top" title="CodeIgniter v3.0-dev documentation" href="../index.html" />
+	    <script type="text/javascript" src="../_static/translations.js"></script>
+	    <link rel="top" title="CodeIgniter 3.0-dev documentation" href="../index.html" />
 	    <link rel="up" title="Libraries" href="index.html" />
 	    <link rel="next" title="Encryption Class" href="encryption.html" />
 	    <link rel="prev" title="Config Class" href="config.html" /> 
@@ -81,9 +82,9 @@
 
 		<div id="brand" class="ci">
 			<a href="http://codeigniter.com/"><img src="../_static/asset/img/ci-logo.gif" alt="CodeIgniter"></a>
-			<p>3.0-dev User Guide</p>
+			<p>3.0-dev Kullanım Kılavuzu</p>
 		    <p><a href="../_sources/libraries/email.txt"
-			           rel="nofollow">Show Source</a></p>
+			           rel="nofollow">Kaynağı Göster</a></p>
 		</div><!-- /#brand -->
 
 		<div id="header">
@@ -91,12 +92,12 @@
 				<fieldset>
 					<input type="text" name="q" id="q" value="">
 					<input type="hidden" name="as_sitesearch" id="as_sitesearch" value="codeigniter.com/user_guide/" />
-					<input class="grades" type="submit" value="search">
+					<input class="grades" type="submit" value="ara">
 				</fieldset>
 			</form>
 			<ul>
-				<li><a href="../index.html">Home</a>&nbsp;&nbsp; &rsaquo;</li>
-				<li><a id="toc-link" href="../index.html">Table of Contents</a>&nbsp;&nbsp; &rsaquo;</li>
+				<li><a href="../index.html">Anasayfa</a>&nbsp;&nbsp; &rsaquo;</li>
+				<li><a id="toc-link" href="../index.html">İçindekiler</a>&nbsp;&nbsp; &rsaquo;</li>
 				<li><a href="index.html" accesskey="U">Libraries</a>&nbsp;&nbsp;  &rsaquo;</li>
 
 				<li><strong>Email Class</strong></li>
@@ -105,7 +106,7 @@
 
 		<div class="section" id="content">
 			<div class="section" id="email-class">
-<h1>Email Class<a class="headerlink" href="#email-class" title="Permalink to this headline">¶</a></h1>
+<h1>Email Class<a class="headerlink" href="#email-class" title="Bu başlığın kalıcı bağlantısı">¶</a></h1>
 <p>CodeIgniter&#8217;s robust Email Class supports the following features:</p>
 <ul class="simple">
 <li>Multiple Protocols: Mail, Sendmail, and SMTP</li>
@@ -121,7 +122,7 @@ BCC batches.</li>
 <li>Email Debugging tools</li>
 </ul>
 <div class="section" id="sending-email">
-<h2>Sending Email<a class="headerlink" href="#sending-email" title="Permalink to this headline">¶</a></h2>
+<h2>Sending Email<a class="headerlink" href="#sending-email" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
 <p>Sending email is not only simple, but you can configure it on the fly or
 set your preferences in a config file.</p>
 <p>Here is a basic example demonstrating how you might send email. Note:
@@ -144,7 +145,7 @@ This example assumes you are sending the email from one of your
 </div>
 </div>
 <div class="section" id="setting-email-preferences">
-<h2>Setting Email Preferences<a class="headerlink" href="#setting-email-preferences" title="Permalink to this headline">¶</a></h2>
+<h2>Setting Email Preferences<a class="headerlink" href="#setting-email-preferences" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
 <p>There are 17 different preferences available to tailor how your email
 messages are sent. You can either set them manually as described here,
 or automatically via preferences stored in your config file, described
@@ -161,12 +162,12 @@ preferences:</p>
 </pre></div>
 </div>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
+<p class="first admonition-title">Not</p>
 <p class="last">Most of the preferences have default values that will be used
 if you do not set them.</p>
 </div>
 <div class="section" id="setting-email-preferences-in-a-config-file">
-<h3>Setting Email Preferences in a Config File<a class="headerlink" href="#setting-email-preferences-in-a-config-file" title="Permalink to this headline">¶</a></h3>
+<h3>Setting Email Preferences in a Config File<a class="headerlink" href="#setting-email-preferences-in-a-config-file" title="Bu başlığın kalıcı bağlantısı">¶</a></h3>
 <p>If you prefer not to set preferences using the above method, you can
 instead put them into a config file. Simply create a new file called the
 email.php, add the $config array in that file. Then save the file at
@@ -176,7 +177,7 @@ in a config file.</p>
 </div>
 </div>
 <div class="section" id="email-preferences">
-<h2>Email Preferences<a class="headerlink" href="#email-preferences" title="Permalink to this headline">¶</a></h2>
+<h2>Email Preferences<a class="headerlink" href="#email-preferences" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
 <p>The following is a list of all the preferences that can be set when
 sending email.</p>
 <table border="1" class="docutils">
@@ -187,106 +188,106 @@ sending email.</p>
 <col width="51%" />
 </colgroup>
 <thead valign="bottom">
-<tr><th class="head">Preference</th>
+<tr class="row-odd"><th class="head">Preference</th>
 <th class="head">Default Value</th>
 <th class="head">Options</th>
 <th class="head">Description</th>
 </tr>
 </thead>
 <tbody valign="top">
-<tr><td><strong>useragent</strong></td>
+<tr class="row-even"><td><strong>useragent</strong></td>
 <td>CodeIgniter</td>
 <td>None</td>
 <td>The &#8220;user agent&#8221;.</td>
 </tr>
-<tr><td><strong>protocol</strong></td>
+<tr class="row-odd"><td><strong>protocol</strong></td>
 <td>mail</td>
 <td>mail, sendmail, or smtp</td>
 <td>The mail sending protocol.</td>
 </tr>
-<tr><td><strong>mailpath</strong></td>
+<tr class="row-even"><td><strong>mailpath</strong></td>
 <td>/usr/sbin/sendmail</td>
 <td>None</td>
 <td>The server path to Sendmail.</td>
 </tr>
-<tr><td><strong>smtp_host</strong></td>
+<tr class="row-odd"><td><strong>smtp_host</strong></td>
 <td>No Default</td>
 <td>None</td>
 <td>SMTP Server Address.</td>
 </tr>
-<tr><td><strong>smtp_user</strong></td>
+<tr class="row-even"><td><strong>smtp_user</strong></td>
 <td>No Default</td>
 <td>None</td>
 <td>SMTP Username.</td>
 </tr>
-<tr><td><strong>smtp_pass</strong></td>
+<tr class="row-odd"><td><strong>smtp_pass</strong></td>
 <td>No Default</td>
 <td>None</td>
 <td>SMTP Password.</td>
 </tr>
-<tr><td><strong>smtp_port</strong></td>
+<tr class="row-even"><td><strong>smtp_port</strong></td>
 <td>25</td>
 <td>None</td>
 <td>SMTP Port.</td>
 </tr>
-<tr><td><strong>smtp_timeout</strong></td>
+<tr class="row-odd"><td><strong>smtp_timeout</strong></td>
 <td>5</td>
 <td>None</td>
 <td>SMTP Timeout (in seconds).</td>
 </tr>
-<tr><td><strong>smtp_crypto</strong></td>
+<tr class="row-even"><td><strong>smtp_crypto</strong></td>
 <td>No Default</td>
 <td>tls or ssl</td>
 <td>SMTP Encryption</td>
 </tr>
-<tr><td><strong>wordwrap</strong></td>
+<tr class="row-odd"><td><strong>wordwrap</strong></td>
 <td>TRUE</td>
 <td>TRUE or FALSE (boolean)</td>
 <td>Enable word-wrap.</td>
 </tr>
-<tr><td><strong>wrapchars</strong></td>
+<tr class="row-even"><td><strong>wrapchars</strong></td>
 <td>76</td>
 <td>&nbsp;</td>
 <td>Character count to wrap at.</td>
 </tr>
-<tr><td><strong>mailtype</strong></td>
+<tr class="row-odd"><td><strong>mailtype</strong></td>
 <td>text</td>
 <td>text or html</td>
 <td>Type of mail. If you send HTML email you must send it as a complete web
 page. Make sure you don&#8217;t have any relative links or relative image
 paths otherwise they will not work.</td>
 </tr>
-<tr><td><strong>charset</strong></td>
+<tr class="row-even"><td><strong>charset</strong></td>
 <td>utf-8</td>
 <td>&nbsp;</td>
 <td>Character set (utf-8, iso-8859-1, etc.).</td>
 </tr>
-<tr><td><strong>validate</strong></td>
+<tr class="row-odd"><td><strong>validate</strong></td>
 <td>FALSE</td>
 <td>TRUE or FALSE (boolean)</td>
 <td>Whether to validate the email address.</td>
 </tr>
-<tr><td><strong>priority</strong></td>
+<tr class="row-even"><td><strong>priority</strong></td>
 <td>3</td>
 <td>1, 2, 3, 4, 5</td>
 <td>Email Priority. 1 = highest. 5 = lowest. 3 = normal.</td>
 </tr>
-<tr><td><strong>crlf</strong></td>
+<tr class="row-odd"><td><strong>crlf</strong></td>
 <td>\n</td>
 <td>&#8220;\r\n&#8221; or &#8220;\n&#8221; or &#8220;\r&#8221;</td>
 <td>Newline character. (Use &#8220;\r\n&#8221; to comply with RFC 822).</td>
 </tr>
-<tr><td><strong>newline</strong></td>
+<tr class="row-even"><td><strong>newline</strong></td>
 <td>\n</td>
 <td>&#8220;\r\n&#8221; or &#8220;\n&#8221; or &#8220;\r&#8221;</td>
 <td>Newline character. (Use &#8220;\r\n&#8221; to comply with RFC 822).</td>
 </tr>
-<tr><td><strong>bcc_batch_mode</strong></td>
+<tr class="row-odd"><td><strong>bcc_batch_mode</strong></td>
 <td>FALSE</td>
 <td>TRUE or FALSE (boolean)</td>
 <td>Enable BCC Batch Mode.</td>
 </tr>
-<tr><td><strong>bcc_batch_size</strong></td>
+<tr class="row-even"><td><strong>bcc_batch_size</strong></td>
 <td>200</td>
 <td>None</td>
 <td>Number of emails in each BCC batch.</td>
@@ -295,16 +296,16 @@ paths otherwise they will not work.</td>
 </table>
 </div>
 <div class="section" id="email-function-reference">
-<h2>Email Function Reference<a class="headerlink" href="#email-function-reference" title="Permalink to this headline">¶</a></h2>
+<h2>Email Function Reference<a class="headerlink" href="#email-function-reference" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
 <div class="section" id="this-email-from">
-<h3>$this-&gt;email-&gt;from()<a class="headerlink" href="#this-email-from" title="Permalink to this headline">¶</a></h3>
+<h3>$this-&gt;email-&gt;from()<a class="headerlink" href="#this-email-from" title="Bu başlığın kalıcı bağlantısı">¶</a></h3>
 <p>Sets the email address and name of the person sending the email:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">email</span><span class="o">-&gt;</span><span class="na">from</span><span class="p">(</span><span class="s1">&#39;you@example.com&#39;</span><span class="p">,</span> <span class="s1">&#39;Your Name&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="this-email-reply-to">
-<h3>$this-&gt;email-&gt;reply_to()<a class="headerlink" href="#this-email-reply-to" title="Permalink to this headline">¶</a></h3>
+<h3>$this-&gt;email-&gt;reply_to()<a class="headerlink" href="#this-email-reply-to" title="Bu başlığın kalıcı bağlantısı">¶</a></h3>
 <p>Sets the reply-to address. If the information is not provided the
 information in the &#8220;from&#8221; function is used. Example:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">email</span><span class="o">-&gt;</span><span class="na">reply_to</span><span class="p">(</span><span class="s1">&#39;you@example.com&#39;</span><span class="p">,</span> <span class="s1">&#39;Your Name&#39;</span><span class="p">);</span>
@@ -312,7 +313,7 @@ information in the &#8220;from&#8221; function is used. Example:</p>
 </div>
 </div>
 <div class="section" id="this-email-to">
-<h3>$this-&gt;email-&gt;to()<a class="headerlink" href="#this-email-to" title="Permalink to this headline">¶</a></h3>
+<h3>$this-&gt;email-&gt;to()<a class="headerlink" href="#this-email-to" title="Bu başlığın kalıcı bağlantısı">¶</a></h3>
 <p>Sets the email address(s) of the recipient(s). Can be a single email, a
 comma-delimited list or an array:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">email</span><span class="o">-&gt;</span><span class="na">to</span><span class="p">(</span><span class="s1">&#39;someone@example.com&#39;</span><span class="p">);</span>
@@ -328,31 +329,31 @@ comma-delimited list or an array:</p>
 </div>
 </div>
 <div class="section" id="this-email-cc">
-<h3>$this-&gt;email-&gt;cc()<a class="headerlink" href="#this-email-cc" title="Permalink to this headline">¶</a></h3>
+<h3>$this-&gt;email-&gt;cc()<a class="headerlink" href="#this-email-cc" title="Bu başlığın kalıcı bağlantısı">¶</a></h3>
 <p>Sets the CC email address(s). Just like the &#8220;to&#8221;, can be a single email,
 a comma-delimited list or an array.</p>
 </div>
 <div class="section" id="this-email-bcc">
-<h3>$this-&gt;email-&gt;bcc()<a class="headerlink" href="#this-email-bcc" title="Permalink to this headline">¶</a></h3>
+<h3>$this-&gt;email-&gt;bcc()<a class="headerlink" href="#this-email-bcc" title="Bu başlığın kalıcı bağlantısı">¶</a></h3>
 <p>Sets the BCC email address(s). Just like the &#8220;to&#8221;, can be a single
 email, a comma-delimited list or an array.</p>
 </div>
 <div class="section" id="this-email-subject">
-<h3>$this-&gt;email-&gt;subject()<a class="headerlink" href="#this-email-subject" title="Permalink to this headline">¶</a></h3>
+<h3>$this-&gt;email-&gt;subject()<a class="headerlink" href="#this-email-subject" title="Bu başlığın kalıcı bağlantısı">¶</a></h3>
 <p>Sets the email subject:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">email</span><span class="o">-&gt;</span><span class="na">subject</span><span class="p">(</span><span class="s1">&#39;This is my subject&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="this-email-message">
-<h3>$this-&gt;email-&gt;message()<a class="headerlink" href="#this-email-message" title="Permalink to this headline">¶</a></h3>
+<h3>$this-&gt;email-&gt;message()<a class="headerlink" href="#this-email-message" title="Bu başlığın kalıcı bağlantısı">¶</a></h3>
 <p>Sets the email message body:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">email</span><span class="o">-&gt;</span><span class="na">message</span><span class="p">(</span><span class="s1">&#39;This is my message&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="this-email-set-alt-message">
-<h3>$this-&gt;email-&gt;set_alt_message()<a class="headerlink" href="#this-email-set-alt-message" title="Permalink to this headline">¶</a></h3>
+<h3>$this-&gt;email-&gt;set_alt_message()<a class="headerlink" href="#this-email-set-alt-message" title="Bu başlığın kalıcı bağlantısı">¶</a></h3>
 <p>Sets the alternative email message body:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">email</span><span class="o">-&gt;</span><span class="na">set_alt_message</span><span class="p">(</span><span class="s1">&#39;This is the alternative message&#39;</span><span class="p">);</span>
 </pre></div>
@@ -364,7 +365,7 @@ accept HTML email. If you do not set your own message CodeIgniter will
 extract the message from your HTML email and strip the tags.</p>
 </div>
 <div class="section" id="this-email-clear">
-<h3>$this-&gt;email-&gt;clear()<a class="headerlink" href="#this-email-clear" title="Permalink to this headline">¶</a></h3>
+<h3>$this-&gt;email-&gt;clear()<a class="headerlink" href="#this-email-clear" title="Bu başlığın kalıcı bağlantısı">¶</a></h3>
 <p>Initializes all the email variables to an empty state. This function is
 intended for use if you run the email sending function in a loop,
 permitting the data to be reset between cycles.</p>
@@ -387,7 +388,7 @@ well:</p>
 </div>
 </div>
 <div class="section" id="this-email-send">
-<h3>$this-&gt;email-&gt;send()<a class="headerlink" href="#this-email-send" title="Permalink to this headline">¶</a></h3>
+<h3>$this-&gt;email-&gt;send()<a class="headerlink" href="#this-email-send" title="Bu başlığın kalıcı bağlantısı">¶</a></h3>
 <p>The Email sending function. Returns boolean TRUE or FALSE based on
 success or failure, enabling it to be used conditionally:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="k">if</span> <span class="p">(</span> <span class="o">!</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">email</span><span class="o">-&gt;</span><span class="na">send</span><span class="p">())</span>
@@ -398,7 +399,7 @@ success or failure, enabling it to be used conditionally:</p>
 </div>
 </div>
 <div class="section" id="this-email-attach">
-<h3>$this-&gt;email-&gt;attach()<a class="headerlink" href="#this-email-attach" title="Permalink to this headline">¶</a></h3>
+<h3>$this-&gt;email-&gt;attach()<a class="headerlink" href="#this-email-attach" title="Bu başlığın kalıcı bağlantısı">¶</a></h3>
 <p>Enables you to send an attachment. Put the file path/name in the first
 parameter. Note: Use a file path, not a URL. For multiple attachments
 use the function multiple times. For example:</p>
@@ -411,13 +412,13 @@ use the function multiple times. For example:</p>
 </div>
 </div>
 <div class="section" id="this-email-print-debugger">
-<h3>$this-&gt;email-&gt;print_debugger()<a class="headerlink" href="#this-email-print-debugger" title="Permalink to this headline">¶</a></h3>
+<h3>$this-&gt;email-&gt;print_debugger()<a class="headerlink" href="#this-email-print-debugger" title="Bu başlığın kalıcı bağlantısı">¶</a></h3>
 <p>Returns a string containing any server messages, the email headers, and
 the email messsage. Useful for debugging.</p>
 </div>
 </div>
 <div class="section" id="overriding-word-wrapping">
-<h2>Overriding Word Wrapping<a class="headerlink" href="#overriding-word-wrapping" title="Permalink to this headline">¶</a></h2>
+<h2>Overriding Word Wrapping<a class="headerlink" href="#overriding-word-wrapping" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
 <p>If you have word wrapping enabled (recommended to comply with RFC 822)
 and you have a very long link in your email it can get wrapped too,
 causing it to become un-clickable by the person receiving it.
@@ -448,10 +449,10 @@ message like this:</p>
 				
 				<span class="next">Sonraki Başlık: <a href="encryption.html">Encryption Class</a></span>
 				
-				<a href="#header" title="Return to top">Return to top</a>
+				<a href="#header" title="Başa Dön">Başa Dön</a>
 			</p>
 			<p><a href="">CodeIgniter</a> &ndash; Copyright &copy;
-      2011, EllisLab, Inc.</a> &ndash; Son Güncelleme: Nov 22, 2011</p>
+      2011, EllisLab, Inc.</a> &ndash; Son Güncelleme: 22 Kasım 2011</p>
 		</div><!-- /#footer -->
 	
 	<script src="../_static/asset/js/jquery-ui-min.js" type="text/javascript" charset="utf-8" async></script>

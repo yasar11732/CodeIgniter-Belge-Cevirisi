@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="utf-8">
 	    
-	    <title>Transactions &mdash; CodeIgniter v3.0-dev documentation</title>
+	    <title>Transactions &mdash; CodeIgniter 3.0-dev documentation</title>
 
 	    <link rel="stylesheet" href="../_static/asset/css/common.css" type="text/css" />
 	    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -20,7 +20,8 @@
 	    <script type="text/javascript" src="../_static/jquery.js"></script>
 	    <script type="text/javascript" src="../_static/underscore.js"></script>
 	    <script type="text/javascript" src="../_static/doctools.js"></script>
-	    <link rel="top" title="CodeIgniter v3.0-dev documentation" href="../index.html" />
+	    <script type="text/javascript" src="../_static/translations.js"></script>
+	    <link rel="top" title="CodeIgniter 3.0-dev documentation" href="../index.html" />
 	    <link rel="up" title="Veri Tabanı Sınıfı" href="index.html" />
 	    <link rel="next" title="Tablo Verileri" href="table_data.html" />
 	    <link rel="prev" title="Active Record Class" href="active_record.html" /> 
@@ -67,9 +68,9 @@
 
 		<div id="brand" class="ci">
 			<a href="http://codeigniter.com/"><img src="../_static/asset/img/ci-logo.gif" alt="CodeIgniter"></a>
-			<p>3.0-dev User Guide</p>
+			<p>3.0-dev Kullanım Kılavuzu</p>
 		    <p><a href="../_sources/database/transactions.txt"
-			           rel="nofollow">Show Source</a></p>
+			           rel="nofollow">Kaynağı Göster</a></p>
 		</div><!-- /#brand -->
 
 		<div id="header">
@@ -77,12 +78,12 @@
 				<fieldset>
 					<input type="text" name="q" id="q" value="">
 					<input type="hidden" name="as_sitesearch" id="as_sitesearch" value="codeigniter.com/user_guide/" />
-					<input class="grades" type="submit" value="search">
+					<input class="grades" type="submit" value="ara">
 				</fieldset>
 			</form>
 			<ul>
-				<li><a href="../index.html">Home</a>&nbsp;&nbsp; &rsaquo;</li>
-				<li><a id="toc-link" href="../index.html">Table of Contents</a>&nbsp;&nbsp; &rsaquo;</li>
+				<li><a href="../index.html">Anasayfa</a>&nbsp;&nbsp; &rsaquo;</li>
+				<li><a id="toc-link" href="../index.html">İçindekiler</a>&nbsp;&nbsp; &rsaquo;</li>
 				<li><a href="index.html" accesskey="U">Veri Tabanı Sınıfı</a>&nbsp;&nbsp;  &rsaquo;</li>
 
 				<li><strong>Transactions</strong></li>
@@ -91,7 +92,7 @@
 
 		<div class="section" id="content">
 			<div class="section" id="transactions">
-<h1>Transactions<a class="headerlink" href="#transactions" title="Permalink to this headline">¶</a></h1>
+<h1>Transactions<a class="headerlink" href="#transactions" title="Bu başlığın kalıcı bağlantısı">¶</a></h1>
 <p>CodeIgniter&#8217;s database abstraction allows you to use transactions with
 databases that support transaction-safe table types. In MySQL, you&#8217;ll
 need to be running InnoDB or BDB table types rather than the more common
@@ -101,7 +102,7 @@ online resource to learn about them for your particular database. The
 information below assumes you have a basic understanding of
 transactions.</p>
 <div class="section" id="codeigniter-s-approach-to-transactions">
-<h2>CodeIgniter&#8217;s Approach to Transactions<a class="headerlink" href="#codeigniter-s-approach-to-transactions" title="Permalink to this headline">¶</a></h2>
+<h2>CodeIgniter&#8217;s Approach to Transactions<a class="headerlink" href="#codeigniter-s-approach-to-transactions" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
 <p>CodeIgniter utilizes an approach to transactions that is very similar to
 the process used by the popular database class ADODB. We&#8217;ve chosen that
 approach because it greatly simplifies the process of running
@@ -115,7 +116,7 @@ this for you automatically (you can also manage your transactions
 manually if you choose to, but there&#8217;s really no benefit).</p>
 </div>
 <div class="section" id="running-transactions">
-<h2>Running Transactions<a class="headerlink" href="#running-transactions" title="Permalink to this headline">¶</a></h2>
+<h2>Running Transactions<a class="headerlink" href="#running-transactions" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
 <p>To run your queries using transactions you will use the
 $this-&gt;db-&gt;trans_start() and $this-&gt;db-&gt;trans_complete() functions as
 follows:</p>
@@ -131,7 +132,7 @@ functions and they will all be committed or rolled back based on success
 or failure of any given query.</p>
 </div>
 <div class="section" id="strict-mode">
-<h2>Strict Mode<a class="headerlink" href="#strict-mode" title="Permalink to this headline">¶</a></h2>
+<h2>Strict Mode<a class="headerlink" href="#strict-mode" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
 <p>By default CodeIgniter runs all transactions in Strict Mode. When strict
 mode is enabled, if you are running multiple groups of transactions, if
 one group fails all groups will be rolled back. If strict mode is
@@ -143,7 +144,7 @@ group will not affect any others.</p>
 </div>
 </div>
 <div class="section" id="managing-errors">
-<h2>Managing Errors<a class="headerlink" href="#managing-errors" title="Permalink to this headline">¶</a></h2>
+<h2>Managing Errors<a class="headerlink" href="#managing-errors" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
 <p>If you have error reporting enabled in your config/database.php file
 you&#8217;ll see a standard error message if the commit was unsuccessful. If
 debugging is turned off, you can manage your own errors like this:</p>
@@ -160,7 +161,7 @@ debugging is turned off, you can manage your own errors like this:</p>
 </div>
 </div>
 <div class="section" id="enabling-transactions">
-<h2>Enabling Transactions<a class="headerlink" href="#enabling-transactions" title="Permalink to this headline">¶</a></h2>
+<h2>Enabling Transactions<a class="headerlink" href="#enabling-transactions" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
 <p>Transactions are enabled automatically the moment you use
 $this-&gt;db-&gt;trans_start(). If you would like to disable transactions you
 can do so using $this-&gt;db-&gt;trans_off():</p>
@@ -175,7 +176,7 @@ can do so using $this-&gt;db-&gt;trans_off():</p>
 as they are when running queries without transactions.</p>
 </div>
 <div class="section" id="test-mode">
-<h2>Test Mode<a class="headerlink" href="#test-mode" title="Permalink to this headline">¶</a></h2>
+<h2>Test Mode<a class="headerlink" href="#test-mode" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
 <p>You can optionally put the transaction system into &#8220;test mode&#8221;, which
 will cause your queries to be rolled back &#8211; even if the queries produce
 a valid result. To use test mode simply set the first parameter in the
@@ -187,7 +188,7 @@ $this-&gt;db-&gt;trans_start() function to TRUE:</p>
 </div>
 </div>
 <div class="section" id="running-transactions-manually">
-<h2>Running Transactions Manually<a class="headerlink" href="#running-transactions-manually" title="Permalink to this headline">¶</a></h2>
+<h2>Running Transactions Manually<a class="headerlink" href="#running-transactions-manually" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
 <p>If you would like to run transactions manually you can do so as follows:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">trans_begin</span><span class="p">();</span>
 
@@ -206,7 +207,7 @@ $this-&gt;db-&gt;trans_start() function to TRUE:</p>
 </pre></div>
 </div>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
+<p class="first admonition-title">Not</p>
 <p class="last">Make sure to use $this-&gt;db-&gt;trans_begin() when running manual
 transactions, <strong>NOT</strong> $this-&gt;db-&gt;trans_start().</p>
 </div>
@@ -225,10 +226,10 @@ transactions, <strong>NOT</strong> $this-&gt;db-&gt;trans_start().</p>
 				
 				<span class="next">Sonraki Başlık: <a href="table_data.html">Tablo Verileri</a></span>
 				
-				<a href="#header" title="Return to top">Return to top</a>
+				<a href="#header" title="Başa Dön">Başa Dön</a>
 			</p>
 			<p><a href="">CodeIgniter</a> &ndash; Copyright &copy;
-      2011, EllisLab, Inc.</a> &ndash; Son Güncelleme: Nov 22, 2011</p>
+      2011, EllisLab, Inc.</a> &ndash; Son Güncelleme: 22 Kasım 2011</p>
 		</div><!-- /#footer -->
 	
 	<script src="../_static/asset/js/jquery-ui-min.js" type="text/javascript" charset="utf-8" async></script>

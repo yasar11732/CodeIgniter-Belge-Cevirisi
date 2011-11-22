@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="utf-8">
 	    
-	    <title>XML-RPC and XML-RPC Server Classes &mdash; CodeIgniter v3.0-dev documentation</title>
+	    <title>XML-RPC and XML-RPC Server Classes &mdash; CodeIgniter 3.0-dev documentation</title>
 
 	    <link rel="stylesheet" href="../_static/asset/css/common.css" type="text/css" />
 	    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -20,7 +20,8 @@
 	    <script type="text/javascript" src="../_static/jquery.js"></script>
 	    <script type="text/javascript" src="../_static/underscore.js"></script>
 	    <script type="text/javascript" src="../_static/doctools.js"></script>
-	    <link rel="top" title="CodeIgniter v3.0-dev documentation" href="../index.html" />
+	    <script type="text/javascript" src="../_static/translations.js"></script>
+	    <link rel="top" title="CodeIgniter 3.0-dev documentation" href="../index.html" />
 	    <link rel="up" title="Libraries" href="index.html" />
 	    <link rel="next" title="Zip Encoding Class" href="zip.html" />
 	    <link rel="prev" title="User Agent Class" href="user_agent.html" /> 
@@ -81,9 +82,9 @@
 
 		<div id="brand" class="ci">
 			<a href="http://codeigniter.com/"><img src="../_static/asset/img/ci-logo.gif" alt="CodeIgniter"></a>
-			<p>3.0-dev User Guide</p>
+			<p>3.0-dev Kullanım Kılavuzu</p>
 		    <p><a href="../_sources/libraries/xmlrpc.txt"
-			           rel="nofollow">Show Source</a></p>
+			           rel="nofollow">Kaynağı Göster</a></p>
 		</div><!-- /#brand -->
 
 		<div id="header">
@@ -91,12 +92,12 @@
 				<fieldset>
 					<input type="text" name="q" id="q" value="">
 					<input type="hidden" name="as_sitesearch" id="as_sitesearch" value="codeigniter.com/user_guide/" />
-					<input class="grades" type="submit" value="search">
+					<input class="grades" type="submit" value="ara">
 				</fieldset>
 			</form>
 			<ul>
-				<li><a href="../index.html">Home</a>&nbsp;&nbsp; &rsaquo;</li>
-				<li><a id="toc-link" href="../index.html">Table of Contents</a>&nbsp;&nbsp; &rsaquo;</li>
+				<li><a href="../index.html">Anasayfa</a>&nbsp;&nbsp; &rsaquo;</li>
+				<li><a id="toc-link" href="../index.html">İçindekiler</a>&nbsp;&nbsp; &rsaquo;</li>
 				<li><a href="index.html" accesskey="U">Libraries</a>&nbsp;&nbsp;  &rsaquo;</li>
 
 				<li><strong>XML-RPC and XML-RPC Server Classes</strong></li>
@@ -105,11 +106,11 @@
 
 		<div class="section" id="content">
 			<div class="section" id="xml-rpc-and-xml-rpc-server-classes">
-<h1>XML-RPC and XML-RPC Server Classes<a class="headerlink" href="#xml-rpc-and-xml-rpc-server-classes" title="Permalink to this headline">¶</a></h1>
+<h1>XML-RPC and XML-RPC Server Classes<a class="headerlink" href="#xml-rpc-and-xml-rpc-server-classes" title="Bu başlığın kalıcı bağlantısı">¶</a></h1>
 <p>CodeIgniter&#8217;s XML-RPC classes permit you to send requests to another
 server, or set up your own XML-RPC server to receive requests.</p>
 <div class="section" id="what-is-xml-rpc">
-<h2>What is XML-RPC?<a class="headerlink" href="#what-is-xml-rpc" title="Permalink to this headline">¶</a></h2>
+<h2>What is XML-RPC?<a class="headerlink" href="#what-is-xml-rpc" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
 <p>Quite simply it is a way for two computers to communicate over the
 internet using XML. One computer, which we will call the client, sends
 an XML-RPC <strong>request</strong> to another computer, which we will call the
@@ -126,7 +127,7 @@ message.</p>
 <p>For detailed specifications, you can visit the
 <a class="reference external" href="http://www.xmlrpc.com/">XML-RPC</a> site.</p>
 <div class="section" id="initializing-the-class">
-<h3>Initializing the Class<a class="headerlink" href="#initializing-the-class" title="Permalink to this headline">¶</a></h3>
+<h3>Initializing the Class<a class="headerlink" href="#initializing-the-class" title="Bu başlığın kalıcı bağlantısı">¶</a></h3>
 <p>Like most other classes in CodeIgniter, the XML-RPC and XML-RPCS classes
 are initialized in your controller using the $this-&gt;load-&gt;library
 function:</p>
@@ -144,13 +145,13 @@ $this-&gt;xmlrpc</p>
 <p>Once loaded, the xml-rpcs library object will be available using:
 $this-&gt;xmlrpcs</p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
+<p class="first admonition-title">Not</p>
 <p class="last">When using the XML-RPC Server class you must load BOTH the
 XML-RPC class and the XML-RPC Server class.</p>
 </div>
 </div>
 <div class="section" id="sending-xml-rpc-requests">
-<h3>Sending XML-RPC Requests<a class="headerlink" href="#sending-xml-rpc-requests" title="Permalink to this headline">¶</a></h3>
+<h3>Sending XML-RPC Requests<a class="headerlink" href="#sending-xml-rpc-requests" title="Bu başlığın kalıcı bağlantısı">¶</a></h3>
 <p>To send a request to an XML-RPC server you must specify the following
 information:</p>
 <ul class="simple">
@@ -175,7 +176,7 @@ information:</p>
 </pre></div>
 </div>
 <div class="section" id="explanation">
-<h4>Explanation<a class="headerlink" href="#explanation" title="Permalink to this headline">¶</a></h4>
+<h4>Explanation<a class="headerlink" href="#explanation" title="Bu başlığın kalıcı bağlantısı">¶</a></h4>
 <p>The above code initializes the XML-RPC class, sets the server URL and
 method to be called (weblogUpdates.ping). The request (in this case, the
 title and URL of your site) is placed into an array for transportation,
@@ -185,7 +186,7 @@ error message sent back from the XML-RPC Server.</p>
 </div>
 </div>
 <div class="section" id="anatomy-of-a-request">
-<h3>Anatomy of a Request<a class="headerlink" href="#anatomy-of-a-request" title="Permalink to this headline">¶</a></h3>
+<h3>Anatomy of a Request<a class="headerlink" href="#anatomy-of-a-request" title="Bu başlığın kalıcı bağlantısı">¶</a></h3>
 <p>An XML-RPC request is simply the data you are sending to the XML-RPC
 server. Each piece of data in a request is referred to as a request
 parameter. The above example has two parameters: The URL and title of
@@ -257,7 +258,7 @@ enable debugging, and xss_clean may be set to FALSE to prevent sending
 data through the Security library&#8217;s xss_clean function.</p>
 </div>
 <div class="section" id="processing-server-requests">
-<h3>Processing Server Requests<a class="headerlink" href="#processing-server-requests" title="Permalink to this headline">¶</a></h3>
+<h3>Processing Server Requests<a class="headerlink" href="#processing-server-requests" title="Bu başlığın kalıcı bağlantısı">¶</a></h3>
 <p>When the XML-RPC Server receives a request and loads the class/method
 for processing, it will pass an object to that method containing the
 data sent by the client.</p>
@@ -312,7 +313,7 @@ email address, etc.). Here is how the processing function might look:</p>
 </pre></div>
 </div>
 <div class="section" id="notes">
-<h4>Notes:<a class="headerlink" href="#notes" title="Permalink to this headline">¶</a></h4>
+<h4>Notes:<a class="headerlink" href="#notes" title="Bu başlığın kalıcı bağlantısı">¶</a></h4>
 <p>The output_parameters() function retrieves an indexed array
 corresponding to the request parameters sent by the client. In the above
 example, the output parameters will be the username and password.</p>
@@ -323,7 +324,7 @@ array containing the user&#8217;s info.</p>
 </div>
 </div>
 <div class="section" id="formatting-a-response">
-<h3>Formatting a Response<a class="headerlink" href="#formatting-a-response" title="Permalink to this headline">¶</a></h3>
+<h3>Formatting a Response<a class="headerlink" href="#formatting-a-response" title="Bu başlığın kalıcı bağlantısı">¶</a></h3>
 <p>Similar to <em>Requests</em>, <em>Responses</em> must be formatted as an array.
 However, unlike requests, a response is an array <strong>that contains a
 single item</strong>. This item can be an array with several additional arrays,
@@ -353,7 +354,7 @@ common data type for responses.</p>
 in the <a class="reference external" href="#datatypes">Data Types</a> section.</p>
 </div>
 <div class="section" id="sending-an-error-response">
-<h3>Sending an Error Response<a class="headerlink" href="#sending-an-error-response" title="Permalink to this headline">¶</a></h3>
+<h3>Sending an Error Response<a class="headerlink" href="#sending-an-error-response" title="Bu başlığın kalıcı bağlantısı">¶</a></h3>
 <p>If you need to send the client an error response you will use the
 following:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">xmlrpc</span><span class="o">-&gt;</span><span class="na">send_error_message</span><span class="p">(</span><span class="s1">&#39;123&#39;</span><span class="p">,</span> <span class="s1">&#39;Requested data not available&#39;</span><span class="p">);</span>
@@ -363,12 +364,12 @@ following:</p>
 the error message.</p>
 </div>
 <div class="section" id="creating-your-own-client-and-server">
-<h3>Creating Your Own Client and Server<a class="headerlink" href="#creating-your-own-client-and-server" title="Permalink to this headline">¶</a></h3>
+<h3>Creating Your Own Client and Server<a class="headerlink" href="#creating-your-own-client-and-server" title="Bu başlığın kalıcı bağlantısı">¶</a></h3>
 <p>To help you understand everything we&#8217;ve covered thus far, let&#8217;s create a
 couple controllers that act as XML-RPC Client and Server. You&#8217;ll use the
 Client to send a request to the Server and receive a response.</p>
 <div class="section" id="the-client">
-<h4>The Client<a class="headerlink" href="#the-client" title="Permalink to this headline">¶</a></h4>
+<h4>The Client<a class="headerlink" href="#the-client" title="Bu başlığın kalıcı bağlantısı">¶</a></h4>
 <p>Using a text editor, create a controller called xmlrpc_client.php. In
 it, place this code and save it to your applications/controllers/
 folder:</p>
@@ -405,13 +406,13 @@ folder:</p>
 </pre></div>
 </div>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
+<p class="first admonition-title">Not</p>
 <p class="last">In the above code we are using a &#8220;url helper&#8221;. You can find more
 information in the <a class="reference internal" href="../general/helpers.html"><em>Helpers Functions</em></a> page.</p>
 </div>
 </div>
 <div class="section" id="the-server">
-<h4>The Server<a class="headerlink" href="#the-server" title="Permalink to this headline">¶</a></h4>
+<h4>The Server<a class="headerlink" href="#the-server" title="Bu başlığın kalıcı bağlantısı">¶</a></h4>
 <p>Using a text editor, create a controller called xmlrpc_server.php. In
 it, place this code and save it to your applications/controllers/
 folder:</p>
@@ -449,7 +450,7 @@ folder:</p>
 </div>
 </div>
 <div class="section" id="try-it">
-<h4>Try it!<a class="headerlink" href="#try-it" title="Permalink to this headline">¶</a></h4>
+<h4>Try it!<a class="headerlink" href="#try-it" title="Bu başlığın kalıcı bağlantısı">¶</a></h4>
 <p>Now visit the your site using a URL similar to this:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nx">example</span><span class="o">.</span><span class="nx">com</span><span class="o">/</span><span class="nx">index</span><span class="o">.</span><span class="nx">php</span><span class="o">/</span><span class="nx">xmlrpc_client</span><span class="o">/</span>
 </pre></div>
@@ -463,7 +464,7 @@ response is sent back.</p>
 </div>
 </div>
 <div class="section" id="using-associative-arrays-in-a-request-parameter">
-<h3>Using Associative Arrays In a Request Parameter<a class="headerlink" href="#using-associative-arrays-in-a-request-parameter" title="Permalink to this headline">¶</a></h3>
+<h3>Using Associative Arrays In a Request Parameter<a class="headerlink" href="#using-associative-arrays-in-a-request-parameter" title="Bu başlığın kalıcı bağlantısı">¶</a></h3>
 <p>If you wish to use an associative array in your method parameters you
 will need to use a struct datatype:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$request</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
@@ -497,9 +498,9 @@ the Server.</p>
 </div>
 </div>
 <div class="section" id="xml-rpc-function-reference">
-<h2>XML-RPC Function Reference<a class="headerlink" href="#xml-rpc-function-reference" title="Permalink to this headline">¶</a></h2>
+<h2>XML-RPC Function Reference<a class="headerlink" href="#xml-rpc-function-reference" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
 <div class="section" id="this-xmlrpc-server">
-<h3>$this-&gt;xmlrpc-&gt;server()<a class="headerlink" href="#this-xmlrpc-server" title="Permalink to this headline">¶</a></h3>
+<h3>$this-&gt;xmlrpc-&gt;server()<a class="headerlink" href="#this-xmlrpc-server" title="Bu başlığın kalıcı bağlantısı">¶</a></h3>
 <p>Sets the URL and port number of the server to which a request is to be
 sent:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">xmlrpc</span><span class="o">-&gt;</span><span class="na">server</span><span class="p">(</span><span class="s1">&#39;http://www.sometimes.com/pings.php&#39;</span><span class="p">,</span> <span class="mi">80</span><span class="p">);</span>
@@ -507,7 +508,7 @@ sent:</p>
 </div>
 </div>
 <div class="section" id="this-xmlrpc-timeout">
-<h3>$this-&gt;xmlrpc-&gt;timeout()<a class="headerlink" href="#this-xmlrpc-timeout" title="Permalink to this headline">¶</a></h3>
+<h3>$this-&gt;xmlrpc-&gt;timeout()<a class="headerlink" href="#this-xmlrpc-timeout" title="Bu başlığın kalıcı bağlantısı">¶</a></h3>
 <p>Set a time out period (in seconds) after which the request will be
 canceled:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">xmlrpc</span><span class="o">-&gt;</span><span class="na">timeout</span><span class="p">(</span><span class="mi">6</span><span class="p">);</span>
@@ -515,7 +516,7 @@ canceled:</p>
 </div>
 </div>
 <div class="section" id="this-xmlrpc-method">
-<h3>$this-&gt;xmlrpc-&gt;method()<a class="headerlink" href="#this-xmlrpc-method" title="Permalink to this headline">¶</a></h3>
+<h3>$this-&gt;xmlrpc-&gt;method()<a class="headerlink" href="#this-xmlrpc-method" title="Bu başlığın kalıcı bağlantısı">¶</a></h3>
 <p>Sets the method that will be requested from the XML-RPC server:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">xmlrpc</span><span class="o">-&gt;</span><span class="na">method</span><span class="p">(</span><span class="s1">&#39;method&#39;</span><span class="p">);</span>
 </pre></div>
@@ -523,7 +524,7 @@ canceled:</p>
 <p>Where method is the name of the method.</p>
 </div>
 <div class="section" id="this-xmlrpc-request">
-<h3>$this-&gt;xmlrpc-&gt;request()<a class="headerlink" href="#this-xmlrpc-request" title="Permalink to this headline">¶</a></h3>
+<h3>$this-&gt;xmlrpc-&gt;request()<a class="headerlink" href="#this-xmlrpc-request" title="Bu başlığın kalıcı bağlantısı">¶</a></h3>
 <p>Takes an array of data and builds request to be sent to XML-RPC server:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$request</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span><span class="k">array</span><span class="p">(</span><span class="s1">&#39;My Photoblog&#39;</span><span class="p">,</span> <span class="s1">&#39;string&#39;</span><span class="p">),</span> <span class="s1">&#39;http://www.yoursite.com/photoblog/&#39;</span><span class="p">);</span>
 <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">xmlrpc</span><span class="o">-&gt;</span><span class="na">request</span><span class="p">(</span><span class="nv">$request</span><span class="p">);</span>
@@ -531,17 +532,17 @@ canceled:</p>
 </div>
 </div>
 <div class="section" id="this-xmlrpc-send-request">
-<h3>$this-&gt;xmlrpc-&gt;send_request()<a class="headerlink" href="#this-xmlrpc-send-request" title="Permalink to this headline">¶</a></h3>
+<h3>$this-&gt;xmlrpc-&gt;send_request()<a class="headerlink" href="#this-xmlrpc-send-request" title="Bu başlığın kalıcı bağlantısı">¶</a></h3>
 <p>The request sending function. Returns boolean TRUE or FALSE based on
 success for failure, enabling it to be used conditionally.</p>
 </div>
 <div class="section" id="this-xmlrpc-set-debug-true">
-<h3>$this-&gt;xmlrpc-&gt;set_debug(TRUE);<a class="headerlink" href="#this-xmlrpc-set-debug-true" title="Permalink to this headline">¶</a></h3>
+<h3>$this-&gt;xmlrpc-&gt;set_debug(TRUE);<a class="headerlink" href="#this-xmlrpc-set-debug-true" title="Bu başlığın kalıcı bağlantısı">¶</a></h3>
 <p>Enables debugging, which will display a variety of information and error
 data helpful during development.</p>
 </div>
 <div class="section" id="this-xmlrpc-display-error">
-<h3>$this-&gt;xmlrpc-&gt;display_error()<a class="headerlink" href="#this-xmlrpc-display-error" title="Permalink to this headline">¶</a></h3>
+<h3>$this-&gt;xmlrpc-&gt;display_error()<a class="headerlink" href="#this-xmlrpc-display-error" title="Bu başlığın kalıcı bağlantısı">¶</a></h3>
 <p>Returns an error message as a string if your request failed for some
 reason.</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="k">echo</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">xmlrpc</span><span class="o">-&gt;</span><span class="na">display_error</span><span class="p">();</span>
@@ -549,7 +550,7 @@ reason.</p>
 </div>
 </div>
 <div class="section" id="this-xmlrpc-display-response">
-<h3>$this-&gt;xmlrpc-&gt;display_response()<a class="headerlink" href="#this-xmlrpc-display-response" title="Permalink to this headline">¶</a></h3>
+<h3>$this-&gt;xmlrpc-&gt;display_response()<a class="headerlink" href="#this-xmlrpc-display-response" title="Bu başlığın kalıcı bağlantısı">¶</a></h3>
 <p>Returns the response from the remote server once request is received.
 The response will typically be an associative array.</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">xmlrpc</span><span class="o">-&gt;</span><span class="na">display_response</span><span class="p">();</span>
@@ -557,7 +558,7 @@ The response will typically be an associative array.</p>
 </div>
 </div>
 <div class="section" id="this-xmlrpc-send-error-message">
-<h3>$this-&gt;xmlrpc-&gt;send_error_message()<a class="headerlink" href="#this-xmlrpc-send-error-message" title="Permalink to this headline">¶</a></h3>
+<h3>$this-&gt;xmlrpc-&gt;send_error_message()<a class="headerlink" href="#this-xmlrpc-send-error-message" title="Bu başlığın kalıcı bağlantısı">¶</a></h3>
 <p>This function lets you send an error message from your server to the
 client. First parameter is the error number while the second parameter
 is the error message.</p>
@@ -566,7 +567,7 @@ is the error message.</p>
 </div>
 </div>
 <div class="section" id="this-xmlrpc-send-response">
-<h3>$this-&gt;xmlrpc-&gt;send_response()<a class="headerlink" href="#this-xmlrpc-send-response" title="Permalink to this headline">¶</a></h3>
+<h3>$this-&gt;xmlrpc-&gt;send_response()<a class="headerlink" href="#this-xmlrpc-send-response" title="Bu başlığın kalıcı bağlantısı">¶</a></h3>
 <p>Lets you send the response from your server to the client. An array of
 valid data values must be sent with this method.</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$response</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
@@ -580,7 +581,7 @@ valid data values must be sent with this method.</p>
 </div>
 </div>
 <div class="section" id="id2">
-<h3>Data Types<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<h3>Data Types<a class="headerlink" href="#id2" title="Bu başlığın kalıcı bağlantısı">¶</a></h3>
 <p>According to the <a class="reference external" href="http://www.xmlrpc.com/spec">XML-RPC spec</a> there are
 seven types of values that you can send via XML-RPC:</p>
 <ul class="simple">
@@ -609,10 +610,10 @@ seven types of values that you can send via XML-RPC:</p>
 				
 				<span class="next">Sonraki Başlık: <a href="zip.html">Zip Encoding Class</a></span>
 				
-				<a href="#header" title="Return to top">Return to top</a>
+				<a href="#header" title="Başa Dön">Başa Dön</a>
 			</p>
 			<p><a href="">CodeIgniter</a> &ndash; Copyright &copy;
-      2011, EllisLab, Inc.</a> &ndash; Son Güncelleme: Nov 22, 2011</p>
+      2011, EllisLab, Inc.</a> &ndash; Son Güncelleme: 22 Kasım 2011</p>
 		</div><!-- /#footer -->
 	
 	<script src="../_static/asset/js/jquery-ui-min.js" type="text/javascript" charset="utf-8" async></script>

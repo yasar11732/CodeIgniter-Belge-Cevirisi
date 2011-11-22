@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="utf-8">
 	    
-	    <title>Upgrading from 1.7.2 to 2.0.0 &mdash; CodeIgniter v3.0-dev documentation</title>
+	    <title>Upgrading from 1.7.2 to 2.0.0 &mdash; CodeIgniter 3.0-dev documentation</title>
 
 	    <link rel="stylesheet" href="../_static/asset/css/common.css" type="text/css" />
 	    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -20,7 +20,8 @@
 	    <script type="text/javascript" src="../_static/jquery.js"></script>
 	    <script type="text/javascript" src="../_static/underscore.js"></script>
 	    <script type="text/javascript" src="../_static/doctools.js"></script>
-	    <link rel="top" title="CodeIgniter v3.0-dev documentation" href="../index.html" />
+	    <script type="text/javascript" src="../_static/translations.js"></script>
+	    <link rel="top" title="CodeIgniter 3.0-dev documentation" href="../index.html" />
 	    <link rel="up" title="Installation Instructions" href="index.html" />
 	    <link rel="next" title="Upgrading from 2.0.0 to 2.0.1" href="upgrade_201.html" />
 	    <link rel="prev" title="Upgrading from 1.7.1 to 1.7.2" href="upgrade_172.html" /> 
@@ -80,9 +81,9 @@
 
 		<div id="brand" class="ci">
 			<a href="http://codeigniter.com/"><img src="../_static/asset/img/ci-logo.gif" alt="CodeIgniter"></a>
-			<p>3.0-dev User Guide</p>
+			<p>3.0-dev Kullanım Kılavuzu</p>
 		    <p><a href="../_sources/installation/upgrade_200.txt"
-			           rel="nofollow">Show Source</a></p>
+			           rel="nofollow">Kaynağı Göster</a></p>
 		</div><!-- /#brand -->
 
 		<div id="header">
@@ -90,12 +91,12 @@
 				<fieldset>
 					<input type="text" name="q" id="q" value="">
 					<input type="hidden" name="as_sitesearch" id="as_sitesearch" value="codeigniter.com/user_guide/" />
-					<input class="grades" type="submit" value="search">
+					<input class="grades" type="submit" value="ara">
 				</fieldset>
 			</form>
 			<ul>
-				<li><a href="../index.html">Home</a>&nbsp;&nbsp; &rsaquo;</li>
-				<li><a id="toc-link" href="../index.html">Table of Contents</a>&nbsp;&nbsp; &rsaquo;</li>
+				<li><a href="../index.html">Anasayfa</a>&nbsp;&nbsp; &rsaquo;</li>
+				<li><a id="toc-link" href="../index.html">İçindekiler</a>&nbsp;&nbsp; &rsaquo;</li>
 				<li><a href="index.html" accesskey="U">Installation Instructions</a>&nbsp;&nbsp;  &rsaquo;</li>
 
 				<li><strong>Upgrading from 1.7.2 to 2.0.0</strong></li>
@@ -104,23 +105,23 @@
 
 		<div class="section" id="content">
 			<div class="section" id="upgrading-from-1-7-2-to-2-0-0">
-<h1>Upgrading from 1.7.2 to 2.0.0<a class="headerlink" href="#upgrading-from-1-7-2-to-2-0-0" title="Permalink to this headline">¶</a></h1>
+<h1>Upgrading from 1.7.2 to 2.0.0<a class="headerlink" href="#upgrading-from-1-7-2-to-2-0-0" title="Bu başlığın kalıcı bağlantısı">¶</a></h1>
 <p>Before performing an update you should take your site offline by
 replacing the index.php file with a static one.</p>
 <div class="section" id="update-instructions">
-<h2>Update Instructions<a class="headerlink" href="#update-instructions" title="Permalink to this headline">¶</a></h2>
+<h2>Update Instructions<a class="headerlink" href="#update-instructions" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
 <div class="section" id="step-1-update-your-codeigniter-files">
-<h3>Step 1: Update your CodeIgniter files<a class="headerlink" href="#step-1-update-your-codeigniter-files" title="Permalink to this headline">¶</a></h3>
+<h3>Step 1: Update your CodeIgniter files<a class="headerlink" href="#step-1-update-your-codeigniter-files" title="Bu başlığın kalıcı bağlantısı">¶</a></h3>
 <p>Replace all files and directories in your &#8220;system&#8221; folder <strong>except</strong>
 your application folder.</p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
+<p class="first admonition-title">Not</p>
 <p class="last">If you have any custom developed files in these folders please
 make copies of them first.</p>
 </div>
 </div>
 <div class="section" id="step-2-adjust-get-dir-file-info-where-necessary">
-<h3>Step 2: Adjust get_dir_file_info() where necessary<a class="headerlink" href="#step-2-adjust-get-dir-file-info-where-necessary" title="Permalink to this headline">¶</a></h3>
+<h3>Step 2: Adjust get_dir_file_info() where necessary<a class="headerlink" href="#step-2-adjust-get-dir-file-info-where-necessary" title="Bu başlığın kalıcı bağlantısı">¶</a></h3>
 <p>Version 2.0.0 brings a non-backwards compatible change to
 get_dir_file_info() in the <a class="reference internal" href="../helpers/file_helper.html"><em>File
 Helper</em></a>. Non-backwards compatible changes
@@ -134,7 +135,7 @@ to FALSE:</p>
 </div>
 </div>
 <div class="section" id="step-3-convert-your-plugins-to-helpers">
-<h3>Step 3: Convert your Plugins to Helpers<a class="headerlink" href="#step-3-convert-your-plugins-to-helpers" title="Permalink to this headline">¶</a></h3>
+<h3>Step 3: Convert your Plugins to Helpers<a class="headerlink" href="#step-3-convert-your-plugins-to-helpers" title="Bu başlığın kalıcı bağlantısı">¶</a></h3>
 <p>2.0.0 gets rid of the &#8220;Plugin&#8221; system as their functionality was
 identical to Helpers, but non-extensible. You will need to rename your
 plugin files from filename_pi.php to filename_helper.php, move them to
@@ -148,9 +149,9 @@ your helpers folder, and change all instances of:</p>
 </div>
 </div>
 <div class="section" id="step-4-update-stored-encrypted-data">
-<h3>Step 4: Update stored encrypted data<a class="headerlink" href="#step-4-update-stored-encrypted-data" title="Permalink to this headline">¶</a></h3>
+<h3>Step 4: Update stored encrypted data<a class="headerlink" href="#step-4-update-stored-encrypted-data" title="Bu başlığın kalıcı bağlantısı">¶</a></h3>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
+<p class="first admonition-title">Not</p>
 <p class="last">If your application does not use the Encryption library, does
 not store Encrypted data permanently, or is on an environment that does
 not support Mcrypt, you may skip this step.</p>
@@ -169,29 +170,29 @@ method</a> in the Encryption library
 documentation.</p>
 </div>
 <div class="section" id="step-5-remove-loading-calls-for-the-compatibility-helper">
-<h3>Step 5: Remove loading calls for the compatibility helper.<a class="headerlink" href="#step-5-remove-loading-calls-for-the-compatibility-helper" title="Permalink to this headline">¶</a></h3>
+<h3>Step 5: Remove loading calls for the compatibility helper.<a class="headerlink" href="#step-5-remove-loading-calls-for-the-compatibility-helper" title="Bu başlığın kalıcı bağlantısı">¶</a></h3>
 <p>The compatibility helper has been removed from the CodeIgniter core. All
 methods in it should be natively available in supported PHP versions.</p>
 </div>
 <div class="section" id="step-6-update-class-extension">
-<h3>Step 6: Update Class extension<a class="headerlink" href="#step-6-update-class-extension" title="Permalink to this headline">¶</a></h3>
+<h3>Step 6: Update Class extension<a class="headerlink" href="#step-6-update-class-extension" title="Bu başlığın kalıcı bağlantısı">¶</a></h3>
 <p>All core classes are now prefixed with CI_. Update Models and
 Controllers to extend CI_Model and CI_Controller, respectively.</p>
 </div>
 <div class="section" id="step-7-update-parent-constructor-calls">
-<h3>Step 7: Update Parent Constructor calls<a class="headerlink" href="#step-7-update-parent-constructor-calls" title="Permalink to this headline">¶</a></h3>
+<h3>Step 7: Update Parent Constructor calls<a class="headerlink" href="#step-7-update-parent-constructor-calls" title="Bu başlığın kalıcı bağlantısı">¶</a></h3>
 <p>All native CodeIgniter classes now use the PHP 5 __construct()
 convention. Please update extended libraries to call
 parent::__construct().</p>
 </div>
 <div class="section" id="step-8-update-your-user-guide">
-<h3>Step 8: Update your user guide<a class="headerlink" href="#step-8-update-your-user-guide" title="Permalink to this headline">¶</a></h3>
+<h3>Step 8: Update your user guide<a class="headerlink" href="#step-8-update-your-user-guide" title="Bu başlığın kalıcı bağlantısı">¶</a></h3>
 <p>Please replace your local copy of the user guide with the new version,
 including the image files.</p>
 </div>
 </div>
 <div class="section" id="update-notes">
-<h2>Update Notes<a class="headerlink" href="#update-notes" title="Permalink to this headline">¶</a></h2>
+<h2>Update Notes<a class="headerlink" href="#update-notes" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
 <p>Please refer to the <a class="reference internal" href="../changelog.html#changelog"><em>2.0.0 Change Log</em></a> for full
 details, but here are some of the larger changes that are more likely to
 impact your code:</p>
@@ -218,7 +219,7 @@ from the db utility drivers.</li>
 has been renamed to <tt class="docutils literal"><span class="pre">do_hash()</span></tt> for naming consistency.</li>
 </ul>
 <div class="section" id="the-config-folder">
-<h3>The config folder<a class="headerlink" href="#the-config-folder" title="Permalink to this headline">¶</a></h3>
+<h3>The config folder<a class="headerlink" href="#the-config-folder" title="Bu başlığın kalıcı bağlantısı">¶</a></h3>
 <p>The following files have been changed:</p>
 <ul class="simple">
 <li>config.php</li>
@@ -248,10 +249,10 @@ has been renamed to <tt class="docutils literal"><span class="pre">do_hash()</sp
 				
 				<span class="next">Sonraki Başlık: <a href="upgrade_201.html">Upgrading from 2.0.0 to 2.0.1</a></span>
 				
-				<a href="#header" title="Return to top">Return to top</a>
+				<a href="#header" title="Başa Dön">Başa Dön</a>
 			</p>
 			<p><a href="">CodeIgniter</a> &ndash; Copyright &copy;
-      2011, EllisLab, Inc.</a> &ndash; Son Güncelleme: Nov 22, 2011</p>
+      2011, EllisLab, Inc.</a> &ndash; Son Güncelleme: 22 Kasım 2011</p>
 		</div><!-- /#footer -->
 	
 	<script src="../_static/asset/js/jquery-ui-min.js" type="text/javascript" charset="utf-8" async></script>

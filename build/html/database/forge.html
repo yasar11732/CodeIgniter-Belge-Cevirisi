@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="utf-8">
 	    
-	    <title>Database Forge Class &mdash; CodeIgniter v3.0-dev documentation</title>
+	    <title>Database Forge Class &mdash; CodeIgniter 3.0-dev documentation</title>
 
 	    <link rel="stylesheet" href="../_static/asset/css/common.css" type="text/css" />
 	    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -20,7 +20,8 @@
 	    <script type="text/javascript" src="../_static/jquery.js"></script>
 	    <script type="text/javascript" src="../_static/underscore.js"></script>
 	    <script type="text/javascript" src="../_static/doctools.js"></script>
-	    <link rel="top" title="CodeIgniter v3.0-dev documentation" href="../index.html" />
+	    <script type="text/javascript" src="../_static/translations.js"></script>
+	    <link rel="top" title="CodeIgniter 3.0-dev documentation" href="../index.html" />
 	    <link rel="up" title="Veri Tabanı Sınıfı" href="index.html" />
 	    <link rel="next" title="Database Utility Class" href="utilities.html" />
 	    <link rel="prev" title="Database Caching Class" href="caching.html" /> 
@@ -67,9 +68,9 @@
 
 		<div id="brand" class="ci">
 			<a href="http://codeigniter.com/"><img src="../_static/asset/img/ci-logo.gif" alt="CodeIgniter"></a>
-			<p>3.0-dev User Guide</p>
+			<p>3.0-dev Kullanım Kılavuzu</p>
 		    <p><a href="../_sources/database/forge.txt"
-			           rel="nofollow">Show Source</a></p>
+			           rel="nofollow">Kaynağı Göster</a></p>
 		</div><!-- /#brand -->
 
 		<div id="header">
@@ -77,12 +78,12 @@
 				<fieldset>
 					<input type="text" name="q" id="q" value="">
 					<input type="hidden" name="as_sitesearch" id="as_sitesearch" value="codeigniter.com/user_guide/" />
-					<input class="grades" type="submit" value="search">
+					<input class="grades" type="submit" value="ara">
 				</fieldset>
 			</form>
 			<ul>
-				<li><a href="../index.html">Home</a>&nbsp;&nbsp; &rsaquo;</li>
-				<li><a id="toc-link" href="../index.html">Table of Contents</a>&nbsp;&nbsp; &rsaquo;</li>
+				<li><a href="../index.html">Anasayfa</a>&nbsp;&nbsp; &rsaquo;</li>
+				<li><a id="toc-link" href="../index.html">İçindekiler</a>&nbsp;&nbsp; &rsaquo;</li>
 				<li><a href="index.html" accesskey="U">Veri Tabanı Sınıfı</a>&nbsp;&nbsp;  &rsaquo;</li>
 
 				<li><strong>Database Forge Class</strong></li>
@@ -91,7 +92,7 @@
 
 		<div class="section" id="content">
 			<div class="section" id="database-forge-class">
-<h1><a class="toc-backref" href="#id1">Database Forge Class</a><a class="headerlink" href="#database-forge-class" title="Permalink to this headline">¶</a></h1>
+<h1><a class="toc-backref" href="#id1">Database Forge Class</a><a class="headerlink" href="#database-forge-class" title="Bu başlığın kalıcı bağlantısı">¶</a></h1>
 <p>The Database Forge Class contains functions that help you manage your
 database.</p>
 <div class="contents topic" id="table-of-contents">
@@ -127,9 +128,9 @@ database.</p>
 </ul>
 </div>
 <div class="section" id="initializing-the-forge-class">
-<h2><a class="toc-backref" href="#id2">Initializing the Forge Class</a><a class="headerlink" href="#initializing-the-forge-class" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id2">Initializing the Forge Class</a><a class="headerlink" href="#initializing-the-forge-class" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
 <div class="admonition important">
-<p class="first admonition-title">Important</p>
+<p class="first admonition-title">Önemli</p>
 <p class="last">In order to initialize the Forge class, your database
 driver must already be running, since the forge class relies on it.</p>
 </div>
@@ -143,7 +144,7 @@ object:</p>
 </pre></div>
 </div>
 <div class="section" id="this-dbforge-create-database-db-name">
-<h3><a class="toc-backref" href="#id3">$this-&gt;dbforge-&gt;create_database(&#8216;db_name&#8217;)</a><a class="headerlink" href="#this-dbforge-create-database-db-name" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id3">$this-&gt;dbforge-&gt;create_database(&#8216;db_name&#8217;)</a><a class="headerlink" href="#this-dbforge-create-database-db-name" title="Bu başlığın kalıcı bağlantısı">¶</a></h3>
 <p>Permits you to create the database specified in the first parameter.
 Returns TRUE/FALSE based on success or failure:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="k">if</span> <span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">dbforge</span><span class="o">-&gt;</span><span class="na">create_database</span><span class="p">(</span><span class="s1">&#39;my_db&#39;</span><span class="p">))</span>
@@ -154,7 +155,7 @@ Returns TRUE/FALSE based on success or failure:</p>
 </div>
 </div>
 <div class="section" id="this-dbforge-drop-database-db-name">
-<h3><a class="toc-backref" href="#id4">$this-&gt;dbforge-&gt;drop_database(&#8216;db_name&#8217;)</a><a class="headerlink" href="#this-dbforge-drop-database-db-name" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id4">$this-&gt;dbforge-&gt;drop_database(&#8216;db_name&#8217;)</a><a class="headerlink" href="#this-dbforge-drop-database-db-name" title="Bu başlığın kalıcı bağlantısı">¶</a></h3>
 <p>Permits you to drop the database specified in the first parameter.
 Returns TRUE/FALSE based on success or failure:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="k">if</span> <span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">dbforge</span><span class="o">-&gt;</span><span class="na">drop_database</span><span class="p">(</span><span class="s1">&#39;my_db&#39;</span><span class="p">))</span>
@@ -166,12 +167,12 @@ Returns TRUE/FALSE based on success or failure:</p>
 </div>
 </div>
 <div class="section" id="creating-and-dropping-tables">
-<h2><a class="toc-backref" href="#id5">Creating and Dropping Tables</a><a class="headerlink" href="#creating-and-dropping-tables" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id5">Creating and Dropping Tables</a><a class="headerlink" href="#creating-and-dropping-tables" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
 <p>There are several things you may wish to do when creating tables. Add
 fields, add keys to the table, alter columns. CodeIgniter provides a
 mechanism for this.</p>
 <div class="section" id="adding-fields">
-<h3><a class="toc-backref" href="#id6">Adding fields</a><a class="headerlink" href="#adding-fields" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id6">Adding fields</a><a class="headerlink" href="#adding-fields" title="Bu başlığın kalıcı bağlantısı">¶</a></h3>
 <p>Fields are created via an associative array. Within the array you must
 include a &#8216;type&#8217; key that relates to the datatype of the field. For
 example, INT, VARCHAR, TEXT, etc. Many datatypes (for example VARCHAR)
@@ -222,23 +223,23 @@ such as integer.</li>
 $this-&gt;dbforge-&gt;add_field($fields); followed by a call to the
 create_table() function.</p>
 <div class="section" id="this-dbforge-add-field">
-<h4><a class="toc-backref" href="#id7">$this-&gt;dbforge-&gt;add_field()</a><a class="headerlink" href="#this-dbforge-add-field" title="Permalink to this headline">¶</a></h4>
+<h4><a class="toc-backref" href="#id7">$this-&gt;dbforge-&gt;add_field()</a><a class="headerlink" href="#this-dbforge-add-field" title="Bu başlığın kalıcı bağlantısı">¶</a></h4>
 <p>The add fields function will accept the above array.</p>
 </div>
 <div class="section" id="passing-strings-as-fields">
-<h4><a class="toc-backref" href="#id8">Passing strings as fields</a><a class="headerlink" href="#passing-strings-as-fields" title="Permalink to this headline">¶</a></h4>
+<h4><a class="toc-backref" href="#id8">Passing strings as fields</a><a class="headerlink" href="#passing-strings-as-fields" title="Bu başlığın kalıcı bağlantısı">¶</a></h4>
 <p>If you know exactly how you want a field to be created, you can pass the
 string into the field definitions with add_field()</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">dbforge</span><span class="o">-&gt;</span><span class="na">add_field</span><span class="p">(</span><span class="s2">&quot;label varchar(100) NOT NULL DEFAULT &#39;default label&#39;&quot;</span><span class="p">);</span>
 </pre></div>
 </div>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
+<p class="first admonition-title">Not</p>
 <p class="last">Multiple calls to add_field() are cumulative.</p>
 </div>
 </div>
 <div class="section" id="creating-an-id-field">
-<h4><a class="toc-backref" href="#id9">Creating an id field</a><a class="headerlink" href="#creating-an-id-field" title="Permalink to this headline">¶</a></h4>
+<h4><a class="toc-backref" href="#id9">Creating an id field</a><a class="headerlink" href="#creating-an-id-field" title="Bu başlığın kalıcı bağlantısı">¶</a></h4>
 <p>There is a special exception for creating id fields. A field with type
 id will automatically be assinged as an INT(9) auto_incrementing
 Primary Key.</p>
@@ -249,7 +250,7 @@ Primary Key.</p>
 </div>
 </div>
 <div class="section" id="adding-keys">
-<h3><a class="toc-backref" href="#id10">Adding Keys</a><a class="headerlink" href="#adding-keys" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id10">Adding Keys</a><a class="headerlink" href="#adding-keys" title="Bu başlığın kalıcı bağlantısı">¶</a></h3>
 <p>Generally speaking, you&#8217;ll want your table to have Keys. This is
 accomplished with $this-&gt;dbforge-&gt;add_key(&#8216;field&#8217;). An optional second
 parameter set to TRUE will make it a primary key. Note that add_key()
@@ -272,7 +273,7 @@ below is for MySQL.</p>
 </div>
 </div>
 <div class="section" id="creating-a-table">
-<h3><a class="toc-backref" href="#id11">Creating a table</a><a class="headerlink" href="#creating-a-table" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id11">Creating a table</a><a class="headerlink" href="#creating-a-table" title="Bu başlığın kalıcı bağlantısı">¶</a></h3>
 <p>After fields and keys have been declared, you can create a new table
 with</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">dbforge</span><span class="o">-&gt;</span><span class="na">create_table</span><span class="p">(</span><span class="s1">&#39;table_name&#39;</span><span class="p">);</span>
@@ -287,7 +288,7 @@ into the definition</p>
 </div>
 </div>
 <div class="section" id="dropping-a-table">
-<h3><a class="toc-backref" href="#id12">Dropping a table</a><a class="headerlink" href="#dropping-a-table" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id12">Dropping a table</a><a class="headerlink" href="#dropping-a-table" title="Bu başlığın kalıcı bağlantısı">¶</a></h3>
 <p>Executes a DROP TABLE sql</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">dbforge</span><span class="o">-&gt;</span><span class="na">drop_table</span><span class="p">(</span><span class="s1">&#39;table_name&#39;</span><span class="p">);</span>
 <span class="c1">// gives DROP TABLE IF EXISTS  table_name</span>
@@ -295,7 +296,7 @@ into the definition</p>
 </div>
 </div>
 <div class="section" id="renaming-a-table">
-<h3><a class="toc-backref" href="#id13">Renaming a table</a><a class="headerlink" href="#renaming-a-table" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id13">Renaming a table</a><a class="headerlink" href="#renaming-a-table" title="Bu başlığın kalıcı bağlantısı">¶</a></h3>
 <p>Executes a TABLE rename</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">dbforge</span><span class="o">-&gt;</span><span class="na">rename_table</span><span class="p">(</span><span class="s1">&#39;old_table_name&#39;</span><span class="p">,</span> <span class="s1">&#39;new_table_name&#39;</span><span class="p">);</span>
 <span class="c1">// gives ALTER TABLE old_table_name RENAME TO new_table_name</span>
@@ -304,9 +305,9 @@ into the definition</p>
 </div>
 </div>
 <div class="section" id="modifying-tables">
-<h2><a class="toc-backref" href="#id14">Modifying Tables</a><a class="headerlink" href="#modifying-tables" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id14">Modifying Tables</a><a class="headerlink" href="#modifying-tables" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
 <div class="section" id="this-dbforge-add-column">
-<h3><a class="toc-backref" href="#id15">$this-&gt;dbforge-&gt;add_column()</a><a class="headerlink" href="#this-dbforge-add-column" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id15">$this-&gt;dbforge-&gt;add_column()</a><a class="headerlink" href="#this-dbforge-add-column" title="Bu başlığın kalıcı bağlantısı">¶</a></h3>
 <p>The add_column() function is used to modify an existing table. It
 accepts the same field array as above, and can be used for an unlimited
 number of additional fields.</p>
@@ -324,14 +325,14 @@ to add the new column after.</p>
 </div>
 </div>
 <div class="section" id="this-dbforge-drop-column">
-<h3><a class="toc-backref" href="#id16">$this-&gt;dbforge-&gt;drop_column()</a><a class="headerlink" href="#this-dbforge-drop-column" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id16">$this-&gt;dbforge-&gt;drop_column()</a><a class="headerlink" href="#this-dbforge-drop-column" title="Bu başlığın kalıcı bağlantısı">¶</a></h3>
 <p>Used to remove a column from a table.</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">dbforge</span><span class="o">-&gt;</span><span class="na">drop_column</span><span class="p">(</span><span class="s1">&#39;table_name&#39;</span><span class="p">,</span> <span class="s1">&#39;column_to_drop&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="this-dbforge-modify-column">
-<h3><a class="toc-backref" href="#id17">$this-&gt;dbforge-&gt;modify_column()</a><a class="headerlink" href="#this-dbforge-modify-column" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id17">$this-&gt;dbforge-&gt;modify_column()</a><a class="headerlink" href="#this-dbforge-modify-column" title="Bu başlığın kalıcı bağlantısı">¶</a></h3>
 <p>The usage of this function is identical to add_column(), except it
 alters an existing column rather than adding a new one. In order to
 change the name you can add a &#8220;name&#8221; key into the field defining array.</p>
@@ -361,10 +362,10 @@ change the name you can add a &#8220;name&#8221; key into the field defining arr
 				
 				<span class="next">Sonraki Başlık: <a href="utilities.html">Database Utility Class</a></span>
 				
-				<a href="#header" title="Return to top">Return to top</a>
+				<a href="#header" title="Başa Dön">Başa Dön</a>
 			</p>
 			<p><a href="">CodeIgniter</a> &ndash; Copyright &copy;
-      2011, EllisLab, Inc.</a> &ndash; Son Güncelleme: Nov 22, 2011</p>
+      2011, EllisLab, Inc.</a> &ndash; Son Güncelleme: 22 Kasım 2011</p>
 		</div><!-- /#footer -->
 	
 	<script src="../_static/asset/js/jquery-ui-min.js" type="text/javascript" charset="utf-8" async></script>

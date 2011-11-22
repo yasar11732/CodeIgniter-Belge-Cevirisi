@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="utf-8">
 	    
-	    <title>Cookie Helper &mdash; CodeIgniter v3.0-dev documentation</title>
+	    <title>Cookie Helper &mdash; CodeIgniter 3.0-dev documentation</title>
 
 	    <link rel="stylesheet" href="../_static/asset/css/common.css" type="text/css" />
 	    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -20,7 +20,8 @@
 	    <script type="text/javascript" src="../_static/jquery.js"></script>
 	    <script type="text/javascript" src="../_static/underscore.js"></script>
 	    <script type="text/javascript" src="../_static/doctools.js"></script>
-	    <link rel="top" title="CodeIgniter v3.0-dev documentation" href="../index.html" />
+	    <script type="text/javascript" src="../_static/translations.js"></script>
+	    <link rel="top" title="CodeIgniter 3.0-dev documentation" href="../index.html" />
 	    <link rel="up" title="Helpers" href="index.html" />
 	    <link rel="next" title="Date Helper" href="date_helper.html" />
 	    <link rel="prev" title="CAPTCHA Helper" href="captcha_helper.html" /> 
@@ -74,9 +75,9 @@
 
 		<div id="brand" class="ci">
 			<a href="http://codeigniter.com/"><img src="../_static/asset/img/ci-logo.gif" alt="CodeIgniter"></a>
-			<p>3.0-dev User Guide</p>
+			<p>3.0-dev Kullanım Kılavuzu</p>
 		    <p><a href="../_sources/helpers/cookie_helper.txt"
-			           rel="nofollow">Show Source</a></p>
+			           rel="nofollow">Kaynağı Göster</a></p>
 		</div><!-- /#brand -->
 
 		<div id="header">
@@ -84,12 +85,12 @@
 				<fieldset>
 					<input type="text" name="q" id="q" value="">
 					<input type="hidden" name="as_sitesearch" id="as_sitesearch" value="codeigniter.com/user_guide/" />
-					<input class="grades" type="submit" value="search">
+					<input class="grades" type="submit" value="ara">
 				</fieldset>
 			</form>
 			<ul>
-				<li><a href="../index.html">Home</a>&nbsp;&nbsp; &rsaquo;</li>
-				<li><a id="toc-link" href="../index.html">Table of Contents</a>&nbsp;&nbsp; &rsaquo;</li>
+				<li><a href="../index.html">Anasayfa</a>&nbsp;&nbsp; &rsaquo;</li>
+				<li><a id="toc-link" href="../index.html">İçindekiler</a>&nbsp;&nbsp; &rsaquo;</li>
 				<li><a href="index.html" accesskey="U">Helpers</a>&nbsp;&nbsp;  &rsaquo;</li>
 
 				<li><strong>Cookie Helper</strong></li>
@@ -98,7 +99,7 @@
 
 		<div class="section" id="content">
 			<div class="section" id="cookie-helper">
-<h1><a class="toc-backref" href="#id1">Cookie Helper</a><a class="headerlink" href="#cookie-helper" title="Permalink to this headline">¶</a></h1>
+<h1><a class="toc-backref" href="#id1">Cookie Helper</a><a class="headerlink" href="#cookie-helper" title="Bu başlığın kalıcı bağlantısı">¶</a></h1>
 <p>The Cookie Helper file contains functions that assist in working with
 cookies.</p>
 <div class="contents topic" id="page-contents">
@@ -114,7 +115,7 @@ cookies.</p>
 </ul>
 </div>
 <div class="section" id="loading-this-helper">
-<h2><a class="toc-backref" href="#id2">Loading this Helper</a><a class="headerlink" href="#loading-this-helper" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id2">Loading this Helper</a><a class="headerlink" href="#loading-this-helper" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
 <p>This helper is loaded using the following code</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">helper</span><span class="p">(</span><span class="s1">&#39;cookie&#39;</span><span class="p">);</span>
 </pre></div>
@@ -122,19 +123,19 @@ cookies.</p>
 <p>The following functions are available:</p>
 </div>
 <div class="section" id="set-cookie">
-<h2><a class="toc-backref" href="#id3">set_cookie()</a><a class="headerlink" href="#set-cookie" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id3">set_cookie()</a><a class="headerlink" href="#set-cookie" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
 <p>This helper function gives you view file friendly syntax to set browser
 cookies. Refer to the <a class="reference internal" href="../libraries/input.html"><em>Input class</em></a> for a
 description of use, as this function is an alias to
 <cite>$this-&gt;input-&gt;set_cookie()</cite>.</p>
 <dl class="method">
 <dt id="set_cookie">
-<tt class="descname">set_cookie</tt><big>(</big><em>$name = ''</em>, <em>$value = ''</em>, <em>$expire = ''</em>, <em>$domain = ''</em>, <em>$path = '/'</em>, <em>$prefix = ''</em>, <em>$secure = FALSE</em><big>)</big><a class="headerlink" href="#set_cookie" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">set_cookie</tt><big>(</big><em>$name = ''</em>, <em>$value = ''</em>, <em>$expire = ''</em>, <em>$domain = ''</em>, <em>$path = '/'</em>, <em>$prefix = ''</em>, <em>$secure = FALSE</em><big>)</big><a class="headerlink" href="#set_cookie" title="Bu tanımın kalıcı bağlantısı">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<tr class="field-odd field"><th class="field-name">Parametreler:</th><td class="field-body"><ul class="first simple">
 <li><strong>$name</strong> (<em>string</em>) &#8211; the name of the cookie</li>
 <li><strong>$value</strong> (<em>string</em>) &#8211; the value of the cookie</li>
 <li><strong>$expire</strong> (<em>string</em>) &#8211; the number of seconds until expiration</li>
@@ -145,7 +146,7 @@ description of use, as this function is an alias to
 </ul>
 </td>
 </tr>
-<tr class="field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">void</p>
+<tr class="field-even field"><th class="field-name">Dönüş değeri::</th><td class="field-body"><p class="first last">void</p>
 </td>
 </tr>
 </tbody>
@@ -154,24 +155,24 @@ description of use, as this function is an alias to
 
 </div>
 <div class="section" id="get-cookie">
-<h2><a class="toc-backref" href="#id4">get_cookie()</a><a class="headerlink" href="#get-cookie" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id4">get_cookie()</a><a class="headerlink" href="#get-cookie" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
 <p>This helper function gives you view file friendly syntax to get browser
 cookies. Refer to the <a class="reference internal" href="../libraries/input.html"><em>Input class</em></a> for a
 description of use, as this function is an alias to <cite>$this-&gt;input-&gt;cookie()</cite>.</p>
 <dl class="method">
 <dt id="get_cookie">
-<tt class="descname">get_cookie</tt><big>(</big><em>$index = ''</em>, <em>$xss_clean = FALSE</em><big>)</big><a class="headerlink" href="#get_cookie" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">get_cookie</tt><big>(</big><em>$index = ''</em>, <em>$xss_clean = FALSE</em><big>)</big><a class="headerlink" href="#get_cookie" title="Bu tanımın kalıcı bağlantısı">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<tr class="field-odd field"><th class="field-name">Parametreler:</th><td class="field-body"><ul class="first simple">
 <li><strong>$index</strong> (<em>string</em>) &#8211; the name of the cookie</li>
 <li><strong>$xss_clean</strong> (<em>boolean</em>) &#8211; If the resulting value should be xss_cleaned or not</li>
 </ul>
 </td>
 </tr>
-<tr class="field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">mixed</p>
+<tr class="field-even field"><th class="field-name">Dönüş değeri::</th><td class="field-body"><p class="first last">mixed</p>
 </td>
 </tr>
 </tbody>
@@ -180,17 +181,17 @@ description of use, as this function is an alias to <cite>$this-&gt;input-&gt;co
 
 </div>
 <div class="section" id="delete-cookie">
-<h2><a class="toc-backref" href="#id5">delete_cookie()</a><a class="headerlink" href="#delete-cookie" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id5">delete_cookie()</a><a class="headerlink" href="#delete-cookie" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
 <p>Lets you delete a cookie. Unless you&#8217;ve set a custom path or other
 values, only the name of the cookie is needed</p>
 <dl class="method">
 <dt id="delete_cookie">
-<tt class="descname">delete_cookie</tt><big>(</big><em>$name = ''</em>, <em>$domain = ''</em>, <em>$path = '/'</em>, <em>$prefix = ''</em><big>)</big><a class="headerlink" href="#delete_cookie" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">delete_cookie</tt><big>(</big><em>$name = ''</em>, <em>$domain = ''</em>, <em>$path = '/'</em>, <em>$prefix = ''</em><big>)</big><a class="headerlink" href="#delete_cookie" title="Bu tanımın kalıcı bağlantısı">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<tr class="field-odd field"><th class="field-name">Parametreler:</th><td class="field-body"><ul class="first simple">
 <li><strong>$name</strong> (<em>string</em>) &#8211; the name of the cookie</li>
 <li><strong>$domain</strong> (<em>string</em>) &#8211; cookie domain (ususally .example.com)</li>
 <li><strong>$path</strong> (<em>string</em>) &#8211; cookie path</li>
@@ -198,7 +199,7 @@ values, only the name of the cookie is needed</p>
 </ul>
 </td>
 </tr>
-<tr class="field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">void</p>
+<tr class="field-even field"><th class="field-name">Dönüş değeri::</th><td class="field-body"><p class="first last">void</p>
 </td>
 </tr>
 </tbody>
@@ -230,10 +231,10 @@ parameters.</p>
 				
 				<span class="next">Sonraki Başlık: <a href="date_helper.html">Date Helper</a></span>
 				
-				<a href="#header" title="Return to top">Return to top</a>
+				<a href="#header" title="Başa Dön">Başa Dön</a>
 			</p>
 			<p><a href="">CodeIgniter</a> &ndash; Copyright &copy;
-      2011, EllisLab, Inc.</a> &ndash; Son Güncelleme: Nov 22, 2011</p>
+      2011, EllisLab, Inc.</a> &ndash; Son Güncelleme: 22 Kasım 2011</p>
 		</div><!-- /#footer -->
 	
 	<script src="../_static/asset/js/jquery-ui-min.js" type="text/javascript" charset="utf-8" async></script>

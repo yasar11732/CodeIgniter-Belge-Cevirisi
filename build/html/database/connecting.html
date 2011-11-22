@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="utf-8">
 	    
-	    <title>Connecting to your Database &mdash; CodeIgniter v3.0-dev documentation</title>
+	    <title>Connecting to your Database &mdash; CodeIgniter 3.0-dev documentation</title>
 
 	    <link rel="stylesheet" href="../_static/asset/css/common.css" type="text/css" />
 	    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -20,7 +20,8 @@
 	    <script type="text/javascript" src="../_static/jquery.js"></script>
 	    <script type="text/javascript" src="../_static/underscore.js"></script>
 	    <script type="text/javascript" src="../_static/doctools.js"></script>
-	    <link rel="top" title="CodeIgniter v3.0-dev documentation" href="../index.html" />
+	    <script type="text/javascript" src="../_static/translations.js"></script>
+	    <link rel="top" title="CodeIgniter 3.0-dev documentation" href="../index.html" />
 	    <link rel="up" title="Veri Tabanı Sınıfı" href="index.html" />
 	    <link rel="next" title="Queries" href="queries.html" />
 	    <link rel="prev" title="Database Configuration" href="configuration.html" /> 
@@ -67,9 +68,9 @@
 
 		<div id="brand" class="ci">
 			<a href="http://codeigniter.com/"><img src="../_static/asset/img/ci-logo.gif" alt="CodeIgniter"></a>
-			<p>3.0-dev User Guide</p>
+			<p>3.0-dev Kullanım Kılavuzu</p>
 		    <p><a href="../_sources/database/connecting.txt"
-			           rel="nofollow">Show Source</a></p>
+			           rel="nofollow">Kaynağı Göster</a></p>
 		</div><!-- /#brand -->
 
 		<div id="header">
@@ -77,12 +78,12 @@
 				<fieldset>
 					<input type="text" name="q" id="q" value="">
 					<input type="hidden" name="as_sitesearch" id="as_sitesearch" value="codeigniter.com/user_guide/" />
-					<input class="grades" type="submit" value="search">
+					<input class="grades" type="submit" value="ara">
 				</fieldset>
 			</form>
 			<ul>
-				<li><a href="../index.html">Home</a>&nbsp;&nbsp; &rsaquo;</li>
-				<li><a id="toc-link" href="../index.html">Table of Contents</a>&nbsp;&nbsp; &rsaquo;</li>
+				<li><a href="../index.html">Anasayfa</a>&nbsp;&nbsp; &rsaquo;</li>
+				<li><a id="toc-link" href="../index.html">İçindekiler</a>&nbsp;&nbsp; &rsaquo;</li>
 				<li><a href="index.html" accesskey="U">Veri Tabanı Sınıfı</a>&nbsp;&nbsp;  &rsaquo;</li>
 
 				<li><strong>Connecting to your Database</strong></li>
@@ -91,17 +92,17 @@
 
 		<div class="section" id="content">
 			<div class="section" id="connecting-to-your-database">
-<h1>Connecting to your Database<a class="headerlink" href="#connecting-to-your-database" title="Permalink to this headline">¶</a></h1>
+<h1>Connecting to your Database<a class="headerlink" href="#connecting-to-your-database" title="Bu başlığın kalıcı bağlantısı">¶</a></h1>
 <p>There are two ways to connect to a database:</p>
 <div class="section" id="automatically-connecting">
-<h2>Automatically Connecting<a class="headerlink" href="#automatically-connecting" title="Permalink to this headline">¶</a></h2>
+<h2>Automatically Connecting<a class="headerlink" href="#automatically-connecting" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
 <p>The &#8220;auto connect&#8221; feature will load and instantiate the database class
 with every page load. To enable &#8220;auto connecting&#8221;, add the word database
 to the library array, as indicated in the following file:</p>
 <p>application/config/autoload.php</p>
 </div>
 <div class="section" id="manually-connecting">
-<h2>Manually Connecting<a class="headerlink" href="#manually-connecting" title="Permalink to this headline">¶</a></h2>
+<h2>Manually Connecting<a class="headerlink" href="#manually-connecting" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
 <p>If only some of your pages require database connectivity you can
 manually connect to your database by adding this line of code in any
 function where it is needed, or in your class constructor to make the
@@ -113,7 +114,7 @@ database available globally in that class.</p>
 parameter it will connect to the group specified in your database config
 file. For most people, this is the preferred method of use.</p>
 <div class="section" id="available-parameters">
-<h3>Available Parameters<a class="headerlink" href="#available-parameters" title="Permalink to this headline">¶</a></h3>
+<h3>Available Parameters<a class="headerlink" href="#available-parameters" title="Bu başlığın kalıcı bağlantısı">¶</a></h3>
 <ol class="arabic simple">
 <li>The database connection values, passed either as an array or a DSN
 string.</li>
@@ -124,7 +125,7 @@ to TRUE by default.</li>
 </ol>
 </div>
 <div class="section" id="manually-connecting-to-a-database">
-<h3>Manually Connecting to a Database<a class="headerlink" href="#manually-connecting-to-a-database" title="Permalink to this headline">¶</a></h3>
+<h3>Manually Connecting to a Database<a class="headerlink" href="#manually-connecting-to-a-database" title="Bu başlığın kalıcı bağlantısı">¶</a></h3>
 <p>The first parameter of this function can <strong>optionally</strong> be used to
 specify a particular database group from your config file, or you can
 even submit connection values for a database that is not specified in
@@ -155,7 +156,7 @@ values:</p>
 <p>For information on each of these values please see the <a class="reference internal" href="configuration.html"><em>configuration
 page</em></a>.</p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
+<p class="first admonition-title">Not</p>
 <p class="last">For the PDO driver, $config[&#8216;hostname&#8217;] should look like
 this: &#8216;mysql:host=localhost&#8217;</p>
 </div>
@@ -174,7 +175,7 @@ the config variables as a query string.</p>
 </div>
 </div>
 <div class="section" id="connecting-to-multiple-databases">
-<h2>Connecting to Multiple Databases<a class="headerlink" href="#connecting-to-multiple-databases" title="Permalink to this headline">¶</a></h2>
+<h2>Connecting to Multiple Databases<a class="headerlink" href="#connecting-to-multiple-databases" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
 <p>If you need to connect to more than one database simultaneously you can
 do so as follows:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$DB1</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">database</span><span class="p">(</span><span class="s1">&#39;group_one&#39;</span><span class="p">,</span> <span class="k">TRUE</span><span class="p">);</span>
@@ -187,7 +188,7 @@ as indicated above).</p>
 <p>By setting the second parameter to TRUE (boolean) the function will
 return the database object.</p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
+<p class="first admonition-title">Not</p>
 <p>When you connect this way, you will use your object name to issue
 commands rather than the syntax used throughout this guide. In other
 words, rather than issuing commands with:</p>
@@ -206,7 +207,7 @@ words, rather than issuing commands with:</p>
 </div>
 </div>
 <div class="section" id="reconnecting-keeping-the-connection-alive">
-<h2>Reconnecting / Keeping the Connection Alive<a class="headerlink" href="#reconnecting-keeping-the-connection-alive" title="Permalink to this headline">¶</a></h2>
+<h2>Reconnecting / Keeping the Connection Alive<a class="headerlink" href="#reconnecting-keeping-the-connection-alive" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
 <p>If the database server&#8217;s idle timeout is exceeded while you&#8217;re doing
 some heavy PHP lifting (processing an image, for instance), you should
 consider pinging the server by using the reconnect() method before
@@ -217,7 +218,7 @@ or re-establish it.</p>
 </div>
 </div>
 <div class="section" id="manually-closing-the-connection">
-<h2>Manually closing the Connection<a class="headerlink" href="#manually-closing-the-connection" title="Permalink to this headline">¶</a></h2>
+<h2>Manually closing the Connection<a class="headerlink" href="#manually-closing-the-connection" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
 <p>While CodeIgniter intelligently takes care of closing your database
 connections, you can explicitly close the connection.</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">close</span><span class="p">();</span>
@@ -238,10 +239,10 @@ connections, you can explicitly close the connection.</p>
 				
 				<span class="next">Sonraki Başlık: <a href="queries.html">Queries</a></span>
 				
-				<a href="#header" title="Return to top">Return to top</a>
+				<a href="#header" title="Başa Dön">Başa Dön</a>
 			</p>
 			<p><a href="">CodeIgniter</a> &ndash; Copyright &copy;
-      2011, EllisLab, Inc.</a> &ndash; Son Güncelleme: Nov 22, 2011</p>
+      2011, EllisLab, Inc.</a> &ndash; Son Güncelleme: 22 Kasım 2011</p>
 		</div><!-- /#footer -->
 	
 	<script src="../_static/asset/js/jquery-ui-min.js" type="text/javascript" charset="utf-8" async></script>

@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="utf-8">
 	    
-	    <title>File Helper &mdash; CodeIgniter v3.0-dev documentation</title>
+	    <title>File Helper &mdash; CodeIgniter 3.0-dev documentation</title>
 
 	    <link rel="stylesheet" href="../_static/asset/css/common.css" type="text/css" />
 	    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -20,7 +20,8 @@
 	    <script type="text/javascript" src="../_static/jquery.js"></script>
 	    <script type="text/javascript" src="../_static/underscore.js"></script>
 	    <script type="text/javascript" src="../_static/doctools.js"></script>
-	    <link rel="top" title="CodeIgniter v3.0-dev documentation" href="../index.html" />
+	    <script type="text/javascript" src="../_static/translations.js"></script>
+	    <link rel="top" title="CodeIgniter 3.0-dev documentation" href="../index.html" />
 	    <link rel="up" title="Helpers" href="index.html" />
 	    <link rel="next" title="Form Helper" href="form_helper.html" />
 	    <link rel="prev" title="Email Helper" href="email_helper.html" /> 
@@ -74,9 +75,9 @@
 
 		<div id="brand" class="ci">
 			<a href="http://codeigniter.com/"><img src="../_static/asset/img/ci-logo.gif" alt="CodeIgniter"></a>
-			<p>3.0-dev User Guide</p>
+			<p>3.0-dev Kullanım Kılavuzu</p>
 		    <p><a href="../_sources/helpers/file_helper.txt"
-			           rel="nofollow">Show Source</a></p>
+			           rel="nofollow">Kaynağı Göster</a></p>
 		</div><!-- /#brand -->
 
 		<div id="header">
@@ -84,12 +85,12 @@
 				<fieldset>
 					<input type="text" name="q" id="q" value="">
 					<input type="hidden" name="as_sitesearch" id="as_sitesearch" value="codeigniter.com/user_guide/" />
-					<input class="grades" type="submit" value="search">
+					<input class="grades" type="submit" value="ara">
 				</fieldset>
 			</form>
 			<ul>
-				<li><a href="../index.html">Home</a>&nbsp;&nbsp; &rsaquo;</li>
-				<li><a id="toc-link" href="../index.html">Table of Contents</a>&nbsp;&nbsp; &rsaquo;</li>
+				<li><a href="../index.html">Anasayfa</a>&nbsp;&nbsp; &rsaquo;</li>
+				<li><a id="toc-link" href="../index.html">İçindekiler</a>&nbsp;&nbsp; &rsaquo;</li>
 				<li><a href="index.html" accesskey="U">Helpers</a>&nbsp;&nbsp;  &rsaquo;</li>
 
 				<li><strong>File Helper</strong></li>
@@ -98,7 +99,7 @@
 
 		<div class="section" id="content">
 			<div class="section" id="file-helper">
-<h1><a class="toc-backref" href="#id1">File Helper</a><a class="headerlink" href="#file-helper" title="Permalink to this headline">¶</a></h1>
+<h1><a class="toc-backref" href="#id1">File Helper</a><a class="headerlink" href="#file-helper" title="Bu başlığın kalıcı bağlantısı">¶</a></h1>
 <p>The File Helper file contains functions that assist in working with files.</p>
 <div class="contents topic" id="page-contents">
 <p class="topic-title first">Page Contents</p>
@@ -119,7 +120,7 @@
 </ul>
 </div>
 <div class="section" id="loading-this-helper">
-<h2><a class="toc-backref" href="#id2">Loading this Helper</a><a class="headerlink" href="#loading-this-helper" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id2">Loading this Helper</a><a class="headerlink" href="#loading-this-helper" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
 <p>This helper is loaded using the following code</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">helper</span><span class="p">(</span><span class="s1">&#39;file&#39;</span><span class="p">);</span>
 </pre></div>
@@ -127,14 +128,14 @@
 <p>The following functions are available:</p>
 </div>
 <div class="section" id="read-file-path">
-<h2><a class="toc-backref" href="#id3">read_file(&#8216;path&#8217;)</a><a class="headerlink" href="#read-file-path" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id3">read_file(&#8216;path&#8217;)</a><a class="headerlink" href="#read-file-path" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
 <p>Returns the data contained in the file specified in the path. Example</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$string</span> <span class="o">=</span> <span class="nx">read_file</span><span class="p">(</span><span class="s1">&#39;./path/to/file.php&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>The path can be a relative or full server path. Returns FALSE (boolean) on failure.</p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
+<p class="first admonition-title">Not</p>
 <p class="last">The path is relative to your main site index.php file, NOT your
 controller or view files. CodeIgniter uses a front controller so paths
 are always relative to the main site index.</p>
@@ -142,7 +143,7 @@ are always relative to the main site index.</p>
 <p>If your server is running an <cite>open_basedir</cite> restriction this function might not work if you are trying to access a file above the calling script.</p>
 </div>
 <div class="section" id="write-file-path-data">
-<h2><a class="toc-backref" href="#id4">write_file(&#8216;path&#8217;, $data)</a><a class="headerlink" href="#write-file-path-data" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id4">write_file(&#8216;path&#8217;, $data)</a><a class="headerlink" href="#write-file-path-data" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
 <p>Writes data to the file specified in the path. If the file does not exist the function will create it. Example</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$data</span> <span class="o">=</span> <span class="s1">&#39;Some file data&#39;</span><span class="p">;</span>
 <span class="k">if</span> <span class="p">(</span> <span class="o">!</span> <span class="nx">write_file</span><span class="p">(</span><span class="s1">&#39;./path/to/file.php&#39;</span><span class="p">,</span> <span class="nv">$data</span><span class="p">))</span>
@@ -162,14 +163,14 @@ are always relative to the main site index.</p>
 <p>The default mode is wb. Please see the <a class="reference external" href="http://php.net/fopen">PHP user guide</a> for mode options.</p>
 <p>Note: In order for this function to write data to a file its file permissions must be set such that it is writable (666, 777, etc.). If the file does not already exist, the directory containing it must be writable.</p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
+<p class="first admonition-title">Not</p>
 <p class="last">The path is relative to your main site index.php file, NOT your
 controller or view files. CodeIgniter uses a front controller so paths
 are always relative to the main site index.</p>
 </div>
 </div>
 <div class="section" id="delete-files-path">
-<h2><a class="toc-backref" href="#id5">delete_files(&#8216;path&#8217;)</a><a class="headerlink" href="#delete-files-path" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id5">delete_files(&#8216;path&#8217;)</a><a class="headerlink" href="#delete-files-path" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
 <p>Deletes ALL files contained in the supplied path. Example</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nx">delete_files</span><span class="p">(</span><span class="s1">&#39;./path/to/directory/&#39;</span><span class="p">);</span>
 </pre></div>
@@ -179,50 +180,50 @@ are always relative to the main site index.</p>
 </pre></div>
 </div>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
+<p class="first admonition-title">Not</p>
 <p class="last">The files must be writable or owned by the system in order to be deleted.</p>
 </div>
 </div>
 <div class="section" id="get-filenames-path-to-directory">
-<h2><a class="toc-backref" href="#id6">get_filenames(&#8216;path/to/directory/&#8217;)</a><a class="headerlink" href="#get-filenames-path-to-directory" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id6">get_filenames(&#8216;path/to/directory/&#8217;)</a><a class="headerlink" href="#get-filenames-path-to-directory" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
 <p>Takes a server path as input and returns an array containing the names of all files contained within it. The file path can optionally be added to the file names by setting the second parameter to TRUE.</p>
 </div>
 <div class="section" id="get-dir-file-info-path-to-directory-top-level-only-true">
-<h2><a class="toc-backref" href="#id7">get_dir_file_info(&#8216;path/to/directory/&#8217;, $top_level_only = TRUE)</a><a class="headerlink" href="#get-dir-file-info-path-to-directory-top-level-only-true" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id7">get_dir_file_info(&#8216;path/to/directory/&#8217;, $top_level_only = TRUE)</a><a class="headerlink" href="#get-dir-file-info-path-to-directory-top-level-only-true" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
 <p>Reads the specified directory and builds an array containing the filenames, filesize, dates, and permissions. Sub-folders contained within the specified path are only read if forced by sending the second parameter, $top_level_only to FALSE, as this can be an intensive operation.</p>
 </div>
 <div class="section" id="get-file-info-path-to-file-file-information">
-<h2><a class="toc-backref" href="#id8">get_file_info(&#8216;path/to/file&#8217;, $file_information)</a><a class="headerlink" href="#get-file-info-path-to-file-file-information" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id8">get_file_info(&#8216;path/to/file&#8217;, $file_information)</a><a class="headerlink" href="#get-file-info-path-to-file-file-information" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
 <p>Given a file and path, returns the name, path, size, date modified. Second parameter allows you to explicitly declare what information you want returned; options are: <cite>name</cite>, <cite>server_path</cite>, <cite>size</cite>, <cite>date</cite>, <cite>readable</cite>, <cite>writable</cite>, <cite>executable</cite>, <cite>fileperms</cite>. Returns FALSE if the file cannot be found.</p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
+<p class="first admonition-title">Not</p>
 <p class="last">The &#8220;writable&#8221; uses the PHP function is_writable() which is known
 to have issues on the IIS webserver. Consider using fileperms instead,
 which returns information from PHP&#8217;s fileperms() function.</p>
 </div>
 </div>
 <div class="section" id="get-mime-by-extension-file">
-<h2><a class="toc-backref" href="#id9">get_mime_by_extension(&#8216;file&#8217;)</a><a class="headerlink" href="#get-mime-by-extension-file" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id9">get_mime_by_extension(&#8216;file&#8217;)</a><a class="headerlink" href="#get-mime-by-extension-file" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
 <p>Translates a file extension into a mime type based on config/mimes.php. Returns FALSE if it can&#8217;t determine the type, or open the mime config file.</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$file</span> <span class="o">=</span> <span class="s2">&quot;somefile.png&quot;</span><span class="p">;</span>
 <span class="k">echo</span> <span class="nv">$file</span> <span class="o">.</span> <span class="s1">&#39; is has a mime type of &#39;</span> <span class="o">.</span> <span class="nx">get_mime_by_extension</span><span class="p">(</span><span class="nv">$file</span><span class="p">);</span>
 </pre></div>
 </div>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
+<p class="first admonition-title">Not</p>
 <p class="last">This is not an accurate way of determining file mime types, and
 is here strictly as a convenience. It should not be used for security.</p>
 </div>
 </div>
 <div class="section" id="symbolic-permissions-perms">
-<h2><a class="toc-backref" href="#id10">symbolic_permissions($perms)</a><a class="headerlink" href="#symbolic-permissions-perms" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id10">symbolic_permissions($perms)</a><a class="headerlink" href="#symbolic-permissions-perms" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
 <p>Takes numeric permissions (such as is returned by <cite>fileperms()</cite> and returns standard symbolic notation of file permissions.</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="k">echo</span> <span class="nx">symbolic_permissions</span><span class="p">(</span><span class="nb">fileperms</span><span class="p">(</span><span class="s1">&#39;./index.php&#39;</span><span class="p">));</span>  <span class="c1">// -rw-r--r--</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="octal-permissions-perms">
-<h2><a class="toc-backref" href="#id11">octal_permissions($perms)</a><a class="headerlink" href="#octal-permissions-perms" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id11">octal_permissions($perms)</a><a class="headerlink" href="#octal-permissions-perms" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
 <p>Takes numeric permissions (such as is returned by fileperms() and returns a three character octal notation of file permissions.</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="k">echo</span> <span class="nx">octal_permissions</span><span class="p">(</span><span class="nb">fileperms</span><span class="p">(</span><span class="s1">&#39;./index.php&#39;</span><span class="p">));</span>  <span class="c1">// 644</span>
 </pre></div>
@@ -242,10 +243,10 @@ is here strictly as a convenience. It should not be used for security.</p>
 				
 				<span class="next">Sonraki Başlık: <a href="form_helper.html">Form Helper</a></span>
 				
-				<a href="#header" title="Return to top">Return to top</a>
+				<a href="#header" title="Başa Dön">Başa Dön</a>
 			</p>
 			<p><a href="">CodeIgniter</a> &ndash; Copyright &copy;
-      2011, EllisLab, Inc.</a> &ndash; Son Güncelleme: Nov 22, 2011</p>
+      2011, EllisLab, Inc.</a> &ndash; Son Güncelleme: 22 Kasım 2011</p>
 		</div><!-- /#footer -->
 	
 	<script src="../_static/asset/js/jquery-ui-min.js" type="text/javascript" charset="utf-8" async></script>

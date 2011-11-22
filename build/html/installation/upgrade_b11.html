@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="utf-8">
 	    
-	    <title>Upgrading From Beta 1.0 to Beta 1.1 &mdash; CodeIgniter v3.0-dev documentation</title>
+	    <title>Upgrading From Beta 1.0 to Beta 1.1 &mdash; CodeIgniter 3.0-dev documentation</title>
 
 	    <link rel="stylesheet" href="../_static/asset/css/common.css" type="text/css" />
 	    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -20,7 +20,8 @@
 	    <script type="text/javascript" src="../_static/jquery.js"></script>
 	    <script type="text/javascript" src="../_static/underscore.js"></script>
 	    <script type="text/javascript" src="../_static/doctools.js"></script>
-	    <link rel="top" title="CodeIgniter v3.0-dev documentation" href="../index.html" />
+	    <script type="text/javascript" src="../_static/translations.js"></script>
+	    <link rel="top" title="CodeIgniter 3.0-dev documentation" href="../index.html" />
 	    <link rel="up" title="Installation Instructions" href="index.html" />
 	    <link rel="next" title="Upgrading From a Previous Version" href="upgrading.html" />
 	    <link rel="prev" title="Upgrading from 2.0.3 to 2.1.0" href="upgrade_210.html" /> 
@@ -80,9 +81,9 @@
 
 		<div id="brand" class="ci">
 			<a href="http://codeigniter.com/"><img src="../_static/asset/img/ci-logo.gif" alt="CodeIgniter"></a>
-			<p>3.0-dev User Guide</p>
+			<p>3.0-dev Kullanım Kılavuzu</p>
 		    <p><a href="../_sources/installation/upgrade_b11.txt"
-			           rel="nofollow">Show Source</a></p>
+			           rel="nofollow">Kaynağı Göster</a></p>
 		</div><!-- /#brand -->
 
 		<div id="header">
@@ -90,12 +91,12 @@
 				<fieldset>
 					<input type="text" name="q" id="q" value="">
 					<input type="hidden" name="as_sitesearch" id="as_sitesearch" value="codeigniter.com/user_guide/" />
-					<input class="grades" type="submit" value="search">
+					<input class="grades" type="submit" value="ara">
 				</fieldset>
 			</form>
 			<ul>
-				<li><a href="../index.html">Home</a>&nbsp;&nbsp; &rsaquo;</li>
-				<li><a id="toc-link" href="../index.html">Table of Contents</a>&nbsp;&nbsp; &rsaquo;</li>
+				<li><a href="../index.html">Anasayfa</a>&nbsp;&nbsp; &rsaquo;</li>
+				<li><a id="toc-link" href="../index.html">İçindekiler</a>&nbsp;&nbsp; &rsaquo;</li>
 				<li><a href="index.html" accesskey="U">Installation Instructions</a>&nbsp;&nbsp;  &rsaquo;</li>
 
 				<li><strong>Upgrading From Beta 1.0 to Beta 1.1</strong></li>
@@ -104,16 +105,16 @@
 
 		<div class="section" id="content">
 			<div class="section" id="upgrading-from-beta-1-0-to-beta-1-1">
-<h1>Upgrading From Beta 1.0 to Beta 1.1<a class="headerlink" href="#upgrading-from-beta-1-0-to-beta-1-1" title="Permalink to this headline">¶</a></h1>
+<h1>Upgrading From Beta 1.0 to Beta 1.1<a class="headerlink" href="#upgrading-from-beta-1-0-to-beta-1-1" title="Bu başlığın kalıcı bağlantısı">¶</a></h1>
 <p>To upgrade to Beta 1.1 please perform the following steps:</p>
 <div class="section" id="step-1-replace-your-index-file">
-<h2>Step 1: Replace your index file<a class="headerlink" href="#step-1-replace-your-index-file" title="Permalink to this headline">¶</a></h2>
+<h2>Step 1: Replace your index file<a class="headerlink" href="#step-1-replace-your-index-file" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
 <p>Replace your main index.php file with the new index.php file. Note: If
 you have renamed your &#8220;system&#8221; folder you will need to edit this info in
 the new file.</p>
 </div>
 <div class="section" id="step-2-relocate-your-config-folder">
-<h2>Step 2: Relocate your config folder<a class="headerlink" href="#step-2-relocate-your-config-folder" title="Permalink to this headline">¶</a></h2>
+<h2>Step 2: Relocate your config folder<a class="headerlink" href="#step-2-relocate-your-config-folder" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
 <p>This version of CodeIgniter now permits multiple sets of &#8220;applications&#8221;
 to all share a common set of backend files. In order to enable each
 application to have its own configuration values, the config directory
@@ -121,7 +122,7 @@ must now reside inside of your application folder, so please move it
 there.</p>
 </div>
 <div class="section" id="step-3-replace-directories">
-<h2>Step 3: Replace directories<a class="headerlink" href="#step-3-replace-directories" title="Permalink to this headline">¶</a></h2>
+<h2>Step 3: Replace directories<a class="headerlink" href="#step-3-replace-directories" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
 <p>Replace the following directories with the new versions:</p>
 <ul class="simple">
 <li>drivers</li>
@@ -132,13 +133,13 @@ there.</p>
 </ul>
 </div>
 <div class="section" id="step-4-add-the-calendar-language-file">
-<h2>Step 4: Add the calendar language file<a class="headerlink" href="#step-4-add-the-calendar-language-file" title="Permalink to this headline">¶</a></h2>
+<h2>Step 4: Add the calendar language file<a class="headerlink" href="#step-4-add-the-calendar-language-file" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
 <p>There is a new language file corresponding to the new calendaring class
 which must be added to your language folder. Add the following item to
 your version: language/english/calendar_lang.php</p>
 </div>
 <div class="section" id="step-5-edit-your-config-file">
-<h2>Step 5: Edit your config file<a class="headerlink" href="#step-5-edit-your-config-file" title="Permalink to this headline">¶</a></h2>
+<h2>Step 5: Edit your config file<a class="headerlink" href="#step-5-edit-your-config-file" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
 <p>The original application/config/config.php file has a typo in it Open
 the file and look for the items related to cookies:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$conf</span><span class="p">[</span><span class="s1">&#39;cookie_prefix&#39;</span><span class="p">]</span>  <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">;</span>
@@ -188,10 +189,10 @@ option if needed):</p>
 				
 				<span class="next">Sonraki Başlık: <a href="upgrading.html">Upgrading From a Previous Version</a></span>
 				
-				<a href="#header" title="Return to top">Return to top</a>
+				<a href="#header" title="Başa Dön">Başa Dön</a>
 			</p>
 			<p><a href="">CodeIgniter</a> &ndash; Copyright &copy;
-      2011, EllisLab, Inc.</a> &ndash; Son Güncelleme: Nov 22, 2011</p>
+      2011, EllisLab, Inc.</a> &ndash; Son Güncelleme: 22 Kasım 2011</p>
 		</div><!-- /#footer -->
 	
 	<script src="../_static/asset/js/jquery-ui-min.js" type="text/javascript" charset="utf-8" async></script>

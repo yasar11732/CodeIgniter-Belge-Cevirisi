@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="utf-8">
 	    
-	    <title>Generating Query Results &mdash; CodeIgniter v3.0-dev documentation</title>
+	    <title>Generating Query Results &mdash; CodeIgniter 3.0-dev documentation</title>
 
 	    <link rel="stylesheet" href="../_static/asset/css/common.css" type="text/css" />
 	    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -20,7 +20,8 @@
 	    <script type="text/javascript" src="../_static/jquery.js"></script>
 	    <script type="text/javascript" src="../_static/underscore.js"></script>
 	    <script type="text/javascript" src="../_static/doctools.js"></script>
-	    <link rel="top" title="CodeIgniter v3.0-dev documentation" href="../index.html" />
+	    <script type="text/javascript" src="../_static/translations.js"></script>
+	    <link rel="top" title="CodeIgniter 3.0-dev documentation" href="../index.html" />
 	    <link rel="up" title="Veri Tabanı Sınıfı" href="index.html" />
 	    <link rel="next" title="Query Helper Functions" href="helpers.html" />
 	    <link rel="prev" title="Queries" href="queries.html" /> 
@@ -67,9 +68,9 @@
 
 		<div id="brand" class="ci">
 			<a href="http://codeigniter.com/"><img src="../_static/asset/img/ci-logo.gif" alt="CodeIgniter"></a>
-			<p>3.0-dev User Guide</p>
+			<p>3.0-dev Kullanım Kılavuzu</p>
 		    <p><a href="../_sources/database/results.txt"
-			           rel="nofollow">Show Source</a></p>
+			           rel="nofollow">Kaynağı Göster</a></p>
 		</div><!-- /#brand -->
 
 		<div id="header">
@@ -77,12 +78,12 @@
 				<fieldset>
 					<input type="text" name="q" id="q" value="">
 					<input type="hidden" name="as_sitesearch" id="as_sitesearch" value="codeigniter.com/user_guide/" />
-					<input class="grades" type="submit" value="search">
+					<input class="grades" type="submit" value="ara">
 				</fieldset>
 			</form>
 			<ul>
-				<li><a href="../index.html">Home</a>&nbsp;&nbsp; &rsaquo;</li>
-				<li><a id="toc-link" href="../index.html">Table of Contents</a>&nbsp;&nbsp; &rsaquo;</li>
+				<li><a href="../index.html">Anasayfa</a>&nbsp;&nbsp; &rsaquo;</li>
+				<li><a id="toc-link" href="../index.html">İçindekiler</a>&nbsp;&nbsp; &rsaquo;</li>
 				<li><a href="index.html" accesskey="U">Veri Tabanı Sınıfı</a>&nbsp;&nbsp;  &rsaquo;</li>
 
 				<li><strong>Generating Query Results</strong></li>
@@ -91,10 +92,10 @@
 
 		<div class="section" id="content">
 			<div class="section" id="generating-query-results">
-<h1>Generating Query Results<a class="headerlink" href="#generating-query-results" title="Permalink to this headline">¶</a></h1>
+<h1>Generating Query Results<a class="headerlink" href="#generating-query-results" title="Bu başlığın kalıcı bağlantısı">¶</a></h1>
 <p>There are several ways to generate query results:</p>
 <div class="section" id="result">
-<h2>result()<a class="headerlink" href="#result" title="Permalink to this headline">¶</a></h2>
+<h2>result()<a class="headerlink" href="#result" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
 <p>This function returns the query result as an array of <strong>objects</strong>, or
 <strong>an empty array</strong> on failure. Typically you&#8217;ll use this in a foreach
 loop, like this:</p>
@@ -137,7 +138,7 @@ instantiate for each result object (note: this class must be loaded)</p>
 </div>
 </div>
 <div class="section" id="result-array">
-<h2>result_array()<a class="headerlink" href="#result-array" title="Permalink to this headline">¶</a></h2>
+<h2>result_array()<a class="headerlink" href="#result-array" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
 <p>This function returns the query result as a pure array, or an empty
 array when no result is produced. Typically you&#8217;ll use this in a foreach
 loop, like this:</p>
@@ -153,7 +154,7 @@ loop, like this:</p>
 </div>
 </div>
 <div class="section" id="row">
-<h2>row()<a class="headerlink" href="#row" title="Permalink to this headline">¶</a></h2>
+<h2>row()<a class="headerlink" href="#row" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
 <p>This function returns a single result row. If your query has more than
 one row, it returns only the first row. The result is returned as an
 <strong>object</strong>. Here&#8217;s a usage example:</p>
@@ -185,7 +186,7 @@ to instantiate the row with:</p>
 </div>
 </div>
 <div class="section" id="row-array">
-<h2>row_array()<a class="headerlink" href="#row-array" title="Permalink to this headline">¶</a></h2>
+<h2>row_array()<a class="headerlink" href="#row-array" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
 <p>Identical to the above row() function, except it returns an array.
 Example:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$query</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">query</span><span class="p">(</span><span class="s2">&quot;YOUR QUERY&quot;</span><span class="p">);</span>
@@ -226,11 +227,11 @@ parameter:</p>
 </div>
 </div></blockquote>
 <div class="section" id="result-helper-functions">
-<h3>Result Helper Functions<a class="headerlink" href="#result-helper-functions" title="Permalink to this headline">¶</a></h3>
+<h3>Result Helper Functions<a class="headerlink" href="#result-helper-functions" title="Bu başlığın kalıcı bağlantısı">¶</a></h3>
 </div>
 </div>
 <div class="section" id="query-num-rows">
-<h2>$query-&gt;num_rows()<a class="headerlink" href="#query-num-rows" title="Permalink to this headline">¶</a></h2>
+<h2>$query-&gt;num_rows()<a class="headerlink" href="#query-num-rows" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
 <p>The number of rows returned by the query. Note: In this example, $query
 is the variable that the query result object is assigned to:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$query</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">query</span><span class="p">(</span><span class="s1">&#39;SELECT * FROM my_table&#39;</span><span class="p">);</span>
@@ -240,7 +241,7 @@ is the variable that the query result object is assigned to:</p>
 </div>
 </div>
 <div class="section" id="query-num-fields">
-<h2>$query-&gt;num_fields()<a class="headerlink" href="#query-num-fields" title="Permalink to this headline">¶</a></h2>
+<h2>$query-&gt;num_fields()<a class="headerlink" href="#query-num-fields" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
 <p>The number of FIELDS (columns) returned by the query. Make sure to call
 the function using your query result object:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$query</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">query</span><span class="p">(</span><span class="s1">&#39;SELECT * FROM my_table&#39;</span><span class="p">);</span>
@@ -250,7 +251,7 @@ the function using your query result object:</p>
 </div>
 </div>
 <div class="section" id="query-free-result">
-<h2>$query-&gt;free_result()<a class="headerlink" href="#query-free-result" title="Permalink to this headline">¶</a></h2>
+<h2>$query-&gt;free_result()<a class="headerlink" href="#query-free-result" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
 <p>It frees the memory associated with the result and deletes the result
 resource ID. Normally PHP frees its memory automatically at the end of
 script execution. However, if you are running a lot of queries in a
@@ -287,10 +288,10 @@ Example:</p>
 				
 				<span class="next">Sonraki Başlık: <a href="helpers.html">Query Helper Functions</a></span>
 				
-				<a href="#header" title="Return to top">Return to top</a>
+				<a href="#header" title="Başa Dön">Başa Dön</a>
 			</p>
 			<p><a href="">CodeIgniter</a> &ndash; Copyright &copy;
-      2011, EllisLab, Inc.</a> &ndash; Son Güncelleme: Nov 22, 2011</p>
+      2011, EllisLab, Inc.</a> &ndash; Son Güncelleme: 22 Kasım 2011</p>
 		</div><!-- /#footer -->
 	
 	<script src="../_static/asset/js/jquery-ui-min.js" type="text/javascript" charset="utf-8" async></script>

@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="utf-8">
 	    
-	    <title>Zip Encoding Class &mdash; CodeIgniter v3.0-dev documentation</title>
+	    <title>Zip Encoding Class &mdash; CodeIgniter 3.0-dev documentation</title>
 
 	    <link rel="stylesheet" href="../_static/asset/css/common.css" type="text/css" />
 	    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -20,7 +20,8 @@
 	    <script type="text/javascript" src="../_static/jquery.js"></script>
 	    <script type="text/javascript" src="../_static/underscore.js"></script>
 	    <script type="text/javascript" src="../_static/doctools.js"></script>
-	    <link rel="top" title="CodeIgniter v3.0-dev documentation" href="../index.html" />
+	    <script type="text/javascript" src="../_static/translations.js"></script>
+	    <link rel="top" title="CodeIgniter 3.0-dev documentation" href="../index.html" />
 	    <link rel="up" title="Libraries" href="index.html" />
 	    <link rel="next" title="Helpers" href="../helpers/index.html" />
 	    <link rel="prev" title="XML-RPC and XML-RPC Server Classes" href="xmlrpc.html" /> 
@@ -81,9 +82,9 @@
 
 		<div id="brand" class="ci">
 			<a href="http://codeigniter.com/"><img src="../_static/asset/img/ci-logo.gif" alt="CodeIgniter"></a>
-			<p>3.0-dev User Guide</p>
+			<p>3.0-dev Kullanım Kılavuzu</p>
 		    <p><a href="../_sources/libraries/zip.txt"
-			           rel="nofollow">Show Source</a></p>
+			           rel="nofollow">Kaynağı Göster</a></p>
 		</div><!-- /#brand -->
 
 		<div id="header">
@@ -91,12 +92,12 @@
 				<fieldset>
 					<input type="text" name="q" id="q" value="">
 					<input type="hidden" name="as_sitesearch" id="as_sitesearch" value="codeigniter.com/user_guide/" />
-					<input class="grades" type="submit" value="search">
+					<input class="grades" type="submit" value="ara">
 				</fieldset>
 			</form>
 			<ul>
-				<li><a href="../index.html">Home</a>&nbsp;&nbsp; &rsaquo;</li>
-				<li><a id="toc-link" href="../index.html">Table of Contents</a>&nbsp;&nbsp; &rsaquo;</li>
+				<li><a href="../index.html">Anasayfa</a>&nbsp;&nbsp; &rsaquo;</li>
+				<li><a id="toc-link" href="../index.html">İçindekiler</a>&nbsp;&nbsp; &rsaquo;</li>
 				<li><a href="index.html" accesskey="U">Libraries</a>&nbsp;&nbsp;  &rsaquo;</li>
 
 				<li><strong>Zip Encoding Class</strong></li>
@@ -105,12 +106,12 @@
 
 		<div class="section" id="content">
 			<div class="section" id="zip-encoding-class">
-<h1>Zip Encoding Class<a class="headerlink" href="#zip-encoding-class" title="Permalink to this headline">¶</a></h1>
+<h1>Zip Encoding Class<a class="headerlink" href="#zip-encoding-class" title="Bu başlığın kalıcı bağlantısı">¶</a></h1>
 <p>CodeIgniter&#8217;s Zip Encoding Class classes permit you to create Zip
 archives. Archives can be downloaded to your desktop or saved to a
 directory.</p>
 <div class="section" id="initializing-the-class">
-<h2>Initializing the Class<a class="headerlink" href="#initializing-the-class" title="Permalink to this headline">¶</a></h2>
+<h2>Initializing the Class<a class="headerlink" href="#initializing-the-class" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
 <p>Like most other classes in CodeIgniter, the Zip class is initialized in
 your controller using the $this-&gt;load-&gt;library function:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">library</span><span class="p">(</span><span class="s1">&#39;zip&#39;</span><span class="p">);</span>
@@ -119,7 +120,7 @@ your controller using the $this-&gt;load-&gt;library function:</p>
 <p>Once loaded, the Zip library object will be available using: $this-&gt;zip</p>
 </div>
 <div class="section" id="usage-example">
-<h2>Usage Example<a class="headerlink" href="#usage-example" title="Permalink to this headline">¶</a></h2>
+<h2>Usage Example<a class="headerlink" href="#usage-example" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
 <p>This example demonstrates how to compress a file, save it to a folder on
 your server, and download it to your desktop.</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$name</span> <span class="o">=</span> <span class="s1">&#39;mydata1.txt&#39;</span><span class="p">;</span>
@@ -135,11 +136,11 @@ your server, and download it to your desktop.</p>
 </pre></div>
 </div>
 <div class="section" id="function-reference">
-<h3>Function Reference<a class="headerlink" href="#function-reference" title="Permalink to this headline">¶</a></h3>
+<h3>Function Reference<a class="headerlink" href="#function-reference" title="Bu başlığın kalıcı bağlantısı">¶</a></h3>
 </div>
 </div>
 <div class="section" id="this-zip-add-data">
-<h2>$this-&gt;zip-&gt;add_data()<a class="headerlink" href="#this-zip-add-data" title="Permalink to this headline">¶</a></h2>
+<h2>$this-&gt;zip-&gt;add_data()<a class="headerlink" href="#this-zip-add-data" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
 <p>Permits you to add data to the Zip archive. The first parameter must
 contain the name you would like given to the file, the second parameter
 must contain the file data as a string:</p>
@@ -183,7 +184,7 @@ include the path as part of the filename:</p>
 personal.</p>
 </div>
 <div class="section" id="this-zip-add-dir">
-<h2>$this-&gt;zip-&gt;add_dir()<a class="headerlink" href="#this-zip-add-dir" title="Permalink to this headline">¶</a></h2>
+<h2>$this-&gt;zip-&gt;add_dir()<a class="headerlink" href="#this-zip-add-dir" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
 <p>Permits you to add a directory. Usually this function is unnecessary
 since you can place your data into folders when using
 $this-&gt;zip-&gt;add_data(), but if you would like to create an empty folder
@@ -193,7 +194,7 @@ you can do so. Example:</p>
 </div>
 </div>
 <div class="section" id="this-zip-read-file">
-<h2>$this-&gt;zip-&gt;read_file()<a class="headerlink" href="#this-zip-read-file" title="Permalink to this headline">¶</a></h2>
+<h2>$this-&gt;zip-&gt;read_file()<a class="headerlink" href="#this-zip-read-file" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
 <p>Permits you to compress a file that already exists somewhere on your
 server. Supply a file path and the zip class will read it and add it to
 the archive:</p>
@@ -219,7 +220,7 @@ the file in it, pass TRUE (boolean) in the second parameter. Example:</p>
 path/to/</p>
 </div>
 <div class="section" id="this-zip-read-dir">
-<h2>$this-&gt;zip-&gt;read_dir()<a class="headerlink" href="#this-zip-read-dir" title="Permalink to this headline">¶</a></h2>
+<h2>$this-&gt;zip-&gt;read_dir()<a class="headerlink" href="#this-zip-read-dir" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
 <p>Permits you to compress a folder (and its contents) that already exists
 somewhere on your server. Supply a file path to the directory and the
 zip class will recursively read it and recreate it as a Zip archive. All
@@ -247,7 +248,7 @@ sub-folders stored correctly inside that, but will not include the
 folders /path/to/your.</p>
 </div>
 <div class="section" id="this-zip-archive">
-<h2>$this-&gt;zip-&gt;archive()<a class="headerlink" href="#this-zip-archive" title="Permalink to this headline">¶</a></h2>
+<h2>$this-&gt;zip-&gt;archive()<a class="headerlink" href="#this-zip-archive" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
 <p>Writes the Zip-encoded file to a directory on your server. Submit a
 valid server path ending in the file name. Make sure the directory is
 writable (666 or 777 is usually OK). Example:</p>
@@ -256,21 +257,21 @@ writable (666 or 777 is usually OK). Example:</p>
 </div>
 </div>
 <div class="section" id="this-zip-download">
-<h2>$this-&gt;zip-&gt;download()<a class="headerlink" href="#this-zip-download" title="Permalink to this headline">¶</a></h2>
+<h2>$this-&gt;zip-&gt;download()<a class="headerlink" href="#this-zip-download" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
 <p>Causes the Zip file to be downloaded from your server. The function must
 be passed the name you would like the zip file called. Example:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">zip</span><span class="o">-&gt;</span><span class="na">download</span><span class="p">(</span><span class="s1">&#39;latest_stuff.zip&#39;</span><span class="p">);</span> <span class="c1">// File will be named &quot;latest_stuff.zip&quot;</span>
 </pre></div>
 </div>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
+<p class="first admonition-title">Not</p>
 <p class="last">Do not display any data in the controller in which you call
 this function since it sends various server headers that cause the
 download to happen and the file to be treated as binary.</p>
 </div>
 </div>
 <div class="section" id="this-zip-get-zip">
-<h2>$this-&gt;zip-&gt;get_zip()<a class="headerlink" href="#this-zip-get-zip" title="Permalink to this headline">¶</a></h2>
+<h2>$this-&gt;zip-&gt;get_zip()<a class="headerlink" href="#this-zip-get-zip" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
 <p>Returns the Zip-compressed file data. Generally you will not need this
 function unless you want to do something unique with the data. Example:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$name</span> <span class="o">=</span> <span class="s1">&#39;my_bio.txt&#39;</span><span class="p">;</span>
@@ -283,7 +284,7 @@ function unless you want to do something unique with the data. Example:</p>
 </div>
 </div>
 <div class="section" id="this-zip-clear-data">
-<h2>$this-&gt;zip-&gt;clear_data()<a class="headerlink" href="#this-zip-clear-data" title="Permalink to this headline">¶</a></h2>
+<h2>$this-&gt;zip-&gt;clear_data()<a class="headerlink" href="#this-zip-clear-data" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
 <p>The Zip class caches your zip data so that it doesn&#8217;t need to recompile
 the Zip archive for each function you use above. If, however, you need
 to create multiple Zips, each with different data, you can clear the
@@ -318,10 +319,10 @@ cache between calls. Example:</p>
 				
 				<span class="next">Sonraki Başlık: <a href="../helpers/index.html">Helpers</a></span>
 				
-				<a href="#header" title="Return to top">Return to top</a>
+				<a href="#header" title="Başa Dön">Başa Dön</a>
 			</p>
 			<p><a href="">CodeIgniter</a> &ndash; Copyright &copy;
-      2011, EllisLab, Inc.</a> &ndash; Son Güncelleme: Nov 22, 2011</p>
+      2011, EllisLab, Inc.</a> &ndash; Son Güncelleme: 22 Kasım 2011</p>
 		</div><!-- /#footer -->
 	
 	<script src="../_static/asset/js/jquery-ui-min.js" type="text/javascript" charset="utf-8" async></script>

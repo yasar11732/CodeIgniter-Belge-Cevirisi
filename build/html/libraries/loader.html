@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="utf-8">
 	    
-	    <title>Loader Class &mdash; CodeIgniter v3.0-dev documentation</title>
+	    <title>Loader Class &mdash; CodeIgniter 3.0-dev documentation</title>
 
 	    <link rel="stylesheet" href="../_static/asset/css/common.css" type="text/css" />
 	    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -20,7 +20,8 @@
 	    <script type="text/javascript" src="../_static/jquery.js"></script>
 	    <script type="text/javascript" src="../_static/underscore.js"></script>
 	    <script type="text/javascript" src="../_static/doctools.js"></script>
-	    <link rel="top" title="CodeIgniter v3.0-dev documentation" href="../index.html" />
+	    <script type="text/javascript" src="../_static/translations.js"></script>
+	    <link rel="top" title="CodeIgniter 3.0-dev documentation" href="../index.html" />
 	    <link rel="up" title="Libraries" href="index.html" />
 	    <link rel="next" title="Output Class" href="output.html" />
 	    <link rel="prev" title="Language Class" href="language.html" /> 
@@ -81,9 +82,9 @@
 
 		<div id="brand" class="ci">
 			<a href="http://codeigniter.com/"><img src="../_static/asset/img/ci-logo.gif" alt="CodeIgniter"></a>
-			<p>3.0-dev User Guide</p>
+			<p>3.0-dev Kullanım Kılavuzu</p>
 		    <p><a href="../_sources/libraries/loader.txt"
-			           rel="nofollow">Show Source</a></p>
+			           rel="nofollow">Kaynağı Göster</a></p>
 		</div><!-- /#brand -->
 
 		<div id="header">
@@ -91,12 +92,12 @@
 				<fieldset>
 					<input type="text" name="q" id="q" value="">
 					<input type="hidden" name="as_sitesearch" id="as_sitesearch" value="codeigniter.com/user_guide/" />
-					<input class="grades" type="submit" value="search">
+					<input class="grades" type="submit" value="ara">
 				</fieldset>
 			</form>
 			<ul>
-				<li><a href="../index.html">Home</a>&nbsp;&nbsp; &rsaquo;</li>
-				<li><a id="toc-link" href="../index.html">Table of Contents</a>&nbsp;&nbsp; &rsaquo;</li>
+				<li><a href="../index.html">Anasayfa</a>&nbsp;&nbsp; &rsaquo;</li>
+				<li><a id="toc-link" href="../index.html">İçindekiler</a>&nbsp;&nbsp; &rsaquo;</li>
 				<li><a href="index.html" accesskey="U">Libraries</a>&nbsp;&nbsp;  &rsaquo;</li>
 
 				<li><strong>Loader Class</strong></li>
@@ -105,19 +106,19 @@
 
 		<div class="section" id="content">
 			<div class="section" id="loader-class">
-<h1>Loader Class<a class="headerlink" href="#loader-class" title="Permalink to this headline">¶</a></h1>
+<h1>Loader Class<a class="headerlink" href="#loader-class" title="Bu başlığın kalıcı bağlantısı">¶</a></h1>
 <p>Loader, as the name suggests, is used to load elements. These elements
 can be libraries (classes) <a class="reference internal" href="../general/views.html"><em>View files</em></a>,
 <a class="reference internal" href="../general/helpers.html"><em>Helpers</em></a>,
 <a class="reference internal" href="../general/models.html"><em>Models</em></a>, or your own files.</p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
+<p class="first admonition-title">Not</p>
 <p class="last">This class is initialized automatically by the system so there
 is no need to do it manually.</p>
 </div>
 <p>The following functions are available in this class:</p>
 <div class="section" id="this-load-library-class-name-config-object-name">
-<h2>$this-&gt;load-&gt;library(&#8216;class_name&#8217;, $config, &#8216;object name&#8217;)<a class="headerlink" href="#this-load-library-class-name-config-object-name" title="Permalink to this headline">¶</a></h2>
+<h2>$this-&gt;load-&gt;library(&#8216;class_name&#8217;, $config, &#8216;object name&#8217;)<a class="headerlink" href="#this-load-library-class-name-config-object-name" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
 <p>This function is used to load core classes. Where class_name is the
 name of the class you want to load. Note: We use the terms &#8220;class&#8221; and
 &#8220;library&#8221; interchangeably.</p>
@@ -147,7 +148,7 @@ passing an array of libraries to the load function.</p>
 </pre></div>
 </div>
 <div class="section" id="setting-options">
-<h3>Setting options<a class="headerlink" href="#setting-options" title="Permalink to this headline">¶</a></h3>
+<h3>Setting options<a class="headerlink" href="#setting-options" title="Bu başlığın kalıcı bağlantısı">¶</a></h3>
 <p>The second (optional) parameter allows you to optionally pass
 configuration setting. You will typically pass these as an array:</p>
 <div class="highlight-ci"><pre>$config = array (
@@ -165,7 +166,7 @@ regarding each one you would like to use.</p>
 the first parameter, each will receive the same parameter information.</p>
 </div>
 <div class="section" id="assigning-a-library-to-a-different-object-name">
-<h3>Assigning a Library to a different object name<a class="headerlink" href="#assigning-a-library-to-a-different-object-name" title="Permalink to this headline">¶</a></h3>
+<h3>Assigning a Library to a different object name<a class="headerlink" href="#assigning-a-library-to-a-different-object-name" title="Bu başlığın kalıcı bağlantısı">¶</a></h3>
 <p>If the third (optional) parameter is blank, the library will usually be
 assigned to an object with the same name as the library. For example, if
 the library is named Session, it will be assigned to a variable named
@@ -184,7 +185,7 @@ the first parameter, this parameter is discarded.</p>
 </div>
 </div>
 <div class="section" id="this-load-view-file-name-data-true-false">
-<h2>$this-&gt;load-&gt;view(&#8216;file_name&#8217;, $data, true/false)<a class="headerlink" href="#this-load-view-file-name-data-true-false" title="Permalink to this headline">¶</a></h2>
+<h2>$this-&gt;load-&gt;view(&#8216;file_name&#8217;, $data, true/false)<a class="headerlink" href="#this-load-view-file-name-data-true-false" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
 <p>This function is used to load your View files. If you haven&#8217;t read the
 <a class="reference internal" href="../general/views.html"><em>Views</em></a> section of the user guide it is
 recommended that you do since it shows you how this function is
@@ -208,7 +209,7 @@ assign it to a variable if you want the data returned:</p>
 </div>
 </div>
 <div class="section" id="this-load-model-model-name">
-<h2>$this-&gt;load-&gt;model(&#8216;Model_name&#8217;);<a class="headerlink" href="#this-load-model-model-name" title="Permalink to this headline">¶</a></h2>
+<h2>$this-&gt;load-&gt;model(&#8216;Model_name&#8217;);<a class="headerlink" href="#this-load-model-model-name" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">model</span><span class="p">(</span><span class="s1">&#39;Model_name&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
@@ -227,13 +228,13 @@ specify it via the second parameter of the loading function:</p>
 </div>
 </div>
 <div class="section" id="this-load-database-options-true-false">
-<h2>$this-&gt;load-&gt;database(&#8216;options&#8217;, true/false)<a class="headerlink" href="#this-load-database-options-true-false" title="Permalink to this headline">¶</a></h2>
+<h2>$this-&gt;load-&gt;database(&#8216;options&#8217;, true/false)<a class="headerlink" href="#this-load-database-options-true-false" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
 <p>This function lets you load the database class. The two parameters are
 <strong>optional</strong>. Please see the <a class="reference internal" href="../database/index.html"><em>database</em></a>
 section for more info.</p>
 </div>
 <div class="section" id="this-load-vars-array">
-<h2>$this-&gt;load-&gt;vars($array)<a class="headerlink" href="#this-load-vars-array" title="Permalink to this headline">¶</a></h2>
+<h2>$this-&gt;load-&gt;vars($array)<a class="headerlink" href="#this-load-vars-array" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
 <p>This function takes an associative array as input and generates
 variables using the PHP <a class="reference external" href="http://www.php.net/extract">extract</a>
 function. This function produces the same result as using the second
@@ -245,18 +246,18 @@ have multiple calls to this function. The data get cached and merged
 into one array for conversion to variables.</p>
 </div>
 <div class="section" id="this-load-get-var-key">
-<h2>$this-&gt;load-&gt;get_var($key)<a class="headerlink" href="#this-load-get-var-key" title="Permalink to this headline">¶</a></h2>
+<h2>$this-&gt;load-&gt;get_var($key)<a class="headerlink" href="#this-load-get-var-key" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
 <p>This function checks the associative array of variables available to
 your views. This is useful if for any reason a var is set in a library
 or another controller method using $this-&gt;load-&gt;vars().</p>
 </div>
 <div class="section" id="this-load-helper-file-name">
-<h2>$this-&gt;load-&gt;helper(&#8216;file_name&#8217;)<a class="headerlink" href="#this-load-helper-file-name" title="Permalink to this headline">¶</a></h2>
+<h2>$this-&gt;load-&gt;helper(&#8216;file_name&#8217;)<a class="headerlink" href="#this-load-helper-file-name" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
 <p>This function loads helper files, where file_name is the name of the
 file, without the _helper.php extension.</p>
 </div>
 <div class="section" id="this-load-file-filepath-filename-true-false">
-<h2>$this-&gt;load-&gt;file(&#8216;filepath/filename&#8217;, true/false)<a class="headerlink" href="#this-load-file-filepath-filename-true-false" title="Permalink to this headline">¶</a></h2>
+<h2>$this-&gt;load-&gt;file(&#8216;filepath/filename&#8217;, true/false)<a class="headerlink" href="#this-load-file-filepath-filename-true-false" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
 <p>This is a generic file loading function. Supply the filepath and name in
 the first parameter and it will open and read the file. By default the
 data is sent to your browser, just like a View file, but if you set the
@@ -264,17 +265,17 @@ second parameter to true (boolean) it will instead return the data as a
 string.</p>
 </div>
 <div class="section" id="this-load-language-file-name">
-<h2>$this-&gt;load-&gt;language(&#8216;file_name&#8217;)<a class="headerlink" href="#this-load-language-file-name" title="Permalink to this headline">¶</a></h2>
+<h2>$this-&gt;load-&gt;language(&#8216;file_name&#8217;)<a class="headerlink" href="#this-load-language-file-name" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
 <p>This function is an alias of the <a class="reference internal" href="language.html"><em>language loading
 function</em></a>: $this-&gt;lang-&gt;load()</p>
 </div>
 <div class="section" id="this-load-config-file-name">
-<h2>$this-&gt;load-&gt;config(&#8216;file_name&#8217;)<a class="headerlink" href="#this-load-config-file-name" title="Permalink to this headline">¶</a></h2>
+<h2>$this-&gt;load-&gt;config(&#8216;file_name&#8217;)<a class="headerlink" href="#this-load-config-file-name" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
 <p>This function is an alias of the <a class="reference internal" href="config.html"><em>config file loading
 function</em></a>: $this-&gt;config-&gt;load()</p>
 </div>
 <div class="section" id="application-packages">
-<h2>Application &#8220;Packages&#8221;<a class="headerlink" href="#application-packages" title="Permalink to this headline">¶</a></h2>
+<h2>Application &#8220;Packages&#8221;<a class="headerlink" href="#application-packages" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
 <p>An application package allows for the easy distribution of complete sets
 of resources in a single directory, complete with its own libraries,
 models, helpers, config, and language files. It is recommended that
@@ -282,7 +283,7 @@ these packages be placed in the application/third_party folder. Below
 is a sample map of an package directory</p>
 </div>
 <div class="section" id="sample-package-foo-bar-directory-map">
-<h2>Sample Package &#8220;Foo Bar&#8221; Directory Map<a class="headerlink" href="#sample-package-foo-bar-directory-map" title="Permalink to this headline">¶</a></h2>
+<h2>Sample Package &#8220;Foo Bar&#8221; Directory Map<a class="headerlink" href="#sample-package-foo-bar-directory-map" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
 <p>The following is an example of a directory for an application package
 named &#8220;Foo Bar&#8221;.</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="o">/</span><span class="nx">application</span><span class="o">/</span><span class="nx">third_party</span><span class="o">/</span><span class="nx">foo_bar</span>
@@ -300,7 +301,7 @@ these resources in your controllers, you first need to tell the Loader
 that you are going to be loading resources from a package, by adding the
 package path.</p>
 <div class="section" id="this-load-add-package-path">
-<h3>$this-&gt;load-&gt;add_package_path()<a class="headerlink" href="#this-load-add-package-path" title="Permalink to this headline">¶</a></h3>
+<h3>$this-&gt;load-&gt;add_package_path()<a class="headerlink" href="#this-load-add-package-path" title="Bu başlığın kalıcı bağlantısı">¶</a></h3>
 <p>Adding a package path instructs the Loader class to prepend a given path
 for subsequent requests for resources. As an example, the &#8220;Foo Bar&#8221;
 application package above has a library named Foo_bar.php. In our
@@ -311,7 +312,7 @@ controller, we&#8217;d do the following:</p>
 </div>
 </div>
 <div class="section" id="this-load-remove-package-path">
-<h3>$this-&gt;load-&gt;remove_package_path()<a class="headerlink" href="#this-load-remove-package-path" title="Permalink to this headline">¶</a></h3>
+<h3>$this-&gt;load-&gt;remove_package_path()<a class="headerlink" href="#this-load-remove-package-path" title="Bu başlığın kalıcı bağlantısı">¶</a></h3>
 <p>When your controller is finished using resources from an application
 package, and particularly if you have other application packages you
 want to work with, you may wish to remove the package path so the Loader
@@ -319,7 +320,7 @@ no longer looks in that folder for resources. To remove the last path
 added, simply call the method with no parameters.</p>
 </div>
 <div class="section" id="id2">
-<h3>$this-&gt;load-&gt;remove_package_path()<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<h3>$this-&gt;load-&gt;remove_package_path()<a class="headerlink" href="#id2" title="Bu başlığın kalıcı bağlantısı">¶</a></h3>
 <p>Or to remove a specific package path, specify the same path previously
 given to add_package_path() for a package.:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">remove_package_path</span><span class="p">(</span><span class="nx">APPPATH</span><span class="o">.</span><span class="s1">&#39;third_party/foo_bar/&#39;</span><span class="p">);</span>
@@ -327,7 +328,7 @@ given to add_package_path() for a package.:</p>
 </div>
 </div>
 <div class="section" id="package-view-files">
-<h3>Package view files<a class="headerlink" href="#package-view-files" title="Permalink to this headline">¶</a></h3>
+<h3>Package view files<a class="headerlink" href="#package-view-files" title="Bu başlığın kalıcı bağlantısı">¶</a></h3>
 <p>By Default, package view files paths are set when add_package_path()
 is called. View paths are looped through, and once a match is
 encountered that view is loaded.</p>
@@ -364,10 +365,10 @@ calling add_package_path().</p>
 				
 				<span class="next">Sonraki Başlık: <a href="output.html">Output Class</a></span>
 				
-				<a href="#header" title="Return to top">Return to top</a>
+				<a href="#header" title="Başa Dön">Başa Dön</a>
 			</p>
 			<p><a href="">CodeIgniter</a> &ndash; Copyright &copy;
-      2011, EllisLab, Inc.</a> &ndash; Son Güncelleme: Nov 22, 2011</p>
+      2011, EllisLab, Inc.</a> &ndash; Son Güncelleme: 22 Kasım 2011</p>
 		</div><!-- /#footer -->
 	
 	<script src="../_static/asset/js/jquery-ui-min.js" type="text/javascript" charset="utf-8" async></script>

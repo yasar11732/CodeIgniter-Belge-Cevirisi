@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="utf-8">
 	    
-	    <title>Form Validation &mdash; CodeIgniter v3.0-dev documentation</title>
+	    <title>Form Validation &mdash; CodeIgniter 3.0-dev documentation</title>
 
 	    <link rel="stylesheet" href="../_static/asset/css/common.css" type="text/css" />
 	    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -20,7 +20,8 @@
 	    <script type="text/javascript" src="../_static/jquery.js"></script>
 	    <script type="text/javascript" src="../_static/underscore.js"></script>
 	    <script type="text/javascript" src="../_static/doctools.js"></script>
-	    <link rel="top" title="CodeIgniter v3.0-dev documentation" href="../index.html" />
+	    <script type="text/javascript" src="../_static/translations.js"></script>
+	    <link rel="top" title="CodeIgniter 3.0-dev documentation" href="../index.html" />
 	    <link rel="up" title="Libraries" href="index.html" />
 	    <link rel="next" title="FTP Class" href="ftp.html" />
 	    <link rel="prev" title="File Uploading Class" href="file_uploading.html" /> 
@@ -81,9 +82,9 @@
 
 		<div id="brand" class="ci">
 			<a href="http://codeigniter.com/"><img src="../_static/asset/img/ci-logo.gif" alt="CodeIgniter"></a>
-			<p>3.0-dev User Guide</p>
+			<p>3.0-dev Kullanım Kılavuzu</p>
 		    <p><a href="../_sources/libraries/form_validation.txt"
-			           rel="nofollow">Show Source</a></p>
+			           rel="nofollow">Kaynağı Göster</a></p>
 		</div><!-- /#brand -->
 
 		<div id="header">
@@ -91,12 +92,12 @@
 				<fieldset>
 					<input type="text" name="q" id="q" value="">
 					<input type="hidden" name="as_sitesearch" id="as_sitesearch" value="codeigniter.com/user_guide/" />
-					<input class="grades" type="submit" value="search">
+					<input class="grades" type="submit" value="ara">
 				</fieldset>
 			</form>
 			<ul>
-				<li><a href="../index.html">Home</a>&nbsp;&nbsp; &rsaquo;</li>
-				<li><a id="toc-link" href="../index.html">Table of Contents</a>&nbsp;&nbsp; &rsaquo;</li>
+				<li><a href="../index.html">Anasayfa</a>&nbsp;&nbsp; &rsaquo;</li>
+				<li><a id="toc-link" href="../index.html">İçindekiler</a>&nbsp;&nbsp; &rsaquo;</li>
 				<li><a href="index.html" accesskey="U">Libraries</a>&nbsp;&nbsp;  &rsaquo;</li>
 
 				<li><strong>Form Validation</strong></li>
@@ -105,7 +106,7 @@
 
 		<div class="section" id="content">
 			<div class="section" id="form-validation">
-<h1><a class="toc-backref" href="#id6">Form Validation</a><a class="headerlink" href="#form-validation" title="Permalink to this headline">¶</a></h1>
+<h1><a class="toc-backref" href="#id6">Form Validation</a><a class="headerlink" href="#form-validation" title="Bu başlığın kalıcı bağlantısı">¶</a></h1>
 <p>CodeIgniter provides a comprehensive form validation and data prepping
 class that helps minimize the amount of code you&#8217;ll write.</p>
 <div class="contents topic" id="page-contents">
@@ -161,7 +162,7 @@ class that helps minimize the amount of code you&#8217;ll write.</p>
 </ul>
 </div>
 <div class="section" id="overview">
-<h2><a class="toc-backref" href="#id7">Overview</a><a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id7">Overview</a><a class="headerlink" href="#overview" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
 <p>Before explaining CodeIgniter&#8217;s approach to data validation, let&#8217;s
 describe the ideal scenario:</p>
 <ol class="arabic simple">
@@ -193,7 +194,7 @@ HTML. Form validation, while simple to create, is generally very messy
 and tedious to implement.</p>
 </div>
 <div class="section" id="form-validation-tutorial">
-<h2><a class="toc-backref" href="#id8">Form Validation Tutorial</a><a class="headerlink" href="#form-validation-tutorial" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id8">Form Validation Tutorial</a><a class="headerlink" href="#form-validation-tutorial" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
 <p>What follows is a &#8220;hands on&#8221; tutorial for implementing CodeIgniters Form
 Validation.</p>
 <p>In order to implement form validation you&#8217;ll need three things:</p>
@@ -207,7 +208,7 @@ process the submitted data.</li>
 <p>Let&#8217;s create those three things, using a member sign-up form as the
 example.</p>
 <div class="section" id="the-form">
-<h3><a class="toc-backref" href="#id9">The Form</a><a class="headerlink" href="#the-form" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id9">The Form</a><a class="headerlink" href="#the-form" title="Bu başlığın kalıcı bağlantısı">¶</a></h3>
 <p>Using a text editor, create a form called myform.php. In it, place this
 code and save it to your applications/views/ folder:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="o">&lt;</span><span class="nx">html</span><span class="o">&gt;</span>
@@ -242,7 +243,7 @@ code and save it to your applications/views/ folder:</p>
 </div>
 </div>
 <div class="section" id="the-success-page">
-<h3><a class="toc-backref" href="#id10">The Success Page</a><a class="headerlink" href="#the-success-page" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id10">The Success Page</a><a class="headerlink" href="#the-success-page" title="Bu başlığın kalıcı bağlantısı">¶</a></h3>
 <p>Using a text editor, create a form called formsuccess.php. In it, place
 this code and save it to your applications/views/ folder:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="o">&lt;</span><span class="nx">html</span><span class="o">&gt;</span>
@@ -261,7 +262,7 @@ this code and save it to your applications/views/ folder:</p>
 </div>
 </div>
 <div class="section" id="the-controller">
-<h3><a class="toc-backref" href="#id11">The Controller</a><a class="headerlink" href="#the-controller" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id11">The Controller</a><a class="headerlink" href="#the-controller" title="Bu başlığın kalıcı bağlantısı">¶</a></h3>
 <p>Using a text editor, create a controller called form.php. In it, place
 this code and save it to your applications/controllers/ folder:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="o">&lt;?</span><span class="nx">php</span>
@@ -289,7 +290,7 @@ this code and save it to your applications/controllers/ folder:</p>
 </div>
 </div>
 <div class="section" id="try-it">
-<h3><a class="toc-backref" href="#id12">Try it!</a><a class="headerlink" href="#try-it" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id12">Try it!</a><a class="headerlink" href="#try-it" title="Bu başlığın kalıcı bağlantısı">¶</a></h3>
 <p>To try your form, visit your site using a URL similar to this one:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nx">example</span><span class="o">.</span><span class="nx">com</span><span class="o">/</span><span class="nx">index</span><span class="o">.</span><span class="nx">php</span><span class="o">/</span><span class="nx">form</span><span class="o">/</span>
 </pre></div>
@@ -302,7 +303,7 @@ only returns TRUE if it has successfully applied your rules without any
 of them failing.</strong></p>
 </div>
 <div class="section" id="explanation">
-<h3><a class="toc-backref" href="#id13">Explanation</a><a class="headerlink" href="#explanation" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id13">Explanation</a><a class="headerlink" href="#explanation" title="Bu başlığın kalıcı bağlantısı">¶</a></h3>
 <p>You&#8217;ll notice several things about the above pages:</p>
 <p>The form (myform.php) is a standard web form with a couple exceptions:</p>
 <ol class="arabic">
@@ -327,7 +328,7 @@ Based on whether the validation was successful it either presents the
 form or the success page.</p>
 </div>
 <div class="section" id="setting-validation-rules">
-<span id="id1"></span><h3><a class="toc-backref" href="#id14">Setting Validation Rules</a><a class="headerlink" href="#setting-validation-rules" title="Permalink to this headline">¶</a></h3>
+<span id="id1"></span><h3><a class="toc-backref" href="#id14">Setting Validation Rules</a><a class="headerlink" href="#setting-validation-rules" title="Bu başlığın kalıcı bağlantısı">¶</a></h3>
 <p>CodeIgniter lets you set as many validation rules as you need for a
 given field, cascading them in order, and it even lets you prep and
 pre-process the field data at the same time. To set validation rules you
@@ -344,7 +345,7 @@ a human name of &#8220;Username&#8221;.</li>
 <li>The validation rules for this form field.</li>
 </ol>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
+<p class="first admonition-title">Not</p>
 <p class="last">If you would like the field
 name to be stored in a language file, please see <a class="reference internal" href="#translating-field-names"><em>Translating Field Names</em></a>.</p>
 </div>
@@ -389,13 +390,13 @@ below the validation initialization function:</p>
 messages. If you submit the form with all the fields populated you&#8217;ll
 see your success page.</p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
+<p class="first admonition-title">Not</p>
 <p class="last">The form fields are not yet being re-populated with the data
 when there is an error. We&#8217;ll get to that shortly.</p>
 </div>
 </div>
 <div class="section" id="setting-rules-using-an-array">
-<h3><a class="toc-backref" href="#id15">Setting Rules Using an Array</a><a class="headerlink" href="#setting-rules-using-an-array" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id15">Setting Rules Using an Array</a><a class="headerlink" href="#setting-rules-using-an-array" title="Bu başlığın kalıcı bağlantısı">¶</a></h3>
 <p>Before moving on it should be noted that the rule setting function can
 be passed an array if you prefer to set all your rules in one action. If
 you use this approach you must name your array keys as indicated:</p>
@@ -427,7 +428,7 @@ you use this approach you must name your array keys as indicated:</p>
 </div>
 </div>
 <div class="section" id="cascading-rules">
-<h3><a class="toc-backref" href="#id16">Cascading Rules</a><a class="headerlink" href="#cascading-rules" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id16">Cascading Rules</a><a class="headerlink" href="#cascading-rules" title="Bu başlığın kalıcı bağlantısı">¶</a></h3>
 <p>CodeIgniter lets you pipe multiple rules together. Let&#8217;s try it. Change
 your rules in the third parameter of rule setting function, like this:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">form_validation</span><span class="o">-&gt;</span><span class="na">set_rules</span><span class="p">(</span><span class="s1">&#39;username&#39;</span><span class="p">,</span> <span class="s1">&#39;Username&#39;</span><span class="p">,</span> <span class="s1">&#39;required|min_length[5]|max_length[12]|is_unique[users.username]&#39;</span><span class="p">);</span>
@@ -448,7 +449,7 @@ new error messages that correspond to your new rules. There are numerous
 rules available which you can read about in the validation reference.</p>
 </div>
 <div class="section" id="prepping-data">
-<h3><a class="toc-backref" href="#id17">Prepping Data</a><a class="headerlink" href="#prepping-data" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id17">Prepping Data</a><a class="headerlink" href="#prepping-data" title="Bu başlığın kalıcı bağlantısı">¶</a></h3>
 <p>In addition to the validation functions like the ones we used above, you
 can also prep your data in various ways. For example, you can set up
 rules like this:</p>
@@ -464,14 +465,14 @@ function, which removes malicious data.</p>
 <p><strong>Any native PHP function that accepts one parameter can be used as a
 rule, like htmlspecialchars, trim, MD5, etc.</strong></p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
+<p class="first admonition-title">Not</p>
 <p class="last">You will generally want to use the prepping functions
 <strong>after</strong> the validation rules so if there is an error, the original
 data will be shown in the form.</p>
 </div>
 </div>
 <div class="section" id="re-populating-the-form">
-<h3><a class="toc-backref" href="#id18">Re-populating the form</a><a class="headerlink" href="#re-populating-the-form" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id18">Re-populating the form</a><a class="headerlink" href="#re-populating-the-form" title="Bu başlığın kalıcı bağlantısı">¶</a></h3>
 <p>Thus far we have only been dealing with errors. It&#8217;s time to repopulate
 the form field with the submitted data. CodeIgniter offers several
 helper functions that permit you to do this. The one you will use most
@@ -516,7 +517,7 @@ functions!</strong></p>
 <p>Now reload your page and submit the form so that it triggers an error.
 Your form fields should now be re-populated</p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
+<p class="first admonition-title">Not</p>
 <p class="last">The <a class="reference internal" href="#function-reference"><em>Function Reference</em></a> section below
 contains functions that permit you to re-populate &lt;select&gt; menus, radio
 buttons, and checkboxes.</p>
@@ -529,7 +530,7 @@ must supply it as an array to the function. Example:</p>
 <p>For more info please see the <a class="reference internal" href="#using-arrays-as-field-names"><em>Using Arrays as Field Names</em></a> section below.</p>
 </div>
 <div class="section" id="callbacks-your-own-validation-functions">
-<h3><a class="toc-backref" href="#id19">Callbacks: Your own Validation Functions</a><a class="headerlink" href="#callbacks-your-own-validation-functions" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id19">Callbacks: Your own Validation Functions</a><a class="headerlink" href="#callbacks-your-own-validation-functions" title="Bu başlığın kalıcı bağlantısı">¶</a></h3>
 <p>The validation system supports callbacks to your own validation
 functions. This permits you to extend the validation class to meet your
 needs. For example, if you need to run a database query to see if the
@@ -592,7 +593,7 @@ parameter in your callback function, just add it normally after the
 function name between square brackets, as in: &#8220;callback_foo**[bar]**&#8221;,
 then it will be passed as the second argument of your callback function.</p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
+<p class="first admonition-title">Not</p>
 <p class="last">You can also process the form data that is passed to your
 callback and return it. If your callback returns anything other than a
 boolean TRUE/FALSE it is assumed that the data is your newly processed
@@ -600,7 +601,7 @@ form data.</p>
 </div>
 </div>
 <div class="section" id="setting-error-messages">
-<span id="id2"></span><h3><a class="toc-backref" href="#id20">Setting Error Messages</a><a class="headerlink" href="#setting-error-messages" title="Permalink to this headline">¶</a></h3>
+<span id="id2"></span><h3><a class="toc-backref" href="#id20">Setting Error Messages</a><a class="headerlink" href="#setting-error-messages" title="Bu başlığın kalıcı bağlantısı">¶</a></h3>
 <p>All of the native error messages are located in the following language
 file: language/english/form_validation_lang.php</p>
 <p>To set your own custom message you can either edit that file, or use the
@@ -624,7 +625,7 @@ example, to change the message for the &#8220;required&#8221; rule you will do t
 </div>
 </div>
 <div class="section" id="translating-field-names">
-<span id="id3"></span><h3><a class="toc-backref" href="#id21">Translating Field Names</a><a class="headerlink" href="#translating-field-names" title="Permalink to this headline">¶</a></h3>
+<span id="id3"></span><h3><a class="toc-backref" href="#id21">Translating Field Names</a><a class="headerlink" href="#translating-field-names" title="Bu başlığın kalıcı bağlantısı">¶</a></h3>
 <p>If you would like to store the &#8220;human&#8221; name you passed to the
 set_rules() function in a language file, and therefore make the name
 able to be translated, here&#8217;s how:</p>
@@ -638,7 +639,7 @@ prefix):</p>
 </pre></div>
 </div>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
+<p class="first admonition-title">Not</p>
 <p>If you store your array item in a language file that is not
 loaded automatically by CI, you&#8217;ll need to remember to load it in your
 controller using:</p>
@@ -650,7 +651,7 @@ controller using:</p>
 language files.</p>
 </div>
 <div class="section" id="changing-the-error-delimiters">
-<span id="changing-delimiters"></span><h3><a class="toc-backref" href="#id22">Changing the Error Delimiters</a><a class="headerlink" href="#changing-the-error-delimiters" title="Permalink to this headline">¶</a></h3>
+<span id="changing-delimiters"></span><h3><a class="toc-backref" href="#id22">Changing the Error Delimiters</a><a class="headerlink" href="#changing-the-error-delimiters" title="Bu başlığın kalıcı bağlantısı">¶</a></h3>
 <p>By default, the Form Validation class adds a paragraph tag (&lt;p&gt;) around
 each error message shown. You can either change these delimiters
 globally or individually.</p>
@@ -677,7 +678,7 @@ be supplied their own delimiters as follows:</p>
 </ol>
 </div>
 <div class="section" id="showing-errors-individually">
-<h3><a class="toc-backref" href="#id23">Showing Errors Individually</a><a class="headerlink" href="#showing-errors-individually" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id23">Showing Errors Individually</a><a class="headerlink" href="#showing-errors-individually" title="Bu başlığın kalıcı bağlantısı">¶</a></h3>
 <p>If you prefer to show an error message next to each form field, rather
 than as a list, you can use the form_error() function.</p>
 <p>Try it! Change your form so that it looks like this:</p>
@@ -710,14 +711,14 @@ must supply it as an array to the function. Example:</p>
 </div>
 </div>
 <div class="section" id="saving-sets-of-validation-rules-to-a-config-file">
-<span id="saving-groups"></span><h2><a class="toc-backref" href="#id24">Saving Sets of Validation Rules to a Config File</a><a class="headerlink" href="#saving-sets-of-validation-rules-to-a-config-file" title="Permalink to this headline">¶</a></h2>
+<span id="saving-groups"></span><h2><a class="toc-backref" href="#id24">Saving Sets of Validation Rules to a Config File</a><a class="headerlink" href="#saving-sets-of-validation-rules-to-a-config-file" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
 <p>A nice feature of the Form Validation class is that it permits you to
 store all your validation rules for your entire application in a config
 file. You can organize these rules into &#8220;groups&#8221;. These groups can
 either be loaded automatically when a matching controller/function is
 called, or you can manually call each set as needed.</p>
 <div class="section" id="how-to-save-your-rules">
-<h3><a class="toc-backref" href="#id25">How to save your rules</a><a class="headerlink" href="#how-to-save-your-rules" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id25">How to save your rules</a><a class="headerlink" href="#how-to-save-your-rules" title="Bu başlığın kalıcı bağlantısı">¶</a></h3>
 <p>To store your validation rules, simply create a file named
 form_validation.php in your application/config/ folder. In that file
 you will place an array named $config with your rules. As shown earlier,
@@ -751,7 +752,7 @@ call the run() function.</p>
 <p>Please note that you MUST name your array $config.</p>
 </div>
 <div class="section" id="creating-sets-of-rules">
-<h3><a class="toc-backref" href="#id26">Creating Sets of Rules</a><a class="headerlink" href="#creating-sets-of-rules" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id26">Creating Sets of Rules</a><a class="headerlink" href="#creating-sets-of-rules" title="Bu başlığın kalıcı bağlantısı">¶</a></h3>
 <p>In order to organize your rules into &#8220;sets&#8221; requires that you place them
 into &#8220;sub arrays&#8221;. Consider the following example, showing two sets of
 rules. We&#8217;ve arbitrarily called these two rules &#8220;signup&#8221; and &#8220;email&#8221;.
@@ -806,7 +807,7 @@ You can name your rules anything you want:</p>
 </div>
 </div>
 <div class="section" id="calling-a-specific-rule-group">
-<h3><a class="toc-backref" href="#id27">Calling a Specific Rule Group</a><a class="headerlink" href="#calling-a-specific-rule-group" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id27">Calling a Specific Rule Group</a><a class="headerlink" href="#calling-a-specific-rule-group" title="Bu başlığın kalıcı bağlantısı">¶</a></h3>
 <p>In order to call a specific group you will pass its name to the run()
 function. For example, to call the signup rule you will do this:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="k">if</span> <span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">form_validation</span><span class="o">-&gt;</span><span class="na">run</span><span class="p">(</span><span class="s1">&#39;signup&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="k">FALSE</span><span class="p">)</span>
@@ -821,7 +822,7 @@ function. For example, to call the signup rule you will do this:</p>
 </div>
 </div>
 <div class="section" id="associating-a-controller-function-with-a-rule-group">
-<h3><a class="toc-backref" href="#id28">Associating a Controller Function with a Rule Group</a><a class="headerlink" href="#associating-a-controller-function-with-a-rule-group" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id28">Associating a Controller Function with a Rule Group</a><a class="headerlink" href="#associating-a-controller-function-with-a-rule-group" title="Bu başlığın kalıcı bağlantısı">¶</a></h3>
 <p>An alternate (and more automatic) method of calling a rule group is to
 name it according to the controller class/function you intend to use it
 with. For example, let&#8217;s say you have a controller named Member and a
@@ -881,7 +882,7 @@ class/function.</p>
 </div>
 </div>
 <div class="section" id="using-arrays-as-field-names">
-<span id="id4"></span><h2><a class="toc-backref" href="#id29">Using Arrays as Field Names</a><a class="headerlink" href="#using-arrays-as-field-names" title="Permalink to this headline">¶</a></h2>
+<span id="id4"></span><h2><a class="toc-backref" href="#id29">Using Arrays as Field Names</a><a class="headerlink" href="#using-arrays-as-field-names" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
 <p>The Form Validation class supports the use of arrays as field names.
 Consider this example:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="o">&lt;</span><span class="nx">input</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;text&quot;</span> <span class="nx">name</span><span class="o">=</span><span class="s2">&quot;options[]&quot;</span> <span class="nx">value</span><span class="o">=</span><span class="s2">&quot;&quot;</span> <span class="nx">size</span><span class="o">=</span><span class="s2">&quot;50&quot;</span> <span class="o">/&gt;</span>
@@ -935,7 +936,7 @@ that all selections will be added to the POST array:</p>
 </div>
 </div>
 <div class="section" id="rule-reference">
-<h2><a class="toc-backref" href="#id30">Rule Reference</a><a class="headerlink" href="#rule-reference" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id30">Rule Reference</a><a class="headerlink" href="#rule-reference" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
 <p>The following is a list of all the native rules that are available to
 use:</p>
 <table border="1" class="docutils">
@@ -946,113 +947,113 @@ use:</p>
 <col width="15%" />
 </colgroup>
 <thead valign="bottom">
-<tr><th class="head">Rule</th>
+<tr class="row-odd"><th class="head">Rule</th>
 <th class="head">Parameter</th>
 <th class="head">Description</th>
 <th class="head">Example</th>
 </tr>
 </thead>
 <tbody valign="top">
-<tr><td><strong>required</strong></td>
+<tr class="row-even"><td><strong>required</strong></td>
 <td>No</td>
 <td>Returns FALSE if the form element is empty.</td>
 <td>&nbsp;</td>
 </tr>
-<tr><td><strong>matches</strong></td>
+<tr class="row-odd"><td><strong>matches</strong></td>
 <td>Yes</td>
 <td>Returns FALSE if the form element does not match the one in the parameter.</td>
 <td>matches[form_item]</td>
 </tr>
-<tr><td><strong>is_unique</strong></td>
+<tr class="row-even"><td><strong>is_unique</strong></td>
 <td>Yes</td>
 <td>Returns FALSE if the form element is not unique to the
 table and field name in the parameter. is_unique[table.field]</td>
 <td>is_unique[table.field]</td>
 </tr>
-<tr><td><strong>max_length</strong></td>
+<tr class="row-odd"><td><strong>max_length</strong></td>
 <td>Yes</td>
 <td>Returns FALSE if the form element is longer then the parameter value.</td>
 <td>max_length[12]</td>
 </tr>
-<tr><td><strong>exact_length</strong></td>
+<tr class="row-even"><td><strong>exact_length</strong></td>
 <td>Yes</td>
 <td>Returns FALSE if the form element is not exactly the parameter value.</td>
 <td>exact_length[8]</td>
 </tr>
-<tr><td><strong>greater_than</strong></td>
+<tr class="row-odd"><td><strong>greater_than</strong></td>
 <td>Yes</td>
 <td>Returns FALSE if the form element is less than the parameter value or not numeric.</td>
 <td>greater_than[8]</td>
 </tr>
-<tr><td><strong>less_than</strong></td>
+<tr class="row-even"><td><strong>less_than</strong></td>
 <td>Yes</td>
 <td>Returns FALSE if the form element is greater than the parameter value or not numeric.</td>
 <td>less_than[8]</td>
 </tr>
-<tr><td><strong>alpha</strong></td>
+<tr class="row-odd"><td><strong>alpha</strong></td>
 <td>No</td>
 <td>Returns FALSE if the form element contains anything other than alphabetical characters.</td>
 <td>&nbsp;</td>
 </tr>
-<tr><td><strong>alpha_numeric</strong></td>
+<tr class="row-even"><td><strong>alpha_numeric</strong></td>
 <td>No</td>
 <td>Returns FALSE if the form element contains anything other than alpha-numeric characters.</td>
 <td>&nbsp;</td>
 </tr>
-<tr><td><strong>alpha_dash</strong></td>
+<tr class="row-odd"><td><strong>alpha_dash</strong></td>
 <td>No</td>
 <td>Returns FALSE if the form element contains anything other than alpha-numeric characters,
 underscores or dashes.</td>
 <td>&nbsp;</td>
 </tr>
-<tr><td><strong>numeric</strong></td>
+<tr class="row-even"><td><strong>numeric</strong></td>
 <td>No</td>
 <td>Returns FALSE if the form element contains anything other than numeric characters.</td>
 <td>&nbsp;</td>
 </tr>
-<tr><td><strong>integer</strong></td>
+<tr class="row-odd"><td><strong>integer</strong></td>
 <td>No</td>
 <td>Returns FALSE if the form element contains anything other than an integer.</td>
 <td>&nbsp;</td>
 </tr>
-<tr><td><strong>decimal</strong></td>
+<tr class="row-even"><td><strong>decimal</strong></td>
 <td>Yes</td>
 <td>Returns FALSE if the form element is not exactly the parameter value.</td>
 <td>&nbsp;</td>
 </tr>
-<tr><td><strong>is_natural</strong></td>
+<tr class="row-odd"><td><strong>is_natural</strong></td>
 <td>No</td>
 <td>Returns FALSE if the form element contains anything other than a natural number:
 0, 1, 2, 3, etc.</td>
 <td>&nbsp;</td>
 </tr>
-<tr><td><strong>is_natural_no_zero</strong></td>
+<tr class="row-even"><td><strong>is_natural_no_zero</strong></td>
 <td>No</td>
 <td>Returns FALSE if the form element contains anything other than a natural
 number, but not zero: 1, 2, 3, etc.</td>
 <td>&nbsp;</td>
 </tr>
-<tr><td><strong>is_unique</strong></td>
+<tr class="row-odd"><td><strong>is_unique</strong></td>
 <td>Yes</td>
 <td>Returns FALSE if the form element is not unique in a database table.</td>
 <td>is_unique[table.field]</td>
 </tr>
-<tr><td><strong>valid_email</strong></td>
+<tr class="row-even"><td><strong>valid_email</strong></td>
 <td>No</td>
 <td>Returns FALSE if the form element does not contain a valid email address.</td>
 <td>&nbsp;</td>
 </tr>
-<tr><td><strong>valid_emails</strong></td>
+<tr class="row-odd"><td><strong>valid_emails</strong></td>
 <td>No</td>
 <td>Returns FALSE if any value provided in a comma separated list is not a valid email.</td>
 <td>&nbsp;</td>
 </tr>
-<tr><td><strong>valid_ip</strong></td>
+<tr class="row-even"><td><strong>valid_ip</strong></td>
 <td>No</td>
 <td>Returns FALSE if the supplied IP is not valid.</td>
 <td>&nbsp;</td>
 </tr>
-<tr><td><strong>valid_base64</strong></td>
+<tr class="row-odd"><td><strong>valid_base64</strong></td>
 <td>No</td>
 <td>Returns FALSE if the supplied string contains anything other than valid Base64 characters.</td>
 <td>&nbsp;</td>
@@ -1060,7 +1061,7 @@ number, but not zero: 1, 2, 3, etc.</td>
 </tbody>
 </table>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
+<p class="first admonition-title">Not</p>
 <p>These rules can also be called as discrete functions. For
 example:</p>
 <div class="last highlight-ci"><div class="highlight"><pre><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">form_validation</span><span class="o">-&gt;</span><span class="na">required</span><span class="p">(</span><span class="nv">$string</span><span class="p">);</span>
@@ -1068,13 +1069,13 @@ example:</p>
 </div>
 </div>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
+<p class="first admonition-title">Not</p>
 <p class="last">You can also use any native PHP functions that permit one
 parameter.</p>
 </div>
 </div>
 <div class="section" id="prepping-reference">
-<h2><a class="toc-backref" href="#id31">Prepping Reference</a><a class="headerlink" href="#prepping-reference" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id31">Prepping Reference</a><a class="headerlink" href="#prepping-reference" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
 <p>The following is a list of all the prepping functions that are available
 to use:</p>
 <table border="1" class="docutils">
@@ -1084,67 +1085,67 @@ to use:</p>
 <col width="77%" />
 </colgroup>
 <thead valign="bottom">
-<tr><th class="head">Name</th>
+<tr class="row-odd"><th class="head">Name</th>
 <th class="head">Parameter</th>
 <th class="head">Description</th>
 </tr>
 </thead>
 <tbody valign="top">
-<tr><td><strong>xss_clean</strong></td>
+<tr class="row-even"><td><strong>xss_clean</strong></td>
 <td>No</td>
 <td>Runs the data through the XSS filtering function, described in the <a class="reference internal" href="input.html"><em>Input Class</em></a> page.</td>
 </tr>
-<tr><td><strong>prep_for_form</strong></td>
+<tr class="row-odd"><td><strong>prep_for_form</strong></td>
 <td>No</td>
 <td>Converts special characters so that HTML data can be shown in a form field without breaking it.</td>
 </tr>
-<tr><td><strong>prep_url</strong></td>
+<tr class="row-even"><td><strong>prep_url</strong></td>
 <td>No</td>
 <td>Adds &#8220;http://&#8221; to URLs if missing.</td>
 </tr>
-<tr><td><strong>strip_image_tags</strong></td>
+<tr class="row-odd"><td><strong>strip_image_tags</strong></td>
 <td>No</td>
 <td>Strips the HTML from image tags leaving the raw URL.</td>
 </tr>
-<tr><td><strong>encode_php_tags</strong></td>
+<tr class="row-even"><td><strong>encode_php_tags</strong></td>
 <td>No</td>
 <td>Converts PHP tags to entities.</td>
 </tr>
 </tbody>
 </table>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
+<p class="first admonition-title">Not</p>
 <p class="last">You can also use any native PHP functions that permit one
 parameter, like trim, htmlspecialchars, urldecode, etc.</p>
 </div>
 </div>
 <div class="section" id="function-reference">
-<span id="id5"></span><h2><a class="toc-backref" href="#id32">Function Reference</a><a class="headerlink" href="#function-reference" title="Permalink to this headline">¶</a></h2>
+<span id="id5"></span><h2><a class="toc-backref" href="#id32">Function Reference</a><a class="headerlink" href="#function-reference" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
 <dl class="class">
 <dt id="Form_validation">
-<em class="property">class </em><tt class="descname">Form_validation</tt><a class="headerlink" href="#Form_validation" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><tt class="descname">Form_validation</tt><a class="headerlink" href="#Form_validation" title="Bu tanımın kalıcı bağlantısı">¶</a></dt>
 <dd></dd></dl>
 
 <p>The following functions are intended for use in your controller
 functions.</p>
 <div class="section" id="this-form-validation-set-rules">
-<h3><a class="toc-backref" href="#id33">$this-&gt;form_validation-&gt;set_rules();</a><a class="headerlink" href="#this-form-validation-set-rules" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id33">$this-&gt;form_validation-&gt;set_rules();</a><a class="headerlink" href="#this-form-validation-set-rules" title="Bu başlığın kalıcı bağlantısı">¶</a></h3>
 <blockquote>
 <div><dl class="method">
 <dt id="Form_validation::set_rules">
-<tt class="descclassname">Form_validation::</tt><tt class="descname">set_rules</tt><big>(</big><em>$field</em>, <em>$label = ''</em>, <em>$rules = ''</em><big>)</big><a class="headerlink" href="#Form_validation::set_rules" title="Permalink to this definition">¶</a></dt>
+<tt class="descclassname">Form_validation::</tt><tt class="descname">set_rules</tt><big>(</big><em>$field</em>, <em>$label = ''</em>, <em>$rules = ''</em><big>)</big><a class="headerlink" href="#Form_validation::set_rules" title="Bu tanımın kalıcı bağlantısı">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<tr class="field-odd field"><th class="field-name">Parametreler:</th><td class="field-body"><ul class="first simple">
 <li><strong>$field</strong> (<em>string</em>) &#8211; The field name</li>
 <li><strong>$label</strong> (<em>string</em>) &#8211; The field label</li>
 <li><strong>$rules</strong> (<em>string</em>) &#8211; The rules, seperated by a pipe &#8220;|&#8221;</li>
 </ul>
 </td>
 </tr>
-<tr class="field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">Object</p>
+<tr class="field-even field"><th class="field-name">Dönüş tipi:</th><td class="field-body"><p class="first last">Object</p>
 </td>
 </tr>
 </tbody>
@@ -1160,21 +1161,21 @@ sections above:</p>
 </div></blockquote>
 </div>
 <div class="section" id="this-form-validation-run">
-<h3><a class="toc-backref" href="#id34">$this-&gt;form_validation-&gt;run();</a><a class="headerlink" href="#this-form-validation-run" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id34">$this-&gt;form_validation-&gt;run();</a><a class="headerlink" href="#this-form-validation-run" title="Bu başlığın kalıcı bağlantısı">¶</a></h3>
 <blockquote>
 <div><dl class="method">
 <dt id="Form_validation::run">
-<tt class="descclassname">Form_validation::</tt><tt class="descname">run</tt><big>(</big><em>$group = ''</em><big>)</big><a class="headerlink" href="#Form_validation::run" title="Permalink to this definition">¶</a></dt>
+<tt class="descclassname">Form_validation::</tt><tt class="descname">run</tt><big>(</big><em>$group = ''</em><big>)</big><a class="headerlink" href="#Form_validation::run" title="Bu tanımın kalıcı bağlantısı">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<tr class="field-odd field"><th class="field-name">Parametreler:</th><td class="field-body"><ul class="first simple">
 <li><strong>$group</strong> (<em>string</em>) &#8211; The name of the validation group to run</li>
 </ul>
 </td>
 </tr>
-<tr class="field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">Boolean</p>
+<tr class="field-even field"><th class="field-name">Dönüş tipi:</th><td class="field-body"><p class="first last">Boolean</p>
 </td>
 </tr>
 </tbody>
@@ -1187,22 +1188,22 @@ the function, as described in: <a class="reference internal" href="#saving-group
 </div></blockquote>
 </div>
 <div class="section" id="this-form-validation-set-message">
-<h3><a class="toc-backref" href="#id35">$this-&gt;form_validation-&gt;set_message();</a><a class="headerlink" href="#this-form-validation-set-message" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id35">$this-&gt;form_validation-&gt;set_message();</a><a class="headerlink" href="#this-form-validation-set-message" title="Bu başlığın kalıcı bağlantısı">¶</a></h3>
 <blockquote>
 <div><dl class="method">
 <dt id="Form_validation::set_message">
-<tt class="descclassname">Form_validation::</tt><tt class="descname">set_message</tt><big>(</big><em>$lang</em>, <em>$val = ''</em><big>)</big><a class="headerlink" href="#Form_validation::set_message" title="Permalink to this definition">¶</a></dt>
+<tt class="descclassname">Form_validation::</tt><tt class="descname">set_message</tt><big>(</big><em>$lang</em>, <em>$val = ''</em><big>)</big><a class="headerlink" href="#Form_validation::set_message" title="Bu tanımın kalıcı bağlantısı">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<tr class="field-odd field"><th class="field-name">Parametreler:</th><td class="field-body"><ul class="first simple">
 <li><strong>$lang</strong> (<em>string</em>) &#8211; The rule the message is for</li>
 <li><strong>$val</strong> (<em>string</em>) &#8211; The message</li>
 </ul>
 </td>
 </tr>
-<tr class="field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">Object</p>
+<tr class="field-even field"><th class="field-name">Dönüş tipi:</th><td class="field-body"><p class="first last">Object</p>
 </td>
 </tr>
 </tbody>
@@ -1214,12 +1215,12 @@ the function, as described in: <a class="reference internal" href="#saving-group
 </div>
 </div>
 <div class="section" id="helper-reference">
-<span id="helper-functions"></span><h2><a class="toc-backref" href="#id36">Helper Reference</a><a class="headerlink" href="#helper-reference" title="Permalink to this headline">¶</a></h2>
+<span id="helper-functions"></span><h2><a class="toc-backref" href="#id36">Helper Reference</a><a class="headerlink" href="#helper-reference" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
 <p>The following helper functions are available for use in the view files
 containing your forms. Note that these are procedural functions, so they
 <strong>do not</strong> require you to prepend them with $this-&gt;form_validation.</p>
 <div class="section" id="form-error">
-<h3><a class="toc-backref" href="#id37">form_error()</a><a class="headerlink" href="#form-error" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id37">form_error()</a><a class="headerlink" href="#form-error" title="Bu başlığın kalıcı bağlantısı">¶</a></h3>
 <p>Shows an individual error message associated with the field name
 supplied to the function. Example:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="o">&lt;?</span><span class="nx">php</span> <span class="k">echo</span> <span class="nx">form_error</span><span class="p">(</span><span class="s1">&#39;username&#39;</span><span class="p">);</span> <span class="cp">?&gt;</span>
@@ -1229,7 +1230,7 @@ supplied to the function. Example:</p>
 <a class="reference internal" href="#changing-delimiters"><em>Changing the Error Delimiters</em></a> section above.</p>
 </div>
 <div class="section" id="validation-errors">
-<h3><a class="toc-backref" href="#id38">validation_errors()</a><a class="headerlink" href="#validation-errors" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id38">validation_errors()</a><a class="headerlink" href="#validation-errors" title="Bu başlığın kalıcı bağlantısı">¶</a></h3>
 <p>Shows all error messages as a string: Example:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="o">&lt;?</span><span class="nx">php</span> <span class="k">echo</span> <span class="nx">validation_errors</span><span class="p">();</span> <span class="cp">?&gt;</span>
 </pre></div>
@@ -1238,7 +1239,7 @@ supplied to the function. Example:</p>
 <a class="reference internal" href="#changing-delimiters"><em>Changing the Error Delimiters</em></a> section above.</p>
 </div>
 <div class="section" id="set-value">
-<h3><a class="toc-backref" href="#id39">set_value()</a><a class="headerlink" href="#set-value" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id39">set_value()</a><a class="headerlink" href="#set-value" title="Bu başlığın kalıcı bağlantısı">¶</a></h3>
 <p>Permits you to set the value of an input form or textarea. You must
 supply the field name via the first parameter of the function. The
 second (optional) parameter allows you to set a default value for the
@@ -1249,7 +1250,7 @@ form. Example:</p>
 <p>The above form will show &#8220;0&#8221; when loaded for the first time.</p>
 </div>
 <div class="section" id="set-select">
-<h3><a class="toc-backref" href="#id40">set_select()</a><a class="headerlink" href="#set-select" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id40">set_select()</a><a class="headerlink" href="#set-select" title="Bu başlığın kalıcı bağlantısı">¶</a></h3>
 <p>If you use a &lt;select&gt; menu, this function permits you to display the
 menu item that was selected. The first parameter must contain the name
 of the select menu, the second parameter must contain the value of each
@@ -1265,7 +1266,7 @@ default (use boolean TRUE/FALSE).</p>
 </div>
 </div>
 <div class="section" id="set-checkbox">
-<h3><a class="toc-backref" href="#id41">set_checkbox()</a><a class="headerlink" href="#set-checkbox" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id41">set_checkbox()</a><a class="headerlink" href="#set-checkbox" title="Bu başlığın kalıcı bağlantısı">¶</a></h3>
 <p>Permits you to display a checkbox in the state it was submitted. The
 first parameter must contain the name of the checkbox, the second
 parameter must contain its value, and the third (optional) parameter
@@ -1276,7 +1277,7 @@ lets you set an item as the default (use boolean TRUE/FALSE). Example:</p>
 </div>
 </div>
 <div class="section" id="set-radio">
-<h3><a class="toc-backref" href="#id42">set_radio()</a><a class="headerlink" href="#set-radio" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id42">set_radio()</a><a class="headerlink" href="#set-radio" title="Bu başlığın kalıcı bağlantısı">¶</a></h3>
 <p>Permits you to display radio buttons in the state they were submitted.
 This function is identical to the <strong>set_checkbox()</strong> function above.</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="o">&lt;</span><span class="nx">input</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;radio&quot;</span> <span class="nx">name</span><span class="o">=</span><span class="s2">&quot;myradio&quot;</span> <span class="nx">value</span><span class="o">=</span><span class="s2">&quot;1&quot;</span> <span class="o">&lt;?</span><span class="nx">php</span> <span class="k">echo</span>  <span class="nx">set_radio</span><span class="p">(</span><span class="s1">&#39;myradio&#39;</span><span class="p">,</span> <span class="s1">&#39;1&#39;</span><span class="p">,</span> <span class="k">TRUE</span><span class="p">);</span> <span class="cp">?&gt;</span> /&gt;
@@ -1299,10 +1300,10 @@ This function is identical to the <strong>set_checkbox()</strong> function above
 				
 				<span class="next">Sonraki Başlık: <a href="ftp.html">FTP Class</a></span>
 				
-				<a href="#header" title="Return to top">Return to top</a>
+				<a href="#header" title="Başa Dön">Başa Dön</a>
 			</p>
 			<p><a href="">CodeIgniter</a> &ndash; Copyright &copy;
-      2011, EllisLab, Inc.</a> &ndash; Son Güncelleme: Nov 22, 2011</p>
+      2011, EllisLab, Inc.</a> &ndash; Son Güncelleme: 22 Kasım 2011</p>
 		</div><!-- /#footer -->
 	
 	<script src="../_static/asset/js/jquery-ui-min.js" type="text/javascript" charset="utf-8" async></script>

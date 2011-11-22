@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="utf-8">
 	    
-	    <title>Array Helper &mdash; CodeIgniter v3.0-dev documentation</title>
+	    <title>Array Helper &mdash; CodeIgniter 3.0-dev documentation</title>
 
 	    <link rel="stylesheet" href="../_static/asset/css/common.css" type="text/css" />
 	    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -20,7 +20,8 @@
 	    <script type="text/javascript" src="../_static/jquery.js"></script>
 	    <script type="text/javascript" src="../_static/underscore.js"></script>
 	    <script type="text/javascript" src="../_static/doctools.js"></script>
-	    <link rel="top" title="CodeIgniter v3.0-dev documentation" href="../index.html" />
+	    <script type="text/javascript" src="../_static/translations.js"></script>
+	    <link rel="top" title="CodeIgniter 3.0-dev documentation" href="../index.html" />
 	    <link rel="up" title="Helpers" href="index.html" />
 	    <link rel="next" title="CAPTCHA Helper" href="captcha_helper.html" />
 	    <link rel="prev" title="Helpers" href="index.html" /> 
@@ -74,9 +75,9 @@
 
 		<div id="brand" class="ci">
 			<a href="http://codeigniter.com/"><img src="../_static/asset/img/ci-logo.gif" alt="CodeIgniter"></a>
-			<p>3.0-dev User Guide</p>
+			<p>3.0-dev Kullanım Kılavuzu</p>
 		    <p><a href="../_sources/helpers/array_helper.txt"
-			           rel="nofollow">Show Source</a></p>
+			           rel="nofollow">Kaynağı Göster</a></p>
 		</div><!-- /#brand -->
 
 		<div id="header">
@@ -84,12 +85,12 @@
 				<fieldset>
 					<input type="text" name="q" id="q" value="">
 					<input type="hidden" name="as_sitesearch" id="as_sitesearch" value="codeigniter.com/user_guide/" />
-					<input class="grades" type="submit" value="search">
+					<input class="grades" type="submit" value="ara">
 				</fieldset>
 			</form>
 			<ul>
-				<li><a href="../index.html">Home</a>&nbsp;&nbsp; &rsaquo;</li>
-				<li><a id="toc-link" href="../index.html">Table of Contents</a>&nbsp;&nbsp; &rsaquo;</li>
+				<li><a href="../index.html">Anasayfa</a>&nbsp;&nbsp; &rsaquo;</li>
+				<li><a id="toc-link" href="../index.html">İçindekiler</a>&nbsp;&nbsp; &rsaquo;</li>
 				<li><a href="index.html" accesskey="U">Helpers</a>&nbsp;&nbsp;  &rsaquo;</li>
 
 				<li><strong>Array Helper</strong></li>
@@ -98,7 +99,7 @@
 
 		<div class="section" id="content">
 			<div class="section" id="array-helper">
-<h1><a class="toc-backref" href="#id1">Array Helper</a><a class="headerlink" href="#array-helper" title="Permalink to this headline">¶</a></h1>
+<h1><a class="toc-backref" href="#id1">Array Helper</a><a class="headerlink" href="#array-helper" title="Bu başlığın kalıcı bağlantısı">¶</a></h1>
 <p>The Array Helper file contains functions that assist in working with
 arrays.</p>
 <div class="contents topic" id="page-contents">
@@ -114,7 +115,7 @@ arrays.</p>
 </ul>
 </div>
 <div class="section" id="loading-this-helper">
-<h2><a class="toc-backref" href="#id2">Loading this Helper</a><a class="headerlink" href="#loading-this-helper" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id2">Loading this Helper</a><a class="headerlink" href="#loading-this-helper" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
 <p>This helper is loaded using the following code</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">helper</span><span class="p">(</span><span class="s1">&#39;array&#39;</span><span class="p">);</span>
 </pre></div>
@@ -122,7 +123,7 @@ arrays.</p>
 <p>The following functions are available:</p>
 </div>
 <div class="section" id="element">
-<h2><a class="toc-backref" href="#id3">element()</a><a class="headerlink" href="#element" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id3">element()</a><a class="headerlink" href="#element" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
 <dl class="method">
 <dt>
 <tt class="descname">element</tt><big>(</big><em>$item</em>, <em>$array</em>, <em>$default = FALSE</em><big>)</big></dt>
@@ -130,14 +131,14 @@ arrays.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<tr class="field-odd field"><th class="field-name">Parametreler:</th><td class="field-body"><ul class="first simple">
 <li><strong>$item</strong> (<em>string</em>) &#8211; Item to fetch from the array</li>
 <li><strong>$array</strong> (<em>array</em>) &#8211; Input array</li>
 <li><strong>$default</strong> (<em>boolean</em>) &#8211; What to return if the array isn&#8217;t valid</li>
 </ul>
 </td>
 </tr>
-<tr class="field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">FALSE on failure or the array item.</p>
+<tr class="field-even field"><th class="field-name">Dönüş değeri::</th><td class="field-body"><p class="first last">FALSE on failure or the array item.</p>
 </td>
 </tr>
 </tbody>
@@ -160,7 +161,7 @@ specified as the default value via the third parameter. Example</p>
 </div>
 </div>
 <div class="section" id="elements">
-<h2><a class="toc-backref" href="#id4">elements()</a><a class="headerlink" href="#elements" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id4">elements()</a><a class="headerlink" href="#elements" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
 <p>Lets you fetch a number of items from an array. The function tests
 whether each of the array indices is set. If an index does not exist it
 is set to FALSE, or whatever you&#8217;ve specified as the default value via
@@ -172,14 +173,14 @@ the third parameter.</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<tr class="field-odd field"><th class="field-name">Parametreler:</th><td class="field-body"><ul class="first simple">
 <li><strong>$item</strong> (<em>string</em>) &#8211; Item to fetch from the array</li>
 <li><strong>$array</strong> (<em>array</em>) &#8211; Input array</li>
 <li><strong>$default</strong> (<em>boolean</em>) &#8211; What to return if the array isn&#8217;t valid</li>
 </ul>
 </td>
 </tr>
-<tr class="field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">FALSE on failure or the array item.</p>
+<tr class="field-even field"><th class="field-name">Dönüş değeri::</th><td class="field-body"><p class="first last">FALSE on failure or the array item.</p>
 </td>
 </tr>
 </tbody>
@@ -230,22 +231,22 @@ your tables</p>
 updated.</p>
 </div>
 <div class="section" id="random-element">
-<h2><a class="toc-backref" href="#id5">random_element()</a><a class="headerlink" href="#random-element" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id5">random_element()</a><a class="headerlink" href="#random-element" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
 <p>Takes an array as input and returns a random element from it. Usage
 example</p>
 <dl class="method">
 <dt id="random_element">
-<tt class="descname">random_element</tt><big>(</big><em>$array</em><big>)</big><a class="headerlink" href="#random_element" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">random_element</tt><big>(</big><em>$array</em><big>)</big><a class="headerlink" href="#random_element" title="Bu tanımın kalıcı bağlantısı">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<tr class="field-odd field"><th class="field-name">Parametreler:</th><td class="field-body"><ul class="first simple">
 <li><strong>$array</strong> (<em>array</em>) &#8211; Input array</li>
 </ul>
 </td>
 </tr>
-<tr class="field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">String - Random element from the array.</p>
+<tr class="field-even field"><th class="field-name">Dönüş değeri::</th><td class="field-body"><p class="first last">String - Random element from the array.</p>
 </td>
 </tr>
 </tbody>
@@ -279,10 +280,10 @@ example</p>
 				
 				<span class="next">Sonraki Başlık: <a href="captcha_helper.html">CAPTCHA Helper</a></span>
 				
-				<a href="#header" title="Return to top">Return to top</a>
+				<a href="#header" title="Başa Dön">Başa Dön</a>
 			</p>
 			<p><a href="">CodeIgniter</a> &ndash; Copyright &copy;
-      2011, EllisLab, Inc.</a> &ndash; Son Güncelleme: Nov 22, 2011</p>
+      2011, EllisLab, Inc.</a> &ndash; Son Güncelleme: 22 Kasım 2011</p>
 		</div><!-- /#footer -->
 	
 	<script src="../_static/asset/js/jquery-ui-min.js" type="text/javascript" charset="utf-8" async></script>

@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="utf-8">
 	    
-	    <title>Trackback Class &mdash; CodeIgniter v3.0-dev documentation</title>
+	    <title>Trackback Class &mdash; CodeIgniter 3.0-dev documentation</title>
 
 	    <link rel="stylesheet" href="../_static/asset/css/common.css" type="text/css" />
 	    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -20,7 +20,8 @@
 	    <script type="text/javascript" src="../_static/jquery.js"></script>
 	    <script type="text/javascript" src="../_static/underscore.js"></script>
 	    <script type="text/javascript" src="../_static/doctools.js"></script>
-	    <link rel="top" title="CodeIgniter v3.0-dev documentation" href="../index.html" />
+	    <script type="text/javascript" src="../_static/translations.js"></script>
+	    <link rel="top" title="CodeIgniter 3.0-dev documentation" href="../index.html" />
 	    <link rel="up" title="Libraries" href="index.html" />
 	    <link rel="next" title="Typography Class" href="typography.html" />
 	    <link rel="prev" title="HTML Table Class" href="table.html" /> 
@@ -81,9 +82,9 @@
 
 		<div id="brand" class="ci">
 			<a href="http://codeigniter.com/"><img src="../_static/asset/img/ci-logo.gif" alt="CodeIgniter"></a>
-			<p>3.0-dev User Guide</p>
+			<p>3.0-dev Kullanım Kılavuzu</p>
 		    <p><a href="../_sources/libraries/trackback.txt"
-			           rel="nofollow">Show Source</a></p>
+			           rel="nofollow">Kaynağı Göster</a></p>
 		</div><!-- /#brand -->
 
 		<div id="header">
@@ -91,12 +92,12 @@
 				<fieldset>
 					<input type="text" name="q" id="q" value="">
 					<input type="hidden" name="as_sitesearch" id="as_sitesearch" value="codeigniter.com/user_guide/" />
-					<input class="grades" type="submit" value="search">
+					<input class="grades" type="submit" value="ara">
 				</fieldset>
 			</form>
 			<ul>
-				<li><a href="../index.html">Home</a>&nbsp;&nbsp; &rsaquo;</li>
-				<li><a id="toc-link" href="../index.html">Table of Contents</a>&nbsp;&nbsp; &rsaquo;</li>
+				<li><a href="../index.html">Anasayfa</a>&nbsp;&nbsp; &rsaquo;</li>
+				<li><a id="toc-link" href="../index.html">İçindekiler</a>&nbsp;&nbsp; &rsaquo;</li>
 				<li><a href="index.html" accesskey="U">Libraries</a>&nbsp;&nbsp;  &rsaquo;</li>
 
 				<li><strong>Trackback Class</strong></li>
@@ -105,13 +106,13 @@
 
 		<div class="section" id="content">
 			<div class="section" id="trackback-class">
-<h1>Trackback Class<a class="headerlink" href="#trackback-class" title="Permalink to this headline">¶</a></h1>
+<h1>Trackback Class<a class="headerlink" href="#trackback-class" title="Bu başlığın kalıcı bağlantısı">¶</a></h1>
 <p>The Trackback Class provides functions that enable you to send and
 receive Trackback data.</p>
 <p>If you are not familiar with Trackbacks you&#8217;ll find more information
 <a class="reference external" href="http://en.wikipedia.org/wiki/Trackback">here</a>.</p>
 <div class="section" id="initializing-the-class">
-<h2>Initializing the Class<a class="headerlink" href="#initializing-the-class" title="Permalink to this headline">¶</a></h2>
+<h2>Initializing the Class<a class="headerlink" href="#initializing-the-class" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
 <p>Like most other classes in CodeIgniter, the Trackback class is
 initialized in your controller using the $this-&gt;load-&gt;library function:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">library</span><span class="p">(</span><span class="s1">&#39;trackback&#39;</span><span class="p">);</span>
@@ -121,7 +122,7 @@ initialized in your controller using the $this-&gt;load-&gt;library function:</p
 $this-&gt;trackback</p>
 </div>
 <div class="section" id="sending-trackbacks">
-<h2>Sending Trackbacks<a class="headerlink" href="#sending-trackbacks" title="Permalink to this headline">¶</a></h2>
+<h2>Sending Trackbacks<a class="headerlink" href="#sending-trackbacks" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
 <p>A Trackback can be sent from any of your controller functions using code
 similar to this example:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">library</span><span class="p">(</span><span class="s1">&#39;trackback&#39;</span><span class="p">);</span>
@@ -166,7 +167,7 @@ or failure. If it fails, you can retrieve the error message using:</p>
 </div>
 </div>
 <div class="section" id="receiving-trackbacks">
-<h2>Receiving Trackbacks<a class="headerlink" href="#receiving-trackbacks" title="Permalink to this headline">¶</a></h2>
+<h2>Receiving Trackbacks<a class="headerlink" href="#receiving-trackbacks" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
 <p>Before you can receive Trackbacks you must create a weblog. If you don&#8217;t
 have a blog yet there&#8217;s no point in continuing.</p>
 <p>Receiving Trackbacks is a little more complex than sending them, only
@@ -179,7 +180,7 @@ curtail spam. The process of receiving a Trackback is quite simple; the
 validation is what takes most of the effort.</p>
 </div>
 <div class="section" id="your-ping-url">
-<h2>Your Ping URL<a class="headerlink" href="#your-ping-url" title="Permalink to this headline">¶</a></h2>
+<h2>Your Ping URL<a class="headerlink" href="#your-ping-url" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
 <p>In order to accept Trackbacks you must display a Trackback URL next to
 each one of your weblog entries. This will be the URL that people will
 use to send you Trackbacks (we will refer to this as your &#8220;Ping URL&#8221;).</p>
@@ -197,7 +198,7 @@ like this:</p>
 entries.</p>
 </div>
 <div class="section" id="creating-a-trackback-table">
-<h2>Creating a Trackback Table<a class="headerlink" href="#creating-a-trackback-table" title="Permalink to this headline">¶</a></h2>
+<h2>Creating a Trackback Table<a class="headerlink" href="#creating-a-trackback-table" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
 <p>Before you can receive Trackbacks you must create a table in which to
 store them. Here is a basic prototype for such a table:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nx">CREATE</span> <span class="nx">TABLE</span> <span class="nx">trackbacks</span> <span class="p">(</span>
@@ -220,7 +221,7 @@ the data more useful we&#8217;ve added a few more fields in the above table
 schema (date, IP address, etc.).</p>
 </div>
 <div class="section" id="processing-a-trackback">
-<h2>Processing a Trackback<a class="headerlink" href="#processing-a-trackback" title="Permalink to this headline">¶</a></h2>
+<h2>Processing a Trackback<a class="headerlink" href="#processing-a-trackback" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
 <p>Here is an example showing how you will receive and process a Trackback.
 The following code is intended for use within the controller function
 where you expect to receive Trackbacks.</p>
@@ -255,7 +256,7 @@ where you expect to receive Trackbacks.</p>
 </pre></div>
 </div>
 <div class="section" id="notes">
-<h3>Notes:<a class="headerlink" href="#notes" title="Permalink to this headline">¶</a></h3>
+<h3>Notes:<a class="headerlink" href="#notes" title="Bu başlığın kalıcı bağlantısı">¶</a></h3>
 <p>The entry ID number is expected in the third segment of your URL. This
 is based on the URI example we gave earlier:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nx">http</span><span class="o">://</span><span class="nx">example</span><span class="o">.</span><span class="nx">com</span><span class="o">/</span><span class="nx">index</span><span class="o">.</span><span class="nx">php</span><span class="o">/</span><span class="nx">trackback</span><span class="o">/</span><span class="nx">receive</span><span class="o">/</span><span class="nx">entry_id</span>
@@ -286,7 +287,7 @@ message using:</p>
 </pre></div>
 </div>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
+<p class="first admonition-title">Not</p>
 <p class="last">The above code contains no data validation, which you are
 encouraged to add.</p>
 </div>
@@ -306,10 +307,10 @@ encouraged to add.</p>
 				
 				<span class="next">Sonraki Başlık: <a href="typography.html">Typography Class</a></span>
 				
-				<a href="#header" title="Return to top">Return to top</a>
+				<a href="#header" title="Başa Dön">Başa Dön</a>
 			</p>
 			<p><a href="">CodeIgniter</a> &ndash; Copyright &copy;
-      2011, EllisLab, Inc.</a> &ndash; Son Güncelleme: Nov 22, 2011</p>
+      2011, EllisLab, Inc.</a> &ndash; Son Güncelleme: 22 Kasım 2011</p>
 		</div><!-- /#footer -->
 	
 	<script src="../_static/asset/js/jquery-ui-min.js" type="text/javascript" charset="utf-8" async></script>

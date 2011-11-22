@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="utf-8">
 	    
-	    <title>File Uploading Class &mdash; CodeIgniter v3.0-dev documentation</title>
+	    <title>File Uploading Class &mdash; CodeIgniter 3.0-dev documentation</title>
 
 	    <link rel="stylesheet" href="../_static/asset/css/common.css" type="text/css" />
 	    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -20,7 +20,8 @@
 	    <script type="text/javascript" src="../_static/jquery.js"></script>
 	    <script type="text/javascript" src="../_static/underscore.js"></script>
 	    <script type="text/javascript" src="../_static/doctools.js"></script>
-	    <link rel="top" title="CodeIgniter v3.0-dev documentation" href="../index.html" />
+	    <script type="text/javascript" src="../_static/translations.js"></script>
+	    <link rel="top" title="CodeIgniter 3.0-dev documentation" href="../index.html" />
 	    <link rel="up" title="Libraries" href="index.html" />
 	    <link rel="next" title="Form Validation" href="form_validation.html" />
 	    <link rel="prev" title="Encryption Class" href="encryption.html" /> 
@@ -81,9 +82,9 @@
 
 		<div id="brand" class="ci">
 			<a href="http://codeigniter.com/"><img src="../_static/asset/img/ci-logo.gif" alt="CodeIgniter"></a>
-			<p>3.0-dev User Guide</p>
+			<p>3.0-dev Kullanım Kılavuzu</p>
 		    <p><a href="../_sources/libraries/file_uploading.txt"
-			           rel="nofollow">Show Source</a></p>
+			           rel="nofollow">Kaynağı Göster</a></p>
 		</div><!-- /#brand -->
 
 		<div id="header">
@@ -91,12 +92,12 @@
 				<fieldset>
 					<input type="text" name="q" id="q" value="">
 					<input type="hidden" name="as_sitesearch" id="as_sitesearch" value="codeigniter.com/user_guide/" />
-					<input class="grades" type="submit" value="search">
+					<input class="grades" type="submit" value="ara">
 				</fieldset>
 			</form>
 			<ul>
-				<li><a href="../index.html">Home</a>&nbsp;&nbsp; &rsaquo;</li>
-				<li><a id="toc-link" href="../index.html">Table of Contents</a>&nbsp;&nbsp; &rsaquo;</li>
+				<li><a href="../index.html">Anasayfa</a>&nbsp;&nbsp; &rsaquo;</li>
+				<li><a id="toc-link" href="../index.html">İçindekiler</a>&nbsp;&nbsp; &rsaquo;</li>
 				<li><a href="index.html" accesskey="U">Libraries</a>&nbsp;&nbsp;  &rsaquo;</li>
 
 				<li><strong>File Uploading Class</strong></li>
@@ -105,11 +106,11 @@
 
 		<div class="section" id="content">
 			<div class="section" id="file-uploading-class">
-<h1>File Uploading Class<a class="headerlink" href="#file-uploading-class" title="Permalink to this headline">¶</a></h1>
+<h1>File Uploading Class<a class="headerlink" href="#file-uploading-class" title="Bu başlığın kalıcı bağlantısı">¶</a></h1>
 <p>CodeIgniter&#8217;s File Uploading Class permits files to be uploaded. You can
 set various preferences, restricting the type and size of the files.</p>
 <div class="section" id="the-process">
-<h2>The Process<a class="headerlink" href="#the-process" title="Permalink to this headline">¶</a></h2>
+<h2>The Process<a class="headerlink" href="#the-process" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
 <p>Uploading a file involves the following general process:</p>
 <ul class="simple">
 <li>An upload form is displayed, allowing a user to select a file and
@@ -123,7 +124,7 @@ uploaded based on the preferences you set.</li>
 <p>To demonstrate this process here is brief tutorial. Afterward you&#8217;ll
 find reference information.</p>
 <div class="section" id="creating-the-upload-form">
-<h3>Creating the Upload Form<a class="headerlink" href="#creating-the-upload-form" title="Permalink to this headline">¶</a></h3>
+<h3>Creating the Upload Form<a class="headerlink" href="#creating-the-upload-form" title="Bu başlığın kalıcı bağlantısı">¶</a></h3>
 <p>Using a text editor, create a form called upload_form.php. In it, place
 this code and save it to your applications/views/ folder:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="o">&lt;</span><span class="nx">html</span><span class="o">&gt;</span>
@@ -155,7 +156,7 @@ so we can show error messages in the event the user does something
 wrong.</p>
 </div>
 <div class="section" id="the-success-page">
-<h3>The Success Page<a class="headerlink" href="#the-success-page" title="Permalink to this headline">¶</a></h3>
+<h3>The Success Page<a class="headerlink" href="#the-success-page" title="Bu başlığın kalıcı bağlantısı">¶</a></h3>
 <p>Using a text editor, create a form called upload_success.php. In it,
 place this code and save it to your applications/views/ folder:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="o">&lt;</span><span class="nx">html</span><span class="o">&gt;</span>
@@ -180,7 +181,7 @@ place this code and save it to your applications/views/ folder:</p>
 </div>
 </div>
 <div class="section" id="the-controller">
-<h3>The Controller<a class="headerlink" href="#the-controller" title="Permalink to this headline">¶</a></h3>
+<h3>The Controller<a class="headerlink" href="#the-controller" title="Bu başlığın kalıcı bağlantısı">¶</a></h3>
 <p>Using a text editor, create a controller called upload.php. In it, place
 this code and save it to your applications/controllers/ folder:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="o">&lt;?</span><span class="nx">php</span>
@@ -227,13 +228,13 @@ this code and save it to your applications/controllers/ folder:</p>
 </div>
 </div>
 <div class="section" id="the-upload-folder">
-<h3>The Upload Folder<a class="headerlink" href="#the-upload-folder" title="Permalink to this headline">¶</a></h3>
+<h3>The Upload Folder<a class="headerlink" href="#the-upload-folder" title="Bu başlığın kalıcı bağlantısı">¶</a></h3>
 <p>You&#8217;ll need a destination folder for your uploaded images. Create a
 folder at the root of your CodeIgniter installation called uploads and
 set its file permissions to 777.</p>
 </div>
 <div class="section" id="try-it">
-<h3>Try it!<a class="headerlink" href="#try-it" title="Permalink to this headline">¶</a></h3>
+<h3>Try it!<a class="headerlink" href="#try-it" title="Bu başlığın kalıcı bağlantısı">¶</a></h3>
 <p>To try your form, visit your site using a URL similar to this one:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nx">example</span><span class="o">.</span><span class="nx">com</span><span class="o">/</span><span class="nx">index</span><span class="o">.</span><span class="nx">php</span><span class="o">/</span><span class="nx">upload</span><span class="o">/</span>
 </pre></div>
@@ -244,9 +245,9 @@ work.</p>
 </div>
 </div>
 <div class="section" id="reference-guide">
-<h2>Reference Guide<a class="headerlink" href="#reference-guide" title="Permalink to this headline">¶</a></h2>
+<h2>Reference Guide<a class="headerlink" href="#reference-guide" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
 <div class="section" id="initializing-the-upload-class">
-<h3>Initializing the Upload Class<a class="headerlink" href="#initializing-the-upload-class" title="Permalink to this headline">¶</a></h3>
+<h3>Initializing the Upload Class<a class="headerlink" href="#initializing-the-upload-class" title="Bu başlığın kalıcı bağlantısı">¶</a></h3>
 <p>Like most other classes in CodeIgniter, the Upload class is initialized
 in your controller using the $this-&gt;load-&gt;library function:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">library</span><span class="p">(</span><span class="s1">&#39;upload&#39;</span><span class="p">);</span>
@@ -256,7 +257,7 @@ in your controller using the $this-&gt;load-&gt;library function:</p>
 $this-&gt;upload</p>
 </div>
 <div class="section" id="setting-preferences">
-<h3>Setting Preferences<a class="headerlink" href="#setting-preferences" title="Permalink to this headline">¶</a></h3>
+<h3>Setting Preferences<a class="headerlink" href="#setting-preferences" title="Bu başlığın kalıcı bağlantısı">¶</a></h3>
 <p>Similar to other libraries, you&#8217;ll control what is allowed to be upload
 based on your preferences. In the controller you built above you set the
 following preferences:</p>
@@ -276,7 +277,7 @@ following preferences:</p>
 table describing all available preferences.</p>
 </div>
 <div class="section" id="preferences">
-<h3>Preferences<a class="headerlink" href="#preferences" title="Permalink to this headline">¶</a></h3>
+<h3>Preferences<a class="headerlink" href="#preferences" title="Bu başlığın kalıcı bağlantısı">¶</a></h3>
 <p>The following preferences are available. The default value indicates
 what will be used if you do not specify that preference.</p>
 <table border="1" class="docutils">
@@ -287,77 +288,77 @@ what will be used if you do not specify that preference.</p>
 <col width="51%" />
 </colgroup>
 <thead valign="bottom">
-<tr><th class="head">Preference</th>
+<tr class="row-odd"><th class="head">Preference</th>
 <th class="head">Default Value</th>
 <th class="head">Options</th>
 <th class="head">Description</th>
 </tr>
 </thead>
 <tbody valign="top">
-<tr><td><strong>upload_path</strong></td>
+<tr class="row-even"><td><strong>upload_path</strong></td>
 <td>None</td>
 <td>None</td>
 <td>The path to the folder where the upload should be placed. The folder
 must be writable and the path can be absolute or relative.</td>
 </tr>
-<tr><td><strong>allowed_types</strong></td>
+<tr class="row-odd"><td><strong>allowed_types</strong></td>
 <td>None</td>
 <td>None</td>
 <td>The mime types corresponding to the types of files you allow to be
 uploaded. Usually the file extension can be used as the mime type.
 Separate multiple types with a pipe.</td>
 </tr>
-<tr><td><strong>file_name</strong></td>
+<tr class="row-even"><td><strong>file_name</strong></td>
 <td>None</td>
 <td>Desired file name</td>
 <td>If set CodeIgniter will rename the uploaded file to this name. The
 extension provided in the file name must also be an allowed file type.</td>
 </tr>
-<tr><td><strong>overwrite</strong></td>
+<tr class="row-odd"><td><strong>overwrite</strong></td>
 <td>FALSE</td>
 <td>TRUE/FALSE (boolean)</td>
 <td>If set to true, if a file with the same name as the one you are
 uploading exists, it will be overwritten. If set to false, a number will
 be appended to the filename if another with the same name exists.</td>
 </tr>
-<tr><td><strong>max_size</strong></td>
+<tr class="row-even"><td><strong>max_size</strong></td>
 <td>0</td>
 <td>None</td>
 <td>The maximum size (in kilobytes) that the file can be. Set to zero for no
 limit. Note: Most PHP installations have their own limit, as specified
 in the php.ini file. Usually 2 MB (or 2048 KB) by default.</td>
 </tr>
-<tr><td><strong>max_width</strong></td>
+<tr class="row-odd"><td><strong>max_width</strong></td>
 <td>0</td>
 <td>None</td>
 <td>The maximum width (in pixels) that the file can be. Set to zero for no
 limit.</td>
 </tr>
-<tr><td><strong>max_height</strong></td>
+<tr class="row-even"><td><strong>max_height</strong></td>
 <td>0</td>
 <td>None</td>
 <td>The maximum height (in pixels) that the file can be. Set to zero for no
 limit.</td>
 </tr>
-<tr><td><strong>max_filename</strong></td>
+<tr class="row-odd"><td><strong>max_filename</strong></td>
 <td>0</td>
 <td>None</td>
 <td>The maximum length that a file name can be. Set to zero for no limit.</td>
 </tr>
-<tr><td><strong>max_filename_increment</strong></td>
+<tr class="row-even"><td><strong>max_filename_increment</strong></td>
 <td>100</td>
 <td>None</td>
 <td>When overwrite is set to FALSE, use this to set the maximum filename
 increment for CodeIgniter to append to the filename.</td>
 </tr>
-<tr><td><strong>encrypt_name</strong></td>
+<tr class="row-odd"><td><strong>encrypt_name</strong></td>
 <td>FALSE</td>
 <td>TRUE/FALSE (boolean)</td>
 <td>If set to TRUE the file name will be converted to a random encrypted
 string. This can be useful if you would like the file saved with a name
 that can not be discerned by the person uploading it.</td>
 </tr>
-<tr><td><strong>remove_spaces</strong></td>
+<tr class="row-even"><td><strong>remove_spaces</strong></td>
 <td>TRUE</td>
 <td>TRUE/FALSE (boolean)</td>
 <td>If set to TRUE, any spaces in the file name will be converted to
@@ -367,7 +368,7 @@ underscores. This is recommended.</td>
 </table>
 </div>
 <div class="section" id="setting-preferences-in-a-config-file">
-<h3>Setting preferences in a config file<a class="headerlink" href="#setting-preferences-in-a-config-file" title="Permalink to this headline">¶</a></h3>
+<h3>Setting preferences in a config file<a class="headerlink" href="#setting-preferences-in-a-config-file" title="Bu başlığın kalıcı bağlantısı">¶</a></h3>
 <p>If you prefer not to set preferences using the above method, you can
 instead put them into a config file. Simply create a new file called the
 upload.php, add the $config array in that file. Then save the file in:
@@ -377,10 +378,10 @@ preferences in a config file.</p>
 </div>
 </div>
 <div class="section" id="function-reference">
-<h2>Function Reference<a class="headerlink" href="#function-reference" title="Permalink to this headline">¶</a></h2>
+<h2>Function Reference<a class="headerlink" href="#function-reference" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
 <p>The following functions are available</p>
 <div class="section" id="this-upload-do-upload">
-<h3>$this-&gt;upload-&gt;do_upload()<a class="headerlink" href="#this-upload-do-upload" title="Permalink to this headline">¶</a></h3>
+<h3>$this-&gt;upload-&gt;do_upload()<a class="headerlink" href="#this-upload-do-upload" title="Bu başlığın kalıcı bağlantısı">¶</a></h3>
 <p>Performs the upload based on the preferences you&#8217;ve set. Note: By
 default the upload routine expects the file to come from a form field
 called userfile, and the form must be a &#8220;multipart type:</p>
@@ -395,12 +396,12 @@ the do_upload function:</p>
 </div>
 </div>
 <div class="section" id="this-upload-display-errors">
-<h3>$this-&gt;upload-&gt;display_errors()<a class="headerlink" href="#this-upload-display-errors" title="Permalink to this headline">¶</a></h3>
+<h3>$this-&gt;upload-&gt;display_errors()<a class="headerlink" href="#this-upload-display-errors" title="Bu başlığın kalıcı bağlantısı">¶</a></h3>
 <p>Retrieves any error messages if the do_upload() function returned
 false. The function does not echo automatically, it returns the data so
 you can assign it however you need.</p>
 <div class="section" id="formatting-errors">
-<h4>Formatting Errors<a class="headerlink" href="#formatting-errors" title="Permalink to this headline">¶</a></h4>
+<h4>Formatting Errors<a class="headerlink" href="#formatting-errors" title="Bu başlığın kalıcı bağlantısı">¶</a></h4>
 <p>By default the above function wraps any errors within &lt;p&gt; tags. You can
 set your own delimiters like this:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">upload</span><span class="o">-&gt;</span><span class="na">display_errors</span><span class="p">(</span><span class="s1">&#39;&lt;p&gt;&#39;</span><span class="p">,</span> <span class="s1">&#39;&lt;/p&gt;&#39;</span><span class="p">);</span>
@@ -409,7 +410,7 @@ set your own delimiters like this:</p>
 </div>
 </div>
 <div class="section" id="this-upload-data">
-<h3>$this-&gt;upload-&gt;data()<a class="headerlink" href="#this-upload-data" title="Permalink to this headline">¶</a></h3>
+<h3>$this-&gt;upload-&gt;data()<a class="headerlink" href="#this-upload-data" title="Bu başlığın kalıcı bağlantısı">¶</a></h3>
 <p>This is a helper function that returns an array containing all of the
 data related to the file you uploaded. Here is the array prototype:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="k">Array</span>
@@ -432,7 +433,7 @@ data related to the file you uploaded. Here is the array prototype:</p>
 </pre></div>
 </div>
 <div class="section" id="explanation">
-<h4>Explanation<a class="headerlink" href="#explanation" title="Permalink to this headline">¶</a></h4>
+<h4>Explanation<a class="headerlink" href="#explanation" title="Bu başlığın kalıcı bağlantısı">¶</a></h4>
 <p>Here is an explanation of the above array items.</p>
 <p>Item
 Description
@@ -484,10 +485,10 @@ tag.</p>
 				
 				<span class="next">Sonraki Başlık: <a href="form_validation.html">Form Validation</a></span>
 				
-				<a href="#header" title="Return to top">Return to top</a>
+				<a href="#header" title="Başa Dön">Başa Dön</a>
 			</p>
 			<p><a href="">CodeIgniter</a> &ndash; Copyright &copy;
-      2011, EllisLab, Inc.</a> &ndash; Son Güncelleme: Nov 22, 2011</p>
+      2011, EllisLab, Inc.</a> &ndash; Son Güncelleme: 22 Kasım 2011</p>
 		</div><!-- /#footer -->
 	
 	<script src="../_static/asset/js/jquery-ui-min.js" type="text/javascript" charset="utf-8" async></script>

@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="utf-8">
 	    
-	    <title>Unit Testing Class &mdash; CodeIgniter v3.0-dev documentation</title>
+	    <title>Unit Testing Class &mdash; CodeIgniter 3.0-dev documentation</title>
 
 	    <link rel="stylesheet" href="../_static/asset/css/common.css" type="text/css" />
 	    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -20,7 +20,8 @@
 	    <script type="text/javascript" src="../_static/jquery.js"></script>
 	    <script type="text/javascript" src="../_static/underscore.js"></script>
 	    <script type="text/javascript" src="../_static/doctools.js"></script>
-	    <link rel="top" title="CodeIgniter v3.0-dev documentation" href="../index.html" />
+	    <script type="text/javascript" src="../_static/translations.js"></script>
+	    <link rel="top" title="CodeIgniter 3.0-dev documentation" href="../index.html" />
 	    <link rel="up" title="Libraries" href="index.html" />
 	    <link rel="next" title="URI Class" href="uri.html" />
 	    <link rel="prev" title="Typography Class" href="typography.html" /> 
@@ -81,9 +82,9 @@
 
 		<div id="brand" class="ci">
 			<a href="http://codeigniter.com/"><img src="../_static/asset/img/ci-logo.gif" alt="CodeIgniter"></a>
-			<p>3.0-dev User Guide</p>
+			<p>3.0-dev Kullanım Kılavuzu</p>
 		    <p><a href="../_sources/libraries/unit_testing.txt"
-			           rel="nofollow">Show Source</a></p>
+			           rel="nofollow">Kaynağı Göster</a></p>
 		</div><!-- /#brand -->
 
 		<div id="header">
@@ -91,12 +92,12 @@
 				<fieldset>
 					<input type="text" name="q" id="q" value="">
 					<input type="hidden" name="as_sitesearch" id="as_sitesearch" value="codeigniter.com/user_guide/" />
-					<input class="grades" type="submit" value="search">
+					<input class="grades" type="submit" value="ara">
 				</fieldset>
 			</form>
 			<ul>
-				<li><a href="../index.html">Home</a>&nbsp;&nbsp; &rsaquo;</li>
-				<li><a id="toc-link" href="../index.html">Table of Contents</a>&nbsp;&nbsp; &rsaquo;</li>
+				<li><a href="../index.html">Anasayfa</a>&nbsp;&nbsp; &rsaquo;</li>
+				<li><a id="toc-link" href="../index.html">İçindekiler</a>&nbsp;&nbsp; &rsaquo;</li>
 				<li><a href="index.html" accesskey="U">Libraries</a>&nbsp;&nbsp;  &rsaquo;</li>
 
 				<li><strong>Unit Testing Class</strong></li>
@@ -105,7 +106,7 @@
 
 		<div class="section" id="content">
 			<div class="section" id="unit-testing-class">
-<h1>Unit Testing Class<a class="headerlink" href="#unit-testing-class" title="Permalink to this headline">¶</a></h1>
+<h1>Unit Testing Class<a class="headerlink" href="#unit-testing-class" title="Bu başlığın kalıcı bağlantısı">¶</a></h1>
 <p>Unit testing is an approach to software development in which tests are
 written for each function in your application. If you are not familiar
 with the concept you might do a little googling on the subject.</p>
@@ -114,7 +115,7 @@ evaluation function and two result functions. It&#8217;s not intended to be a
 full-blown test suite but rather a simple mechanism to evaluate your
 code to determine if it is producing the correct data type and result.</p>
 <div class="section" id="initializing-the-class">
-<h2>Initializing the Class<a class="headerlink" href="#initializing-the-class" title="Permalink to this headline">¶</a></h2>
+<h2>Initializing the Class<a class="headerlink" href="#initializing-the-class" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
 <p>Like most other classes in CodeIgniter, the Unit Test class is
 initialized in your controller using the $this-&gt;load-&gt;library function:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">library</span><span class="p">(</span><span class="s1">&#39;unit_test&#39;</span><span class="p">);</span>
@@ -123,12 +124,12 @@ initialized in your controller using the $this-&gt;load-&gt;library function:</p
 <p>Once loaded, the Unit Test object will be available using: $this-&gt;unit</p>
 </div>
 <div class="section" id="running-tests">
-<h2>Running Tests<a class="headerlink" href="#running-tests" title="Permalink to this headline">¶</a></h2>
+<h2>Running Tests<a class="headerlink" href="#running-tests" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
 <p>Running a test involves supplying a test and an expected result to the
 following function:</p>
 </div>
 <div class="section" id="this-unit-run-test-expected-result-test-name-notes">
-<h2>$this-&gt;unit-&gt;run( test, expected result, &#8216;test name&#8217;, &#8216;notes&#8217;);<a class="headerlink" href="#this-unit-run-test-expected-result-test-name-notes" title="Permalink to this headline">¶</a></h2>
+<h2>$this-&gt;unit-&gt;run( test, expected result, &#8216;test name&#8217;, &#8216;notes&#8217;);<a class="headerlink" href="#this-unit-run-test-expected-result-test-name-notes" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
 <p>Where test is the result of the code you wish to test, expected result
 is the data type you expect, test name is an optional name you can give
 your test, and notes are optional notes. Example:</p>
@@ -168,7 +169,7 @@ result. Here is a list of allowed comparison types:</p>
 </ul>
 </div>
 <div class="section" id="generating-reports">
-<h2>Generating Reports<a class="headerlink" href="#generating-reports" title="Permalink to this headline">¶</a></h2>
+<h2>Generating Reports<a class="headerlink" href="#generating-reports" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
 <p>You can either display results after each test, or your can run several
 tests and generate a report at the end. To show a report directly simply
 echo or return the run function:</p>
@@ -186,7 +187,7 @@ the raw data you can retrieve an array using:</p>
 </div>
 </div>
 <div class="section" id="strict-mode">
-<h2>Strict Mode<a class="headerlink" href="#strict-mode" title="Permalink to this headline">¶</a></h2>
+<h2>Strict Mode<a class="headerlink" href="#strict-mode" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
 <p>By default the unit test class evaluates literal matches loosely.
 Consider this example:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">unit</span><span class="o">-&gt;</span><span class="na">run</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="k">TRUE</span><span class="p">);</span>
@@ -209,7 +210,7 @@ will compare the data type as well as the value:</p>
 </div>
 </div>
 <div class="section" id="enabling-disabling-unit-testing">
-<h2>Enabling/Disabling Unit Testing<a class="headerlink" href="#enabling-disabling-unit-testing" title="Permalink to this headline">¶</a></h2>
+<h2>Enabling/Disabling Unit Testing<a class="headerlink" href="#enabling-disabling-unit-testing" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
 <p>If you would like to leave some testing in place in your scripts, but
 not have it run unless you need it, you can disable unit testing using:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">unit</span><span class="o">-&gt;</span><span class="na">active</span><span class="p">(</span><span class="k">FALSE</span><span class="p">)</span>
@@ -217,7 +218,7 @@ not have it run unless you need it, you can disable unit testing using:</p>
 </div>
 </div>
 <div class="section" id="unit-test-display">
-<h2>Unit Test Display<a class="headerlink" href="#unit-test-display" title="Permalink to this headline">¶</a></h2>
+<h2>Unit Test Display<a class="headerlink" href="#unit-test-display" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
 <p>When your unit test results display, the following items show by
 default:</p>
 <ul class="simple">
@@ -233,13 +234,13 @@ default:</p>
 $this-&gt;unit-&gt;set_items(). For example, if you only wanted the test name
 and the result displayed:</p>
 <div class="section" id="customizing-displayed-tests">
-<h3>Customizing displayed tests<a class="headerlink" href="#customizing-displayed-tests" title="Permalink to this headline">¶</a></h3>
+<h3>Customizing displayed tests<a class="headerlink" href="#customizing-displayed-tests" title="Bu başlığın kalıcı bağlantısı">¶</a></h3>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">unit</span><span class="o">-&gt;</span><span class="na">set_test_items</span><span class="p">(</span><span class="k">array</span><span class="p">(</span><span class="s1">&#39;test_name&#39;</span><span class="p">,</span> <span class="s1">&#39;result&#39;</span><span class="p">));</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="creating-a-template">
-<h3>Creating a Template<a class="headerlink" href="#creating-a-template" title="Permalink to this headline">¶</a></h3>
+<h3>Creating a Template<a class="headerlink" href="#creating-a-template" title="Bu başlığın kalıcı bağlantısı">¶</a></h3>
 <p>If you would like your test results formatted differently then the
 default you can set your own template. Here is an example of a simple
 template. Note the required pseudo-variables:</p>
@@ -257,7 +258,7 @@ template. Note the required pseudo-variables:</p>
 </pre></div>
 </div>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
+<p class="first admonition-title">Not</p>
 <p class="last">Your template must be declared <strong>before</strong> running the unit
 test process.</p>
 </div>
@@ -277,10 +278,10 @@ test process.</p>
 				
 				<span class="next">Sonraki Başlık: <a href="uri.html">URI Class</a></span>
 				
-				<a href="#header" title="Return to top">Return to top</a>
+				<a href="#header" title="Başa Dön">Başa Dön</a>
 			</p>
 			<p><a href="">CodeIgniter</a> &ndash; Copyright &copy;
-      2011, EllisLab, Inc.</a> &ndash; Son Güncelleme: Nov 22, 2011</p>
+      2011, EllisLab, Inc.</a> &ndash; Son Güncelleme: 22 Kasım 2011</p>
 		</div><!-- /#footer -->
 	
 	<script src="../_static/asset/js/jquery-ui-min.js" type="text/javascript" charset="utf-8" async></script>

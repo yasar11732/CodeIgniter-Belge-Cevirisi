@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="utf-8">
 	    
-	    <title>URI Yönlendirme &mdash; CodeIgniter v3.0-dev documentation</title>
+	    <title>URI Yönlendirme &mdash; CodeIgniter 3.0-dev documentation</title>
 
 	    <link rel="stylesheet" href="../_static/asset/css/common.css" type="text/css" />
 	    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -20,7 +20,8 @@
 	    <script type="text/javascript" src="../_static/jquery.js"></script>
 	    <script type="text/javascript" src="../_static/underscore.js"></script>
 	    <script type="text/javascript" src="../_static/doctools.js"></script>
-	    <link rel="top" title="CodeIgniter v3.0-dev documentation" href="../index.html" />
+	    <script type="text/javascript" src="../_static/translations.js"></script>
+	    <link rel="top" title="CodeIgniter 3.0-dev documentation" href="../index.html" />
 	    <link rel="up" title="General Topics" href="index.html" />
 	    <link rel="next" title="Hata İşleme" href="errors.html" />
 	    <link rel="prev" title="Genel Fonksiyonlar" href="common_functions.html" /> 
@@ -78,9 +79,9 @@
 
 		<div id="brand" class="ci">
 			<a href="http://codeigniter.com/"><img src="../_static/asset/img/ci-logo.gif" alt="CodeIgniter"></a>
-			<p>3.0-dev User Guide</p>
+			<p>3.0-dev Kullanım Kılavuzu</p>
 		    <p><a href="../_sources/general/routing.txt"
-			           rel="nofollow">Show Source</a></p>
+			           rel="nofollow">Kaynağı Göster</a></p>
 		</div><!-- /#brand -->
 
 		<div id="header">
@@ -88,12 +89,12 @@
 				<fieldset>
 					<input type="text" name="q" id="q" value="">
 					<input type="hidden" name="as_sitesearch" id="as_sitesearch" value="codeigniter.com/user_guide/" />
-					<input class="grades" type="submit" value="search">
+					<input class="grades" type="submit" value="ara">
 				</fieldset>
 			</form>
 			<ul>
-				<li><a href="../index.html">Home</a>&nbsp;&nbsp; &rsaquo;</li>
-				<li><a id="toc-link" href="../index.html">Table of Contents</a>&nbsp;&nbsp; &rsaquo;</li>
+				<li><a href="../index.html">Anasayfa</a>&nbsp;&nbsp; &rsaquo;</li>
+				<li><a id="toc-link" href="../index.html">İçindekiler</a>&nbsp;&nbsp; &rsaquo;</li>
 				<li><a href="index.html" accesskey="U">General Topics</a>&nbsp;&nbsp;  &rsaquo;</li>
 
 				<li><strong>URI Yönlendirme</strong></li>
@@ -102,7 +103,7 @@
 
 		<div class="section" id="content">
 			<div class="section" id="uri-yonlendirme">
-<h1>URI Yönlendirme<a class="headerlink" href="#uri-yonlendirme" title="Permalink to this headline">¶</a></h1>
+<h1>URI Yönlendirme<a class="headerlink" href="#uri-yonlendirme" title="Bu başlığın kalıcı bağlantısı">¶</a></h1>
 <p>Genellikle URL adresi ile onun controller sınıf/metodu arasında birebir ilişki mevcuttur. URI URI parçaları normalde şu deseni takip eder:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nx">example</span><span class="o">.</span><span class="nx">com</span><span class="o">/</span><span class="nx">class</span><span class="o">/</span><span class="nx">function</span><span class="o">/</span><span class="nx">id</span><span class="o">/</span>
 </pre></div>
@@ -115,11 +116,11 @@ example.com/product/3/
 example.com/product/4/</p>
 <p>Normalde URL&#8217;nin ikinci parçası fonksiyon adına rezerve edilmiştir, ama bu yukarıdaki örnekte onun yerine ürün ID değeri vardır. Bunun çaresine bakmak için, CodeIgniter URI işlemeyi yeniden düzenlemenize izin verir.</p>
 <div class="section" id="kendi-yonlendirme-kurallarinizi-ayarlamak">
-<h2>Kendi yönlendirme kurallarınızı ayarlamak<a class="headerlink" href="#kendi-yonlendirme-kurallarinizi-ayarlamak" title="Permalink to this headline">¶</a></h2>
+<h2>Kendi yönlendirme kurallarınızı ayarlamak<a class="headerlink" href="#kendi-yonlendirme-kurallarinizi-ayarlamak" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
 <p>Yönlendirme kurallarınızı application/config/routes.php dosyasında tanımlayabilirsiniz. BU dosya içinde çağırdığınız $route dizini, kendi yönlendirme kriterinizi tanımlamanıza izin verir. Yönlendirme tanımlanırken wildcards ya da Regular Expressions kullanılabilir.</p>
 </div>
 <div class="section" id="wildcards">
-<h2>Wildcards<a class="headerlink" href="#wildcards" title="Permalink to this headline">¶</a></h2>
+<h2>Wildcards<a class="headerlink" href="#wildcards" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
 <p>Tipik bir wildcard yönlendirmesi şuna benzeyecektir:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$route</span><span class="p">[</span><span class="s1">&#39;product/:num&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;catalog/product_lookup&quot;</span><span class="p">;</span>
 </pre></div>
@@ -132,7 +133,7 @@ example.com/product/4/</p>
 </dl>
 </div>
 <div class="section" id="ornekler">
-<h2>Örnekler<a class="headerlink" href="#ornekler" title="Permalink to this headline">¶</a></h2>
+<h2>Örnekler<a class="headerlink" href="#ornekler" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
 <p>Burada bir kaç tane yönlendirme örneği gösterelim:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$route</span><span class="p">[</span><span class="s1">&#39;journals&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;blogs&quot;</span><span class="p">;</span>
 </pre></div>
@@ -152,7 +153,7 @@ example.com/product/4/</p>
 <p>URL&#8217;nin ilk parçası &#8220;product&#8221; ve ikinci parçası herhangi bir şey olduğunda, hemen &#8220;catalog&#8221; sınıfı, &#8220;product_lookup_by_id&#8221; metoduna ne kadar parametre varsa gönderilir.</p>
 </div>
 <div class="section" id="duzenli-ifadeler-regular-expressions">
-<h2>Düzenli İfadeler (Regular Expressions)<a class="headerlink" href="#duzenli-ifadeler-regular-expressions" title="Permalink to this headline">¶</a></h2>
+<h2>Düzenli İfadeler (Regular Expressions)<a class="headerlink" href="#duzenli-ifadeler-regular-expressions" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
 <p>Eğer isterseniz, yönlendirme kullarınızda düzenli ifadeler kullanabilirsiniz. Geçerli olan düzenli ifadelerin kullanımı geri-referanslı olmaları durumunda izin verilir.</p>
 <p>Tipik bir RegEx yönlendirmesi şöyledir:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$route</span><span class="p">[</span><span class="s1">&#39;products/([a-z]+)/(\d+)&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;$1/id_$2&quot;</span><span class="p">;</span>
@@ -162,7 +163,7 @@ example.com/product/4/</p>
 <p>Ayrıca yönlendirme için wildcards ve düzenli ifadeleri birlikte de kullanabilirsiniz.</p>
 </div>
 <div class="section" id="rezerve-yonlendirmeler">
-<h2>Rezerve Yönlendirmeler<a class="headerlink" href="#rezerve-yonlendirmeler" title="Permalink to this headline">¶</a></h2>
+<h2>Rezerve Yönlendirmeler<a class="headerlink" href="#rezerve-yonlendirmeler" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
 <p>İki tane rezerve yönlendirme vardır:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$route</span><span class="p">[</span><span class="s1">&#39;default_controller&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;welcome&#39;</span><span class="p">;</span>
 </pre></div>
@@ -187,10 +188,10 @@ example.com/product/4/</p>
 				
 				<span class="next">Sonraki Başlık: <a href="errors.html">Hata İşleme</a></span>
 				
-				<a href="#header" title="Return to top">Return to top</a>
+				<a href="#header" title="Başa Dön">Başa Dön</a>
 			</p>
 			<p><a href="">CodeIgniter</a> &ndash; Copyright &copy;
-      2011, EllisLab, Inc.</a> &ndash; Son Güncelleme: Nov 22, 2011</p>
+      2011, EllisLab, Inc.</a> &ndash; Son Güncelleme: 22 Kasım 2011</p>
 		</div><!-- /#footer -->
 	
 	<script src="../_static/asset/js/jquery-ui-min.js" type="text/javascript" charset="utf-8" async></script>
