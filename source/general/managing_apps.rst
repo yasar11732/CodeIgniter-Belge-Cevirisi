@@ -1,43 +1,31 @@
-##########################
-Managing your Applications
-##########################
+######################
+Uygulamaların Yönetimi
+######################
 
-By default it is assumed that you only intend to use CodeIgniter to
-manage one application, which you will build in your application/
-directory. It is possible, however, to have multiple sets of
-applications that share a single CodeIgniter installation, or even to
-rename or relocate your application folder.
+CodeIngiter system/application/ dizinine kurularak sadece bir uygulamayı çalıştıdığınız varsayılır. Bununla birlikte, bir tane CodeIgniter kurulumu yaparak, application yerini değiştirerek ya da ismini değiştirerek çoklu uygulamayı çalıştırmanız da mümkündür.
 
-Renaming the Application Folder
-===============================
+Application Dizininin Adını Değiştirmek
+=======================================
 
-If you would like to rename your application folder you may do so as
-long as you open your main index.php file and set its name using the
-$application_folder variable::
+Eğer application dizininin adını değiştirmek istiyorsanız, bunu ana dizindeki index.php dosyasını açıp, $application_folder değişkeninin adını değiştirerek yapabilirsiniz::
 
 	$application_folder = "application";
 
-Relocating your Application Folder
-==================================
+Application Dizininin Yerini Değiştirmek
+========================================
 
-It is possible to move your application folder to a different location
-on your server than your system folder. To do so open your main
-index.php and set a *full server path* in the $application_folder
-variable.
+Application dizininin yerini system dizini altından farklı bir yere almak da mümkündür. Bundan sonra yapacağınız, index.php dosyasındaki $application_folder değişkenine **tüm sunucu yolunu** tanımlamaktır.
 
 ::
 
 	$application_folder = "/Path/to/your/application";
 
-Running Multiple Applications with one CodeIgniter Installation
-===============================================================
+Çoklu Uygulamayı bir CodeIgniter Kurulumu ile Çalıştırmak
+=========================================================
 
-If you would like to share a common CodeIgniter installation to manage
-several different applications simply put all of the directories located
-inside your application folder into their own sub-folder.
+Eğer bir CodeIgniter kurulumunu bir kaç farklı uygulama arasında basitçe paylaştırmak istiyorsanız, bütün uygulamalarınızı, herbiri farklı isimdeki dizinler ile birlikte application dizini içine yerleştiriniz.
 
-For example, let's say you want to create two applications, "foo" and
-"bar". You could structure your application folders like this::
+Örneğin, diyelim ki "foo" ve "bar" isminde iki farklı uygulama oluşturmak istiyorsunuz. Uygulama dizininizin yapısı şuna benzeyecektir::
 
 	applications/foo/
 	applications/foo/config/
@@ -54,12 +42,8 @@ For example, let's say you want to create two applications, "foo" and
 	applications/bar/models/
 	applications/bar/views/
 
-To select a particular application for use requires that you open your
-main index.php file and set the $application_folder variable. For
-example, to select the "foo" application for use you would do this::
+Kullanacağınız uygulamayı belirtmek için ana index.php dosyasını açıp, $application_folder değişkenini ayarlamalısınız. Örneğin, "foo" uygulamasını seçmek için şunu yapmalısınız::
 
 	$application_folder = "applications/foo";
 
-.. note:: Each of your applications will need its own index.php file
-	which calls the desired application. The index.php file can be named
-	anything you want.
+.. not:: Her uygulamanın kendisine ait, kendisini çağıran bir index.php dosyası olmalıdır. Index.php dosyasının adı isteğinize göre herşey olabilir.

@@ -1,17 +1,13 @@
 ########
-Security
+Güvenlik
 ########
 
-This page describes some "best practices" regarding web security, and
-details CodeIgniter's internal security features.
+Bu sayfa web güvenliği hakkında bazı "en iyi uygulamaları" ve CodeIgniter'ın dahili güvenliği konularını içermektedir.
 
-URI Security
-============
+URI Güvenliği
+=============
 
-CodeIgniter is fairly restrictive regarding which characters it allows
-in your URI strings in order to help minimize the possibility that
-malicious data can be passed to your application. URIs may only contain
-the following:
+CodeIgniter bozuk verilerin en aza indirgenebilmesi için URI yazımında bazı özel karakterin kullanımını yasaklamıştır, URI yanlızca aşşağıdaki karakterleri içerebilir:
 
 -  Alpha-numeric text
 -  Tilde: ~
@@ -23,68 +19,43 @@ the following:
 Register_globals
 =================
 
-During system initialization all global variables are unset, except
-those found in the $_GET, $_POST, and $_COOKIE arrays. The unsetting
-routine is effectively the same as register_globals = off.
+Sistem ön yüklemesi sırasında $_POST ve $_COOKIE değerleri haricindeki bütün global değerler bellekten silinir (unset) Değerlerin bellekten silinmesi register_globals=off tanımlaması ile aynı etkiyi gösterir.
 
 error_reporting
 ================
 
-In production environments, it is typically desirable to disable PHP's
-error reporting by setting the internal error_reporting flag to a value
-of 0. This disables native PHP errors from being rendered as output,
-which may potentially contain sensitive information.
+Geliştirme sürecinde, PHP hata raporu kodlarının kapatılması error_reporting sabitine 0 değeri verilmesi ile yapılır. Bu etkisizleştirme, bazı önemli bilgi içeren PHP hatalarının ekrana basılmasını sağlar.
 
-Setting CodeIgniter's **ENVIRONMENT** constant in index.php to a value of
-**\'production\'** will turn off these errors. In development mode, it is
-recommended that a value of 'development' is used. More information
-about differentiating between environments can be found on the :doc:`Handling
-Environments <environments>` page.
+CodeIgniter'ın index.php dosyasındaki **ENVIRONMENT** sabitine **\'production\'** değeri atanınca bu tür hatalar kapatılır. Geliştirme modunda, 'development' değerinin kullanılması tavsiye edilir. İki değer arasındaki fark hakkında detaylı bilgi için  :doc:`Handling Environments <environments>` sayfasını okuyunuz.
 
 magic_quotes_runtime
 ======================
 
-The magic_quotes_runtime directive is turned off during system
-initialization so that you don't have to remove slashes when retrieving
-data from your database.
+magic_quotes_runtime tanımlaması sistem önyüklemesi sırasında kapatıldığı için veritabanından gelen kayıtlar içerisindeki slash karakterini ayrıca temizlemenize gerek yoktur.
 
-**************
-Best Practices
-**************
+******************
+En iyi uygulamalar
+******************
 
-Before accepting any data into your application, whether it be POST data
-from a form submission, COOKIE data, URI data, XML-RPC data, or even
-data from the SERVER array, you are encouraged to practice this three
-step approach:
+Dışardan gelen her veriyi (POST, COOKIE, URI Verisi veya XML-RPC , SERVER gibi) işlemeden önce aşşağıdaki 3. adımı uygulamaya özen gösterin:
 
-#. Filter the data as if it were tainted.
-#. Validate the data to ensure it conforms to the correct type, length,
-   size, etc. (sometimes this step can replace step one)
-#. Escape the data before submitting it into your database.
+#. Veri doğruluğundan emin olun.
+#. Verinin istediğiniz tipte, uzunlukta veya büyüklükte olduğundan emin olun. (Bu adım bazen 1. adımın değişmesine neden olabilir).
+#. Veritabanına yazmadan önce verinin özek karakterler veya kodlar içermediğinden emin olun (Sql injection, XSS gibi).
 
-CodeIgniter provides the following functions to assist in this process:
+CodeIgniter güvenlik adımların uygulanmasına yardım etmek için araçlar sunar :
 
-XSS Filtering
+XSS Temizleme
 =============
 
-CodeIgniter comes with a Cross Site Scripting filter. This filter
-looks for commonly used techniques to embed malicious Javascript into
-your data, or other types of code that attempt to hijack cookies or
-do other malicious things. The XSS Filter is described
-:doc:`here <../libraries/security>`.
+CodeIgniter XSS filtrsi ile birlikte dağıtılır. Bu filtre çok kullanılan zararlı kod yerleştirme tekniğine karşı, hijack ve diğer zararlı kodlara karşı kontroller yapar. XSS filtresi hakkında detaylı açıklamaya :doc:`buradan <../libraries/security>` erişin.
 
-Validate the data
-=================
+Veri doğrulama
+==============
 
-CodeIgniter has a :doc:`Form Validation
-Class <../libraries/form_validation>` that assists you in
-validating, filtering, and prepping your data.
+CodeIgniter verilerinizi doğrulamada, filtrlemede ve uygun hale getirmenizde yardımcı olacak :doc:`veri doğrulama <../libraries/form_validation>` araçlarıyla birlikte gelir.
 
-Escape all data before database insertion
-=========================================
+Veritabanına eklemeden önce bütün verilerin kontrolü ve filtrelenmesi
+=====================================================================
 
-Never insert information into your database without escaping it.
-Please see the section that discusses
-:doc:`queries <../database/queries>` for more information.
-
-
+Asla dış kaynaklı verileri filtrlemeden veritabanına eklemeyin. Bu konu hakkında daha fazla bilgiye :doc:`buradan <../database/queries>` ulaşabilirsiniz.
