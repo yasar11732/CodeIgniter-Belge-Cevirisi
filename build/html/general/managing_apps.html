@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="utf-8">
 	    
-	    <title>Managing your Applications &mdash; CodeIgniter 3.0-dev documentation</title>
+	    <title>Uygulamaların Yönetimi &mdash; CodeIgniter 3.0-dev documentation</title>
 
 	    <link rel="stylesheet" href="../_static/asset/css/common.css" type="text/css" />
 	    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -54,14 +54,14 @@
 <li class="toctree-l2"><a class="reference internal" href="routing.html">URI Yönlendirme</a></li>
 <li class="toctree-l2"><a class="reference internal" href="errors.html">Hata İşleme</a></li>
 <li class="toctree-l2"><a class="reference internal" href="caching.html">Caching</a></li>
-<li class="toctree-l2"><a class="reference internal" href="profiling.html">Profiling Your Application</a></li>
+<li class="toctree-l2"><a class="reference internal" href="profiling.html">Uygulamanızı Ayrımlayın</a></li>
 <li class="toctree-l2"><a class="reference internal" href="cli.html">Running via the CLI</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="">Managing your Applications</a><ul class="simple">
+<li class="toctree-l2 current"><a class="current reference internal" href="">Uygulamaların Yönetimi</a><ul class="simple">
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="environments.html">Handling Multiple Environments</a></li>
 <li class="toctree-l2"><a class="reference internal" href="alternative_php.html">Alternate PHP Syntax for View Files</a></li>
-<li class="toctree-l2"><a class="reference internal" href="security.html">Security</a></li>
+<li class="toctree-l2"><a class="reference internal" href="security.html">Güvenlik</a></li>
 <li class="toctree-l2"><a class="reference internal" href="styleguide.html">PHP Style Guide</a></li>
 </ul>
 </li>
@@ -97,44 +97,32 @@
 				<li><a id="toc-link" href="../index.html">İçindekiler</a>&nbsp;&nbsp; &rsaquo;</li>
 				<li><a href="index.html" accesskey="U">General Topics</a>&nbsp;&nbsp;  &rsaquo;</li>
 
-				<li><strong>Managing your Applications</strong></li>
+				<li><strong>Uygulamaların Yönetimi</strong></li>
 			</ul>
 		</div><!-- /#header -->
 
 		<div class="section" id="content">
-			<div class="section" id="managing-your-applications">
-<h1>Managing your Applications<a class="headerlink" href="#managing-your-applications" title="Bu başlığın kalıcı bağlantısı">¶</a></h1>
-<p>By default it is assumed that you only intend to use CodeIgniter to
-manage one application, which you will build in your application/
-directory. It is possible, however, to have multiple sets of
-applications that share a single CodeIgniter installation, or even to
-rename or relocate your application folder.</p>
-<div class="section" id="renaming-the-application-folder">
-<h2>Renaming the Application Folder<a class="headerlink" href="#renaming-the-application-folder" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
-<p>If you would like to rename your application folder you may do so as
-long as you open your main index.php file and set its name using the
-$application_folder variable:</p>
+			<div class="section" id="uygulamalarin-yonetimi">
+<h1>Uygulamaların Yönetimi<a class="headerlink" href="#uygulamalarin-yonetimi" title="Bu başlığın kalıcı bağlantısı">¶</a></h1>
+<p>CodeIngiter system/application/ dizinine kurularak sadece bir uygulamayı çalıştıdığınız varsayılır. Bununla birlikte, bir tane CodeIgniter kurulumu yaparak, application yerini değiştirerek ya da ismini değiştirerek çoklu uygulamayı çalıştırmanız da mümkündür.</p>
+<div class="section" id="application-dizininin-adini-degistirmek">
+<h2>Application Dizininin Adını Değiştirmek<a class="headerlink" href="#application-dizininin-adini-degistirmek" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
+<p>Eğer application dizininin adını değiştirmek istiyorsanız, bunu ana dizindeki index.php dosyasını açıp, $application_folder değişkeninin adını değiştirerek yapabilirsiniz:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$application_folder</span> <span class="o">=</span> <span class="s2">&quot;application&quot;</span><span class="p">;</span>
 </pre></div>
 </div>
 </div>
-<div class="section" id="relocating-your-application-folder">
-<h2>Relocating your Application Folder<a class="headerlink" href="#relocating-your-application-folder" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
-<p>It is possible to move your application folder to a different location
-on your server than your system folder. To do so open your main
-index.php and set a <em>full server path</em> in the $application_folder
-variable.</p>
+<div class="section" id="application-dizininin-yerini-degistirmek">
+<h2>Application Dizininin Yerini Değiştirmek<a class="headerlink" href="#application-dizininin-yerini-degistirmek" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
+<p>Application dizininin yerini system dizini altından farklı bir yere almak da mümkündür. Bundan sonra yapacağınız, index.php dosyasındaki $application_folder değişkenine <strong>tüm sunucu yolunu</strong> tanımlamaktır.</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$application_folder</span> <span class="o">=</span> <span class="s2">&quot;/Path/to/your/application&quot;</span><span class="p">;</span>
 </pre></div>
 </div>
 </div>
-<div class="section" id="running-multiple-applications-with-one-codeigniter-installation">
-<h2>Running Multiple Applications with one CodeIgniter Installation<a class="headerlink" href="#running-multiple-applications-with-one-codeigniter-installation" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
-<p>If you would like to share a common CodeIgniter installation to manage
-several different applications simply put all of the directories located
-inside your application folder into their own sub-folder.</p>
-<p>For example, let&#8217;s say you want to create two applications, &#8220;foo&#8221; and
-&#8220;bar&#8221;. You could structure your application folders like this:</p>
+<div class="section" id="coklu-uygulamayi-bir-codeigniter-kurulumu-ile-calistirmak">
+<h2>Çoklu Uygulamayı bir CodeIgniter Kurulumu ile Çalıştırmak<a class="headerlink" href="#coklu-uygulamayi-bir-codeigniter-kurulumu-ile-calistirmak" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
+<p>Eğer bir CodeIgniter kurulumunu bir kaç farklı uygulama arasında basitçe paylaştırmak istiyorsanız, bütün uygulamalarınızı, herbiri farklı isimdeki dizinler ile birlikte application dizini içine yerleştiriniz.</p>
+<p>Örneğin, diyelim ki &#8220;foo&#8221; ve &#8220;bar&#8221; isminde iki farklı uygulama oluşturmak istiyorsunuz. Uygulama dizininizin yapısı şuna benzeyecektir:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nx">applications</span><span class="o">/</span><span class="nx">foo</span><span class="o">/</span>
 <span class="nx">applications</span><span class="o">/</span><span class="nx">foo</span><span class="o">/</span><span class="nx">config</span><span class="o">/</span>
 <span class="nx">applications</span><span class="o">/</span><span class="nx">foo</span><span class="o">/</span><span class="nx">controllers</span><span class="o">/</span>
@@ -151,17 +139,13 @@ inside your application folder into their own sub-folder.</p>
 <span class="nx">applications</span><span class="o">/</span><span class="nx">bar</span><span class="o">/</span><span class="nx">views</span><span class="o">/</span>
 </pre></div>
 </div>
-<p>To select a particular application for use requires that you open your
-main index.php file and set the $application_folder variable. For
-example, to select the &#8220;foo&#8221; application for use you would do this:</p>
+<p>Kullanacağınız uygulamayı belirtmek için ana index.php dosyasını açıp, $application_folder değişkenini ayarlamalısınız. Örneğin, &#8220;foo&#8221; uygulamasını seçmek için şunu yapmalısınız:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$application_folder</span> <span class="o">=</span> <span class="s2">&quot;applications/foo&quot;</span><span class="p">;</span>
 </pre></div>
 </div>
-<div class="admonition note">
-<p class="first admonition-title">Not</p>
-<p class="last">Each of your applications will need its own index.php file
-which calls the desired application. The index.php file can be named
-anything you want.</p>
+<div class="note admonition">
+<p class="first admonition-title">NOT</p>
+<p class="last">Her uygulamanın kendisine ait, kendisini çağıran bir index.php dosyası olmalıdır. Index.php dosyasının adı isteğinize göre herşey olabilir.</p>
 </div>
 </div>
 </div>
@@ -181,7 +165,7 @@ anything you want.</p>
 				<a href="#header" title="Başa Dön">Başa Dön</a>
 			</p>
 			<p><a href="">CodeIgniter</a> &ndash; Copyright &copy;
-      2011, EllisLab, Inc.</a> &ndash; Son Güncelleme: 22 Kasım 2011</p>
+      2011, EllisLab, Inc.</a> &ndash; Son Güncelleme: 24 Kasım 2011</p>
 		</div><!-- /#footer -->
 	
 	<script src="../_static/asset/js/jquery-ui-min.js" type="text/javascript" charset="utf-8" async></script>

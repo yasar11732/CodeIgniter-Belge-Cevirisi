@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="utf-8">
 	    
-	    <title>Security &mdash; CodeIgniter 3.0-dev documentation</title>
+	    <title>Güvenlik &mdash; CodeIgniter 3.0-dev documentation</title>
 
 	    <link rel="stylesheet" href="../_static/asset/css/common.css" type="text/css" />
 	    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -54,12 +54,12 @@
 <li class="toctree-l2"><a class="reference internal" href="routing.html">URI Yönlendirme</a></li>
 <li class="toctree-l2"><a class="reference internal" href="errors.html">Hata İşleme</a></li>
 <li class="toctree-l2"><a class="reference internal" href="caching.html">Caching</a></li>
-<li class="toctree-l2"><a class="reference internal" href="profiling.html">Profiling Your Application</a></li>
+<li class="toctree-l2"><a class="reference internal" href="profiling.html">Uygulamanızı Ayrımlayın</a></li>
 <li class="toctree-l2"><a class="reference internal" href="cli.html">Running via the CLI</a></li>
-<li class="toctree-l2"><a class="reference internal" href="managing_apps.html">Managing your Applications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="managing_apps.html">Uygulamaların Yönetimi</a></li>
 <li class="toctree-l2"><a class="reference internal" href="environments.html">Handling Multiple Environments</a></li>
 <li class="toctree-l2"><a class="reference internal" href="alternative_php.html">Alternate PHP Syntax for View Files</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="">Security</a><ul class="simple">
+<li class="toctree-l2 current"><a class="current reference internal" href="">Güvenlik</a><ul class="simple">
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="styleguide.html">PHP Style Guide</a></li>
@@ -97,21 +97,17 @@
 				<li><a id="toc-link" href="../index.html">İçindekiler</a>&nbsp;&nbsp; &rsaquo;</li>
 				<li><a href="index.html" accesskey="U">General Topics</a>&nbsp;&nbsp;  &rsaquo;</li>
 
-				<li><strong>Security</strong></li>
+				<li><strong>Güvenlik</strong></li>
 			</ul>
 		</div><!-- /#header -->
 
 		<div class="section" id="content">
-			<div class="section" id="security">
-<h1>Security<a class="headerlink" href="#security" title="Bu başlığın kalıcı bağlantısı">¶</a></h1>
-<p>This page describes some &#8220;best practices&#8221; regarding web security, and
-details CodeIgniter&#8217;s internal security features.</p>
-<div class="section" id="uri-security">
-<h2>URI Security<a class="headerlink" href="#uri-security" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
-<p>CodeIgniter is fairly restrictive regarding which characters it allows
-in your URI strings in order to help minimize the possibility that
-malicious data can be passed to your application. URIs may only contain
-the following:</p>
+			<div class="section" id="guvenlik">
+<h1>Güvenlik<a class="headerlink" href="#guvenlik" title="Bu başlığın kalıcı bağlantısı">¶</a></h1>
+<p>Bu sayfa web güvenliği hakkında bazı &#8220;en iyi uygulamaları&#8221; ve CodeIgniter&#8217;ın dahili güvenliği konularını içermektedir.</p>
+<div class="section" id="uri-guvenligi">
+<h2>URI Güvenliği<a class="headerlink" href="#uri-guvenligi" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
+<p>CodeIgniter bozuk verilerin en aza indirgenebilmesi için URI yazımında bazı özel karakterin kullanımını yasaklamıştır, URI yanlızca aşşağıdaki karakterleri içerebilir:</p>
 <ul class="simple">
 <li>Alpha-numeric text</li>
 <li>Tilde: ~</li>
@@ -123,61 +119,38 @@ the following:</p>
 </div>
 <div class="section" id="register-globals">
 <h2>Register_globals<a class="headerlink" href="#register-globals" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
-<p>During system initialization all global variables are unset, except
-those found in the $_GET, $_POST, and $_COOKIE arrays. The unsetting
-routine is effectively the same as register_globals = off.</p>
+<p>Sistem ön yüklemesi sırasında $_POST ve $_COOKIE değerleri haricindeki bütün global değerler bellekten silinir (unset) Değerlerin bellekten silinmesi register_globals=off tanımlaması ile aynı etkiyi gösterir.</p>
 </div>
 <div class="section" id="error-reporting">
 <h2>error_reporting<a class="headerlink" href="#error-reporting" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
-<p>In production environments, it is typically desirable to disable PHP&#8217;s
-error reporting by setting the internal error_reporting flag to a value
-of 0. This disables native PHP errors from being rendered as output,
-which may potentially contain sensitive information.</p>
-<p>Setting CodeIgniter&#8217;s <strong>ENVIRONMENT</strong> constant in index.php to a value of
-<strong>&#8216;production&#8217;</strong> will turn off these errors. In development mode, it is
-recommended that a value of &#8216;development&#8217; is used. More information
-about differentiating between environments can be found on the <a class="reference internal" href="environments.html"><em>Handling
-Environments</em></a> page.</p>
+<p>Geliştirme sürecinde, PHP hata raporu kodlarının kapatılması error_reporting sabitine 0 değeri verilmesi ile yapılır. Bu etkisizleştirme, bazı önemli bilgi içeren PHP hatalarının ekrana basılmasını sağlar.</p>
+<p>CodeIgniter&#8217;ın index.php dosyasındaki <strong>ENVIRONMENT</strong> sabitine <strong>&#8216;production&#8217;</strong> değeri atanınca bu tür hatalar kapatılır. Geliştirme modunda, &#8216;development&#8217; değerinin kullanılması tavsiye edilir. İki değer arasındaki fark hakkında detaylı bilgi için  <a class="reference internal" href="environments.html"><em>Handling Environments</em></a> sayfasını okuyunuz.</p>
 </div>
 <div class="section" id="magic-quotes-runtime">
 <h2>magic_quotes_runtime<a class="headerlink" href="#magic-quotes-runtime" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
-<p>The magic_quotes_runtime directive is turned off during system
-initialization so that you don&#8217;t have to remove slashes when retrieving
-data from your database.</p>
-<div class="section" id="best-practices">
-<h3>Best Practices<a class="headerlink" href="#best-practices" title="Bu başlığın kalıcı bağlantısı">¶</a></h3>
-<p>Before accepting any data into your application, whether it be POST data
-from a form submission, COOKIE data, URI data, XML-RPC data, or even
-data from the SERVER array, you are encouraged to practice this three
-step approach:</p>
+<p>magic_quotes_runtime tanımlaması sistem önyüklemesi sırasında kapatıldığı için veritabanından gelen kayıtlar içerisindeki slash karakterini ayrıca temizlemenize gerek yoktur.</p>
+<div class="section" id="en-iyi-uygulamalar">
+<h3>En iyi uygulamalar<a class="headerlink" href="#en-iyi-uygulamalar" title="Bu başlığın kalıcı bağlantısı">¶</a></h3>
+<p>Dışardan gelen her veriyi (POST, COOKIE, URI Verisi veya XML-RPC , SERVER gibi) işlemeden önce aşşağıdaki 3. adımı uygulamaya özen gösterin:</p>
 <ol class="arabic simple">
-<li>Filter the data as if it were tainted.</li>
-<li>Validate the data to ensure it conforms to the correct type, length,
-size, etc. (sometimes this step can replace step one)</li>
-<li>Escape the data before submitting it into your database.</li>
+<li>Veri doğruluğundan emin olun.</li>
+<li>Verinin istediğiniz tipte, uzunlukta veya büyüklükte olduğundan emin olun. (Bu adım bazen 1. adımın değişmesine neden olabilir).</li>
+<li>Veritabanına yazmadan önce verinin özek karakterler veya kodlar içermediğinden emin olun (Sql injection, XSS gibi).</li>
 </ol>
-<p>CodeIgniter provides the following functions to assist in this process:</p>
+<p>CodeIgniter güvenlik adımların uygulanmasına yardım etmek için araçlar sunar :</p>
 </div>
 </div>
-<div class="section" id="xss-filtering">
-<h2>XSS Filtering<a class="headerlink" href="#xss-filtering" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
-<p>CodeIgniter comes with a Cross Site Scripting filter. This filter
-looks for commonly used techniques to embed malicious Javascript into
-your data, or other types of code that attempt to hijack cookies or
-do other malicious things. The XSS Filter is described
-<a class="reference internal" href="../libraries/security.html"><em>here</em></a>.</p>
+<div class="section" id="xss-temizleme">
+<h2>XSS Temizleme<a class="headerlink" href="#xss-temizleme" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
+<p>CodeIgniter XSS filtrsi ile birlikte dağıtılır. Bu filtre çok kullanılan zararlı kod yerleştirme tekniğine karşı, hijack ve diğer zararlı kodlara karşı kontroller yapar. XSS filtresi hakkında detaylı açıklamaya <a class="reference internal" href="../libraries/security.html"><em>buradan</em></a> erişin.</p>
 </div>
-<div class="section" id="validate-the-data">
-<h2>Validate the data<a class="headerlink" href="#validate-the-data" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
-<p>CodeIgniter has a <a class="reference internal" href="../libraries/form_validation.html"><em>Form Validation
-Class</em></a> that assists you in
-validating, filtering, and prepping your data.</p>
+<div class="section" id="veri-dogrulama">
+<h2>Veri doğrulama<a class="headerlink" href="#veri-dogrulama" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
+<p>CodeIgniter verilerinizi doğrulamada, filtrlemede ve uygun hale getirmenizde yardımcı olacak <a class="reference internal" href="../libraries/form_validation.html"><em>veri doğrulama</em></a> araçlarıyla birlikte gelir.</p>
 </div>
-<div class="section" id="escape-all-data-before-database-insertion">
-<h2>Escape all data before database insertion<a class="headerlink" href="#escape-all-data-before-database-insertion" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
-<p>Never insert information into your database without escaping it.
-Please see the section that discusses
-<a class="reference internal" href="../database/queries.html"><em>queries</em></a> for more information.</p>
+<div class="section" id="veritabanina-eklemeden-once-butun-verilerin-kontrolu-ve-filtrelenmesi">
+<h2>Veritabanına eklemeden önce bütün verilerin kontrolü ve filtrelenmesi<a class="headerlink" href="#veritabanina-eklemeden-once-butun-verilerin-kontrolu-ve-filtrelenmesi" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
+<p>Asla dış kaynaklı verileri filtrlemeden veritabanına eklemeyin. Bu konu hakkında daha fazla bilgiye <a class="reference internal" href="../database/queries.html"><em>buradan</em></a> ulaşabilirsiniz.</p>
 </div>
 </div>
 
@@ -196,7 +169,7 @@ Please see the section that discusses
 				<a href="#header" title="Başa Dön">Başa Dön</a>
 			</p>
 			<p><a href="">CodeIgniter</a> &ndash; Copyright &copy;
-      2011, EllisLab, Inc.</a> &ndash; Son Güncelleme: 22 Kasım 2011</p>
+      2011, EllisLab, Inc.</a> &ndash; Son Güncelleme: 24 Kasım 2011</p>
 		</div><!-- /#footer -->
 	
 	<script src="../_static/asset/js/jquery-ui-min.js" type="text/javascript" charset="utf-8" async></script>

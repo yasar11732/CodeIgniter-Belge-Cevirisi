@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="utf-8">
 	    
-	    <title>Profiling Your Application &mdash; CodeIgniter 3.0-dev documentation</title>
+	    <title>Uygulamanızı Ayrımlayın &mdash; CodeIgniter 3.0-dev documentation</title>
 
 	    <link rel="stylesheet" href="../_static/asset/css/common.css" type="text/css" />
 	    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -54,14 +54,14 @@
 <li class="toctree-l2"><a class="reference internal" href="routing.html">URI Yönlendirme</a></li>
 <li class="toctree-l2"><a class="reference internal" href="errors.html">Hata İşleme</a></li>
 <li class="toctree-l2"><a class="reference internal" href="caching.html">Caching</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="">Profiling Your Application</a><ul class="simple">
+<li class="toctree-l2 current"><a class="current reference internal" href="">Uygulamanızı Ayrımlayın</a><ul class="simple">
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="cli.html">Running via the CLI</a></li>
-<li class="toctree-l2"><a class="reference internal" href="managing_apps.html">Managing your Applications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="managing_apps.html">Uygulamaların Yönetimi</a></li>
 <li class="toctree-l2"><a class="reference internal" href="environments.html">Handling Multiple Environments</a></li>
 <li class="toctree-l2"><a class="reference internal" href="alternative_php.html">Alternate PHP Syntax for View Files</a></li>
-<li class="toctree-l2"><a class="reference internal" href="security.html">Security</a></li>
+<li class="toctree-l2"><a class="reference internal" href="security.html">Güvenlik</a></li>
 <li class="toctree-l2"><a class="reference internal" href="styleguide.html">PHP Style Guide</a></li>
 </ul>
 </li>
@@ -97,60 +97,46 @@
 				<li><a id="toc-link" href="../index.html">İçindekiler</a>&nbsp;&nbsp; &rsaquo;</li>
 				<li><a href="index.html" accesskey="U">General Topics</a>&nbsp;&nbsp;  &rsaquo;</li>
 
-				<li><strong>Profiling Your Application</strong></li>
+				<li><strong>Uygulamanızı Ayrımlayın</strong></li>
 			</ul>
 		</div><!-- /#header -->
 
 		<div class="section" id="content">
-			<div class="section" id="profiling-your-application">
-<h1>Profiling Your Application<a class="headerlink" href="#profiling-your-application" title="Bu başlığın kalıcı bağlantısı">¶</a></h1>
-<p>The Profiler Class will display benchmark results, queries you have run,
-and $_POST data at the bottom of your pages. This information can be
-useful during development in order to help with debugging and
-optimization.</p>
-<div class="section" id="initializing-the-class">
-<h2>Initializing the Class<a class="headerlink" href="#initializing-the-class" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
-<div class="admonition important">
-<p class="first admonition-title">Önemli</p>
-<p class="last">This class does NOT need to be initialized. It is loaded
-automatically by the <a class="reference internal" href="../libraries/output.html"><em>Output Class</em></a> if
-profiling is enabled as shown below.</p>
+			<div class="section" id="uygulamanizi-ayrimlayin">
+<h1>Uygulamanızı Ayrımlayın<a class="headerlink" href="#uygulamanizi-ayrimlayin" title="Bu başlığın kalıcı bağlantısı">¶</a></h1>
+<p>Ayrımlama sınıfı karşılaştırma sonuçlarını, çalıştırdığınız sorguları and $_POST bilgilerini sayfanın altında gösterecektir. Bu bilgiler uygulama geliştirme ve optimize etme sırasında yardımcı olurlar.</p>
+<div class="section" id="sinifin-baslatilmasi">
+<h2>Sınıfın Başlatılması<a class="headerlink" href="#sinifin-baslatilmasi" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
+<div class="important admonition">
+<p class="first admonition-title">ÖNEMLİ</p>
+<p class="last">Bu sınıfın başlatılmasına gerek YOKTUR. Bu sınıf <a class="reference internal" href="../libraries/output.html"><em>Output Sınıfı</em></a> ile birlikte otomatik olarak yüklenir. Eğer ayrımlama etkinleştirilmişse aşağıda görülür.</p>
 </div>
 </div>
-<div class="section" id="enabling-the-profiler">
-<h2>Enabling the Profiler<a class="headerlink" href="#enabling-the-profiler" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
-<p>To enable the profiler place the following function anywhere within your
-<a class="reference internal" href="controllers.html"><em>Controller</em></a> functions:</p>
+<div class="section" id="ayrimlamayi-etkinlestirme">
+<h2>Ayrımlamayı Etkinleştirme<a class="headerlink" href="#ayrimlamayi-etkinlestirme" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
+<p>Ayrımlamayı etkinleştirmek için <a class="reference internal" href="controllers.html"><em>Controller</em></a> fonksiyonlarının herhangi bir yerine şu başlığı ekleyebilirsiniz:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">output</span><span class="o">-&gt;</span><span class="na">enable_profiler</span><span class="p">(</span><span class="k">TRUE</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>When enabled a report will be generated and inserted at the bottom of
-your pages.</p>
-<p>To disable the profiler you will use:</p>
+<p>Eklendikten sonra ekrana gelen sayfanın alt kısmına rapor gelecektir.</p>
+<p>Etkisizleştirme için:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">output</span><span class="o">-&gt;</span><span class="na">enable_profiler</span><span class="p">(</span><span class="k">FALSE</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
-<div class="section" id="setting-benchmark-points">
-<h2>Setting Benchmark Points<a class="headerlink" href="#setting-benchmark-points" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
-<p>In order for the Profiler to compile and display your benchmark data you
-must name your mark points using specific syntax.</p>
-<p>Please read the information on setting Benchmark points in <a class="reference internal" href="../libraries/benchmark.html"><em>Benchmark
-Class</em></a> page.</p>
+<div class="section" id="karsilastirma-noktalarin-ayarlari">
+<h2>Karşılaştırma Noktaların Ayarları<a class="headerlink" href="#karsilastirma-noktalarin-ayarlari" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
+<p>Ayrımlama değerlerini derlemek ve karşılaştırma bilgilerini göstermek için belirli imla ile noktalar tanımlamalısınız.</p>
+<p>Lütfen karşılaştırma noktaları için <a class="reference internal" href="../libraries/benchmark.html"><em>Benchmark - Karşılaştırma Sınıfı</em></a> sayfasında anlatılanları okuyun.</p>
 </div>
-<div class="section" id="enabling-and-disabling-profiler-sections">
-<h2>Enabling and Disabling Profiler Sections<a class="headerlink" href="#enabling-and-disabling-profiler-sections" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
-<p>Each section of Profiler data can be enabled or disabled by setting a
-corresponding config variable to TRUE or FALSE. This can be done one of
-two ways. First, you can set application wide defaults with the
-application/config/profiler.php config file.</p>
+<div class="section" id="ayrimlama-sinifini-etkinlestirme-ve-etkisizlestirme">
+<h2>Ayrımlama Sınıfını Etkinleştirme ve Etkisizleştirme<a class="headerlink" href="#ayrimlama-sinifini-etkinlestirme-ve-etkisizlestirme" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
+<p>Ayrımlama sınıfını her yerde etkinleştirme ve etkisizleştirme için ilgili değişken ayarları TRUE ya da FALSE yapılabilir. Bu iki yol ile olur. Birincisi, uygulmanın application/config/profiler.php dosyasındaki config değişkenlerini ayarlama</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$config</span><span class="p">[</span><span class="s1">&#39;config&#39;</span><span class="p">]</span>          <span class="o">=</span> <span class="k">FALSE</span><span class="p">;</span>
 <span class="nv">$config</span><span class="p">[</span><span class="s1">&#39;queries&#39;</span><span class="p">]</span>         <span class="o">=</span> <span class="k">FALSE</span><span class="p">;</span>
 </pre></div>
 </div>
-<p>In your controllers, you can override the defaults and config file
-values by calling the set_profiler_sections() method of the <a class="reference internal" href="../libraries/output.html"><em>Output
-class</em></a>:</p>
+<p>Controller dosyanızda, varsayılan değerlerin üzerine <a class="reference internal" href="../libraries/output.html"><em>Output sınıfınfaki</em></a> set_profiler_sections() metodunu çağırarak yazma:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$sections</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
     <span class="s1">&#39;config&#39;</span>  <span class="o">=&gt;</span> <span class="k">TRUE</span><span class="p">,</span>
     <span class="s1">&#39;queries&#39;</span> <span class="o">=&gt;</span> <span class="k">TRUE</span>
@@ -159,64 +145,62 @@ class</em></a>:</p>
 <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">output</span><span class="o">-&gt;</span><span class="na">set_profiler_sections</span><span class="p">(</span><span class="nv">$sections</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>Available sections and the array key used to access them are described
-in the table below.</p>
+<p>Kullanılabilecek bölümler ve anahtar diziler aşağıdaki tabloda tarif edilmiştir.</p>
 <table border="1" class="docutils">
 <colgroup>
-<col width="23%" />
-<col width="68%" />
-<col width="8%" />
+<col width="18%" />
+<col width="52%" />
+<col width="31%" />
 </colgroup>
 <thead valign="bottom">
-<tr class="row-odd"><th class="head">Key</th>
-<th class="head">Description</th>
-<th class="head">Default</th>
+<tr class="row-odd"><th class="head">Anahtar</th>
+<th class="head">Tanım</th>
+<th class="head">Varsayılan</th>
 </tr>
 </thead>
 <tbody valign="top">
 <tr class="row-even"><td><strong>benchmarks</strong></td>
-<td>Elapsed time of Benchmark points and total execution time</td>
+<td>Karşılaştırma noktalarında ve toplamda geçen süre</td>
 <td>TRUE</td>
 </tr>
 <tr class="row-odd"><td><strong>config</strong></td>
-<td>CodeIgniter Config variables</td>
+<td>CodeIgniter Config değişkenleri</td>
 <td>TRUE</td>
 </tr>
 <tr class="row-even"><td><strong>controller_info</strong></td>
-<td>The Controller class and method requested</td>
+<td>Controller sınıfı ve çağrılan metodu</td>
 <td>TRUE</td>
 </tr>
 <tr class="row-odd"><td><strong>get</strong></td>
-<td>Any GET data passed in the request</td>
+<td>İstemdeki bütün GET bilgileri</td>
 <td>TRUE</td>
 </tr>
 <tr class="row-even"><td><strong>http_headers</strong></td>
-<td>The HTTP headers for the current request</td>
+<td>Yapılan istem için HTTP header değerleri</td>
 <td>TRUE</td>
 </tr>
 <tr class="row-odd"><td><strong>memory_usage</strong></td>
-<td>Amount of memory consumed by the current request, in bytes</td>
+<td>Yapılan istem için harcanılan hafıza değeri, bayt olarak</td>
 <td>TRUE</td>
 </tr>
 <tr class="row-even"><td><strong>post</strong></td>
-<td>Any POST data passed in the request</td>
+<td>İstemdeki bütün POST bilgileri</td>
 <td>TRUE</td>
 </tr>
 <tr class="row-odd"><td><strong>queries</strong></td>
-<td>Listing of all database queries executed, including execution time</td>
+<td>Çalıştırılan bütün veritabanı sorguları ve çalışma süreleri</td>
 <td>TRUE</td>
 </tr>
 <tr class="row-even"><td><strong>uri_string</strong></td>
-<td>The URI of the current request</td>
+<td>Yapılan istemdeki URI değerleri</td>
 <td>TRUE</td>
 </tr>
 <tr class="row-odd"><td><strong>session_data</strong></td>
-<td>Data stored in the current session</td>
+<td>Oturumda saklanılan bilgiler</td>
 <td>TRUE</td>
 </tr>
 <tr class="row-even"><td><strong>query_toggle_count</strong></td>
-<td>The number of queries after which the query block will default to
-hidden.</td>
+<td>Görünmez sorgu bloklarının ardından yapılan toplam sorgu  sayısı</td>
 <td>25</td>
 </tr>
 </tbody>
@@ -239,7 +223,7 @@ hidden.</td>
 				<a href="#header" title="Başa Dön">Başa Dön</a>
 			</p>
 			<p><a href="">CodeIgniter</a> &ndash; Copyright &copy;
-      2011, EllisLab, Inc.</a> &ndash; Son Güncelleme: 22 Kasım 2011</p>
+      2011, EllisLab, Inc.</a> &ndash; Son Güncelleme: 24 Kasım 2011</p>
 		</div><!-- /#footer -->
 	
 	<script src="../_static/asset/js/jquery-ui-min.js" type="text/javascript" charset="utf-8" async></script>
