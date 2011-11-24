@@ -46,4 +46,7 @@ Kullanacağınız uygulamayı belirtmek için ana index.php dosyasını açıp, 
 
 	$application_folder = "applications/foo";
 
-.. not:: Her uygulamanın kendisine ait, kendisini çağıran bir index.php dosyası olmalıdır. Index.php dosyasının adı isteğinize göre herşey olabilir.
+.. admonition:: NOT
+    :class: note
+
+    Her uygulamanın kendisine ait, kendisini çağıran bir index.php dosyası olmalıdır. Index.php dosyasının adı isteğinize göre herşey olabilir.

@@ -7,7 +7,10 @@ Ayrımlama sınıfı karşılaştırma sonuçlarını, çalıştırdığınız s
 Sınıfın Başlatılması
 ====================
 
-.. önemli:: Bu sınıfın başlatılmasına gerek YOKTUR. Bu sınıf :doc:`Output Sınıfı <../libraries/output>` ile birlikte otomatik olarak yüklenir. Eğer ayrımlama etkinleştirilmişse aşağıda görülür.
+.. admonition:: ÖNEMLİ
+    :class: important
+
+    Bu sınıfın başlatılmasına gerek YOKTUR. Bu sınıf :doc:`Output Sınıfı <../libraries/output>` ile birlikte otomatik olarak yüklenir. Eğer ayrımlama etkinleştirilmişse aşağıda görülür.
 
 Ayrımlamayı Etkinleştirme
 =========================
@@ -27,7 +30,7 @@ Karşılaştırma Noktaların Ayarları
 
 Ayrımlama değerlerini derlemek ve karşılaştırma bilgilerini göstermek için belirli imla ile noktalar tanımlamalısınız.
 
-Lütfen karşılaştırma noktaları için :doc:`Benchmark - Karşılaştırma Sınıfı  <../libraries/benchmark>`sayfasında anlatılanları okuyun.
+Lütfen karşılaştırma noktaları için :doc:`Benchmark - Karşılaştırma Sınıfı  <../libraries/benchmark>` sayfasında anlatılanları okuyun.
 
 Ayrımlama Sınıfını Etkinleştirme ve Etkisizleştirme
 ===================================================
