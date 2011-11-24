@@ -1,59 +1,45 @@
-##########################
-Profiling Your Application
-##########################
+#######################
+Uygulamanızı Ayrımlayın
+#######################
 
-The Profiler Class will display benchmark results, queries you have run,
-and $_POST data at the bottom of your pages. This information can be
-useful during development in order to help with debugging and
-optimization.
+Ayrımlama sınıfı karşılaştırma sonuçlarını, çalıştırdığınız sorguları and $_POST bilgilerini sayfanın altında gösterecektir. Bu bilgiler uygulama geliştirme ve optimize etme sırasında yardımcı olurlar.
 
-Initializing the Class
-======================
+Sınıfın Başlatılması
+====================
 
-.. important:: This class does NOT need to be initialized. It is loaded
-	automatically by the :doc:`Output Class <../libraries/output>` if
-	profiling is enabled as shown below.
+.. önemli:: Bu sınıfın başlatılmasına gerek YOKTUR. Bu sınıf :doc:`Output Sınıfı <../libraries/output>` ile birlikte otomatik olarak yüklenir. Eğer ayrımlama etkinleştirilmişse aşağıda görülür.
 
-Enabling the Profiler
-=====================
+Ayrımlamayı Etkinleştirme
+=========================
 
-To enable the profiler place the following function anywhere within your
-:doc:`Controller <controllers>` functions::
+Ayrımlamayı etkinleştirmek için :doc:`Controller <controllers>` fonksiyonlarının herhangi bir yerine şu başlığı ekleyebilirsiniz::
 
 	$this->output->enable_profiler(TRUE);
 
-When enabled a report will be generated and inserted at the bottom of
-your pages.
+Eklendikten sonra ekrana gelen sayfanın alt kısmına rapor gelecektir.
 
-To disable the profiler you will use::
+Etkisizleştirme için::
 
 	$this->output->enable_profiler(FALSE);
 
-Setting Benchmark Points
-========================
+Karşılaştırma Noktaların Ayarları
+=================================
 
-In order for the Profiler to compile and display your benchmark data you
-must name your mark points using specific syntax.
+Ayrımlama değerlerini derlemek ve karşılaştırma bilgilerini göstermek için belirli imla ile noktalar tanımlamalısınız.
 
-Please read the information on setting Benchmark points in :doc:`Benchmark
-Class <../libraries/benchmark>` page.
+Lütfen karşılaştırma noktaları için :doc:`Benchmark - Karşılaştırma Sınıfı  <../libraries/benchmark>`sayfasında anlatılanları okuyun.
 
-Enabling and Disabling Profiler Sections
-========================================
+Ayrımlama Sınıfını Etkinleştirme ve Etkisizleştirme
+===================================================
 
-Each section of Profiler data can be enabled or disabled by setting a
-corresponding config variable to TRUE or FALSE. This can be done one of
-two ways. First, you can set application wide defaults with the
-application/config/profiler.php config file.
+Ayrımlama sınıfını her yerde etkinleştirme ve etkisizleştirme için ilgili değişken ayarları TRUE ya da FALSE yapılabilir. Bu iki yol ile olur. Birincisi, uygulmanın application/config/profiler.php dosyasındaki config değişkenlerini ayarlama
 
 ::
 
 	$config['config']          = FALSE;
 	$config['queries']         = FALSE;
 
-In your controllers, you can override the defaults and config file
-values by calling the set_profiler_sections() method of the :doc:`Output
-class <../libraries/output>`::
+Controller dosyanızda, varsayılan değerlerin üzerine :doc:`Output sınıfınfaki <../libraries/output>` set_profiler_sections() metodunu çağırarak yazma::
 
 	$sections = array(
 	    'config'  => TRUE,
@@ -62,22 +48,20 @@ class <../libraries/output>`::
 
 	$this->output->set_profiler_sections($sections);
 
-Available sections and the array key used to access them are described
-in the table below.
+Kullanılabilecek bölümler ve anahtar diziler aşağıdaki tabloda tarif edilmiştir.
 
-======================= =================================================================== ========
-Key                     Description                                                         Default
-======================= =================================================================== ========
-**benchmarks**          Elapsed time of Benchmark points and total execution time           TRUE
-**config**              CodeIgniter Config variables                                        TRUE
-**controller_info**     The Controller class and method requested                           TRUE
-**get**                 Any GET data passed in the request                                  TRUE
-**http_headers**        The HTTP headers for the current request                            TRUE
-**memory_usage**        Amount of memory consumed by the current request, in bytes          TRUE
-**post**                Any POST data passed in the request                                 TRUE
-**queries**             Listing of all database queries executed, including execution time  TRUE
-**uri_string**          The URI of the current request                                      TRUE
-**session_data**        Data stored in the current session                                  TRUE
-**query_toggle_count**  The number of queries after which the query block will default to   25
-                        hidden.
-======================= =================================================================== ========
+======================= =================================================================== ==========
+Anahtar                 Tanım                                                         		Varsayılan
+======================= =================================================================== ==========
+**benchmarks**          Karşılaştırma noktalarında ve toplamda geçen süre					TRUE
+**config**              CodeIgniter Config değişkenleri										TRUE
+**controller_info**     Controller sınıfı ve çağrılan metodu								TRUE
+**get**                 İstemdeki bütün GET bilgileri										TRUE
+**http_headers**        Yapılan istem için HTTP header değerleri							TRUE
+**memory_usage**        Yapılan istem için harcanılan hafıza değeri, bayt olarak			TRUE
+**post**                İstemdeki bütün POST bilgileri										TRUE
+**queries**             Çalıştırılan bütün veritabanı sorguları ve çalışma süreleri			TRUE
+**uri_string**          Yapılan istemdeki URI değerleri										TRUE
+**session_data**        Oturumda saklanılan bilgiler										TRUE
+**query_toggle_count**  Görünmez sorgu bloklarının ardından yapılan toplam sorgu  sayısı	25
+======================= =================================================================== ==========
