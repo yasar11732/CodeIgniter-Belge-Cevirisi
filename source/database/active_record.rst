@@ -91,8 +91,7 @@ db->where() fonksiyonunu kullanmanıza gerek kalmaz.::
 
 Detaylı bilgi için aşağıdaki where fonksiyonu hakkındaki yazıyı okuyunuz.
 
-.. note:: get_where() was formerly known as getwhere(), which has been
-removed
+.. note:: get_where() önceden getwhere() olarak bilinirdi, artık böyle değildir.
 
 $this->db->select()
 ===================
@@ -106,55 +105,53 @@ Sorgunuzun SELECT kısmını yazmanız içindir::
 .. note:: Eğer tüm sutunları seçmek isterseniz (\*) bu fonksiyonu hiç kullanmanız gerekmez.
 	CodeIgniter SELECT * şeklinde işlem yapar.
 
-$this->db->select() isteğe bağlı ikinci bir değer kabul eder. If you set it
-to FALSE, CodeIgniter will not try to protect your field or table names
-with backticks. This is useful if you need a compound select statement.
+$this->db->select() isteğe bağlı ikinci bir değer kabul eder.Eğer bu değeri FALSE olarak ayarlarssanız
+CodeIgniter sütunlarınızı ve tablo adlarınızı ters tırnaklardan korumaya çalışmayacaktır.
+Eğer birleşik sorgular kullanacaksanız bu kullanışlıdır.
 
 ::
 
-	$this->db->select('(SELECT SUM(payments.amount) FROM payments WHERE payments.invoice_id=4') AS amount_paid', FALSE); 
-	$query = $this->db->get('mytable');
+	$this->db->select('(SELECT SUM(odeme.miktar) FROM odemeler WHERE odemeler.fatura_id=4') AS odenen_miktar', FALSE); 
+	$query = $this->db->get('tablom');
 
 
 $this->db->select_max()
 =======================
 
-Writes a "SELECT MAX(field)" portion for your query. You can optionally
-include a second parameter to rename the resulting field.
+Sorgunuz için "SELECT MAX(sütun)" kısmını yazar. İsteğe bağlı ikinci değer olarak sonuc sütunu adını 
+isimlendirebilirsiniz.
 
 ::
 
-	$this->db->select_max('age');
-	$query = $this->db->get('members');  // Produces: SELECT MAX(age) as age FROM members
+	$this->db->select_max('yas');
+	$query = $this->db->get('uyeler');  // İşlem Sonucu: SELECT MAX(yas) as yas FROM uyeler
 	
-	$this->db->select_max('age', 'member_age');
-	$query = $this->db->get('members'); // Produces: SELECT MAX(age) as member_age FROM members
+	$this->db->select_max('yas', 'uye_yasi');
+	$query = $this->db->get('yas'); // İşlem Sonucu: SELECT MAX(yas) as uye_yasi FROM uyeler
 
 
 $this->db->select_min()
 =======================
 
-Writes a "SELECT MIN(field)" portion for your query. As with
-select_max(), You can optionally include a second parameter to rename
-the resulting field.
+Sorgunuz için "SELECT MIN(sütun)" kısmını yazar. select_max() gibi ikinci bir değer kullanarak
+sonuç sütunu adını isimlendirebilirsiniz.
 
 ::
 
-	$this->db->select_min('age');
-	$query = $this->db->get('members'); // Produces: SELECT MIN(age) as age FROM members
+	$this->db->select_min('yas');
+	$query = $this->db->get('uyeler'); // İşlem Sonucu: SELECT MIN(yas) as yas FROM uyeler
 
 
 $this->db->select_avg()
 =======================
 
-Writes a "SELECT AVG(field)" portion for your query. As with
-select_max(), You can optionally include a second parameter to rename
-the resulting field.
+Sorgunuz için "SELECT AVG(sütun)" kısmını yazar.select_max() gibi ikinci bir değer kullanarak
+sonuç sütunu adını isimlendirebilirsiniz.
 
 ::
 
-	$this->db->select_avg('age');
-	$query = $this->db->get('members'); // Produces: SELECT AVG(age) as age FROM members
+	$this->db->select_avg('yas');
+	$query = $this->db->get('uyeler'); // İşlem Sonucu: SELECT AVG(yas) as yas FROM uyeler
 
 
 $this->db->select_sum()
