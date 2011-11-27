@@ -44,7 +44,8 @@ Release Date: Not Released
    -  Added max_filename_increment config setting for Upload library.
    -  CI_Loader::_ci_autoloader() is now a protected method.
    -  Modified valid_ip() to use PHP's filter_var() when possible (>= PHP 5.2) in the :doc:`Form Validation library <libraries/form_validation>`.
-
+	 -  Added custom filename to Email::attach() as $this->email->attach($filename, $disposition, $newname)
+	 
 -  Core
 
    -  Changed private functions in CI_URI to protected so MY_URI can
@@ -57,6 +58,7 @@ Bug fixes for 3.0
 -  Unlink raised an error if cache file did not exist when you try to delete it.
 -  Fixed a bug (#181) where a mis-spelling was in the form validation
    language file.
+-  Fixed a bug (#159, #163) that mishandled Active Record nested transactions because _trans_depth was not getting incremented.
 
 
 Version 2.1.0
