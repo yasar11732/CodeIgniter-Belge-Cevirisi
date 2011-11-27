@@ -78,8 +78,9 @@
 <div class="section" id="version-3-0-planned">
 <h2>Version 3.0 (planned)<a class="headerlink" href="#version-3-0-planned" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
 <p>Release Date: Not Released</p>
+<ul>
+<li><p class="first">License</p>
 <ul class="simple">
-<li>License<ul>
 <li>CodeIgniter has been relicensed with the Open Software License (3.0),
 eliminating its old proprietary licensing.<ul>
 <li>All system files are licensed with OSL 3.0.</li>
@@ -90,7 +91,8 @@ all licensing authority over your own application code.</li>
 </li>
 </ul>
 </li>
-<li>General Changes<ul>
+<li><p class="first">General Changes</p>
+<ul class="simple">
 <li>Added an optional backtrace to php-error template.</li>
 <li>Added Android to the list of user agents.</li>
 <li>Added Windows 7 to the list of user platforms.</li>
@@ -101,24 +103,37 @@ all licensing authority over your own application code.</li>
 <li>Added support m4a, aac, m4u, xspf, au, ac3, flac, ogg Audio files to mimes.php.</li>
 </ul>
 </li>
-<li>Helpers<ul>
+<li><p class="first">Helpers</p>
+<ul class="simple">
 <li>url_title() will now trim extra dashes from beginning and end.</li>
 <li>Added XHTML Basic 1.1 doctype to <a class="reference internal" href="helpers/html_helper.html"><em>HTML Helper</em></a>.</li>
 </ul>
 </li>
-<li>Database<ul>
+<li><p class="first">Database</p>
+<ul class="simple">
 <li>Added new <a class="reference internal" href="database/active_record.html"><em>Active Record</em></a> methods that return
 the SQL string of queries without executing them: get_compiled_select(),
 get_compiled_insert(), get_compiled_update(), get_compiled_delete().</li>
 </ul>
 </li>
-<li>Libraries<ul>
-<li>Added max_filename_increment config setting for Upload library.</li>
-<li>CI_Loader::_ci_autoloader() is now a protected method.</li>
-<li>Modified valid_ip() to use PHP&#8217;s filter_var() when possible (&gt;= PHP 5.2) in the <a class="reference internal" href="libraries/form_validation.html"><em>Form Validation library</em></a>.</li>
+<li><p class="first">Libraries</p>
+<ul>
+<li><p class="first">Added max_filename_increment config setting for Upload library.</p>
+</li>
+<li><p class="first">CI_Loader::_ci_autoloader() is now a protected method.</p>
+</li>
+<li><dl class="first docutils">
+<dt>Modified valid_ip() to use PHP&#8217;s filter_var() when possible (&gt;= PHP 5.2) in the <a class="reference internal" href="libraries/form_validation.html"><em>Form Validation library</em></a>.</dt>
+<dd><ul class="first last simple">
+<li>Added custom filename to Email::attach() as $this-&gt;email-&gt;attach($filename, $disposition, $newname)</li>
+</ul>
+</dd>
+</dl>
+</li>
 </ul>
 </li>
-<li>Core<ul>
+<li><p class="first">Core</p>
+<ul class="simple">
 <li>Changed private functions in CI_URI to protected so MY_URI can
 override them.</li>
 <li>Removed CI_CORE boolean constant from CodeIgniter.php (no longer Reactor and Core versions).</li>
@@ -131,6 +146,7 @@ override them.</li>
 <li>Unlink raised an error if cache file did not exist when you try to delete it.</li>
 <li>Fixed a bug (#181) where a mis-spelling was in the form validation
 language file.</li>
+<li>Fixed a bug (#159, #163) that mishandled Active Record nested transactions because _trans_depth was not getting incremented.</li>
 </ul>
 </div>
 </div>
@@ -2332,7 +2348,7 @@ and fixed various typos.</li>
 				<a href="#header" title="Başa Dön">Başa Dön</a>
 			</p>
 			<p><a href="">CodeIgniter</a> &ndash; Copyright &copy;
-      2011, EllisLab, Inc.</a> &ndash; Son Güncelleme: 22 Kasım 2011</p>
+      2011, EllisLab, Inc.</a> &ndash; Son Güncelleme: 27 Kasım 2011</p>
 		</div><!-- /#footer -->
 	
 	<script src="_static/asset/js/jquery-ui-min.js" type="text/javascript" charset="utf-8" async></script>
