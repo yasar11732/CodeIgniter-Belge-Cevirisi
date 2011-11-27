@@ -157,58 +157,54 @@ sonuç sütunu adını isimlendirebilirsiniz.
 $this->db->select_sum()
 =======================
 
-Writes a "SELECT SUM(field)" portion for your query. As with
-select_max(), You can optionally include a second parameter to rename
-the resulting field.
+Sorgunuz için "SELECT SUM(sütun)" kısmını yazar. select_max(),gibi ikinci bir değer kullanarak
+sonuç sütunu adını isimlendirebilirsiniz.
 
 ::
 
-	$this->db->select_sum('age');
-	$query = $this->db->get('members'); // Produces: SELECT SUM(age) as age FROM members
+	$this->db->select_sum('yas');
+	$query = $this->db->get('uyeler'); // İşlem Sonucu: SELECT SUM(yas) as yas FROM uyeler
 
 
 $this->db->from()
 =================
 
-Permits you to write the FROM portion of your query::
+Sorgunuzun FROM kısmını yazmanıza izin verir::
 
-	$this->db->select('title, content, date');
-	$this->db->from('mytable');
-	$query = $this->db->get();  // Produces: SELECT title, content, date FROM mytable
+	$this->db->select('baslik, icerik, tarih');
+	$this->db->from('tablom');
+	$query = $this->db->get();  // İşlem Sonucu: SELECT baslik, icerik, tarih FROM tablom
 
-.. note:: As shown earlier, the FROM portion of your query can be specified
-	in the $this->db->get() function, so use whichever method you prefer.
+.. note:: Önce gösterildiği gibi, sorgunuzun FROM kısmını $this->db->get() içinde kullanmanız önerilir.
 
 $this->db->join()
 =================
 
-Permits you to write the JOIN portion of your query::
+Sorgunuzun JOIN kısmını yazmanıza izin verir::
 
 	$this->db->select('*');
-	$this->db->from('blogs');
-	$this->db->join('comments', 'comments.id = blogs.id');
+	$this->db->from('blog');
+	$this->db->join('yorumlar', 'yorumlar.id = blog.id');
 	$query = $this->db->get();
 	
-	// Produces:
-	// SELECT * FROM blogs JOIN comments ON comments.id = blogs.id
+	// İşlem sonucu:
+	// SELECT * FROM blog JOIN comments ON comments.id = blogs.id
 
-Multiple function calls can be made if you need several joins in one
-query.
+Eğer bir sorguda benzen 'join' ler kullanılmalı ise çoklu fonksiyon çağrıları yapılabilir.
 
-If you need a specific type of JOIN you can specify it via the third
-parameter of the function. Options are: left, right, outer, inner, left
-outer, and right outer.
+Eğer JOIN kısmınız için özel bir tür belirtmeniz gerekirse, üçüncü değer ile
+özel fonksiyona özel tür atanabilir. Alabileceği değerler: left, right, outer,inner, left
+outer, ve right outher.
 
 ::
 
-	$this->db->join('comments', 'comments.id = blogs.id', 'left');
-	// Produces: LEFT JOIN comments ON comments.id = blogs.id
+	$this->db->join('yorumlar', 'yorum.id = blog.id', 'left');
+	// İşlem Sonucu: LEFT JOIN yorumlar ON yorum.id = blog.id
 
 $this->db->where()
 ==================
 
-This function enables you to set **WHERE** clauses using one of four
-methods:
+Bu fonksiyon 4 değerden biri kullanılara **WHERE** koşulunu kullanmanızı sağlar:
 
 .. note:: All values passed to this function are escaped automatically,
 	producing safer queries.
