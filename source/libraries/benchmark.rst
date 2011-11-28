@@ -1,53 +1,43 @@
-##################
-Benchmarking Class
-##################
+###################################
+Karşılaştırma (Benchmarking) Sınıfı
+###################################
 
-CodeIgniter has a Benchmarking class that is always active, enabling the
-time difference between any two marked points to be calculated.
+CodeIgniter belirlenmiş iki nokta arasındaki harcanan zamanı hesaplamak için her zaman aktif olan bir karşılaştırma (Benchmark) sınıfına sahiptir.
 
-.. note:: This class is initialized automatically by the system so there
-	is no need to do it manually.
+.. not:: Bu sınıf sistem tarafından otomatik olarka yüklenir, elle yüklenmesine gerek yoktur.
 
-In addition, the benchmark is always started the moment the framework is
-invoked, and ended by the output class right before sending the final
-view to the browser, enabling a very accurate timing of the entire
-system execution to be shown.
+Ek olarak: sınıf, framework başladığı anda aktifleştirilir ve çıktı(output) sınıfı tarafından view(görüntü) tarayıcıya gönderilmeden hemen önce sonlandırılır, sistemin çalışma zamanı hakkında kesin sonuçlar üretir.
 
-.. contents:: Table of Contents
+.. contents:: Başlıklar
 
-Using the Benchmark Class
-=========================
+Karşılaştırma sınıfının kullanılması
+====================================
 
-The Benchmark class can be used within your
-:doc:`controllers </general/controllers>`,
-:doc:`views </general/views>`, or your :doc:`models </general/models>`.
-The process for usage is this:
+view, model ve controller Karşılaştırma sınıfı uygulamanızdaki :doc:`controllers </general/controllers>`, :doc:`views </general/views>`, ya da :doc:`models </general/models>`tarafından çağrılabilir. Kullanım örneği :
 
-#. Mark a start point
-#. Mark an end point
-#. Run the "elapsed time" function to view the results
+#. Başlangıç noktası belirle
+#. Bitiş noktası belirle
+#. "elapsed_time" fonskyionu ile sonucu al
 
-Here's an example using real code::
+Örnek kodlar ile örnek verelim::
 
 	$this->benchmark->mark('code_start');
 
-	// Some code happens here
+	// Burda bir miktar kod çalışıyor
 
 	$this->benchmark->mark('code_end');
 
 	echo $this->benchmark->elapsed_time('code_start', 'code_end');
 
-.. note:: The words "code_start" and "code_end" are arbitrary. They
-	are simply words used to set two markers. You can use any words you
-	want, and you can set multiple sets of markers. Consider this example::
+.. not:: "code_start" ve "code_end" kelimeleri yerine istediğiniz başka kelimelerde kullanabilirsiniz, ayrıca 2 den fazla nokta tanımlayıp aralarındaki zaman farkını da hesaplayabilirsiniz. Aşağıda bir örnek mevcut ::
 
 		$this->benchmark->mark('dog');
 
-		// Some code happens here
+		//  Burada bir miktar kod çalışıyor
 
 		$this->benchmark->mark('cat');
 
-		// More code happens here
+		//  Burada da bir miktar kod çalışıyor
 
 		$this->benchmark->mark('bird');
 
@@ -56,67 +46,50 @@ Here's an example using real code::
 		echo $this->benchmark->elapsed_time('dog', 'bird');
 
 
-Profiling Your Benchmark Points
-===============================
+Uygulama profili ile kullanılması
+=================================
 
-If you want your benchmark data to be available to the
-:doc:`Profiler </general/profiling>` all of your marked points must
-be set up in pairs, and each mark point name must end with _start and
-_end. Each pair of points must otherwise be named identically. Example::
+Karşılaştırma sonuçlarınızın :doc:`Profiler </general/profiling>` ile kullanılabilir olmasını istiyorsanız mark fonskiyonunun alacağı parametreler belirli bir düzen içerisinde olmalıdır. Parametre düzeni şöyledir : parametreler çiftler halinde yazılır _start ve _end ile biterler. Örnek kullanım ::
 
 	$this->benchmark->mark('my_mark_start');
 
-	// Some code happens here...
+	// Burada da bir miktar kod çalışıyor...
 
 	$this->benchmark->mark('my_mark_end'); 
 
 	$this->benchmark->mark('another_mark_start');
 
-	// Some more code happens here...
+	// Burada da bir miktar kod çalışıyor...
 
 	$this->benchmark->mark('another_mark_end');
 
-Please read the :doc:`Profiler page </general/profiling>` for more
-information.
+Lütfen daha fazla uygulama için :doc:`Profiler page </general/profiling>` sayfasına göz atın.
+	
+Toplam çalışma süresinin gösterilmesi
+=====================================
 
-Displaying Total Execution Time
-===============================
-
-If you would like to display the total elapsed time from the moment
-CodeIgniter starts to the moment the final output is sent to the
-browser, simply place this in one of your view templates::
+Çalışan kodun en baştan en sonra kadar ne kadar zamanda çalıştığını göstermek isterseniz view dosyanızın herhangi bir yerine aşağıdaki kodu yazabilirsiniz::
 
 	<?php echo $this->benchmark->elapsed_time();?>
 
-You'll notice that it's the same function used in the examples above to
-calculate the time between two point, except you are **not** using any
-parameters. When the parameters are absent, CodeIgniter does not stop
-the benchmark until right before the final output is sent to the
-browser. It doesn't matter where you use the function call, the timer
-will continue to run until the very end.
+elapsed_time() fonksiyonunu daha önceden hatırlıyoruz, iki nokta arasında ki geçen zamanı elde etmek için bu fonksiyonu Kullanımıştık, şimdi farklı olarak parametre **kullanmadan** çağırdık. Fonksiyon çağrılırken parametre belirtilmezse karşılaştırma sınıfı kodun çalışmaya başlaması ve view dosyasının tarayıcıya gönderilmesi arasındaki geçen zamanı hesaplayıp döndürecektir, bu sebepten dolayı kodun nerede çağtırıldığının bir önemi yoktur, nerde çağrılırsa çağrılsın aynı sonucu döndürecektir.	
 
-An alternate way to show your elapsed time in your view files is to use
-this pseudo-variable, if you prefer not to use the pure PHP::
+Toplam zamanı göstermenin alternatif bir yolu da sahte değişken kullanımıdır. Php kodu Kullanımak istemediğiniz zamanlar size yardımcı olabilir. Örnek kullanım ::
 
 	{elapsed_time}
 
-.. note:: If you want to benchmark anything within your controller
-	functions you must set your own start/end points.
+.. not:: Kontrol dosyanız içerisinden ölçümler yapmak istiyorsanız, kendi başlangıç ve bitiş noktalarınızı tanımlamalısınız.
 
-Displaying Memory Consumption
-=============================
+Bellek kullanımının gösterilmesi
+================================
 
-If your PHP installation is configured with --enable-memory-limit, you
-can display the amount of memory consumed by the entire system using the
-following code in one of your view file::
+Eğer php kurulumunuz –enable-memory-limit konfigurasyonu ile derlendiyse aşşağıdaki kodu kullanarak, çalışan scriptin harcadığı bellek miktarını elde edebilirsiniz ::
 
 	<?php echo $this->benchmark->memory_usage();?>
 
-.. note:: This function can only be used in your view files. The consumption
-	will reflect the total memory used by the entire app.
+.. not:: Bu fonksiyon sadece view dosyası içierisinden çağrılabilir. İçinde çalıştırıldığı scriptin o anki bütün bellek kullanımını verir.
 
-An alternate way to show your memory usage in your view files is to use
-this pseudo-variable, if you prefer not to use the pure PHP::
+Toplam bellek kullanımını göstermenin alternatif bir yolu da sahte değişken tanımlamaktır. Php kodu Kullanımak istemediğiniz zamanlar size yardımcı olabilir. Örnek kullanım ::
 
 	{memory_usage}
 
