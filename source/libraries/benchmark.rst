@@ -4,7 +4,10 @@ Karşılaştırma (Benchmarking) Sınıfı
 
 CodeIgniter belirlenmiş iki nokta arasındaki harcanan zamanı hesaplamak için her zaman aktif olan bir karşılaştırma (Benchmark) sınıfına sahiptir.
 
-.. not:: Bu sınıf sistem tarafından otomatik olarka yüklenir, elle yüklenmesine gerek yoktur.
+.. admonition:: Not
+    :class: note
+
+    Bu sınıf sistem tarafından otomatik olarka yüklenir, elle yüklenmesine gerek yoktur.
 
 Ek olarak: sınıf, framework başladığı anda aktifleştirilir ve çıktı(output) sınıfı tarafından view(görüntü) tarayıcıya gönderilmeden hemen önce sonlandırılır, sistemin çalışma zamanı hakkında kesin sonuçlar üretir.
 
@@ -13,7 +16,7 @@ Ek olarak: sınıf, framework başladığı anda aktifleştirilir ve çıktı(ou
 Karşılaştırma sınıfının kullanılması
 ====================================
 
-view, model ve controller Karşılaştırma sınıfı uygulamanızdaki :doc:`controllers </general/controllers>`, :doc:`views </general/views>`, ya da :doc:`models </general/models>`tarafından çağrılabilir. Kullanım örneği :
+view, model ve controller Karşılaştırma sınıfı uygulamanızdaki :doc:`controllers </general/controllers>`, :doc:`views </general/views>`, ya da :doc:`models </general/models>` tarafından çağrılabilir. Kullanım örneği :
 
 #. Başlangıç noktası belirle
 #. Bitiş noktası belirle
@@ -29,7 +32,10 @@ view, model ve controller Karşılaştırma sınıfı uygulamanızdaki :doc:`con
 
 	echo $this->benchmark->elapsed_time('code_start', 'code_end');
 
-.. not:: "code_start" ve "code_end" kelimeleri yerine istediğiniz başka kelimelerde kullanabilirsiniz, ayrıca 2 den fazla nokta tanımlayıp aralarındaki zaman farkını da hesaplayabilirsiniz. Aşağıda bir örnek mevcut ::
+.. admonition:: Not
+    :class: note
+
+    "code_start" ve "code_end" kelimeleri yerine istediğiniz başka kelimelerde kullanabilirsiniz, ayrıca 2 den fazla nokta tanımlayıp aralarındaki zaman farkını da hesaplayabilirsiniz. Aşağıda bir örnek mevcut ::
 
 		$this->benchmark->mark('dog');
 
@@ -78,7 +84,10 @@ Toplam zamanı göstermenin alternatif bir yolu da sahte değişken kullanımıd
 
 	{elapsed_time}
 
-.. not:: Kontrol dosyanız içerisinden ölçümler yapmak istiyorsanız, kendi başlangıç ve bitiş noktalarınızı tanımlamalısınız.
+.. admonition:: Not
+    :class: note
+
+    Kontrol dosyanız içerisinden ölçümler yapmak istiyorsanız, kendi başlangıç ve bitiş noktalarınızı tanımlamalısınız.
 
 Bellek kullanımının gösterilmesi
 ================================
@@ -87,7 +96,10 @@ Eğer php kurulumunuz –enable-memory-limit konfigurasyonu ile derlendiyse aş�
 
 	<?php echo $this->benchmark->memory_usage();?>
 
-.. not:: Bu fonksiyon sadece view dosyası içierisinden çağrılabilir. İçinde çalıştırıldığı scriptin o anki bütün bellek kullanımını verir.
+.. admonition:: Not
+    :class: note
+    
+    Bu fonksiyon sadece view dosyası içierisinden çağrılabilir. İçinde çalıştırıldığı scriptin o anki bütün bellek kullanımını verir.
 
 Toplam bellek kullanımını göstermenin alternatif bir yolu da sahte değişken tanımlamaktır. Php kodu Kullanımak istemediğiniz zamanlar size yardımcı olabilir. Örnek kullanım ::
 
