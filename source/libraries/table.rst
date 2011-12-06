@@ -1,28 +1,22 @@
-################
-HTML Table Class
-################
+#################
+HTML Tablo Sınıfı
+#################
 
-The Table Class provides functions that enable you to auto-generate HTML
-tables from arrays or database result sets.
+Tablo sınıfı array veya veritabanı sonuç setlerinden otomatik olarak HTML tablosu oluşturmanıza imkan sağlayacak işlevler sunar.
 
-Initializing the Class
-======================
+Sınıfı başlatma
+===============
 
-Like most other classes in CodeIgniter, the Table class is initialized
-in your controller using the $this->load->library function::
+Codeigniter'daki birçok sınıf gibi HTML Tablo Sınıfı da controller içinde $this->load->library işlevi kullarak başlatılır::
 
 	$this->load->library('table');
 
-Once loaded, the Table library object will be available using:
-$this->table
+Bir kere yüklendikten sonra, Tablo kütüphanesi objesine şöyle erişilebilir: $this->table
 
-Examples
+Örnekler
 ========
 
-Here is an example showing how you can create a table from a
-multi-dimensional array. Note that the first array index will become the
-table heading (or you can set your own headings using the set_heading()
-function described in the function reference below).
+Çok boyutlu bir array'den nasıl tablo oluşturacağınızı gösteren bir örnek. İlk array'in tablo başlığı olacağını unutmayın (yada aşağıdaki işlev referansında tarif edilen set_heading() işlevini kullarak kendi başlığınızı ayarlayabilirsiniz).
 
 ::
 
@@ -37,10 +31,7 @@ function described in the function reference below).
 
 	echo $this->table->generate($data);
 
-Here is an example of a table created from a database query result. The
-table class will automatically generate the headings based on the table
-names (or you can set your own headings using the set_heading()
-function described in the function reference below).
+Veritabanı sorgusu sonuçlarından oluşturulan tablo örneği. Tablo sınıfı veritabanı tablo isimlerine dayanarak, tablo başlıklarını otomatik olarak oluşturacak (yada aşağıdaki işlev referansında tarif edilen set_heading() işlevini kullarak kendi başlığınızı ayarlayabilirsiniz).
 
 ::
 
@@ -50,8 +41,7 @@ function described in the function reference below).
 
 	echo $this->table->generate($query);
 
-Here is an example showing how you might create a table using discrete
-parameters::
+Ayrık parametreler kullanarak nasıl tablo oluşturabileceğinizi gösteren bir örnek::
 
 	$this->load->library('table');
 
@@ -63,8 +53,7 @@ parameters::
 
 	echo $this->table->generate();
 
-Here is the same example, except instead of individual parameters,
-arrays are used::
+Aynı örnek, yalnızca bireysel	 parametreler yerine array kullanılmış::
 
 	$this->load->library('table');
 
@@ -76,11 +65,10 @@ arrays are used::
 
 	echo $this->table->generate();
 
-Changing the Look of Your Table
-===============================
+Tablonuzun Görüntüsünü Değiştirme
+=================================
 
-The Table Class permits you to set a table template with which you can
-specify the design of your layout. Here is the template prototype::
+Tablo sınıfı, tablo tasarımını belirtebileceğiniz bir tablo şablonu ayarlamanıza izin verir. Şablon prototipi şöyledir::
 
 	$tmpl = array (
 	                    'table_open'          => '<table border="0" cellpadding="4" cellspacing="0">',
@@ -105,32 +93,27 @@ specify the design of your layout. Here is the template prototype::
 
 	$this->table->set_template($tmpl);
 
-.. note:: You'll notice there are two sets of "row" blocks in the
-	template. These permit you to create alternating row colors or design
-	elements that alternate with each iteration of the row data.
+.. not:: İki "row" bloğu olduğunu farkedeceksiniz. Bunlar satır bilgisinin her tekrarında değişen satır renkleri veya tasarım elementleri oluşturmanıza izin verir.
 
-You are NOT required to submit a complete template. If you only need to
-change parts of the layout you can simply submit those elements. In this
-example, only the table opening tag is being changed::
+Tam bir şablon oluşturmanıza gerek YOKTUR. Eğer sadece bazı parçaları değiştirmeye ihtiyacınız varsa, basitçe sadece o elementleri oluşturabilirsiniz. Bu örnekte, sadece tablo açma etiketi değiştiriliyor::
 
 	$tmpl = array ( 'table_open'  => '<table border="1" cellpadding="2" cellspacing="1" class="mytable">' );
 
 	$this->table->set_template($tmpl);
 
-******************
-Function Reference
-******************
+*******************
+Fonksiyon Referansı
+*******************
 
 $this->table->generate()
 ========================
 
-Returns a string containing the generated table. Accepts an optional
-parameter which can be an array or a database result object.
+Oluşturulan tabloyu içeren bir dizge döndürür. İsteğe bağlı olarak array veya veritabanı sonuç objesi olabilecek bir parametre kabul eder.
 
 $this->table->set_caption()
 ============================
 
-Permits you to add a caption to the table.
+Tabloya bir caption(=başlık, tablo'nun başlık satırı değil, tablonun üstünde bir başlık) atmanıza izin verir.
 
 ::
 
@@ -139,8 +122,7 @@ Permits you to add a caption to the table.
 $this->table->set_heading()
 ============================
 
-Permits you to set the table heading. You can submit an array or
-discrete params::
+Bir tablo başlığı ayarlamanıza izin verir. Array veya ayrık parametreler olabilir::
 
 	$this->table->set_heading('Name', 'Color', 'Size');
 
@@ -151,8 +133,7 @@ discrete params::
 $this->table->add_row()
 ========================
 
-Permits you to add a row to your table. You can submit an array or
-discrete params::
+Bir satır eklemenize izin verir. Array veya ayrık parametreler olabilir::
 
 	$this->table->add_row('Blue', 'Red', 'Green');
 
@@ -160,10 +141,7 @@ discrete params::
 
 	$this->table->add_row(array('Blue', 'Red', 'Green'));
 
-If you would like to set an individual cell's tag attributes, you can
-use an associative array for that cell. The associative key 'data'
-defines the cell's data. Any other key => val pairs are added as
-key='val' attributes to the tag::
+Eğer bir hücreye özellik vermek isterseniz, bu hücreye bir dizide birleştirilmiş özellikleri kullanabilirsiniz. Dizide birleştirilmiş anahtar 'data' değeridir. Diğer key => val ikilileri de tag olarak key = 'val' şeklinde eklenebilir::
 
 	$cell = array('data' => 'Blue', 'class' => 'highlight', 'colspan' => 2);
 	$this->table->add_row($cell, 'Red', 'Green');
@@ -174,10 +152,7 @@ key='val' attributes to the tag::
 $this->table->make_columns()
 =============================
 
-This function takes a one-dimensional array as input and creates a
-multi-dimensional array with a depth equal to the number of columns
-desired. This allows a single array with many elements to be displayed
-in a table that has a fixed column count. Consider this example::
+Bu fonksiyon tek boyutlu bir arrayi girdi olarak alır ve derinliği arzu edilen sütün genişliğine eşit olan yeni bir array oluşturur. Bu birçok elementi olan tek bir array'in sabit sütün genişliği olan bir tabloda gösterilmesini sağlar. Şu örneğe göz önünde bulundurun:
 
 	$list = array('one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten', 'eleven', 'twelve');
 
@@ -201,8 +176,7 @@ in a table that has a fixed column count. Consider this example::
 $this->table->set_template()
 =============================
 
-Permits you to set your template. You can submit a full or partial
-template.
+Şablonunuzu belirlemenize olanak sağlar. Tam veya bir parça şablon kullanabilirsiniz.
 
 ::
 
@@ -213,18 +187,14 @@ template.
 $this->table->set_empty()
 ==========================
 
-Let's you set a default value for use in any table cells that are empty.
-You might, for example, set a non-breaking space::
+Boş hücreler için öntanımlı değer atamanıza olanak sağlar. Mesela, boşluk kullanabilirsiniz::
 
 	 $this->table->set_empty("&nbsp;");
 
 $this->table->clear()
 =====================
 
-Lets you clear the table heading and row data. If you need to show
-multiple tables with different data you should to call this function
-after each table has been generated to empty the previous table
-information. Example::
+Tablo başlığı ve satır bilgisini temizlemenizi sağlar. Eğer farklı verilerle birden fazla tablo göstermeniz gerekiyorsa, bu işlevi oluşturduğunuz her tablodan sonra önce oluşturulan tabloya ait bilgileri temizlemek için çalıştırmalısınız. Örneğin::
 
 	$this->load->library('table');
 
@@ -247,8 +217,7 @@ information. Example::
 $this->table->function
 ======================
 
-Allows you to specify a native PHP function or a valid function array
-object to be applied to all cell data.
+Doğal PHP fonksiyonlarının ya da geçerli fonksiyon dizi objelerinin tüm hücrelere uygulanmasına izin verir.
 
 ::
 
@@ -260,8 +229,6 @@ object to be applied to all cell data.
 	$this->table->function = 'htmlspecialchars';
 	echo $this->table->generate();
 
-In the above example, all cell data would be ran through PHP's
-htmlspecialchars() function, resulting in::
+Yukarıdaki örnekte, bütün hücrelerdeki bilgilere PHP'deki htmlspecialchars() fonksiyonu uygulanır, sonuç ::
 
 	<td>Fred</td><td>&lt;strong&gt;Blue&lt;/strong&gt;</td><td>Small</td>
-
