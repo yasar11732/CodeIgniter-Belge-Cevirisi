@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="utf-8">
 	    
-	    <title>Shopping Cart Class &mdash; CodeIgniter 3.0-dev documentation</title>
+	    <title>Alışveriş Sepeti Sınıfı &mdash; CodeIgniter 3.0-dev documentation</title>
 
 	    <link rel="stylesheet" href="../_static/asset/css/common.css" type="text/css" />
 	    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -37,10 +37,10 @@
 <li class="toctree-l1"><a class="reference internal" href="../installation/index.html">Installation Instructions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../general/index.html">General Topics</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">Libraries</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="benchmark.html">Benchmarking Class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmark.html">Karşılaştırma (Benchmarking) Sınıfı</a></li>
 <li class="toctree-l2"><a class="reference internal" href="caching.html">Caching Driver</a></li>
 <li class="toctree-l2"><a class="reference internal" href="calendar.html">Calendaring Class</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="">Shopping Cart Class</a><ul class="simple">
+<li class="toctree-l2 current"><a class="current reference internal" href="">Alışveriş Sepeti Sınıfı</a><ul class="simple">
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="config.html">Config Class</a></li>
@@ -59,7 +59,7 @@
 <li class="toctree-l2"><a class="reference internal" href="parser.html">Template Parser Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="security.html">Security Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="sessions.html">Session Class</a></li>
-<li class="toctree-l2"><a class="reference internal" href="table.html">HTML Table Class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="table.html">HTML Tablo Sınıfı</a></li>
 <li class="toctree-l2"><a class="reference internal" href="trackback.html">Trackback Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="typography.html">Typography Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="unit_testing.html">Unit Testing Class</a></li>
@@ -100,33 +100,28 @@
 				<li><a id="toc-link" href="../index.html">İçindekiler</a>&nbsp;&nbsp; &rsaquo;</li>
 				<li><a href="index.html" accesskey="U">Libraries</a>&nbsp;&nbsp;  &rsaquo;</li>
 
-				<li><strong>Shopping Cart Class</strong></li>
+				<li><strong>Alışveriş Sepeti Sınıfı</strong></li>
 			</ul>
 		</div><!-- /#header -->
 
 		<div class="section" id="content">
-			<div class="section" id="shopping-cart-class">
-<h1><a class="toc-backref" href="#id1">Shopping Cart Class</a><a class="headerlink" href="#shopping-cart-class" title="Bu başlığın kalıcı bağlantısı">¶</a></h1>
-<p>The Cart Class permits items to be added to a session that stays active
-while a user is browsing your site. These items can be retrieved and
-displayed in a standard &#8220;shopping cart&#8221; format, allowing the user to
-update the quantity or remove items from the cart.</p>
-<p>Please note that the Cart Class ONLY provides the core &#8220;cart&#8221;
-functionality. It does not provide shipping, credit card authorization,
-or other processing components.</p>
+			<div class="section" id="alisveris-sepeti-sinifi">
+<h1><a class="toc-backref" href="#id1">Alışveriş Sepeti Sınıfı</a><a class="headerlink" href="#alisveris-sepeti-sinifi" title="Bu başlığın kalıcı bağlantısı">¶</a></h1>
+<p>Bu sınıf kullanıcılar siteyi ziyaret ederken ürünlerin eklenebileceği, &#8220;session&#8221;da saklanan bir alışveriş sepeti oluşturmamız için bize yardım eder. Alışveriş sepetindeki ürünlerin silinmesi, miktarının değiştirlmesi veya yeni ürün eklenmesi gibi işlemlere olanak sağlar.</p>
+<p>Sınıf standart alışveriş sepeti fonksiyonlarını yerine getirir, kredi kartı ödemesi gibi ödeme fonksiyonlarını barındırmaz.</p>
 <div class="contents topic" id="page-contents">
 <p class="topic-title first">Page Contents</p>
 <ul class="simple">
-<li><a class="reference internal" href="#shopping-cart-class" id="id1">Shopping Cart Class</a><ul>
-<li><a class="reference internal" href="#initializing-the-shopping-cart-class" id="id2">Initializing the Shopping Cart Class</a></li>
-<li><a class="reference internal" href="#adding-an-item-to-the-cart" id="id3">Adding an Item to The Cart</a></li>
-<li><a class="reference internal" href="#adding-multiple-items-to-the-cart" id="id4">Adding Multiple Items to The Cart</a></li>
-<li><a class="reference internal" href="#displaying-the-cart" id="id5">Displaying the Cart</a></li>
-<li><a class="reference internal" href="#updating-the-cart" id="id6">Updating The Cart</a><ul>
-<li><a class="reference internal" href="#what-is-a-row-id" id="id7">What is a Row ID?</a></li>
+<li><a class="reference internal" href="#alisveris-sepeti-sinifi" id="id1">Alışveriş Sepeti Sınıfı</a><ul>
+<li><a class="reference internal" href="#alisveris-sepeti-sinifinin-hazilanmasi" id="id2">Alışveriş Sepeti Sınıfının hazılanması</a></li>
+<li><a class="reference internal" href="#alisveris-sepetine-urun-eklenmesi" id="id3">Alışveriş sepetine ürün eklenmesi</a></li>
+<li><a class="reference internal" href="#coklu-urun-girisi" id="id4">Çoklu ürün girişi</a></li>
+<li><a class="reference internal" href="#sepetin-gosterilmesi" id="id5">Sepetin gösterilmesi</a></li>
+<li><a class="reference internal" href="#sepeti-guncellemek" id="id6">Sepeti güncellemek</a><ul>
+<li><a class="reference internal" href="#row-id-nedir" id="id7">Row ID nedir?</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#function-reference" id="id8">Function Reference</a><ul>
+<li><a class="reference internal" href="#fonksiyon-referanslari" id="id8">Fonksiyon Referansları</a><ul>
 <li><a class="reference internal" href="#this-cart-insert" id="id9">$this-&gt;cart-&gt;insert();</a></li>
 <li><a class="reference internal" href="#this-cart-update" id="id10">$this-&gt;cart-&gt;update();</a></li>
 <li><a class="reference internal" href="#this-cart-total" id="id11">$this-&gt;cart-&gt;total();</a></li>
@@ -141,38 +136,28 @@ or other processing components.</p>
 </li>
 </ul>
 </div>
-<div class="section" id="initializing-the-shopping-cart-class">
-<h2><a class="toc-backref" href="#id2">Initializing the Shopping Cart Class</a><a class="headerlink" href="#initializing-the-shopping-cart-class" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
-<div class="admonition important">
+<div class="section" id="alisveris-sepeti-sinifinin-hazilanmasi">
+<h2><a class="toc-backref" href="#id2">Alışveriş Sepeti Sınıfının hazılanması</a><a class="headerlink" href="#alisveris-sepeti-sinifinin-hazilanmasi" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
+<div class="important admonition">
 <p class="first admonition-title">Önemli</p>
-<p class="last">The Cart class utilizes CodeIgniter&#8217;s <a class="reference internal" href="sessions.html"><em>Session
-Class</em></a> to save the cart information to a database, so
-before using the Cart class you must set up a database table as
-indicated in the <a class="reference internal" href="sessions.html"><em>Session Documentation</em></a>, and set the
-session preferences in your application/config/config.php file to
-utilize a database.</p>
+<p class="last">Alışveriş sepeti sınıfı sepet bilgilerini veritabanına saklamak için CodeIgniter&#8217;in <a class="reference internal" href="sessions.html"><em>Session Sınıfını</em></a> kullanır, bu yüzden alışveriş sepeti sınıfını kullanmadan önce <a class="reference internal" href="sessions.html"><em>Session Dokümantasyonunda</em></a> anlatılan veritabanlarını ayarlayıp appliction/config/config.php dosyasındaki session özellikleri kısmını düzenlemeniz gerekmektedir.</p>
 </div>
-<p>To initialize the Shopping Cart Class in your controller constructor,
-use the $this-&gt;load-&gt;library function:</p>
+<p>Sınıfı hazılamak için $this-&gt;load-&gt;library fonksiyonu ile yüklenmesi gerekmektedir</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">library</span><span class="p">(</span><span class="s1">&#39;cart&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>Once loaded, the Cart object will be available using:</p>
+<p>Yüklendikten sonra Cart nesnesi $this-&gt;cart altında kullanılabilir olacaktır:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">cart</span>
 </pre></div>
 </div>
-<div class="admonition note">
+<div class="note admonition">
 <p class="first admonition-title">Not</p>
-<p class="last">The Cart Class will load and initialize the Session Class
-automatically, so unless you are using sessions elsewhere in your
-application, you do not need to load the Session class.</p>
+<p class="last">Alışveriş sepeti sınıfı otomatik olarak Session sınıfını belleğeye yükleyeceği için, uygulamanızın herhangi bir yerinde session sınıfını elle yüklemeden kullanabilirsiniz.</p>
 </div>
 </div>
-<div class="section" id="adding-an-item-to-the-cart">
-<h2><a class="toc-backref" href="#id3">Adding an Item to The Cart</a><a class="headerlink" href="#adding-an-item-to-the-cart" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
-<p>To add an item to the shopping cart, simply pass an array with the
-product information to the $this-&gt;cart-&gt;insert() function, as shown
-below:</p>
+<div class="section" id="alisveris-sepetine-urun-eklenmesi">
+<h2><a class="toc-backref" href="#id3">Alışveriş sepetine ürün eklenmesi</a><a class="headerlink" href="#alisveris-sepetine-urun-eklenmesi" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
+<p>Alışveriş sepetine ürün eklemek için basitce aşşağıda görünen tipte bir array $this-&gt;cart-&gt;insert() fonksiyonuna parametre olarak gönderilir. Örnek</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$data</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
                <span class="s1">&#39;id&#39;</span>      <span class="o">=&gt;</span> <span class="s1">&#39;sku_123ABC&#39;</span><span class="p">,</span>
                <span class="s1">&#39;qty&#39;</span>     <span class="o">=&gt;</span> <span class="mi">1</span><span class="p">,</span>
@@ -184,41 +169,26 @@ below:</p>
 <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">cart</span><span class="o">-&gt;</span><span class="na">insert</span><span class="p">(</span><span class="nv">$data</span><span class="p">);</span>
 </pre></div>
 </div>
-<div class="admonition important">
+<div class="important admonition">
 <p class="first admonition-title">Önemli</p>
-<p class="last">The first four array indexes above (id, qty, price, and
-name) are <strong>required</strong>. If you omit any of them the data will not be
-saved to the cart. The fifth index (options) is optional. It is intended
-to be used in cases where your product has options associated with it.
-Use an array for options, as shown above.</p>
+<p class="last">İlk dört anahtar (id, qty, price, ve name) <strong>zorunlu</strong> anahtarlardır, eğer bu 4 anahtardan biri hatalı ise ürün sepete eklenmeyecektir. Beşinci anahtar (options) isteğe bağlı olarak kullanılabilir, ürüne ait ekstra bilgiler bu alanda saklanabilir.</p>
 </div>
-<p>The five reserved indexes are:</p>
+<p>Anahtarlar ve açıklamaları:</p>
 <ul class="simple">
-<li><strong>id</strong> - Each product in your store must have a unique identifier.
-Typically this will be an &#8220;sku&#8221; or other such identifier.</li>
-<li><strong>qty</strong> - The quantity being purchased.</li>
-<li><strong>price</strong> - The price of the item.</li>
-<li><strong>name</strong> - The name of the item.</li>
-<li><strong>options</strong> - Any additional attributes that are needed to identify
-the product. These must be passed via an array.</li>
+<li><strong>id</strong> - Ürünün tekil tanımlayıcısı. Her ürün için tekil olan kod, bir çok kişi bunu stok kodu olarak kullanmaktadır.
+Tipik oalrak &#8220;sku&#8221; ya da bunun gibi başka bir tanımlayıcı.</li>
+<li><strong>qty</strong> - Ödenecek ürün miktarı. (Miktar).</li>
+<li><strong>price</strong> - Ürünün fiyatı.</li>
+<li><strong>name</strong> -  Ürün adı.</li>
+<li><strong>options</strong> - Herhangi ekstra bilgi, dizi (array) olarak eklenmelidir.</li>
 </ul>
-<p>In addition to the five indexes above, there are two reserved words:
-rowid and subtotal. These are used internally by the Cart class, so
-please do NOT use those words as index names when inserting data into
-the cart.</p>
-<p>Your array may contain additional data. Anything you include in your
-array will be stored in the session. However, it is best to standardize
-your data among all your products in order to make displaying the
-information in a table easier.</p>
-<p>The insert() method will return the $rowid if you successfully insert a
-single item.</p>
+<p>Ek olarak 2 adet rezerve kelime mevcuttur, bunlar : rowid ve subtotal kelimeleridir. Alışveriş sepeti sınıfı içinde kullanıldığı için sepete ürün eklenirken bu kelimeleri anahtar tanımlayıcısı olarak kullanmamaya özen gösterin.</p>
+<p>Sepet sınıfına parametre olarak gönderilen dizi başka verilerde içerebilir, bu veriler session&#8217;da saklanacaktır. BUnunla birlikte, ürün bilgilerini ekranda tablolama ile gösterimin en kolay yolu, listelenecek ürün bilgilerinin tamamının tutulmasıdır.</p>
+<p>Eğer bir ürün sepete eklenirse, insert() metodu $rowid değerini geri döndürecektir.</p>
 </div>
-<div class="section" id="adding-multiple-items-to-the-cart">
-<h2><a class="toc-backref" href="#id4">Adding Multiple Items to The Cart</a><a class="headerlink" href="#adding-multiple-items-to-the-cart" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
-<p>By using a multi-dimensional array, as shown below, it is possible to
-add multiple products to the cart in one action. This is useful in cases
-where you wish to allow people to select from among several items on the
-same page.</p>
+<div class="section" id="coklu-urun-girisi">
+<h2><a class="toc-backref" href="#id4">Çoklu ürün girişi</a><a class="headerlink" href="#coklu-urun-girisi" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
+<p>Bir seferde birden falza ürünü sepete ekleyebilirsiniz, bunun için çok boyutlu bir array&#8217;ın aşşağıdaki örnekte olduğu gibi tanımlanması gerekmetedir. Bu yöntem kullanıcının tek sayfada çoklu ürün seçimi yaptığı ve sepete eklediği anlarda kullanışlı olacaktır.</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$data</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
                <span class="k">array</span><span class="p">(</span>
                        <span class="s1">&#39;id&#39;</span>      <span class="o">=&gt;</span> <span class="s1">&#39;sku_123ABC&#39;</span><span class="p">,</span>
@@ -245,12 +215,10 @@ same page.</p>
 </pre></div>
 </div>
 </div>
-<div class="section" id="displaying-the-cart">
-<h2><a class="toc-backref" href="#id5">Displaying the Cart</a><a class="headerlink" href="#displaying-the-cart" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
-<p>To display the cart you will create a <a class="reference internal" href="../general/views.html"><em>view
-file</em></a> with code similar to the one shown below.</p>
-<p>Please note that this example uses the <a class="reference internal" href="../helpers/form_helper.html"><em>form
-helper</em></a>.</p>
+<div class="section" id="sepetin-gosterilmesi">
+<h2><a class="toc-backref" href="#id5">Sepetin gösterilmesi</a><a class="headerlink" href="#sepetin-gosterilmesi" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
+<p>Ürün gösterimi için aşşağıdaki örneğe benzer bir <a class="reference internal" href="../general/views.html"><em>view dosyası</em></a> oluşturmamız gerekmedir.</p>
+<p>Bu örneğin <a class="reference internal" href="../helpers/form_helper.html"><em>form helper</em></a> kullandığını unutmayın.</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="o">&lt;?</span><span class="nx">php</span> <span class="k">echo</span> <span class="nx">form_open</span><span class="p">(</span><span class="s1">&#39;path/to/controller/update/function&#39;</span><span class="p">);</span> <span class="cp">?&gt;</span>
 
 <span class="nt">&lt;table</span> <span class="na">cellpadding=</span><span class="s">&quot;6&quot;</span> <span class="na">cellspacing=</span><span class="s">&quot;1&quot;</span> <span class="na">style=</span><span class="s">&quot;width:100%&quot;</span> <span class="na">border=</span><span class="s">&quot;0&quot;</span><span class="nt">&gt;</span>
@@ -306,15 +274,12 @@ helper</em></a>.</p>
 </pre></div>
 </div>
 </div>
-<div class="section" id="updating-the-cart">
-<h2><a class="toc-backref" href="#id6">Updating The Cart</a><a class="headerlink" href="#updating-the-cart" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
-<p>To update the information in your cart, you must pass an array
-containing the Row ID and quantity to the $this-&gt;cart-&gt;update()
-function:</p>
-<div class="admonition note">
+<div class="section" id="sepeti-guncellemek">
+<h2><a class="toc-backref" href="#id6">Sepeti güncellemek</a><a class="headerlink" href="#sepeti-guncellemek" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
+<p>Sepeti güncellemek için $this-&gt;cart-&gt;update() fonksiyonuna Row ID ve quantity anahtarlarını içeren bir array parametre olarak gönderilmelidir.</p>
+<div class="note admonition">
 <p class="first admonition-title">Not</p>
-<p class="last">If the quantity is set to zero, the item will be removed from
-the cart.</p>
+<p class="last">quantity anahtarı ürünün miktarını tanımlar ve sıfır olarak ayarlanırsa ürün septten kaldırılır.</p>
 </div>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$data</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
                <span class="s1">&#39;rowid&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;b99ccdf16028f015540f341130b6d8ec&#39;</span><span class="p">,</span>
@@ -343,68 +308,46 @@ the cart.</p>
 <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">cart</span><span class="o">-&gt;</span><span class="na">update</span><span class="p">(</span><span class="nv">$data</span><span class="p">);</span>
 </pre></div>
 </div>
-<div class="section" id="what-is-a-row-id">
-<h3><a class="toc-backref" href="#id7">What is a Row ID?</a><a class="headerlink" href="#what-is-a-row-id" title="Bu başlığın kalıcı bağlantısı">¶</a></h3>
-<p>The row ID is a unique identifier that is
-generated by the cart code when an item is added to the cart. The reason
-a unique ID is created is so that identical products with different
-options can be managed by the cart.</p>
-<p>For example, let&#8217;s say someone buys two identical t-shirts (same product
-ID), but in different sizes. The product ID (and other attributes) will
-be identical for both sizes because it&#8217;s the same shirt. The only
-difference will be the size. The cart must therefore have a means of
-identifying this difference so that the two sizes of shirts can be
-managed independently. It does so by creating a unique &#8220;row ID&#8221; based on
-the product ID and any options associated with it.</p>
-<p>In nearly all cases, updating the cart will be something the user does
-via the &#8220;view cart&#8221; page, so as a developer, it is unlikely that you
-will ever have to concern yourself with the &#8220;row ID&#8221;, other then making
-sure your &#8220;view cart&#8221; page contains this information in a hidden form
-field, and making sure it gets passed to the update function when the
-update form is submitted. Please examine the construction of the &#8220;view
-cart&#8221; page above for more information.</p>
+<div class="section" id="row-id-nedir">
+<h3><a class="toc-backref" href="#id7">Row ID nedir?</a><a class="headerlink" href="#row-id-nedir" title="Bu başlığın kalıcı bağlantısı">¶</a></h3>
+<p>Sepet sınıfı her eklenen ürün için tekil bir tanımlayıcı tayin eder, row ID bu tanımayıcıya verilen isimdir. Row id yardımı ile sepet içindeki ürünler tek tek düzenlenebilir.</p>
+<p>Örnekle açıklamak gerekirse : Bir müşterimiz 2 adet tişört satın aldı, Ürün kodu aynı fakat bedenleri farklı. Ürün kodu fiyat, adet bilgileri aynı olduğu halde ürünlerin bedenleri farklı. Bizim iki ürünüde birbirinden bağımsız olarak yönetebilmemiz gerekiyor, CodeIgniter bunu sepetteki her farklı ürün için tekil rowid tanımlayarak mümkün kılıyor, rowid üretilirken ürün kod ve options parametresindeki değerleri kullanılıyor.</p>
+<p>Nerdeyse bütün işlemlerin sepet gösterimi sayfasında yapılacağını düşünürsek, rowid değerini bolca kullanacağımızı görebiliriz. Sepet üzerinde değişiklik yapabilmemiz için sepeti gösterirken rowid değerini gizli eleman (hidden field) olarak forma dahil etmemiz gerekecektir. Sepeti güncellerken de rowid değişkenini update fonksiyonuna gönderdiğimizden emin olmamız gerekmektedir. Daha fazla bilgi için sepetin gösterilmesi bölümüne göz atınız.</p>
 </div>
 </div>
-<div class="section" id="function-reference">
-<h2><a class="toc-backref" href="#id8">Function Reference</a><a class="headerlink" href="#function-reference" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
+<div class="section" id="fonksiyon-referanslari">
+<h2><a class="toc-backref" href="#id8">Fonksiyon Referansları</a><a class="headerlink" href="#fonksiyon-referanslari" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
 <div class="section" id="this-cart-insert">
 <h3><a class="toc-backref" href="#id9">$this-&gt;cart-&gt;insert();</a><a class="headerlink" href="#this-cart-insert" title="Bu başlığın kalıcı bağlantısı">¶</a></h3>
-<p>Permits you to add items to the shopping cart, as outlined above.</p>
+<p>Sepete yeni bir ürün eklemenizi sağlar.</p>
 </div>
 <div class="section" id="this-cart-update">
 <h3><a class="toc-backref" href="#id10">$this-&gt;cart-&gt;update();</a><a class="headerlink" href="#this-cart-update" title="Bu başlığın kalıcı bağlantısı">¶</a></h3>
-<p>Permits you to update items in the shopping cart, as outlined above.</p>
+<p>Sepetteki ürün veya ürünleri güncellemenizi sağlar.</p>
 </div>
 <div class="section" id="this-cart-total">
 <h3><a class="toc-backref" href="#id11">$this-&gt;cart-&gt;total();</a><a class="headerlink" href="#this-cart-total" title="Bu başlığın kalıcı bağlantısı">¶</a></h3>
-<p>Displays the total amount in the cart.</p>
+<p>Sepetin toplam tutarını, yani alt toplamını verir.</p>
 </div>
 <div class="section" id="this-cart-total-items">
 <h3><a class="toc-backref" href="#id12">$this-&gt;cart-&gt;total_items();</a><a class="headerlink" href="#this-cart-total-items" title="Bu başlığın kalıcı bağlantısı">¶</a></h3>
-<p>Displays the total number of items in the cart.</p>
+<p>Sepetteki toplam ürün adetini verir.</p>
 </div>
 <div class="section" id="this-cart-contents">
 <h3><a class="toc-backref" href="#id13">$this-&gt;cart-&gt;contents();</a><a class="headerlink" href="#this-cart-contents" title="Bu başlığın kalıcı bağlantısı">¶</a></h3>
-<p>Returns an array containing everything in the cart.</p>
+<p>Sepetteki herşeyi içerin bir array geri döndürür.</p>
 </div>
 <div class="section" id="this-cart-has-options-rowid">
 <h3><a class="toc-backref" href="#id14">$this-&gt;cart-&gt;has_options(rowid);</a><a class="headerlink" href="#this-cart-has-options-rowid" title="Bu başlığın kalıcı bağlantısı">¶</a></h3>
-<p>Returns TRUE (boolean) if a particular row in the cart contains options.
-This function is designed to be used in a loop with
-$this-&gt;cart-&gt;contents(), since you must pass the rowid to this function,
-as shown in the Displaying the Cart example above.</p>
+<p>Eğer ürünün options değişkeni bir değer içeriyorsa TRUE döndürür. Bu fonksyion $this-&gt;cart-&gt;contents() ile kullanılan döngüler içinde kullanılmak üzere tasarlanmıştır, bu yüzden rowid değerini “Sepetin gösterilmesi” başlığı altındaki gibi kullanmalısınız.</p>
 </div>
 <div class="section" id="this-cart-product-options-rowid">
 <h3><a class="toc-backref" href="#id15">$this-&gt;cart-&gt;product_options(rowid);</a><a class="headerlink" href="#this-cart-product-options-rowid" title="Bu başlığın kalıcı bağlantısı">¶</a></h3>
-<p>Returns an array of options for a particular product. This function is
-designed to be used in a loop with $this-&gt;cart-&gt;contents(), since you
-must pass the rowid to this function, as shown in the Displaying the
-Cart example above.</p>
+<p>Seçilen ürüne özel opstions dizisini geri döndürür. Bu fonksiyon yukarıda örneği verildiği gibi, rowid değeri belirlendiğinde, $this-&gt;cart-&gt;contents() fonksiyonu kullanılarak döngü içinde tasarlanır.</p>
 </div>
 <div class="section" id="this-cart-destroy">
 <h3><a class="toc-backref" href="#id16">$this-&gt;cart-&gt;destroy();</a><a class="headerlink" href="#this-cart-destroy" title="Bu başlığın kalıcı bağlantısı">¶</a></h3>
-<p>Permits you to destroy the cart. This function will likely be called
-when you are finished processing the customer&#8217;s order.</p>
+<p>Sepeti yok etmek için kullanılır. Müşteri ödemeyi gerçekleştirdikten sonra kullanmak isteyebilirsiniz.</p>
 </div>
 </div>
 </div>
@@ -424,7 +367,7 @@ when you are finished processing the customer&#8217;s order.</p>
 				<a href="#header" title="Başa Dön">Başa Dön</a>
 			</p>
 			<p><a href="">CodeIgniter</a> &ndash; Copyright &copy;
-      2011, EllisLab, Inc.</a> &ndash; Son Güncelleme: 22 Kasım 2011</p>
+      2011, EllisLab, Inc.</a> &ndash; Son Güncelleme: 06 Aralık 2011</p>
 		</div><!-- /#footer -->
 	
 	<script src="../_static/asset/js/jquery-ui-min.js" type="text/javascript" charset="utf-8" async></script>
