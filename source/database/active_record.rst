@@ -75,6 +75,7 @@ için kullanılır::
 
 	// Sonuç Çıktısı: SELECT baslik, icerik, tarih FROM tablom
 	
+
 The key thing to notice in the above example is that the second query did not 
 utilize `$this->db->from()`_ and did not pass a table name into the first 
 parameter. The reason for this outcome is because the query has not been 
@@ -206,70 +207,68 @@ $this->db->where()
 
 Bu fonksiyon 4 değerden biri kullanılara **WHERE** koşulunu kullanmanızı sağlar:
 
-.. note:: All values passed to this function are escaped automatically,
-	producing safer queries.
+.. note:: Güvenli sorgular oluşturabilmek için tüm değerler otomatik olarak fonksiyon tarafından filtrelenir.
 
-#. **Simple key/value method:**
-
-	::
-
-		$this->db->where('name', $name); // Produces: WHERE name = 'Joe' 
-
-	Notice that the equal sign is added for you.
-
-	If you use multiple function calls they will be chained together with
-	AND between them:
+#. **Basit anahtar/değer yöntemi:**
 
 	::
 
-		$this->db->where('name', $name);
-		$this->db->where('title', $title);
-		$this->db->where('status', $status);
-		// WHERE name = 'Joe' AND title = 'boss' AND status = 'active'  
+		$this->db->where('isim', $isim); // İşlem Sonucu: WHERE isim = 'Joe' 
 
-#. **Custom key/value method:**
-	You can include an operator in the first parameter in order to
-	control the comparison:
+	Dikkatli olun eşittir işareti dahil edilir.
+
+	Eğer çoklu olarak bu fonksiyon çağrılırsa aralara 
+	AND değeri eklenir:
 
 	::
 
-		$this->db->where('name !=', $name);
-		$this->db->where('id <', $id); // Produces: WHERE name != 'Joe' AND id < 45    
+		$this->db->where('isim', $isim);
+		$this->db->where('baslik', $baslik);
+		$this->db->where('durum', $durum);
+		// WHERE isim = 'Joe' AND baslik = 'boss' AND durum = 'active'  
 
-#. **Associative array method:**
+#. **Özel anahtar/değer yöntemi:**
+	İlk değerin yanına herhangi bir operatör çağırabilirsiniz:
 
 	::
 
-		$array = array('name' => $name, 'title' => $title, 'status' => $status);
+		$this->db->where('isim !=', $isim);
+		$this->db->where('id <', $id); // İşlem Sonucu: WHERE isim != 'Joe' AND id < 45    
+
+#. **İlişkilendirilebilir dizi yöntemi:**
+
+	::
+
+		$array = array('isim' => $isim, 'baslik' => $baslik, 'durum' => $durum);
 		$this->db->where($array);
-		// Produces: WHERE name = 'Joe' AND title = 'boss' AND status = 'active'    
+		// Produces: WHERE isim = 'Joe' AND baslik = 'boss' AND durum = 'aktif'    
 
-	You can include your own operators using this method as well:
+	Kendi operatörlerinizi atayabilirsiniz:
 
 	::
 
-		$array = array('name !=' => $name, 'id <' => $id, 'date >' => $date);
+		$array = array('isim !=' => $isim, 'id <' => $id, 'tarih >' => $tarih);
 		$this->db->where($array);
 
-#. **Custom string:**
-	You can write your own clauses manually::
+#. **Özel metin:**
+	Koşul kısmını manuel olarak kendiniz yazabilirsiniz::
 
-		$where = "name='Joe' AND status='boss' OR status='active'";
+		$where = "isim='Joe' AND durum='boss' OR durum='active'";
 		$this->db->where($where);
 
 
-$this->db->where() accepts an optional third parameter. If you set it to
-FALSE, CodeIgniter will not try to protect your field or table names
-with backticks.
+$this->db->where() isteğe bağlı üçüncü bir değer alabilir. Eğer FALSE olarak ayarlarsanız,
+CodeIgniter alanları ve tablo adlarını korumayı ( filtrelemeyi ) denemeyecektir.
 
 ::
 
-	$this->db->where('MATCH (field) AGAINST ("value")', NULL, FALSE);
+	$this->db->where('MATCH (alan) AGAINST ("deger")', NULL, FALSE);
 
 
 $this->db->or_where()
 =====================
 
+Bu fonksiyon yukarıdaki ile aynıdır //devam
 This function is identical to the one above, except that multiple
 instances are joined by OR::
 
