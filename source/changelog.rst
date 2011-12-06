@@ -27,6 +27,7 @@ Release Date: Not Released
    -  Added support pgp and gpg to mimes.php.
    -  Added support 3gp, 3g2, mp4, wmv, f4v, vlc Video files to mimes.php.
    -  Added support m4a, aac, m4u, xspf, au, ac3, flac, ogg Audio files to mimes.php.
+   -  Changed logger to only chmod when file is first created.
 
 -  Helpers
 
@@ -35,8 +36,8 @@ Release Date: Not Released
 
 -  Database
 
-   -  Added new :doc:`Active Record <database/active_record>` methods that return 
-      the SQL string of queries without executing them: get_compiled_select(), 
+   -  Added new :doc:`Active Record <database/active_record>` methods that return
+      the SQL string of queries without executing them: get_compiled_select(),
       get_compiled_insert(), get_compiled_update(), get_compiled_delete().
 
 -  Libraries
@@ -45,7 +46,7 @@ Release Date: Not Released
    -  CI_Loader::_ci_autoloader() is now a protected method.
    -  Modified valid_ip() to use PHP's filter_var() when possible (>= PHP 5.2) in the :doc:`Form Validation library <libraries/form_validation>`.
 	 -  Added custom filename to Email::attach() as $this->email->attach($filename, $disposition, $newname)
-	 
+
 -  Core
 
    -  Changed private functions in CI_URI to protected so MY_URI can
@@ -59,6 +60,13 @@ Bug fixes for 3.0
 -  Fixed a bug (#181) where a mis-spelling was in the form validation
    language file.
 -  Fixed a bug (#159, #163) that mishandled Active Record nested transactions because _trans_depth was not getting incremented.
+-  Fixed a bug (#737, #75) where pagination anchor class was not set properly when using initialize method.
+-  Bug #419 - auto_link() now recognizes URLs that come after a word boundary.
+-  Bug #724 - is_unique in form validation now checks that you are connected to a database.
+-  Bug #647 - _get_mod_time() in Zip library no longer generates stat failed errors
+-  Bug #608 - Fixes an issue with the Image_lib class not clearing properties completely
+-  Fixed bugs (#157 and #174) - the Image_lib clear() function now resets all variables to their default values.
+-  Fixed a bug where using $this->dbforge->create_table() with PostgreSQL database could lead to fetching whole table.
 
 
 Version 2.1.0
@@ -97,6 +105,7 @@ Release Date: Not Released
       $this->db->like() in the :doc:`Database
       Driver <database/active_record>`.
    -  Added $this->db->insert_batch() support to the OCI8 (Oracle) driver.
+   -  Added failover if the main connections in the config should fail
 
 -  Libraries
 

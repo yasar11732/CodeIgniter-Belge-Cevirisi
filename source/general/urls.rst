@@ -36,11 +36,12 @@ Bu dosyayı .htaccess dosyasında yazacağınız bir kaç basit kural ile kaldı
 
 ::
 	
-	RewriteEngine on
-	RewriteCond $1 !^(index\.php|images|robots\.txt)
+	RewriteEngine On
+	RewriteCond %{REQUEST_FILENAME} !-f
+	RewriteCond %{REQUEST_FILENAME} !-d
 	RewriteRule ^(.*)$ /index.php/$1 [L]
 
-Yukarıdaki örnekte, index.php, images ve robots.txt dosyalarından farklı her HTTP istemi index.php dosyamızı çağırmış işlemi görecektir.
+Yukarıdaki örnekte, var olmayan her dosya veya klasör için yapılan HTTP istemi index.php dosyamızı çağırmış işlemi görecektir.
 
 URL Soneki Eklemek
 ==================
