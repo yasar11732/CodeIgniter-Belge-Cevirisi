@@ -118,6 +118,47 @@ prototype:</p>
 <span class="nv">$db</span><span class="p">[</span><span class="s1">&#39;default&#39;</span><span class="p">][</span><span class="s1">&#39;stricton&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="k">FALSE</span><span class="p">;</span>
 </pre></div>
 </div>
+<p>You can also specify failovers for the situation when the main connection cannot connect for some reason.
+These failovers can be specified by setting the failover for a connection like this:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span class="nv">$db</span><span class="p">[</span><span class="s1">&#39;default&#39;</span><span class="p">][</span><span class="s1">&#39;failover&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+                <span class="k">array</span><span class="p">(</span>
+                        <span class="s1">&#39;hostname&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;localhost1&#39;</span><span class="p">,</span>
+                        <span class="s1">&#39;username&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+                        <span class="s1">&#39;password&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+                        <span class="s1">&#39;database&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+                        <span class="s1">&#39;dbdriver&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;mysql&#39;</span><span class="p">,</span>
+                        <span class="s1">&#39;dbprefix&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+                        <span class="s1">&#39;pconnect&#39;</span> <span class="o">=&gt;</span> <span class="k">TRUE</span><span class="p">,</span>
+                        <span class="s1">&#39;db_debug&#39;</span> <span class="o">=&gt;</span> <span class="k">TRUE</span><span class="p">,</span>
+                        <span class="s1">&#39;cache_on&#39;</span> <span class="o">=&gt;</span> <span class="k">FALSE</span><span class="p">,</span>
+                        <span class="s1">&#39;cachedir&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+                        <span class="s1">&#39;char_set&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;utf8&#39;</span><span class="p">,</span>
+                        <span class="s1">&#39;dbcollat&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;utf8_general_ci&#39;</span><span class="p">,</span>
+                        <span class="s1">&#39;swap_pre&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+                        <span class="s1">&#39;autoinit&#39;</span> <span class="o">=&gt;</span> <span class="k">TRUE</span><span class="p">,</span>
+                        <span class="s1">&#39;stricton&#39;</span> <span class="o">=&gt;</span> <span class="k">FALSE</span>
+                <span class="p">),</span>
+                <span class="k">array</span><span class="p">(</span>
+                        <span class="s1">&#39;hostname&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;localhost2&#39;</span><span class="p">,</span>
+                        <span class="s1">&#39;username&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+                        <span class="s1">&#39;password&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+                        <span class="s1">&#39;database&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+                        <span class="s1">&#39;dbdriver&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;mysql&#39;</span><span class="p">,</span>
+                        <span class="s1">&#39;dbprefix&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+                        <span class="s1">&#39;pconnect&#39;</span> <span class="o">=&gt;</span> <span class="k">TRUE</span><span class="p">,</span>
+                        <span class="s1">&#39;db_debug&#39;</span> <span class="o">=&gt;</span> <span class="k">TRUE</span><span class="p">,</span>
+                        <span class="s1">&#39;cache_on&#39;</span> <span class="o">=&gt;</span> <span class="k">FALSE</span><span class="p">,</span>
+                        <span class="s1">&#39;cachedir&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+                        <span class="s1">&#39;char_set&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;utf8&#39;</span><span class="p">,</span>
+                        <span class="s1">&#39;dbcollat&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;utf8_general_ci&#39;</span><span class="p">,</span>
+                        <span class="s1">&#39;swap_pre&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+                        <span class="s1">&#39;autoinit&#39;</span> <span class="o">=&gt;</span> <span class="k">TRUE</span><span class="p">,</span>
+                        <span class="s1">&#39;stricton&#39;</span> <span class="o">=&gt;</span> <span class="k">FALSE</span>
+                <span class="p">)</span>
+        <span class="p">);</span>
+</pre></div>
+</div>
+<p>You can specify as many failovers as you like.</p>
 <p>The reason we use a multi-dimensional array rather than a more simple
 one is to permit you to optionally store multiple sets of connection
 values. If, for example, you run multiple environments (development,
@@ -277,7 +318,7 @@ above assumes you are using MySQL.</p>
 				<a href="#header" title="Başa Dön">Başa Dön</a>
 			</p>
 			<p><a href="">CodeIgniter</a> &ndash; Copyright &copy;
-      2011, EllisLab, Inc.</a> &ndash; Son Güncelleme: 22 Kasım 2011</p>
+      2011, EllisLab, Inc.</a> &ndash; Son Güncelleme: 06 Aralık 2011</p>
 		</div><!-- /#footer -->
 	
 	<script src="../_static/asset/js/jquery-ui-min.js" type="text/javascript" charset="utf-8" async></script>

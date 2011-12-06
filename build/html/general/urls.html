@@ -56,12 +56,12 @@
 <li class="toctree-l2"><a class="reference internal" href="routing.html">URI Yönlendirme</a></li>
 <li class="toctree-l2"><a class="reference internal" href="errors.html">Hata İşleme</a></li>
 <li class="toctree-l2"><a class="reference internal" href="caching.html">Caching</a></li>
-<li class="toctree-l2"><a class="reference internal" href="profiling.html">Profiling Your Application</a></li>
+<li class="toctree-l2"><a class="reference internal" href="profiling.html">Uygulamanızı Ayrımlayın</a></li>
 <li class="toctree-l2"><a class="reference internal" href="cli.html">Running via the CLI</a></li>
-<li class="toctree-l2"><a class="reference internal" href="managing_apps.html">Managing your Applications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="managing_apps.html">Uygulamaların Yönetimi</a></li>
 <li class="toctree-l2"><a class="reference internal" href="environments.html">Handling Multiple Environments</a></li>
 <li class="toctree-l2"><a class="reference internal" href="alternative_php.html">Alternate PHP Syntax for View Files</a></li>
-<li class="toctree-l2"><a class="reference internal" href="security.html">Security</a></li>
+<li class="toctree-l2"><a class="reference internal" href="security.html">Güvenlik</a></li>
 <li class="toctree-l2"><a class="reference internal" href="styleguide.html">PHP Style Guide</a></li>
 </ul>
 </li>
@@ -132,11 +132,12 @@
 </pre></div>
 </div>
 <p>Bu dosyayı .htaccess dosyasında yazacağınız bir kaç basit kural ile kaldırabilirsiniz. Burada verilen örnek dosya ile, kullanılan çıkartma  metodu ile herşeyi yeniden yönlendirebilirsiniz:</p>
-<div class="highlight-ci"><pre>RewriteEngine on
-RewriteCond $1 !^(index\.php|images|robots\.txt)
+<div class="highlight-ci"><pre>RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^(.*)$ /index.php/$1 [L]</pre>
 </div>
-<p>Yukarıdaki örnekte, index.php, images ve robots.txt dosyalarından farklı her HTTP istemi index.php dosyamızı çağırmış işlemi görecektir.</p>
+<p>Yukarıdaki örnekte, var olmayan her dosya veya klasör için yapılan HTTP istemi index.php dosyamızı çağırmış işlemi görecektir.</p>
 </div>
 <div class="section" id="url-soneki-eklemek">
 <h2>URL Soneki Eklemek<a class="headerlink" href="#url-soneki-eklemek" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
@@ -187,7 +188,7 @@ RewriteRule ^(.*)$ /index.php/$1 [L]</pre>
 				<a href="#header" title="Başa Dön">Başa Dön</a>
 			</p>
 			<p><a href="">CodeIgniter</a> &ndash; Copyright &copy;
-      2011, EllisLab, Inc.</a> &ndash; Son Güncelleme: 22 Kasım 2011</p>
+      2011, EllisLab, Inc.</a> &ndash; Son Güncelleme: 06 Aralık 2011</p>
 		</div><!-- /#footer -->
 	
 	<script src="../_static/asset/js/jquery-ui-min.js" type="text/javascript" charset="utf-8" async></script>

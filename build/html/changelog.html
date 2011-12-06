@@ -101,6 +101,7 @@ all licensing authority over your own application code.</li>
 <li>Added support pgp and gpg to mimes.php.</li>
 <li>Added support 3gp, 3g2, mp4, wmv, f4v, vlc Video files to mimes.php.</li>
 <li>Added support m4a, aac, m4u, xspf, au, ac3, flac, ogg Audio files to mimes.php.</li>
+<li>Changed logger to only chmod when file is first created.</li>
 </ul>
 </li>
 <li><p class="first">Helpers</p>
@@ -147,6 +148,13 @@ override them.</li>
 <li>Fixed a bug (#181) where a mis-spelling was in the form validation
 language file.</li>
 <li>Fixed a bug (#159, #163) that mishandled Active Record nested transactions because _trans_depth was not getting incremented.</li>
+<li>Fixed a bug (#737, #75) where pagination anchor class was not set properly when using initialize method.</li>
+<li>Bug #419 - auto_link() now recognizes URLs that come after a word boundary.</li>
+<li>Bug #724 - is_unique in form validation now checks that you are connected to a database.</li>
+<li>Bug #647 - _get_mod_time() in Zip library no longer generates stat failed errors</li>
+<li>Bug #608 - Fixes an issue with the Image_lib class not clearing properties completely</li>
+<li>Fixed bugs (#157 and #174) - the Image_lib clear() function now resets all variables to their default values.</li>
+<li>Fixed a bug where using $this-&gt;dbforge-&gt;create_table() with PostgreSQL database could lead to fetching whole table.</li>
 </ul>
 </div>
 </div>
@@ -184,6 +192,7 @@ injection.</li>
 $this-&gt;db-&gt;like() in the <a class="reference internal" href="database/active_record.html"><em>Database
 Driver</em></a>.</li>
 <li>Added $this-&gt;db-&gt;insert_batch() support to the OCI8 (Oracle) driver.</li>
+<li>Added failover if the main connections in the config should fail</li>
 </ul>
 </li>
 <li>Libraries<ul>
@@ -2348,7 +2357,7 @@ and fixed various typos.</li>
 				<a href="#header" title="Başa Dön">Başa Dön</a>
 			</p>
 			<p><a href="">CodeIgniter</a> &ndash; Copyright &copy;
-      2011, EllisLab, Inc.</a> &ndash; Son Güncelleme: 27 Kasım 2011</p>
+      2011, EllisLab, Inc.</a> &ndash; Son Güncelleme: 06 Aralık 2011</p>
 		</div><!-- /#footer -->
 	
 	<script src="_static/asset/js/jquery-ui-min.js" type="text/javascript" charset="utf-8" async></script>
