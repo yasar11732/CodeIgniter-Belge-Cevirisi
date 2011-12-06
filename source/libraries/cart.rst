@@ -11,7 +11,10 @@ Sınıf standart alışveriş sepeti fonksiyonlarını yerine getirir, kredi kar
 Alışveriş Sepeti Sınıfının hazılanması
 ======================================
 
-.. Önemli:: Alışveriş sepeti sınıfı sepet bilgilerini veritabanına saklamak için CodeIgniter'in :doc:`Session Sınıfını <sessions>` kullanır, bu yüzden alışveriş sepeti sınıfını kullanmadan önce :doc:`Session Dokümantasyonunda<sessions>` anlatılan veritabanlarını ayarlayıp appliction/config/config.php dosyasındaki session özellikleri kısmını düzenlemeniz gerekmektedir.
+.. admonition:: Önemli
+	:class: important 
+
+	Alışveriş sepeti sınıfı sepet bilgilerini veritabanına saklamak için CodeIgniter'in :doc:`Session Sınıfını <sessions>` kullanır, bu yüzden alışveriş sepeti sınıfını kullanmadan önce :doc:`Session Dokümantasyonunda<sessions>` anlatılan veritabanlarını ayarlayıp appliction/config/config.php dosyasındaki session özellikleri kısmını düzenlemeniz gerekmektedir.
 
 Sınıfı hazılamak için $this->load->library fonksiyonu ile yüklenmesi gerekmektedir ::
 
@@ -21,7 +24,10 @@ Yüklendikten sonra Cart nesnesi $this->cart altında kullanılabilir olacaktır
  	
 	$this->cart
 
-.. not::  Alışveriş sepeti sınıfı otomatik olarak Session sınıfını belleğeye yükleyeceği için, uygulamanızın herhangi bir yerinde session sınıfını elle yüklemeden kullanabilirsiniz.
+.. admonition:: Not
+	:class: note
+
+	Alışveriş sepeti sınıfı otomatik olarak Session sınıfını belleğeye yükleyeceği için, uygulamanızın herhangi bir yerinde session sınıfını elle yüklemeden kullanabilirsiniz.
 
 Alışveriş sepetine ürün eklenmesi
 =================================
@@ -38,7 +44,10 @@ Alışveriş sepetine ürün eklemek için basitce aşşağıda görünen tipte 
 
 	$this->cart->insert($data);
 
-.. Önemli:: İlk dört anahtar (id, qty, price, ve name) **zorunlu** anahtarlardır, eğer bu 4 anahtardan biri hatalı ise ürün sepete eklenmeyecektir. Beşinci anahtar (options) isteğe bağlı olarak kullanılabilir, ürüne ait ekstra bilgiler bu alanda saklanabilir.
+.. admonition:: Önemli
+	:class: important
+
+	İlk dört anahtar (id, qty, price, ve name) **zorunlu** anahtarlardır, eğer bu 4 anahtardan biri hatalı ise ürün sepete eklenmeyecektir. Beşinci anahtar (options) isteğe bağlı olarak kullanılabilir, ürüne ait ekstra bilgiler bu alanda saklanabilir.
 
 Anahtarlar ve açıklamaları:
 
@@ -153,7 +162,10 @@ Sepeti güncellemek
 
 Sepeti güncellemek için $this->cart->update() fonksiyonuna Row ID ve quantity anahtarlarını içeren bir array parametre olarak gönderilmelidir.
 
-.. not:: quantity anahtarı ürünün miktarını tanımlar ve sıfır olarak ayarlanırsa ürün septten kaldırılır.
+.. admonition:: Not
+	:class: note
+
+	quantity anahtarı ürünün miktarını tanımlar ve sıfır olarak ayarlanırsa ürün septten kaldırılır.
 
 ::
 

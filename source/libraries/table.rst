@@ -93,7 +93,10 @@ Tablo sınıfı, tablo tasarımını belirtebileceğiniz bir tablo şablonu ayar
 
 	$this->table->set_template($tmpl);
 
-.. not:: İki "row" bloğu olduğunu farkedeceksiniz. Bunlar satır bilgisinin her tekrarında değişen satır renkleri veya tasarım elementleri oluşturmanıza izin verir.
+.. admonition:: Not
+	:class: note
+
+	İki "row" bloğu olduğunu farkedeceksiniz. Bunlar satır bilgisinin her tekrarında değişen satır renkleri veya tasarım elementleri oluşturmanıza izin verir.
 
 Tam bir şablon oluşturmanıza gerek YOKTUR. Eğer sadece bazı parçaları değiştirmeye ihtiyacınız varsa, basitçe sadece o elementleri oluşturabilirsiniz. Bu örnekte, sadece tablo açma etiketi değiştiriliyor::
 
