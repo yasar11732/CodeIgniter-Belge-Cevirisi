@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="utf-8">
 	    
-	    <title>Language Class &mdash; CodeIgniter 3.0-dev documentation</title>
+	    <title>Dil sınıfı &mdash; CodeIgniter 3.0-dev documentation</title>
 
 	    <link rel="stylesheet" href="../_static/asset/css/common.css" type="text/css" />
 	    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -37,10 +37,10 @@
 <li class="toctree-l1"><a class="reference internal" href="../installation/index.html">Installation Instructions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../general/index.html">General Topics</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">Libraries</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="benchmark.html">Benchmarking Class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmark.html">Karşılaştırma (Benchmarking) Sınıfı</a></li>
 <li class="toctree-l2"><a class="reference internal" href="caching.html">Caching Driver</a></li>
 <li class="toctree-l2"><a class="reference internal" href="calendar.html">Calendaring Class</a></li>
-<li class="toctree-l2"><a class="reference internal" href="cart.html">Shopping Cart Class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cart.html">Alışveriş Sepeti Sınıfı</a></li>
 <li class="toctree-l2"><a class="reference internal" href="config.html">Config Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="email.html">Email Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="encryption.html">Encryption Class</a></li>
@@ -50,7 +50,7 @@
 <li class="toctree-l2"><a class="reference internal" href="image_lib.html">Image Manipulation Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="input.html">Input Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="javascript.html">Javascript Class</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="">Language Class</a><ul class="simple">
+<li class="toctree-l2 current"><a class="current reference internal" href="">Dil sınıfı</a><ul class="simple">
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="loader.html">Loader Class</a></li>
@@ -59,7 +59,7 @@
 <li class="toctree-l2"><a class="reference internal" href="parser.html">Template Parser Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="security.html">Security Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="sessions.html">Session Class</a></li>
-<li class="toctree-l2"><a class="reference internal" href="table.html">HTML Table Class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="table.html">HTML Tablo Sınıfı</a></li>
 <li class="toctree-l2"><a class="reference internal" href="trackback.html">Trackback Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="typography.html">Typography Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="unit_testing.html">Unit Testing Class</a></li>
@@ -100,46 +100,30 @@
 				<li><a id="toc-link" href="../index.html">İçindekiler</a>&nbsp;&nbsp; &rsaquo;</li>
 				<li><a href="index.html" accesskey="U">Libraries</a>&nbsp;&nbsp;  &rsaquo;</li>
 
-				<li><strong>Language Class</strong></li>
+				<li><strong>Dil sınıfı</strong></li>
 			</ul>
 		</div><!-- /#header -->
 
 		<div class="section" id="content">
-			<div class="section" id="language-class">
-<h1>Language Class<a class="headerlink" href="#language-class" title="Bu başlığın kalıcı bağlantısı">¶</a></h1>
-<p>The Language Class provides functions to retrieve language files and
-lines of text for purposes of internationalization.</p>
-<p>In your CodeIgniter system folder you&#8217;ll find one called language
-containing sets of language files. You can create your own language
-files as needed in order to display error and other messages in other
-languages.</p>
-<p>Language files are typically stored in your system/language directory.
-Alternately you can create a folder called language inside your
-application folder and store them there. CodeIgniter will look first in
-your application/language directory. If the directory does not exist or
-the specified language is not located there CI will instead look in your
-global system/language folder.</p>
-<div class="admonition note">
+			<div class="section" id="dil-sinifi">
+<h1>Dil sınıfı<a class="headerlink" href="#dil-sinifi" title="Bu başlığın kalıcı bağlantısı">¶</a></h1>
+<p>Dil sınıfı, sitenizin birden fazla dile sahip olabilmesi için, dil dosyalarını ve istediğiniz dile ait satırları yüklemenizi sağlar.</p>
+<p>Codeigniter sistem klasörlerinizde içinde dil dosyaları bulunan language isimli bir klasör bulacaksınız. Hata mesajlarını veya istediğiniz diğer mesajları göstermeniz için gereken kendi dil dosyalarınızı burada oluşturabilirsiniz.</p>
+<p>Dil dosyaları tipik olarak system/language klasöründe bulunur. Alternatif olarak application klasörünüzü içinde language isimli bir klasör oluşturup, dil dosyalarınızı orada da bulundurabilirsiniz. Codeigniter ilk olarak system/application/language klasörünüze bakacaktır. Eğer bu klasör yoksa veya aradığı dil dosyası burada değilse, codeigniter global system/language klasörünüzü kontrol edecektir.</p>
+<div class="note admonition">
 <p class="first admonition-title">Not</p>
-<p class="last">Each language should be stored in its own folder. For example,
-the English files are located at: system/language/english</p>
+<p class="last">Her dil dosyası kendine ait bir klasörde bulunmalıdır. Örneğin, İngilizce dil dosyaları şuradadır: system/language/english</p>
 </div>
-<div class="section" id="creating-language-files">
-<h2>Creating Language Files<a class="headerlink" href="#creating-language-files" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
-<p>Language files must be named with _lang.php as the file extension. For
-example, let&#8217;s say you want to create a file containing error messages.
-You might name it: error_lang.php</p>
-<p>Within the file you will assign each line of text to an array called
-$lang with this prototype:</p>
+<div class="section" id="dil-dosyasi-olusturma">
+<h2>Dil Dosyası Oluşturma<a class="headerlink" href="#dil-dosyasi-olusturma" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
+<p>Dil dosyaları uzantı olarak _lang.php ile isimlendirilmelidir. Örneğin, diyelim ki hata mesajlarını içeren bir dil dosyası oluşturacaksınız.hata_lang.php olarak isimlendirebilirsiniz.</p>
+<p>Dosyanın içinde, her satırı $lang isimli bir diziye şu şekilde atayacaksınız:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$lang</span><span class="p">[</span><span class="s1">&#39;language_key&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;The actual message to be shown&quot;</span><span class="p">;</span>
 </pre></div>
 </div>
-<div class="admonition note">
+<div class="note admonition">
 <p class="first admonition-title">Not</p>
-<p class="last">It&#8217;s a good practice to use a common prefix for all messages
-in a given file to avoid collisions with similarly named items in other
-files. For example, if you are creating error messages you might prefix
-them with error_</p>
+<p class="last">Diğer dosyalardaki benzer isimlerle çakışma yaşanmaması için çalıştığınız dosyadaki tüm anahtar kelimelerinize ortak bir önek getirmek güzel bir alışkanlıktır. Örneğin, eğer hata mesajları oluşturuyorsanız, onlara error_ öneki getirebilirsiniz.</p>
 </div>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$lang</span><span class="p">[</span><span class="s1">&#39;error_email_missing&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;You must submit an email address&quot;</span><span class="p">;</span>
 <span class="nv">$lang</span><span class="p">[</span><span class="s1">&#39;error_url_missing&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;You must submit a URL&quot;</span><span class="p">;</span>
@@ -147,44 +131,30 @@ them with error_</p>
 </pre></div>
 </div>
 </div>
-<div class="section" id="loading-a-language-file">
-<h2>Loading A Language File<a class="headerlink" href="#loading-a-language-file" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
-<p>In order to fetch a line from a particular file you must load the file
-first. Loading a language file is done with the following code:</p>
+<div class="section" id="dil-dosyasi-yukleme">
+<h2>Dil Dosyası Yükleme<a class="headerlink" href="#dil-dosyasi-yukleme" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
+<p>Belli bir dosyadan istediğiniz satırı alabilmek için, önce dil dosyasını yüklemelisiniz. Dil dosyası şöyle yüklenir:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">lang</span><span class="o">-&gt;</span><span class="na">load</span><span class="p">(</span><span class="s1">&#39;filename&#39;</span><span class="p">,</span> <span class="s1">&#39;language&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>Where filename is the name of the file you wish to load (without the
-file extension), and language is the language set containing it (ie,
-english). If the second parameter is missing, the default language set
-in your application/config/config.php file will be used.</p>
+<p>dosyaadı yüklemek istediğiniz dosyanın adını (dosya öneki olmadan), ve dil o dosyayı içeren dil setini belirtir (örneğin, turkce). Eğer ikinci parametre eksikse, application/config/config.php dosyanızda önceden tanımladığınız dil seti yüklenir.</p>
 </div>
-<div class="section" id="fetching-a-line-of-text">
-<h2>Fetching a Line of Text<a class="headerlink" href="#fetching-a-line-of-text" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
-<p>Once your desired language file is loaded you can access any line of
-text using this function:</p>
+<div class="section" id="bir-yazi-satiri-almak">
+<h2>Bir Yazı Satırı Almak<a class="headerlink" href="#bir-yazi-satiri-almak" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
+<p>Arzu ettiğiniz dil dosyası bir kere yüklendiğinde, bu fonksiyonu kullanarak herhangi bir satıra ulaşabilirsiniz:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">lang</span><span class="o">-&gt;</span><span class="na">line</span><span class="p">(</span><span class="s1">&#39;language_key&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>Where language_key is the array key corresponding to the line you wish
-to show.</p>
-<p>Note: This function simply returns the line. It does not echo it for
-you.</p>
-<div class="section" id="using-language-lines-as-form-labels">
-<h3>Using language lines as form labels<a class="headerlink" href="#using-language-lines-as-form-labels" title="Bu başlığın kalıcı bağlantısı">¶</a></h3>
-<p>This feature has been deprecated from the language library and moved to
-the lang() function of the <a class="reference internal" href="../helpers/language_helper.html"><em>Language
-helper</em></a>.</p>
+<p>language_key göstermek istediğiniz satıra ait array anahtarına karşılık gelir.</p>
+<p>Note: Bu işlev sadece satırı döndürür. Ekrana basmaz.</p>
+<div class="section" id="dil-satirlarini-form-etkiketi-olarak-kullanma">
+<h3>Dil Satırlarını Form Etkiketi Olarak Kullanma<a class="headerlink" href="#dil-satirlarini-form-etkiketi-olarak-kullanma" title="Bu başlığın kalıcı bağlantısı">¶</a></h3>
+<p>Bu özellik artık dil sınıfından <a class="reference internal" href="../helpers/language_helper.html"><em>Dil yardımcısının</em></a> lang() fonksiyonuna taşınmıştır .</p>
 </div>
 </div>
-<div class="section" id="auto-loading-languages">
-<h2>Auto-loading Languages<a class="headerlink" href="#auto-loading-languages" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
-<p>If you find that you need a particular language globally throughout your
-application, you can tell CodeIgniter to
-<a class="reference internal" href="../general/autoloader.html"><em>auto-load</em></a> it during system
-initialization. This is done by opening the
-application/config/autoload.php file and adding the language(s) to the
-autoload array.</p>
+<div class="section" id="dilleri-otomatik-yukleme">
+<h2>Dilleri Otomatik Yükleme<a class="headerlink" href="#dilleri-otomatik-yukleme" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
+<p>Eğer belirli bir dili uygulamanızın tümünde kullanma ihtiyacınız varsa , Codeigniter&#8217;a sistem başlangıcında <a class="reference internal" href="../general/autoloader.html"><em>oto-yükleme</em></a> yapmasını isteyebilirsiniz. Bunu application/config/autoload.php dosyasını açıp,istediğiniz dil(ler)i autoload arrayine ekleyerek yapabilirsiniz.</p>
 </div>
 </div>
 
@@ -203,7 +173,7 @@ autoload array.</p>
 				<a href="#header" title="Başa Dön">Başa Dön</a>
 			</p>
 			<p><a href="">CodeIgniter</a> &ndash; Copyright &copy;
-      2011, EllisLab, Inc.</a> &ndash; Son Güncelleme: 22 Kasım 2011</p>
+      2011, EllisLab, Inc.</a> &ndash; Son Güncelleme: 09 Aralık 2011</p>
 		</div><!-- /#footer -->
 	
 	<script src="../_static/asset/js/jquery-ui-min.js" type="text/javascript" charset="utf-8" async></script>
