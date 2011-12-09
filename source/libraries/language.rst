@@ -1,41 +1,25 @@
-##############
-Language Class
-##############
+##########
+Dil sınıfı
+##########
 
-The Language Class provides functions to retrieve language files and
-lines of text for purposes of internationalization.
+Dil sınıfı, sitenizin birden fazla dile sahip olabilmesi için, dil dosyalarını ve istediğiniz dile ait satırları yüklemenizi sağlar.
 
-In your CodeIgniter system folder you'll find one called language
-containing sets of language files. You can create your own language
-files as needed in order to display error and other messages in other
-languages.
+Codeigniter sistem klasörlerinizde içinde dil dosyaları bulunan language isimli bir klasör bulacaksınız. Hata mesajlarını veya istediğiniz diğer mesajları göstermeniz için gereken kendi dil dosyalarınızı burada oluşturabilirsiniz.
 
-Language files are typically stored in your system/language directory.
-Alternately you can create a folder called language inside your
-application folder and store them there. CodeIgniter will look first in
-your application/language directory. If the directory does not exist or
-the specified language is not located there CI will instead look in your
-global system/language folder.
+Dil dosyaları tipik olarak system/language klasöründe bulunur. Alternatif olarak application klasörünüzü içinde language isimli bir klasör oluşturup, dil dosyalarınızı orada da bulundurabilirsiniz. Codeigniter ilk olarak system/application/language klasörünüze bakacaktır. Eğer bu klasör yoksa veya aradığı dil dosyası burada değilse, codeigniter global system/language klasörünüzü kontrol edecektir.
 
-.. note:: Each language should be stored in its own folder. For example,
-	the English files are located at: system/language/english
+.. not:: Her dil dosyası kendine ait bir klasörde bulunmalıdır. Örneğin, İngilizce dil dosyaları şuradadır: system/language/english
 
-Creating Language Files
-=======================
+Dil Dosyası Oluşturma
+=====================
 
-Language files must be named with _lang.php as the file extension. For
-example, let's say you want to create a file containing error messages.
-You might name it: error_lang.php
+Dil dosyaları uzantı olarak _lang.php ile isimlendirilmelidir. Örneğin, diyelim ki hata mesajlarını içeren bir dil dosyası oluşturacaksınız.hata_lang.php olarak isimlendirebilirsiniz.
 
-Within the file you will assign each line of text to an array called
-$lang with this prototype::
+Dosyanın içinde, her satırı $lang isimli bir diziye şu şekilde atayacaksınız::
 
 	$lang['language_key'] = "The actual message to be shown";
 
-.. note:: It's a good practice to use a common prefix for all messages
-	in a given file to avoid collisions with similarly named items in other
-	files. For example, if you are creating error messages you might prefix
-	them with error\_
+.. not:: Diğer dosyalardaki benzer isimlerle çakışma yaşanmaması için çalıştığınız dosyadaki tüm anahtar kelimelerinize ortak bir önek getirmek güzel bir alışkanlıktır. Örneğin, eğer hata mesajları oluşturuyorsanız, onlara error\_ öneki getirebilirsiniz.
 
 ::
 
@@ -43,48 +27,33 @@ $lang with this prototype::
 	$lang['error_url_missing'] = "You must submit a URL";
 	$lang['error_username_missing'] = "You must submit a username";
 
-Loading A Language File
-=======================
+Dil Dosyası Yükleme
+===================
 
-In order to fetch a line from a particular file you must load the file
-first. Loading a language file is done with the following code::
+Belli bir dosyadan istediğiniz satırı alabilmek için, önce dil dosyasını yüklemelisiniz. Dil dosyası şöyle yüklenir::
 
 	$this->lang->load('filename', 'language');
 
-Where filename is the name of the file you wish to load (without the
-file extension), and language is the language set containing it (ie,
-english). If the second parameter is missing, the default language set
-in your application/config/config.php file will be used.
+dosyaadı yüklemek istediğiniz dosyanın adını (dosya öneki olmadan), ve dil o dosyayı içeren dil setini belirtir (örneğin, turkce). Eğer ikinci parametre eksikse, application/config/config.php dosyanızda önceden tanımladığınız dil seti yüklenir.
 
-Fetching a Line of Text
-=======================
+Bir Yazı Satırı Almak
+=====================
 
-Once your desired language file is loaded you can access any line of
-text using this function::
+Arzu ettiğiniz dil dosyası bir kere yüklendiğinde, bu fonksiyonu kullanarak herhangi bir satıra ulaşabilirsiniz::
 
 	$this->lang->line('language_key');
 
-Where language_key is the array key corresponding to the line you wish
-to show.
+language_key göstermek istediğiniz satıra ait array anahtarına karşılık gelir.
 
-Note: This function simply returns the line. It does not echo it for
-you.
+Note: Bu işlev sadece satırı döndürür. Ekrana basmaz.
 
-Using language lines as form labels
------------------------------------
+Dil Satırlarını Form Etkiketi Olarak Kullanma
+---------------------------------------------
 
-This feature has been deprecated from the language library and moved to
-the lang() function of the :doc:`Language
-helper <../helpers/language_helper>`.
-
-Auto-loading Languages
-======================
-
-If you find that you need a particular language globally throughout your
-application, you can tell CodeIgniter to
-:doc:`auto-load <../general/autoloader>` it during system
-initialization. This is done by opening the
-application/config/autoload.php file and adding the language(s) to the
-autoload array.
+Bu özellik artık dil sınıfından :doc:`Dil yardımcısının <../helpers/language_helper>` lang() fonksiyonuna taşınmıştır .
 
 
+Dilleri Otomatik Yükleme
+========================
+
+Eğer belirli bir dili uygulamanızın tümünde kullanma ihtiyacınız varsa , Codeigniter'a sistem başlangıcında :doc:`oto-yükleme <../general/autoloader>` yapmasını isteyebilirsiniz. Bunu application/config/autoload.php dosyasını açıp,istediğiniz dil(ler)i autoload arrayine ekleyerek yapabilirsiniz.
