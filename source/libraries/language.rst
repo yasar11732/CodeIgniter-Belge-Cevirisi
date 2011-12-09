@@ -8,7 +8,10 @@ Codeigniter sistem klasörlerinizde içinde dil dosyaları bulunan language isim
 
 Dil dosyaları tipik olarak system/language klasöründe bulunur. Alternatif olarak application klasörünüzü içinde language isimli bir klasör oluşturup, dil dosyalarınızı orada da bulundurabilirsiniz. Codeigniter ilk olarak system/application/language klasörünüze bakacaktır. Eğer bu klasör yoksa veya aradığı dil dosyası burada değilse, codeigniter global system/language klasörünüzü kontrol edecektir.
 
-.. not:: Her dil dosyası kendine ait bir klasörde bulunmalıdır. Örneğin, İngilizce dil dosyaları şuradadır: system/language/english
+.. admonition:: Not
+	:class: note
+
+	Her dil dosyası kendine ait bir klasörde bulunmalıdır. Örneğin, İngilizce dil dosyaları şuradadır: system/language/english
 
 Dil Dosyası Oluşturma
 =====================
@@ -19,7 +22,10 @@ Dosyanın içinde, her satırı $lang isimli bir diziye şu şekilde atayacaksı
 
 	$lang['language_key'] = "The actual message to be shown";
 
-.. not:: Diğer dosyalardaki benzer isimlerle çakışma yaşanmaması için çalıştığınız dosyadaki tüm anahtar kelimelerinize ortak bir önek getirmek güzel bir alışkanlıktır. Örneğin, eğer hata mesajları oluşturuyorsanız, onlara error\_ öneki getirebilirsiniz.
+.. admonition:: Not
+	:class: note
+
+	Diğer dosyalardaki benzer isimlerle çakışma yaşanmaması için çalıştığınız dosyadaki tüm anahtar kelimelerinize ortak bir önek getirmek güzel bir alışkanlıktır. Örneğin, eğer hata mesajları oluşturuyorsanız, onlara error\_ öneki getirebilirsiniz.
 
 ::
 
