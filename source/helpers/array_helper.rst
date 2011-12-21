@@ -1,38 +1,34 @@
-############
-Array Helper
-############
+###########
+Dizi Helper
+###########
 
-The Array Helper file contains functions that assist in working with
-arrays.
+Dizi helper dizilerle çalışırken işinizi kolaylaştıracak fonksiyonlar içermektedir.
 
-.. contents:: Page Contents
+.. contents:: Sayfa İçeriği
 
-Loading this Helper
-===================
+Helper Yüklemek
+===============
 
-This helper is loaded using the following code
+Helper aşağıdaki kod ile yüklenir.:
 
 ::
 
 	$this->load->helper('array');
 
-The following functions are available:
+Kullanılabilir fonksiyonlar:
 
 element()
 =========
 
 .. php:method:: element($item, $array, $default = FALSE)
 
-	:param string 	$item: Item to fetch from the array
-	:param array 	$array: Input array
-	:param boolean	$default: What to return if the array isn't valid
-	:returns: FALSE on failure or the array item.
+	:param string 	$item: Diziden çekilmesi istenilen indeks.
+	:param array 	$array: Girdi dizisi.
+	:param boolean	$default: Eğer dizi geçerli değilse geri dönecek değer.
+	:returns: Hata durumunda ya da indeks dizide bulanmazsa FALSE döner.
 
 
-Lets you fetch an item from an array. The function tests whether the
-array index is set and whether it has a value. If a value exists it is
-returned. If a value does not exist it returns FALSE, or whatever you've
-specified as the default value via the third parameter. Example
+Bu fonksiyon Dizi içinden istediğiniz anahtara karşılık gelen değeri almanızı sağlar. Fonksiyon anahtara karşılık gelen bir değer olup olmadığını kontrol eder, eğer tanımlı bir değer var ise bu değeri geri döndürür. Eğer değer tanımlanmamışsa FALSE döndürür. Değer tanımlanmadığı durumlarda FALSE dönmesini istemiyorsanız, geri dönmesini istediğiniz değeri 3. parametre olarak fonksiyona gönderebilirsiniz. Örnek
 
 ::
 
@@ -48,19 +44,16 @@ specified as the default value via the third parameter. Example
 elements()
 ==========
 
-Lets you fetch a number of items from an array. The function tests
-whether each of the array indices is set. If an index does not exist it
-is set to FALSE, or whatever you've specified as the default value via
-the third parameter. 
+Bir dizi içinde birden fazla maddenin karşılığının bulunmasına izin verir. Fonksiyon, her bir indisin dizin içinde varlığını test eder. Eğer indeks yok ise FALSE ya da üüçncü parametrede ne tanımladıysanız o değeri geri döndürür.
 
 .. php:method:: elements($items, $array, $default = FALSE)
 
-	:param string 	$item: Item to fetch from the array
-	:param array 	$array: Input array
-	:param boolean	$default: What to return if the array isn't valid
-	:returns: FALSE on failure or the array item.
+	:param string 	$item: Diziden çekilmesi istenilen indeks.
+	:param array 	$array: Girdi dizisi.
+	:param boolean	$default: Eğer dizi geçerli değilse geri dönecek değer.
+	:returns: Hata durumunda ya da indeks dizide bulanmazsa FALSE döner.
 
-Example
+Örnek
 
 ::
 
@@ -73,7 +66,7 @@ Example
 
 	$my_shape = elements(array('color', 'shape', 'height'), $array);
 
-The above will return the following array
+Yukarıdaki dizi şöyle geri döner
 
 ::
 
@@ -83,13 +76,13 @@ The above will return the following array
 		'height' => FALSE
 	);
 
-You can set the third parameter to any default value you like
+Üçüncü parametreyi istedğiniz gibi bir değere ayarlayabilirsiniz
 
 ::
 
 	 $my_shape = elements(array('color', 'shape', 'height'), $array, NULL);
 
-The above will return the following array
+Yukarıdaki dizi şöyle geri döner
 
 ::
 
@@ -99,9 +92,7 @@ The above will return the following array
 		'height'	=> NULL
 	);
 
-This is useful when sending the $_POST array to one of your Models.
-This prevents users from sending additional POST data to be entered into
-your tables
+Bu kullanım $_POST dizisini model dosyasına gönderirken çok kullanışlıdır. Tabloya eklemek için ilaveten POST bilgisi hazırlamanızı önler.
 
 ::
 
@@ -110,29 +101,27 @@ your tables
 		elements(array('id', 'title', 'content'), $_POST)
 	);
 
-This ensures that only the id, title and content fields are sent to be
-updated.
+Bu örnekte sadece id, title ve content alanları update edilecektir.
 
 random_element()
 ================
 
-Takes an array as input and returns a random element from it. Usage
-example
+Dizi içerisinden rasgele bir değer çeker ve geri döndürür:
 
 .. php:method:: random_element($array)
 
-	:param array 	$array: Input array
-	:returns: String - Random element from the array.
+	:param array 	$array: Girdi dizisi.
+	:returns: String - Diziden rasgele çekilen bir değer.
 
 ::
 
 	$quotes = array(
-		"I find that the harder I work, the more luck I seem to have. - Thomas Jefferson",
-		"Don't stay in bed, unless you can make money in bed. - George Burns",
-		"We didn't lose the game; we just ran out of time. - Vince Lombardi",
-		"If everything seems under control, you're not going fast enough. - Mario Andretti",
-		"Reality is merely an illusion, albeit a very persistent one. - Albert Einstein",
-		"Chance favors the prepared mind - Louis Pasteur"
+            "İstikbal göklerdedir. - M.Kemal ATATÜRK",
+            "Adalet evrenin ruhudur. - Ömer HAYYAM",
+            "Bir insanda kibir, hırs ve şehvet söz söylerken soğan kokar. - Mevlana",
+            "Doğru düşündüğüne inanan yanlış fikirlerle savaşmak zorunda kalır. - Mehmet KAPLAN",
+            ""Filozoflar dünyayı yalnızca çeşitli biçimlerde yorumlamışlardır; oysa sorun onu değiştirmektir. - Karl MARX",
+            "Kulağım halkta,gözüm toplumda. - Rıfat ILGAZ"
 	);
 
 	echo random_element($quotes);
