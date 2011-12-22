@@ -1,40 +1,26 @@
-############
-Output Class
-############
+#############
+Output Sınıfı
+#############
 
-The Output class is a small class with one main function: To send the
-finalized web page to the requesting browser. It is also responsible for
-:doc:`caching <../general/caching>` your web pages, if you use that
-feature.
+Çıktı sınıfı sadece birkaç fonksiyon içeren küçük bir sınıftır: Hazırlanmış olan web sayfası çıktısının istek yapan tarayıcıya gönderilmesini sağlar. Ayrıca web sayfalarınızı önbeleğe almak (bkz: :doc:`Caching-Önbelleğe alma<../general/caching>`) için de kullanılır.
 
-.. note:: This class is initialized automatically by the system so there
-	is no need to do it manually.
+.. not:: Bu sınıf sistem tarafından otomatik yüklendiği için ayrıca elle yüklemenize gerek yoktur.
 
-Under normal circumstances you won't even notice the Output class since
-it works transparently without your intervention. For example, when you
-use the :doc:`Loader <../libraries/loader>` class to load a view file,
-it's automatically passed to the Output class, which will be called
-automatically by CodeIgniter at the end of system execution. It is
-possible, however, for you to manually intervene with the output if you
-need to, using either of the two following functions:
+Normal durumlarda sınıf otomatik olarak yüklenir ve arka planda sizinin herhangi bir şey yapmanıza gerek kalmadan çalışır. Örnek olarak :doc:`Yükleyici sınıfı<../libraries/loader>` ile bir view yüklediğinizde view dosyası otomatik olarak Codeigniter'in son işlemi olarak çıktı sınıfına yönlendirilir. İşi CodeIgniter'a bırakmayıp çıktıya müdahale etmek istediğinizde aşşağıdaki iki fonksiyonu kullanabilrsiniz.
 
 $this->output->set_output();
 =============================
 
-Permits you to manually set the final output string. Usage example::
+Son çıktıyı bir string değerinden göndermenize olanak sağlar. Örnek kullanım ::
 
 	$this->output->set_output($data);
 
-.. important:: If you do set your output manually, it must be the last
-	thing done in the function you call it from. For example, if you build a
-	page in one of your controller functions, don't set the output until the
-	end.
+.. Önemli:: Eğer çıktıyı elle gönderiyorsanız, çıktıyı gönderen kod çağrılan fonksiyonun en sonunda bulunmalıdır. Örnek olarak, eğer control dosyalarınız içerisinde bir sayfa yaratılıyorsa çıktıyı gönderen kod bu fonksiyonun en sonunda bulunmalıdır.
 
 $this->output->set_content_type();
 ====================================
 
-Permits you to set the mime-type of your page so you can serve JSON
-data, JPEG's, XML, etc easily.
+Çıktıyı sayfanızın mime-type formatını belirterek göndermenizi sağlar. Böylece, JSON data, JPEG, XML formatları kolayca kullanabilirsiniz.
 
 ::
 
@@ -46,33 +32,28 @@ data, JPEG's, XML, etc easily.
 	    ->set_content_type('jpeg') // You could also use ".jpeg" which will have the full stop removed before looking in config/mimes.php
 	    ->set_output(file_get_contents('files/something.jpg'));
 
-.. important:: Make sure any non-mime string you pass to this method
-	exists in config/mimes.php or it will have no effect.
+.. Önemli:: Tipi belli olmayan sayfalar için config/mimes.php dosyasında tanımlı olmadığından emin olun.
 
 $this->output->get_output();
 =============================
 
-Permits you to manually retrieve any output that has been sent for
-storage in the output class. Usage example::
+Herhangi bir zamanda çıktı sınıfının sahip olduğu bütün çıktı verilerini almanıza yardımcı olur. Örnek kullanım ::
 
 	$string = $this->output->get_output();
 
-Note that data will only be retrievable from this function if it has
-been previously sent to the output class by one of the CodeIgniter
-functions like $this->load->view().
+Bu fonksiyonun değer döndürebilmesi için çıktı sınıfına daha önceden çıktı verisi gönderilmiş olmalıdır. Örnek olarak $this->load->view() fonksiyonu view dosyamızı işleyerek çıktı sınıfına çıktı verisi olarak gönderecek bir fonksiyondur.
 
 $this->output->append_output();
 ================================
 
-Appends data onto the output string. Usage example::
+Çıktı verilerine bilgi ekler. Örnek kullanımı::
 
 	$this->output->append_output($data);
 
 $this->output->set_header();
 =============================
 
-Permits you to manually set server headers, which the output class will
-send for you when outputting the final rendered display. Example::
+Başlığın (Header) elle yapılandırılmasına olanak sağlar. Bu fonksiyon ile atanan header çıktıları, çıktı sınıfı tarafından header verileri gönderilirken kullanılır. Örneğin::
 
 	$this->output->set_header("HTTP/1.0 200 OK");
 	$this->output->set_header("HTTP/1.1 200 OK");
@@ -84,55 +65,40 @@ send for you when outputting the final rendered display. Example::
 $this->output->set_status_header(code, 'text');
 =================================================
 
-Permits you to manually set a server status header. Example::
+Server durumu başlığını (Server status header) elle yapılandırmak için kullanılır. Örnek ::
 
 	$this->output->set_status_header('401');
 	// Sets the header as:  Unauthorized
 
-`See here <http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html>`_ for
-a full list of headers.
+`Başlıkların tam listesi için <http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html>`_ buraya bakınız.
 
 $this->output->enable_profiler();
 ==================================
 
-Permits you to enable/disable the
-:doc:`Profiler <../general/profiling>`, which will display benchmark
-and other data at the bottom of your pages for debugging and
-optimization purposes.
-
-To enable the profiler place the following function anywhere within your
-:doc:`Controller <../general/controllers>` functions::
+:doc:`Profiler  <../general/profiling>` kullanılıp kullanılmayacağını bu fonksiyon ile belirleyebilirsiniz. Profiler kullanmak için :doc:`Controller <../general/controllers>` foksiyonunuzun herhangi bir yerine aşağıdaki kodu uygulayabilirsiniz::
 
 	$this->output->enable_profiler(TRUE);
 
-When enabled a report will be generated and inserted at the bottom of
-your pages.
+Bu komut ile uygulama profili aktif hale gelecek ve oluşturulan rapor sayfanızın en altına eklenecektir.
 
-To disable the profiler you will use::
+Uygulama profilini devre dışı bırakmak için ::
 
 	$this->output->enable_profiler(FALSE);
 
 $this->output->set_profiler_sections();
 =========================================
 
-Permits you to enable/disable specific sections of the Profiler when
-enabled. Please refer to the :doc:`Profiler <../general/profiling>`
-documentation for further information.
+Profiler uygulamasını belirli kısımlar için devreye alınmasına ve kapatılmasına izin verir. Daha fazla bilgi için lütfen  :doc:`Profiler <../general/profiling>` bölümünü okuyunuz.
 
 $this->output->cache();
 =======================
 
-The CodeIgniter output library also controls caching. For more
-information, please see the :doc:`caching
-documentation <../general/caching>`.
+Çıktı kütüphanesi ayrıca Caching kontrolü de yapmaktadır. Daha fazla bilgi için :doc:`caching - önbelleğe alma <../general/caching>` konusuna gözatabilirsiniz.
 
 Parsing Execution Variables
 ===========================
 
-CodeIgniter will parse the pseudo-variables {elapsed_time} and
-{memory_usage} in your output by default. To disable this, set the
-$parse_exec_vars class property to FALSE in your controller.
-::
+CodeIgniter sözde değişkenlerden (pseudo-variables) {elapsed_time} ve {memory_usage} değişkenlerini varsayılan değişkenler olarak çıktıda ayrıştırır. Bunu devre dışı bırakmak için controller dosyanızda $parse_exec_vars sınıf özelliğini FALSE yapınız::
 
 	$this->output->parse_exec_vars = FALSE;
 
