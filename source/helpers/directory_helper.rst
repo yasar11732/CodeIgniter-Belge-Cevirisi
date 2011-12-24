@@ -1,56 +1,50 @@
-################
-Directory Helper
-################
+############
+Dizin Helper
+############
 
-The Directory Helper file contains functions that assist in working with
-directories.
+Dizin yardımcısı dizinlerle çalışırken ihtiyaç duyacağınız bazı fonksiyonları barındırır.
 
-.. contents:: Page Contents
+.. contents:: Sayfa İçeriği
 
-Loading this Helper
-===================
+Helper Yüklemek
+===============
 
-This helper is loaded using the following code
+Bu helper aşağıdaki şekilde yüklenilir
 
 ::
 
 	$this->load->helper('directory');
 
-The following functions are available:
+Kullanılabilir fonksiyonlar:
 
 directory_map()
 ===============
 
-This function reads the directory path specified in the first parameter
-and builds an array representation of it and all its contained files.
+Bu fonksyion parametre olarak gönderilen dizini tarayarak içerdiği dosyaları bir dizi değişkeni şeklinde sunar.
 	
 .. php:method:: directory_map($source_dir[, $directory_depth = 0[, $hidden = FALSE]])
 
-	:param string	$source_dir: path to the ource directory
-	:param integer	$directory_depth: depth of directories to traverse (0 =
-		fully recursive, 1 = current dir, etc)
-	:param boolean	$hidden: whether to include hidden directories
+	:param string	$source_dir: kaynak dizin yolu
+	:param integer	$directory_depth: iniliecek dizin derinliği (0 =
+		hepsini getir, 1 = bulunduğu dizini getir, vs.)
+	:param boolean	$hidden: görünmeyen dizileri de getir
 	
-Examples::
+Örnekler::
 
 	$map = directory_map('./mydirectory/');
 
-.. note:: Paths are almost always relative to your main index.php file.
+.. not:: Parametre olarak tam dizin yolu verilmezse aktif dizin index.php dosyanızın bulunduğu dizin olarak kabul edilecektir.
 
 
-Sub-folders contained within the directory will be mapped as well. If
-you wish to control the recursion depth, you can do so using the second
-parameter (integer). A depth of 1 will only map the top level directory::
+Yukarıdaki fonksiyon çağrımı ile alt dizin ve dosyalar da diziye dahil edilecektir. Sadece dizin içeriğini almak istiyorsaniz alt dizinleri almak istemiyorsanız ikinci parametreyi true olarak gönderebilirsiniz. Örnek::
 
 	$map = directory_map('./mydirectory/', 1);
 
-By default, hidden files will not be included in the returned array. To
-override this behavior, you may set a third parameter to true (boolean)::
+Ön tanımlı olarak gizli dizin ve dosyalar diziye dahil edilmeyecektir, gizli dizin ve dosyaları da almak isterseniz 3. parametreyi true (boolean) olarak gönderebilirsiniz::
 
 	$map = directory_map('./mydirectory/', FALSE, TRUE);
 
-Each folder name will be an array index, while its contained files will
-be numerically indexed. Here is an example of a typical array::
+arama sonucunda bulunan her dizin bir dizi olarak tanımlanacak ve bulunan her dosya 0 dan başlayarak yükselen sayısal bir değer alacaktır. Örnek olması açısından fonksiyondan dönen bir dizi aşağıda listelenmiştir::
 
 	Array (    
 		[libraries] => Array    

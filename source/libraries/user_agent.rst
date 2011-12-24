@@ -1,36 +1,27 @@
-################
-User Agent Class
-################
+##########################
+Kullanıcı Bilgileri Sınıfı
+##########################
 
-The User Agent Class provides functions that help identify information
-about the browser, mobile device, or robot visiting your site. In
-addition you can get referrer information as well as language and
-supported character-set information.
+Kullanıcı bilgileri sınıfı ziyaretcinin kullandığı tarayıcı özelliklerini, mobil aygıt özelliklerini elde edebilmenizi veya robot olup olmadığını belirleyebilmenizi sağlar. Ayrıca gönderici (Referrer), dil veya desteklenen karakter seti gibi bilgilerin elde edilebilmesini de kolaylaştırır.
 
-Initializing the Class
-======================
+Sınıfın Yüklenmesi
+==================
 
-Like most other classes in CodeIgniter, the User Agent class is
-initialized in your controller using the $this->load->library function::
+Diğer sınıflar gibi bu sınıf da $this->load->library fonksiyonu ile yüklenir::
 
 	$this->load->library('user_agent');
 
-Once loaded, the object will be available using: $this->agent
+Sınıf bir kere yüklendikten sonra $this->agent nesnesi üzerinden erişilebilir olacaktır.
 
-User Agent Definitions
-======================
+Tanımlamalar
+============
 
-The user agent name definitions are located in a config file located at:
-application/config/user_agents.php. You may add items to the various
-user agent arrays if needed.
+Tarayıcı, işletim sistemi, ve ziyaretci tipi gibi tanımlamalar application/config/user_agents.php dosyası içerisindedir. Dilerseniz bu dosyayı değiştirerek yeni tarayıcı, isletim sistemi gibi tanımlamalar yapabilirsiniz.
 
-Example
-=======
+Örnek
+=====
 
-When the User Agent class is initialized it will attempt to determine
-whether the user agent browsing your site is a web browser, a mobile
-device, or a robot. It will also gather the platform information if it
-is available.
+Sınıf yüklendiğinde tarayıcı bilgisi, mobil cihaz işletim sistemi veya ziyaretci bir bot ise bot bilgilerini almaya çalışacaktır.
 
 ::
 
@@ -57,14 +48,14 @@ is available.
 
 	echo $this->agent->platform(); // Platform info (Windows, Linux, Mac, etc.)
 
-******************
-Function Reference
-******************
+************
+Fonksiyonlar
+************
 
 $this->agent->is_browser()
 ===========================
 
-Returns TRUE/FALSE (boolean) if the user agent is a known web browser.
+Bir boolean değeri döndürür (TRUE/FALSE) kullanıcının bilinen bir tarayıcıyla mı ziyareti gerçekleştirdiğini sorgular.
 
 ::
 
@@ -78,15 +69,12 @@ Returns TRUE/FALSE (boolean) if the user agent is a known web browser.
 	}
 	
 
-.. note:: The string "Safari" in this example is an array key in the
-	list of browser definitions. You can find this list in
-	application/config/user_agents.php if you want to add new browsers or
-	change the stings.
+.. not:: Bu örnekte dizi indeksi, tarayıcılı listesinden "Safari" seçildi. Bu listeye application/config/user_agents.php dosyasından erişebilir, eğer isterseniz yeni tarayıcı ekleyebilir ya da mevcudu değiştirebilirsiniz.
 
 $this->agent->is_mobile()
 ==========================
 
-Returns TRUE/FALSE (boolean) if the user agent is a known mobile device.
+Bir boolean değeri döndürür (TRUE/FALSE) kullanıcının bilinen bir mobil cihazla mı ziyareti gerçekleştirdiğini sorgular.
 
 ::
 
@@ -107,54 +95,44 @@ Returns TRUE/FALSE (boolean) if the user agent is a known mobile device.
 $this->agent->is_robot()
 =========================
 
-Returns TRUE/FALSE (boolean) if the user agent is a known robot.
+Bir boolean değeri döndürür (TRUE/FALSE) Ziyaretcinin bir robot olup olmadığını sorgular.
 
-.. note:: The user agent library only contains the most common robot
-	definitions. It is not a complete list of bots. There are hundreds of
-	them so searching for each one would not be very efficient. If you find
-	that some bots that commonly visit your site are missing from the list
-	you can add them to your application/config/user_agents.php file.
+.. not:: Tanım dosyası sadece en polüler robot tanımlarını barındırır. Bu tanımlama bütün robotların bir listesini barındırmaz. Dünyadaki bütün robotların incelenip listeye dahil edilmesi mümkün olmadığı için eğer sitenizi ziyaret eden robotlar tesbit ettiyseniz ve bu robotların da tanımlanmasını istiyorsanız application/config/user_agents.php dosyasını düzenleyerek bu tanımlamayı yapabilirsiniz.
 
 $this->agent->is_referral()
 ============================
 
-Returns TRUE/FALSE (boolean) if the user agent was referred from another
-site.
+Bir boolean değeri döndürür (TRUE/FALSE) Ziyaretcinin başka bir siteden yönlendirilip yönlendirilmediğini kontrol eder.
 
 $this->agent->browser()
 =======================
 
-Returns a string containing the name of the web browser viewing your
-site.
+Ziyarecinin kullandığı tarayıcı adını string olarak döndürür.
 
 $this->agent->version()
 =======================
 
-Returns a string containing the version number of the web browser
-viewing your site.
+Ziyaretcinin kullandığı tarayıcı versiyonunu string olarak döndürür.
 
 $this->agent->mobile()
 ======================
 
-Returns a string containing the name of the mobile device viewing your
-site.
+Ziyaretcinin kullandığı mobil cihazın adını string olarak döndürür.
 
 $this->agent->robot()
 =====================
 
-Returns a string containing the name of the robot viewing your site.
+Ziyaretci robotun adını string olarak döndürür.
 
 $this->agent->platform()
 ========================
 
-Returns a string containing the platform viewing your site (Linux,
-Windows, OS X, etc.).
+Ziyaretcinin kullandığı işletim sistemi (Platform) adını string olarak döndürür. (Linux, Windows, OS X, vs.).
 
 $this->agent->referrer()
 ========================
 
-The referrer, if the user agent was referred from another site.
-Typically you'll test for this as follows::
+Eğer ziyaretci başka bir siteden yönlendirildiyse basitçe aşşağıdaki metodu kullanarak test edebilirsiniz::
 
 	if ($this->agent->is_referral())
 	{
@@ -164,37 +142,30 @@ Typically you'll test for this as follows::
 $this->agent->agent_string()
 =============================
 
-Returns a string containing the full user agent string. Typically it
-will be something like this::
+Kullanıcı bilgilerinin elde edildiği tam metinin salt halini geri döndürür, muhtemelen şuna benzeyecektir::
 
 	Mozilla/5.0 (Macintosh; U; Intel Mac OS X; en-US; rv:1.8.0.4) Gecko/20060613 Camino/1.0.2
 
 $this->agent->accept_lang()
 ============================
 
-Lets you determine if the user agent accepts a particular language.
-Example::
+Gönderilen parametreye ait olan dilin kullanıcı tarafından kabul edilip edilmediğini kontrol eder. Örnek ::
 
 	if ($this->agent->accept_lang('en'))
 	{
 	    echo 'You accept English!';
 	}
 
-.. note:: This function is not typically very reliable since some
-	browsers do not provide language info, and even among those that do, it
-	is not always accurate.
+.. not:: Bu bilginin tamamen doğru olduğu söylenemez, bazı tarayıcılar kabul edilen diller hakkında bilgi göndermeyebilir.
 
 $this->agent->accept_charset()
 ===============================
 
-Lets you determine if the user agent accepts a particular character set.
-Example::
+Gönderilen parametreye ait olan karakter kodlamasının kullanıcı tarafından kabul edilip edilmediğini kontrol eder. Örnek::
 
 	if ($this->agent->accept_charset('utf-8'))
 	{
 	    echo 'You browser supports UTF-8!';
 	}
 
-.. note:: This function is not typically very reliable since some
-	browsers do not provide character-set info, and even among those that
-	do, it is not always accurate.
+.. not:: Bu bilginin tamamen doğru olduğu söylenemez, bazı tarayıcılar karakter kodlaması hakkında bilgi göndermeyebilir.
