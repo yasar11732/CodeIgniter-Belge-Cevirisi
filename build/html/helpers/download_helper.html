@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="utf-8">
 	    
-	    <title>Download Helper &mdash; CodeIgniter 3.0-dev documentation</title>
+	    <title>İndirme (Download) Helper &mdash; CodeIgniter 3.0-dev documentation</title>
 
 	    <link rel="stylesheet" href="../_static/asset/css/common.css" type="text/css" />
 	    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -24,7 +24,7 @@
 	    <link rel="top" title="CodeIgniter 3.0-dev documentation" href="../index.html" />
 	    <link rel="up" title="Helpers" href="index.html" />
 	    <link rel="next" title="Email Helper" href="email_helper.html" />
-	    <link rel="prev" title="Directory Helper" href="directory_helper.html" /> 
+	    <link rel="prev" title="Dizin Helper" href="directory_helper.html" /> 
 	</head>
 	<body>
 		<div id="table-contents">
@@ -38,12 +38,12 @@
 <li class="toctree-l1"><a class="reference internal" href="../general/index.html">General Topics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../libraries/index.html">Libraries</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">Helpers</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="array_helper.html">Array Helper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="array_helper.html">Dizi Helper</a></li>
 <li class="toctree-l2"><a class="reference internal" href="captcha_helper.html">CAPTCHA Helper</a></li>
 <li class="toctree-l2"><a class="reference internal" href="cookie_helper.html">Cookie Helper</a></li>
 <li class="toctree-l2"><a class="reference internal" href="date_helper.html">Date Helper</a></li>
-<li class="toctree-l2"><a class="reference internal" href="directory_helper.html">Directory Helper</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="">Download Helper</a><ul class="simple">
+<li class="toctree-l2"><a class="reference internal" href="directory_helper.html">Dizin Helper</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">İndirme (Download) Helper</a><ul class="simple">
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="email_helper.html">Email Helper</a></li>
@@ -93,46 +93,42 @@
 				<li><a id="toc-link" href="../index.html">İçindekiler</a>&nbsp;&nbsp; &rsaquo;</li>
 				<li><a href="index.html" accesskey="U">Helpers</a>&nbsp;&nbsp;  &rsaquo;</li>
 
-				<li><strong>Download Helper</strong></li>
+				<li><strong>İndirme (Download) Helper</strong></li>
 			</ul>
 		</div><!-- /#header -->
 
 		<div class="section" id="content">
-			<div class="section" id="download-helper">
-<h1><a class="toc-backref" href="#id1">Download Helper</a><a class="headerlink" href="#download-helper" title="Bu başlığın kalıcı bağlantısı">¶</a></h1>
-<p>The Download Helper lets you download data to your desktop.</p>
-<div class="contents topic" id="page-contents">
-<p class="topic-title first">Page Contents</p>
+			<div class="section" id="indirme-download-helper">
+<h1><a class="toc-backref" href="#id1">İndirme (Download) Helper</a><a class="headerlink" href="#indirme-download-helper" title="Bu başlığın kalıcı bağlantısı">¶</a></h1>
+<p>İndirme Helper gönderilen verinin bilgisayara dosya şeklinde kaydedilmesine olanak sağlar.</p>
+<div class="contents topic" id="sayfa-icerigi">
+<p class="topic-title first">Sayfa İçeriği</p>
 <ul class="simple">
-<li><a class="reference internal" href="#download-helper" id="id1">Download Helper</a><ul>
-<li><a class="reference internal" href="#loading-this-helper" id="id2">Loading this Helper</a></li>
+<li><a class="reference internal" href="#indirme-download-helper" id="id1">İndirme (Download) Helper</a><ul>
+<li><a class="reference internal" href="#helper-yukleme" id="id2">Helper Yükleme</a></li>
 <li><a class="reference internal" href="#force-download-filename-data" id="id3">force_download(&#8216;filename&#8217;, &#8216;data&#8217;)</a></li>
 </ul>
 </li>
 </ul>
 </div>
-<div class="section" id="loading-this-helper">
-<h2><a class="toc-backref" href="#id2">Loading this Helper</a><a class="headerlink" href="#loading-this-helper" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
-<p>This helper is loaded using the following code</p>
+<div class="section" id="helper-yukleme">
+<h2><a class="toc-backref" href="#id2">Helper Yükleme</a><a class="headerlink" href="#helper-yukleme" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
+<p>Helper aşağıdaki kodla yüklenir</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">helper</span><span class="p">(</span><span class="s1">&#39;download&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>The following functions are available:</p>
+<p>Kullanılabilen fonksiyonlar aşağıdadır :</p>
 </div>
 <div class="section" id="force-download-filename-data">
 <h2><a class="toc-backref" href="#id3">force_download(&#8216;filename&#8217;, &#8216;data&#8217;)</a><a class="headerlink" href="#force-download-filename-data" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
-<p>Generates server headers which force data to be downloaded to your
-desktop. Useful with file downloads. The first parameter is the <strong>name
-you want the downloaded file to be named</strong>, the second parameter is the
-file data. Example</p>
+<p>osyanın indirilebilmesi için başlığın (Header) oluşturulmasını sağlar. İlk parametre kullanıcı dosyayı kaydederken göreceği geçerli dosya adıdır (Kullanıcı dosya adını değiştirmezse sizin belirlediğiniz bu isimle kayıt edilecektir). İkinci parametre dosya içeriğidir. Örnek:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$data</span> <span class="o">=</span> <span class="s1">&#39;Here is some text!&#39;</span><span class="p">;</span>
 <span class="nv">$name</span> <span class="o">=</span> <span class="s1">&#39;mytext.txt&#39;</span><span class="p">;</span>
 <span class="nx">force_download</span><span class="p">(</span><span class="nv">$name</span><span class="p">,</span> <span class="nv">$data</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>If you want to download an existing file from your server you&#8217;ll need to
-read the file into a string</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="nv">$data</span> <span class="o">=</span> <span class="nb">file_get_contents</span><span class="p">(</span><span class="s2">&quot;/path/to/photo.jpg&quot;</span><span class="p">);</span> <span class="c1">// Read the file&#39;s contents</span>
+<p>Var olan bir dosyanın indirilebilmesi için öncelikle dosya içeriğinin $data değerine yüklenmesi gerekmektedir:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span class="nv">$data</span> <span class="o">=</span> <span class="nb">file_get_contents</span><span class="p">(</span><span class="s2">&quot;/path/to/photo.jpg&quot;</span><span class="p">);</span> <span class="c1">// Dosya içeriğini oku</span>
 <span class="nv">$name</span> <span class="o">=</span> <span class="s1">&#39;myphoto.jpg&#39;</span><span class="p">;</span>
 <span class="nx">force_download</span><span class="p">(</span><span class="nv">$name</span><span class="p">,</span> <span class="nv">$data</span><span class="p">);</span>
 </pre></div>
@@ -147,7 +143,7 @@ read the file into a string</p>
 		<div id="footer">
 			<p class="top">
 				
-				<span class="prev">Önceki Başlık: <a href="directory_helper.html">Directory Helper</a></span>
+				<span class="prev">Önceki Başlık: <a href="directory_helper.html">Dizin Helper</a></span>
 				
 				
 				<span class="next">Sonraki Başlık: <a href="email_helper.html">Email Helper</a></span>
@@ -155,7 +151,7 @@ read the file into a string</p>
 				<a href="#header" title="Başa Dön">Başa Dön</a>
 			</p>
 			<p><a href="">CodeIgniter</a> &ndash; Copyright &copy;
-      2011, EllisLab, Inc.</a> &ndash; Son Güncelleme: 22 Kasım 2011</p>
+      2011, EllisLab, Inc.</a> &ndash; Son Güncelleme: 24 Aralık 2011</p>
 		</div><!-- /#footer -->
 	
 	<script src="../_static/asset/js/jquery-ui-min.js" type="text/javascript" charset="utf-8" async></script>

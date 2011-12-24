@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="utf-8">
 	    
-	    <title>Directory Helper &mdash; CodeIgniter 3.0-dev documentation</title>
+	    <title>Dizin Helper &mdash; CodeIgniter 3.0-dev documentation</title>
 
 	    <link rel="stylesheet" href="../_static/asset/css/common.css" type="text/css" />
 	    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -23,7 +23,7 @@
 	    <script type="text/javascript" src="../_static/translations.js"></script>
 	    <link rel="top" title="CodeIgniter 3.0-dev documentation" href="../index.html" />
 	    <link rel="up" title="Helpers" href="index.html" />
-	    <link rel="next" title="Download Helper" href="download_helper.html" />
+	    <link rel="next" title="İndirme (Download) Helper" href="download_helper.html" />
 	    <link rel="prev" title="Date Helper" href="date_helper.html" /> 
 	</head>
 	<body>
@@ -38,14 +38,14 @@
 <li class="toctree-l1"><a class="reference internal" href="../general/index.html">General Topics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../libraries/index.html">Libraries</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">Helpers</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="array_helper.html">Array Helper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="array_helper.html">Dizi Helper</a></li>
 <li class="toctree-l2"><a class="reference internal" href="captcha_helper.html">CAPTCHA Helper</a></li>
 <li class="toctree-l2"><a class="reference internal" href="cookie_helper.html">Cookie Helper</a></li>
 <li class="toctree-l2"><a class="reference internal" href="date_helper.html">Date Helper</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="">Directory Helper</a><ul class="simple">
+<li class="toctree-l2 current"><a class="current reference internal" href="">Dizin Helper</a><ul class="simple">
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="download_helper.html">Download Helper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="download_helper.html">İndirme (Download) Helper</a></li>
 <li class="toctree-l2"><a class="reference internal" href="email_helper.html">Email Helper</a></li>
 <li class="toctree-l2"><a class="reference internal" href="file_helper.html">File Helper</a></li>
 <li class="toctree-l2"><a class="reference internal" href="form_helper.html">Form Helper</a></li>
@@ -93,37 +93,35 @@
 				<li><a id="toc-link" href="../index.html">İçindekiler</a>&nbsp;&nbsp; &rsaquo;</li>
 				<li><a href="index.html" accesskey="U">Helpers</a>&nbsp;&nbsp;  &rsaquo;</li>
 
-				<li><strong>Directory Helper</strong></li>
+				<li><strong>Dizin Helper</strong></li>
 			</ul>
 		</div><!-- /#header -->
 
 		<div class="section" id="content">
-			<div class="section" id="directory-helper">
-<h1><a class="toc-backref" href="#id1">Directory Helper</a><a class="headerlink" href="#directory-helper" title="Bu başlığın kalıcı bağlantısı">¶</a></h1>
-<p>The Directory Helper file contains functions that assist in working with
-directories.</p>
-<div class="contents topic" id="page-contents">
-<p class="topic-title first">Page Contents</p>
+			<div class="section" id="dizin-helper">
+<h1><a class="toc-backref" href="#id1">Dizin Helper</a><a class="headerlink" href="#dizin-helper" title="Bu başlığın kalıcı bağlantısı">¶</a></h1>
+<p>Dizin yardımcısı dizinlerle çalışırken ihtiyaç duyacağınız bazı fonksiyonları barındırır.</p>
+<div class="contents topic" id="sayfa-icerigi">
+<p class="topic-title first">Sayfa İçeriği</p>
 <ul class="simple">
-<li><a class="reference internal" href="#directory-helper" id="id1">Directory Helper</a><ul>
-<li><a class="reference internal" href="#loading-this-helper" id="id2">Loading this Helper</a></li>
+<li><a class="reference internal" href="#dizin-helper" id="id1">Dizin Helper</a><ul>
+<li><a class="reference internal" href="#helper-yuklemek" id="id2">Helper Yüklemek</a></li>
 <li><a class="reference internal" href="#directory-map" id="id3">directory_map()</a></li>
 </ul>
 </li>
 </ul>
 </div>
-<div class="section" id="loading-this-helper">
-<h2><a class="toc-backref" href="#id2">Loading this Helper</a><a class="headerlink" href="#loading-this-helper" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
-<p>This helper is loaded using the following code</p>
+<div class="section" id="helper-yuklemek">
+<h2><a class="toc-backref" href="#id2">Helper Yüklemek</a><a class="headerlink" href="#helper-yuklemek" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
+<p>Bu helper aşağıdaki şekilde yüklenilir</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">helper</span><span class="p">(</span><span class="s1">&#39;directory&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>The following functions are available:</p>
+<p>Kullanılabilir fonksiyonlar:</p>
 </div>
 <div class="section" id="directory-map">
 <h2><a class="toc-backref" href="#id3">directory_map()</a><a class="headerlink" href="#directory-map" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
-<p>This function reads the directory path specified in the first parameter
-and builds an array representation of it and all its contained files.</p>
+<p>Bu fonksyion parametre olarak gönderilen dizini tarayarak içerdiği dosyaları bir dizi değişkeni şeklinde sunar.</p>
 <dl class="method">
 <dt id="directory_map">
 <tt class="descname">directory_map</tt><big>(</big><em>$source_dir</em><span class="optional">[</span>, <em>$directory_depth = 0</em><span class="optional">[</span>, <em>$hidden = FALSE</em><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#directory_map" title="Bu tanımın kalıcı bağlantısı">¶</a></dt>
@@ -132,10 +130,10 @@ and builds an array representation of it and all its contained files.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parametreler:</th><td class="field-body"><ul class="first last simple">
-<li><strong>$source_dir</strong> (<em>string</em>) &#8211; path to the ource directory</li>
-<li><strong>$directory_depth</strong> (<em>integer</em>) &#8211; depth of directories to traverse (0 =
-fully recursive, 1 = current dir, etc)</li>
-<li><strong>$hidden</strong> (<em>boolean</em>) &#8211; whether to include hidden directories</li>
+<li><strong>$source_dir</strong> (<em>string</em>) &#8211; kaynak dizin yolu</li>
+<li><strong>$directory_depth</strong> (<em>integer</em>) &#8211; iniliecek dizin derinliği (0 =
+hepsini getir, 1 = bulunduğu dizini getir, vs.)</li>
+<li><strong>$hidden</strong> (<em>boolean</em>) &#8211; görünmeyen dizileri de getir</li>
 </ul>
 </td>
 </tr>
@@ -143,27 +141,23 @@ fully recursive, 1 = current dir, etc)</li>
 </table>
 </dd></dl>
 
-<p>Examples:</p>
+<p>Örnekler:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$map</span> <span class="o">=</span> <span class="nx">directory_map</span><span class="p">(</span><span class="s1">&#39;./mydirectory/&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
-<div class="admonition note">
+<div class="note admonition">
 <p class="first admonition-title">Not</p>
-<p class="last">Paths are almost always relative to your main index.php file.</p>
+<p class="last">Parametre olarak tam dizin yolu verilmezse aktif dizin index.php dosyanızın bulunduğu dizin olarak kabul edilecektir.</p>
 </div>
-<p>Sub-folders contained within the directory will be mapped as well. If
-you wish to control the recursion depth, you can do so using the second
-parameter (integer). A depth of 1 will only map the top level directory:</p>
+<p>Yukarıdaki fonksiyon çağrımı ile alt dizin ve dosyalar da diziye dahil edilecektir. Sadece dizin içeriğini almak istiyorsaniz alt dizinleri almak istemiyorsanız ikinci parametreyi true olarak gönderebilirsiniz. Örnek:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$map</span> <span class="o">=</span> <span class="nx">directory_map</span><span class="p">(</span><span class="s1">&#39;./mydirectory/&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>By default, hidden files will not be included in the returned array. To
-override this behavior, you may set a third parameter to true (boolean):</p>
+<p>Ön tanımlı olarak gizli dizin ve dosyalar diziye dahil edilmeyecektir, gizli dizin ve dosyaları da almak isterseniz 3. parametreyi true (boolean) olarak gönderebilirsiniz:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$map</span> <span class="o">=</span> <span class="nx">directory_map</span><span class="p">(</span><span class="s1">&#39;./mydirectory/&#39;</span><span class="p">,</span> <span class="k">FALSE</span><span class="p">,</span> <span class="k">TRUE</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>Each folder name will be an array index, while its contained files will
-be numerically indexed. Here is an example of a typical array:</p>
+<p>arama sonucunda bulunan her dizin bir dizi olarak tanımlanacak ve bulunan her dosya 0 dan başlayarak yükselen sayısal bir değer alacaktır. Örnek olması açısından fonksiyondan dönen bir dizi aşağıda listelenmiştir:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="k">Array</span> <span class="p">(</span>
         <span class="p">[</span><span class="nx">libraries</span><span class="p">]</span> <span class="o">=&gt;</span> <span class="k">Array</span>
                 <span class="p">(</span>
@@ -204,12 +198,12 @@ be numerically indexed. Here is an example of a typical array:</p>
 				<span class="prev">Önceki Başlık: <a href="date_helper.html">Date Helper</a></span>
 				
 				
-				<span class="next">Sonraki Başlık: <a href="download_helper.html">Download Helper</a></span>
+				<span class="next">Sonraki Başlık: <a href="download_helper.html">İndirme (Download) Helper</a></span>
 				
 				<a href="#header" title="Başa Dön">Başa Dön</a>
 			</p>
 			<p><a href="">CodeIgniter</a> &ndash; Copyright &copy;
-      2011, EllisLab, Inc.</a> &ndash; Son Güncelleme: 22 Kasım 2011</p>
+      2011, EllisLab, Inc.</a> &ndash; Son Güncelleme: 24 Aralık 2011</p>
 		</div><!-- /#footer -->
 	
 	<script src="../_static/asset/js/jquery-ui-min.js" type="text/javascript" charset="utf-8" async></script>

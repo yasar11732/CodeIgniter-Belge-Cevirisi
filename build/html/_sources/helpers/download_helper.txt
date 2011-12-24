@@ -1,29 +1,26 @@
-###############
-Download Helper
-###############
+#########################
+İndirme (Download) Helper
+#########################
 
-The Download Helper lets you download data to your desktop.
+İndirme Helper gönderilen verinin bilgisayara dosya şeklinde kaydedilmesine olanak sağlar.
 
-.. contents:: Page Contents
+.. contents:: Sayfa İçeriği
 
-Loading this Helper
-===================
+Helper Yükleme
+==============
 
-This helper is loaded using the following code
+Helper aşağıdaki kodla yüklenir
 
 ::
 
 	$this->load->helper('download');
 
-The following functions are available:
+Kullanılabilen fonksiyonlar aşağıdadır :
 
 force_download('filename', 'data')
 ==================================
 
-Generates server headers which force data to be downloaded to your
-desktop. Useful with file downloads. The first parameter is the **name
-you want the downloaded file to be named**, the second parameter is the
-file data. Example
+osyanın indirilebilmesi için başlığın (Header) oluşturulmasını sağlar. İlk parametre kullanıcı dosyayı kaydederken göreceği geçerli dosya adıdır (Kullanıcı dosya adını değiştirmezse sizin belirlediğiniz bu isimle kayıt edilecektir). İkinci parametre dosya içeriğidir. Örnek:
 
 ::
 
@@ -31,12 +28,11 @@ file data. Example
 	$name = 'mytext.txt';
 	force_download($name, $data);
 
-If you want to download an existing file from your server you'll need to
-read the file into a string
+Var olan bir dosyanın indirilebilmesi için öncelikle dosya içeriğinin $data değerine yüklenmesi gerekmektedir:
 
 ::
 
-	$data = file_get_contents("/path/to/photo.jpg"); // Read the file's contents
+	$data = file_get_contents("/path/to/photo.jpg"); // Dosya içeriğini oku
 	$name = 'myphoto.jpg';
 	force_download($name, $data);
 

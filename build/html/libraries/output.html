@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="utf-8">
 	    
-	    <title>Output Class &mdash; CodeIgniter 3.0-dev documentation</title>
+	    <title>Output Sınıfı &mdash; CodeIgniter 3.0-dev documentation</title>
 
 	    <link rel="stylesheet" href="../_static/asset/css/common.css" type="text/css" />
 	    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -37,10 +37,10 @@
 <li class="toctree-l1"><a class="reference internal" href="../installation/index.html">Installation Instructions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../general/index.html">General Topics</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">Libraries</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="benchmark.html">Benchmarking Class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmark.html">Karşılaştırma (Benchmarking) Sınıfı</a></li>
 <li class="toctree-l2"><a class="reference internal" href="caching.html">Caching Driver</a></li>
 <li class="toctree-l2"><a class="reference internal" href="calendar.html">Calendaring Class</a></li>
-<li class="toctree-l2"><a class="reference internal" href="cart.html">Shopping Cart Class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cart.html">Alışveriş Sepeti Sınıfı</a></li>
 <li class="toctree-l2"><a class="reference internal" href="config.html">Config Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="email.html">Email Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="encryption.html">Encryption Class</a></li>
@@ -50,21 +50,21 @@
 <li class="toctree-l2"><a class="reference internal" href="image_lib.html">Image Manipulation Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="input.html">Input Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="javascript.html">Javascript Class</a></li>
-<li class="toctree-l2"><a class="reference internal" href="language.html">Language Class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="language.html">Dil sınıfı</a></li>
 <li class="toctree-l2"><a class="reference internal" href="loader.html">Loader Class</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="">Output Class</a><ul class="simple">
+<li class="toctree-l2 current"><a class="current reference internal" href="">Output Sınıfı</a><ul class="simple">
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="pagination.html">Pagination Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="parser.html">Template Parser Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="security.html">Security Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="sessions.html">Session Class</a></li>
-<li class="toctree-l2"><a class="reference internal" href="table.html">HTML Table Class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="table.html">HTML Tablo Sınıfı</a></li>
 <li class="toctree-l2"><a class="reference internal" href="trackback.html">Trackback Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="typography.html">Typography Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="unit_testing.html">Unit Testing Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="uri.html">URI Class</a></li>
-<li class="toctree-l2"><a class="reference internal" href="user_agent.html">User Agent Class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_agent.html">Kullanıcı Bilgileri Sınıfı</a></li>
 <li class="toctree-l2"><a class="reference internal" href="xmlrpc.html">XML-RPC and XML-RPC Server Classes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="zip.html">Zip Encoding Class</a></li>
 </ul>
@@ -100,47 +100,33 @@
 				<li><a id="toc-link" href="../index.html">İçindekiler</a>&nbsp;&nbsp; &rsaquo;</li>
 				<li><a href="index.html" accesskey="U">Libraries</a>&nbsp;&nbsp;  &rsaquo;</li>
 
-				<li><strong>Output Class</strong></li>
+				<li><strong>Output Sınıfı</strong></li>
 			</ul>
 		</div><!-- /#header -->
 
 		<div class="section" id="content">
-			<div class="section" id="output-class">
-<h1>Output Class<a class="headerlink" href="#output-class" title="Bu başlığın kalıcı bağlantısı">¶</a></h1>
-<p>The Output class is a small class with one main function: To send the
-finalized web page to the requesting browser. It is also responsible for
-<a class="reference internal" href="../general/caching.html"><em>caching</em></a> your web pages, if you use that
-feature.</p>
-<div class="admonition note">
+			<div class="section" id="output-sinifi">
+<h1>Output Sınıfı<a class="headerlink" href="#output-sinifi" title="Bu başlığın kalıcı bağlantısı">¶</a></h1>
+<p>Çıktı sınıfı sadece birkaç fonksiyon içeren küçük bir sınıftır: Hazırlanmış olan web sayfası çıktısının istek yapan tarayıcıya gönderilmesini sağlar. Ayrıca web sayfalarınızı önbeleğe almak (bkz: <a class="reference internal" href="../general/caching.html"><em>Caching-Önbelleğe alma</em></a>) için de kullanılır.</p>
+<div class="note admonition">
 <p class="first admonition-title">Not</p>
-<p class="last">This class is initialized automatically by the system so there
-is no need to do it manually.</p>
+<p class="last">Bu sınıf sistem tarafından otomatik yüklendiği için ayrıca elle yüklemenize gerek yoktur.</p>
 </div>
-<p>Under normal circumstances you won&#8217;t even notice the Output class since
-it works transparently without your intervention. For example, when you
-use the <a class="reference internal" href="loader.html"><em>Loader</em></a> class to load a view file,
-it&#8217;s automatically passed to the Output class, which will be called
-automatically by CodeIgniter at the end of system execution. It is
-possible, however, for you to manually intervene with the output if you
-need to, using either of the two following functions:</p>
+<p>Normal durumlarda sınıf otomatik olarak yüklenir ve arka planda sizinin herhangi bir şey yapmanıza gerek kalmadan çalışır. Örnek olarak <a class="reference internal" href="loader.html"><em>Yükleyici sınıfı</em></a> ile bir view yüklediğinizde view dosyası otomatik olarak Codeigniter&#8217;in son işlemi olarak çıktı sınıfına yönlendirilir. İşi CodeIgniter&#8217;a bırakmayıp çıktıya müdahale etmek istediğinizde aşşağıdaki iki fonksiyonu kullanabilrsiniz.</p>
 <div class="section" id="this-output-set-output">
 <h2>$this-&gt;output-&gt;set_output();<a class="headerlink" href="#this-output-set-output" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
-<p>Permits you to manually set the final output string. Usage example:</p>
+<p>Son çıktıyı bir string değerinden göndermenize olanak sağlar. Örnek kullanım</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">output</span><span class="o">-&gt;</span><span class="na">set_output</span><span class="p">(</span><span class="nv">$data</span><span class="p">);</span>
 </pre></div>
 </div>
-<div class="admonition important">
+<div class="important admonition">
 <p class="first admonition-title">Önemli</p>
-<p class="last">If you do set your output manually, it must be the last
-thing done in the function you call it from. For example, if you build a
-page in one of your controller functions, don&#8217;t set the output until the
-end.</p>
+<p class="last">Eğer çıktıyı elle gönderiyorsanız, çıktıyı gönderen kod çağrılan fonksiyonun en sonunda bulunmalıdır. Örnek olarak, eğer control dosyalarınız içerisinde bir sayfa yaratılıyorsa çıktıyı gönderen kod bu fonksiyonun en sonunda bulunmalıdır.</p>
 </div>
 </div>
 <div class="section" id="this-output-set-content-type">
 <h2>$this-&gt;output-&gt;set_content_type();<a class="headerlink" href="#this-output-set-content-type" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
-<p>Permits you to set the mime-type of your page so you can serve JSON
-data, JPEG&#8217;s, XML, etc easily.</p>
+<p>Çıktıyı sayfanızın mime-type formatını belirterek göndermenizi sağlar. Böylece, JSON data, JPEG, XML formatları kolayca kullanabilirsiniz.</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">output</span>
     <span class="o">-&gt;</span><span class="na">set_content_type</span><span class="p">(</span><span class="s1">&#39;application/json&#39;</span><span class="p">)</span>
     <span class="o">-&gt;</span><span class="na">set_output</span><span class="p">(</span><span class="nx">json_encode</span><span class="p">(</span><span class="k">array</span><span class="p">(</span><span class="s1">&#39;foo&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;bar&#39;</span><span class="p">)));</span>
@@ -150,34 +136,29 @@ data, JPEG&#8217;s, XML, etc easily.</p>
     <span class="o">-&gt;</span><span class="na">set_output</span><span class="p">(</span><span class="nb">file_get_contents</span><span class="p">(</span><span class="s1">&#39;files/something.jpg&#39;</span><span class="p">));</span>
 </pre></div>
 </div>
-<div class="admonition important">
+<div class="important admonition">
 <p class="first admonition-title">Önemli</p>
-<p class="last">Make sure any non-mime string you pass to this method
-exists in config/mimes.php or it will have no effect.</p>
+<p class="last">Tipi belli olmayan sayfalar için config/mimes.php dosyasında tanımlı olmadığından emin olun.</p>
 </div>
 </div>
 <div class="section" id="this-output-get-output">
 <h2>$this-&gt;output-&gt;get_output();<a class="headerlink" href="#this-output-get-output" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
-<p>Permits you to manually retrieve any output that has been sent for
-storage in the output class. Usage example:</p>
+<p>Herhangi bir zamanda çıktı sınıfının sahip olduğu bütün çıktı verilerini almanıza yardımcı olur. Örnek kullanım</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$string</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">output</span><span class="o">-&gt;</span><span class="na">get_output</span><span class="p">();</span>
 </pre></div>
 </div>
-<p>Note that data will only be retrievable from this function if it has
-been previously sent to the output class by one of the CodeIgniter
-functions like $this-&gt;load-&gt;view().</p>
+<p>Bu fonksiyonun değer döndürebilmesi için çıktı sınıfına daha önceden çıktı verisi gönderilmiş olmalıdır. Örnek olarak $this-&gt;load-&gt;view() fonksiyonu view dosyamızı işleyerek çıktı sınıfına çıktı verisi olarak gönderecek bir fonksiyondur.</p>
 </div>
 <div class="section" id="this-output-append-output">
 <h2>$this-&gt;output-&gt;append_output();<a class="headerlink" href="#this-output-append-output" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
-<p>Appends data onto the output string. Usage example:</p>
+<p>Çıktı verilerine bilgi ekler. Örnek kullanımı:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">output</span><span class="o">-&gt;</span><span class="na">append_output</span><span class="p">(</span><span class="nv">$data</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="this-output-set-header">
 <h2>$this-&gt;output-&gt;set_header();<a class="headerlink" href="#this-output-set-header" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
-<p>Permits you to manually set server headers, which the output class will
-send for you when outputting the final rendered display. Example:</p>
+<p>Başlığın (Header) elle yapılandırılmasına olanak sağlar. Bu fonksiyon ile atanan header çıktıları, çıktı sınıfı tarafından header verileri gönderilirken kullanılır. Örneğin:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">output</span><span class="o">-&gt;</span><span class="na">set_header</span><span class="p">(</span><span class="s2">&quot;HTTP/1.0 200 OK&quot;</span><span class="p">);</span>
 <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">output</span><span class="o">-&gt;</span><span class="na">set_header</span><span class="p">(</span><span class="s2">&quot;HTTP/1.1 200 OK&quot;</span><span class="p">);</span>
 <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">output</span><span class="o">-&gt;</span><span class="na">set_header</span><span class="p">(</span><span class="s1">&#39;Last-Modified: &#39;</span><span class="o">.</span><span class="nb">gmdate</span><span class="p">(</span><span class="s1">&#39;D, d M Y H:i:s&#39;</span><span class="p">,</span> <span class="nv">$last_update</span><span class="p">)</span><span class="o">.</span><span class="s1">&#39; GMT&#39;</span><span class="p">);</span>
@@ -189,49 +170,36 @@ send for you when outputting the final rendered display. Example:</p>
 </div>
 <div class="section" id="this-output-set-status-header-code-text">
 <h2>$this-&gt;output-&gt;set_status_header(code, &#8216;text&#8217;);<a class="headerlink" href="#this-output-set-status-header-code-text" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
-<p>Permits you to manually set a server status header. Example:</p>
+<p>Server durumu başlığını (Server status header) elle yapılandırmak için kullanılır. Örnek</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">output</span><span class="o">-&gt;</span><span class="na">set_status_header</span><span class="p">(</span><span class="s1">&#39;401&#39;</span><span class="p">);</span>
 <span class="c1">// Sets the header as:  Unauthorized</span>
 </pre></div>
 </div>
-<p><a class="reference external" href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html">See here</a> for
-a full list of headers.</p>
+<p><a class="reference external" href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html">Başlıkların tam listesi için</a> buraya bakınız.</p>
 </div>
 <div class="section" id="this-output-enable-profiler">
 <h2>$this-&gt;output-&gt;enable_profiler();<a class="headerlink" href="#this-output-enable-profiler" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
-<p>Permits you to enable/disable the
-<a class="reference internal" href="../general/profiling.html"><em>Profiler</em></a>, which will display benchmark
-and other data at the bottom of your pages for debugging and
-optimization purposes.</p>
-<p>To enable the profiler place the following function anywhere within your
-<a class="reference internal" href="../general/controllers.html"><em>Controller</em></a> functions:</p>
+<p><a class="reference internal" href="../general/profiling.html"><em>Profiler</em></a> kullanılıp kullanılmayacağını bu fonksiyon ile belirleyebilirsiniz. Profiler kullanmak için <a class="reference internal" href="../general/controllers.html"><em>Controller</em></a> foksiyonunuzun herhangi bir yerine aşağıdaki kodu uygulayabilirsiniz:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">output</span><span class="o">-&gt;</span><span class="na">enable_profiler</span><span class="p">(</span><span class="k">TRUE</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>When enabled a report will be generated and inserted at the bottom of
-your pages.</p>
-<p>To disable the profiler you will use:</p>
+<p>Bu komut ile uygulama profili aktif hale gelecek ve oluşturulan rapor sayfanızın en altına eklenecektir.</p>
+<p>Uygulama profilini devre dışı bırakmak için</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">output</span><span class="o">-&gt;</span><span class="na">enable_profiler</span><span class="p">(</span><span class="k">FALSE</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="this-output-set-profiler-sections">
 <h2>$this-&gt;output-&gt;set_profiler_sections();<a class="headerlink" href="#this-output-set-profiler-sections" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
-<p>Permits you to enable/disable specific sections of the Profiler when
-enabled. Please refer to the <a class="reference internal" href="../general/profiling.html"><em>Profiler</em></a>
-documentation for further information.</p>
+<p>Profiler uygulamasını belirli kısımlar için devreye alınmasına ve kapatılmasına izin verir. Daha fazla bilgi için lütfen  <a class="reference internal" href="../general/profiling.html"><em>Profiler</em></a> bölümünü okuyunuz.</p>
 </div>
 <div class="section" id="this-output-cache">
 <h2>$this-&gt;output-&gt;cache();<a class="headerlink" href="#this-output-cache" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
-<p>The CodeIgniter output library also controls caching. For more
-information, please see the <a class="reference internal" href="../general/caching.html"><em>caching
-documentation</em></a>.</p>
+<p>Çıktı kütüphanesi ayrıca Caching kontrolü de yapmaktadır. Daha fazla bilgi için <a class="reference internal" href="../general/caching.html"><em>caching - önbelleğe alma</em></a> konusuna gözatabilirsiniz.</p>
 </div>
 <div class="section" id="parsing-execution-variables">
 <h2>Parsing Execution Variables<a class="headerlink" href="#parsing-execution-variables" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
-<p>CodeIgniter will parse the pseudo-variables {elapsed_time} and
-{memory_usage} in your output by default. To disable this, set the
-$parse_exec_vars class property to FALSE in your controller.</p>
+<p>CodeIgniter sözde değişkenlerden (pseudo-variables) {elapsed_time} ve {memory_usage} değişkenlerini varsayılan değişkenler olarak çıktıda ayrıştırır. Bunu devre dışı bırakmak için controller dosyanızda $parse_exec_vars sınıf özelliğini FALSE yapınız:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">output</span><span class="o">-&gt;</span><span class="na">parse_exec_vars</span> <span class="o">=</span> <span class="k">FALSE</span><span class="p">;</span>
 </pre></div>
 </div>
@@ -253,7 +221,7 @@ $parse_exec_vars class property to FALSE in your controller.</p>
 				<a href="#header" title="Başa Dön">Başa Dön</a>
 			</p>
 			<p><a href="">CodeIgniter</a> &ndash; Copyright &copy;
-      2011, EllisLab, Inc.</a> &ndash; Son Güncelleme: 22 Kasım 2011</p>
+      2011, EllisLab, Inc.</a> &ndash; Son Güncelleme: 24 Aralık 2011</p>
 		</div><!-- /#footer -->
 	
 	<script src="../_static/asset/js/jquery-ui-min.js" type="text/javascript" charset="utf-8" async></script>

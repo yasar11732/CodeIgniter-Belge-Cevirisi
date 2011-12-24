@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="utf-8">
 	    
-	    <title>Array Helper &mdash; CodeIgniter 3.0-dev documentation</title>
+	    <title>Dizi Helper &mdash; CodeIgniter 3.0-dev documentation</title>
 
 	    <link rel="stylesheet" href="../_static/asset/css/common.css" type="text/css" />
 	    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -38,14 +38,14 @@
 <li class="toctree-l1"><a class="reference internal" href="../general/index.html">General Topics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../libraries/index.html">Libraries</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">Helpers</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="">Array Helper</a><ul class="simple">
+<li class="toctree-l2 current"><a class="current reference internal" href="">Dizi Helper</a><ul class="simple">
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="captcha_helper.html">CAPTCHA Helper</a></li>
 <li class="toctree-l2"><a class="reference internal" href="cookie_helper.html">Cookie Helper</a></li>
 <li class="toctree-l2"><a class="reference internal" href="date_helper.html">Date Helper</a></li>
-<li class="toctree-l2"><a class="reference internal" href="directory_helper.html">Directory Helper</a></li>
-<li class="toctree-l2"><a class="reference internal" href="download_helper.html">Download Helper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="directory_helper.html">Dizin Helper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="download_helper.html">İndirme (Download) Helper</a></li>
 <li class="toctree-l2"><a class="reference internal" href="email_helper.html">Email Helper</a></li>
 <li class="toctree-l2"><a class="reference internal" href="file_helper.html">File Helper</a></li>
 <li class="toctree-l2"><a class="reference internal" href="form_helper.html">Form Helper</a></li>
@@ -93,20 +93,19 @@
 				<li><a id="toc-link" href="../index.html">İçindekiler</a>&nbsp;&nbsp; &rsaquo;</li>
 				<li><a href="index.html" accesskey="U">Helpers</a>&nbsp;&nbsp;  &rsaquo;</li>
 
-				<li><strong>Array Helper</strong></li>
+				<li><strong>Dizi Helper</strong></li>
 			</ul>
 		</div><!-- /#header -->
 
 		<div class="section" id="content">
-			<div class="section" id="array-helper">
-<h1><a class="toc-backref" href="#id1">Array Helper</a><a class="headerlink" href="#array-helper" title="Bu başlığın kalıcı bağlantısı">¶</a></h1>
-<p>The Array Helper file contains functions that assist in working with
-arrays.</p>
-<div class="contents topic" id="page-contents">
-<p class="topic-title first">Page Contents</p>
+			<div class="section" id="dizi-helper">
+<h1><a class="toc-backref" href="#id1">Dizi Helper</a><a class="headerlink" href="#dizi-helper" title="Bu başlığın kalıcı bağlantısı">¶</a></h1>
+<p>Dizi helper dizilerle çalışırken işinizi kolaylaştıracak fonksiyonlar içermektedir.</p>
+<div class="contents topic" id="sayfa-icerigi">
+<p class="topic-title first">Sayfa İçeriği</p>
 <ul class="simple">
-<li><a class="reference internal" href="#array-helper" id="id1">Array Helper</a><ul>
-<li><a class="reference internal" href="#loading-this-helper" id="id2">Loading this Helper</a></li>
+<li><a class="reference internal" href="#dizi-helper" id="id1">Dizi Helper</a><ul>
+<li><a class="reference internal" href="#helper-yuklemek" id="id2">Helper Yüklemek</a></li>
 <li><a class="reference internal" href="#element" id="id3">element()</a></li>
 <li><a class="reference internal" href="#elements" id="id4">elements()</a></li>
 <li><a class="reference internal" href="#random-element" id="id5">random_element()</a></li>
@@ -114,13 +113,13 @@ arrays.</p>
 </li>
 </ul>
 </div>
-<div class="section" id="loading-this-helper">
-<h2><a class="toc-backref" href="#id2">Loading this Helper</a><a class="headerlink" href="#loading-this-helper" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
-<p>This helper is loaded using the following code</p>
+<div class="section" id="helper-yuklemek">
+<h2><a class="toc-backref" href="#id2">Helper Yüklemek</a><a class="headerlink" href="#helper-yuklemek" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
+<p>Helper aşağıdaki kod ile yüklenir.:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">helper</span><span class="p">(</span><span class="s1">&#39;array&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>The following functions are available:</p>
+<p>Kullanılabilir fonksiyonlar:</p>
 </div>
 <div class="section" id="element">
 <h2><a class="toc-backref" href="#id3">element()</a><a class="headerlink" href="#element" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
@@ -132,23 +131,20 @@ arrays.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parametreler:</th><td class="field-body"><ul class="first simple">
-<li><strong>$item</strong> (<em>string</em>) &#8211; Item to fetch from the array</li>
-<li><strong>$array</strong> (<em>array</em>) &#8211; Input array</li>
-<li><strong>$default</strong> (<em>boolean</em>) &#8211; What to return if the array isn&#8217;t valid</li>
+<li><strong>$item</strong> (<em>string</em>) &#8211; Diziden çekilmesi istenilen indeks.</li>
+<li><strong>$array</strong> (<em>array</em>) &#8211; Girdi dizisi.</li>
+<li><strong>$default</strong> (<em>boolean</em>) &#8211; Eğer dizi geçerli değilse geri dönecek değer.</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Dönüş değeri::</th><td class="field-body"><p class="first last">FALSE on failure or the array item.</p>
+<tr class="field-even field"><th class="field-name">Dönüş değeri::</th><td class="field-body"><p class="first last">Hata durumunda ya da indeks dizide bulanmazsa FALSE döner.</p>
 </td>
 </tr>
 </tbody>
 </table>
 </dd></dl>
 
-<p>Lets you fetch an item from an array. The function tests whether the
-array index is set and whether it has a value. If a value exists it is
-returned. If a value does not exist it returns FALSE, or whatever you&#8217;ve
-specified as the default value via the third parameter. Example</p>
+<p>Bu fonksiyon Dizi içinden istediğiniz anahtara karşılık gelen değeri almanızı sağlar. Fonksiyon anahtara karşılık gelen bir değer olup olmadığını kontrol eder, eğer tanımlı bir değer var ise bu değeri geri döndürür. Eğer değer tanımlanmamışsa FALSE döndürür. Değer tanımlanmadığı durumlarda FALSE dönmesini istemiyorsanız, geri dönmesini istediğiniz değeri 3. parametre olarak fonksiyona gönderebilirsiniz. Örnek</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$array</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
         <span class="s1">&#39;color&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;red&#39;</span><span class="p">,</span>
         <span class="s1">&#39;shape&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;round&#39;</span><span class="p">,</span>
@@ -162,10 +158,7 @@ specified as the default value via the third parameter. Example</p>
 </div>
 <div class="section" id="elements">
 <h2><a class="toc-backref" href="#id4">elements()</a><a class="headerlink" href="#elements" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
-<p>Lets you fetch a number of items from an array. The function tests
-whether each of the array indices is set. If an index does not exist it
-is set to FALSE, or whatever you&#8217;ve specified as the default value via
-the third parameter.</p>
+<p>Bir dizi içinde birden fazla maddenin karşılığının bulunmasına izin verir. Fonksiyon, her bir indisin dizin içinde varlığını test eder. Eğer indeks yok ise FALSE ya da üüçncü parametrede ne tanımladıysanız o değeri geri döndürür.</p>
 <dl class="method">
 <dt>
 <tt class="descname">elements</tt><big>(</big><em>$items</em>, <em>$array</em>, <em>$default = FALSE</em><big>)</big></dt>
@@ -174,20 +167,20 @@ the third parameter.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parametreler:</th><td class="field-body"><ul class="first simple">
-<li><strong>$item</strong> (<em>string</em>) &#8211; Item to fetch from the array</li>
-<li><strong>$array</strong> (<em>array</em>) &#8211; Input array</li>
-<li><strong>$default</strong> (<em>boolean</em>) &#8211; What to return if the array isn&#8217;t valid</li>
+<li><strong>$item</strong> (<em>string</em>) &#8211; Diziden çekilmesi istenilen indeks.</li>
+<li><strong>$array</strong> (<em>array</em>) &#8211; Girdi dizisi.</li>
+<li><strong>$default</strong> (<em>boolean</em>) &#8211; Eğer dizi geçerli değilse geri dönecek değer.</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Dönüş değeri::</th><td class="field-body"><p class="first last">FALSE on failure or the array item.</p>
+<tr class="field-even field"><th class="field-name">Dönüş değeri::</th><td class="field-body"><p class="first last">Hata durumunda ya da indeks dizide bulanmazsa FALSE döner.</p>
 </td>
 </tr>
 </tbody>
 </table>
 </dd></dl>
 
-<p>Example</p>
+<p>Örnek</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$array</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
         <span class="s1">&#39;color&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;red&#39;</span><span class="p">,</span>
         <span class="s1">&#39;shape&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;round&#39;</span><span class="p">,</span>
@@ -198,7 +191,7 @@ the third parameter.</p>
 <span class="nv">$my_shape</span> <span class="o">=</span> <span class="nx">elements</span><span class="p">(</span><span class="k">array</span><span class="p">(</span><span class="s1">&#39;color&#39;</span><span class="p">,</span> <span class="s1">&#39;shape&#39;</span><span class="p">,</span> <span class="s1">&#39;height&#39;</span><span class="p">),</span> <span class="nv">$array</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>The above will return the following array</p>
+<p>Yukarıdaki dizi şöyle geri döner</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="k">array</span><span class="p">(</span>
         <span class="s1">&#39;color&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;red&#39;</span><span class="p">,</span>
         <span class="s1">&#39;shape&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;round&#39;</span><span class="p">,</span>
@@ -206,11 +199,11 @@ the third parameter.</p>
 <span class="p">);</span>
 </pre></div>
 </div>
-<p>You can set the third parameter to any default value you like</p>
+<p>Üçüncü parametreyi istedğiniz gibi bir değere ayarlayabilirsiniz</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$my_shape</span> <span class="o">=</span> <span class="nx">elements</span><span class="p">(</span><span class="k">array</span><span class="p">(</span><span class="s1">&#39;color&#39;</span><span class="p">,</span> <span class="s1">&#39;shape&#39;</span><span class="p">,</span> <span class="s1">&#39;height&#39;</span><span class="p">),</span> <span class="nv">$array</span><span class="p">,</span> <span class="k">NULL</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>The above will return the following array</p>
+<p>Yukarıdaki dizi şöyle geri döner</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="k">array</span><span class="p">(</span>
         <span class="s1">&#39;color&#39;</span>         <span class="o">=&gt;</span> <span class="s1">&#39;red&#39;</span><span class="p">,</span>
         <span class="s1">&#39;shape&#39;</span>         <span class="o">=&gt;</span> <span class="s1">&#39;round&#39;</span><span class="p">,</span>
@@ -218,22 +211,18 @@ the third parameter.</p>
 <span class="p">);</span>
 </pre></div>
 </div>
-<p>This is useful when sending the $_POST array to one of your Models.
-This prevents users from sending additional POST data to be entered into
-your tables</p>
+<p>Bu kullanım $_POST dizisini model dosyasına gönderirken çok kullanışlıdır. Tabloya eklemek için ilaveten POST bilgisi hazırlamanızı önler.</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">model</span><span class="p">(</span><span class="s1">&#39;post_model&#39;</span><span class="p">);</span>
 <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">post_model</span><span class="o">-&gt;</span><span class="na">update</span><span class="p">(</span>
         <span class="nx">elements</span><span class="p">(</span><span class="k">array</span><span class="p">(</span><span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="s1">&#39;title&#39;</span><span class="p">,</span> <span class="s1">&#39;content&#39;</span><span class="p">),</span> <span class="nv">$_POST</span><span class="p">)</span>
 <span class="p">);</span>
 </pre></div>
 </div>
-<p>This ensures that only the id, title and content fields are sent to be
-updated.</p>
+<p>Bu örnekte sadece id, title ve content alanları update edilecektir.</p>
 </div>
 <div class="section" id="random-element">
 <h2><a class="toc-backref" href="#id5">random_element()</a><a class="headerlink" href="#random-element" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
-<p>Takes an array as input and returns a random element from it. Usage
-example</p>
+<p>Dizi içerisinden rasgele bir değer çeker ve geri döndürür:</p>
 <dl class="method">
 <dt id="random_element">
 <tt class="descname">random_element</tt><big>(</big><em>$array</em><big>)</big><a class="headerlink" href="#random_element" title="Bu tanımın kalıcı bağlantısı">¶</a></dt>
@@ -242,28 +231,27 @@ example</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parametreler:</th><td class="field-body"><ul class="first simple">
-<li><strong>$array</strong> (<em>array</em>) &#8211; Input array</li>
+<li><strong>$array</strong> (<em>array</em>) &#8211; Girdi dizisi.</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Dönüş değeri::</th><td class="field-body"><p class="first last">String - Random element from the array.</p>
+<tr class="field-even field"><th class="field-name">Dönüş değeri::</th><td class="field-body"><p class="first last">String - Diziden rasgele çekilen bir değer.</p>
 </td>
 </tr>
 </tbody>
 </table>
 </dd></dl>
 
-<div class="highlight-ci"><div class="highlight"><pre><span class="nv">$quotes</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
-        <span class="s2">&quot;I find that the harder I work, the more luck I seem to have. - Thomas Jefferson&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;Don&#39;t stay in bed, unless you can make money in bed. - George Burns&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;We didn&#39;t lose the game; we just ran out of time. - Vince Lombardi&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;If everything seems under control, you&#39;re not going fast enough. - Mario Andretti&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;Reality is merely an illusion, albeit a very persistent one. - Albert Einstein&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;Chance favors the prepared mind - Louis Pasteur&quot;</span>
-<span class="p">);</span>
+<div class="highlight-ci"><pre>$quotes = array(
+    "İstikbal göklerdedir. - M.Kemal ATATÜRK",
+    "Adalet evrenin ruhudur. - Ömer HAYYAM",
+    "Bir insanda kibir, hırs ve şehvet söz söylerken soğan kokar. - Mevlana",
+    "Doğru düşündüğüne inanan yanlış fikirlerle savaşmak zorunda kalır. - Mehmet KAPLAN",
+    ""Filozoflar dünyayı yalnızca çeşitli biçimlerde yorumlamışlardır; oysa sorun onu değiştirmektir. - Karl MARX",
+    "Kulağım halkta,gözüm toplumda. - Rıfat ILGAZ"
+);
 
-<span class="k">echo</span> <span class="nx">random_element</span><span class="p">(</span><span class="nv">$quotes</span><span class="p">);</span>
-</pre></div>
+echo random_element($quotes);</pre>
 </div>
 </div>
 </div>
@@ -283,7 +271,7 @@ example</p>
 				<a href="#header" title="Başa Dön">Başa Dön</a>
 			</p>
 			<p><a href="">CodeIgniter</a> &ndash; Copyright &copy;
-      2011, EllisLab, Inc.</a> &ndash; Son Güncelleme: 22 Kasım 2011</p>
+      2011, EllisLab, Inc.</a> &ndash; Son Güncelleme: 24 Aralık 2011</p>
 		</div><!-- /#footer -->
 	
 	<script src="../_static/asset/js/jquery-ui-min.js" type="text/javascript" charset="utf-8" async></script>
