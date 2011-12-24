@@ -4,7 +4,10 @@ Output Sınıfı
 
 Çıktı sınıfı sadece birkaç fonksiyon içeren küçük bir sınıftır: Hazırlanmış olan web sayfası çıktısının istek yapan tarayıcıya gönderilmesini sağlar. Ayrıca web sayfalarınızı önbeleğe almak (bkz: :doc:`Caching-Önbelleğe alma<../general/caching>`) için de kullanılır.
 
-.. not:: Bu sınıf sistem tarafından otomatik yüklendiği için ayrıca elle yüklemenize gerek yoktur.
+.. admonition:: Not
+    :class: note
+
+    Bu sınıf sistem tarafından otomatik yüklendiği için ayrıca elle yüklemenize gerek yoktur.
 
 Normal durumlarda sınıf otomatik olarak yüklenir ve arka planda sizinin herhangi bir şey yapmanıza gerek kalmadan çalışır. Örnek olarak :doc:`Yükleyici sınıfı<../libraries/loader>` ile bir view yüklediğinizde view dosyası otomatik olarak Codeigniter'in son işlemi olarak çıktı sınıfına yönlendirilir. İşi CodeIgniter'a bırakmayıp çıktıya müdahale etmek istediğinizde aşşağıdaki iki fonksiyonu kullanabilrsiniz.
 
@@ -15,7 +18,10 @@ Son çıktıyı bir string değerinden göndermenize olanak sağlar. Örnek kull
 
 	$this->output->set_output($data);
 
-.. Önemli:: Eğer çıktıyı elle gönderiyorsanız, çıktıyı gönderen kod çağrılan fonksiyonun en sonunda bulunmalıdır. Örnek olarak, eğer control dosyalarınız içerisinde bir sayfa yaratılıyorsa çıktıyı gönderen kod bu fonksiyonun en sonunda bulunmalıdır.
+.. admonition:: Önemli
+    :class: important
+
+    Eğer çıktıyı elle gönderiyorsanız, çıktıyı gönderen kod çağrılan fonksiyonun en sonunda bulunmalıdır. Örnek olarak, eğer control dosyalarınız içerisinde bir sayfa yaratılıyorsa çıktıyı gönderen kod bu fonksiyonun en sonunda bulunmalıdır.
 
 $this->output->set_content_type();
 ====================================
@@ -32,7 +38,10 @@ $this->output->set_content_type();
 	    ->set_content_type('jpeg') // You could also use ".jpeg" which will have the full stop removed before looking in config/mimes.php
 	    ->set_output(file_get_contents('files/something.jpg'));
 
-.. Önemli:: Tipi belli olmayan sayfalar için config/mimes.php dosyasında tanımlı olmadığından emin olun.
+.. admonition:: Önemli
+    :class: important
+
+    Tipi belli olmayan sayfalar için config/mimes.php dosyasında tanımlı olmadığından emin olun.
 
 $this->output->get_output();
 =============================

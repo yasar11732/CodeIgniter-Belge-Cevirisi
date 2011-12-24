@@ -69,7 +69,10 @@ Bir boolean değeri döndürür (TRUE/FALSE) kullanıcının bilinen bir tarayı
 	}
 	
 
-.. not:: Bu örnekte dizi indeksi, tarayıcılı listesinden "Safari" seçildi. Bu listeye application/config/user_agents.php dosyasından erişebilir, eğer isterseniz yeni tarayıcı ekleyebilir ya da mevcudu değiştirebilirsiniz.
+.. admonition:: Not
+    :class: note
+
+    Bu örnekte dizi indeksi, tarayıcılı listesinden "Safari" seçildi. Bu listeye application/config/user_agents.php dosyasından erişebilir, eğer isterseniz yeni tarayıcı ekleyebilir ya da mevcudu değiştirebilirsiniz.
 
 $this->agent->is_mobile()
 ==========================
@@ -97,7 +100,10 @@ $this->agent->is_robot()
 
 Bir boolean değeri döndürür (TRUE/FALSE) Ziyaretcinin bir robot olup olmadığını sorgular.
 
-.. not:: Tanım dosyası sadece en polüler robot tanımlarını barındırır. Bu tanımlama bütün robotların bir listesini barındırmaz. Dünyadaki bütün robotların incelenip listeye dahil edilmesi mümkün olmadığı için eğer sitenizi ziyaret eden robotlar tesbit ettiyseniz ve bu robotların da tanımlanmasını istiyorsanız application/config/user_agents.php dosyasını düzenleyerek bu tanımlamayı yapabilirsiniz.
+.. admonition:: Not
+    :class: note
+
+    Tanım dosyası sadece en polüler robot tanımlarını barındırır. Bu tanımlama bütün robotların bir listesini barındırmaz. Dünyadaki bütün robotların incelenip listeye dahil edilmesi mümkün olmadığı için eğer sitenizi ziyaret eden robotlar tesbit ettiyseniz ve bu robotların da tanımlanmasını istiyorsanız application/config/user_agents.php dosyasını düzenleyerek bu tanımlamayı yapabilirsiniz.
 
 $this->agent->is_referral()
 ============================
@@ -156,7 +162,10 @@ Gönderilen parametreye ait olan dilin kullanıcı tarafından kabul edilip edil
 	    echo 'You accept English!';
 	}
 
-.. not:: Bu bilginin tamamen doğru olduğu söylenemez, bazı tarayıcılar kabul edilen diller hakkında bilgi göndermeyebilir.
+.. admonition:: Not
+    :class: note
+
+    Bu bilginin tamamen doğru olduğu söylenemez, bazı tarayıcılar kabul edilen diller hakkında bilgi göndermeyebilir.
 
 $this->agent->accept_charset()
 ===============================
@@ -168,4 +177,7 @@ Gönderilen parametreye ait olan karakter kodlamasının kullanıcı tarafından
 	    echo 'You browser supports UTF-8!';
 	}
 
-.. not:: Bu bilginin tamamen doğru olduğu söylenemez, bazı tarayıcılar karakter kodlaması hakkında bilgi göndermeyebilir.
+.. admonition:: Not
+    :class: note
+
+    Bu bilginin tamamen doğru olduğu söylenemez, bazı tarayıcılar karakter kodlaması hakkında bilgi göndermeyebilir.

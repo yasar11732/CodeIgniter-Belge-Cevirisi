@@ -33,7 +33,10 @@ Bu fonksyion parametre olarak gönderilen dizini tarayarak içerdiği dosyaları
 
 	$map = directory_map('./mydirectory/');
 
-.. not:: Parametre olarak tam dizin yolu verilmezse aktif dizin index.php dosyanızın bulunduğu dizin olarak kabul edilecektir.
+.. admonition:: Not
+    :class: note
+
+    Parametre olarak tam dizin yolu verilmezse aktif dizin index.php dosyanızın bulunduğu dizin olarak kabul edilecektir.
 
 
 Yukarıdaki fonksiyon çağrımı ile alt dizin ve dosyalar da diziye dahil edilecektir. Sadece dizin içeriğini almak istiyorsaniz alt dizinleri almak istemiyorsanız ikinci parametreyi true olarak gönderebilirsiniz. Örnek::
