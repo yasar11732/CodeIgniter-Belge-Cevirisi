@@ -1,10 +1,9 @@
-
 <!DOCTYPE html>
 <html>
 	<head>
 		<meta charset="utf-8">
 	    
-	    <title>Database Forge Class &mdash; CodeIgniter 3.0-dev documentation</title>
+	    <title>Veritabanı İşleme Sınıfı &mdash; CodeIgniter 3.0-dev Dökümanı</title>
 
 	    <link rel="stylesheet" href="../_static/asset/css/common.css" type="text/css" />
 	    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -30,17 +29,17 @@
 		<div id="table-contents">
 			<div class="toctree-wrapper compound">
 			<ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../changelog.html">Change Log</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../changelog.html">Yeni Versiyondakiler?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../license.html">Open Software License (&#8220;OSL&#8221;) v 3.0</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../overview/index.html">CodeIgniter Overview</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../general/requirements.html">Server Requirements</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../installation/index.html">Installation Instructions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../general/index.html">General Topics</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../libraries/index.html">Libraries</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../helpers/index.html">Helpers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../overview/index.html">CodeIgniter'a Genel Bakış</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../general/requirements.html">Sunucu Gereksinimleri</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation/index.html">Kurulum Yönergeleri</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../general/index.html">Genel Konular</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../libraries/index.html">Kütüphaneler</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../helpers/index.html">Yardımcı Fonksiyonlar</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">Veri Tabanı Sınıfı</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="examples.html">Hızlı Başlangıç: Kullanım Örnekleri</a></li>
-<li class="toctree-l2"><a class="reference internal" href="configuration.html">Veri Tabanı Konfigürasyonu</a></li>
+<li class="toctree-l2"><a class="reference internal" href="configuration.html">Veri Tabanı Ayarları</a></li>
 <li class="toctree-l2"><a class="reference internal" href="connecting.html">Veri Tabanına Bağlanmak</a></li>
 <li class="toctree-l2"><a class="reference internal" href="queries.html">Sorgu Çalıştırmak</a></li>
 <li class="toctree-l2"><a class="reference internal" href="results.html">Sorgu Sonuçları Üretmek</a></li>
@@ -51,7 +50,7 @@
 <li class="toctree-l2"><a class="reference internal" href="fields.html">Alan Meta Verileri</a></li>
 <li class="toctree-l2"><a class="reference internal" href="call_function.html">Özel Fonksiyon Çağrıları</a></li>
 <li class="toctree-l2"><a class="reference internal" href="caching.html">Sorgu Önbelleği</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="">Veri Tabanı Forge Sınıfı İle Veri Tabanı Düzenleme İşlemleri</a><ul class="simple">
+<li class="toctree-l2 current"><a class="current reference internal" href="">Veri Tabanı İşleme Sınıfı İle Veri Tabanı Düzenleme İşlemleri</a><ul class="simple">
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="utilities.html">Veri Tabanı Yardımcı Sınıfı</a></li>
@@ -86,19 +85,19 @@
 				<li><a id="toc-link" href="../index.html">İçindekiler</a>&nbsp;&nbsp; &rsaquo;</li>
 				<li><a href="index.html" accesskey="U">Veri Tabanı Sınıfı</a>&nbsp;&nbsp;  &rsaquo;</li>
 
-				<li><strong>Database Forge Class</strong></li>
+				<li><strong>Veritabanı İşleme Sınıfı</strong></li>
 			</ul>
 		</div><!-- /#header -->
 
 		<div class="section" id="content">
 			<div class="section" id="database-forge-class">
-<h1><a class="toc-backref" href="#id1">Database Forge Class</a><a class="headerlink" href="#database-forge-class" title="Bu başlığın kalıcı bağlantısı">¶</a></h1>
+<h1><a class="toc-backref" href="#id1">Veritabanı İşleme Sınıfı</a><a class="headerlink" href="#database-forge-class" title="Bu başlığın kalıcı bağlantısı">¶</a></h1>
 <p>The Database Forge Class contains functions that help you manage your
 database.</p>
 <div class="contents topic" id="table-of-contents">
 <p class="topic-title first">Table of Contents</p>
 <ul class="simple">
-<li><a class="reference internal" href="#database-forge-class" id="id1">Database Forge Class</a><ul>
+<li><a class="reference internal" href="#database-forge-class" id="id1">Veritabanı İşleme Sınıfı</a><ul>
 <li><a class="reference internal" href="#initializing-the-forge-class" id="id2">Initializing the Forge Class</a><ul>
 <li><a class="reference internal" href="#this-dbforge-create-database-db-name" id="id3">$this-&gt;dbforge-&gt;create_database(&#8216;db_name&#8217;)</a></li>
 <li><a class="reference internal" href="#this-dbforge-drop-database-db-name" id="id4">$this-&gt;dbforge-&gt;drop_database(&#8216;db_name&#8217;)</a></li>
