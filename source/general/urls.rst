@@ -32,19 +32,23 @@ Adresten Index.php kaldırmak
 
 	example.com/index.php/news/article/my_article
 
-Bu dosyayı .htaccess dosyasında yazacağınız bir kaç basit kural ile kaldırabilirsiniz. Burada verilen örnek dosya ile, kullanılan çıkartma  metodu ile herşeyi yeniden yönlendirebilirsiniz:
+If your Apache server has mod_rewrite enabled, you can easily remove this
+file by using a .htaccess file with some simple rules. Here is an example
+of such a file, using the "negative" method in which everything is redirected
+except the specified items:
 
 ::
 	
 	RewriteEngine On
 	RewriteCond %{REQUEST_FILENAME} !-f
 	RewriteCond %{REQUEST_FILENAME} !-d
-	RewriteRule ^(.*)$ /index.php/$1 [L]
+	RewriteRule ^(.*)$ index.php/$1 [L]
 
 Yukarıdaki örnekte, var olmayan her dosya veya klasör için yapılan HTTP istemi index.php dosyamızı çağırmış işlemi görecektir.
 
 URL Soneki Eklemek
 ==================
+.. note:: Note: These specific rules might not work for all server configurations.
 
 **config/config.php** dosyanızda, istediğiniz soneki ekleyerek CodeIgniter tarafından URL oluşturulmasını tanımlayabilirsiniz. Örneğin, eğer URL şöyle ise::
 
