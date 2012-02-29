@@ -1,32 +1,28 @@
-#########
-FTP Class
-#########
+##########
+FTP Sınıfı
+##########
 
-CodeIgniter's FTP Class permits files to be transfered to a remote
-server. Remote files can also be moved, renamed, and deleted. The FTP
-class also includes a "mirroring" function that permits an entire local
-directory to be recreated remotely via FTP.
+CodeIgniter 'ın FTP sınıfı sunucuya dosya yüklenmesine izin verir. Yüklenen dosyalar taşınabilir, ismi değiştirilebilir ve silinebilirler. Ayrıca, FTP sınıfının yerel dizini sunucu üzerindeki dizini, sunucu üzerine aynalayan fonksiyona ("mirroring") sahiptir.
 
-.. note:: SFTP and SSL FTP protocols are not supported, only standard
-	FTP.
+.. admonition:: Not
+    :class: note
 
-**********************
-Initializing the Class
-**********************
+    SFTP ve SSL FTP protokolleri desteklenmes. Sadece sstandart FTP protokolü desteklenir.
 
-Like most other classes in CodeIgniter, the FTP class is initialized in
-your controller using the $this->load->library function::
+********************
+Sınıfın Başlatılması
+********************
+
+CodeIgniter'daki diğer sınıflar gibi, FTP sınıfı da controller dosyasında $this->load->library fonksiyonu kullanılarak başlatılır::
 
 	$this->load->library('ftp');
 
-Once loaded, the FTP object will be available using: $this->ftp
+Bir kere yüklendikten sonra, FTP objesi şöyle kullanılır: $this->ftp
 
-Usage Examples
-==============
+Kullanım Örnekleri
+==================
 
-In this example a connection is opened to the FTP server, and a local
-file is read and uploaded in ASCII mode. The file permissions are set to
-755. Note: Setting permissions requires PHP 5.
+Bu örnekte, FTP bağlantısı sunucu üzerine açılır ve yerel dosyalar okunur, ASCII mod ile yüklenir. Dosya izinleri 755 olarak ayarlanmıştır. Not: İzin ayarları PHP 5 için şarttır.
 
 ::
 
@@ -43,8 +39,7 @@ file is read and uploaded in ASCII mode. The file permissions are set to
 
 	$this->ftp->close();
 
-In this example a list of files is retrieved from the server.
-
+Bu örnekte, sunucu üzerindeki dosyaların listesi alınır.
 ::
 
 	$this->load->library('ftp');
@@ -62,8 +57,8 @@ In this example a list of files is retrieved from the server.
 
 	$this->ftp->close();
 
-In this example a local directory is mirrored on the server.
-
+Bu örnekte, yerel dizin sunucu üzerine aynalanır.	
+	
 ::
 
 	$this->load->library('ftp');
@@ -79,18 +74,16 @@ In this example a local directory is mirrored on the server.
 
 	$this->ftp->close();
 
-******************
-Function Reference
-******************
+*******************
+Fonksiyon Referansı
+*******************
 
 $this->ftp->connect()
 =====================
 
-Connects and logs into to the FTP server. Connection preferences are set
-by passing an array to the function, or you can store them in a config
-file.
+FTP sunucuya bağlanır ve kayıt bilgisi tutulur. Bağlantı tercihleri fonksiyona bir dizi ile aktarılabilidiği gibi config dosyası içinde de aktarılabilir.
 
-Here is an example showing how you set preferences manually::
+Bu örnekte, tercihlerin dizi ile nasıl aktarıldığı gösterilmektedir::
 
 	$this->load->library('ftp');
 
@@ -103,61 +96,49 @@ Here is an example showing how you set preferences manually::
 
 	$this->ftp->connect($config);
 
-Setting FTP Preferences in a Config File
-****************************************
+FTP Tercihlerinin Config Dosyası ile Ayarlanması
+************************************************
 
-If you prefer you can store your FTP preferences in a config file.
-Simply create a new file called the ftp.php, add the $config array in
-that file. Then save the file at config/ftp.php and it will be used
-automatically.
+Eğer FTP tercihlerinizi kayıt etmek isterseniz bir config dosyası hazırlamalısınız. Hızlıca, ftp.php isimli bir dosya oluşturun, bu dosya içine $config isimli dizi ekleyin. Daha sonra bu dosyayı config/ftp.php yoluna kayıt ederseniz, bu dosya otomatik olarak kullanılır.
 
-Available connection options
-****************************
+Kullanılabilen bağlantı opsiyonları
+***********************************
 
--  **hostname** - the FTP hostname. Usually something like:
+-  **hostname** - FTP sunucu adı. Genelde şunun gibidir:
    ftp.example.com
--  **username** - the FTP username.
--  **password** - the FTP password.
--  **port** - The port number. Set to 21 by default.
--  **debug** - TRUE/FALSE (boolean). Whether to enable debugging to
-   display error messages.
--  **passive** - TRUE/FALSE (boolean). Whether to use passive mode.
-   Passive is set automatically by default.
+-  **username** - FTP kullanıcı adı.
+-  **password** - FTP şifresi.
+-  **port** - Port numarası. Varsayılan 21 dir.
+-  **debug** - TRUE/FALSE (boolean). Hata mesajları gösterilsin/gösterilmesin
+-  **passive** - TRUE/FALSE (boolean). Passive mod kullanılırsa. Passive mod varsayılır.
 
 $this->ftp->upload()
 ====================
 
-Uploads a file to your server. You must supply the local path and the
-remote path, and you can optionally set the mode and permissions.
-Example::
+Sunucuya bir dosya yükler. Yerel dosya yolu ile sunucudaki dosya yolunu tanımlamalısınız. Yükleme modunu ve izin değeri opsiyonel verilebilir.
+Örnek::
 
 	$this->ftp->upload('/local/path/to/myfile.html', '/public_html/myfile.html', 'ascii', 0775);
 
-**Mode options are:** ascii, binary, and auto (the default). If auto is
-used it will base the mode on the file extension of the source file.
+**Mod opsiyonları:** ascii, binary, and auto (varsayılan). Eğer auto değeri kullanılırsa, kaynak dosyanın dosya uzantısı yükleme sırasında baz olarak kullanılır.
 
-Permissions are available if you are running PHP 5 and can be passed as
-an octal value in the fourth parameter.
+PHP 5 kullanıyorsanız, izinler geçerlidir ve dördüncü parametrede octal değer olarak aktarılır.
 
 $this->ftp->download()
 ======================
 
-Downloads a file from your server. You must supply the remote path and
-the local path, and you can optionally set the mode. Example::
+Sunucudan bir dosya indirir. Sunucu üzerinde dosya yolu ile yerel dosya yolunu tanımlamalısınız, mod değeri opsiyonel verilebilir. Örneğin::
 
 	$this->ftp->download('/public_html/myfile.html', '/local/path/to/myfile.html', 'ascii');
 
-**Mode options are:** ascii, binary, and auto (the default). If auto is
-used it will base the mode on the file extension of the source file.
+**Mod opsiyonları:** ascii, binary, and auto (varsayılan). Eğer auto değeri kullanılırsa, kaynak dosyanın dosya uzantısı yükleme sırasında baz olarak kullanılır.
 
-Returns FALSE if the download does not execute successfully (including
-if PHP does not have permission to write the local file)
+Dosya indirilmesi gerçekleşmezse (eğer PHP yerel dosyayı yazma yetkisi yoksa da) geri dönüşü FALSE değeridir. 
 
 $this->ftp->rename()
 ====================
 
-Permits you to rename a file. Supply the source file name/path and the
-new file name/path.
+Dosya ismini değiştirir. Dosya adı/yolu ile yeni dosya adı/yolu değeri tanımlanır.
 
 ::
 
@@ -167,33 +148,26 @@ new file name/path.
 $this->ftp->move()
 ==================
 
-Lets you move a file. Supply the source and destination paths::
+Dosyayı taşır. Kaynak ve hedef yol değeri tanımlanmalıdır::
 
 	// Moves blog.html from "joe" to "fred"
 	$this->ftp->move('/public_html/joe/blog.html', '/public_html/fred/blog.html');
 
-Note: if the destination file name is different the file will be
-renamed.
+Not: Eğer hedef dosya adı farklı ise dosyanın ismi değiştirilir.
 
 $this->ftp->delete_file()
 ==========================
 
-Lets you delete a file. Supply the source path with the file name.
-
-::
+Dosya siler. Kaynak yolu ve dosya ismi tanımlanmalıdır::
 
 	 $this->ftp->delete_file('/public_html/joe/blog.html');
 
 $this->ftp->delete_dir()
 =========================
 
-Lets you delete a directory and everything it contains. Supply the
-source path to the directory with a trailing slash.
+Dizini ve altındaki herşeyi siler. Dizin adı ve kaynak yolu sonuna ters bölü (slash) ile tanımlanmalıdır.
 
-**Important** Be VERY careful with this function. It will recursively
-delete **everything** within the supplied path, including sub-folders
-and all files. Make absolutely sure your path is correct. Try using the
-list_files() function first to verify that your path is correct.
+**Önemli** bu fonksiyonu kullanırken ÇOK DİKKATLİ olun. Kaynak yolun altındaki **herşey**, alt dizinler ve dosyalar dahil silinebilir. Yolun geçerli olduğundan emin olun. Yolun doğruluğundan emin olmak için önce list_files() komutunu çalıştırın.
 
 ::
 
@@ -202,8 +176,7 @@ list_files() function first to verify that your path is correct.
 $this->ftp->list_files()
 =========================
 
-Permits you to retrieve a list of files on your server returned as an
-array. You must supply the path to the desired directory.
+Sunucunuz altındaki dosyaların listesini dizin olarak geri gönderir. Liste almak isteiğiniz dizinin yolunu tanımlamalısınız.
 
 ::
 
@@ -214,20 +187,14 @@ array. You must supply the path to the desired directory.
 $this->ftp->mirror()
 ====================
 
-Recursively reads a local folder and everything it contains (including
-sub-folders) and creates a mirror via FTP based on it. Whatever the
-directory structure of the original file path will be recreated on the
-server. You must supply a source path and a destination path::
+Yerel dizin altındaki (tüm alt dizinler dahil) yolu okur ve sunucu üzerine FTP kullanarak aynalar. Orijinal dosya yolunun altındaki dizin yapısında ne varsa sunucu üzerine yeniden oluşturur. Kaynak yolunu ve hedef yolunu tanımlamalısınız::
 
 	 $this->ftp->mirror('/path/to/myfolder/', '/public_html/myfolder/');
 
 $this->ftp->mkdir()
 ===================
 
-Lets you create a directory on your server. Supply the path ending in
-the folder name you wish to create, with a trailing slash. Permissions
-can be set by passed an octal value in the second parameter (if you are
-running PHP 5).
+Sunucunuz üzerine dizin oluşturur. Oluşturmak istediğiniz dosya adını sonuna ters bölü işareti kullanarak tanımlamalısınız. İzinler (eğer PHP 5 kullanıyorsanız), ikinci parametre olarak octal formatta aktarılmalıdır.
 
 ::
 
@@ -237,8 +204,7 @@ running PHP 5).
 $this->ftp->chmod()
 ===================
 
-Permits you to set file permissions. Supply the path to the file or
-folder you wish to alter permissions on::
+Dosya izinlerini değiştirir. İzinlerini değiştirmek istediğiniz dosya adını ve yolunu tanımlamalısınız::
 
 	// Chmod "bar" to 777
 	$this->ftp->chmod('/public_html/foo/bar/', DIR_WRITE_MODE);
@@ -246,5 +212,4 @@ folder you wish to alter permissions on::
 $this->ftp->close();
 ====================
 
-Closes the connection to your server. It's recommended that you use this
-when you are finished uploading.
+Sunucunuzla bağlantıyı kapatır. Yükleme işlemini bitirince kapatmanız önerilir.

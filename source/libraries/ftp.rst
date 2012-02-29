@@ -4,7 +4,10 @@ FTP Sınıfı
 
 CodeIgniter 'ın FTP sınıfı sunucuya dosya yüklenmesine izin verir. Yüklenen dosyalar taşınabilir, ismi değiştirilebilir ve silinebilirler. Ayrıca, FTP sınıfının yerel dizini sunucu üzerindeki dizini, sunucu üzerine aynalayan fonksiyona ("mirroring") sahiptir.
 
-.. not:: SFTP ve SSL FTP protokolleri desteklenmes. Sadece sstandart FTP protokolü desteklenir.
+.. admonition:: Not
+    :class: note
+
+    SFTP ve SSL FTP protokolleri desteklenmes. Sadece sstandart FTP protokolü desteklenir.
 
 ********************
 Sınıfın Başlatılması

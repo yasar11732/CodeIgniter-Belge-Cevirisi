@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="utf-8">
 	    
-	    <title>FTP Class &mdash; CodeIgniter 3.0-dev documentation</title>
+	    <title>FTP Sınıfı &mdash; CodeIgniter 3.0-dev documentation</title>
 
 	    <link rel="stylesheet" href="../_static/asset/css/common.css" type="text/css" />
 	    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -46,7 +46,7 @@
 <li class="toctree-l2"><a class="reference internal" href="encryption.html">Encryption Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="file_uploading.html">File Uploading Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="form_validation.html">Form Validation</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="">FTP Class</a><ul class="simple">
+<li class="toctree-l2 current"><a class="current reference internal" href="">FTP Sınıfı</a><ul class="simple">
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="image_lib.html">Image Manipulation Class</a></li>
@@ -101,35 +101,28 @@
 				<li><a id="toc-link" href="../index.html">İçindekiler</a>&nbsp;&nbsp; &rsaquo;</li>
 				<li><a href="index.html" accesskey="U">Libraries</a>&nbsp;&nbsp;  &rsaquo;</li>
 
-				<li><strong>FTP Class</strong></li>
+				<li><strong>FTP Sınıfı</strong></li>
 			</ul>
 		</div><!-- /#header -->
 
 		<div class="section" id="content">
-			<div class="section" id="ftp-class">
-<h1>FTP Class<a class="headerlink" href="#ftp-class" title="Bu başlığın kalıcı bağlantısı">¶</a></h1>
-<p>CodeIgniter&#8217;s FTP Class permits files to be transfered to a remote
-server. Remote files can also be moved, renamed, and deleted. The FTP
-class also includes a &#8220;mirroring&#8221; function that permits an entire local
-directory to be recreated remotely via FTP.</p>
-<div class="admonition note">
+			<div class="section" id="ftp-sinifi">
+<h1>FTP Sınıfı<a class="headerlink" href="#ftp-sinifi" title="Bu başlığın kalıcı bağlantısı">¶</a></h1>
+<p>CodeIgniter &#8216;ın FTP sınıfı sunucuya dosya yüklenmesine izin verir. Yüklenen dosyalar taşınabilir, ismi değiştirilebilir ve silinebilirler. Ayrıca, FTP sınıfının yerel dizini sunucu üzerindeki dizini, sunucu üzerine aynalayan fonksiyona (&#8220;mirroring&#8221;) sahiptir.</p>
+<div class="note admonition">
 <p class="first admonition-title">Not</p>
-<p class="last">SFTP and SSL FTP protocols are not supported, only standard
-FTP.</p>
+<p class="last">SFTP ve SSL FTP protokolleri desteklenmes. Sadece sstandart FTP protokolü desteklenir.</p>
 </div>
-<div class="section" id="initializing-the-class">
-<h2>Initializing the Class<a class="headerlink" href="#initializing-the-class" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
-<p>Like most other classes in CodeIgniter, the FTP class is initialized in
-your controller using the $this-&gt;load-&gt;library function:</p>
+<div class="section" id="sinifin-baslatilmasi">
+<h2>Sınıfın Başlatılması<a class="headerlink" href="#sinifin-baslatilmasi" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
+<p>CodeIgniter&#8217;daki diğer sınıflar gibi, FTP sınıfı da controller dosyasında $this-&gt;load-&gt;library fonksiyonu kullanılarak başlatılır:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">library</span><span class="p">(</span><span class="s1">&#39;ftp&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>Once loaded, the FTP object will be available using: $this-&gt;ftp</p>
-<div class="section" id="usage-examples">
-<h3>Usage Examples<a class="headerlink" href="#usage-examples" title="Bu başlığın kalıcı bağlantısı">¶</a></h3>
-<p>In this example a connection is opened to the FTP server, and a local
-file is read and uploaded in ASCII mode. The file permissions are set to
-755. Note: Setting permissions requires PHP 5.</p>
+<p>Bir kere yüklendikten sonra, FTP objesi şöyle kullanılır: $this-&gt;ftp</p>
+<div class="section" id="kullanim-ornekleri">
+<h3>Kullanım Örnekleri<a class="headerlink" href="#kullanim-ornekleri" title="Bu başlığın kalıcı bağlantısı">¶</a></h3>
+<p>Bu örnekte, FTP bağlantısı sunucu üzerine açılır ve yerel dosyalar okunur, ASCII mod ile yüklenir. Dosya izinleri 755 olarak ayarlanmıştır. Not: İzin ayarları PHP 5 için şarttır.</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">library</span><span class="p">(</span><span class="s1">&#39;ftp&#39;</span><span class="p">);</span>
 
 <span class="nv">$config</span><span class="p">[</span><span class="s1">&#39;hostname&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;ftp.example.com&#39;</span><span class="p">;</span>
@@ -144,7 +137,7 @@ file is read and uploaded in ASCII mode. The file permissions are set to
 <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">ftp</span><span class="o">-&gt;</span><span class="na">close</span><span class="p">();</span>
 </pre></div>
 </div>
-<p>In this example a list of files is retrieved from the server.</p>
+<p>Bu örnekte, sunucu üzerindeki dosyaların listesi alınır.</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">library</span><span class="p">(</span><span class="s1">&#39;ftp&#39;</span><span class="p">);</span>
 
 <span class="nv">$config</span><span class="p">[</span><span class="s1">&#39;hostname&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;ftp.example.com&#39;</span><span class="p">;</span>
@@ -161,7 +154,7 @@ file is read and uploaded in ASCII mode. The file permissions are set to
 <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">ftp</span><span class="o">-&gt;</span><span class="na">close</span><span class="p">();</span>
 </pre></div>
 </div>
-<p>In this example a local directory is mirrored on the server.</p>
+<p>Bu örnekte, yerel dizin sunucu üzerine aynalanır.</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">library</span><span class="p">(</span><span class="s1">&#39;ftp&#39;</span><span class="p">);</span>
 
 <span class="nv">$config</span><span class="p">[</span><span class="s1">&#39;hostname&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;ftp.example.com&#39;</span><span class="p">;</span>
@@ -178,14 +171,12 @@ file is read and uploaded in ASCII mode. The file permissions are set to
 </div>
 </div>
 </div>
-<div class="section" id="function-reference">
-<h2>Function Reference<a class="headerlink" href="#function-reference" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
+<div class="section" id="fonksiyon-referansi">
+<h2>Fonksiyon Referansı<a class="headerlink" href="#fonksiyon-referansi" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
 <div class="section" id="this-ftp-connect">
 <h3>$this-&gt;ftp-&gt;connect()<a class="headerlink" href="#this-ftp-connect" title="Bu başlığın kalıcı bağlantısı">¶</a></h3>
-<p>Connects and logs into to the FTP server. Connection preferences are set
-by passing an array to the function, or you can store them in a config
-file.</p>
-<p>Here is an example showing how you set preferences manually:</p>
+<p>FTP sunucuya bağlanır ve kayıt bilgisi tutulur. Bağlantı tercihleri fonksiyona bir dizi ile aktarılabilidiği gibi config dosyası içinde de aktarılabilir.</p>
+<p>Bu örnekte, tercihlerin dizi ile nasıl aktarıldığı gösterilmektedir:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">library</span><span class="p">(</span><span class="s1">&#39;ftp&#39;</span><span class="p">);</span>
 
 <span class="nv">$config</span><span class="p">[</span><span class="s1">&#39;hostname&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;ftp.example.com&#39;</span><span class="p">;</span>
@@ -198,57 +189,45 @@ file.</p>
 <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">ftp</span><span class="o">-&gt;</span><span class="na">connect</span><span class="p">(</span><span class="nv">$config</span><span class="p">);</span>
 </pre></div>
 </div>
-<div class="section" id="setting-ftp-preferences-in-a-config-file">
-<h4>Setting FTP Preferences in a Config File<a class="headerlink" href="#setting-ftp-preferences-in-a-config-file" title="Bu başlığın kalıcı bağlantısı">¶</a></h4>
-<p>If you prefer you can store your FTP preferences in a config file.
-Simply create a new file called the ftp.php, add the $config array in
-that file. Then save the file at config/ftp.php and it will be used
-automatically.</p>
+<div class="section" id="ftp-tercihlerinin-config-dosyasi-ile-ayarlanmasi">
+<h4>FTP Tercihlerinin Config Dosyası ile Ayarlanması<a class="headerlink" href="#ftp-tercihlerinin-config-dosyasi-ile-ayarlanmasi" title="Bu başlığın kalıcı bağlantısı">¶</a></h4>
+<p>Eğer FTP tercihlerinizi kayıt etmek isterseniz bir config dosyası hazırlamalısınız. Hızlıca, ftp.php isimli bir dosya oluşturun, bu dosya içine $config isimli dizi ekleyin. Daha sonra bu dosyayı config/ftp.php yoluna kayıt ederseniz, bu dosya otomatik olarak kullanılır.</p>
 </div>
-<div class="section" id="available-connection-options">
-<h4>Available connection options<a class="headerlink" href="#available-connection-options" title="Bu başlığın kalıcı bağlantısı">¶</a></h4>
+<div class="section" id="kullanilabilen-baglanti-opsiyonlari">
+<h4>Kullanılabilen bağlantı opsiyonları<a class="headerlink" href="#kullanilabilen-baglanti-opsiyonlari" title="Bu başlığın kalıcı bağlantısı">¶</a></h4>
 <ul class="simple">
-<li><strong>hostname</strong> - the FTP hostname. Usually something like:
+<li><strong>hostname</strong> - FTP sunucu adı. Genelde şunun gibidir:
 ftp.example.com</li>
-<li><strong>username</strong> - the FTP username.</li>
-<li><strong>password</strong> - the FTP password.</li>
-<li><strong>port</strong> - The port number. Set to 21 by default.</li>
-<li><strong>debug</strong> - TRUE/FALSE (boolean). Whether to enable debugging to
-display error messages.</li>
-<li><strong>passive</strong> - TRUE/FALSE (boolean). Whether to use passive mode.
-Passive is set automatically by default.</li>
+<li><strong>username</strong> - FTP kullanıcı adı.</li>
+<li><strong>password</strong> - FTP şifresi.</li>
+<li><strong>port</strong> - Port numarası. Varsayılan 21 dir.</li>
+<li><strong>debug</strong> - TRUE/FALSE (boolean). Hata mesajları gösterilsin/gösterilmesin</li>
+<li><strong>passive</strong> - TRUE/FALSE (boolean). Passive mod kullanılırsa. Passive mod varsayılır.</li>
 </ul>
 </div>
 </div>
 <div class="section" id="this-ftp-upload">
 <h3>$this-&gt;ftp-&gt;upload()<a class="headerlink" href="#this-ftp-upload" title="Bu başlığın kalıcı bağlantısı">¶</a></h3>
-<p>Uploads a file to your server. You must supply the local path and the
-remote path, and you can optionally set the mode and permissions.
-Example:</p>
+<p>Sunucuya bir dosya yükler. Yerel dosya yolu ile sunucudaki dosya yolunu tanımlamalısınız. Yükleme modunu ve izin değeri opsiyonel verilebilir.
+Örnek:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">ftp</span><span class="o">-&gt;</span><span class="na">upload</span><span class="p">(</span><span class="s1">&#39;/local/path/to/myfile.html&#39;</span><span class="p">,</span> <span class="s1">&#39;/public_html/myfile.html&#39;</span><span class="p">,</span> <span class="s1">&#39;ascii&#39;</span><span class="p">,</span> <span class="mo">0775</span><span class="p">);</span>
 </pre></div>
 </div>
-<p><strong>Mode options are:</strong> ascii, binary, and auto (the default). If auto is
-used it will base the mode on the file extension of the source file.</p>
-<p>Permissions are available if you are running PHP 5 and can be passed as
-an octal value in the fourth parameter.</p>
+<p><strong>Mod opsiyonları:</strong> ascii, binary, and auto (varsayılan). Eğer auto değeri kullanılırsa, kaynak dosyanın dosya uzantısı yükleme sırasında baz olarak kullanılır.</p>
+<p>PHP 5 kullanıyorsanız, izinler geçerlidir ve dördüncü parametrede octal değer olarak aktarılır.</p>
 </div>
 <div class="section" id="this-ftp-download">
 <h3>$this-&gt;ftp-&gt;download()<a class="headerlink" href="#this-ftp-download" title="Bu başlığın kalıcı bağlantısı">¶</a></h3>
-<p>Downloads a file from your server. You must supply the remote path and
-the local path, and you can optionally set the mode. Example:</p>
+<p>Sunucudan bir dosya indirir. Sunucu üzerinde dosya yolu ile yerel dosya yolunu tanımlamalısınız, mod değeri opsiyonel verilebilir. Örneğin:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">ftp</span><span class="o">-&gt;</span><span class="na">download</span><span class="p">(</span><span class="s1">&#39;/public_html/myfile.html&#39;</span><span class="p">,</span> <span class="s1">&#39;/local/path/to/myfile.html&#39;</span><span class="p">,</span> <span class="s1">&#39;ascii&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
-<p><strong>Mode options are:</strong> ascii, binary, and auto (the default). If auto is
-used it will base the mode on the file extension of the source file.</p>
-<p>Returns FALSE if the download does not execute successfully (including
-if PHP does not have permission to write the local file)</p>
+<p><strong>Mod opsiyonları:</strong> ascii, binary, and auto (varsayılan). Eğer auto değeri kullanılırsa, kaynak dosyanın dosya uzantısı yükleme sırasında baz olarak kullanılır.</p>
+<p>Dosya indirilmesi gerçekleşmezse (eğer PHP yerel dosyayı yazma yetkisi yoksa da) geri dönüşü FALSE değeridir.</p>
 </div>
 <div class="section" id="this-ftp-rename">
 <h3>$this-&gt;ftp-&gt;rename()<a class="headerlink" href="#this-ftp-rename" title="Bu başlığın kalıcı bağlantısı">¶</a></h3>
-<p>Permits you to rename a file. Supply the source file name/path and the
-new file name/path.</p>
+<p>Dosya ismini değiştirir. Dosya adı/yolu ile yeni dosya adı/yolu değeri tanımlanır.</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="c1">// Renames green.html to blue.html</span>
 <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">ftp</span><span class="o">-&gt;</span><span class="na">rename</span><span class="p">(</span><span class="s1">&#39;/public_html/foo/green.html&#39;</span><span class="p">,</span> <span class="s1">&#39;/public_html/foo/blue.html&#39;</span><span class="p">);</span>
 </pre></div>
@@ -256,37 +235,31 @@ new file name/path.</p>
 </div>
 <div class="section" id="this-ftp-move">
 <h3>$this-&gt;ftp-&gt;move()<a class="headerlink" href="#this-ftp-move" title="Bu başlığın kalıcı bağlantısı">¶</a></h3>
-<p>Lets you move a file. Supply the source and destination paths:</p>
+<p>Dosyayı taşır. Kaynak ve hedef yol değeri tanımlanmalıdır:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="c1">// Moves blog.html from &quot;joe&quot; to &quot;fred&quot;</span>
 <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">ftp</span><span class="o">-&gt;</span><span class="na">move</span><span class="p">(</span><span class="s1">&#39;/public_html/joe/blog.html&#39;</span><span class="p">,</span> <span class="s1">&#39;/public_html/fred/blog.html&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>Note: if the destination file name is different the file will be
-renamed.</p>
+<p>Not: Eğer hedef dosya adı farklı ise dosyanın ismi değiştirilir.</p>
 </div>
 <div class="section" id="this-ftp-delete-file">
 <h3>$this-&gt;ftp-&gt;delete_file()<a class="headerlink" href="#this-ftp-delete-file" title="Bu başlığın kalıcı bağlantısı">¶</a></h3>
-<p>Lets you delete a file. Supply the source path with the file name.</p>
+<p>Dosya siler. Kaynak yolu ve dosya ismi tanımlanmalıdır:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">ftp</span><span class="o">-&gt;</span><span class="na">delete_file</span><span class="p">(</span><span class="s1">&#39;/public_html/joe/blog.html&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="this-ftp-delete-dir">
 <h3>$this-&gt;ftp-&gt;delete_dir()<a class="headerlink" href="#this-ftp-delete-dir" title="Bu başlığın kalıcı bağlantısı">¶</a></h3>
-<p>Lets you delete a directory and everything it contains. Supply the
-source path to the directory with a trailing slash.</p>
-<p><strong>Important</strong> Be VERY careful with this function. It will recursively
-delete <strong>everything</strong> within the supplied path, including sub-folders
-and all files. Make absolutely sure your path is correct. Try using the
-list_files() function first to verify that your path is correct.</p>
+<p>Dizini ve altındaki herşeyi siler. Dizin adı ve kaynak yolu sonuna ters bölü (slash) ile tanımlanmalıdır.</p>
+<p><strong>Önemli</strong> bu fonksiyonu kullanırken ÇOK DİKKATLİ olun. Kaynak yolun altındaki <strong>herşey</strong>, alt dizinler ve dosyalar dahil silinebilir. Yolun geçerli olduğundan emin olun. Yolun doğruluğundan emin olmak için önce list_files() komutunu çalıştırın.</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">ftp</span><span class="o">-&gt;</span><span class="na">delete_dir</span><span class="p">(</span><span class="s1">&#39;/public_html/path/to/folder/&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="this-ftp-list-files">
 <h3>$this-&gt;ftp-&gt;list_files()<a class="headerlink" href="#this-ftp-list-files" title="Bu başlığın kalıcı bağlantısı">¶</a></h3>
-<p>Permits you to retrieve a list of files on your server returned as an
-array. You must supply the path to the desired directory.</p>
+<p>Sunucunuz altındaki dosyaların listesini dizin olarak geri gönderir. Liste almak isteiğiniz dizinin yolunu tanımlamalısınız.</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$list</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">ftp</span><span class="o">-&gt;</span><span class="na">list_files</span><span class="p">(</span><span class="s1">&#39;/public_html/&#39;</span><span class="p">);</span>
 
 <span class="nb">print_r</span><span class="p">(</span><span class="nv">$list</span><span class="p">);</span>
@@ -295,20 +268,14 @@ array. You must supply the path to the desired directory.</p>
 </div>
 <div class="section" id="this-ftp-mirror">
 <h3>$this-&gt;ftp-&gt;mirror()<a class="headerlink" href="#this-ftp-mirror" title="Bu başlığın kalıcı bağlantısı">¶</a></h3>
-<p>Recursively reads a local folder and everything it contains (including
-sub-folders) and creates a mirror via FTP based on it. Whatever the
-directory structure of the original file path will be recreated on the
-server. You must supply a source path and a destination path:</p>
+<p>Yerel dizin altındaki (tüm alt dizinler dahil) yolu okur ve sunucu üzerine FTP kullanarak aynalar. Orijinal dosya yolunun altındaki dizin yapısında ne varsa sunucu üzerine yeniden oluşturur. Kaynak yolunu ve hedef yolunu tanımlamalısınız:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">ftp</span><span class="o">-&gt;</span><span class="na">mirror</span><span class="p">(</span><span class="s1">&#39;/path/to/myfolder/&#39;</span><span class="p">,</span> <span class="s1">&#39;/public_html/myfolder/&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="this-ftp-mkdir">
 <h3>$this-&gt;ftp-&gt;mkdir()<a class="headerlink" href="#this-ftp-mkdir" title="Bu başlığın kalıcı bağlantısı">¶</a></h3>
-<p>Lets you create a directory on your server. Supply the path ending in
-the folder name you wish to create, with a trailing slash. Permissions
-can be set by passed an octal value in the second parameter (if you are
-running PHP 5).</p>
+<p>Sunucunuz üzerine dizin oluşturur. Oluşturmak istediğiniz dosya adını sonuna ters bölü işareti kullanarak tanımlamalısınız. İzinler (eğer PHP 5 kullanıyorsanız), ikinci parametre olarak octal formatta aktarılmalıdır.</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="c1">// Creates a folder named &quot;bar&quot;</span>
 <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">ftp</span><span class="o">-&gt;</span><span class="na">mkdir</span><span class="p">(</span><span class="s1">&#39;/public_html/foo/bar/&#39;</span><span class="p">,</span> <span class="nx">DIR_WRITE_MODE</span><span class="p">);</span>
 </pre></div>
@@ -316,8 +283,7 @@ running PHP 5).</p>
 </div>
 <div class="section" id="this-ftp-chmod">
 <h3>$this-&gt;ftp-&gt;chmod()<a class="headerlink" href="#this-ftp-chmod" title="Bu başlığın kalıcı bağlantısı">¶</a></h3>
-<p>Permits you to set file permissions. Supply the path to the file or
-folder you wish to alter permissions on:</p>
+<p>Dosya izinlerini değiştirir. İzinlerini değiştirmek istediğiniz dosya adını ve yolunu tanımlamalısınız:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="c1">// Chmod &quot;bar&quot; to 777</span>
 <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">ftp</span><span class="o">-&gt;</span><span class="na">chmod</span><span class="p">(</span><span class="s1">&#39;/public_html/foo/bar/&#39;</span><span class="p">,</span> <span class="nx">DIR_WRITE_MODE</span><span class="p">);</span>
 </pre></div>
@@ -325,8 +291,7 @@ folder you wish to alter permissions on:</p>
 </div>
 <div class="section" id="this-ftp-close">
 <h3>$this-&gt;ftp-&gt;close();<a class="headerlink" href="#this-ftp-close" title="Bu başlığın kalıcı bağlantısı">¶</a></h3>
-<p>Closes the connection to your server. It&#8217;s recommended that you use this
-when you are finished uploading.</p>
+<p>Sunucunuzla bağlantıyı kapatır. Yükleme işlemini bitirince kapatmanız önerilir.</p>
 </div>
 </div>
 </div>
