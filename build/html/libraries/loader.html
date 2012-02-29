@@ -23,8 +23,8 @@
 	    <script type="text/javascript" src="../_static/translations.js"></script>
 	    <link rel="top" title="CodeIgniter 3.0-dev documentation" href="../index.html" />
 	    <link rel="up" title="Libraries" href="index.html" />
-	    <link rel="next" title="Output Class" href="output.html" />
-	    <link rel="prev" title="Language Class" href="language.html" /> 
+	    <link rel="next" title="Migrations Class" href="migration.html" />
+	    <link rel="prev" title="Dil sınıfı" href="language.html" /> 
 	</head>
 	<body>
 		<div id="table-contents">
@@ -37,10 +37,10 @@
 <li class="toctree-l1"><a class="reference internal" href="../installation/index.html">Installation Instructions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../general/index.html">General Topics</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">Libraries</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="benchmark.html">Benchmarking Class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmark.html">Karşılaştırma (Benchmarking) Sınıfı</a></li>
 <li class="toctree-l2"><a class="reference internal" href="caching.html">Caching Driver</a></li>
 <li class="toctree-l2"><a class="reference internal" href="calendar.html">Calendaring Class</a></li>
-<li class="toctree-l2"><a class="reference internal" href="cart.html">Shopping Cart Class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cart.html">Alışveriş Sepeti Sınıfı</a></li>
 <li class="toctree-l2"><a class="reference internal" href="config.html">Config Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="email.html">Email Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="encryption.html">Encryption Class</a></li>
@@ -50,21 +50,22 @@
 <li class="toctree-l2"><a class="reference internal" href="image_lib.html">Image Manipulation Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="input.html">Input Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="javascript.html">Javascript Class</a></li>
-<li class="toctree-l2"><a class="reference internal" href="language.html">Language Class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="language.html">Dil sınıfı</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="">Loader Class</a><ul class="simple">
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="output.html">Output Class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="migration.html">Migrations Class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="output.html">Output Sınıfı</a></li>
 <li class="toctree-l2"><a class="reference internal" href="pagination.html">Pagination Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="parser.html">Template Parser Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="security.html">Security Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="sessions.html">Session Class</a></li>
-<li class="toctree-l2"><a class="reference internal" href="table.html">HTML Table Class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="table.html">HTML Tablo Sınıfı</a></li>
 <li class="toctree-l2"><a class="reference internal" href="trackback.html">Trackback Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="typography.html">Typography Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="unit_testing.html">Unit Testing Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="uri.html">URI Class</a></li>
-<li class="toctree-l2"><a class="reference internal" href="user_agent.html">User Agent Class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_agent.html">Kullanıcı Bilgileri Sınıfı</a></li>
 <li class="toctree-l2"><a class="reference internal" href="xmlrpc.html">XML-RPC and XML-RPC Server Classes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="zip.html">Zip Encoding Class</a></li>
 </ul>
@@ -251,6 +252,11 @@ into one array for conversion to variables.</p>
 your views. This is useful if for any reason a var is set in a library
 or another controller method using $this-&gt;load-&gt;vars().</p>
 </div>
+<div class="section" id="this-load-get-vars">
+<h2>$this-&gt;load-&gt;get_vars()<a class="headerlink" href="#this-load-get-vars" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
+<p>This function retrieves all variables available to
+your views.</p>
+</div>
 <div class="section" id="this-load-helper-file-name">
 <h2>$this-&gt;load-&gt;helper(&#8216;file_name&#8217;)<a class="headerlink" href="#this-load-helper-file-name" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
 <p>This function loads helper files, where file_name is the name of the
@@ -360,15 +366,15 @@ calling add_package_path().</p>
 		<div id="footer">
 			<p class="top">
 				
-				<span class="prev">Önceki Başlık: <a href="language.html">Language Class</a></span>
+				<span class="prev">Önceki Başlık: <a href="language.html">Dil sınıfı</a></span>
 				
 				
-				<span class="next">Sonraki Başlık: <a href="output.html">Output Class</a></span>
+				<span class="next">Sonraki Başlık: <a href="migration.html">Migrations Class</a></span>
 				
 				<a href="#header" title="Başa Dön">Başa Dön</a>
 			</p>
 			<p><a href="">CodeIgniter</a> &ndash; Copyright &copy;
-      2011, EllisLab, Inc.</a> &ndash; Son Güncelleme: 22 Kasım 2011</p>
+      2012, EllisLab, Inc.</a> &ndash; Son Güncelleme: 29 Şubat 2012</p>
 		</div><!-- /#footer -->
 	
 	<script src="../_static/asset/js/jquery-ui-min.js" type="text/javascript" charset="utf-8" async></script>

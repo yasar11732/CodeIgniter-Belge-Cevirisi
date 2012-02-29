@@ -38,12 +38,12 @@
 <li class="toctree-l1"><a class="reference internal" href="../general/index.html">General Topics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../libraries/index.html">Libraries</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">Helpers</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="array_helper.html">Array Helper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="array_helper.html">Dizi Helper</a></li>
 <li class="toctree-l2"><a class="reference internal" href="captcha_helper.html">CAPTCHA Helper</a></li>
 <li class="toctree-l2"><a class="reference internal" href="cookie_helper.html">Cookie Helper</a></li>
 <li class="toctree-l2"><a class="reference internal" href="date_helper.html">Date Helper</a></li>
-<li class="toctree-l2"><a class="reference internal" href="directory_helper.html">Directory Helper</a></li>
-<li class="toctree-l2"><a class="reference internal" href="download_helper.html">Download Helper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="directory_helper.html">Dizin Helper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="download_helper.html">İndirme (Download) Helper</a></li>
 <li class="toctree-l2"><a class="reference internal" href="email_helper.html">Email Helper</a></li>
 <li class="toctree-l2"><a class="reference internal" href="file_helper.html">File Helper</a></li>
 <li class="toctree-l2"><a class="reference internal" href="form_helper.html">Form Helper</a></li>
@@ -99,30 +99,30 @@
 
 		<div class="section" id="content">
 			<div class="section" id="text-helper">
-<h1><a class="toc-backref" href="#id1">Text Helper</a><a class="headerlink" href="#text-helper" title="Bu başlığın kalıcı bağlantısı">¶</a></h1>
+<h1><a class="toc-backref" href="#id2">Text Helper</a><a class="headerlink" href="#text-helper" title="Bu başlığın kalıcı bağlantısı">¶</a></h1>
 <p>The Text Helper file contains functions that assist in working with
 text.</p>
 <div class="contents topic" id="page-contents">
 <p class="topic-title first">Page Contents</p>
 <ul class="simple">
-<li><a class="reference internal" href="#text-helper" id="id1">Text Helper</a><ul>
-<li><a class="reference internal" href="#loading-this-helper" id="id2">Loading this Helper</a></li>
-<li><a class="reference internal" href="#word-limiter" id="id3">word_limiter()</a></li>
-<li><a class="reference internal" href="#character-limiter" id="id4">character_limiter()</a></li>
-<li><a class="reference internal" href="#ascii-to-entities" id="id5">ascii_to_entities()</a></li>
-<li><a class="reference internal" href="#entities-to-ascii" id="id6">entities_to_ascii()</a></li>
-<li><a class="reference internal" href="#convert-accented-characters" id="id7">convert_accented_characters()</a></li>
-<li><a class="reference internal" href="#word-censor" id="id8">word_censor()</a></li>
-<li><a class="reference internal" href="#highlight-code" id="id9">highlight_code()</a></li>
-<li><a class="reference internal" href="#highlight-phrase" id="id10">highlight_phrase()</a></li>
-<li><a class="reference internal" href="#word-wrap" id="id11">word_wrap()</a></li>
-<li><a class="reference internal" href="#ellipsize" id="id12">ellipsize()</a></li>
+<li><a class="reference internal" href="#text-helper" id="id2">Text Helper</a><ul>
+<li><a class="reference internal" href="#loading-this-helper" id="id3">Loading this Helper</a></li>
+<li><a class="reference internal" href="#word-limiter" id="id4">word_limiter()</a></li>
+<li><a class="reference internal" href="#character-limiter" id="id5">character_limiter()</a></li>
+<li><a class="reference internal" href="#ascii-to-entities" id="id6">ascii_to_entities()</a></li>
+<li><a class="reference internal" href="#entities-to-ascii" id="id7">entities_to_ascii()</a></li>
+<li><a class="reference internal" href="#convert-accented-characters" id="id8">convert_accented_characters()</a></li>
+<li><a class="reference internal" href="#word-censor" id="id9">word_censor()</a></li>
+<li><a class="reference internal" href="#highlight-code" id="id10">highlight_code()</a></li>
+<li><a class="reference internal" href="#highlight-phrase" id="id11">highlight_phrase()</a></li>
+<li><a class="reference internal" href="#word-wrap" id="id12">word_wrap()</a></li>
+<li><a class="reference internal" href="#ellipsize" id="id13">ellipsize()</a></li>
 </ul>
 </li>
 </ul>
 </div>
 <div class="section" id="loading-this-helper">
-<h2><a class="toc-backref" href="#id2">Loading this Helper</a><a class="headerlink" href="#loading-this-helper" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
+<h2><a class="toc-backref" href="#id3">Loading this Helper</a><a class="headerlink" href="#loading-this-helper" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
 <p>This helper is loaded using the following code</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">load</span><span class="o">-&gt;</span><span class="na">helper</span><span class="p">(</span><span class="s1">&#39;text&#39;</span><span class="p">);</span>
 </pre></div>
@@ -130,7 +130,7 @@ text.</p>
 <p>The following functions are available:</p>
 </div>
 <div class="section" id="word-limiter">
-<h2><a class="toc-backref" href="#id3">word_limiter()</a><a class="headerlink" href="#word-limiter" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
+<h2><a class="toc-backref" href="#id4">word_limiter()</a><a class="headerlink" href="#word-limiter" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
 <p>Truncates a string to the number of <strong>words</strong> specified. Example:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$string</span> <span class="o">=</span> <span class="s2">&quot;Here is a nice text string consisting of eleven words.&quot;</span><span class="p">;</span>
 <span class="nv">$string</span> <span class="o">=</span> <span class="nx">word_limiter</span><span class="p">(</span><span class="nv">$string</span><span class="p">,</span> <span class="mi">4</span><span class="p">);</span>
@@ -141,7 +141,7 @@ text.</p>
 default it adds an ellipsis.</p>
 </div>
 <div class="section" id="character-limiter">
-<h2><a class="toc-backref" href="#id4">character_limiter()</a><a class="headerlink" href="#character-limiter" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
+<h2><a class="toc-backref" href="#id5">character_limiter()</a><a class="headerlink" href="#character-limiter" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
 <p>Truncates a string to the number of <strong>characters</strong> specified. It
 maintains the integrity of words so the character count may be slightly
 more or less then what you specify. Example</p>
@@ -152,9 +152,11 @@ more or less then what you specify. Example</p>
 </div>
 <p>The third parameter is an optional suffix added to the string, if
 undeclared this helper uses an ellipsis.</p>
+<p><strong>Note:</strong> If you need to truncate to an exact number of characters please see
+the <a class="reference internal" href="#ellipsize"><em>ellipsize()</em></a> function below.</p>
 </div>
 <div class="section" id="ascii-to-entities">
-<h2><a class="toc-backref" href="#id5">ascii_to_entities()</a><a class="headerlink" href="#ascii-to-entities" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
+<h2><a class="toc-backref" href="#id6">ascii_to_entities()</a><a class="headerlink" href="#ascii-to-entities" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
 <p>Converts ASCII values to character entities, including high ASCII and MS
 Word characters that can cause problems when used in a web page, so that
 they can be shown consistently regardless of browser settings or stored
@@ -167,12 +169,12 @@ the normal range (like accented characters). Example</p>
 </div>
 </div>
 <div class="section" id="entities-to-ascii">
-<h2><a class="toc-backref" href="#id6">entities_to_ascii()</a><a class="headerlink" href="#entities-to-ascii" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
+<h2><a class="toc-backref" href="#id7">entities_to_ascii()</a><a class="headerlink" href="#entities-to-ascii" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
 <p>This function does the opposite of the previous one; it turns character
 entities back into ASCII.</p>
 </div>
 <div class="section" id="convert-accented-characters">
-<h2><a class="toc-backref" href="#id7">convert_accented_characters()</a><a class="headerlink" href="#convert-accented-characters" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
+<h2><a class="toc-backref" href="#id8">convert_accented_characters()</a><a class="headerlink" href="#convert-accented-characters" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
 <p>Transliterates high ASCII characters to low ASCII equivalents, useful
 when non-English characters need to be used where only standard ASCII
 characters are safely used, for instance, in URLs.</p>
@@ -184,7 +186,7 @@ characters are safely used, for instance, in URLs.</p>
 for transliteration.</p>
 </div>
 <div class="section" id="word-censor">
-<h2><a class="toc-backref" href="#id8">word_censor()</a><a class="headerlink" href="#word-censor" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
+<h2><a class="toc-backref" href="#id9">word_censor()</a><a class="headerlink" href="#word-censor" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
 <p>Enables you to censor words within a text string. The first parameter
 will contain the original string. The second will contain an array of
 words which you disallow. The third (optional) parameter can contain a
@@ -196,7 +198,7 @@ pound signs: ####. Example</p>
 </div>
 </div>
 <div class="section" id="highlight-code">
-<h2><a class="toc-backref" href="#id9">highlight_code()</a><a class="headerlink" href="#highlight-code" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
+<h2><a class="toc-backref" href="#id10">highlight_code()</a><a class="headerlink" href="#highlight-code" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
 <p>Colorizes a string of code (PHP, HTML, etc.). Example:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$string</span> <span class="o">=</span> <span class="nx">highlight_code</span><span class="p">(</span><span class="nv">$string</span><span class="p">);</span>
 </pre></div>
@@ -205,7 +207,7 @@ pound signs: ####. Example</p>
 are the ones specified in your php.ini file.</p>
 </div>
 <div class="section" id="highlight-phrase">
-<h2><a class="toc-backref" href="#id10">highlight_phrase()</a><a class="headerlink" href="#highlight-phrase" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
+<h2><a class="toc-backref" href="#id11">highlight_phrase()</a><a class="headerlink" href="#highlight-phrase" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
 <p>Will highlight a phrase within a text string. The first parameter will
 contain the original string, the second will contain the phrase you wish
 to highlight. The third and fourth parameters will contain the
@@ -218,7 +220,7 @@ opening/closing HTML tags you would like the phrase wrapped in. Example</p>
 <p>Here is a nice text string about nothing in particular.</p>
 </div>
 <div class="section" id="word-wrap">
-<h2><a class="toc-backref" href="#id11">word_wrap()</a><a class="headerlink" href="#word-wrap" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
+<h2><a class="toc-backref" href="#id12">word_wrap()</a><a class="headerlink" href="#word-wrap" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
 <p>Wraps text at the specified <strong>character</strong> count while maintaining
 complete words. Example</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$string</span> <span class="o">=</span> <span class="s2">&quot;Here is a simple string of text that will help us demonstrate this function.&quot;</span><span class="p">;</span>
@@ -229,7 +231,7 @@ complete words. Example</p>
 </div>
 </div>
 <div class="section" id="ellipsize">
-<h2><a class="toc-backref" href="#id12">ellipsize()</a><a class="headerlink" href="#ellipsize" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
+<span id="id1"></span><h2><a class="toc-backref" href="#id13">ellipsize()</a><a class="headerlink" href="#ellipsize" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
 <p>This function will strip tags from a string, split it at a defined
 maximum length, and insert an ellipsis.</p>
 <p>The first parameter is the string to ellipsize, the second is the number
@@ -265,7 +267,7 @@ string, .5 in the middle, and 0 at the left.</p>
 				<a href="#header" title="Başa Dön">Başa Dön</a>
 			</p>
 			<p><a href="">CodeIgniter</a> &ndash; Copyright &copy;
-      2011, EllisLab, Inc.</a> &ndash; Son Güncelleme: 22 Kasım 2011</p>
+      2012, EllisLab, Inc.</a> &ndash; Son Güncelleme: 29 Şubat 2012</p>
 		</div><!-- /#footer -->
 	
 	<script src="../_static/asset/js/jquery-ui-min.js" type="text/javascript" charset="utf-8" async></script>

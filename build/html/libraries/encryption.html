@@ -37,10 +37,10 @@
 <li class="toctree-l1"><a class="reference internal" href="../installation/index.html">Installation Instructions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../general/index.html">General Topics</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">Libraries</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="benchmark.html">Benchmarking Class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="benchmark.html">Karşılaştırma (Benchmarking) Sınıfı</a></li>
 <li class="toctree-l2"><a class="reference internal" href="caching.html">Caching Driver</a></li>
 <li class="toctree-l2"><a class="reference internal" href="calendar.html">Calendaring Class</a></li>
-<li class="toctree-l2"><a class="reference internal" href="cart.html">Shopping Cart Class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cart.html">Alışveriş Sepeti Sınıfı</a></li>
 <li class="toctree-l2"><a class="reference internal" href="config.html">Config Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="email.html">Email Class</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="">Encryption Class</a><ul class="simple">
@@ -52,19 +52,20 @@
 <li class="toctree-l2"><a class="reference internal" href="image_lib.html">Image Manipulation Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="input.html">Input Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="javascript.html">Javascript Class</a></li>
-<li class="toctree-l2"><a class="reference internal" href="language.html">Language Class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="language.html">Dil sınıfı</a></li>
 <li class="toctree-l2"><a class="reference internal" href="loader.html">Loader Class</a></li>
-<li class="toctree-l2"><a class="reference internal" href="output.html">Output Class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="migration.html">Migrations Class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="output.html">Output Sınıfı</a></li>
 <li class="toctree-l2"><a class="reference internal" href="pagination.html">Pagination Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="parser.html">Template Parser Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="security.html">Security Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="sessions.html">Session Class</a></li>
-<li class="toctree-l2"><a class="reference internal" href="table.html">HTML Table Class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="table.html">HTML Tablo Sınıfı</a></li>
 <li class="toctree-l2"><a class="reference internal" href="trackback.html">Trackback Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="typography.html">Typography Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="unit_testing.html">Unit Testing Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="uri.html">URI Class</a></li>
-<li class="toctree-l2"><a class="reference internal" href="user_agent.html">User Agent Class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_agent.html">Kullanıcı Bilgileri Sınıfı</a></li>
 <li class="toctree-l2"><a class="reference internal" href="xmlrpc.html">XML-RPC and XML-RPC Server Classes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="zip.html">Zip Encoding Class</a></li>
 </ul>
@@ -221,20 +222,6 @@ Example:</p>
 <p>Please visit php.net for a list of <a class="reference external" href="http://php.net/mcrypt">available
 modes</a>.</p>
 </div>
-<div class="section" id="this-encrypt-sha1">
-<h2>$this-&gt;encrypt-&gt;sha1();<a class="headerlink" href="#this-encrypt-sha1" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
-<p>SHA1 encoding function. Provide a string and it will return a 160 bit
-one way hash. Note: SHA1, just like MD5 is non-decodable. Example:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="nv">$hash</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">encrypt</span><span class="o">-&gt;</span><span class="na">sha1</span><span class="p">(</span><span class="s1">&#39;Some string&#39;</span><span class="p">);</span>
-</pre></div>
-</div>
-<p>Many PHP installations have SHA1 support by default so if all you need
-is to encode a hash it&#8217;s simpler to use the native function:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="nv">$hash</span> <span class="o">=</span> <span class="nb">sha1</span><span class="p">(</span><span class="s1">&#39;Some string&#39;</span><span class="p">);</span>
-</pre></div>
-</div>
-<p>If your server does not support SHA1 you can use the provided function.</p>
-</div>
 <div class="section" id="this-encrypt-encode-from-legacy-orig-data-legacy-mode-mcrypt-mode-ecb-key">
 <h2>$this-&gt;encrypt-&gt;encode_from_legacy($orig_data, $legacy_mode = MCRYPT_MODE_ECB, $key = &#8216;&#8217;);<a class="headerlink" href="#this-encrypt-encode-from-legacy-orig-data-legacy-mode-mcrypt-mode-ecb-key" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
 <p>Enables you to re-encode data that was originally encrypted with
@@ -307,7 +294,7 @@ outlined above.</td>
 				<a href="#header" title="Başa Dön">Başa Dön</a>
 			</p>
 			<p><a href="">CodeIgniter</a> &ndash; Copyright &copy;
-      2011, EllisLab, Inc.</a> &ndash; Son Güncelleme: 22 Kasım 2011</p>
+      2012, EllisLab, Inc.</a> &ndash; Son Güncelleme: 29 Şubat 2012</p>
 		</div><!-- /#footer -->
 	
 	<script src="../_static/asset/js/jquery-ui-min.js" type="text/javascript" charset="utf-8" async></script>

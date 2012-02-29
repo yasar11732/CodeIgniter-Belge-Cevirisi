@@ -98,16 +98,25 @@ all licensing authority over your own application code.</li>
 <li>Added Windows 7 to the list of user platforms.</li>
 <li>Ability to log certain error types, not all under a threshold.</li>
 <li>Added support for pem, p10, p12, p7a, p7c, p7m, p7r, p7s, crt, crl, der, kdb, rsa, cer, sst, csr Certs to mimes.php.</li>
-<li>Added support pgp and gpg to mimes.php.</li>
-<li>Added support 3gp, 3g2, mp4, wmv, f4v, vlc Video files to mimes.php.</li>
-<li>Added support m4a, aac, m4u, xspf, au, ac3, flac, ogg Audio files to mimes.php.</li>
+<li>Added support for pgp and gpg to mimes.php.</li>
+<li>Added support for 3gp, 3g2, mp4, wmv, f4v, vlc Video files to mimes.php.</li>
+<li>Added support for m4a, aac, m4u, xspf, au, ac3, flac, ogg Audio files to mimes.php.</li>
+<li>Added support for kmz and kml (Google Earth) files to mimes.php.</li>
+<li>Updated support for doc files in mimes.php.</li>
+<li>Added application/xml for xml and application/xml, text/xsl for xsl in mimes.php.</li>
 <li>Changed logger to only chmod when file is first created.</li>
+<li>Removed previously deprecated SHA1 Library.</li>
+<li>Removed previously deprecated use of <tt class="docutils literal"><span class="pre">$autoload['core']</span></tt> in application/config/autoload.php.
+Only entries in <tt class="docutils literal"><span class="pre">$autoload['libraries']</span></tt> are auto-loaded now.</li>
 </ul>
 </li>
 <li><p class="first">Helpers</p>
 <ul class="simple">
 <li>url_title() will now trim extra dashes from beginning and end.</li>
 <li>Added XHTML Basic 1.1 doctype to <a class="reference internal" href="helpers/html_helper.html"><em>HTML Helper</em></a>.</li>
+<li>Changed humanize to include a second param for the separator.</li>
+<li>Refactored <tt class="docutils literal"><span class="pre">plural()</span></tt> and <tt class="docutils literal"><span class="pre">singular()</span></tt> to avoid double pluralization and support more words.</li>
+<li>Added an optional third parameter to <tt class="docutils literal"><span class="pre">force_download()</span></tt> that enables/disables sending the actual file MIME type in the Content-Type header (disabled by default).</li>
 </ul>
 </li>
 <li><p class="first">Database</p>
@@ -115,6 +124,13 @@ all licensing authority over your own application code.</li>
 <li>Added new <a class="reference internal" href="database/active_record.html"><em>Active Record</em></a> methods that return
 the SQL string of queries without executing them: get_compiled_select(),
 get_compiled_insert(), get_compiled_update(), get_compiled_delete().</li>
+<li>Taking care of LIKE condition when used with MySQL UPDATE statement.</li>
+<li>Adding $escape parameter to the order_by function, this enables ordering by custom fields.</li>
+<li>MySQLi driver now uses mysqli_get_server_info() for server version checking.</li>
+<li>MySQLi driver now supports persistent connections when running on PHP &gt;= 5.3.</li>
+<li>Added dsn if the group connections in the config use PDO or any driver which need DSN.</li>
+<li>Improved PDO database support.</li>
+<li>An optional database name parameter was added db_select().</li>
 </ul>
 </li>
 <li><p class="first">Libraries</p>
@@ -123,21 +139,46 @@ get_compiled_insert(), get_compiled_update(), get_compiled_delete().</li>
 </li>
 <li><p class="first">CI_Loader::_ci_autoloader() is now a protected method.</p>
 </li>
+<li><p class="first">Modified valid_ip() to use PHP&#8217;s filter_var() when possible (&gt;= PHP 5.2) in the <a class="reference internal" href="libraries/form_validation.html"><em>Form Validation library</em></a>.</p>
+</li>
+<li><p class="first">Added custom filename to Email::attach() as $this-&gt;email-&gt;attach($filename, $disposition, $newname)</p>
+</li>
 <li><dl class="first docutils">
-<dt>Modified valid_ip() to use PHP&#8217;s filter_var() when possible (&gt;= PHP 5.2) in the <a class="reference internal" href="libraries/form_validation.html"><em>Form Validation library</em></a>.</dt>
+<dt>Cart library changes include:</dt>
 <dd><ul class="first last simple">
-<li>Added custom filename to Email::attach() as $this-&gt;email-&gt;attach($filename, $disposition, $newname)</li>
+<li>It now auto-increments quantity&#8217;s instead of just resetting it, this is the default behaviour of large e-commerce sites.</li>
+<li>Product Name strictness can be disabled via the Cart Library by switching &#8220;$product_name_safe&#8221;</li>
+<li>Added function remove() to remove a cart item, updating with quantity of 0 seemed like a hack but has remained to retain compatability</li>
 </ul>
 </dd>
 </dl>
+</li>
+<li><dl class="first docutils">
+<dt>Image manipulation library changes include:</dt>
+<dd><ul class="first last simple">
+<li>The initialize() method now only sets existing class properties.</li>
+<li>Added support for 3-length hex color values for wm_font_color and wm_shadow_color properties, as well as validation for them.</li>
+<li>Class properties wm_font_color, wm_shadow_color and wm_use_drop_shadow are now protected, to avoid breaking the text_watermark() method
+if they are set manually after initialization.</li>
+<li>If property maintain_ratio is set to TRUE, image_reproportion() now doesn&#8217;t need both width and height to be specified.</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p class="first">Minor speed optimizations and method &amp; property visibility declarations in the Calendar Library.</p>
+</li>
+<li><p class="first">Removed SHA1 function in the <a class="reference internal" href="libraries/encryption.html"><em>Encryption Library</em></a>.</p>
+</li>
+<li><p class="first">Added $config[&#8216;csrf_regeneration&#8217;] to the CSRF protection in the <a class="reference internal" href="libraries/security.html"><em>Security library</em></a>, which makes token regeneration optional.</p>
 </li>
 </ul>
 </li>
 <li><p class="first">Core</p>
 <ul class="simple">
-<li>Changed private functions in CI_URI to protected so MY_URI can
-override them.</li>
+<li>Changed private functions in CI_URI to protected so MY_URI can override them.</li>
 <li>Removed CI_CORE boolean constant from CodeIgniter.php (no longer Reactor and Core versions).</li>
+<li>Added method get_vars() to CI_Loader to retrieve all variables loaded with $this-&gt;load-&gt;vars().</li>
+<li>is_loaded() function from system/core/Commons.php now returns a reference.</li>
 </ul>
 </li>
 </ul>
@@ -149,18 +190,52 @@ override them.</li>
 language file.</li>
 <li>Fixed a bug (#159, #163) that mishandled Active Record nested transactions because _trans_depth was not getting incremented.</li>
 <li>Fixed a bug (#737, #75) where pagination anchor class was not set properly when using initialize method.</li>
-<li>Bug #419 - auto_link() now recognizes URLs that come after a word boundary.</li>
-<li>Bug #724 - is_unique in form validation now checks that you are connected to a database.</li>
-<li>Bug #647 - _get_mod_time() in Zip library no longer generates stat failed errors</li>
-<li>Bug #608 - Fixes an issue with the Image_lib class not clearing properties completely</li>
+<li>Fixed a bug (#419) - auto_link() now recognizes URLs that come after a word boundary.</li>
+<li>Fixed a bug (#724) - is_unique in form validation now checks that you are connected to a database.</li>
+<li>Fixed a bug (#647) - _get_mod_time() in Zip library no longer generates stat failed errors</li>
+<li>Fixed a bug (#608) - Fixes an issue with the Image_lib class not clearing properties completely</li>
 <li>Fixed bugs (#157 and #174) - the Image_lib clear() function now resets all variables to their default values.</li>
 <li>Fixed a bug where using $this-&gt;dbforge-&gt;create_table() with PostgreSQL database could lead to fetching whole table.</li>
+<li>Fixed a bug (#795) - Fixed form method and accept-charset when passing an empty array.</li>
+<li>Fixed a bug (#797) - timespan was using incorrect seconds for year and month.</li>
+<li>Fixed a bug in CI_Cart::contents() where if called without a TRUE (or equal) parameter, it would fail due to a typo.</li>
+<li>Fixed a bug (#696) - make oci_execute calls inside num_rows non-committing, since they are only there to reset which row is next in line for oci_fetch calls and thus don&#8217;t need to be committed.</li>
+<li>Fixed a bug (#406) - sqlsrv DB driver not reuturning resource on &lt;samp&gt;db_pconnect()&lt;/samp&gt;.</li>
+<li>Fixed a bug in CI_Image_lib::gd_loaded() where it was possible for the script execution to end or a PHP E_WARNING message to be emitted.</li>
+<li>In Pagination library, when use_page_numbers=TRUE previous link and page 1 link do not have the same url</li>
+<li>Fixed a bug (#561) - Errors in <a class="reference internal" href="libraries/xmlrpc.html"><em>XML-RPC Library</em></a> were not properly escaped.</li>
+<li>Fixed a bug (#904) - <tt class="docutils literal"><span class="pre">CI_Loader::initialize()</span></tt> caused a PHP Fatal error to be triggered if error level E_STRICT is used.</li>
+<li>Fixed a hosting edge case where an empty $_SERVER[&#8216;HTTPS&#8217;] variable would evaluate to &#8216;on&#8217;</li>
+<li>Fixed a bug (#154) - <tt class="docutils literal"><span class="pre">CI_Session::sess_update()</span></tt> caused the session to be destroyed on pages where multiple AJAX requests were executed at once.</li>
+<li>Fixed a possible bug in <tt class="docutils literal"><span class="pre">CI_Input::is_ajax_request()</span></tt> where some clients might not send the X-Requested-With HTTP header value exactly as &#8216;XmlHttpRequest&#8217;.</li>
+<li>Fixed a bug (#1039) - MySQL&#8217;s _backup() method failed due to a table name not being escaped.</li>
+<li>Fixed a bug (#1070) - CI_DB_driver::initialize() didn&#8217;t set a character set if a database is not selected.</li>
+<li>Fixed a bug (#177) - CI_Form_validation::set_value() didn&#8217;t set the default value if POST data is NULL.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="version-2-1-1">
+<h2>Version 2.1.1<a class="headerlink" href="#version-2-1-1" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
+<p>Release Date: Not Released</p>
+<ul class="simple">
+<li>General Changes
+-  Fixed support for docx, xlsx files in mimes.php.</li>
+<li>Libraries
+-  Further improved MIME type detection in the <a class="reference internal" href="libraries/file_uploading.html"><em>File Uploading Library</em></a>.</li>
+</ul>
+<div class="section" id="bug-fixes-for-2-1-1">
+<h3>Bug fixes for 2.1.1<a class="headerlink" href="#bug-fixes-for-2-1-1" title="Bu başlığın kalıcı bağlantısı">¶</a></h3>
+<ul class="simple">
+<li>Fixed a bug (#697) - A wrong array key was used in the Upload library to check for mime-types.</li>
+<li>Fixed a bug - form_open() compared $action against site_url() instead of base_url().</li>
+<li>Fixed a bug - CI_Upload::_file_mime_type() could&#8217;ve failed if mime_content_type() is used for the detection and returns FALSE.</li>
+<li>Fixed a bug (#538) - Windows paths were ignored when using the <a class="reference internal" href="libraries/image_lib.html"><em>Image Manipulation Library</em></a> to create a new file.</li>
 </ul>
 </div>
 </div>
 <div class="section" id="version-2-1-0">
 <h2>Version 2.1.0<a class="headerlink" href="#version-2-1-0" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
-<p>Release Date: Not Released</p>
+<p>Release Date: November 14, 2011</p>
 <ul class="simple">
 <li>General Changes<ul>
 <li>Callback validation rules can now accept parameters like any other
@@ -202,7 +277,7 @@ item was inserted successfully.</li>
 <li>Added support to set an optional parameter in your callback rules
 of validation using the <a class="reference internal" href="libraries/form_validation.html"><em>Form Validation
 Library</em></a>.</li>
-<li>Added a <tt class="xref doc docutils literal"><span class="pre">Migration</span> <span class="pre">library</span></tt> to assist with applying
+<li>Added a <a class="reference internal" href="libraries/migration.html"><em>Migration library</em></a> to assist with applying
 incremental updates to your database schema.</li>
 <li>Driver children can be located in any package path.</li>
 <li>Added max_filename_increment config setting for Upload library.</li>
@@ -253,6 +328,7 @@ APPPATH first, allowing them to be replaced.</li>
 <li>Fixed a bug (#537) - Support for all wav type in browser.</li>
 <li>Fixed a bug (#576) - Using ini_get() function to detect if apc is enabled or not.</li>
 <li>Fixed invalid date time format in <a class="reference internal" href="helpers/date_helper.html"><em>Date helper</em></a> and <a class="reference internal" href="libraries/xmlrpc.html"><em>XMLRPC library</em></a>.</li>
+<li>Fixed a bug (#200) - MySQL queries would be malformed after calling count_all() then db-&gt;get().</li>
 </ul>
 </div>
 </div>
@@ -2357,7 +2433,7 @@ and fixed various typos.</li>
 				<a href="#header" title="Başa Dön">Başa Dön</a>
 			</p>
 			<p><a href="">CodeIgniter</a> &ndash; Copyright &copy;
-      2011, EllisLab, Inc.</a> &ndash; Son Güncelleme: 06 Aralık 2011</p>
+      2012, EllisLab, Inc.</a> &ndash; Son Güncelleme: 29 Şubat 2012</p>
 		</div><!-- /#footer -->
 	
 	<script src="_static/asset/js/jquery-ui-min.js" type="text/javascript" charset="utf-8" async></script>

@@ -205,6 +205,15 @@ words, rather than issuing commands with:</p>
 <div class="line">etc...</div>
 </div>
 </div>
+<div class="admonition note">
+<p class="first admonition-title">Not</p>
+<p>You don&#8217;t need to create separate database configurations if you
+only need to use a different database on the same connection. You
+can switch to a different database when you need to, like this:</p>
+<div class="last line-block">
+<div class="line">$this-&gt;db-&gt;db_select($database2_name);</div>
+</div>
+</div>
 </div>
 <div class="section" id="reconnecting-keeping-the-connection-alive">
 <h2>Reconnecting / Keeping the Connection Alive<a class="headerlink" href="#reconnecting-keeping-the-connection-alive" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
@@ -242,7 +251,7 @@ connections, you can explicitly close the connection.</p>
 				<a href="#header" title="Başa Dön">Başa Dön</a>
 			</p>
 			<p><a href="">CodeIgniter</a> &ndash; Copyright &copy;
-      2011, EllisLab, Inc.</a> &ndash; Son Güncelleme: 22 Kasım 2011</p>
+      2012, EllisLab, Inc.</a> &ndash; Son Güncelleme: 29 Şubat 2012</p>
 		</div><!-- /#footer -->
 	
 	<script src="../_static/asset/js/jquery-ui-min.js" type="text/javascript" charset="utf-8" async></script>

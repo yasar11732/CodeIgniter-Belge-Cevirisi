@@ -131,16 +131,23 @@
 <div class="highlight-ci"><div class="highlight"><pre><span class="nx">example</span><span class="o">.</span><span class="nx">com</span><span class="o">/</span><span class="nx">index</span><span class="o">.</span><span class="nx">php</span><span class="o">/</span><span class="nx">news</span><span class="o">/</span><span class="nx">article</span><span class="o">/</span><span class="nx">my_article</span>
 </pre></div>
 </div>
-<p>Bu dosyayı .htaccess dosyasında yazacağınız bir kaç basit kural ile kaldırabilirsiniz. Burada verilen örnek dosya ile, kullanılan çıkartma  metodu ile herşeyi yeniden yönlendirebilirsiniz:</p>
+<p>If your Apache server has mod_rewrite enabled, you can easily remove this
+file by using a .htaccess file with some simple rules. Here is an example
+of such a file, using the &#8220;negative&#8221; method in which everything is redirected
+except the specified items:</p>
 <div class="highlight-ci"><pre>RewriteEngine On
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^(.*)$ /index.php/$1 [L]</pre>
+RewriteRule ^(.*)$ index.php/$1 [L]</pre>
 </div>
 <p>Yukarıdaki örnekte, var olmayan her dosya veya klasör için yapılan HTTP istemi index.php dosyamızı çağırmış işlemi görecektir.</p>
 </div>
 <div class="section" id="url-soneki-eklemek">
 <h2>URL Soneki Eklemek<a class="headerlink" href="#url-soneki-eklemek" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
+<div class="admonition note">
+<p class="first admonition-title">Not</p>
+<p class="last">Note: These specific rules might not work for all server configurations.</p>
+</div>
 <p><strong>config/config.php</strong> dosyanızda, istediğiniz soneki ekleyerek CodeIgniter tarafından URL oluşturulmasını tanımlayabilirsiniz. Örneğin, eğer URL şöyle ise:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nx">example</span><span class="o">.</span><span class="nx">com</span><span class="o">/</span><span class="nx">index</span><span class="o">.</span><span class="nx">php</span><span class="o">/</span><span class="nx">products</span><span class="o">/</span><span class="nx">view</span><span class="o">/</span><span class="nx">shoes</span>
 </pre></div>
@@ -188,7 +195,7 @@ RewriteRule ^(.*)$ /index.php/$1 [L]</pre>
 				<a href="#header" title="Başa Dön">Başa Dön</a>
 			</p>
 			<p><a href="">CodeIgniter</a> &ndash; Copyright &copy;
-      2011, EllisLab, Inc.</a> &ndash; Son Güncelleme: 06 Aralık 2011</p>
+      2012, EllisLab, Inc.</a> &ndash; Son Güncelleme: 29 Şubat 2012</p>
 		</div><!-- /#footer -->
 	
 	<script src="../_static/asset/js/jquery-ui-min.js" type="text/javascript" charset="utf-8" async></script>

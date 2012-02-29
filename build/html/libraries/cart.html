@@ -52,9 +52,10 @@
 <li class="toctree-l2"><a class="reference internal" href="image_lib.html">Image Manipulation Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="input.html">Input Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="javascript.html">Javascript Class</a></li>
-<li class="toctree-l2"><a class="reference internal" href="language.html">Language Class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="language.html">Dil sınıfı</a></li>
 <li class="toctree-l2"><a class="reference internal" href="loader.html">Loader Class</a></li>
-<li class="toctree-l2"><a class="reference internal" href="output.html">Output Class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="migration.html">Migrations Class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="output.html">Output Sınıfı</a></li>
 <li class="toctree-l2"><a class="reference internal" href="pagination.html">Pagination Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="parser.html">Template Parser Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="security.html">Security Class</a></li>
@@ -64,7 +65,7 @@
 <li class="toctree-l2"><a class="reference internal" href="typography.html">Typography Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="unit_testing.html">Unit Testing Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="uri.html">URI Class</a></li>
-<li class="toctree-l2"><a class="reference internal" href="user_agent.html">User Agent Class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_agent.html">Kullanıcı Bilgileri Sınıfı</a></li>
 <li class="toctree-l2"><a class="reference internal" href="xmlrpc.html">XML-RPC and XML-RPC Server Classes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="zip.html">Zip Encoding Class</a></li>
 </ul>
@@ -124,12 +125,13 @@
 <li><a class="reference internal" href="#fonksiyon-referanslari" id="id8">Fonksiyon Referansları</a><ul>
 <li><a class="reference internal" href="#this-cart-insert" id="id9">$this-&gt;cart-&gt;insert();</a></li>
 <li><a class="reference internal" href="#this-cart-update" id="id10">$this-&gt;cart-&gt;update();</a></li>
-<li><a class="reference internal" href="#this-cart-total" id="id11">$this-&gt;cart-&gt;total();</a></li>
-<li><a class="reference internal" href="#this-cart-total-items" id="id12">$this-&gt;cart-&gt;total_items();</a></li>
-<li><a class="reference internal" href="#this-cart-contents" id="id13">$this-&gt;cart-&gt;contents();</a></li>
-<li><a class="reference internal" href="#this-cart-has-options-rowid" id="id14">$this-&gt;cart-&gt;has_options(rowid);</a></li>
-<li><a class="reference internal" href="#this-cart-product-options-rowid" id="id15">$this-&gt;cart-&gt;product_options(rowid);</a></li>
-<li><a class="reference internal" href="#this-cart-destroy" id="id16">$this-&gt;cart-&gt;destroy();</a></li>
+<li><a class="reference internal" href="#this-cart-remove-rowid" id="id11">$this-&gt;cart-&gt;remove(rowid);</a></li>
+<li><a class="reference internal" href="#this-cart-total" id="id12">$this-&gt;cart-&gt;total();</a></li>
+<li><a class="reference internal" href="#this-cart-total-items" id="id13">$this-&gt;cart-&gt;total_items();</a></li>
+<li><a class="reference internal" href="#this-cart-contents-boolean" id="id14">$this-&gt;cart-&gt;contents(boolean);</a></li>
+<li><a class="reference internal" href="#this-cart-has-options-rowid" id="id15">$this-&gt;cart-&gt;has_options(rowid);</a></li>
+<li><a class="reference internal" href="#this-cart-product-options-rowid" id="id16">$this-&gt;cart-&gt;product_options(rowid);</a></li>
+<li><a class="reference internal" href="#this-cart-destroy" id="id17">$this-&gt;cart-&gt;destroy();</a></li>
 </ul>
 </li>
 </ul>
@@ -325,28 +327,35 @@ Tipik oalrak &#8220;sku&#8221; ya da bunun gibi başka bir tanımlayıcı.</li>
 <h3><a class="toc-backref" href="#id10">$this-&gt;cart-&gt;update();</a><a class="headerlink" href="#this-cart-update" title="Bu başlığın kalıcı bağlantısı">¶</a></h3>
 <p>Sepetteki ürün veya ürünleri güncellemenizi sağlar.</p>
 </div>
+<div class="section" id="this-cart-remove-rowid">
+<h3><a class="toc-backref" href="#id11">$this-&gt;cart-&gt;remove(rowid);</a><a class="headerlink" href="#this-cart-remove-rowid" title="Bu başlığın kalıcı bağlantısı">¶</a></h3>
+<p>Allows you to remove an item from the shopping cart by passing it the rowid.</p>
+</div>
 <div class="section" id="this-cart-total">
-<h3><a class="toc-backref" href="#id11">$this-&gt;cart-&gt;total();</a><a class="headerlink" href="#this-cart-total" title="Bu başlığın kalıcı bağlantısı">¶</a></h3>
+<h3><a class="toc-backref" href="#id12">$this-&gt;cart-&gt;total();</a><a class="headerlink" href="#this-cart-total" title="Bu başlığın kalıcı bağlantısı">¶</a></h3>
 <p>Sepetin toplam tutarını, yani alt toplamını verir.</p>
 </div>
 <div class="section" id="this-cart-total-items">
-<h3><a class="toc-backref" href="#id12">$this-&gt;cart-&gt;total_items();</a><a class="headerlink" href="#this-cart-total-items" title="Bu başlığın kalıcı bağlantısı">¶</a></h3>
+<h3><a class="toc-backref" href="#id13">$this-&gt;cart-&gt;total_items();</a><a class="headerlink" href="#this-cart-total-items" title="Bu başlığın kalıcı bağlantısı">¶</a></h3>
 <p>Sepetteki toplam ürün adetini verir.</p>
 </div>
-<div class="section" id="this-cart-contents">
-<h3><a class="toc-backref" href="#id13">$this-&gt;cart-&gt;contents();</a><a class="headerlink" href="#this-cart-contents" title="Bu başlığın kalıcı bağlantısı">¶</a></h3>
-<p>Sepetteki herşeyi içerin bir array geri döndürür.</p>
+<div class="section" id="this-cart-contents-boolean">
+<h3><a class="toc-backref" href="#id14">$this-&gt;cart-&gt;contents(boolean);</a><a class="headerlink" href="#this-cart-contents-boolean" title="Bu başlığın kalıcı bağlantısı">¶</a></h3>
+<p>Returns an array containing everything in the cart. You can sort the order,
+by which this is returned by passing it &#8220;true&#8221; where the contents will be sorted
+from newest to oldest, by leaving this function blank, you&#8217;ll automatically just get
+first added to the basket to last added to the basket.</p>
 </div>
 <div class="section" id="this-cart-has-options-rowid">
-<h3><a class="toc-backref" href="#id14">$this-&gt;cart-&gt;has_options(rowid);</a><a class="headerlink" href="#this-cart-has-options-rowid" title="Bu başlığın kalıcı bağlantısı">¶</a></h3>
+<h3><a class="toc-backref" href="#id15">$this-&gt;cart-&gt;has_options(rowid);</a><a class="headerlink" href="#this-cart-has-options-rowid" title="Bu başlığın kalıcı bağlantısı">¶</a></h3>
 <p>Eğer ürünün options değişkeni bir değer içeriyorsa TRUE döndürür. Bu fonksyion $this-&gt;cart-&gt;contents() ile kullanılan döngüler içinde kullanılmak üzere tasarlanmıştır, bu yüzden rowid değerini “Sepetin gösterilmesi” başlığı altındaki gibi kullanmalısınız.</p>
 </div>
 <div class="section" id="this-cart-product-options-rowid">
-<h3><a class="toc-backref" href="#id15">$this-&gt;cart-&gt;product_options(rowid);</a><a class="headerlink" href="#this-cart-product-options-rowid" title="Bu başlığın kalıcı bağlantısı">¶</a></h3>
+<h3><a class="toc-backref" href="#id16">$this-&gt;cart-&gt;product_options(rowid);</a><a class="headerlink" href="#this-cart-product-options-rowid" title="Bu başlığın kalıcı bağlantısı">¶</a></h3>
 <p>Seçilen ürüne özel opstions dizisini geri döndürür. Bu fonksiyon yukarıda örneği verildiği gibi, rowid değeri belirlendiğinde, $this-&gt;cart-&gt;contents() fonksiyonu kullanılarak döngü içinde tasarlanır.</p>
 </div>
 <div class="section" id="this-cart-destroy">
-<h3><a class="toc-backref" href="#id16">$this-&gt;cart-&gt;destroy();</a><a class="headerlink" href="#this-cart-destroy" title="Bu başlığın kalıcı bağlantısı">¶</a></h3>
+<h3><a class="toc-backref" href="#id17">$this-&gt;cart-&gt;destroy();</a><a class="headerlink" href="#this-cart-destroy" title="Bu başlığın kalıcı bağlantısı">¶</a></h3>
 <p>Sepeti yok etmek için kullanılır. Müşteri ödemeyi gerçekleştirdikten sonra kullanmak isteyebilirsiniz.</p>
 </div>
 </div>
@@ -367,7 +376,7 @@ Tipik oalrak &#8220;sku&#8221; ya da bunun gibi başka bir tanımlayıcı.</li>
 				<a href="#header" title="Başa Dön">Başa Dön</a>
 			</p>
 			<p><a href="">CodeIgniter</a> &ndash; Copyright &copy;
-      2011, EllisLab, Inc.</a> &ndash; Son Güncelleme: 06 Aralık 2011</p>
+      2012, EllisLab, Inc.</a> &ndash; Son Güncelleme: 29 Şubat 2012</p>
 		</div><!-- /#footer -->
 	
 	<script src="../_static/asset/js/jquery-ui-min.js" type="text/javascript" charset="utf-8" async></script>

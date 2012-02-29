@@ -145,34 +145,42 @@ and adapter to utilize fewer resources.</p>
 <li><a class="reference internal" href="#this-db-count-all" id="id30">$this-&gt;db-&gt;count_all()</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#inserting-data" id="id31">Inserting Data</a><ul>
-<li><a class="reference internal" href="#this-db-insert" id="id32">$this-&gt;db-&gt;insert()</a></li>
-<li><a class="reference internal" href="#this-db-get-compiled-insert" id="id33">$this-&gt;db-&gt;get_compiled_insert()</a></li>
-<li><a class="reference internal" href="#this-db-insert-batch" id="id34">$this-&gt;db-&gt;insert_batch()</a></li>
-<li><a class="reference internal" href="#this-db-set" id="id35">$this-&gt;db-&gt;set()</a></li>
+<li><a class="reference internal" href="#query-grouping" id="id31">Query grouping</a><ul>
+<li><a class="reference internal" href="#this-db-group-start" id="id32">$this-&gt;db-&gt;group_start()</a></li>
+<li><a class="reference internal" href="#this-db-or-group-start" id="id33">$this-&gt;db-&gt;or_group_start()</a></li>
+<li><a class="reference internal" href="#this-db-not-group-start" id="id34">$this-&gt;db-&gt;not_group_start()</a></li>
+<li><a class="reference internal" href="#this-db-or-not-group-start" id="id35">$this-&gt;db-&gt;or_not_group_start()</a></li>
+<li><a class="reference internal" href="#this-db-group-end" id="id36">$this-&gt;db-&gt;group_end()</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#updating-data" id="id36">Updating Data</a><ul>
-<li><a class="reference internal" href="#this-db-update" id="id37">$this-&gt;db-&gt;update()</a></li>
-<li><a class="reference internal" href="#this-db-update-batch" id="id38">$this-&gt;db-&gt;update_batch()</a></li>
-<li><a class="reference internal" href="#this-db-get-compiled-update" id="id39">$this-&gt;db-&gt;get_compiled_update()</a></li>
+<li><a class="reference internal" href="#inserting-data" id="id37">Inserting Data</a><ul>
+<li><a class="reference internal" href="#this-db-insert" id="id38">$this-&gt;db-&gt;insert()</a></li>
+<li><a class="reference internal" href="#this-db-get-compiled-insert" id="id39">$this-&gt;db-&gt;get_compiled_insert()</a></li>
+<li><a class="reference internal" href="#this-db-insert-batch" id="id40">$this-&gt;db-&gt;insert_batch()</a></li>
+<li><a class="reference internal" href="#this-db-set" id="id41">$this-&gt;db-&gt;set()</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#deleting-data" id="id40">Deleting Data</a><ul>
-<li><a class="reference internal" href="#this-db-delete" id="id41">$this-&gt;db-&gt;delete()</a></li>
-<li><a class="reference internal" href="#this-db-empty-table" id="id42">$this-&gt;db-&gt;empty_table()</a></li>
-<li><a class="reference internal" href="#this-db-truncate" id="id43">$this-&gt;db-&gt;truncate()</a></li>
-<li><a class="reference internal" href="#this-db-get-compiled-delete" id="id44">$this-&gt;db-&gt;get_compiled_delete()</a></li>
+<li><a class="reference internal" href="#updating-data" id="id42">Updating Data</a><ul>
+<li><a class="reference internal" href="#this-db-update" id="id43">$this-&gt;db-&gt;update()</a></li>
+<li><a class="reference internal" href="#this-db-update-batch" id="id44">$this-&gt;db-&gt;update_batch()</a></li>
+<li><a class="reference internal" href="#this-db-get-compiled-update" id="id45">$this-&gt;db-&gt;get_compiled_update()</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#method-chaining" id="id45">Method Chaining</a></li>
-<li><a class="reference internal" href="#active-record-caching" id="id46">Active Record Caching</a><ul>
-<li><a class="reference internal" href="#this-db-start-cache" id="id47">$this-&gt;db-&gt;start_cache()</a></li>
-<li><a class="reference internal" href="#this-db-stop-cache" id="id48">$this-&gt;db-&gt;stop_cache()</a></li>
-<li><a class="reference internal" href="#this-db-flush-cache" id="id49">$this-&gt;db-&gt;flush_cache()</a></li>
+<li><a class="reference internal" href="#deleting-data" id="id46">Deleting Data</a><ul>
+<li><a class="reference internal" href="#this-db-delete" id="id47">$this-&gt;db-&gt;delete()</a></li>
+<li><a class="reference internal" href="#this-db-empty-table" id="id48">$this-&gt;db-&gt;empty_table()</a></li>
+<li><a class="reference internal" href="#this-db-truncate" id="id49">$this-&gt;db-&gt;truncate()</a></li>
+<li><a class="reference internal" href="#this-db-get-compiled-delete" id="id50">$this-&gt;db-&gt;get_compiled_delete()</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#reset-active-record" id="id50">Reset Active Record</a></li>
+<li><a class="reference internal" href="#method-chaining" id="id51">Method Chaining</a></li>
+<li><a class="reference internal" href="#active-record-caching" id="id52">Active Record Caching</a><ul>
+<li><a class="reference internal" href="#this-db-start-cache" id="id53">$this-&gt;db-&gt;start_cache()</a></li>
+<li><a class="reference internal" href="#this-db-stop-cache" id="id54">$this-&gt;db-&gt;stop_cache()</a></li>
+<li><a class="reference internal" href="#this-db-flush-cache" id="id55">$this-&gt;db-&gt;flush_cache()</a></li>
+<li><a class="reference internal" href="#this-db-reset-query" id="id56">$this-&gt;db-&gt;reset_query()</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -232,7 +240,7 @@ will be reset (by default it will be&amp;mdash;just like <cite>$this-&gt;db-&gt;
 utilize <a class="reference internal" href="#this-db-from">$this-&gt;db-&gt;from()</a> and did not pass a table name into the first
 parameter. The reason for this outcome is because the query has not been
 executed using <a class="reference internal" href="#this-db-get">$this-&gt;db-&gt;get()</a> which resets values or reset directly
-using <a href="#id51"><span class="problematic" id="id52">`$this-db-&gt;reset_query()`_</span></a>.</p>
+using <a class="reference internal" href="#this-db-reset-query">$this-&gt;db-&gt;reset_query()</a>.</p>
 </div>
 <div class="section" id="this-db-get-where">
 <h3><a class="toc-backref" href="#id5">$this-&gt;db-&gt;get_where()</a><a class="headerlink" href="#this-db-get-where" title="Bu başlığın kalıcı bağlantısı">¶</a></h3>
@@ -650,10 +658,60 @@ Submit the table name in the first parameter. Example:</p>
 </div>
 </div>
 </div>
+<div class="section" id="query-grouping">
+<h2><a class="toc-backref" href="#id31">Query grouping</a><a class="headerlink" href="#query-grouping" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
+<p>Query grouping allows you to create groups of WHERE clauses by enclosing them in parentheses. This will allow
+you to create queries with complex WHERE clauses. Nested groups are supported. Example:</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>$this-&gt;db-&gt;select(&#8216;*&#8217;)-&gt;from(&#8216;my_table&#8217;)</dt>
+<dd><dl class="first docutils">
+<dt>-&gt;group_start()</dt>
+<dd><p class="first">-&gt;where(&#8216;a&#8217;, &#8216;a&#8217;)
+-&gt;or_group_start()</p>
+<blockquote>
+<div>-&gt;where(&#8216;b&#8217;, &#8216;b&#8217;)
+-&gt;where(&#8216;c&#8217;, &#8216;c&#8217;)</div></blockquote>
+<p class="last">-&gt;group_end()</p>
+</dd>
+</dl>
+<p class="last">-&gt;group_end()
+-&gt;where(&#8216;d&#8217;, &#8216;d&#8217;)</p>
+</dd>
+</dl>
+<p>-&gt;get();</p>
+<p>// Generates:
+// SELECT * FROM (<cite>my_table</cite>) WHERE ( <cite>a</cite> = &#8216;a&#8217; OR ( <cite>b</cite> = &#8216;b&#8217; AND <cite>c</cite> = &#8216;c&#8217; ) ) AND <cite>d</cite> = &#8216;d&#8217;</p>
+</div></blockquote>
+<div class="admonition note">
+<p class="first admonition-title">Not</p>
+<p class="last">groups need to be balanced, make sure every group_start() is matched by a group_end().</p>
+</div>
+<div class="section" id="this-db-group-start">
+<h3><a class="toc-backref" href="#id32">$this-&gt;db-&gt;group_start()</a><a class="headerlink" href="#this-db-group-start" title="Bu başlığın kalıcı bağlantısı">¶</a></h3>
+<p>Starts a new group by adding an opening parenthesis to the WHERE clause of the query.</p>
+</div>
+<div class="section" id="this-db-or-group-start">
+<h3><a class="toc-backref" href="#id33">$this-&gt;db-&gt;or_group_start()</a><a class="headerlink" href="#this-db-or-group-start" title="Bu başlığın kalıcı bağlantısı">¶</a></h3>
+<p>Starts a new group by adding an opening parenthesis to the WHERE clause of the query, prefixing it with &#8216;OR&#8217;.</p>
+</div>
+<div class="section" id="this-db-not-group-start">
+<h3><a class="toc-backref" href="#id34">$this-&gt;db-&gt;not_group_start()</a><a class="headerlink" href="#this-db-not-group-start" title="Bu başlığın kalıcı bağlantısı">¶</a></h3>
+<p>Starts a new group by adding an opening parenthesis to the WHERE clause of the query, prefixing it with &#8216;NOT&#8217;.</p>
+</div>
+<div class="section" id="this-db-or-not-group-start">
+<h3><a class="toc-backref" href="#id35">$this-&gt;db-&gt;or_not_group_start()</a><a class="headerlink" href="#this-db-or-not-group-start" title="Bu başlığın kalıcı bağlantısı">¶</a></h3>
+<p>Starts a new group by adding an opening parenthesis to the WHERE clause of the query, prefixing it with &#8216;OR NOT&#8217;.</p>
+</div>
+<div class="section" id="this-db-group-end">
+<h3><a class="toc-backref" href="#id36">$this-&gt;db-&gt;group_end()</a><a class="headerlink" href="#this-db-group-end" title="Bu başlığın kalıcı bağlantısı">¶</a></h3>
+<p>Ends the current group by adding an closing parenthesis to the WHERE clause of the query.</p>
+</div>
+</div>
 <div class="section" id="inserting-data">
-<h2><a class="toc-backref" href="#id31">Inserting Data</a><a class="headerlink" href="#inserting-data" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
+<h2><a class="toc-backref" href="#id37">Inserting Data</a><a class="headerlink" href="#inserting-data" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
 <div class="section" id="this-db-insert">
-<h3><a class="toc-backref" href="#id32">$this-&gt;db-&gt;insert()</a><a class="headerlink" href="#this-db-insert" title="Bu başlığın kalıcı bağlantısı">¶</a></h3>
+<h3><a class="toc-backref" href="#id38">$this-&gt;db-&gt;insert()</a><a class="headerlink" href="#this-db-insert" title="Bu başlığın kalıcı bağlantısı">¶</a></h3>
 <p>Generates an insert string based on the data you supply, and runs the
 query. You can either pass an <strong>array</strong> or an <strong>object</strong> to the
 function. Here is an example using an array:</p>
@@ -691,7 +749,7 @@ object.</p>
 </div>
 </div>
 <div class="section" id="this-db-get-compiled-insert">
-<h3><a class="toc-backref" href="#id33">$this-&gt;db-&gt;get_compiled_insert()</a><a class="headerlink" href="#this-db-get-compiled-insert" title="Bu başlığın kalıcı bağlantısı">¶</a></h3>
+<h3><a class="toc-backref" href="#id39">$this-&gt;db-&gt;get_compiled_insert()</a><a class="headerlink" href="#this-db-get-compiled-insert" title="Bu başlığın kalıcı bağlantısı">¶</a></h3>
 <p>Compiles the insertion query just like <a class="reference internal" href="#this-db-insert">$this-&gt;db-&gt;insert()</a> but does not
 <em>run</em> the query. This method simply returns the SQL query as a string.</p>
 <p>Example:</p>
@@ -722,10 +780,10 @@ will be reset (by default it will be&#8211;just like <a class="reference interna
 utlize <a class="reference internal" href="#this-db-from">$this-&gt;db-&gt;from()</a> nor did it pass a table name into the first
 parameter. The reason this worked is because the query has not been executed
 using <a class="reference internal" href="#this-db-insert">$this-&gt;db-&gt;insert()</a> which resets values or reset directly using
-<a href="#id53"><span class="problematic" id="id54">`$this-&gt;db-&gt;reset_query()`_</span></a>.</p>
+<a class="reference internal" href="#this-db-reset-query">$this-&gt;db-&gt;reset_query()</a>.</p>
 </div>
 <div class="section" id="this-db-insert-batch">
-<h3><a class="toc-backref" href="#id34">$this-&gt;db-&gt;insert_batch()</a><a class="headerlink" href="#this-db-insert-batch" title="Bu başlığın kalıcı bağlantısı">¶</a></h3>
+<h3><a class="toc-backref" href="#id40">$this-&gt;db-&gt;insert_batch()</a><a class="headerlink" href="#this-db-insert-batch" title="Bu başlığın kalıcı bağlantısı">¶</a></h3>
 <p>Generates an insert string based on the data you supply, and runs the
 query. You can either pass an <strong>array</strong> or an <strong>object</strong> to the
 function. Here is an example using an array:</p>
@@ -754,7 +812,7 @@ associative array of values.</p>
 </div>
 </div>
 <div class="section" id="this-db-set">
-<h3><a class="toc-backref" href="#id35">$this-&gt;db-&gt;set()</a><a class="headerlink" href="#this-db-set" title="Bu başlığın kalıcı bağlantısı">¶</a></h3>
+<h3><a class="toc-backref" href="#id41">$this-&gt;db-&gt;set()</a><a class="headerlink" href="#this-db-set" title="Bu başlığın kalıcı bağlantısı">¶</a></h3>
 <p>This function enables you to set values for inserts or updates.</p>
 <p><strong>It can be used instead of passing a data array directly to the insert
 or update functions:</strong></p>
@@ -808,9 +866,9 @@ parameter.</p>
 </div>
 </div>
 <div class="section" id="updating-data">
-<h2><a class="toc-backref" href="#id36">Updating Data</a><a class="headerlink" href="#updating-data" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
+<h2><a class="toc-backref" href="#id42">Updating Data</a><a class="headerlink" href="#updating-data" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
 <div class="section" id="this-db-update">
-<h3><a class="toc-backref" href="#id37">$this-&gt;db-&gt;update()</a><a class="headerlink" href="#this-db-update" title="Bu başlığın kalıcı bağlantısı">¶</a></h3>
+<h3><a class="toc-backref" href="#id43">$this-&gt;db-&gt;update()</a><a class="headerlink" href="#this-db-update" title="Bu başlığın kalıcı bağlantısı">¶</a></h3>
 <p>Generates an update string and runs the query based on the data you
 supply. You can pass an <strong>array</strong> or an <strong>object</strong> to the function. Here
 is an example using an array:</p>
@@ -858,7 +916,7 @@ directly into the update function as a string:</p>
 performing updates.</p>
 </div>
 <div class="section" id="this-db-update-batch">
-<h3><a class="toc-backref" href="#id38">$this-&gt;db-&gt;update_batch()</a><a class="headerlink" href="#this-db-update-batch" title="Bu başlığın kalıcı bağlantısı">¶</a></h3>
+<h3><a class="toc-backref" href="#id44">$this-&gt;db-&gt;update_batch()</a><a class="headerlink" href="#this-db-update-batch" title="Bu başlığın kalıcı bağlantısı">¶</a></h3>
 <p>Generates an update string based on the data you supply, and runs the query.
 You can either pass an <strong>array</strong> or an <strong>object</strong> to the function.
 Here is an example using an array:</p>
@@ -897,16 +955,16 @@ array of values, the third parameter is the where key.</p>
 </div>
 </div>
 <div class="section" id="this-db-get-compiled-update">
-<h3><a class="toc-backref" href="#id39">$this-&gt;db-&gt;get_compiled_update()</a><a class="headerlink" href="#this-db-get-compiled-update" title="Bu başlığın kalıcı bağlantısı">¶</a></h3>
+<h3><a class="toc-backref" href="#id45">$this-&gt;db-&gt;get_compiled_update()</a><a class="headerlink" href="#this-db-get-compiled-update" title="Bu başlığın kalıcı bağlantısı">¶</a></h3>
 <p>This works exactly the same way as <tt class="docutils literal"><span class="pre">$this-&gt;db-&gt;get_compiled_insert()</span></tt> except
 that it produces an UPDATE SQL string instead of an INSERT SQL string.</p>
-<p>For more information view documentation for <a href="#id55"><span class="problematic" id="id56">`$this-&gt;get_compiled_insert()`_</span></a>.</p>
+<p>For more information view documentation for <a class="reference internal" href="#this-db-get-compiled-insert">$this-&gt;db-&gt;get_compiled_insert()</a>.</p>
 </div>
 </div>
 <div class="section" id="deleting-data">
-<h2><a class="toc-backref" href="#id40">Deleting Data</a><a class="headerlink" href="#deleting-data" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
+<h2><a class="toc-backref" href="#id46">Deleting Data</a><a class="headerlink" href="#deleting-data" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
 <div class="section" id="this-db-delete">
-<h3><a class="toc-backref" href="#id41">$this-&gt;db-&gt;delete()</a><a class="headerlink" href="#this-db-delete" title="Bu başlığın kalıcı bağlantısı">¶</a></h3>
+<h3><a class="toc-backref" href="#id47">$this-&gt;db-&gt;delete()</a><a class="headerlink" href="#this-db-delete" title="Bu başlığın kalıcı bağlantısı">¶</a></h3>
 <p>Generates a delete SQL string and runs the query.</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">delete</span><span class="p">(</span><span class="s1">&#39;mytable&#39;</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span><span class="s1">&#39;id&#39;</span> <span class="o">=&gt;</span> <span class="nv">$id</span><span class="p">));</span>  <span class="c1">// Produces: // DELETE FROM mytable  // WHERE id = $id</span>
 </pre></div>
@@ -933,7 +991,7 @@ delete data from more than 1 table.</p>
 function, or empty_table().</p>
 </div>
 <div class="section" id="this-db-empty-table">
-<h3><a class="toc-backref" href="#id42">$this-&gt;db-&gt;empty_table()</a><a class="headerlink" href="#this-db-empty-table" title="Bu başlığın kalıcı bağlantısı">¶</a></h3>
+<h3><a class="toc-backref" href="#id48">$this-&gt;db-&gt;empty_table()</a><a class="headerlink" href="#this-db-empty-table" title="Bu başlığın kalıcı bağlantısı">¶</a></h3>
 <p>Generates a delete SQL string and runs the
 query.:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">empty_table</span><span class="p">(</span><span class="s1">&#39;mytable&#39;</span><span class="p">);</span> <span class="c1">// Produces: DELETE FROM mytable</span>
@@ -941,7 +999,7 @@ query.:</p>
 </div>
 </div>
 <div class="section" id="this-db-truncate">
-<h3><a class="toc-backref" href="#id43">$this-&gt;db-&gt;truncate()</a><a class="headerlink" href="#this-db-truncate" title="Bu başlığın kalıcı bağlantısı">¶</a></h3>
+<h3><a class="toc-backref" href="#id49">$this-&gt;db-&gt;truncate()</a><a class="headerlink" href="#this-db-truncate" title="Bu başlığın kalıcı bağlantısı">¶</a></h3>
 <p>Generates a truncate SQL string and runs the query.</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">from</span><span class="p">(</span><span class="s1">&#39;mytable&#39;</span><span class="p">);</span>
 <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">truncate</span><span class="p">();</span>
@@ -961,14 +1019,14 @@ execute as &#8220;DELETE FROM table&#8221;.</p>
 </div>
 </div>
 <div class="section" id="this-db-get-compiled-delete">
-<h3><a class="toc-backref" href="#id44">$this-&gt;db-&gt;get_compiled_delete()</a><a class="headerlink" href="#this-db-get-compiled-delete" title="Bu başlığın kalıcı bağlantısı">¶</a></h3>
+<h3><a class="toc-backref" href="#id50">$this-&gt;db-&gt;get_compiled_delete()</a><a class="headerlink" href="#this-db-get-compiled-delete" title="Bu başlığın kalıcı bağlantısı">¶</a></h3>
 <p>This works exactly the same way as <tt class="docutils literal"><span class="pre">$this-&gt;db-&gt;get_compiled_insert()</span></tt> except
 that it produces a DELETE SQL string instead of an INSERT SQL string.</p>
-<p>For more information view documentation for <a href="#id57"><span class="problematic" id="id58">`$this-&gt;get_compiled_insert()`_</span></a>.</p>
+<p>For more information view documentation for <a class="reference internal" href="#this-db-get-compiled-insert">$this-&gt;db-&gt;get_compiled_insert()</a>.</p>
 </div>
 </div>
 <div class="section" id="method-chaining">
-<h2><a class="toc-backref" href="#id45">Method Chaining</a><a class="headerlink" href="#method-chaining" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
+<h2><a class="toc-backref" href="#id51">Method Chaining</a><a class="headerlink" href="#method-chaining" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
 <p>Method chaining allows you to simplify your syntax by connecting
 multiple functions. Consider this example:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$query</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">select</span><span class="p">(</span><span class="s1">&#39;title&#39;</span><span class="p">)</span>
@@ -979,7 +1037,7 @@ multiple functions. Consider this example:</p>
 </div>
 </div>
 <div class="section" id="active-record-caching">
-<span id="ar-caching"></span><h2><a class="toc-backref" href="#id46">Active Record Caching</a><a class="headerlink" href="#active-record-caching" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
+<span id="ar-caching"></span><h2><a class="toc-backref" href="#id52">Active Record Caching</a><a class="headerlink" href="#active-record-caching" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
 <p>While not &#8220;true&#8221; caching, Active Record enables you to save (or &#8220;cache&#8221;)
 certain parts of your queries for reuse at a later point in your
 script&#8217;s execution. Normally, when an Active Record call is completed,
@@ -989,17 +1047,17 @@ prevent this reset, and reuse information easily.</p>
 then 2 uncached select() calls, this will result in 4 select() calls.
 There are three Caching functions available:</p>
 <div class="section" id="this-db-start-cache">
-<h3><a class="toc-backref" href="#id47">$this-&gt;db-&gt;start_cache()</a><a class="headerlink" href="#this-db-start-cache" title="Bu başlığın kalıcı bağlantısı">¶</a></h3>
+<h3><a class="toc-backref" href="#id53">$this-&gt;db-&gt;start_cache()</a><a class="headerlink" href="#this-db-start-cache" title="Bu başlığın kalıcı bağlantısı">¶</a></h3>
 <p>This function must be called to begin caching. All Active Record queries
 of the correct type (see below for supported queries) are stored for
 later use.</p>
 </div>
 <div class="section" id="this-db-stop-cache">
-<h3><a class="toc-backref" href="#id48">$this-&gt;db-&gt;stop_cache()</a><a class="headerlink" href="#this-db-stop-cache" title="Bu başlığın kalıcı bağlantısı">¶</a></h3>
+<h3><a class="toc-backref" href="#id54">$this-&gt;db-&gt;stop_cache()</a><a class="headerlink" href="#this-db-stop-cache" title="Bu başlığın kalıcı bağlantısı">¶</a></h3>
 <p>This function can be called to stop caching.</p>
 </div>
 <div class="section" id="this-db-flush-cache">
-<h3><a class="toc-backref" href="#id49">$this-&gt;db-&gt;flush_cache()</a><a class="headerlink" href="#this-db-flush-cache" title="Bu başlığın kalıcı bağlantısı">¶</a></h3>
+<h3><a class="toc-backref" href="#id55">$this-&gt;db-&gt;flush_cache()</a><a class="headerlink" href="#this-db-flush-cache" title="Bu başlığın kalıcı bağlantısı">¶</a></h3>
 <p>This function deletes all items from the Active Record cache.</p>
 <p>Here&#8217;s a usage example:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">db</span><span class="o">-&gt;</span><span class="na">start_cache</span><span class="p">();</span>
@@ -1024,9 +1082,8 @@ later use.</p>
 where, like, group_by, having, order_by, set</p>
 </div>
 </div>
-</div>
-<div class="section" id="reset-active-record">
-<h2><a class="toc-backref" href="#id50">Reset Active Record</a><a class="headerlink" href="#reset-active-record" title="Bu başlığın kalıcı bağlantısı">¶</a></h2>
+<div class="section" id="this-db-reset-query">
+<h3><a class="toc-backref" href="#id56">$this-&gt;db-&gt;reset_query()</a><a class="headerlink" href="#this-db-reset-query" title="Bu başlığın kalıcı bağlantısı">¶</a></h3>
 <p>Resetting Active Record allows you to start fresh with your query without
 executing it first using a method like $this-&gt;db-&gt;get() or $this-&gt;db-&gt;insert().
 Just like the methods that execute a query, this will <em>not</em> reset items you&#8217;ve
@@ -1052,6 +1109,7 @@ run the query:</p>
 </div>
 </div>
 </div>
+</div>
 
 		</div>
 
@@ -1068,7 +1126,7 @@ run the query:</p>
 				<a href="#header" title="Başa Dön">Başa Dön</a>
 			</p>
 			<p><a href="">CodeIgniter</a> &ndash; Copyright &copy;
-      2011, EllisLab, Inc.</a> &ndash; Son Güncelleme: 22 Kasım 2011</p>
+      2012, EllisLab, Inc.</a> &ndash; Son Güncelleme: 29 Şubat 2012</p>
 		</div><!-- /#footer -->
 	
 	<script src="../_static/asset/js/jquery-ui-min.js" type="text/javascript" charset="utf-8" async></script>

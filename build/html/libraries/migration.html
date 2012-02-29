@@ -1,0 +1,162 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+	    
+	    <title>Migrations Class &mdash; CodeIgniter 3.0-dev documentation</title>
+
+	    <link rel="stylesheet" href="../_static/asset/css/common.css" type="text/css" />
+	    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+	    <script type="text/javascript">
+	      var DOCUMENTATION_OPTIONS = {
+	        URL_ROOT:    '../',
+	        VERSION:     '3.0-dev',
+	        COLLAPSE_INDEX: false,
+	        FILE_SUFFIX: '.html',
+	        HAS_SOURCE:  true
+	      };
+	    </script>
+	    <script type="text/javascript" src="../_static/jquery.js"></script>
+	    <script type="text/javascript" src="../_static/underscore.js"></script>
+	    <script type="text/javascript" src="../_static/doctools.js"></script>
+	    <script type="text/javascript" src="../_static/translations.js"></script>
+	    <link rel="top" title="CodeIgniter 3.0-dev documentation" href="../index.html" />
+	    <link rel="up" title="Libraries" href="index.html" />
+	    <link rel="next" title="Output Sınıfı" href="output.html" />
+	    <link rel="prev" title="Loader Class" href="loader.html" /> 
+	</head>
+	<body>
+		<div id="table-contents">
+			<div class="toctree-wrapper compound">
+			<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../changelog.html">Change Log</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../license.html">Open Software License (&#8220;OSL&#8221;) v 3.0</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../overview/index.html">CodeIgniter Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../general/requirements.html">Server Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation/index.html">Installation Instructions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../general/index.html">General Topics</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Libraries</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="benchmark.html">Karşılaştırma (Benchmarking) Sınıfı</a></li>
+<li class="toctree-l2"><a class="reference internal" href="caching.html">Caching Driver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="calendar.html">Calendaring Class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cart.html">Alışveriş Sepeti Sınıfı</a></li>
+<li class="toctree-l2"><a class="reference internal" href="config.html">Config Class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="email.html">Email Class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="encryption.html">Encryption Class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_uploading.html">File Uploading Class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="form_validation.html">Form Validation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ftp.html">FTP Class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="image_lib.html">Image Manipulation Class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="input.html">Input Class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="javascript.html">Javascript Class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="language.html">Dil sınıfı</a></li>
+<li class="toctree-l2"><a class="reference internal" href="loader.html">Loader Class</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Migrations Class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="output.html">Output Sınıfı</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pagination.html">Pagination Class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="parser.html">Template Parser Class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="security.html">Security Class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sessions.html">Session Class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="table.html">HTML Tablo Sınıfı</a></li>
+<li class="toctree-l2"><a class="reference internal" href="trackback.html">Trackback Class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="typography.html">Typography Class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="unit_testing.html">Unit Testing Class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="uri.html">URI Class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_agent.html">Kullanıcı Bilgileri Sınıfı</a></li>
+<li class="toctree-l2"><a class="reference internal" href="xmlrpc.html">XML-RPC and XML-RPC Server Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="zip.html">Zip Encoding Class</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../helpers/index.html">Helpers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../database/index.html">Veri Tabanı Sınıfı</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../documentation/index.html">CodeIgniter Belgesi Yazma</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial/index.html">Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../general/quick_reference.html">Quick Reference Chart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../general/credits.html">Credits</a></li>
+</ul>
+
+			</div>
+		</div>
+
+		<div id="brand" class="ci">
+			<a href="http://codeigniter.com/"><img src="../_static/asset/img/ci-logo.gif" alt="CodeIgniter"></a>
+			<p>3.0-dev Kullanım Kılavuzu</p>
+		    <p><a href="../_sources/libraries/migration.txt"
+			           rel="nofollow">Kaynağı Göster</a></p>
+		</div><!-- /#brand -->
+
+		<div id="header">
+			<form method="get" action="http://www.google.com/search">
+				<fieldset>
+					<input type="text" name="q" id="q" value="">
+					<input type="hidden" name="as_sitesearch" id="as_sitesearch" value="codeigniter.com/user_guide/" />
+					<input class="grades" type="submit" value="ara">
+				</fieldset>
+			</form>
+			<ul>
+				<li><a href="../index.html">Anasayfa</a>&nbsp;&nbsp; &rsaquo;</li>
+				<li><a id="toc-link" href="../index.html">İçindekiler</a>&nbsp;&nbsp; &rsaquo;</li>
+				<li><a href="index.html" accesskey="U">Libraries</a>&nbsp;&nbsp;  &rsaquo;</li>
+
+				<li><strong>Migrations Class</strong></li>
+			</ul>
+		</div><!-- /#header -->
+
+		<div class="section" id="content">
+			<div class="section" id="migrations-class">
+<h1>Migrations Class<a class="headerlink" href="#migrations-class" title="Bu başlığın kalıcı bağlantısı">¶</a></h1>
+<p>Coming soon.</p>
+</div>
+
+		</div>
+
+		<!-- {user_guide_comments} -->
+					
+		<div id="footer">
+			<p class="top">
+				
+				<span class="prev">Önceki Başlık: <a href="loader.html">Loader Class</a></span>
+				
+				
+				<span class="next">Sonraki Başlık: <a href="output.html">Output Sınıfı</a></span>
+				
+				<a href="#header" title="Başa Dön">Başa Dön</a>
+			</p>
+			<p><a href="">CodeIgniter</a> &ndash; Copyright &copy;
+      2012, EllisLab, Inc.</a> &ndash; Son Güncelleme: 29 Şubat 2012</p>
+		</div><!-- /#footer -->
+	
+	<script src="../_static/asset/js/jquery-ui-min.js" type="text/javascript" charset="utf-8" async></script>
+	<script type="text/javascript" charset="utf-8">
+		$('#toc-link').click(function(){
+			$('#table-contents').animate({ left: '0' },1000);
+			return false;
+		});
+		$('html').click(function(){
+			if ($('#table-contents').css("left") == '0px'){
+				$('#table-contents').animate({ left: '-520' },1000);
+			}
+		});
+		$('#table-contents').click(function(event){
+			event.stopPropagation();
+		});
+/*		$('*:not(#table-contents,#toc-link)').click(function(){
+			if ($('#table-contents').css("left") == '0px'){
+				$('#table-contents').animate({ left: '-520' },1000);
+			}
+		});
+/*		$("#toc-link").click(function () {
+			$('#table-contents').show("slide", { direction: "left" }, 100);
+			event.stopPropagation();
+			return false;
+		});
+		$('*:not(#table-contents,#toc-link)').click(function () {
+			if ($('#table-contents').is(":visible")) {
+				$('#table-contents').hide("slide", { direction: "left" }, 100);
+				event.stopPropagation();	
+			}
+		}); */
+	</script>
+	</body>
+</html>

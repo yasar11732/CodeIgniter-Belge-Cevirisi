@@ -38,12 +38,12 @@
 <li class="toctree-l1"><a class="reference internal" href="../general/index.html">General Topics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../libraries/index.html">Libraries</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">Helpers</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="array_helper.html">Array Helper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="array_helper.html">Dizi Helper</a></li>
 <li class="toctree-l2"><a class="reference internal" href="captcha_helper.html">CAPTCHA Helper</a></li>
 <li class="toctree-l2"><a class="reference internal" href="cookie_helper.html">Cookie Helper</a></li>
 <li class="toctree-l2"><a class="reference internal" href="date_helper.html">Date Helper</a></li>
-<li class="toctree-l2"><a class="reference internal" href="directory_helper.html">Directory Helper</a></li>
-<li class="toctree-l2"><a class="reference internal" href="download_helper.html">Download Helper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="directory_helper.html">Dizin Helper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="download_helper.html">İndirme (Download) Helper</a></li>
 <li class="toctree-l2"><a class="reference internal" href="email_helper.html">Email Helper</a></li>
 <li class="toctree-l2"><a class="reference internal" href="file_helper.html">File Helper</a></li>
 <li class="toctree-l2"><a class="reference internal" href="form_helper.html">Form Helper</a></li>
@@ -170,6 +170,11 @@ them. Each word is capitalized. Example</p>
 <span class="k">echo</span> <span class="nx">humanize</span><span class="p">(</span><span class="nv">$word</span><span class="p">);</span> <span class="c1">// Returns &quot;My Dog Spot&quot;</span>
 </pre></div>
 </div>
+<p>To use dashes instead of underscores</p>
+<div class="highlight-ci"><div class="highlight"><pre><span class="nv">$word</span> <span class="o">=</span> <span class="s2">&quot;my-dog-spot&quot;</span><span class="p">;</span>
+<span class="k">echo</span> <span class="nx">humanize</span><span class="p">(</span><span class="nv">$word</span><span class="p">,</span> <span class="s1">&#39;-&#39;</span><span class="p">);</span> <span class="c1">// Returns &quot;My Dog Spot&quot;</span>
+</pre></div>
+</div>
 </div>
 </div>
 
@@ -188,7 +193,7 @@ them. Each word is capitalized. Example</p>
 				<a href="#header" title="Başa Dön">Başa Dön</a>
 			</p>
 			<p><a href="">CodeIgniter</a> &ndash; Copyright &copy;
-      2011, EllisLab, Inc.</a> &ndash; Son Güncelleme: 22 Kasım 2011</p>
+      2012, EllisLab, Inc.</a> &ndash; Son Güncelleme: 29 Şubat 2012</p>
 		</div><!-- /#footer -->
 	
 	<script src="../_static/asset/js/jquery-ui-min.js" type="text/javascript" charset="utf-8" async></script>

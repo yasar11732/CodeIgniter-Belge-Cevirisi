@@ -217,28 +217,36 @@ $this->cart->update();
 
 Sepetteki ürün veya ürünleri güncellemenizi sağlar.
 
+$this->cart->remove(rowid);
+***************************
+
+Allows you to remove an item from the shopping cart by passing it the rowid.
+
 $this->cart->total();
 *********************
 
 Sepetin toplam tutarını, yani alt toplamını verir.
 
 $this->cart->total_items();
-****************************
+***************************
 
 Sepetteki toplam ürün adetini verir.
 
-$this->cart->contents();
-************************
+$this->cart->contents(boolean);
+*******************************
 
-Sepetteki herşeyi içerin bir array geri döndürür.
+Returns an array containing everything in the cart. You can sort the order,
+by which this is returned by passing it "true" where the contents will be sorted
+from newest to oldest, by leaving this function blank, you'll automatically just get
+first added to the basket to last added to the basket.
 
 $this->cart->has_options(rowid);
-*********************************
+********************************
 
 Eğer ürünün options değişkeni bir değer içeriyorsa TRUE döndürür. Bu fonksyion $this->cart->contents() ile kullanılan döngüler içinde kullanılmak üzere tasarlanmıştır, bu yüzden rowid değerini “Sepetin gösterilmesi” başlığı altındaki gibi kullanmalısınız.
 
 $this->cart->product_options(rowid);
-*************************************
+************************************
 
 Seçilen ürüne özel opstions dizisini geri döndürür. Bu fonksiyon yukarıda örneği verildiği gibi, rowid değeri belirlendiğinde, $this->cart->contents() fonksiyonu kullanılarak döngü içinde tasarlanır.
 

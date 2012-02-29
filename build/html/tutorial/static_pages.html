@@ -140,7 +140,7 @@ before loading the main view, together with a heading. It will also
 output the $title variable, which we&#8217;ll define later in the controller.
 Now create a footer at application/views/templates/footer.php that
 includes the following code:</p>
-<div class="highlight-ci"><div class="highlight"><pre>        <span class="o">&lt;</span><span class="nx">em</span><span class="o">&gt;&amp;</span><span class="nb">copy</span><span class="p">;</span> <span class="mi">2011</span><span class="o">&lt;/</span><span class="nx">em</span><span class="o">&gt;</span>
+<div class="highlight-ci"><div class="highlight"><pre>        <span class="o">&lt;</span><span class="nx">em</span><span class="o">&gt;&amp;</span><span class="nb">copy</span><span class="p">;</span> <span class="mi">2012</span><span class="o">&lt;/</span><span class="nx">em</span><span class="o">&gt;</span>
     <span class="o">&lt;/</span><span class="nx">body</span><span class="o">&gt;</span>
 <span class="o">&lt;</span><span class="nx">html</span><span class="o">&gt;</span>
 </pre></div>
@@ -160,7 +160,7 @@ page actually exists:</p>
 <span class="k">public</span> <span class="k">function</span> <span class="nf">view</span><span class="p">(</span><span class="nv">$page</span> <span class="o">=</span> <span class="s1">&#39;home&#39;</span><span class="p">)</span>
 <span class="p">{</span>
 
-    <span class="k">if</span> <span class="p">(</span> <span class="o">!</span> <span class="nb">file_exists</span><span class="p">(</span><span class="s1">&#39;application/views/pages/&#39;</span><span class="o">.</span><span class="nv">$page</span><span class="o">.</span><span class="s1">&#39;.php&#39;</span><span class="p">))</span>
+    <span class="k">if</span> <span class="p">(</span> <span class="o">!</span> <span class="nb">file_exists</span><span class="p">(</span><span class="nx">APPPATH</span><span class="o">.</span><span class="s1">&#39;/views/pages/&#39;</span><span class="o">.</span><span class="nv">$page</span><span class="o">.</span><span class="s1">&#39;.php&#39;</span><span class="p">))</span>
     <span class="p">{</span>
         <span class="c1">// Whoops, we don&#39;t have a page for that!</span>
         <span class="nx">show_404</span><span class="p">();</span>
@@ -239,7 +239,7 @@ method in the pages controller? Awesome!</p>
 				<a href="#header" title="Başa Dön">Başa Dön</a>
 			</p>
 			<p><a href="">CodeIgniter</a> &ndash; Copyright &copy;
-      2011, EllisLab, Inc.</a> &ndash; Son Güncelleme: 22 Kasım 2011</p>
+      2012, EllisLab, Inc.</a> &ndash; Son Güncelleme: 29 Şubat 2012</p>
 		</div><!-- /#footer -->
 	
 	<script src="../_static/asset/js/jquery-ui-min.js" type="text/javascript" charset="utf-8" async></script>

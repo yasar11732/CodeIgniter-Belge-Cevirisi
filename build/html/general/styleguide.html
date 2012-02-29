@@ -24,7 +24,7 @@
 	    <link rel="top" title="CodeIgniter 3.0-dev documentation" href="../index.html" />
 	    <link rel="up" title="General Topics" href="index.html" />
 	    <link rel="next" title="Libraries" href="../libraries/index.html" />
-	    <link rel="prev" title="Security" href="security.html" /> 
+	    <link rel="prev" title="Güvenlik" href="security.html" /> 
 	</head>
 	<body>
 		<div id="table-contents">
@@ -54,12 +54,12 @@
 <li class="toctree-l2"><a class="reference internal" href="routing.html">URI Yönlendirme</a></li>
 <li class="toctree-l2"><a class="reference internal" href="errors.html">Hata İşleme</a></li>
 <li class="toctree-l2"><a class="reference internal" href="caching.html">Caching</a></li>
-<li class="toctree-l2"><a class="reference internal" href="profiling.html">Profiling Your Application</a></li>
+<li class="toctree-l2"><a class="reference internal" href="profiling.html">Uygulamanızı Ayrımlayın</a></li>
 <li class="toctree-l2"><a class="reference internal" href="cli.html">Running via the CLI</a></li>
-<li class="toctree-l2"><a class="reference internal" href="managing_apps.html">Managing your Applications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="managing_apps.html">Uygulamaların Yönetimi</a></li>
 <li class="toctree-l2"><a class="reference internal" href="environments.html">Handling Multiple Environments</a></li>
 <li class="toctree-l2"><a class="reference internal" href="alternative_php.html">Alternate PHP Syntax for View Files</a></li>
-<li class="toctree-l2"><a class="reference internal" href="security.html">Security</a></li>
+<li class="toctree-l2"><a class="reference internal" href="security.html">Güvenlik</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="">PHP Style Guide</a><ul class="simple">
 </ul>
 </li>
@@ -551,6 +551,13 @@ same level as the control statement that &#8220;owns&#8221; them.</p>
                 <span class="c1">// ...</span>
                 <span class="p">}</span>
         <span class="p">}</span>
+
+<span class="k">try</span> <span class="p">{</span>
+        <span class="c1">// ...</span>
+<span class="p">}</span>
+<span class="k">catch</span><span class="p">()</span> <span class="p">{</span>
+        <span class="c1">// ...</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p><strong>CORRECT</strong>:</p>
@@ -579,6 +586,15 @@ same level as the control statement that &#8220;owns&#8221; them.</p>
         <span class="p">{</span>
                 <span class="c1">// ...</span>
         <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">try</span>
+<span class="p">{</span>
+        <span class="c1">// ...</span>
+<span class="p">}</span>
+<span class="k">catch</span><span class="p">()</span>
+<span class="p">{</span>
+        <span class="c1">// ...</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -760,7 +776,7 @@ values which can save a few lines of code. Example:</p>
 		<div id="footer">
 			<p class="top">
 				
-				<span class="prev">Önceki Başlık: <a href="security.html">Security</a></span>
+				<span class="prev">Önceki Başlık: <a href="security.html">Güvenlik</a></span>
 				
 				
 				<span class="next">Sonraki Başlık: <a href="../libraries/index.html">Libraries</a></span>
@@ -768,7 +784,7 @@ values which can save a few lines of code. Example:</p>
 				<a href="#header" title="Başa Dön">Başa Dön</a>
 			</p>
 			<p><a href="">CodeIgniter</a> &ndash; Copyright &copy;
-      2011, EllisLab, Inc.</a> &ndash; Son Güncelleme: 22 Kasım 2011</p>
+      2012, EllisLab, Inc.</a> &ndash; Son Güncelleme: 29 Şubat 2012</p>
 		</div><!-- /#footer -->
 	
 	<script src="../_static/asset/js/jquery-ui-min.js" type="text/javascript" charset="utf-8" async></script>
